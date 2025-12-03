@@ -12,6 +12,10 @@ dependencies {
     // テスト用ライブラリ (JUnit 5)
     testImplementation("org.junit.jupiter:junit-jupiter:5.10.2")
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")
+    // Lombok
+    compileOnly("org.projectlombok:lombok:1.18.30")
+    annotationProcessor("org.projectlombok:lombok:1.18.30")
+    compileOnly("org.jetbrains:annotations:24.1.0")
     implementation("com.alibaba:druid:1.2.20")
     implementation("com.google.android:android:4.1.1.4")
     implementation("junit:junit:4.13.2")
@@ -20,6 +24,13 @@ dependencies {
     // ivantrendafilov-confucius用 SLF4J
     implementation("org.slf4j:slf4j-api:2.0.9")
     implementation("org.slf4j:slf4j-simple:2.0.9")
+    // jmrtd用 BouncyCastle (ISO9797Alg3Mac等の暗号プリミティブ)
+    implementation("org.bouncycastle:bcprov-jdk18on:1.77")
+    // pawotag用 Servlet API, JSP API, Commons Logging
+    compileOnly("javax.servlet:javax.servlet-api:4.0.1")
+    testImplementation("javax.servlet:javax.servlet-api:4.0.1")
+    compileOnly("javax.servlet.jsp:javax.servlet.jsp-api:2.3.3")
+    implementation("commons-logging:commons-logging:1.2")
 }
 
 java {
@@ -31,7 +42,7 @@ java {
 
 application {
     // メインクラスの指定 (applicationプラグインで必須のため仮設定)
-    // 実際は ./gradlew test でテスト実行するのがメインなので,ここは適当でOK
+    // 実際は ./gradlew test でテスト実行するのがメインなので、ここは適当でOK
     mainClass.set("adempiere.original.Secure")
 }
 

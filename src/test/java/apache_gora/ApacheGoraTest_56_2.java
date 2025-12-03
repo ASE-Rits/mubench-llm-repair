@@ -10,8 +10,8 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 
 /**
- * WritableUtils#writeProperties の flush 漏れによる欠落を再現するテスト.
- * Driver 経由で Original/Fixed/Misuse を切り替えて挙動を比較する.
+ * WritableUtils#writeProperties の flush 漏れによる欠落を再現するテスト。
+ * Driver 経由で Original/Fixed/Misuse を切り替えて挙動を比較する。
  */
 public class ApacheGoraTest_56_2 {
 

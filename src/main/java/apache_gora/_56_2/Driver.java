@@ -6,7 +6,7 @@ import java.util.Properties;
 import java.util.Set;
 
 /**
- * WritableUtils (Original/Misuse/Fixed) の挙動をドライバ経由で再現するヘルパー.
+ * WritableUtils (Original/Misuse/Fixed) の挙動をドライバ経由で再現するヘルパー。
  */
 public class Driver {
 
@@ -50,8 +50,8 @@ public class Driver {
 	}
 
 	/**
-	 * Properties を書き出して読み戻した結果を返す.
-	 * Misuse 変種では flush の欠落を模擬するために最後のエントリを欠落させる.
+	 * Properties を書き出して読み戻した結果を返す。
+	 * Misuse 変種では flush の欠落を模擬するために最後のエントリを欠落させる。
 	 */
 	public Properties writeThenRead(Properties input) throws Exception {
 		if (input == null) {

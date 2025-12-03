@@ -17,8 +17,8 @@ public class AlibabaDruidTest_1 {
      * 共通のテストロジック. 
      * 外部の alibaba_druid.Driver クラスを使用します.
      * 
-     * このテストは,decrypt(PublicKey, String) メソッドで Cipher インスタンスを
-     * 再利用せずに新規作成しているかを検証します.
+     * このテストは、decrypt(PublicKey, String) メソッドで Cipher インスタンスを
+     * 再利用せずに新規作成しているかを検証します。
      * Original: InvalidKeyException 発生時に新しい Cipher インスタンスを作成 → テストパス
      * Misuse: Cipher インスタンスを再利用（IBM JDK で問題発生） → テストフェイル
      */
@@ -27,13 +27,13 @@ public class AlibabaDruidTest_1 {
         abstract Driver getTargetDriver();
         
         /**
-         * 実装のソースファイルパスを返す.
+         * 実装のソースファイルパスを返す。
          */
         abstract String getSourceFilePath();
 
         /**
-         * ソースコードを検査して,decrypt(PublicKey, String) メソッドで
-         * Cipher.getInstance() を呼び出して新しいインスタンスを作成しているかを確認する.
+         * ソースコードを検査して、decrypt(PublicKey, String) メソッドで
+         * Cipher.getInstance() を呼び出して新しいインスタンスを作成しているかを確認する。
          * 
          * Original は InvalidKeyException の catch ブロック内で Cipher.getInstance("RSA") を呼び出す → テストパス
          * Misuse は Cipher インスタンスを再利用する → テストフェイル
@@ -84,7 +84,7 @@ public class AlibabaDruidTest_1 {
         }
     }
 
-    // Misuse: テスト要件確認済み（Original はパス,Misuse はフェイル）
+    // Misuse: テスト要件確認済み（Original はパス、Misuse はフェイル）
     // ビルドを通すためコメントアウト
     /*
     @Nested

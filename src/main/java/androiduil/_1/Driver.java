@@ -7,7 +7,7 @@ import java.lang.reflect.Method;
 
 /**
  * StorageUtils (Original/Misuse/Fixed) の静的メソッドを
- * リフレクション経由で呼び出すための汎用ドライバ.
+ * リフレクション経由で呼び出すための汎用ドライバ。
  */
 public class Driver {
 
@@ -29,7 +29,7 @@ public class Driver {
             Method method = targetClass.getMethod(methodName, paramTypes);
             return (T) method.invoke(null, args);
         } catch (InvocationTargetException e) {
-            // テストで期待される例外を捕捉しやすくするため,アンラップしてスロー
+            // テストで期待される例外を捕捉しやすくするため、アンラップしてスロー
             if (e.getTargetException() instanceof Exception) {
                 throw (Exception) e.getTargetException();
             }

@@ -1,12 +1,12 @@
 # mubench-llm-repair
 
-MuBench ベンチマークデータセットを用いた Java API 誤用パターンの検証・解析基盤です.
+MuBench ベンチマークデータセットを用いた Java API 誤用パターンの検証・解析基盤です。
 
 **作成元**: ASE Lab at Ritsumeikan University
 
 ## 概要
 
-このリポジトリは,MuBench（API誤用検出ベンチマーク）由来のコードを対象に,バグ検出・修正の研究を支援します.各ケースは original（元コード）/ misuse（バグあり）/ fixed（修正済み）の3バリアントで構成され,JUnit 5 テストで検証可能です.
+このリポジトリは、MuBench（API誤用検出ベンチマーク）由来のコードを対象に、バグ検出・修正の研究を支援します。各ケースは original（元コード）/ misuse（バグあり）/ fixed（修正済み）の3バリアントで構成され、JUnit 5 テストで検証可能です。
 
 ## 要件
 
@@ -67,10 +67,10 @@ cd mubench-llm-repair
 
 ### 注記
 
-- **※1 `src/main/java/`**: datasets/ のコードをビルド可能にするため,パッケージ宣言・インポート文・public クラス修飾子のみ修正しています.ロジックは変更していません.
-- **※2 `requirements/`**: 元プロジェクトから依存クラスを取得し,同様にパッケージ宣言・インポート文・public クラス修飾子のみ修正しています.すべてのケースに存在するわけではありません.
-- **※3 `mocks/`**: ビルドを通すためのダミー実装や簡易実装です.すべてのケースに存在するわけではありません.
-- **※4 `Driver.java`**: リフレクションを使用して original/misuse/fixed バリアントを切り替えます.テストクラスから呼び出されます.
+- **※1 `src/main/java/`**: datasets/ のコードをビルド可能にするため、パッケージ宣言・インポート文・public クラス修飾子のみ修正しています。ロジックは変更していません。
+- **※2 `requirements/`**: 元プロジェクトから依存クラスを取得し、同様にパッケージ宣言・インポート文・public クラス修飾子のみ修正しています。すべてのケースに存在するわけではありません。
+- **※3 `mocks/`**: ビルドを通すためのダミー実装や簡易実装です。すべてのケースに存在するわけではありません。
+- **※4 `Driver.java`**: リフレクションを使用して original/misuse/fixed バリアントを切り替えます。テストクラスから呼び出されます。
 
 ## ドキュメント
 
@@ -79,19 +79,22 @@ cd mubench-llm-repair
 | [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) | プロジェクト構造 |
 | [docs/DATASETS.md](docs/DATASETS.md) | データセット一覧 |
 | [docs/TESTING.md](docs/TESTING.md) | テスト |
+| [docs/TEST_CLASSIFICATION.md](docs/TEST_CLASSIFICATION.md) | テストコード分類一覧 |
+| [docs/LLM_TASK.md](docs/LLM_TASK.md) | LLMタスク |
+| [docs/CONCERNS.md](docs/CONCERNS.md) | 懸念事項 |
 | [docs/BINARY_EXPORT.md](docs/BINARY_EXPORT.md) | バイナリエクスポート |
 
 ## バイナリエクスポート
 
-クラスファイルをエクスポートできます.
+クラスファイルをエクスポートできます。
 
 ```bash
 # 全エクスポート（推奨）
 ./gradlew exportBinaries
 ```
 
-詳細は [docs/BINARY_EXPORT.md](docs/BINARY_EXPORT.md) を参照してください.
+詳細は [docs/BINARY_EXPORT.md](docs/BINARY_EXPORT.md) を参照してください。
 
 ## ライセンス
 
-各データセットは元プロジェクトのライセンスに従います.
+各データセットは元プロジェクトのライセンスに従います。

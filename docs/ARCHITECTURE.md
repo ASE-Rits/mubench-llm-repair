@@ -14,18 +14,18 @@ src/main/java/<project>/_<case>/
 
 ### 注記
 
-- **※1 `requirements/`**: 元プロジェクトから依存クラスを取得し,パッケージ宣言・インポート文・public クラス修飾子のみ修正.すべてのケースに存在するわけではない.
-- **※2 `mocks/`**: ビルドを通すためのダミー実装や簡易実装.すべてのケースに存在するわけではない.
+- **※1 `requirements/`**: 元プロジェクトから依存クラスを取得し、パッケージ宣言・インポート文・public クラス修飾子のみ修正。すべてのケースに存在するわけではない。
+- **※2 `mocks/`**: ビルドを通すためのダミー実装や簡易実装。すべてのケースに存在するわけではない。
 
 ## コード修正方針
 
-`src/main/java/` 配下のコードは,datasets/ のコードをビルド可能にするため以下のみ修正：
+`src/main/java/` 配下のコードは、datasets/ のコードをビルド可能にするため以下のみ修正：
 
 - パッケージ宣言
 - インポート文
 - public クラス修飾子
 
-ロジックは変更していない.
+ロジックは変更していない。
 
 ## 実装済みプロジェクト
 
@@ -44,6 +44,15 @@ src/main/java/<project>/_<case>/
 | gnucrasha | 2 |
 | hoverruan_weiboclient4j | 1 |
 | ivantrendafilov_confucius | 9 |
+| jmrtd | 2 |
+| jriecken_gae_java_mini_profiler | 1 |
+| lnreadera | 2 |
+| logblock_logblock_2 | 1 |
+| mqtt | 1 |
+| onosendai | 1 |
+| openaiab | 1 |
+| pawotag | 1 |
+| rhino | 1 |
 
 ## パッケージ命名規則
 
@@ -63,7 +72,7 @@ src/main/java/<project>/_<case>/
 
 ## Driver.java の役割
 
-各ケースの `Driver.java` は,バリアント（original/misuse/fixed）を切り替えるためのエントリポイント.
+各ケースの `Driver.java` は、バリアント（original/misuse/fixed）を切り替えるためのエントリポイント。
 
 ```java
 public class Driver {
@@ -84,7 +93,7 @@ public class Driver {
 
 ## テストクラスの動作
 
-テストクラスはソースコードを静的解析し,バグ修正パターンの有無を検証する.
+テストクラスはソースコードを静的解析し、バグ修正パターンの有無を検証する。
 
 ```java
 public class Ivantrendafilov_confuciusTest_98 {
@@ -123,9 +132,9 @@ public class Ivantrendafilov_confuciusTest_98 {
 
 1. `CommonLogic` に共通のテストロジックを定義
 2. `@Nested` クラスで各バリアントのソースファイルパスを指定
-3. ソースコードを文字列として読み込み,特定パターン（例外ハンドリング等）の有無を検証
-4. original と fixed は検証に通過し,misuse は失敗することを期待
+3. ソースコードを文字列として読み込み、特定パターン（例外ハンドリング等）の有無を検証
+4. original と fixed は検証に通過し、misuse は失敗することを期待
 
 ### Misuse のテスト
 
-misuse バリアントはバグを含むため,テストは失敗する.通常はコメントアウトまたは `@Disabled` で無効化している.
+misuse バリアントはバグを含むため、テストは失敗する。通常はコメントアウトまたは `@Disabled` で無効化している。

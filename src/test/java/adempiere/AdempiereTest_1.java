@@ -14,7 +14,7 @@ public class AdempiereTest_1 {
     /**
      * 共通のテストロジック. Driver を経由してテストを実行します.
      * 
-     * このテストは,encrypt メソッドが明示的に UTF-8 エンコーディングを使用しているかを検証します.
+     * このテストは、encrypt メソッドが明示的に UTF-8 エンコーディングを使用しているかを検証します。
      * Original: getBytes("UTF8") を使用 → テストパス
      * Misuse: getBytes() を使用（プラットフォームデフォルト） → ソースコード検査でフェイル
      */
@@ -23,13 +23,13 @@ public class AdempiereTest_1 {
         abstract Driver getTargetDriver();
         
         /**
-         * 実装のソースファイルパスを返す.
-         * サブクラスでオーバーライドして適切なパスを返す.
+         * 実装のソースファイルパスを返す。
+         * サブクラスでオーバーライドして適切なパスを返す。
          */
         abstract String getSourceFilePath();
 
         /**
-         * ソースコードを検査して,encrypt メソッドで getBytes() が明示的に UTF-8 を指定しているかを確認する.
+         * ソースコードを検査して、encrypt メソッドで getBytes() が明示的に UTF-8 を指定しているかを確認する。
          * 
          * Original は getBytes("UTF8") を使用 → テストパス
          * Misuse は getBytes() を引数なしで使用 → テストフェイル
@@ -51,7 +51,7 @@ public class AdempiereTest_1 {
             int encryptMethodStart = sourceCode.indexOf("public String encrypt (String value)");
             assertTrue(encryptMethodStart >= 0, "encrypt method should exist in source");
             
-            // メソッドの終わりを見つける（次のpublic メソッドまで,または "//	encrypt" コメントまで）
+            // メソッドの終わりを見つける（次のpublic メソッドまで、または "//	encrypt" コメントまで）
             int encryptMethodEnd = sourceCode.indexOf("}	//	encrypt", encryptMethodStart);
             if (encryptMethodEnd < 0) {
                 encryptMethodEnd = sourceCode.indexOf("}\t//\tencrypt", encryptMethodStart);
@@ -67,14 +67,14 @@ public class AdempiereTest_1 {
             boolean hasGetBytes = encryptMethodBody.contains(".getBytes(");
             
             if (hasGetBytes) {
-                // getBytes が使用されている場合,UTF-8 が明示的に指定されているかチェック
+                // getBytes が使用されている場合、UTF-8 が明示的に指定されているかチェック
                 boolean usesUtf8 = encryptMethodBody.contains("getBytes(\"UTF8\")") ||
                                    encryptMethodBody.contains("getBytes(\"UTF-8\")") ||
                                    encryptMethodBody.contains("getBytes(StandardCharsets.UTF_8)") ||
                                    encryptMethodBody.contains("getBytes(java.nio.charset.StandardCharsets.UTF_8)");
                 
                 // getBytes() が引数なしで呼ばれていないかチェック
-                // パターン: .getBytes() で,直後に ) が来る場合（引数なし）
+                // パターン: .getBytes() で、直後に ) が来る場合（引数なし）
                 boolean hasGetBytesNoArgs = encryptMethodBody.matches("(?s).*\\.getBytes\\(\\).*");
                 
                 assertTrue(usesUtf8 && !hasGetBytesNoArgs, 
@@ -85,7 +85,7 @@ public class AdempiereTest_1 {
         }
     }
 
-    // --- 以下,実行定義 ---
+    // --- 以下、実行定義 ---
 
     @Nested
     @DisplayName("Original")
@@ -102,7 +102,7 @@ public class AdempiereTest_1 {
         }
     }
 
-    // Misuse: テスト要件確認済み（Original はパス,Misuse はフェイル）
+    // Misuse: テスト要件確認済み（Original はパス、Misuse はフェイル）
     // ビルドを通すためコメントアウト
     /*
     @Nested
@@ -121,7 +121,7 @@ public class AdempiereTest_1 {
     }
     */
 
-    // Fixed: getBytes()を使用しているため,Misuseと同様にフェイルする
+    // Fixed: getBytes()を使用しているため、Misuseと同様にフェイルする
     // そのためコメントアウト
     /*
     @Nested

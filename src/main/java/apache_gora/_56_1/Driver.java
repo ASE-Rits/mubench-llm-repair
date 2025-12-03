@@ -6,7 +6,7 @@ import java.lang.reflect.Method;
 
 /**
  * AccumuloStore (Original/Misuse/Fixed) の静的メソッドを
- * リフレクション経由で呼び出すための汎用ドライバ.
+ * リフレクション経由で呼び出すための汎用ドライバ。
  */
 public class Driver {
 
@@ -30,7 +30,7 @@ public class Driver {
     }
 
     /**
-     * FQCN から動的にテスト対象クラスを解決する補助コンストラクタ.
+     * FQCN から動的にテスト対象クラスを解決する補助コンストラクタ。
      */
     public Driver(String targetClassName) {
         this(loadTargetClass(targetClassName));

@@ -18,8 +18,8 @@ public class AndroiduilTest_1 {
         abstract String getSourceFilePath();
 
         /**
-         * ソースコードを検査して,Environment.getExternalStorageState() の呼び出しで
-         * NullPointerException を try-catch でハンドリングしているかを確認する.
+         * ソースコードを検査して、Environment.getExternalStorageState() の呼び出しで
+         * NullPointerException を try-catch でハンドリングしているかを確認する。
          * 
          * Original: getCacheDirectory メソッド内で直接 try-catch
          * Fixed: isExternalStorageMountedSafe() メソッドで try-catch（リファクタリング済み）
@@ -36,7 +36,7 @@ public class AndroiduilTest_1 {
             String sourceCode = Files.readString(path);
             
             // NullPointerException のハンドリングがどこかにあるかチェック
-            // （getCacheDirectory 内か,isExternalStorageMountedSafe 内）
+            // （getCacheDirectory 内か、isExternalStorageMountedSafe 内）
             boolean hasNullPointerExceptionHandling = 
                 sourceCode.contains("catch (NullPointerException") ||
                 sourceCode.contains("catch(NullPointerException");

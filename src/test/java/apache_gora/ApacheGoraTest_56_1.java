@@ -44,7 +44,7 @@ public class ApacheGoraTest_56_1 {
 
         /**
          * PartitionTest.java の encl メソッドを再現.
-         * long値をバイト列にエンコードし,それをエンコーダーでデコードして返す.
+         * long値をバイト列にエンコードし、それをエンコーダーでデコードして返す.
          */
         private long encl(long l) {
             ByteArrayOutputStream baos = new ByteArrayOutputStream();

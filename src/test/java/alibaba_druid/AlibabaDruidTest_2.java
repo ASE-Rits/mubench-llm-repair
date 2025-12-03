@@ -16,8 +16,8 @@ public class AlibabaDruidTest_2 {
     /**
      * 共通のテストロジック.
      * 
-     * このテストは,encrypt メソッドで InvalidKeyException をキャッチして
-     * 適切にハンドリングしているかを検証します.
+     * このテストは、encrypt メソッドで InvalidKeyException をキャッチして
+     * 適切にハンドリングしているかを検証します。
      * Original: try-catch で InvalidKeyException をハンドリング → テストパス
      * Misuse: 例外ハンドリングなし → テストフェイル
      */
@@ -26,13 +26,13 @@ public class AlibabaDruidTest_2 {
         abstract Driver getTargetDriver();
         
         /**
-         * 実装のソースファイルパスを返す.
+         * 実装のソースファイルパスを返す。
          */
         abstract String getSourceFilePath();
 
         /**
-         * ソースコードを検査して,encrypt メソッドで InvalidKeyException を
-         * try-catch でハンドリングしているかを確認する.
+         * ソースコードを検査して、encrypt メソッドで InvalidKeyException を
+         * try-catch でハンドリングしているかを確認する。
          */
         @Test
         @DisplayName("Source code must handle InvalidKeyException in encrypt method")
@@ -48,7 +48,7 @@ public class AlibabaDruidTest_2 {
             int encryptMethodStart = sourceCode.indexOf("public static String encrypt(byte[] keyBytes, String plainText)");
             assertTrue(encryptMethodStart >= 0, "encrypt(byte[] keyBytes, String plainText) method should exist in source");
             
-            // メソッドの終わりを見つける（次のpublic staticメソッドか,ファイル終わり）
+            // メソッドの終わりを見つける（次のpublic staticメソッドか、ファイル終わり）
             int nextMethodStart = sourceCode.indexOf("public static", encryptMethodStart + 1);
             int encryptMethodEnd = nextMethodStart > 0 ? nextMethodStart : sourceCode.length();
             
@@ -81,7 +81,7 @@ public class AlibabaDruidTest_2 {
         }
     }
 
-    // Misuse: テスト要件確認済み（Original はパス,Misuse はフェイル）
+    // Misuse: テスト要件確認済み（Original はパス、Misuse はフェイル）
     // ビルドを通すためコメントアウト
     /*
     @Nested
@@ -99,7 +99,7 @@ public class AlibabaDruidTest_2 {
     }
     */
 
-    // Fixed: catch(GeneralSecurityException)を使用しているため,InvalidKeyExceptionの明示的ハンドリングがない
+    // Fixed: catch(GeneralSecurityException)を使用しているため、InvalidKeyExceptionの明示的ハンドリングがない
     // そのためコメントアウト
     /*
     @Nested

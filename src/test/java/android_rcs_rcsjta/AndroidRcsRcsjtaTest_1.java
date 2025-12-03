@@ -15,8 +15,8 @@ public class AndroidRcsRcsjtaTest_1 {
     /**
      * 共通のテストロジック.
      * 
-     * このテストは,getContributionId メソッドで getBytes() が明示的に UTF-8 を
-     * 指定しているかを検証します.
+     * このテストは、getContributionId メソッドで getBytes() が明示的に UTF-8 を
+     * 指定しているかを検証します。
      * Original: getBytes(UTF8) を使用 → テストパス
      * Misuse: getBytes() を引数なしで使用 → テストフェイル
      */
@@ -25,13 +25,13 @@ public class AndroidRcsRcsjtaTest_1 {
         abstract Driver getTargetDriver();
         
         /**
-         * 実装のソースファイルパスを返す.
+         * 実装のソースファイルパスを返す。
          */
         abstract String getSourceFilePath();
 
         /**
-         * ソースコードを検査して,getContributionId メソッドで getBytes() が
-         * 明示的に UTF-8 を指定しているかを確認する.
+         * ソースコードを検査して、getContributionId メソッドで getBytes() が
+         * 明示的に UTF-8 を指定しているかを確認する。
          */
         @Test
         @DisplayName("Source code must use explicit UTF-8 encoding in getContributionId method")
@@ -57,7 +57,7 @@ public class AndroidRcsRcsjtaTest_1 {
             boolean hasGetBytes = methodBody.contains(".getBytes(");
             
             if (hasGetBytes) {
-                // getBytes が使用されている場合,UTF-8 が明示的に指定されているかチェック
+                // getBytes が使用されている場合、UTF-8 が明示的に指定されているかチェック
                 boolean usesUtf8 = methodBody.contains("getBytes(UTF8)") ||
                                    methodBody.contains("getBytes(\"UTF8\")") ||
                                    methodBody.contains("getBytes(\"UTF-8\")") ||
@@ -89,7 +89,7 @@ public class AndroidRcsRcsjtaTest_1 {
         }
     }
 
-    // Misuse: テスト要件確認済み（Original はパス,Misuse はフェイル）
+    // Misuse: テスト要件確認済み（Original はパス、Misuse はフェイル）
     // ビルドを通すためコメントアウト
     /*
     @Nested

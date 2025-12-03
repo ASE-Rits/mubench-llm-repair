@@ -14,7 +14,7 @@ public class AdempiereTest_2 {
     /**
      * 共通のテストロジック. Driver を経由してテストを実行します.
      * 
-     * このテストは,encrypt メソッドが明示的に UTF-8 エンコーディングを使用しているかを検証します.
+     * このテストは、encrypt メソッドが明示的に UTF-8 エンコーディングを使用しているかを検証します。
      * Original: getBytes("UTF8") を使用 → テストパス
      * Misuse: getBytes() を使用（プラットフォームデフォルト） → ソースコード検査でフェイル
      */
@@ -23,12 +23,12 @@ public class AdempiereTest_2 {
         abstract Driver getTargetDriver();
         
         /**
-         * 実装のソースファイルパスを返す.
+         * 実装のソースファイルパスを返す。
          */
         abstract String getSourceFilePath();
 
         /**
-         * ソースコードを検査して,encrypt メソッドで getBytes() が明示的に UTF-8 を指定しているかを確認する.
+         * ソースコードを検査して、encrypt メソッドで getBytes() が明示的に UTF-8 を指定しているかを確認する。
          */
         @Test
         @DisplayName("Source code must use explicit UTF-8 encoding in encrypt method")
@@ -71,7 +71,7 @@ public class AdempiereTest_2 {
         }
     }
 
-    // --- 以下,実行定義 ---
+    // --- 以下、実行定義 ---
     @Nested
     @DisplayName("Original")
     class Original extends CommonLogic {
@@ -87,7 +87,7 @@ public class AdempiereTest_2 {
         }
     }
 
-    // Misuse: テスト要件確認済み（Original はパス,Misuse はフェイル）
+    // Misuse: テスト要件確認済み（Original はパス、Misuse はフェイル）
     // ビルドを通すためコメントアウト
     /*
     @Nested
