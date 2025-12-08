@@ -17,13 +17,13 @@
 | テストファイル | 種類 | 検証方法 |
 |---|:---:|---|
 | **adempiere** | | |
-| `AdempiereTest_1.java` | 📝 静的 | `Files.readString()`でソースを読み、`getBytes("UTF8")`パターンを検査 |
-| `AdempiereTest_2.java` | 📝 静的 | 同上 |
+| `AdempiereTest_1.java` | 🔄 動的 | `encrypt()`→`decrypt()`ラウンドトリップで非ASCII文字（日本語・中国語・絵文字）を検証 |
+| `AdempiereTest_2.java` | 🔄 動的 | 同上 |
 | **alibaba_druid** | | |
 | `AlibabaDruidTest_1.java` | 📝 静的 | `cipher = Cipher.getInstance`パターンを検査 |
 | `AlibabaDruidTest_2.java` | 📝 静的 | `catch (InvalidKeyException`パターンを検査 |
 | **android_rcs_rcsjta** | | |
-| `AndroidRcsRcsjtaTest_1.java` | 📝 静的 | `getBytes(UTF8)`パターンを検査 |
+| `AndroidRcsRcsjtaTest_1.java` | 🔄 動的 | `getContributionId()`の結果一貫性を検証、非ASCII文字でも正常動作を確認 |
 | **androiduil** | | |
 | `AndroiduilTest_1.java` | 📝 静的 | `catch (NullPointerException`パターンを検査 |
 | **apache_gora** | | |
@@ -54,7 +54,7 @@
 | `Ivantrendafilov_confuciusTest_101.java` | 🔄 動的 | Driver経由で`getShortList(String, String)`の実行結果を検証 |
 | **jmrtd** | | |
 | `JmrtdTest_1.java` | 📝 静的 | `dataOut.close()`パターンを検査（Driver経由） |
-| `JmrtdTest_2.java` | 📝 静的 | `Cipher.DECRYPT_MODE`パターンを検査（Driver経由） |
+| `JmrtdTest_2.java` | 📝+🔄 混合 | ソース検査（`Cipher.DECRYPT_MODE`）+ 動的RSA暗号化/復号化ラウンドトリップ検証 |
 | **jriecken_gae_java_mini_profiler** | | |
 | `Jriecken_gae_java_mini_profilerTest_39.java` | 🔄 動的 | `handlesInvalidIdGracefully()`の実行結果を検証 |
 | **lnreadera** | | |
@@ -71,7 +71,33 @@
 | **pawotag** | | |
 | `PawotagTest_1.java` | 📝+🔄 混合 | 動的（encrypt/decrypt往復テスト）+ 静的（`hasEmptyArrayCheck()`） |
 | **rhino** | | |
-| `RhinoTest_1.java` | 📝 静的 | `Files.readString()`でParser.javaを読み込み、`nf.initFunction(`パターンの出現回数を検査 |
+| `RhinoTest_1.java` | 📝+🔄 混合 | 動的（`parse()`実行でタイムアウト検出）+ 静的（`initFunction`呼び出し回数検査） |
+| **screen_notifications** | | |
+| `ScreenNotificationsTest_1.java` | 🔄 動的 | Driver経由で`loadInBackground()`を実行し、OOMスロー時のハンドリングを検証 |
+| **tap_apps** | | |
+| `TapAppsTest_1.java` | 📝+🔄 混合 | 動的（encrypt/decrypt往復テスト）+ 静的（`getCipherTransformationFromSource()`でソース解析） |
+| **tbuktu_ntru** | | |
+| `Tbuktu_ntruTest_473.java` | 🔄 動的 | `writeTo()`出力検証、`writeToBuffered()`でflush動作を動的検証 |
+| `Tbuktu_ntruTest_474.java` | 🔄 動的 | `writeTo()`出力検証、`writeToBuffered()`でflush動作を動的検証 |
+| `Tbuktu_ntruTest_475.java` | 📝+🔄 混合 | 動的（`getEncoded()`出力検証）+ 静的（`hasFlushOrCloseInGetEncoded()`でソース解析） |
+| `Tbuktu_ntruTest_476.java` | 📝+🔄 混合 | 動的（`getEncoded()`出力検証）+ 静的（`hasFlushOrCloseInGetEncoded()`でソース解析） |
+| **testng** | | |
+| `TestngTest_16.java` | 📝+🔄 混合 | 静的（`hasSynchronizedBlock()`, `isCorrectlyFixed()`でソース解析）+ 動的（`testPanelInitialization()`, `testGetContentWithMockSuite()`, `testConcurrentAccess()`） |
+| `TestngTest_17.java` | 📝+🔄 混合 | 静的（`hasSynchronizedBlock()`, `isCorrectlyFixed()`でソース解析）+ 動的（`testReporterInitialization()`, `testGenerateReportWithMockContext()`, `testOnStartWithMockContext()`） |
+| `TestngTest_18.java` | 📝+🔄 混合 | 静的（`hasSynchronizedBlock()`, `isCorrectlyFixed()`でソース解析）+ 動的（`testReporterInitialization()`, `testGenerateReportWithMockContext()`, `testOnFinishWithMockContext()`） |
+| `TestngTest_21.java` | 📝+🔄 混合 | 静的（`hasSynchronizedBlock()`, `isCorrectlyFixed()`でソース解析）+ 動的（`testModelInitialization()`, `testGetSuites()`, `testGetAllFailedResults()`） |
+| `TestngTest_22.java` | 📝+🔄 混合 | 静的（`hasSynchronizedBlock()`, `isCorrectlyFixed()`でソース解析）+ 動的（`testReporterInitialization()`, `testGenerateReportWithMockSuite()`, `testMockSuiteAttributes()`） |
+| **thomas_s_b_visualee** | | |
+| `Thomas_s_b_visualeeTest_29.java` | 🔄 動的 | Driver経由で`findAndSetPackage(JavaSource)`の実行結果を検証 |
+| `Thomas_s_b_visualeeTest_30.java` | 🔄 動的 | Driver経由で`jumpOverJavaToken(String, Scanner)`の実行結果を検証 |
+| `Thomas_s_b_visualeeTest_32.java` | 🔄 動的 | Driver経由で`scanAfterClosedParenthesis(String, Scanner)`の実行結果を検証 |
+| **tucanmobile** | | |
+| `TucanmobileTest_1.java` | 🔄 動的 | Driver経由で`onPreExecute()`、`onPostExecute()`を実行し、`dialog.isShowing()`チェック有無を検証 |
+| **ushahidia** | | |
+| `UshahidiaTest_1.java` | 🔄 動的 | Driver経由で`getReportState()`を実行し、`Cursor.isClosed()`でリソース解放を検証 |
+| **wordpressa** | | |
+| `WordpressaTest_1.java` | 🔄 動的 | Driver経由で`restoreListScrollPosition()`を実行し、`isAdded()`チェック有無を検証 |
+| `WordpressaTest_3.java` | 🔄 動的 | Driver経由で`onClick(R.id.more)`を実行し、`mSelectionEnd > str.length()`のbounds check有無を検証 |
 
 ---
 
@@ -79,9 +105,9 @@
 
 | 種類 | 件数 | 割合 |
 |---|:---:|:---:|
-| 📝 **静的テスト** | 12件 | 約33% |
-| 🔄 **動的テスト** | 22件 | 約61% |
-| 📝+🔄 **混合** | 2件 | 約6% |
-| **合計** | 36件 | 100% |
+| 📝 **静的テスト** | 8件 | 約15% |
+| 🔄 **動的テスト** | 35件 | 約65% |
+| 📝+🔄 **混合** | 11件 | 約20% |
+| **合計** | 54件 | 100% |
 
 ---
