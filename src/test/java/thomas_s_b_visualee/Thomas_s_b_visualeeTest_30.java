@@ -95,22 +95,22 @@ public class Thomas_s_b_visualeeTest_30 {
 
     // Misuseはバグ（hasNext()チェックなしでscanner.next()を呼び出し）があるため
     // testJumpOverJavaTokenLoneTokenAtEOFでNoSuchElementExceptionが発生し失敗する
-    // @Nested
-    // @DisplayName("Misuse")
-    // class Misuse extends CommonLogic {
-    //     @Override
-    //     Driver createDriver() throws Exception {
-    //         return Driver.createMisuse();
-    //     }
-    // }
+    @Nested
+    @DisplayName("Misuse")
+    class Misuse extends CommonLogic {
+        @Override
+        Driver createDriver() throws Exception {
+            return Driver.createMisuse();
+        }
+    }
 
     // Fixedはバグ修正に失敗したためコメントアウト
-    // @Nested
-    // @DisplayName("Fixed")
-    // class Fixed extends CommonLogic {
-    //     @Override
-    //     Driver createDriver() throws Exception {
-    //         return Driver.createFixed();
-    //     }
-    // }
+    @Nested
+    @DisplayName("Fixed")
+    class Fixed extends CommonLogic {
+        @Override
+        Driver createDriver() throws Exception {
+            return Driver.createFixed();
+        }
+    }
 }

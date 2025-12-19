@@ -45,14 +45,14 @@ public class ApacheGoraTest_56_2 {
         }
     }
 
-//    @Nested
-//    @DisplayName("Misuse")
-//    class Misuse extends CommonCase {
-//        @Override
-//        Driver driver() {
-//            return new Driver("apache_gora._56_2.misuse.TestWritableUtils");
-//        }
-//    }
+    @Nested
+    @DisplayName("Misuse")
+    class Misuse extends CommonCase {
+        @Override
+        Driver driver() {
+            return new Driver("apache_gora._56_2.misuse.TestWritableUtils");
+        }
+    }
 
     @Nested
     @DisplayName("Fixed")

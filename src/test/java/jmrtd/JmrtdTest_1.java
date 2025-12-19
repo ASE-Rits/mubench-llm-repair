@@ -63,15 +63,15 @@ class JmrtdTest_1 {
      * Misuse variant - always fails because it lacks dataOut.close()
      * Commented out as it represents the buggy code that should fail.
      */
-    // @Nested
-    // @DisplayName("Misuse")
-    // class Misuse extends CommonCases {
-    //
-    //     @Override
-    //     Driver driver() {
-    //         return new Driver(BASE_PACKAGE + ".misuse.SecureMessagingWrapper");
-    //     }
-    // }
+    @Nested
+    @DisplayName("Misuse")
+    class Misuse extends CommonCases {
+
+        @Override
+        Driver driver() {
+            return new Driver(BASE_PACKAGE + ".misuse.SecureMessagingWrapper");
+        }
+    }
 
     @Nested
     @DisplayName("Fixed")

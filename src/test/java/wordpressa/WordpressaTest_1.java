@@ -93,13 +93,13 @@ class WordpressaTest_1 {
         }
     }
 
-//    @Nested
-//    @DisplayName("Misuse")
-//    class Misuse extends CommonLogic {
-//
-//        @Override
-//        Driver driver() {
-//            return new Driver("misuse");
-//        }
-//    }
+    @Nested
+    @DisplayName("Misuse")
+    class Misuse extends CommonLogic {
+
+        @Override
+        Driver driver() {
+            return new Driver("misuse");
+        }
+    }
 }

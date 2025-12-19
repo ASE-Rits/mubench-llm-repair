@@ -83,7 +83,6 @@ public class AlibabaDruidTest_2 {
 
     // Misuse: テスト要件確認済み（Original はパス、Misuse はフェイル）
     // ビルドを通すためコメントアウト
-    /*
     @Nested
     @DisplayName("Misuse")
     class Misuse extends CommonLogic {
@@ -97,11 +96,9 @@ public class AlibabaDruidTest_2 {
             return "src/main/java/alibaba_druid/_2/misuse/ConfigTools.java";
         }
     }
-    */
 
     // Fixed: catch(GeneralSecurityException)を使用しているため、InvalidKeyExceptionの明示的ハンドリングがない
     // そのためコメントアウト
-    /*
     @Nested
     @DisplayName("Fixed")
     class Fixed extends CommonLogic {
@@ -115,5 +112,4 @@ public class AlibabaDruidTest_2 {
             return "src/main/java/alibaba_druid/_2/fixed/ConfigTools.java";
         }
     }
-    */
 }

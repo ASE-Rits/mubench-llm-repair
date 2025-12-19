@@ -119,14 +119,14 @@ public class AndroidRcsRcsjtaTest_1 {
     }
 
     // Misuse: getBytes() を引数なしで使用
-    // @Nested
-    // @DisplayName("Misuse")
-    // class Misuse extends CommonCases {
-    //     @Override
-    //     Driver driver() {
-    //         return new Driver(android_rcs_rcsjta._1.misuse.ContributionIdGenerator.class);
-    //     }
-    // }
+    @Nested
+    @DisplayName("Misuse")
+    class Misuse extends CommonCases {
+        @Override
+        Driver driver() {
+            return new Driver(android_rcs_rcsjta._1.misuse.ContributionIdGenerator.class);
+        }
+    }
 
     @Nested
     @DisplayName("Fixed")

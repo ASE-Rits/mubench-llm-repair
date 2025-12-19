@@ -55,19 +55,19 @@ class ScreenNotificationsTest_1 {
         }
     }
 
-//    @Nested
-//    @DisplayName("Misuse")
-//    class Misuse extends CommonCases {
-//        @Override
-//        Driver createDriver() {
-//            return new Driver(BASE_PACKAGE + ".misuse" + TARGET_CLASS);
-//        }
-//
-//        @Override
-//        String variantName() {
-//            return "misuse";
-//        }
-//    }
+    @Nested
+    @DisplayName("Misuse")
+    class Misuse extends CommonCases {
+        @Override
+        Driver createDriver() {
+            return new Driver(BASE_PACKAGE + ".misuse" + TARGET_CLASS);
+        }
+
+        @Override
+        String variantName() {
+            return "misuse";
+        }
+    }
 
     @Nested
     @DisplayName("Fixed")

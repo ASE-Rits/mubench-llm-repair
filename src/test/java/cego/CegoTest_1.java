@@ -50,20 +50,20 @@ class CegoTest_1 {
         }
     }
 
-//    @Nested
-//    @DisplayName("Misuse")
-//    class Misuse extends CommonCases {
-//
-//        @Override
-//        Driver driver() {
-//            return new Driver("cego._1.misuse.cgeoimages");
-//        }
-//
-//        @Override
-//        String expectedMime() {
-//            return "image/jpeg";
-//        }
-//    }
+    @Nested
+    @DisplayName("Misuse")
+    class Misuse extends CommonCases {
+
+        @Override
+        Driver driver() {
+            return new Driver("cego._1.misuse.cgeoimages");
+        }
+
+        @Override
+        String expectedMime() {
+            return "image/jpeg";
+        }
+    }
 
     @Nested
     @DisplayName("Fixed")

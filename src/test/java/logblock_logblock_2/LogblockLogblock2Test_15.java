@@ -64,14 +64,14 @@ class LogblockLogblock2Test_15 {
     }
 
     // Misuseは常にコメントアウト（バグがあるため必ず失敗）
-    // @Nested
-    // @DisplayName("Misuse")
-    // class Misuse extends CommonLogic {
-    //     @Override
-    //     Driver createDriver() throws Exception {
-    //         return new Driver("misuse");
-    //     }
-    // }
+    @Nested
+    @DisplayName("Misuse")
+    class Misuse extends CommonLogic {
+        @Override
+        Driver createDriver() throws Exception {
+            return new Driver("misuse");
+        }
+    }
 
     @Nested
     @DisplayName("Fixed")

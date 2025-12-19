@@ -116,14 +116,14 @@ class RhinoTest_1 {
     }
 
     // Misuse: initFunctionが2回呼ばれる → 無限ループでタイムアウト
-    // @Nested
-    // @DisplayName("Misuse")
-    // class Misuse extends CommonCases {
-    //     @Override
-    //     Driver driver() throws Exception {
-    //         return new Driver("misuse");
-    //     }
-    // }
+    @Nested
+    @DisplayName("Misuse")
+    class Misuse extends CommonCases {
+        @Override
+        Driver driver() throws Exception {
+            return new Driver("misuse");
+        }
+    }
 
     @Nested
     @DisplayName("Fixed")

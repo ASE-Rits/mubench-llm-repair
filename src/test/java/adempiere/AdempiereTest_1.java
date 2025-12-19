@@ -139,14 +139,14 @@ public class AdempiereTest_1 {
 
     // Misuse: getBytes() を引数なしで使用 → 非ASCII文字で失敗する可能性
     // テスト確認済み: 日本語テストで失敗
-    // @Nested
-    // @DisplayName("Misuse")
-    // class Misuse extends CommonCases {
-    //     @Override
-    //     Driver driver() {
-    //         return new Driver(new adempiere._1.misuse.Secure());
-    //     }
-    // }
+    @Nested
+    @DisplayName("Misuse")
+    class Misuse extends CommonCases {
+        @Override
+        Driver driver() {
+            return new Driver(new adempiere._1.misuse.Secure());
+        }
+    }
 
     @Nested
     @DisplayName("Fixed")

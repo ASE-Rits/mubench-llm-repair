@@ -52,24 +52,24 @@ class GnucrashaTest_1a {
         }
     }
 
-//    @Nested
-//    @DisplayName("Misuse")
-//    class Misuse extends CommonCases {
-//
-//        @Override
-//        Driver driver() {
-//            return new Driver("gnucrasha._1a.misuse.PassLockActivity");
-//        }
-//
-//        @Test
-//        @DisplayName("misuses long extra and loses account UID")
-//        void losesAccountUid() {
-//            Intent result = driver().executeOnResume(true, false, "ACTION_VIEW", "UID-123");
-//
-//            assertNotNull(result);
-//            assertNull(result.getStringExtra(UxArgument.SELECTED_ACCOUNT_UID));
-//        }
-//    }
+    @Nested
+    @DisplayName("Misuse")
+    class Misuse extends CommonCases {
+
+        @Override
+        Driver driver() {
+            return new Driver("gnucrasha._1a.misuse.PassLockActivity");
+        }
+
+        @Test
+        @DisplayName("misuses long extra and loses account UID")
+        void losesAccountUid() {
+            Intent result = driver().executeOnResume(true, false, "ACTION_VIEW", "UID-123");
+
+            assertNotNull(result);
+            assertNull(result.getStringExtra(UxArgument.SELECTED_ACCOUNT_UID));
+        }
+    }
 
     @Nested
     @DisplayName("Fixed")

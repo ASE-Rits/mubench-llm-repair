@@ -78,7 +78,6 @@ public class Jriecken_gae_java_mini_profilerTest_39 {
     
     // Misuse: バグがあるためテストは失敗する（コメントアウト）
     // NumberFormatException を catch していないため、invalid ID で例外がスローされる
-    /*
     @Nested
     @DisplayName("Misuse")
     class Misuse extends CommonCases {
@@ -88,7 +87,6 @@ public class Jriecken_gae_java_mini_profilerTest_39 {
             return new Driver(BASE_PACKAGE + ".misuse.MiniProfilerAppstats");
         }
     }
-    */
     
     @Nested
     @DisplayName("Fixed")

@@ -88,13 +88,14 @@ class PawotagTest_1 {
     }
 
     // Misuse fails the hasEmptyArrayCheckPattern test because it doesn't check for empty arrays
-    // @Nested
-    // @DisplayName("Misuse")
-    // class Misuse extends CommonCases {
-    //     @Override
-    //     Driver driver() {
-    //         return new Driver(BASE_PACKAGE + ".misuse.CryptoUtil");
-    // }
+    @Nested
+    @DisplayName("Misuse")
+    class Misuse extends CommonCases {
+        @Override
+        Driver driver() {
+            return new Driver(BASE_PACKAGE + ".misuse.CryptoUtil");
+        }
+    }
 
 
     @Nested

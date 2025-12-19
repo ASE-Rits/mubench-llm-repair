@@ -37,14 +37,14 @@ class LnreaderaTest_2 {
     }
 
     // Misuseは常にコメントアウト（バグがあるため必ず失敗）
-    // @Nested
-    // @DisplayName("Misuse")
-    // class Misuse extends CommonCases {
-    //     @Override
-    //     Driver driver() {
-    //         return new Driver(BASE_PACKAGE + ".misuse.DisplayLightNovelContentActivity");
-    //     }
-    // }
+    @Nested
+    @DisplayName("Misuse")
+    class Misuse extends CommonCases {
+        @Override
+        Driver driver() {
+            return new Driver(BASE_PACKAGE + ".misuse.DisplayLightNovelContentActivity");
+        }
+    }
 
     @Nested
     @DisplayName("Fixed")

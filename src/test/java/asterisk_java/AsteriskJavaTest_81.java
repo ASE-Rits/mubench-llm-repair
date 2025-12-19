@@ -49,14 +49,14 @@ public class AsteriskJavaTest_81 {
         }
     }
 
-//    @Nested
-//    @DisplayName("Misuse")
-//    class Misuse extends CommonCase {
-//        @Override
-//        Driver driver() {
-//            return new Driver("asterisk_java._81.misuse.AsyncAgiEvent");
-//        }
-//    }
+    @Nested
+    @DisplayName("Misuse")
+    class Misuse extends CommonCase {
+        @Override
+        Driver driver() {
+            return new Driver("asterisk_java._81.misuse.AsyncAgiEvent");
+        }
+    }
 
     @Nested
     @DisplayName("Fixed")

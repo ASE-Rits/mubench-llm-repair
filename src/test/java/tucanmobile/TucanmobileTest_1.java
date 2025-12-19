@@ -72,14 +72,14 @@ class TucanmobileTest_1 {
     }
 
     // Misuseは常にコメントアウト（バグがあるため必ず失敗）
-    // @Nested
-    // @DisplayName("Misuse")
-    // class Misuse extends CommonLogic {
-    //     @Override
-    //     Driver createDriver() {
-    //         return new Driver(BASE_PACKAGE + ".misuse.SimpleSecureBrowser");
-    //     }
-    // }
+    @Nested
+    @DisplayName("Misuse")
+    class Misuse extends CommonLogic {
+        @Override
+        Driver createDriver() {
+            return new Driver(BASE_PACKAGE + ".misuse.SimpleSecureBrowser");
+        }
+    }
 
     @Nested
     @DisplayName("Fixed")

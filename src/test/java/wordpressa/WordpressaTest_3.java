@@ -68,23 +68,23 @@ class WordpressaTest_3 {
     // The bug is in onClick() at R.id.more handler (line 1098), but LLM fixed
     // a different location (onFormatButtonClick method).
     // So Fixed also fails the bounds check test.
-//    @Nested
-//    @DisplayName("Fixed")
-//    class Fixed extends CommonLogic {
-//
-//        @Override
-//        Driver driver() {
-//            return new Driver("fixed");
-//        }
-//    }
+    @Nested
+    @DisplayName("Fixed")
+    class Fixed extends CommonLogic {
 
-//    @Nested
-//    @DisplayName("Misuse")
-//    class Misuse extends CommonLogic {
-//
-//        @Override
-//        Driver driver() {
-//            return new Driver("misuse");
-//        }
-//    }
+        @Override
+        Driver driver() {
+            return new Driver("fixed");
+        }
+    }
+
+    @Nested
+    @DisplayName("Misuse")
+    class Misuse extends CommonLogic {
+
+        @Override
+        Driver driver() {
+            return new Driver("misuse");
+        }
+    }
 }

@@ -57,14 +57,14 @@ public class AsteriskJavaTest_194 {
         }
     }
 
-//    @Nested
-//    @DisplayName("Misuse")
-//    class Misuse extends CommonCase {
-//        @Override
-//        String sourceFile() {
-//            return "asterisk_java/_194/misuse/RtcpReceivedEvent.java";
-//        }
-//    }
+    @Nested
+    @DisplayName("Misuse")
+    class Misuse extends CommonCase {
+        @Override
+        String sourceFile() {
+            return "asterisk_java/_194/misuse/RtcpReceivedEvent.java";
+        }
+    }
 
     @Nested
     @DisplayName("Fixed")

@@ -94,14 +94,14 @@ class UshahidiaTest_1 {
     }
 
     // Misuseはバグがあるため必ず失敗（Cursor.close()が呼ばれない）
-    // @Nested
-    // @DisplayName("Misuse")
-    // class Misuse extends CommonLogic {
-    //     @Override
-    //     Driver createDriver() throws Exception {
-    //         return new Driver("misuse");
-    //     }
-    // }
+    @Nested
+    @DisplayName("Misuse")
+    class Misuse extends CommonLogic {
+        @Override
+        Driver createDriver() throws Exception {
+            return new Driver("misuse");
+        }
+    }
 
     @Nested
     @DisplayName("Fixed")

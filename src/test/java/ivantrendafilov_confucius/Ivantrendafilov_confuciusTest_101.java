@@ -44,7 +44,6 @@ public class Ivantrendafilov_confuciusTest_101 {
         }
     }
 
-    /*
     @Nested
     @DisplayName("Misuse")
     class Misuse extends CommonLogic {
@@ -53,7 +52,6 @@ public class Ivantrendafilov_confuciusTest_101 {
             return new Driver("misuse", props);
         }
     }
-    */
 
     @Nested
     @DisplayName("Fixed")

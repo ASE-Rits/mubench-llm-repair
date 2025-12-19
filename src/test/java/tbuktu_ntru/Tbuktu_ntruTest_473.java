@@ -85,7 +85,6 @@ public class Tbuktu_ntruTest_473 {
         }
     }
 
-    /*
     @Nested
     @DisplayName("Misuse")
     class Misuse extends CommonLogic {
@@ -94,7 +93,6 @@ public class Tbuktu_ntruTest_473 {
             return new Driver("misuse");
         }
     }
-    */
 
     @Nested
     @DisplayName("Fixed")

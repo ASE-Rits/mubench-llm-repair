@@ -118,52 +118,52 @@ class CalligraphyTest_2 {
         }
     }
 
-//    @Nested
-//    @DisplayName("Misuse")
-//    class Misuse extends CommonCases {
-//
-//        @Override
-//        Driver driver() {
-//            return new Driver("calligraphy._2.misuse.CalligraphyUtils");
-//        }
-//
-//        @Override
-//        String expectedStyleFallback() {
-//            return null;
-//        }
-//
-//        @Override
-//        String expectedThemeFallback() {
-//            return null;
-//        }
-//    }
+    @Nested
+    @DisplayName("Misuse")
+    class Misuse extends CommonCases {
 
-    // @Nested
-    // @DisplayName("Fixed")
-    // class Fixed extends CommonCases {
+        @Override
+        Driver driver() {
+            return new Driver("calligraphy._2.misuse.CalligraphyUtils");
+        }
 
-    //     @Override
-    //     Driver driver() {
-    //         return new Driver("calligraphy._2.fixed.CalligraphyUtils");
-    //     }
+        @Override
+        String expectedStyleFallback() {
+            return null;
+        }
 
-    //     @Override
-    //     String expectedStyleFallback() {
-    //         return "style-fallback.ttf";
-    //     }
+        @Override
+        String expectedThemeFallback() {
+            return null;
+        }
+    }
 
-    //     @Override
-    //     String expectedThemeFallback() {
-    //         return "theme-fallback.ttf";
-    //     }
+    @Nested
+    @DisplayName("Fixed")
+    class Fixed extends CommonCases {
 
-    //     @Test
-    //     @DisplayName("pullFontPathFromTheme returns null when style is missing")
-    //     void pullFontPathFromThemeMissingStyleSucceeds() {
-    //         InvocationResult result = driver().pullFontPathFromThemeWithMissingStyle();
+        @Override
+        Driver driver() {
+            return new Driver("calligraphy._2.fixed.CalligraphyUtils");
+        }
 
-    //         assertTrue(result.isSuccess());
-    //         assertNull(result.getValue());
-    //     }
-    // }
+        @Override
+        String expectedStyleFallback() {
+            return "style-fallback.ttf";
+        }
+
+        @Override
+        String expectedThemeFallback() {
+            return "theme-fallback.ttf";
+        }
+
+        @Test
+        @DisplayName("pullFontPathFromTheme returns null when style is missing")
+        void pullFontPathFromThemeMissingStyleSucceeds() {
+            InvocationResult result = driver().pullFontPathFromThemeWithMissingStyle();
+
+            assertTrue(result.isSuccess());
+            assertNull(result.getValue());
+        }
+    }
 }

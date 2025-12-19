@@ -177,15 +177,15 @@ class JmrtdTest_2 {
     }
 
     // Misuse: ENCRYPT_MODE を使用 → ソース解析で検出
-    // @Nested
-    // @DisplayName("Misuse")
-    // class Misuse extends PassportAuthServiceCases {
-    //
-    //     @Override
-    //     Driver driver() {
-    //         return new Driver(BASE_PACKAGE + ".misuse.PassportAuthService");
-    //     }
-    // }
+    @Nested
+    @DisplayName("Misuse")
+    class Misuse extends PassportAuthServiceCases {
+
+        @Override
+        Driver driver() {
+            return new Driver(BASE_PACKAGE + ".misuse.PassportAuthService");
+        }
+    }
 
     /**
      * Fixed バリアント - LLM 失敗ケース

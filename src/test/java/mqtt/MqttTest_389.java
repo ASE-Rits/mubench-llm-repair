@@ -75,14 +75,14 @@ class MqttTest_389 {
     }
 
     // Misuseは常にコメントアウト（バグがあるため必ず失敗）
-    // @Nested
-    // @DisplayName("Misuse")
-    // class Misuse extends CommonLogic {
-    //     @Override
-    //     Driver createDriver() throws Exception {
-    //         return new Driver("misuse", TEST_TOPICS, TEST_QOS);
-    //     }
-    // }
+    @Nested
+    @DisplayName("Misuse")
+    class Misuse extends CommonLogic {
+        @Override
+        Driver createDriver() throws Exception {
+            return new Driver("misuse", TEST_TOPICS, TEST_QOS);
+        }
+    }
 
     @Nested
     @DisplayName("Fixed")

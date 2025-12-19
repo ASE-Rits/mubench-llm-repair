@@ -86,7 +86,6 @@ public class AlibabaDruidTest_1 {
 
     // Misuse: テスト要件確認済み（Original はパス、Misuse はフェイル）
     // ビルドを通すためコメントアウト
-    /*
     @Nested
     @DisplayName("Misuse")
     class Misuse extends CommonLogic {
@@ -100,7 +99,6 @@ public class AlibabaDruidTest_1 {
             return "src/main/java/alibaba_druid/_1/misuse/ConfigTools.java";
         }
     }
-    */
 
     @Nested
     @DisplayName("Fixed")

@@ -143,12 +143,12 @@ class TestngTest_22 {
     }
     
     // ========== Misuse Test (Commented out per guideline) ==========
-    // @Nested
-    // @DisplayName("Misuse")
-    // class Misuse extends CommonCases {
-    //     @Override
-    //     Driver driver() {
-    //         return new Driver("misuse");
-    //     }
-    // }
+    @Nested
+    @DisplayName("Misuse")
+    class Misuse extends CommonCases {
+        @Override
+        Driver driver() {
+            return new Driver("misuse");
+        }
+    }
 }

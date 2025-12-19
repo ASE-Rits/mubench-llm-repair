@@ -127,14 +127,14 @@ public class ApacheGoraTest_56_1 {
         }
     }
 
-//    @Nested
-//    @DisplayName("Misuse")
-//    class Misuse extends CommonLogic {
-//        @Override
-//        Driver getTargetDriver() {
-//            return new Driver("apache_gora._56_1.misuse.PartitionTest");
-//        }
-//    }
+    @Nested
+    @DisplayName("Misuse")
+    class Misuse extends CommonLogic {
+        @Override
+        Driver getTargetDriver() {
+            return new Driver("apache_gora._56_1.misuse.PartitionTest");
+        }
+    }
 
     @Nested
     @DisplayName("Fixed")
