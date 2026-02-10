@@ -1,0 +1,511 @@
+--- /dev/fd/63	2025-12-20 07:52:19.082058869 +0000
++++ /dev/fd/62	2025-12-20 07:52:19.082058869 +0000
+@@ -276,6 +276,255 @@
+ orig(this) has only one value
+ orig(state) == 999
+ ===========================================================================
++ushahidia._1.VARIANT.OpenGeoSmsDao:::CLASS
++ushahidia._1.VARIANT.OpenGeoSmsDao.WHERE has only one value
++ushahidia._1.VARIANT.OpenGeoSmsDao.WHERE != null
++ushahidia._1.VARIANT.OpenGeoSmsDao.WHERE.toString == "report_id=?"
++===========================================================================
++ushahidia._1.VARIANT.OpenGeoSmsDao:::OBJECT
++this.mDb.lastCursor.count == this.mDb.queryResultCount
++this.mDb.queryResultValue == size(this.mDb.lastCursor.intValues[])-1
++size(this.mDb.lastCursor.intValues[])-1 == this.mDb.lastCursor.intValues[this.mDb.queryResultValue]
++this.mDb != null
++this.mDb.lastCursor.count one of { 0, 1 }
++this.mDb.lastCursor.currentPosition one of { -1, 0 }
++this.mDb.lastCursor.intValues[] == [0]
++this.mDb.lastCursor.intValues[] elements == 0
++this.mDb.lastCursor.closed == true
++this.mDb.queryResultCount one of { 0, 1 }
++this.mDb.queryResultValue == 0
++size(this.mDb.lastCursor.intValues[]) == 1
++this.mDb.lastCursor.intValues[] elements == this.mDb.queryResultValue
++this.mDb.queryResultValue in this.mDb.lastCursor.intValues[]
++this.mDb.lastCursor.intValues[] elements == size(this.mDb.lastCursor.intValues[])-1
++this.mDb.queryResultCount >= this.mDb.queryResultValue
++===========================================================================
++ushahidia._1.VARIANT.OpenGeoSmsDao.OpenGeoSmsDao(ushahidia._1.mocks.SQLiteDatabase):::ENTER
++db.lastCursor == null
++db.queryResultCount == 1
++db.queryResultValue == 0
++===========================================================================
++ushahidia._1.VARIANT.OpenGeoSmsDao.OpenGeoSmsDao(ushahidia._1.mocks.SQLiteDatabase):::EXIT
++this.mDb == orig(db)
++this.mDb.lastCursor == db.lastCursor
++this.mDb.queryResultCount == db.queryResultCount
++this.mDb.queryResultValue == db.queryResultValue
++db.lastCursor == orig(db.lastCursor)
++db.queryResultCount == orig(db.queryResultCount)
++db.queryResultValue == orig(db.queryResultValue)
++db.lastCursor == null
++db.queryResultCount == 1
++db.queryResultValue == 0
++===========================================================================
++ushahidia._1.VARIANT.OpenGeoSmsDao.addReport(long):::ENTER
++this has only one value
++this.mDb has only one value
++this.mDb.lastCursor == null
++this.mDb.queryResultCount == 1
++reportId == 100
++===========================================================================
++ushahidia._1.VARIANT.OpenGeoSmsDao.addReport(long):::EXIT
++this.mDb == orig(this.mDb)
++this.mDb.lastCursor == orig(this.mDb.lastCursor)
++ushahidia._1.VARIANT.OpenGeoSmsDao.WHERE == orig(ushahidia._1.VARIANT.OpenGeoSmsDao.WHERE)
++ushahidia._1.VARIANT.OpenGeoSmsDao.WHERE.toString == orig(ushahidia._1.VARIANT.OpenGeoSmsDao.WHERE.toString)
++this.mDb has only one value
++this.mDb.lastCursor == null
++this.mDb.queryResultCount == 1
++return == true
++===========================================================================
++ushahidia._1.VARIANT.OpenGeoSmsDao.addReport(long):::EXIT;condition="return == true"
++===========================================================================
++ushahidia._1.VARIANT.OpenGeoSmsDao.array(java.lang.String[]):::ENTER
++strs.getClass().getName() == java.lang.String[].class
++strs[] contains no nulls and has only one value, of length 1
++strs[] elements has only one value
++strs[].toString == [state]
++strs[].toString elements == "state"
++size(strs[]) == 1
++===========================================================================
++ushahidia._1.VARIANT.OpenGeoSmsDao.array(java.lang.String[]):::EXIT
++ushahidia._1.VARIANT.OpenGeoSmsDao.WHERE == orig(ushahidia._1.VARIANT.OpenGeoSmsDao.WHERE)
++ushahidia._1.VARIANT.OpenGeoSmsDao.WHERE.toString == orig(ushahidia._1.VARIANT.OpenGeoSmsDao.WHERE.toString)
++strs[] == return[]
++strs[] == orig(strs[])
++return == orig(strs)
++return.getClass().getName() == orig(strs.getClass().getName())
++strs[] contains no nulls and has only one value, of length 1
++strs[] elements has only one value
++strs[].toString == [state]
++strs[].toString elements == "state"
++return.getClass().getName() == java.lang.String[].class
++size(return[]) == 1
++===========================================================================
++ushahidia._1.VARIANT.OpenGeoSmsDao.array(long):::ENTER
++i one of { 100, 123, 456 }
++===========================================================================
++ushahidia._1.VARIANT.OpenGeoSmsDao.array(long):::EXIT
++ushahidia._1.VARIANT.OpenGeoSmsDao.WHERE == orig(ushahidia._1.VARIANT.OpenGeoSmsDao.WHERE)
++ushahidia._1.VARIANT.OpenGeoSmsDao.WHERE.toString == orig(ushahidia._1.VARIANT.OpenGeoSmsDao.WHERE.toString)
++return.getClass().getName() == java.lang.String[].class
++return[].toString elements one of { "100", "123", "456" }
++size(return[]) == 1
++===========================================================================
++ushahidia._1.VARIANT.OpenGeoSmsDao.deleteReport(long):::ENTER
++this has only one value
++this.mDb has only one value
++this.mDb.lastCursor == null
++this.mDb.queryResultCount == 1
++reportId == 100
++===========================================================================
++ushahidia._1.VARIANT.OpenGeoSmsDao.deleteReport(long):::EXIT
++this.mDb == orig(this.mDb)
++this.mDb.lastCursor == orig(this.mDb.lastCursor)
++ushahidia._1.VARIANT.OpenGeoSmsDao.WHERE == orig(ushahidia._1.VARIANT.OpenGeoSmsDao.WHERE)
++ushahidia._1.VARIANT.OpenGeoSmsDao.WHERE.toString == orig(ushahidia._1.VARIANT.OpenGeoSmsDao.WHERE.toString)
++this.mDb has only one value
++this.mDb.lastCursor == null
++this.mDb.queryResultCount == 1
++return == true
++===========================================================================
++ushahidia._1.VARIANT.OpenGeoSmsDao.deleteReport(long):::EXIT;condition="return == true"
++===========================================================================
++ushahidia._1.VARIANT.OpenGeoSmsDao.deleteReports():::ENTER
++this has only one value
++this.mDb has only one value
++this.mDb.lastCursor == null
++this.mDb.queryResultCount == 1
++===========================================================================
++ushahidia._1.VARIANT.OpenGeoSmsDao.deleteReports():::EXIT
++this.mDb == orig(this.mDb)
++this.mDb.lastCursor == orig(this.mDb.lastCursor)
++ushahidia._1.VARIANT.OpenGeoSmsDao.WHERE == orig(ushahidia._1.VARIANT.OpenGeoSmsDao.WHERE)
++ushahidia._1.VARIANT.OpenGeoSmsDao.WHERE.toString == orig(ushahidia._1.VARIANT.OpenGeoSmsDao.WHERE.toString)
++this.mDb has only one value
++this.mDb.lastCursor == null
++this.mDb.queryResultCount == 1
++return == true
++===========================================================================
++ushahidia._1.VARIANT.OpenGeoSmsDao.deleteReports():::EXIT;condition="return == true"
++===========================================================================
++ushahidia._1.VARIANT.OpenGeoSmsDao.getReportState(long):::ENTER
++this.mDb.lastCursor == null
++reportId one of { 123, 456 }
++===========================================================================
++ushahidia._1.VARIANT.OpenGeoSmsDao.getReportState(long):::EXIT
++this.mDb.queryResultCount == this.mDb.queryResultValue
++this.mDb.queryResultCount == orig(this.mDb.queryResultValue)
++this.mDb.queryResultCount == size(this.mDb.lastCursor.intValues[])-1
++this.mDb.queryResultCount == this.mDb.lastCursor.intValues[this.mDb.lastCursor.count]
++this.mDb.queryResultCount == this.mDb.lastCursor.intValues[this.mDb.queryResultCount]
++this.mDb.queryResultCount == this.mDb.lastCursor.intValues[this.mDb.queryResultValue]
++this.mDb.queryResultCount == this.mDb.lastCursor.intValues[orig(this.mDb.queryResultCount)]
++this.mDb.queryResultCount == this.mDb.lastCursor.intValues[orig(this.mDb.queryResultValue)]
++this.mDb has only one value
++this.mDb.lastCursor has only one value
++this.mDb.lastCursor.intValues has only one value
++return == -1
++orig(this) has only one value
++orig(reportId) == 456
++this.mDb.lastCursor.intValues[] elements == this.mDb.queryResultCount
++===========================================================================
++ushahidia._1.VARIANT.OpenGeoSmsDao.getReportState(long):::EXIT
++this.mDb.queryResultCount == size(this.mDb.lastCursor.intValues[])
++this.mDb.queryResultValue == return
++return == orig(this.mDb.queryResultValue)
++return == size(this.mDb.lastCursor.intValues[])-1
++return == this.mDb.lastCursor.intValues[this.mDb.lastCursor.count-1]
++return == this.mDb.lastCursor.intValues[this.mDb.lastCursor.currentPosition]
++return == this.mDb.lastCursor.intValues[this.mDb.queryResultCount-1]
++return == this.mDb.lastCursor.intValues[this.mDb.queryResultValue]
++return == this.mDb.lastCursor.intValues[return]
++return == this.mDb.lastCursor.intValues[orig(this.mDb.queryResultCount)-1]
++return == this.mDb.lastCursor.intValues[orig(this.mDb.queryResultValue)]
++this.mDb has only one value
++this.mDb.lastCursor has only one value
++this.mDb.lastCursor.intValues has only one value
++this.mDb.queryResultCount == 1
++orig(this) has only one value
++orig(reportId) == 123
++this.mDb.lastCursor.intValues[] elements == return
++===========================================================================
++ushahidia._1.VARIANT.OpenGeoSmsDao.getReportState(long):::EXIT
++this.mDb == orig(this.mDb)
++this.mDb.lastCursor.currentPosition == return
++this.mDb.queryResultCount == orig(this.mDb.queryResultCount)
++this.mDb.queryResultValue == orig(this.mDb.queryResultValue)
++this.mDb.queryResultValue == this.mDb.lastCursor.intValues[this.mDb.queryResultValue]
++this.mDb.queryResultValue == this.mDb.lastCursor.intValues[orig(this.mDb.queryResultValue)]
++ushahidia._1.VARIANT.OpenGeoSmsDao.WHERE == orig(ushahidia._1.VARIANT.OpenGeoSmsDao.WHERE)
++ushahidia._1.VARIANT.OpenGeoSmsDao.WHERE.toString == orig(ushahidia._1.VARIANT.OpenGeoSmsDao.WHERE.toString)
++(return == -1)  <==>  (orig(reportId) == 456)
++(return == -1)  <==>  (this.mDb.queryResultCount == this.mDb.queryResultValue)
++(return == -1)  ==>  (this.mDb.lastCursor.intValues[] elements == this.mDb.lastCursor.intValues[orig(this.mDb.queryResultCount)])
++(return == -1)  ==>  (this.mDb.lastCursor.intValues[] elements == this.mDb.lastCursor.intValues[this.mDb.lastCursor.count])
++(return == -1)  ==>  (this.mDb.lastCursor.intValues[] elements == this.mDb.lastCursor.intValues[this.mDb.queryResultCount])
++(return == -1)  ==>  (this.mDb.lastCursor.intValues[] elements == this.mDb.queryResultCount)
++(return == -1)  ==>  (this.mDb.queryResultCount == this.mDb.lastCursor.intValues[orig(this.mDb.queryResultCount)])
++(return == -1)  ==>  (this.mDb.queryResultCount == this.mDb.lastCursor.intValues[this.mDb.lastCursor.count])
++(return == -1)  ==>  (this.mDb.queryResultCount == this.mDb.lastCursor.intValues[this.mDb.queryResultCount])
++(this.mDb.queryResultCount == 1)  <==>  (orig(reportId) == 123)
++(this.mDb.queryResultCount == 1)  <==>  (this.mDb.queryResultCount == size(this.mDb.lastCursor.intValues[]))
++(this.mDb.queryResultCount == 1)  <==>  (this.mDb.queryResultValue == return)
++(this.mDb.queryResultCount == 1)  ==>  (return == this.mDb.lastCursor.intValues[orig(this.mDb.queryResultCount)-1])
++(this.mDb.queryResultCount == 1)  ==>  (return == this.mDb.lastCursor.intValues[return])
++(this.mDb.queryResultCount == 1)  ==>  (return == this.mDb.lastCursor.intValues[this.mDb.lastCursor.count-1])
++(this.mDb.queryResultCount == 1)  ==>  (return == this.mDb.lastCursor.intValues[this.mDb.lastCursor.currentPosition])
++(this.mDb.queryResultCount == 1)  ==>  (return == this.mDb.lastCursor.intValues[this.mDb.queryResultCount-1])
++(this.mDb.queryResultCount == 1)  ==>  (this.mDb.lastCursor.intValues[] elements == return)
++(this.mDb.queryResultCount == 1)  ==>  (this.mDb.lastCursor.intValues[] elements == this.mDb.lastCursor.intValues[orig(this.mDb.queryResultCount)-1])
++(this.mDb.queryResultCount == 1)  ==>  (this.mDb.lastCursor.intValues[] elements == this.mDb.lastCursor.intValues[return])
++(this.mDb.queryResultCount == 1)  ==>  (this.mDb.lastCursor.intValues[] elements == this.mDb.lastCursor.intValues[this.mDb.lastCursor.count-1])
++(this.mDb.queryResultCount == 1)  ==>  (this.mDb.lastCursor.intValues[] elements == this.mDb.lastCursor.intValues[this.mDb.lastCursor.currentPosition])
++(this.mDb.queryResultCount == 1)  ==>  (this.mDb.lastCursor.intValues[] elements == this.mDb.lastCursor.intValues[this.mDb.queryResultCount-1])
++return one of { -1, 0 }
++===========================================================================
++ushahidia._1.VARIANT.OpenGeoSmsDao.setReportState(long, int):::ENTER
++this.mDb.lastCursor == null
++this.mDb.queryResultCount == 1
++reportId == 100
++state one of { 0, 1, 999 }
++===========================================================================
++ushahidia._1.VARIANT.OpenGeoSmsDao.setReportState(long, int):::EXIT
++this.mDb has only one value
++return == true
++orig(this) has only one value
++orig(state) one of { 0, 1 }
++===========================================================================
++ushahidia._1.VARIANT.OpenGeoSmsDao.setReportState(long, int):::EXIT;condition="return == true"
++===========================================================================
++ushahidia._1.VARIANT.OpenGeoSmsDao.setReportState(long, int):::EXIT
++this.mDb has only one value
++return == false
++orig(this) has only one value
++orig(state) == 999
++===========================================================================
++ushahidia._1.VARIANT.OpenGeoSmsDao.setReportState(long, int):::EXIT;condition="not(return == true)"
++===========================================================================
++ushahidia._1.VARIANT.OpenGeoSmsDao.setReportState(long, int):::EXIT
++this.mDb == orig(this.mDb)
++this.mDb.lastCursor == orig(this.mDb.lastCursor)
++this.mDb.queryResultCount == orig(this.mDb.queryResultCount)
++this.mDb.queryResultValue == orig(this.mDb.queryResultValue)
++ushahidia._1.VARIANT.OpenGeoSmsDao.WHERE == orig(ushahidia._1.VARIANT.OpenGeoSmsDao.WHERE)
++ushahidia._1.VARIANT.OpenGeoSmsDao.WHERE.toString == orig(ushahidia._1.VARIANT.OpenGeoSmsDao.WHERE.toString)
++(return == false)  <==>  (orig(state) == 999)
++(return == true)  <==>  (orig(state) one of { 0, 1 })
++this.mDb.lastCursor == null
++this.mDb.queryResultCount == 1
++===========================================================================
++ushahidia._1.VARIANT.OpenGeoSmsDao.setReportState(long, int):::EXIT;condition="return == true"
++this.mDb has only one value
++return == true
++orig(this) has only one value
++orig(state) one of { 0, 1 }
++===========================================================================
++ushahidia._1.VARIANT.OpenGeoSmsDao.setReportState(long, int):::EXIT;condition="not(return == true)"
++this.mDb has only one value
++return == false
++orig(this) has only one value
++orig(state) == 999
++===========================================================================
+ ushahidia._1.mocks.ContentValues:::OBJECT
+ this.values.getClass().getName() == java.util.HashMap.class
+ ===========================================================================
+@@ -693,252 +942,3 @@
+ whereArgs[].toString elements == "100"
+ return == 1
+ whereArgs[] elements == whereArgs[this.queryResultValue]
+-===========================================================================
+-ushahidia._1.VARIANT.OpenGeoSmsDao:::CLASS
+-ushahidia._1.VARIANT.OpenGeoSmsDao.WHERE has only one value
+-ushahidia._1.VARIANT.OpenGeoSmsDao.WHERE != null
+-ushahidia._1.VARIANT.OpenGeoSmsDao.WHERE.toString == "report_id=?"
+-===========================================================================
+-ushahidia._1.VARIANT.OpenGeoSmsDao:::OBJECT
+-this.mDb.lastCursor.count == this.mDb.queryResultCount
+-this.mDb.queryResultValue == size(this.mDb.lastCursor.intValues[])-1
+-size(this.mDb.lastCursor.intValues[])-1 == this.mDb.lastCursor.intValues[this.mDb.queryResultValue]
+-this.mDb != null
+-this.mDb.lastCursor.count one of { 0, 1 }
+-this.mDb.lastCursor.currentPosition one of { -1, 0 }
+-this.mDb.lastCursor.intValues[] == [0]
+-this.mDb.lastCursor.intValues[] elements == 0
+-this.mDb.lastCursor.closed == true
+-this.mDb.queryResultCount one of { 0, 1 }
+-this.mDb.queryResultValue == 0
+-size(this.mDb.lastCursor.intValues[]) == 1
+-this.mDb.lastCursor.intValues[] elements == this.mDb.queryResultValue
+-this.mDb.queryResultValue in this.mDb.lastCursor.intValues[]
+-this.mDb.lastCursor.intValues[] elements == size(this.mDb.lastCursor.intValues[])-1
+-this.mDb.queryResultCount >= this.mDb.queryResultValue
+-===========================================================================
+-ushahidia._1.VARIANT.OpenGeoSmsDao.OpenGeoSmsDao(ushahidia._1.mocks.SQLiteDatabase):::ENTER
+-db.lastCursor == null
+-db.queryResultCount == 1
+-db.queryResultValue == 0
+-===========================================================================
+-ushahidia._1.VARIANT.OpenGeoSmsDao.OpenGeoSmsDao(ushahidia._1.mocks.SQLiteDatabase):::EXIT
+-this.mDb == orig(db)
+-this.mDb.lastCursor == db.lastCursor
+-this.mDb.queryResultCount == db.queryResultCount
+-this.mDb.queryResultValue == db.queryResultValue
+-db.lastCursor == orig(db.lastCursor)
+-db.queryResultCount == orig(db.queryResultCount)
+-db.queryResultValue == orig(db.queryResultValue)
+-db.lastCursor == null
+-db.queryResultCount == 1
+-db.queryResultValue == 0
+-===========================================================================
+-ushahidia._1.VARIANT.OpenGeoSmsDao.addReport(long):::ENTER
+-this has only one value
+-this.mDb has only one value
+-this.mDb.lastCursor == null
+-this.mDb.queryResultCount == 1
+-reportId == 100
+-===========================================================================
+-ushahidia._1.VARIANT.OpenGeoSmsDao.addReport(long):::EXIT
+-this.mDb == orig(this.mDb)
+-this.mDb.lastCursor == orig(this.mDb.lastCursor)
+-ushahidia._1.VARIANT.OpenGeoSmsDao.WHERE == orig(ushahidia._1.VARIANT.OpenGeoSmsDao.WHERE)
+-ushahidia._1.VARIANT.OpenGeoSmsDao.WHERE.toString == orig(ushahidia._1.VARIANT.OpenGeoSmsDao.WHERE.toString)
+-this.mDb has only one value
+-this.mDb.lastCursor == null
+-this.mDb.queryResultCount == 1
+-return == true
+-===========================================================================
+-ushahidia._1.VARIANT.OpenGeoSmsDao.addReport(long):::EXIT;condition="return == true"
+-===========================================================================
+-ushahidia._1.VARIANT.OpenGeoSmsDao.array(java.lang.String[]):::ENTER
+-strs.getClass().getName() == java.lang.String[].class
+-strs[] contains no nulls and has only one value, of length 1
+-strs[] elements has only one value
+-strs[].toString == [state]
+-strs[].toString elements == "state"
+-size(strs[]) == 1
+-===========================================================================
+-ushahidia._1.VARIANT.OpenGeoSmsDao.array(java.lang.String[]):::EXIT
+-ushahidia._1.VARIANT.OpenGeoSmsDao.WHERE == orig(ushahidia._1.VARIANT.OpenGeoSmsDao.WHERE)
+-ushahidia._1.VARIANT.OpenGeoSmsDao.WHERE.toString == orig(ushahidia._1.VARIANT.OpenGeoSmsDao.WHERE.toString)
+-strs[] == return[]
+-strs[] == orig(strs[])
+-return == orig(strs)
+-return.getClass().getName() == orig(strs.getClass().getName())
+-strs[] contains no nulls and has only one value, of length 1
+-strs[] elements has only one value
+-strs[].toString == [state]
+-strs[].toString elements == "state"
+-return.getClass().getName() == java.lang.String[].class
+-size(return[]) == 1
+-===========================================================================
+-ushahidia._1.VARIANT.OpenGeoSmsDao.array(long):::ENTER
+-i one of { 100, 123, 456 }
+-===========================================================================
+-ushahidia._1.VARIANT.OpenGeoSmsDao.array(long):::EXIT
+-ushahidia._1.VARIANT.OpenGeoSmsDao.WHERE == orig(ushahidia._1.VARIANT.OpenGeoSmsDao.WHERE)
+-ushahidia._1.VARIANT.OpenGeoSmsDao.WHERE.toString == orig(ushahidia._1.VARIANT.OpenGeoSmsDao.WHERE.toString)
+-return.getClass().getName() == java.lang.String[].class
+-return[].toString elements one of { "100", "123", "456" }
+-size(return[]) == 1
+-===========================================================================
+-ushahidia._1.VARIANT.OpenGeoSmsDao.deleteReport(long):::ENTER
+-this has only one value
+-this.mDb has only one value
+-this.mDb.lastCursor == null
+-this.mDb.queryResultCount == 1
+-reportId == 100
+-===========================================================================
+-ushahidia._1.VARIANT.OpenGeoSmsDao.deleteReport(long):::EXIT
+-this.mDb == orig(this.mDb)
+-this.mDb.lastCursor == orig(this.mDb.lastCursor)
+-ushahidia._1.VARIANT.OpenGeoSmsDao.WHERE == orig(ushahidia._1.VARIANT.OpenGeoSmsDao.WHERE)
+-ushahidia._1.VARIANT.OpenGeoSmsDao.WHERE.toString == orig(ushahidia._1.VARIANT.OpenGeoSmsDao.WHERE.toString)
+-this.mDb has only one value
+-this.mDb.lastCursor == null
+-this.mDb.queryResultCount == 1
+-return == true
+-===========================================================================
+-ushahidia._1.VARIANT.OpenGeoSmsDao.deleteReport(long):::EXIT;condition="return == true"
+-===========================================================================
+-ushahidia._1.VARIANT.OpenGeoSmsDao.deleteReports():::ENTER
+-this has only one value
+-this.mDb has only one value
+-this.mDb.lastCursor == null
+-this.mDb.queryResultCount == 1
+-===========================================================================
+-ushahidia._1.VARIANT.OpenGeoSmsDao.deleteReports():::EXIT
+-this.mDb == orig(this.mDb)
+-this.mDb.lastCursor == orig(this.mDb.lastCursor)
+-ushahidia._1.VARIANT.OpenGeoSmsDao.WHERE == orig(ushahidia._1.VARIANT.OpenGeoSmsDao.WHERE)
+-ushahidia._1.VARIANT.OpenGeoSmsDao.WHERE.toString == orig(ushahidia._1.VARIANT.OpenGeoSmsDao.WHERE.toString)
+-this.mDb has only one value
+-this.mDb.lastCursor == null
+-this.mDb.queryResultCount == 1
+-return == true
+-===========================================================================
+-ushahidia._1.VARIANT.OpenGeoSmsDao.deleteReports():::EXIT;condition="return == true"
+-===========================================================================
+-ushahidia._1.VARIANT.OpenGeoSmsDao.getReportState(long):::ENTER
+-this.mDb.lastCursor == null
+-reportId one of { 123, 456 }
+-===========================================================================
+-ushahidia._1.VARIANT.OpenGeoSmsDao.getReportState(long):::EXIT
+-this.mDb.queryResultCount == this.mDb.queryResultValue
+-this.mDb.queryResultCount == orig(this.mDb.queryResultValue)
+-this.mDb.queryResultCount == size(this.mDb.lastCursor.intValues[])-1
+-this.mDb.queryResultCount == this.mDb.lastCursor.intValues[this.mDb.lastCursor.count]
+-this.mDb.queryResultCount == this.mDb.lastCursor.intValues[this.mDb.queryResultCount]
+-this.mDb.queryResultCount == this.mDb.lastCursor.intValues[this.mDb.queryResultValue]
+-this.mDb.queryResultCount == this.mDb.lastCursor.intValues[orig(this.mDb.queryResultCount)]
+-this.mDb.queryResultCount == this.mDb.lastCursor.intValues[orig(this.mDb.queryResultValue)]
+-this.mDb has only one value
+-this.mDb.lastCursor has only one value
+-this.mDb.lastCursor.intValues has only one value
+-return == -1
+-orig(this) has only one value
+-orig(reportId) == 456
+-this.mDb.lastCursor.intValues[] elements == this.mDb.queryResultCount
+-===========================================================================
+-ushahidia._1.VARIANT.OpenGeoSmsDao.getReportState(long):::EXIT
+-this.mDb.queryResultCount == size(this.mDb.lastCursor.intValues[])
+-this.mDb.queryResultValue == return
+-return == orig(this.mDb.queryResultValue)
+-return == size(this.mDb.lastCursor.intValues[])-1
+-return == this.mDb.lastCursor.intValues[this.mDb.lastCursor.count-1]
+-return == this.mDb.lastCursor.intValues[this.mDb.lastCursor.currentPosition]
+-return == this.mDb.lastCursor.intValues[this.mDb.queryResultCount-1]
+-return == this.mDb.lastCursor.intValues[this.mDb.queryResultValue]
+-return == this.mDb.lastCursor.intValues[return]
+-return == this.mDb.lastCursor.intValues[orig(this.mDb.queryResultCount)-1]
+-return == this.mDb.lastCursor.intValues[orig(this.mDb.queryResultValue)]
+-this.mDb has only one value
+-this.mDb.lastCursor has only one value
+-this.mDb.lastCursor.intValues has only one value
+-this.mDb.queryResultCount == 1
+-orig(this) has only one value
+-orig(reportId) == 123
+-this.mDb.lastCursor.intValues[] elements == return
+-===========================================================================
+-ushahidia._1.VARIANT.OpenGeoSmsDao.getReportState(long):::EXIT
+-this.mDb == orig(this.mDb)
+-this.mDb.lastCursor.currentPosition == return
+-this.mDb.queryResultCount == orig(this.mDb.queryResultCount)
+-this.mDb.queryResultValue == orig(this.mDb.queryResultValue)
+-this.mDb.queryResultValue == this.mDb.lastCursor.intValues[this.mDb.queryResultValue]
+-this.mDb.queryResultValue == this.mDb.lastCursor.intValues[orig(this.mDb.queryResultValue)]
+-ushahidia._1.VARIANT.OpenGeoSmsDao.WHERE == orig(ushahidia._1.VARIANT.OpenGeoSmsDao.WHERE)
+-ushahidia._1.VARIANT.OpenGeoSmsDao.WHERE.toString == orig(ushahidia._1.VARIANT.OpenGeoSmsDao.WHERE.toString)
+-(return == -1)  <==>  (orig(reportId) == 456)
+-(return == -1)  <==>  (this.mDb.queryResultCount == this.mDb.queryResultValue)
+-(return == -1)  ==>  (this.mDb.lastCursor.intValues[] elements == this.mDb.lastCursor.intValues[orig(this.mDb.queryResultCount)])
+-(return == -1)  ==>  (this.mDb.lastCursor.intValues[] elements == this.mDb.lastCursor.intValues[this.mDb.lastCursor.count])
+-(return == -1)  ==>  (this.mDb.lastCursor.intValues[] elements == this.mDb.lastCursor.intValues[this.mDb.queryResultCount])
+-(return == -1)  ==>  (this.mDb.lastCursor.intValues[] elements == this.mDb.queryResultCount)
+-(return == -1)  ==>  (this.mDb.queryResultCount == this.mDb.lastCursor.intValues[orig(this.mDb.queryResultCount)])
+-(return == -1)  ==>  (this.mDb.queryResultCount == this.mDb.lastCursor.intValues[this.mDb.lastCursor.count])
+-(return == -1)  ==>  (this.mDb.queryResultCount == this.mDb.lastCursor.intValues[this.mDb.queryResultCount])
+-(this.mDb.queryResultCount == 1)  <==>  (orig(reportId) == 123)
+-(this.mDb.queryResultCount == 1)  <==>  (this.mDb.queryResultCount == size(this.mDb.lastCursor.intValues[]))
+-(this.mDb.queryResultCount == 1)  <==>  (this.mDb.queryResultValue == return)
+-(this.mDb.queryResultCount == 1)  ==>  (return == this.mDb.lastCursor.intValues[orig(this.mDb.queryResultCount)-1])
+-(this.mDb.queryResultCount == 1)  ==>  (return == this.mDb.lastCursor.intValues[return])
+-(this.mDb.queryResultCount == 1)  ==>  (return == this.mDb.lastCursor.intValues[this.mDb.lastCursor.count-1])
+-(this.mDb.queryResultCount == 1)  ==>  (return == this.mDb.lastCursor.intValues[this.mDb.lastCursor.currentPosition])
+-(this.mDb.queryResultCount == 1)  ==>  (return == this.mDb.lastCursor.intValues[this.mDb.queryResultCount-1])
+-(this.mDb.queryResultCount == 1)  ==>  (this.mDb.lastCursor.intValues[] elements == return)
+-(this.mDb.queryResultCount == 1)  ==>  (this.mDb.lastCursor.intValues[] elements == this.mDb.lastCursor.intValues[orig(this.mDb.queryResultCount)-1])
+-(this.mDb.queryResultCount == 1)  ==>  (this.mDb.lastCursor.intValues[] elements == this.mDb.lastCursor.intValues[return])
+-(this.mDb.queryResultCount == 1)  ==>  (this.mDb.lastCursor.intValues[] elements == this.mDb.lastCursor.intValues[this.mDb.lastCursor.count-1])
+-(this.mDb.queryResultCount == 1)  ==>  (this.mDb.lastCursor.intValues[] elements == this.mDb.lastCursor.intValues[this.mDb.lastCursor.currentPosition])
+-(this.mDb.queryResultCount == 1)  ==>  (this.mDb.lastCursor.intValues[] elements == this.mDb.lastCursor.intValues[this.mDb.queryResultCount-1])
+-return one of { -1, 0 }
+-===========================================================================
+-ushahidia._1.VARIANT.OpenGeoSmsDao.setReportState(long, int):::ENTER
+-this.mDb.lastCursor == null
+-this.mDb.queryResultCount == 1
+-reportId == 100
+-state one of { 0, 1, 999 }
+-===========================================================================
+-ushahidia._1.VARIANT.OpenGeoSmsDao.setReportState(long, int):::EXIT
+-this.mDb has only one value
+-return == true
+-orig(this) has only one value
+-orig(state) one of { 0, 1 }
+-===========================================================================
+-ushahidia._1.VARIANT.OpenGeoSmsDao.setReportState(long, int):::EXIT;condition="return == true"
+-===========================================================================
+-ushahidia._1.VARIANT.OpenGeoSmsDao.setReportState(long, int):::EXIT
+-this.mDb has only one value
+-return == false
+-orig(this) has only one value
+-orig(state) == 999
+-===========================================================================
+-ushahidia._1.VARIANT.OpenGeoSmsDao.setReportState(long, int):::EXIT;condition="not(return == true)"
+-===========================================================================
+-ushahidia._1.VARIANT.OpenGeoSmsDao.setReportState(long, int):::EXIT
+-this.mDb == orig(this.mDb)
+-this.mDb.lastCursor == orig(this.mDb.lastCursor)
+-this.mDb.queryResultCount == orig(this.mDb.queryResultCount)
+-this.mDb.queryResultValue == orig(this.mDb.queryResultValue)
+-ushahidia._1.VARIANT.OpenGeoSmsDao.WHERE == orig(ushahidia._1.VARIANT.OpenGeoSmsDao.WHERE)
+-ushahidia._1.VARIANT.OpenGeoSmsDao.WHERE.toString == orig(ushahidia._1.VARIANT.OpenGeoSmsDao.WHERE.toString)
+-(return == false)  <==>  (orig(state) == 999)
+-(return == true)  <==>  (orig(state) one of { 0, 1 })
+-this.mDb.lastCursor == null
+-this.mDb.queryResultCount == 1
+-===========================================================================
+-ushahidia._1.VARIANT.OpenGeoSmsDao.setReportState(long, int):::EXIT;condition="return == true"
+-this.mDb has only one value
+-return == true
+-orig(this) has only one value
+-orig(state) one of { 0, 1 }
+-===========================================================================
+-ushahidia._1.VARIANT.OpenGeoSmsDao.setReportState(long, int):::EXIT;condition="not(return == true)"
+-this.mDb has only one value
+-return == false
+-orig(this) has only one value
+-orig(state) == 999

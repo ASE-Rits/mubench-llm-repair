@@ -1,0 +1,14 @@
+--- /dev/fd/63	2025-12-20 07:52:19.055058158 +0000
++++ /dev/fd/62	2025-12-20 07:52:19.054058132 +0000
+@@ -14,11 +14,6 @@
+ ===========================================================================
+ thomas_s_b_visualee.Thomas_s_b_visualeeTest_32$CommonLogic.testScanAfterClosedParenthesisNested():::EXIT
+ ===========================================================================
+-thomas_s_b_visualee.Thomas_s_b_visualeeTest_32$CommonLogic.testScanAfterClosedParenthesisUnclosedAtEOF():::ENTER
+-this has only one value
+-===========================================================================
+-thomas_s_b_visualee.Thomas_s_b_visualeeTest_32$CommonLogic.testScanAfterClosedParenthesisUnclosedAtEOF():::EXIT
+-===========================================================================
+ thomas_s_b_visualee.Thomas_s_b_visualeeTest_32$Variant:::OBJECT
+ ===========================================================================
+ thomas_s_b_visualee.Thomas_s_b_visualeeTest_32$Variant.Variant():::EXIT

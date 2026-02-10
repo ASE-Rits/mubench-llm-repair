@@ -1,0 +1,179 @@
+--- /dev/fd/63	2025-12-20 07:52:19.094059185 +0000
++++ /dev/fd/62	2025-12-20 07:52:19.094059185 +0000
+@@ -196,6 +196,110 @@
+ wordpressa._1.Driver.testRestoreScrollPosition(boolean, int, int):::EXIT;condition="not(return == true)"
+ return == false
+ ===========================================================================
++wordpressa._1.VARIANT.NotificationsListFragment:::OBJECT
++this.mFauxPullToRefreshHelper == this.listAdapter
++this.mNotesAdapter.hiddenNoteIds.getClass().getName() == this.mNotesAdapter.moderatingNoteIds.getClass().getName()
++this.mNoteClickListener == this.listAdapter
++this.mBucket == this.listAdapter
++this.listView.emptyView == this.listAdapter
++this.mFauxPullToRefreshHelper == null
++this.mNotesAdapter.notes[].getClass().getName() == [wordpressa._1.mocks.Note, wordpressa._1.mocks.Note, wordpressa._1.mocks.Note, wordpressa._1.mocks.Note, wordpressa._1.mocks.Note]
++this.mNotesAdapter.notes[].getClass().getName() elements == wordpressa._1.mocks.Note.class
++this.mNotesAdapter.notes.getClass().getName() == java.util.ArrayList.class
++this.mNotesAdapter.hiddenNoteIds.getClass().getName() == java.util.HashSet.class
++this.mNotesAdapter.cursorClosed == false
++this.mNoteClickListener == null
++this.mBucket == null
++this.listView != null
++this.listView.firstVisiblePosition == 0
++this.listView.selectionFromTop one of { -1, 2 }
++this.listView.emptyView == null
++this.activity != null
++this.listAdapter == null
++size(this.mNotesAdapter.notes[]) == 5
++this.mNotesAdapter.notes.getClass().getName() != this.mNotesAdapter.hiddenNoteIds.getClass().getName()
++this.mRestoredListPosition >= wordpressa._1.mocks.ListView.INVALID_POSITION
++this.mRestoredListPosition != size(this.mNotesAdapter.notes[])
++this.mRestoredListPosition != size(this.mNotesAdapter.notes[])-1
++wordpressa._1.mocks.ListView.INVALID_POSITION <= this.listView.selectionFromTop
++this.listView.firstVisiblePosition != this.listView.selectionFromTop
++this.listView.selectionFromTop < size(this.mNotesAdapter.notes[])-1
++===========================================================================
++wordpressa._1.VARIANT.NotificationsListFragment.NotificationsListFragment():::EXIT
++this.mNotesAdapter == this.listAdapter
++this.mRestoredListPosition == this.listView.firstVisiblePosition
++wordpressa._1.mocks.ListView.INVALID_POSITION == this.listView.selectionFromTop
++this.mNotesAdapter == null
++this.mRestoredListPosition == 0
++this.isAdded == true
++===========================================================================
++wordpressa._1.VARIANT.NotificationsListFragment.restoreListScrollPosition():::ENTER
++wordpressa._1.mocks.ListView.INVALID_POSITION == this.listView.selectionFromTop
++===========================================================================
++wordpressa._1.VARIANT.NotificationsListFragment.restoreListScrollPosition():::EXIT
++this.mRestoredListPosition == orig(this.mRestoredListPosition)
++wordpressa._1.mocks.ListView.INVALID_POSITION == this.listView.selectionFromTop
++===========================================================================
++wordpressa._1.VARIANT.NotificationsListFragment.restoreListScrollPosition():::EXIT
++this.mRestoredListPosition == wordpressa._1.mocks.ListView.INVALID_POSITION
++this.listView.selectionFromTop == orig(this.mRestoredListPosition)
++this.mNotesAdapter has only one value
++this.mNotesAdapter.notes has only one value
++this.mNotesAdapter.notes[] contains no nulls and has only one value, of length 5
++this.mNotesAdapter.hiddenNoteIds has only one value
++this.mNotesAdapter.moderatingNoteIds has only one value
++this.isAdded == true
++this.listView has only one value
++this.listView.selectionFromTop == 2
++this.activity has only one value
++orig(this) has only one value
++this.mNotesAdapter.notes[this.listView.firstVisiblePosition] has only one value
++this.mNotesAdapter.notes[this.listView.selectionFromTop] has only one value
++this.mNotesAdapter.notes[this.listView.selectionFromTop-1] has only one value
++===========================================================================
++wordpressa._1.VARIANT.NotificationsListFragment.restoreListScrollPosition():::EXIT
++this.mFauxPullToRefreshHelper == orig(this.mFauxPullToRefreshHelper)
++this.mNotesAdapter == orig(this.mNotesAdapter)
++this.mNotesAdapter.notes == orig(this.mNotesAdapter.notes)
++this.mNotesAdapter.notes[] == orig(this.mNotesAdapter.notes[])
++this.mNotesAdapter.notes.getClass().getName() == orig(this.mNotesAdapter.notes.getClass().getName())
++this.mNotesAdapter.hiddenNoteIds == orig(this.mNotesAdapter.hiddenNoteIds)
++this.mNotesAdapter.hiddenNoteIds.getClass().getName() == orig(this.mNotesAdapter.hiddenNoteIds.getClass().getName())
++this.mNotesAdapter.hiddenNoteIds.getClass().getName() == orig(this.mNotesAdapter.moderatingNoteIds.getClass().getName())
++this.mNotesAdapter.moderatingNoteIds == orig(this.mNotesAdapter.moderatingNoteIds)
++this.mNotesAdapter.cursorClosed == orig(this.mNotesAdapter.cursorClosed)
++this.mNoteClickListener == orig(this.mNoteClickListener)
++this.mBucket == orig(this.mBucket)
++this.isAdded == orig(this.isAdded)
++this.listView == orig(this.listView)
++this.listView.firstVisiblePosition == orig(this.listView.firstVisiblePosition)
++this.listView.emptyView == orig(this.listView.emptyView)
++this.activity == orig(this.activity)
++this.listAdapter == orig(this.listAdapter)
++(this.listView.selectionFromTop == 2)  ==>  (orig(this) has only one value)
++(this.listView.selectionFromTop == 2)  ==>  (orig(this.mNotesAdapter.notes[post(this.listView.selectionFromTop)-1]) has only one value)
++(this.listView.selectionFromTop == 2)  ==>  (orig(this.mNotesAdapter.notes[post(this.listView.selectionFromTop)]) has only one value)
++(this.listView.selectionFromTop == 2)  ==>  (orig(this.mNotesAdapter.notes[this.mRestoredListPosition-1]) has only one value)
++(this.listView.selectionFromTop == 2)  ==>  (orig(this.mNotesAdapter.notes[this.mRestoredListPosition]) has only one value)
++(this.listView.selectionFromTop == 2)  ==>  (orig(this.mRestoredListPosition) == 2)
++(this.listView.selectionFromTop == 2)  ==>  (this.activity has only one value)
++(this.listView.selectionFromTop == 2)  ==>  (this.isAdded == true)
++(this.listView.selectionFromTop == 2)  ==>  (this.listView has only one value)
++(this.listView.selectionFromTop == 2)  ==>  (this.listView.selectionFromTop == orig(this.mRestoredListPosition))
++(this.listView.selectionFromTop == 2)  ==>  (this.mNotesAdapter has only one value)
++(this.listView.selectionFromTop == 2)  ==>  (this.mNotesAdapter.hiddenNoteIds has only one value)
++(this.listView.selectionFromTop == 2)  ==>  (this.mNotesAdapter.moderatingNoteIds has only one value)
++(this.listView.selectionFromTop == 2)  ==>  (this.mNotesAdapter.notes has only one value)
++(this.listView.selectionFromTop == 2)  ==>  (this.mNotesAdapter.notes[] contains no nulls and has only one value, of length 5)
++(this.listView.selectionFromTop == 2)  ==>  (this.mNotesAdapter.notes[orig(this.mRestoredListPosition)-1] has only one value)
++(this.listView.selectionFromTop == 2)  ==>  (this.mNotesAdapter.notes[orig(this.mRestoredListPosition)] has only one value)
++(this.listView.selectionFromTop == 2)  ==>  (this.mNotesAdapter.notes[this.listView.firstVisiblePosition] has only one value)
++(this.listView.selectionFromTop == 2)  ==>  (this.mNotesAdapter.notes[this.listView.selectionFromTop-1] has only one value)
++(this.listView.selectionFromTop == 2)  ==>  (this.mNotesAdapter.notes[this.listView.selectionFromTop] has only one value)
++(this.listView.selectionFromTop == 2)  ==>  (this.mRestoredListPosition == wordpressa._1.mocks.ListView.INVALID_POSITION)
++orig(this.mRestoredListPosition) % this.listView.selectionFromTop == 0
++this.mRestoredListPosition + this.listView.selectionFromTop - orig(this.mRestoredListPosition) + 1 == 0
++===========================================================================
+ wordpressa._1.mocks.Activity:::OBJECT
+ ===========================================================================
+ wordpressa._1.mocks.Activity.Activity():::EXIT
+@@ -369,65 +473,3 @@
+ wordpressa._1.mocks.View:::OBJECT
+ ===========================================================================
+ wordpressa._1.mocks.View.View():::EXIT
+-===========================================================================
+-wordpressa._1.VARIANT.NotificationsListFragment:::OBJECT
+-this.mFauxPullToRefreshHelper == this.listAdapter
+-this.mNotesAdapter.hiddenNoteIds.getClass().getName() == this.mNotesAdapter.moderatingNoteIds.getClass().getName()
+-this.mNoteClickListener == this.listAdapter
+-this.mBucket == this.listAdapter
+-this.listView.emptyView == this.listAdapter
+-this.mFauxPullToRefreshHelper == null
+-this.mNotesAdapter.notes[].getClass().getName() == [wordpressa._1.mocks.Note, wordpressa._1.mocks.Note, wordpressa._1.mocks.Note, wordpressa._1.mocks.Note, wordpressa._1.mocks.Note]
+-this.mNotesAdapter.notes[].getClass().getName() elements == wordpressa._1.mocks.Note.class
+-this.mNotesAdapter.notes.getClass().getName() == java.util.ArrayList.class
+-this.mNotesAdapter.hiddenNoteIds.getClass().getName() == java.util.HashSet.class
+-this.mNotesAdapter.cursorClosed == false
+-this.mNoteClickListener == null
+-this.mBucket == null
+-this.listView != null
+-this.listView.firstVisiblePosition == 0
+-this.listView.selectionFromTop one of { -1, 2 }
+-this.listView.emptyView == null
+-this.activity != null
+-this.listAdapter == null
+-size(this.mNotesAdapter.notes[]) == 5
+-this.mNotesAdapter.notes.getClass().getName() != this.mNotesAdapter.hiddenNoteIds.getClass().getName()
+-this.mRestoredListPosition >= wordpressa._1.mocks.ListView.INVALID_POSITION
+-this.mRestoredListPosition != size(this.mNotesAdapter.notes[])
+-this.mRestoredListPosition != size(this.mNotesAdapter.notes[])-1
+-wordpressa._1.mocks.ListView.INVALID_POSITION <= this.listView.selectionFromTop
+-this.listView.firstVisiblePosition != this.listView.selectionFromTop
+-this.listView.selectionFromTop < size(this.mNotesAdapter.notes[])-1
+-===========================================================================
+-wordpressa._1.VARIANT.NotificationsListFragment.NotificationsListFragment():::EXIT
+-this.mNotesAdapter == this.listAdapter
+-this.mRestoredListPosition == this.listView.firstVisiblePosition
+-wordpressa._1.mocks.ListView.INVALID_POSITION == this.listView.selectionFromTop
+-this.mNotesAdapter == null
+-this.mRestoredListPosition == 0
+-this.isAdded == true
+-===========================================================================
+-wordpressa._1.VARIANT.NotificationsListFragment.restoreListScrollPosition():::ENTER
+-wordpressa._1.mocks.ListView.INVALID_POSITION == this.listView.selectionFromTop
+-===========================================================================
+-wordpressa._1.VARIANT.NotificationsListFragment.restoreListScrollPosition():::EXIT
+-this.mFauxPullToRefreshHelper == orig(this.mFauxPullToRefreshHelper)
+-this.mNotesAdapter == orig(this.mNotesAdapter)
+-this.mNotesAdapter.notes == orig(this.mNotesAdapter.notes)
+-this.mNotesAdapter.notes[] == orig(this.mNotesAdapter.notes[])
+-this.mNotesAdapter.notes.getClass().getName() == orig(this.mNotesAdapter.notes.getClass().getName())
+-this.mNotesAdapter.hiddenNoteIds == orig(this.mNotesAdapter.hiddenNoteIds)
+-this.mNotesAdapter.hiddenNoteIds.getClass().getName() == orig(this.mNotesAdapter.hiddenNoteIds.getClass().getName())
+-this.mNotesAdapter.hiddenNoteIds.getClass().getName() == orig(this.mNotesAdapter.moderatingNoteIds.getClass().getName())
+-this.mNotesAdapter.moderatingNoteIds == orig(this.mNotesAdapter.moderatingNoteIds)
+-this.mNotesAdapter.cursorClosed == orig(this.mNotesAdapter.cursorClosed)
+-this.mNoteClickListener == orig(this.mNoteClickListener)
+-this.mBucket == orig(this.mBucket)
+-this.isAdded == orig(this.isAdded)
+-this.listView == orig(this.listView)
+-this.listView.firstVisiblePosition == orig(this.listView.firstVisiblePosition)
+-this.listView.emptyView == orig(this.listView.emptyView)
+-this.activity == orig(this.activity)
+-this.listAdapter == orig(this.listAdapter)
+-orig(this.mRestoredListPosition) % this.listView.selectionFromTop == 0
+-this.mRestoredListPosition + this.listView.selectionFromTop - orig(this.mRestoredListPosition) + 1 == 0

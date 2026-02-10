@@ -1,0 +1,11 @@
+--- /dev/fd/63	2025-12-20 07:52:18.841052519 +0000
++++ /dev/fd/62	2025-12-20 07:52:18.841052519 +0000
+@@ -59,7 +59,7 @@
+ this.targetClass != null
+ this.sourceFilePath != null
+ this.sourceFilePath.toString == "src/main/java/mqtt/_389/VARIANT/MqttSubscribe.java"
+-mqtt._389.Driver.BASE_PACKAGE.toString < this.variant.toString
++mqtt._389.Driver.BASE_PACKAGE.toString > this.variant.toString
+ mqtt._389.Driver.BASE_PACKAGE.toString < this.sourceFilePath.toString
+ this.variant.toString < this.sourceFilePath.toString
+ ===========================================================================

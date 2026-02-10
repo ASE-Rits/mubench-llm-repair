@@ -1,0 +1,17 @@
+--- /dev/fd/63	2025-12-20 07:52:18.599046140 +0000
++++ /dev/fd/62	2025-12-20 07:52:18.599046140 +0000
+@@ -95,14 +95,6 @@
+ hoverruan_weiboclient4j._128.params.Cid:::OBJECT
+ this.value == 12345
+ ===========================================================================
+-hoverruan_weiboclient4j._128.params.Cid.Cid(java.lang.String):::ENTER
+-value has only one value
+-value.toString == "12345"
+-===========================================================================
+-hoverruan_weiboclient4j._128.params.Cid.Cid(java.lang.String):::EXIT
+-value.toString == orig(value.toString)
+-value.toString == "12345"
+-===========================================================================
+ hoverruan_weiboclient4j._128.params.Cid.Cid(long):::ENTER
+ value == 12345
+ ===========================================================================

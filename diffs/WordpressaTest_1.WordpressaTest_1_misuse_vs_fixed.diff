@@ -1,0 +1,204 @@
+--- /dev/fd/63	2025-12-20 07:52:19.092059133 +0000
++++ /dev/fd/62	2025-12-20 07:52:19.092059133 +0000
+@@ -4,6 +4,11 @@
+ ===========================================================================
+ wordpressa.WordpressaTest_1$CommonLogic.CommonLogic():::EXIT
+ ===========================================================================
++wordpressa.WordpressaTest_1$CommonLogic.checksIsAddedBeforeGetListView():::ENTER
++this has only one value
++===========================================================================
++wordpressa.WordpressaTest_1$CommonLogic.checksIsAddedBeforeGetListView():::EXIT
++===========================================================================
+ wordpressa.WordpressaTest_1$CommonLogic.doesNotRestoreWhenInvalidPosition():::ENTER
+ this has only one value
+ ===========================================================================
+@@ -14,6 +19,11 @@
+ ===========================================================================
+ wordpressa.WordpressaTest_1$CommonLogic.doesNotRestoreWhenPositionExceedsCount():::EXIT
+ ===========================================================================
++wordpressa.WordpressaTest_1$CommonLogic.doesNotSetSelectionWhenNotAdded():::ENTER
++this has only one value
++===========================================================================
++wordpressa.WordpressaTest_1$CommonLogic.doesNotSetSelectionWhenNotAdded():::EXIT
++===========================================================================
+ wordpressa.WordpressaTest_1$CommonLogic.restoresScrollPositionWhenAdded():::ENTER
+ this has only one value
+ ===========================================================================
+@@ -84,9 +94,9 @@
+ this.fragment has only one value
+ this.restoreListScrollPosition has only one value
+ this.refreshNotes has only one value
+-return == false
++return == true
+ ===========================================================================
+-wordpressa._1.Driver.checksIsAddedBeforeGetListView():::EXIT;condition="not(return == true)"
++wordpressa._1.Driver.checksIsAddedBeforeGetListView():::EXIT;condition="return == true"
+ ===========================================================================
+ wordpressa._1.Driver.getListView():::ENTER
+ ===========================================================================
+@@ -165,18 +175,26 @@
+ this.fragmentClass == orig(this.fragmentClass)
+ this.restoreListScrollPosition == orig(this.restoreListScrollPosition)
+ this.refreshNotes == orig(this.refreshNotes)
+-(return == false)  <==>  (orig(restoredPosition) one of { -1, 10 })
+-(return == false)  ==>  (orig(isAdded) == true)
+-(return == true)  <==>  (orig(restoredPosition) == 2)
++(return == false)  ==>  (orig(restoredPosition) one of { -1, 2, 10 })
++(return == true)  ==>  (orig(isAdded) == true)
++(return == true)  ==>  (orig(restoredPosition) == 2)
++(return == true)  ==>  (orig(this) has only one value)
++(return == true)  ==>  (return == orig(isAdded))
++(return == true)  ==>  (this.fragment has only one value)
++(return == true)  ==>  (this.refreshNotes has only one value)
++(return == true)  ==>  (this.restoreListScrollPosition has only one value)
+ ===========================================================================
+ wordpressa._1.Driver.testRestoreScrollPosition(boolean, int, int):::EXIT;condition="return == true"
++return == orig(isAdded)
++this.fragment has only one value
++this.restoreListScrollPosition has only one value
++this.refreshNotes has only one value
+ return == true
++orig(this) has only one value
+ orig(restoredPosition) == 2
+ ===========================================================================
+ wordpressa._1.Driver.testRestoreScrollPosition(boolean, int, int):::EXIT;condition="not(return == true)"
+ return == false
+-orig(isAdded) == true
+-orig(restoredPosition) one of { -1, 10 }
+ ===========================================================================
+ wordpressa._1.VARIANT.NotificationsListFragment:::OBJECT
+ this.mFauxPullToRefreshHelper == this.listAdapter
+@@ -194,7 +212,7 @@
+ this.mBucket == null
+ this.listView != null
+ this.listView.firstVisiblePosition == 0
+-this.listView.selectionFromTop one of { -1, 0, 2 }
++this.listView.selectionFromTop one of { -1, 2 }
+ this.listView.emptyView == null
+ this.activity != null
+ this.listAdapter == null
+@@ -204,6 +222,7 @@
+ this.mRestoredListPosition != size(this.mNotesAdapter.notes[])
+ this.mRestoredListPosition != size(this.mNotesAdapter.notes[])-1
+ wordpressa._1.mocks.ListView.INVALID_POSITION <= this.listView.selectionFromTop
++this.listView.firstVisiblePosition != this.listView.selectionFromTop
+ this.listView.selectionFromTop < size(this.mNotesAdapter.notes[])-1
+ ===========================================================================
+ wordpressa._1.VARIANT.NotificationsListFragment.NotificationsListFragment():::EXIT
+@@ -218,6 +237,27 @@
+ wordpressa._1.mocks.ListView.INVALID_POSITION == this.listView.selectionFromTop
+ ===========================================================================
+ wordpressa._1.VARIANT.NotificationsListFragment.restoreListScrollPosition():::EXIT
++this.mRestoredListPosition == orig(this.mRestoredListPosition)
++wordpressa._1.mocks.ListView.INVALID_POSITION == this.listView.selectionFromTop
++===========================================================================
++wordpressa._1.VARIANT.NotificationsListFragment.restoreListScrollPosition():::EXIT
++this.mRestoredListPosition == wordpressa._1.mocks.ListView.INVALID_POSITION
++this.listView.selectionFromTop == orig(this.mRestoredListPosition)
++this.mNotesAdapter has only one value
++this.mNotesAdapter.notes has only one value
++this.mNotesAdapter.notes[] contains no nulls and has only one value, of length 5
++this.mNotesAdapter.hiddenNoteIds has only one value
++this.mNotesAdapter.moderatingNoteIds has only one value
++this.isAdded == true
++this.listView has only one value
++this.listView.selectionFromTop == 2
++this.activity has only one value
++orig(this) has only one value
++this.mNotesAdapter.notes[this.listView.firstVisiblePosition] has only one value
++this.mNotesAdapter.notes[this.listView.selectionFromTop] has only one value
++this.mNotesAdapter.notes[this.listView.selectionFromTop-1] has only one value
++===========================================================================
++wordpressa._1.VARIANT.NotificationsListFragment.restoreListScrollPosition():::EXIT
+ this.mFauxPullToRefreshHelper == orig(this.mFauxPullToRefreshHelper)
+ this.mNotesAdapter == orig(this.mNotesAdapter)
+ this.mNotesAdapter.notes == orig(this.mNotesAdapter.notes)
+@@ -236,8 +276,29 @@
+ this.listView.emptyView == orig(this.listView.emptyView)
+ this.activity == orig(this.activity)
+ this.listAdapter == orig(this.listAdapter)
+-this.mRestoredListPosition one of { -1, 10 }
+-orig(this.mRestoredListPosition) % this.mRestoredListPosition == 0
++(this.listView.selectionFromTop == 2)  ==>  (orig(this) has only one value)
++(this.listView.selectionFromTop == 2)  ==>  (orig(this.mNotesAdapter.notes[post(this.listView.selectionFromTop)-1]) has only one value)
++(this.listView.selectionFromTop == 2)  ==>  (orig(this.mNotesAdapter.notes[post(this.listView.selectionFromTop)]) has only one value)
++(this.listView.selectionFromTop == 2)  ==>  (orig(this.mNotesAdapter.notes[this.mRestoredListPosition-1]) has only one value)
++(this.listView.selectionFromTop == 2)  ==>  (orig(this.mNotesAdapter.notes[this.mRestoredListPosition]) has only one value)
++(this.listView.selectionFromTop == 2)  ==>  (orig(this.mRestoredListPosition) == 2)
++(this.listView.selectionFromTop == 2)  ==>  (this.activity has only one value)
++(this.listView.selectionFromTop == 2)  ==>  (this.isAdded == true)
++(this.listView.selectionFromTop == 2)  ==>  (this.listView has only one value)
++(this.listView.selectionFromTop == 2)  ==>  (this.listView.selectionFromTop == orig(this.mRestoredListPosition))
++(this.listView.selectionFromTop == 2)  ==>  (this.mNotesAdapter has only one value)
++(this.listView.selectionFromTop == 2)  ==>  (this.mNotesAdapter.hiddenNoteIds has only one value)
++(this.listView.selectionFromTop == 2)  ==>  (this.mNotesAdapter.moderatingNoteIds has only one value)
++(this.listView.selectionFromTop == 2)  ==>  (this.mNotesAdapter.notes has only one value)
++(this.listView.selectionFromTop == 2)  ==>  (this.mNotesAdapter.notes[] contains no nulls and has only one value, of length 5)
++(this.listView.selectionFromTop == 2)  ==>  (this.mNotesAdapter.notes[orig(this.mRestoredListPosition)-1] has only one value)
++(this.listView.selectionFromTop == 2)  ==>  (this.mNotesAdapter.notes[orig(this.mRestoredListPosition)] has only one value)
++(this.listView.selectionFromTop == 2)  ==>  (this.mNotesAdapter.notes[this.listView.firstVisiblePosition] has only one value)
++(this.listView.selectionFromTop == 2)  ==>  (this.mNotesAdapter.notes[this.listView.selectionFromTop-1] has only one value)
++(this.listView.selectionFromTop == 2)  ==>  (this.mNotesAdapter.notes[this.listView.selectionFromTop] has only one value)
++(this.listView.selectionFromTop == 2)  ==>  (this.mRestoredListPosition == wordpressa._1.mocks.ListView.INVALID_POSITION)
++orig(this.mRestoredListPosition) % this.listView.selectionFromTop == 0
++this.mRestoredListPosition + this.listView.selectionFromTop - orig(this.mRestoredListPosition) + 1 == 0
+ ===========================================================================
+ wordpressa._1.mocks.Activity:::OBJECT
+ ===========================================================================
+@@ -277,10 +338,26 @@
+ return == orig(this.listView)
+ return.firstVisiblePosition == orig(this.listView.firstVisiblePosition)
+ return.emptyView == orig(this.listView.emptyView)
+-return != null
+ return.firstVisiblePosition == 0
+ return.emptyView == null
+ ===========================================================================
++wordpressa._1.mocks.ListFragment.isAdded():::ENTER
++===========================================================================
++wordpressa._1.mocks.ListFragment.isAdded():::EXIT
++this.isAdded == return
++this.listView == orig(this.listView)
++this.listView.firstVisiblePosition == orig(this.listView.firstVisiblePosition)
++this.listView.emptyView == orig(this.listView.emptyView)
++this.activity == orig(this.activity)
++this.listAdapter == orig(this.listAdapter)
++return == orig(this.isAdded)
++===========================================================================
++wordpressa._1.mocks.ListFragment.isAdded():::EXIT;condition="return == true"
++return == true
++===========================================================================
++wordpressa._1.mocks.ListFragment.isAdded():::EXIT;condition="not(return == true)"
++return == false
++===========================================================================
+ wordpressa._1.mocks.ListFragment.setIsAdded(boolean):::ENTER
+ this.isAdded == true
+ ===========================================================================
+@@ -296,9 +373,11 @@
+ ===========================================================================
+ wordpressa._1.mocks.ListView:::OBJECT
+ this.firstVisiblePosition == 0
+-this.selectionFromTop one of { -1, 0, 2 }
++this.selectionFromTop one of { -1, 2 }
++this.selectionFromTop != 0
+ this.emptyView == null
+ wordpressa._1.mocks.ListView.INVALID_POSITION <= this.selectionFromTop
++this.firstVisiblePosition != this.selectionFromTop
+ ===========================================================================
+ wordpressa._1.mocks.ListView.ListView():::EXIT
+ wordpressa._1.mocks.ListView.INVALID_POSITION == this.selectionFromTop
+@@ -310,13 +389,12 @@
+ this.selectionFromTop == return
+ this.emptyView == orig(this.emptyView)
+ return == orig(this.selectionFromTop)
+-return one of { -1, 0, 2 }
++return one of { -1, 2 }
+ ===========================================================================
+ wordpressa._1.mocks.ListView.setSelectionFromTop(int, int):::ENTER
+ wordpressa._1.mocks.ListView.INVALID_POSITION == this.selectionFromTop
+ this.firstVisiblePosition == y
+-position one of { -1, 0, 2 }
+-wordpressa._1.mocks.ListView.INVALID_POSITION <= position
++position one of { -1, 2 }
+ ===========================================================================
+ wordpressa._1.mocks.ListView.setSelectionFromTop(int, int):::EXIT
+ this.firstVisiblePosition == orig(this.firstVisiblePosition)

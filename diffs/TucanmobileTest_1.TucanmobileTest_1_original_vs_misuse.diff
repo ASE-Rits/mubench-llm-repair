@@ -1,0 +1,195 @@
+--- /dev/fd/63	2025-12-20 07:52:19.063058369 +0000
++++ /dev/fd/62	2025-12-20 07:52:19.064058395 +0000
+@@ -4,11 +4,6 @@
+ ===========================================================================
+ tucanmobile.TucanmobileTest_1$CommonLogic.CommonLogic():::EXIT
+ ===========================================================================
+-tucanmobile.TucanmobileTest_1$CommonLogic.testDismissWhenDialogIsNotShowing():::ENTER
+-this has only one value
+-===========================================================================
+-tucanmobile.TucanmobileTest_1$CommonLogic.testDismissWhenDialogIsNotShowing():::EXIT
+-===========================================================================
+ tucanmobile.TucanmobileTest_1$CommonLogic.testDismissWhenDialogIsShowing():::ENTER
+ this has only one value
+ ===========================================================================
+@@ -60,6 +55,9 @@
+ tucanmobile._1.Driver.invokeOnPostExecute(tucanmobile._1.requirements.AnswerObject):::ENTER
+ result.HTML_text == result.redirectURL
+ result.HTML_text.toString == result.redirectURL.toString
++this has only one value
++this.instance has only one value
++result has only one value
+ result.HTML_text has only one value
+ result.HTML_text.toString == ""
+ result.lastcalledURL == null
+@@ -77,6 +75,7 @@
+ result.HTML_text.toString == orig(result.redirectURL.toString)
+ result.lastcalledURL == orig(result.lastcalledURL)
+ result.Cookies == orig(result.Cookies)
++this.instance has only one value
+ result.HTML_text has only one value
+ result.HTML_text.toString == ""
+ result.lastcalledURL == null
+@@ -89,6 +88,85 @@
+ this.instance == orig(this.instance)
+ this.instance.getClass().getName() == orig(this.instance.getClass().getName())
+ ===========================================================================
++tucanmobile._1.Driver.rethrow(java.lang.Throwable):::ENTER
++this has only one value
++this.instance has only one value
++t has only one value
++===========================================================================
++tucanmobile._1.Driver.rethrow(java.lang.Throwable):::EXIT
++===========================================================================
++tucanmobile._1.Driver.rethrow(java.lang.Throwable):::EXIT
++this.targetClass == orig(this.targetClass)
++this.instance == orig(this.instance)
++this.instance.getClass().getName() == orig(this.instance.getClass().getName())
++this.instance has only one value
++return has only one value
++===========================================================================
++tucanmobile._1.VARIANT.SimpleSecureBrowser:::OBJECT
++this.outerCallingActivity == null
++this.dialog.title.toString one of { "", "mock_string_2" }
++===========================================================================
++tucanmobile._1.VARIANT.SimpleSecureBrowser.SimpleSecureBrowser(tucanmobile._1.mocks.SimpleWebListActivity):::ENTER
++===========================================================================
++tucanmobile._1.VARIANT.SimpleSecureBrowser.SimpleSecureBrowser(tucanmobile._1.mocks.SimpleWebListActivity):::EXIT
++this.outerCallingListActivity == orig(callingActivity)
++this.outerCallingListActivity.resources == callingActivity.resources
++callingActivity.resources == orig(callingActivity.resources)
++this.dialog == null
++===========================================================================
++tucanmobile._1.VARIANT.SimpleSecureBrowser.onPostExecute(tucanmobile._1.requirements.AnswerObject):::ENTER
++this.dialog.title == result.HTML_text
++this.dialog.title == result.redirectURL
++this.dialog.title.toString == result.HTML_text.toString
++this.dialog.title.toString == result.redirectURL.toString
++this has only one value
++this.outerCallingListActivity has only one value
++this.outerCallingListActivity.resources has only one value
++this.dialog has only one value
++this.dialog.showing == true
++this.dialog.title has only one value
++this.dialog.title.toString == ""
++result has only one value
++result.lastcalledURL == null
++result.Cookies == null
++===========================================================================
++tucanmobile._1.VARIANT.SimpleSecureBrowser.onPostExecute(tucanmobile._1.requirements.AnswerObject):::EXIT
++this.outerCallingListActivity == orig(this.outerCallingListActivity)
++this.outerCallingListActivity.resources == orig(this.outerCallingListActivity.resources)
++this.outerCallingActivity == orig(this.outerCallingActivity)
++this.dialog == orig(this.dialog)
++result.HTML_text == result.redirectURL
++result.HTML_text == orig(this.dialog.title)
++result.HTML_text == orig(result.HTML_text)
++result.HTML_text == orig(result.redirectURL)
++result.HTML_text.toString == result.redirectURL.toString
++result.HTML_text.toString == orig(this.dialog.title.toString)
++result.HTML_text.toString == orig(result.HTML_text.toString)
++result.HTML_text.toString == orig(result.redirectURL.toString)
++result.lastcalledURL == orig(result.lastcalledURL)
++result.Cookies == orig(result.Cookies)
++this.outerCallingListActivity has only one value
++this.outerCallingListActivity.resources has only one value
++this.dialog has only one value
++this.dialog.showing == false
++this.dialog.title has only one value
++this.dialog.title.toString == "mock_string_2"
++result.HTML_text has only one value
++result.HTML_text.toString == ""
++result.lastcalledURL == null
++result.Cookies == null
++===========================================================================
++tucanmobile._1.VARIANT.SimpleSecureBrowser.onPreExecute():::ENTER
++this.dialog == null
++===========================================================================
++tucanmobile._1.VARIANT.SimpleSecureBrowser.onPreExecute():::EXIT
++this.outerCallingListActivity == orig(this.outerCallingListActivity)
++this.outerCallingListActivity.resources == orig(this.outerCallingListActivity.resources)
++this.outerCallingActivity == orig(this.outerCallingActivity)
++this.dialog.showing == true
++this.dialog.title has only one value
++this.dialog.title.toString == ""
++===========================================================================
+ tucanmobile._1.mocks.AsyncTask:::OBJECT
+ this.getClass().getName() == tucanmobile._1.VARIANT.SimpleSecureBrowser.class
+ ===========================================================================
+@@ -121,9 +199,14 @@
+ this.title == orig(this.title)
+ this.title.toString == orig(this.title.toString)
+ return == orig(this.showing)
++(return == false)  ==>  (this.title.toString one of { "", "mock_string_2" })
+ (return == true)  ==>  (orig(this) has only one value)
++(return == true)  ==>  (this.title has only one value)
++(return == true)  ==>  (this.title.toString == "")
+ ===========================================================================
+ tucanmobile._1.mocks.ProgressDialog.isShowing():::EXIT;condition="return == true"
++this.title has only one value
++this.title.toString == ""
+ return == true
+ orig(this) has only one value
+ ===========================================================================
+@@ -219,61 +302,6 @@
+ result.lastcalledURL == null
+ result.Cookies == null
+ ===========================================================================
+-tucanmobile._1.VARIANT.SimpleSecureBrowser:::OBJECT
+-this.outerCallingActivity == null
+-this.dialog.title.toString one of { "", "mock_string_2" }
+-===========================================================================
+-tucanmobile._1.VARIANT.SimpleSecureBrowser.SimpleSecureBrowser(tucanmobile._1.mocks.SimpleWebListActivity):::ENTER
+-===========================================================================
+-tucanmobile._1.VARIANT.SimpleSecureBrowser.SimpleSecureBrowser(tucanmobile._1.mocks.SimpleWebListActivity):::EXIT
+-this.outerCallingListActivity == orig(callingActivity)
+-this.outerCallingListActivity.resources == callingActivity.resources
+-callingActivity.resources == orig(callingActivity.resources)
+-this.dialog == null
+-===========================================================================
+-tucanmobile._1.VARIANT.SimpleSecureBrowser.onPostExecute(tucanmobile._1.requirements.AnswerObject):::ENTER
+-this.dialog.title == result.HTML_text
+-this.dialog.title == result.redirectURL
+-this.dialog.title.toString == result.HTML_text.toString
+-this.dialog.title.toString == result.redirectURL.toString
+-this.dialog.title has only one value
+-this.dialog.title.toString == ""
+-result.lastcalledURL == null
+-result.Cookies == null
+-===========================================================================
+-tucanmobile._1.VARIANT.SimpleSecureBrowser.onPostExecute(tucanmobile._1.requirements.AnswerObject):::EXIT
+-this.outerCallingListActivity == orig(this.outerCallingListActivity)
+-this.outerCallingListActivity.resources == orig(this.outerCallingListActivity.resources)
+-this.outerCallingActivity == orig(this.outerCallingActivity)
+-this.dialog == orig(this.dialog)
+-result.HTML_text == result.redirectURL
+-result.HTML_text == orig(this.dialog.title)
+-result.HTML_text == orig(result.HTML_text)
+-result.HTML_text == orig(result.redirectURL)
+-result.HTML_text.toString == result.redirectURL.toString
+-result.HTML_text.toString == orig(this.dialog.title.toString)
+-result.HTML_text.toString == orig(result.HTML_text.toString)
+-result.HTML_text.toString == orig(result.redirectURL.toString)
+-result.lastcalledURL == orig(result.lastcalledURL)
+-result.Cookies == orig(result.Cookies)
+-this.dialog.showing == false
+-this.dialog.title.toString == "mock_string_2"
+-result.HTML_text has only one value
+-result.HTML_text.toString == ""
+-result.lastcalledURL == null
+-result.Cookies == null
+-===========================================================================
+-tucanmobile._1.VARIANT.SimpleSecureBrowser.onPreExecute():::ENTER
+-this.dialog == null
+-===========================================================================
+-tucanmobile._1.VARIANT.SimpleSecureBrowser.onPreExecute():::EXIT
+-this.outerCallingListActivity == orig(this.outerCallingListActivity)
+-this.outerCallingListActivity.resources == orig(this.outerCallingListActivity.resources)
+-this.outerCallingActivity == orig(this.outerCallingActivity)
+-this.dialog.showing == true
+-this.dialog.title has only one value
+-this.dialog.title.toString == ""
+-===========================================================================
+ tucanmobile._1.requirements.AnswerObject:::OBJECT
+ this.HTML_text == this.redirectURL
+ this.HTML_text.toString == this.redirectURL.toString

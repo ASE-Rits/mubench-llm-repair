@@ -1,0 +1,117 @@
+--- /dev/fd/63	2025-12-20 07:52:19.068058500 +0000
++++ /dev/fd/62	2025-12-20 07:52:19.067058474 +0000
+@@ -4,6 +4,11 @@
+ ===========================================================================
+ tucanmobile.TucanmobileTest_1$CommonLogic.CommonLogic():::EXIT
+ ===========================================================================
++tucanmobile.TucanmobileTest_1$CommonLogic.testDismissWhenDialogIsNotShowing():::ENTER
++this has only one value
++===========================================================================
++tucanmobile.TucanmobileTest_1$CommonLogic.testDismissWhenDialogIsNotShowing():::EXIT
++===========================================================================
+ tucanmobile.TucanmobileTest_1$CommonLogic.testDismissWhenDialogIsShowing():::ENTER
+ this has only one value
+ ===========================================================================
+@@ -55,9 +60,6 @@
+ tucanmobile._1.Driver.invokeOnPostExecute(tucanmobile._1.requirements.AnswerObject):::ENTER
+ result.HTML_text == result.redirectURL
+ result.HTML_text.toString == result.redirectURL.toString
+-this has only one value
+-this.instance has only one value
+-result has only one value
+ result.HTML_text has only one value
+ result.HTML_text.toString == ""
+ result.lastcalledURL == null
+@@ -75,7 +77,6 @@
+ result.HTML_text.toString == orig(result.redirectURL.toString)
+ result.lastcalledURL == orig(result.lastcalledURL)
+ result.Cookies == orig(result.Cookies)
+-this.instance has only one value
+ result.HTML_text has only one value
+ result.HTML_text.toString == ""
+ result.lastcalledURL == null
+@@ -88,20 +89,6 @@
+ this.instance == orig(this.instance)
+ this.instance.getClass().getName() == orig(this.instance.getClass().getName())
+ ===========================================================================
+-tucanmobile._1.Driver.rethrow(java.lang.Throwable):::ENTER
+-this has only one value
+-this.instance has only one value
+-t has only one value
+-===========================================================================
+-tucanmobile._1.Driver.rethrow(java.lang.Throwable):::EXIT
+-===========================================================================
+-tucanmobile._1.Driver.rethrow(java.lang.Throwable):::EXIT
+-this.targetClass == orig(this.targetClass)
+-this.instance == orig(this.instance)
+-this.instance.getClass().getName() == orig(this.instance.getClass().getName())
+-this.instance has only one value
+-return has only one value
+-===========================================================================
+ tucanmobile._1.VARIANT.SimpleSecureBrowser:::OBJECT
+ this.outerCallingActivity == null
+ this.dialog.title.toString one of { "", "mock_string_2" }
+@@ -119,14 +106,8 @@
+ this.dialog.title == result.redirectURL
+ this.dialog.title.toString == result.HTML_text.toString
+ this.dialog.title.toString == result.redirectURL.toString
+-this has only one value
+-this.outerCallingListActivity has only one value
+-this.outerCallingListActivity.resources has only one value
+-this.dialog has only one value
+-this.dialog.showing == true
+ this.dialog.title has only one value
+ this.dialog.title.toString == ""
+-result has only one value
+ result.lastcalledURL == null
+ result.Cookies == null
+ ===========================================================================
+@@ -145,12 +126,7 @@
+ result.HTML_text.toString == orig(result.redirectURL.toString)
+ result.lastcalledURL == orig(result.lastcalledURL)
+ result.Cookies == orig(result.Cookies)
+-this.outerCallingListActivity has only one value
+-this.outerCallingListActivity.resources has only one value
+-this.dialog has only one value
+ this.dialog.showing == false
+-this.dialog.title has only one value
+-this.dialog.title.toString == "mock_string_2"
+ result.HTML_text has only one value
+ result.HTML_text.toString == ""
+ result.lastcalledURL == null
+@@ -199,14 +175,9 @@
+ this.title == orig(this.title)
+ this.title.toString == orig(this.title.toString)
+ return == orig(this.showing)
+-(return == false)  ==>  (this.title.toString one of { "", "mock_string_2" })
+ (return == true)  ==>  (orig(this) has only one value)
+-(return == true)  ==>  (this.title has only one value)
+-(return == true)  ==>  (this.title.toString == "")
+ ===========================================================================
+ tucanmobile._1.mocks.ProgressDialog.isShowing():::EXIT;condition="return == true"
+-this.title has only one value
+-this.title.toString == ""
+ return == true
+ orig(this) has only one value
+ ===========================================================================
+@@ -229,8 +200,11 @@
+ this.title.toString == ""
+ ===========================================================================
+ tucanmobile._1.mocks.ProgressDialog.setTitle(java.lang.String):::ENTER
++this has only one value
++this.showing == true
+ this.title has only one value
+ this.title.toString == ""
++title has only one value
+ title.toString == "mock_string_2"
+ ===========================================================================
+ tucanmobile._1.mocks.ProgressDialog.setTitle(java.lang.String):::EXIT
+@@ -238,6 +212,8 @@
+ this.title == orig(title)
+ this.title.toString == title.toString
+ title.toString == orig(title.toString)
++this.showing == true
++this.title has only one value
+ title.toString == "mock_string_2"
+ ===========================================================================
+ tucanmobile._1.mocks.ProgressDialog.show(java.lang.Object, java.lang.String, java.lang.String, boolean):::ENTER

@@ -1,0 +1,67 @@
+--- /dev/fd/63	2025-12-20 07:52:18.825052097 +0000
++++ /dev/fd/62	2025-12-20 07:52:18.825052097 +0000
+@@ -74,33 +74,6 @@
+ return == null
+ paramTypes[] is the reverse of args[]
+ ===========================================================================
+-lnreadera._2.mocks.Handler:::OBJECT
+-this has only one value
+-===========================================================================
+-lnreadera._2.mocks.Handler.Handler():::EXIT
+-===========================================================================
+-lnreadera._2.mocks.SherlockActivity:::OBJECT
+-this has only one value
+-===========================================================================
+-lnreadera._2.mocks.SherlockActivity.SherlockActivity():::EXIT
+-this.superOnDestroyCalled == false
+-===========================================================================
+-lnreadera._2.mocks.SherlockActivity.isSuperOnDestroyCalled():::ENTER
+-this.superOnDestroyCalled == true
+-===========================================================================
+-lnreadera._2.mocks.SherlockActivity.isSuperOnDestroyCalled():::EXIT
+-this.superOnDestroyCalled == return
+-return == orig(this.superOnDestroyCalled)
+-return == true
+-===========================================================================
+-lnreadera._2.mocks.SherlockActivity.isSuperOnDestroyCalled():::EXIT;condition="return == true"
+-===========================================================================
+-lnreadera._2.mocks.SherlockActivity.onDestroy():::ENTER
+-this.superOnDestroyCalled == false
+-===========================================================================
+-lnreadera._2.mocks.SherlockActivity.onDestroy():::EXIT
+-this.superOnDestroyCalled == true
+-===========================================================================
+ lnreadera._2.VARIANT.DisplayLightNovelContentActivity:::CLASS
+ lnreadera._2.VARIANT.DisplayLightNovelContentActivity.TAG has only one value
+ lnreadera._2.VARIANT.DisplayLightNovelContentActivity.TAG.toString == "class lnreadera._2.VARIANT.DisplayLightNovelContentActivity"
+@@ -155,3 +128,30 @@
+ this.hideBottom == orig(this.hideTop)
+ this.mHandler == orig(this.mHandler)
+ this.superOnDestroyCalled == true
++===========================================================================
++lnreadera._2.mocks.Handler:::OBJECT
++this has only one value
++===========================================================================
++lnreadera._2.mocks.Handler.Handler():::EXIT
++===========================================================================
++lnreadera._2.mocks.SherlockActivity:::OBJECT
++this has only one value
++===========================================================================
++lnreadera._2.mocks.SherlockActivity.SherlockActivity():::EXIT
++this.superOnDestroyCalled == false
++===========================================================================
++lnreadera._2.mocks.SherlockActivity.isSuperOnDestroyCalled():::ENTER
++this.superOnDestroyCalled == true
++===========================================================================
++lnreadera._2.mocks.SherlockActivity.isSuperOnDestroyCalled():::EXIT
++this.superOnDestroyCalled == return
++return == orig(this.superOnDestroyCalled)
++return == true
++===========================================================================
++lnreadera._2.mocks.SherlockActivity.isSuperOnDestroyCalled():::EXIT;condition="return == true"
++===========================================================================
++lnreadera._2.mocks.SherlockActivity.onDestroy():::ENTER
++this.superOnDestroyCalled == false
++===========================================================================
++lnreadera._2.mocks.SherlockActivity.onDestroy():::EXIT
++this.superOnDestroyCalled == true

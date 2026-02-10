@@ -1,0 +1,1042 @@
+--- /dev/fd/63	2025-12-20 07:52:19.017057158 +0000
++++ /dev/fd/62	2025-12-20 07:52:19.016057131 +0000
+@@ -1721,7 +1721,7 @@
+ org.slf4j.simple.SimpleLoggerConfiguration.LOG_FILE_DEFAULT.toString == org.slf4j.simple.SimpleLogger.CONFIG_PARAMS.logFile.toString
+ org.slf4j.simple.SimpleLoggerConfiguration.WARN_LEVELS_STRING_DEFAULT == org.slf4j.simple.SimpleLogger.CONFIG_PARAMS.warnLevelString
+ org.slf4j.simple.SimpleLoggerConfiguration.WARN_LEVELS_STRING_DEFAULT.toString == org.slf4j.simple.SimpleLogger.CONFIG_PARAMS.warnLevelString.toString
+-org.slf4j.simple.SimpleLogger.START_TIME == 1766213605694L
++org.slf4j.simple.SimpleLogger.START_TIME == 1766213790995L
+ org.slf4j.simple.SimpleLogger.SP == 32
+ org.slf4j.simple.SimpleLogger.TID_PREFIX has only one value
+ org.slf4j.simple.SimpleLogger.TID_PREFIX.toString == "tid="
+@@ -2981,7 +2981,7 @@
+ this.reporterClass == orig(this.reporterClass)
+ this.reporterInstance == null
+ this.reporterClass == null
+-return.toString == "package testng._22.VARIANT;\n\nimport testng._22.requirements.org.testng.IReporter;\nimport testng._22.requirements.org.testng.ISuite;\nimport testng._22.requirements.org.testng.ISuiteResult;\nimport testng._22.requirements.org.testng.ITestContext;\nimport testng._22.requirements.org.testng.ITestNGMethod;\nimport testng._22.requirements.org.testng.Reporter;\nimport testng._22.requirements.org.testng.internal.Utils;\nimport testng._22.requirements.org.testng.xml.XmlSuite;\nimport testng._22.requirements.org.testng.reporters.XMLReporterConfig;\nimport testng._22.requirements.org.testng.reporters.XMLStringBuffer;\nimport testng._22.requirements.org.testng.reporters.XMLSuiteResultWriter;\n\nimport java.io.File;\nimport java.text.SimpleDateFormat;\nimport java.util.Collection;\nimport java.util.Date;\nimport java.util.LinkedHashSet;\nimport java.util.List;\nimport java.util.Map;\nimport java.util.Properties;\nimport java.util.Set;\nimport java.util.TimeZone;\n\n/**\n * The main entry for the XML generation operation\n * \n * @author Cosmin Marginean, Mar 16, 2007\n */\npublic class XMLReporter implements IReporter {\n  public static final String FILE_NAME = \"testng-results.xml\";\n\n  private final XMLReporterConfig config = new XMLReporterConfig();\n  private XMLStringBuffer rootBuffer;\n\n  @Override\n  public void generateReport(List<XmlSuite> xmlSuites, List<ISuite> suites,\n      String outputDirectory) {\n    if (Utils.isStringEmpty(config.getOutputDirectory())) {\n      config.setOutputDirectory(outputDirectory);\n    }\n\n    // Calculate passed/failed/skipped\n    int passed = 0;\n    int failed = 0;\n    int skipped = 0;\n    for (ISuite s : suites) {\n      Map<String, ISuiteResult> suiteResults = s.getResults();\n      synchronized(suiteResults) {\n        for (ISuiteResult sr : suiteResults.values()) {\n          ITestContext testContext = sr.getTestContext();\n          passed += testContext.getPassedTests().size();\n          failed += testContext.getFailedTests().size();\n          skipped += testContext.getSkippedTests().size();\n        }\n      }\n    }\n\n    rootBuffer = new XMLStringBuffer();\n    Properties p = new Properties();\n    p.put(\"passed\", passed);\n    p.put(\"failed\", failed);\n    p.put(\"skipped\", skipped);\n    p.put(\"total\", passed + failed + skipped);\n    rootBuffer.push(XMLReporterConfig.TAG_TESTNG_RESULTS, p);\n    writeReporterOutput(rootBuffer);\n    for (ISuite suite : suites) {\n      writeSuite(suite.getXmlSuite(), suite);\n    }\n    rootBuffer.pop();\n    Utils.writeUtf8File(config.getOutputDirectory(), FILE_NAME, rootBuffer, null /* no prefix */);\n  }\n\n  private void writeReporterOutput(XMLStringBuffer xmlBuffer) {\n    // TODO: Cosmin - maybe a <line> element isn't indicated for each line\n    xmlBuffer.push(XMLReporterConfig.TAG_REPORTER_OUTPUT);\n    List<String> output = Reporter.getOutput();\n    for (String line : output) {\n      if (line != null) {\n        xmlBuffer.push(XMLReporterConfig.TAG_LINE);\n        xmlBuffer.addCDATA(line);\n        xmlBuffer.pop();\n      }\n    }\n    xmlBuffer.pop();\n  }\n\n  private void writeSuite(XmlSuite xmlSuite, ISuite suite) {\n    switch (config.getFileFragmentationLevel()) {\n    case XMLReporterConfig.FF_LEVEL_NONE:\n      writeSuiteToBuffer(rootBuffer, suite);\n      break;\n    case XMLReporterConfig.FF_LEVEL_SUITE:\n    case XMLReporterConfig.FF_LEVEL_SUITE_RESULT:\n      File suiteFile = referenceSuite(rootBuffer, suite);\n      writeSuiteToFile(suiteFile, suite);\n    }\n  }\n\n  private void writeSuiteToFile(File suiteFile, ISuite suite) {\n    XMLStringBuffer xmlBuffer = new XMLStringBuffer();\n    writeSuiteToBuffer(xmlBuffer, suite);\n    File parentDir = suiteFile.getParentFile();\n    if (parentDir.exists() || suiteFile.getParentFile().mkdirs()) {\n      Utils.writeFile(parentDir.getAbsolutePath(), FILE_NAME, xmlBuffer.toXML());\n    }\n  }\n\n  private File referenceSuite(XMLStringBuffer xmlBuffer, ISuite suite) {\n    String relativePath = suite.getName() + File.separatorChar + FILE_NAME;\n    File suiteFile = new File(config.getOutputDirectory(), relativePath);\n    Properties attrs = new Properties();\n    attrs.setProperty(XMLReporterConfig.ATTR_URL, relativePath);\n    xmlBuffer.addEmptyElement(XMLReporterConfig.TAG_SUITE, attrs);\n    return suiteFile;\n  }\n\n  private void writeSuiteToBuffer(XMLStringBuffer xmlBuffer, ISuite suite) {\n    xmlBuffer.push(XMLReporterConfig.TAG_SUITE, getSuiteAttributes(suite));\n    writeSuiteGroups(xmlBuffer, suite);\n\n    Map<String, ISuiteResult> results = suite.getResults();\n    XMLSuiteResultWriter suiteResultWriter = new XMLSuiteResultWriter(config);\n    for (Map.Entry<String, ISuiteResult> result : results.entrySet()) {\n      suiteResultWriter.writeSuiteResult(xmlBuffer, result.getValue());\n    }\n\n    xmlBuffer.pop();\n  }\n\n  private void writeSuiteGroups(XMLStringBuffer xmlBuffer, ISuite suite) {\n    xmlBuffer.push(XMLReporterConfig.TAG_GROUPS);\n    Map<String, Collection<ITestNGMethod>> methodsByGroups = suite.getMethodsByGroups();\n    for (Map.Entry<String, Collection<ITestNGMethod>> entry : methodsByGroups.entrySet()) {\n      Properties groupAttrs = new Properties();\n      groupAttrs.setProperty(XMLReporterConfig.ATTR_NAME, entry.getKey());\n      xmlBuffer.push(XMLReporterConfig.TAG_GROUP, groupAttrs);\n      Set<ITestNGMethod> groupMethods = getUniqueMethodSet(entry.getValue());\n      for (ITestNGMethod groupMethod : groupMethods) {\n        Properties methodAttrs = new Properties();\n        methodAttrs.setProperty(XMLReporterConfig.ATTR_NAME, groupMethod.getMethodName());\n        methodAttrs.setProperty(XMLReporterConfig.ATTR_METHOD_SIG, groupMethod.toString());\n        methodAttrs.setProperty(XMLReporterConfig.ATTR_CLASS, groupMethod.getRealClass().getName());\n        xmlBuffer.addEmptyElement(XMLReporterConfig.TAG_METHOD, methodAttrs);\n      }\n      xmlBuffer.pop();\n    }\n    xmlBuffer.pop();\n  }\n\n  private Properties getSuiteAttributes(ISuite suite) {\n    Properties props = new Properties();\n    props.setProperty(XMLReporterConfig.ATTR_NAME, suite.getName());\n\n    // Calculate the duration\n    Map<String, ISuiteResult> results = suite.getResults();\n    Date minStartDate = new Date();\n    Date maxEndDate = null;\n    // TODO: We could probably optimize this in order not to traverse this twice\n    synchronized(results) {\n      for (Map.Entry<String, ISuiteResult> result : results.entrySet()) {\n        ITestContext testContext = result.getValue().getTestContext();\n        Date startDate = testContext.getStartDate();\n        Date endDate = testContext.getEndDate();\n        if (minStartDate.after(startDate)) {\n          minStartDate = startDate;\n        }\n        if (maxEndDate == null || maxEndDate.before(endDate)) {\n          maxEndDate = endDate != null ? endDate : startDate;\n        }\n      }\n    }\n    // The suite could be completely empty\n    if (maxEndDate == null) {\n      maxEndDate = minStartDate;\n    }\n    addDurationAttributes(config, props, minStartDate, maxEndDate);\n    return props;\n  }\n\n  /**\n   * Add started-at, finished-at and duration-ms attributes to the <suite> tag\n   */\n  public static void addDurationAttributes(XMLReporterConfig config, Properties attributes,\n      Date minStartDate, Date maxEndDate) {\n    SimpleDateFormat format = new SimpleDateFormat(config.getTimestampFormat());\n    TimeZone utc = TimeZone.getTimeZone(\"UTC\");\n    format.setTimeZone(utc);\n    String startTime = format.format(minStartDate);\n    String endTime = format.format(maxEndDate);\n    long duration = maxEndDate.getTime() - minStartDate.getTime();\n\n    attributes.setProperty(XMLReporterConfig.ATTR_STARTED_AT, startTime);\n    attributes.setProperty(XMLReporterConfig.ATTR_FINISHED_AT, endTime);\n    attributes.setProperty(XMLReporterConfig.ATTR_DURATION_MS, Long.toString(duration));\n  }\n\n  private Set<ITestNGMethod> getUniqueMethodSet(Collection<ITestNGMethod> methods) {\n    Set<ITestNGMethod> result = new LinkedHashSet<>();\n    for (ITestNGMethod method : methods) {\n      result.add(method);\n    }\n    return result;\n  }\n\n  // TODO: This is not the smartest way to implement the config\n  public int getFileFragmentationLevel() {\n    return config.getFileFragmentationLevel();\n  }\n\n  public void setFileFragmentationLevel(int fileFragmentationLevel) {\n    config.setFileFragmentationLevel(fileFragmentationLevel);\n  }\n\n  public int getStackTraceOutputMethod() {\n    return config.getStackTraceOutputMethod();\n  }\n\n  public void setStackTraceOutputMethod(int stackTraceOutputMethod) {\n    config.setStackTraceOutputMethod(stackTraceOutputMethod);\n  }\n\n  public String getOutputDirectory() {\n    return config.getOutputDirectory();\n  }\n\n  public void setOutputDirectory(String outputDirectory) {\n    config.setOutputDirectory(outputDirectory);\n  }\n\n  public boolean isGenerateGroupsAttribute() {\n    return config.isGenerateGroupsAttribute();\n  }\n\n  public void setGenerateGroupsAttribute(boolean generateGroupsAttribute) {\n    config.setGenerateGroupsAttribute(generateGroupsAttribute);\n  }\n\n  public boolean isSplitClassAndPackageNames() {\n    return config.isSplitClassAndPackageNames();\n  }\n\n  public void setSplitClassAndPackageNames(boolean splitClassAndPackageNames) {\n    config.setSplitClassAndPackageNames(splitClassAndPackageNames);\n  }\n\n  public String getTimestampFormat() {\n    return config.getTimestampFormat();\n  }\n\n  public void setTimestampFormat(String timestampFormat) {\n    config.setTimestampFormat(timestampFormat);\n  }\n\n  public boolean isGenerateDependsOnMethods() {\n    return config.isGenerateDependsOnMethods();\n  }\n\n  public void setGenerateDependsOnMethods(boolean generateDependsOnMethods) {\n    config.setGenerateDependsOnMethods(generateDependsOnMethods);\n  }\n\n  public void setGenerateDependsOnGroups(boolean generateDependsOnGroups) {\n    config.setGenerateDependsOnGroups(generateDependsOnGroups);\n  }\n\n  public boolean isGenerateDependsOnGroups() {\n    return config.isGenerateDependsOnGroups();\n  }\n\n  public void setGenerateTestResultAttributes(boolean generateTestResultAttributes) {\n    config.setGenerateTestResultAttributes(generateTestResultAttributes);\n  }\n\n  public boolean isGenerateTestResultAttributes() {\n    return config.isGenerateTestResultAttributes();\n  }\n\n}\n"
++return.toString == "package testng._22.VARIANT;\n\nimport testng._22.requirements.org.testng.IReporter;\nimport testng._22.requirements.org.testng.ISuite;\nimport testng._22.requirements.org.testng.ISuiteResult;\nimport testng._22.requirements.org.testng.ITestContext;\nimport testng._22.requirements.org.testng.ITestNGMethod;\nimport testng._22.requirements.org.testng.Reporter;\nimport testng._22.requirements.org.testng.internal.Utils;\nimport testng._22.requirements.org.testng.xml.XmlSuite;\nimport testng._22.requirements.org.testng.reporters.XMLReporterConfig;\nimport testng._22.requirements.org.testng.reporters.XMLStringBuffer;\nimport testng._22.requirements.org.testng.reporters.XMLSuiteResultWriter;\n\nimport java.io.File;\nimport java.text.SimpleDateFormat;\nimport java.util.Collection;\nimport java.util.Date;\nimport java.util.LinkedHashSet;\nimport java.util.List;\nimport java.util.Map;\nimport java.util.Properties;\nimport java.util.Set;\nimport java.util.TimeZone;\n\n/**\n * The main entry for the XML generation operation\n * \n * @author Cosmin Marginean, Mar 16, 2007\n */\npublic class XMLReporter implements IReporter {\n  public static final String FILE_NAME = \"testng-results.xml\";\n\n  private final XMLReporterConfig config = new XMLReporterConfig();\n  private XMLStringBuffer rootBuffer;\n\n  @Override\n  public void generateReport(List<XmlSuite> xmlSuites, List<ISuite> suites,\n      String outputDirectory) {\n    if (Utils.isStringEmpty(config.getOutputDirectory())) {\n      config.setOutputDirectory(outputDirectory);\n    }\n\n    // Calculate passed/failed/skipped\n    int passed = 0;\n    int failed = 0;\n    int skipped = 0;\n    for (ISuite s : suites) {\n      Map<String, ISuiteResult> suiteResults = s.getResults();\n      synchronized(suiteResults) {\n        for (ISuiteResult sr : suiteResults.values()) {\n          ITestContext testContext = sr.getTestContext();\n          passed += testContext.getPassedTests().size();\n          failed += testContext.getFailedTests().size();\n          skipped += testContext.getSkippedTests().size();\n        }\n      }\n    }\n\n    rootBuffer = new XMLStringBuffer();\n    Properties p = new Properties();\n    p.put(\"passed\", passed);\n    p.put(\"failed\", failed);\n    p.put(\"skipped\", skipped);\n    p.put(\"total\", passed + failed + skipped);\n    rootBuffer.push(XMLReporterConfig.TAG_TESTNG_RESULTS, p);\n    writeReporterOutput(rootBuffer);\n    for (ISuite suite : suites) {\n      writeSuite(suite.getXmlSuite(), suite);\n    }\n    rootBuffer.pop();\n    Utils.writeUtf8File(config.getOutputDirectory(), FILE_NAME, rootBuffer, null /* no prefix */);\n  }\n\n  private void writeReporterOutput(XMLStringBuffer xmlBuffer) {\n    // TODO: Cosmin - maybe a <line> element isn't indicated for each line\n    xmlBuffer.push(XMLReporterConfig.TAG_REPORTER_OUTPUT);\n    List<String> output = Reporter.getOutput();\n    for (String line : output) {\n      if (line != null) {\n        xmlBuffer.push(XMLReporterConfig.TAG_LINE);\n        xmlBuffer.addCDATA(line);\n        xmlBuffer.pop();\n      }\n    }\n    xmlBuffer.pop();\n  }\n\n  private void writeSuite(XmlSuite xmlSuite, ISuite suite) {\n    switch (config.getFileFragmentationLevel()) {\n    case XMLReporterConfig.FF_LEVEL_NONE:\n      writeSuiteToBuffer(rootBuffer, suite);\n      break;\n    case XMLReporterConfig.FF_LEVEL_SUITE:\n    case XMLReporterConfig.FF_LEVEL_SUITE_RESULT:\n      File suiteFile = referenceSuite(rootBuffer, suite);\n      writeSuiteToFile(suiteFile, suite);\n    }\n  }\n\n  private void writeSuiteToFile(File suiteFile, ISuite suite) {\n    XMLStringBuffer xmlBuffer = new XMLStringBuffer();\n    writeSuiteToBuffer(xmlBuffer, suite);\n    File parentDir = suiteFile.getParentFile();\n    if (parentDir.exists() || suiteFile.getParentFile().mkdirs()) {\n      Utils.writeFile(parentDir.getAbsolutePath(), FILE_NAME, xmlBuffer.toXML());\n    }\n  }\n\n  private File referenceSuite(XMLStringBuffer xmlBuffer, ISuite suite) {\n    String relativePath = suite.getName() + File.separatorChar + FILE_NAME;\n    File suiteFile = new File(config.getOutputDirectory(), relativePath);\n    Properties attrs = new Properties();\n    attrs.setProperty(XMLReporterConfig.ATTR_URL, relativePath);\n    xmlBuffer.addEmptyElement(XMLReporterConfig.TAG_SUITE, attrs);\n    return suiteFile;\n  }\n\n  private void writeSuiteToBuffer(XMLStringBuffer xmlBuffer, ISuite suite) {\n    xmlBuffer.push(XMLReporterConfig.TAG_SUITE, getSuiteAttributes(suite));\n    writeSuiteGroups(xmlBuffer, suite);\n\n    Map<String, ISuiteResult> results = suite.getResults();\n    XMLSuiteResultWriter suiteResultWriter = new XMLSuiteResultWriter(config);\n    synchronized (results) {\n      for (Map.Entry<String, ISuiteResult> result : results.entrySet()) {\n        suiteResultWriter.writeSuiteResult(xmlBuffer, result.getValue());\n      }\n    }\n\n    xmlBuffer.pop();\n  }\n\n  private void writeSuiteGroups(XMLStringBuffer xmlBuffer, ISuite suite) {\n    xmlBuffer.push(XMLReporterConfig.TAG_GROUPS);\n    Map<String, Collection<ITestNGMethod>> methodsByGroups = suite.getMethodsByGroups();\n    for (Map.Entry<String, Collection<ITestNGMethod>> entry : methodsByGroups.entrySet()) {\n      Properties groupAttrs = new Properties();\n      groupAttrs.setProperty(XMLReporterConfig.ATTR_NAME, entry.getKey());\n      xmlBuffer.push(XMLReporterConfig.TAG_GROUP, groupAttrs);\n      Set<ITestNGMethod> groupMethods = getUniqueMethodSet(entry.getValue());\n      for (ITestNGMethod groupMethod : groupMethods) {\n        Properties methodAttrs = new Properties();\n        methodAttrs.setProperty(XMLReporterConfig.ATTR_NAME, groupMethod.getMethodName());\n        methodAttrs.setProperty(XMLReporterConfig.ATTR_METHOD_SIG, groupMethod.toString());\n        methodAttrs.setProperty(XMLReporterConfig.ATTR_CLASS, groupMethod.getRealClass().getName());\n        xmlBuffer.addEmptyElement(XMLReporterConfig.TAG_METHOD, methodAttrs);\n      }\n      xmlBuffer.pop();\n    }\n    xmlBuffer.pop();\n  }\n\n  private Properties getSuiteAttributes(ISuite suite) {\n    Properties props = new Properties();\n    props.setProperty(XMLReporterConfig.ATTR_NAME, suite.getName());\n\n    // Calculate the duration\n    Map<String, ISuiteResult> results = suite.getResults();\n    Date minStartDate = new Date();\n    Date maxEndDate = null;\n    // TODO: We could probably optimize this in order not to traverse this twice\n    synchronized (results) {\n      for (Map.Entry<String, ISuiteResult> result : results.entrySet()) {\n        ITestContext testContext = result.getValue().getTestContext();\n        Date startDate = testContext.getStartDate();\n        Date endDate = testContext.getEndDate();\n        if (minStartDate.after(startDate)) {\n          minStartDate = startDate;\n        }\n        if (maxEndDate == null || maxEndDate.before(endDate)) {\n          maxEndDate = endDate != null ? endDate : startDate;\n        }\n      }\n    }\n\n    // The suite could be completely empty\n    if (maxEndDate == null) {\n      maxEndDate = minStartDate;\n    }\n    addDurationAttributes(config, props, minStartDate, maxEndDate);\n    return props;\n  }\n\n  /**\n   * Add started-at, finished-at and duration-ms attributes to the <suite> tag\n   */\n  public static void addDurationAttributes(XMLReporterConfig config, Properties attributes,\n      Date minStartDate, Date maxEndDate) {\n    SimpleDateFormat format = new SimpleDateFormat(config.getTimestampFormat());\n    TimeZone utc = TimeZone.getTimeZone(\"UTC\");\n    format.setTimeZone(utc);\n    String startTime = format.format(minStartDate);\n    String endTime = format.format(maxEndDate);\n    long duration = maxEndDate.getTime() - minStartDate.getTime();\n\n    attributes.setProperty(XMLReporterConfig.ATTR_STARTED_AT, startTime);\n    attributes.setProperty(XMLReporterConfig.ATTR_FINISHED_AT, endTime);\n    attributes.setProperty(XMLReporterConfig.ATTR_DURATION_MS, Long.toString(duration));\n  }\n\n  private Set<ITestNGMethod> getUniqueMethodSet(Collection<ITestNGMethod> methods) {\n    Set<ITestNGMethod> result = new LinkedHashSet<>();\n    for (ITestNGMethod method : methods) {\n      result.add(method);\n    }\n    return result;\n  }\n\n  // TODO: This is not the smartest way to implement the config\n  public int getFileFragmentationLevel() {\n    return config.getFileFragmentationLevel();\n  }\n\n  public void setFileFragmentationLevel(int fileFragmentationLevel) {\n    config.setFileFragmentationLevel(fileFragmentationLevel);\n  }\n\n  public int getStackTraceOutputMethod() {\n    return config.getStackTraceOutputMethod();\n  }\n\n  public void setStackTraceOutputMethod(int stackTraceOutputMethod) {\n    config.setStackTraceOutputMethod(stackTraceOutputMethod);\n  }\n\n  public String getOutputDirectory() {\n    return config.getOutputDirectory();\n  }\n\n  public void setOutputDirectory(String outputDirectory) {\n    config.setOutputDirectory(outputDirectory);\n  }\n\n  public boolean isGenerateGroupsAttribute() {\n    return config.isGenerateGroupsAttribute();\n  }\n\n  public void setGenerateGroupsAttribute(boolean generateGroupsAttribute) {\n    config.setGenerateGroupsAttribute(generateGroupsAttribute);\n  }\n\n  public boolean isSplitClassAndPackageNames() {\n    return config.isSplitClassAndPackageNames();\n  }\n\n  public void setSplitClassAndPackageNames(boolean splitClassAndPackageNames) {\n    config.setSplitClassAndPackageNames(splitClassAndPackageNames);\n  }\n\n  public String getTimestampFormat() {\n    return config.getTimestampFormat();\n  }\n\n  public void setTimestampFormat(String timestampFormat) {\n    config.setTimestampFormat(timestampFormat);\n  }\n\n  public boolean isGenerateDependsOnMethods() {\n    return config.isGenerateDependsOnMethods();\n  }\n\n  public void setGenerateDependsOnMethods(boolean generateDependsOnMethods) {\n    config.setGenerateDependsOnMethods(generateDependsOnMethods);\n  }\n\n  public void setGenerateDependsOnGroups(boolean generateDependsOnGroups) {\n    config.setGenerateDependsOnGroups(generateDependsOnGroups);\n  }\n\n  public boolean isGenerateDependsOnGroups() {\n    return config.isGenerateDependsOnGroups();\n  }\n\n  public void setGenerateTestResultAttributes(boolean generateTestResultAttributes) {\n    config.setGenerateTestResultAttributes(generateTestResultAttributes);\n  }\n\n  public boolean isGenerateTestResultAttributes() {\n    return config.isGenerateTestResultAttributes();\n  }\n\n}\n"
+ ===========================================================================
+ testng._22.Driver.setFileFragmentationLevel(int):::ENTER
+ this has only one value
+@@ -3037,501 +3037,6 @@
+ this.reporterClass has only one value
+ outputDirectory.toString == "/tmp"
+ ===========================================================================
+-testng._22.mocks.MockResultMap:::OBJECT
+-this.results != null
+-this.results.getClass().getName() == java.util.Collections$SynchronizedSet.class
+-===========================================================================
+-testng._22.mocks.MockResultMap.MockResultMap():::EXIT
+-===========================================================================
+-testng._22.mocks.MockResultMap.size():::ENTER
+-===========================================================================
+-testng._22.mocks.MockResultMap.size():::EXIT
+-this.results == orig(this.results)
+-this.results.getClass().getName() == orig(this.results.getClass().getName())
+-return == 0
+-===========================================================================
+-testng._22.mocks.MockSuite:::OBJECT
+-this.attributes.getClass().getName() == this.results.getClass().getName()
+-this.name has only one value
+-this.name != null
+-this.name.toString == "TestSuite"
+-this.attributes != null
+-this.attributes.getClass().getName() == java.util.Collections$SynchronizedMap.class
+-this.results != null
+-===========================================================================
+-testng._22.mocks.MockSuite.MockSuite(java.lang.String):::ENTER
+-name has only one value
+-name.toString == "TestSuite"
+-===========================================================================
+-testng._22.mocks.MockSuite.MockSuite(java.lang.String):::EXIT
+-this.name == orig(name)
+-this.name.toString == name.toString
+-name.toString == orig(name.toString)
+-name.toString == "TestSuite"
+-===========================================================================
+-testng._22.mocks.MockSuite.addResult(java.lang.String, testng._22.requirements.org.testng.ISuiteResult):::ENTER
+-this has only one value
+-this.attributes has only one value
+-this.results has only one value
+-name has only one value
+-name.toString == "test1"
+-result has only one value
+-result.getClass().getName() == testng._22.mocks.MockSuiteResult.class
+-===========================================================================
+-testng._22.mocks.MockSuite.addResult(java.lang.String, testng._22.requirements.org.testng.ISuiteResult):::EXIT
+-this.name == orig(this.name)
+-this.name.toString == orig(this.name.toString)
+-this.attributes == orig(this.attributes)
+-this.attributes.getClass().getName() == orig(this.attributes.getClass().getName())
+-this.attributes.getClass().getName() == orig(this.results.getClass().getName())
+-this.results == orig(this.results)
+-name.toString == orig(name.toString)
+-this.attributes has only one value
+-this.results has only one value
+-name.toString == "test1"
+-===========================================================================
+-testng._22.mocks.MockSuite.getAttribute(java.lang.String):::ENTER
+-this has only one value
+-this.attributes has only one value
+-this.results has only one value
+-name has only one value
+-name.toString == "key"
+-===========================================================================
+-testng._22.mocks.MockSuite.getAttribute(java.lang.String):::EXIT
+-this.name == orig(this.name)
+-this.name.toString == orig(this.name.toString)
+-this.attributes == orig(this.attributes)
+-this.attributes.getClass().getName() == orig(this.attributes.getClass().getName())
+-this.attributes.getClass().getName() == orig(this.results.getClass().getName())
+-this.results == orig(this.results)
+-name.toString == orig(name.toString)
+-this.attributes has only one value
+-this.results has only one value
+-name.toString == "key"
+-return.getClass().getName() == java.lang.String.class
+-===========================================================================
+-testng._22.mocks.MockSuite.getAttributeNames():::ENTER
+-this has only one value
+-this.attributes has only one value
+-this.results has only one value
+-===========================================================================
+-testng._22.mocks.MockSuite.getAttributeNames():::EXIT
+-this.name == orig(this.name)
+-this.name.toString == orig(this.name.toString)
+-this.attributes == orig(this.attributes)
+-this.attributes.getClass().getName() == orig(this.attributes.getClass().getName())
+-this.attributes.getClass().getName() == orig(this.results.getClass().getName())
+-this.results == orig(this.results)
+-this.attributes has only one value
+-this.results has only one value
+-return has only one value
+-return.getClass().getName() == java.util.Collections$SynchronizedSet.class
+-===========================================================================
+-testng._22.mocks.MockSuite.getMethodsByGroups():::ENTER
+-this has only one value
+-this.attributes has only one value
+-this.results has only one value
+-===========================================================================
+-testng._22.mocks.MockSuite.getMethodsByGroups():::EXIT
+-this.name == orig(this.name)
+-this.name.toString == orig(this.name.toString)
+-this.attributes == orig(this.attributes)
+-this.attributes.getClass().getName() == orig(this.attributes.getClass().getName())
+-this.attributes.getClass().getName() == orig(this.results.getClass().getName())
+-this.results == orig(this.results)
+-this.attributes has only one value
+-this.results has only one value
+-return has only one value
+-return.getClass().getName() == java.util.HashMap.class
+-===========================================================================
+-testng._22.mocks.MockSuite.getName():::ENTER
+-this has only one value
+-this.attributes has only one value
+-this.results has only one value
+-===========================================================================
+-testng._22.mocks.MockSuite.getName():::EXIT
+-this.name == return
+-this.name.toString == return.toString
+-this.attributes == orig(this.attributes)
+-this.attributes.getClass().getName() == orig(this.attributes.getClass().getName())
+-this.attributes.getClass().getName() == orig(this.results.getClass().getName())
+-this.results == orig(this.results)
+-return == orig(this.name)
+-return.toString == orig(this.name.toString)
+-this.attributes has only one value
+-this.results has only one value
+-return has only one value
+-return.toString == "TestSuite"
+-===========================================================================
+-testng._22.mocks.MockSuite.getResults():::ENTER
+-this has only one value
+-this.attributes has only one value
+-this.results has only one value
+-===========================================================================
+-testng._22.mocks.MockSuite.getResults():::EXIT
+-this.name == orig(this.name)
+-this.name.toString == orig(this.name.toString)
+-this.attributes == orig(this.attributes)
+-this.attributes.getClass().getName() == return.getClass().getName()
+-this.results == return
+-this.results.getClass().getName() == return.getClass().getName()
+-return == orig(this.results)
+-return.getClass().getName() == orig(this.attributes.getClass().getName())
+-return.getClass().getName() == orig(this.results.getClass().getName())
+-this.attributes has only one value
+-return has only one value
+-return.getClass().getName() == java.util.Collections$SynchronizedMap.class
+-===========================================================================
+-testng._22.mocks.MockSuite.getXmlSuite():::ENTER
+-this has only one value
+-this.attributes has only one value
+-this.results has only one value
+-===========================================================================
+-testng._22.mocks.MockSuite.getXmlSuite():::EXIT
+-this.name == orig(this.name)
+-this.name.toString == orig(this.name.toString)
+-this.attributes == orig(this.attributes)
+-this.attributes.getClass().getName() == orig(this.attributes.getClass().getName())
+-this.attributes.getClass().getName() == orig(this.results.getClass().getName())
+-this.results == orig(this.results)
+-this.attributes has only one value
+-this.results has only one value
+-return == null
+-===========================================================================
+-testng._22.mocks.MockSuite.removeAttribute(java.lang.String):::ENTER
+-this has only one value
+-this.attributes has only one value
+-this.results has only one value
+-name has only one value
+-name.toString == "key"
+-===========================================================================
+-testng._22.mocks.MockSuite.removeAttribute(java.lang.String):::EXIT
+-this.name == orig(this.name)
+-this.name.toString == orig(this.name.toString)
+-this.attributes == orig(this.attributes)
+-this.attributes.getClass().getName() == orig(this.attributes.getClass().getName())
+-this.attributes.getClass().getName() == orig(this.results.getClass().getName())
+-this.results == orig(this.results)
+-name.toString == orig(name.toString)
+-this.attributes has only one value
+-this.results has only one value
+-name.toString == "key"
+-return has only one value
+-return.getClass().getName() == java.lang.String.class
+-===========================================================================
+-testng._22.mocks.MockSuite.setAttribute(java.lang.String, java.lang.Object):::ENTER
+-this has only one value
+-this.attributes has only one value
+-this.results has only one value
+-name has only one value
+-name.toString == "key"
+-value has only one value
+-value.getClass().getName() == java.lang.String.class
+-===========================================================================
+-testng._22.mocks.MockSuite.setAttribute(java.lang.String, java.lang.Object):::EXIT
+-this.name == orig(this.name)
+-this.name.toString == orig(this.name.toString)
+-this.attributes == orig(this.attributes)
+-this.attributes.getClass().getName() == orig(this.attributes.getClass().getName())
+-this.attributes.getClass().getName() == orig(this.results.getClass().getName())
+-this.results == orig(this.results)
+-name.toString == orig(name.toString)
+-this.attributes has only one value
+-this.results has only one value
+-name.toString == "key"
+-===========================================================================
+-testng._22.mocks.MockSuiteResult:::OBJECT
+-this has only one value
+-this.testContext has only one value
+-this.testContext.getClass().getName() == testng._22.mocks.MockTestContext.class
+-===========================================================================
+-testng._22.mocks.MockSuiteResult.MockSuiteResult(testng._22.requirements.org.testng.ITestContext):::ENTER
+-testContext has only one value
+-testContext.getClass().getName() == testng._22.mocks.MockTestContext.class
+-===========================================================================
+-testng._22.mocks.MockSuiteResult.MockSuiteResult(testng._22.requirements.org.testng.ITestContext):::EXIT
+-this.testContext == orig(testContext)
+-this.testContext.getClass().getName() == orig(testContext.getClass().getName())
+-===========================================================================
+-testng._22.mocks.MockSuiteResult.getTestContext():::ENTER
+-===========================================================================
+-testng._22.mocks.MockSuiteResult.getTestContext():::EXIT
+-this.testContext == return
+-this.testContext.getClass().getName() == return.getClass().getName()
+-return == orig(this.testContext)
+-return.getClass().getName() == orig(this.testContext.getClass().getName())
+-return has only one value
+-return.getClass().getName() == testng._22.mocks.MockTestContext.class
+-===========================================================================
+-testng._22.mocks.MockTestContext:::OBJECT
+-this.passedTests.getClass().getName() == this.failedTests.getClass().getName()
+-this.passedTests.getClass().getName() == this.skippedTests.getClass().getName()
+-this.passedTests.getClass().getName() == this.failedButWithinSuccessPercentageTests.getClass().getName()
+-this.passedTests.getClass().getName() == this.passedConfigurations.getClass().getName()
+-this.passedTests.getClass().getName() == this.failedConfigurations.getClass().getName()
+-this.passedTests.getClass().getName() == this.skippedConfigurations.getClass().getName()
+-this has only one value
+-this.name has only one value
+-this.name != null
+-this.name.toString == "TestContext"
+-this.suite.getClass().getName() == testng._22.mocks.MockSuite.class
+-this.startDate has only one value
+-this.startDate != null
+-this.endDate has only one value
+-this.endDate != null
+-this.outputDirectory has only one value
+-this.outputDirectory != null
+-this.outputDirectory.toString == "/tmp"
+-this.attributes has only one value
+-this.attributes != null
+-this.attributes.getClass().getName() == java.util.Collections$SynchronizedMap.class
+-this.passedTests has only one value
+-this.passedTests != null
+-this.passedTests.getClass().getName() == testng._22.mocks.MockResultMap.class
+-this.failedTests has only one value
+-this.failedTests != null
+-this.skippedTests has only one value
+-this.skippedTests != null
+-this.failedButWithinSuccessPercentageTests has only one value
+-this.failedButWithinSuccessPercentageTests != null
+-this.passedConfigurations has only one value
+-this.passedConfigurations != null
+-this.failedConfigurations has only one value
+-this.failedConfigurations != null
+-this.skippedConfigurations has only one value
+-this.skippedConfigurations != null
+-this.name.toString > this.outputDirectory.toString
+-this.suite.getClass().getName() != this.attributes.getClass().getName()
+-this.suite.getClass().getName() != this.passedTests.getClass().getName()
+-this.attributes.getClass().getName() != this.passedTests.getClass().getName()
+-===========================================================================
+-testng._22.mocks.MockTestContext.MockTestContext(java.lang.String):::ENTER
+-name has only one value
+-name.toString == "TestContext"
+-===========================================================================
+-testng._22.mocks.MockTestContext.MockTestContext(java.lang.String):::EXIT
+-this.name == orig(name)
+-this.name.toString == name.toString
+-name.toString == orig(name.toString)
+-this.suite == null
+-name.toString == "TestContext"
+-===========================================================================
+-testng._22.mocks.MockTestContext.getEndDate():::ENTER
+-this.suite has only one value
+-===========================================================================
+-testng._22.mocks.MockTestContext.getEndDate():::EXIT
+-this.name == orig(this.name)
+-this.name.toString == orig(this.name.toString)
+-this.suite == orig(this.suite)
+-this.suite.getClass().getName() == orig(this.suite.getClass().getName())
+-this.startDate == orig(this.startDate)
+-this.endDate == return
+-this.outputDirectory == orig(this.outputDirectory)
+-this.outputDirectory.toString == orig(this.outputDirectory.toString)
+-this.attributes == orig(this.attributes)
+-this.attributes.getClass().getName() == orig(this.attributes.getClass().getName())
+-this.passedTests == orig(this.passedTests)
+-this.passedTests.getClass().getName() == orig(this.passedTests.getClass().getName())
+-this.passedTests.getClass().getName() == orig(this.failedTests.getClass().getName())
+-this.passedTests.getClass().getName() == orig(this.skippedTests.getClass().getName())
+-this.passedTests.getClass().getName() == orig(this.failedButWithinSuccessPercentageTests.getClass().getName())
+-this.passedTests.getClass().getName() == orig(this.passedConfigurations.getClass().getName())
+-this.passedTests.getClass().getName() == orig(this.failedConfigurations.getClass().getName())
+-this.passedTests.getClass().getName() == orig(this.skippedConfigurations.getClass().getName())
+-this.failedTests == orig(this.failedTests)
+-this.skippedTests == orig(this.skippedTests)
+-this.failedButWithinSuccessPercentageTests == orig(this.failedButWithinSuccessPercentageTests)
+-this.passedConfigurations == orig(this.passedConfigurations)
+-this.failedConfigurations == orig(this.failedConfigurations)
+-this.skippedConfigurations == orig(this.skippedConfigurations)
+-return == orig(this.endDate)
+-this.suite has only one value
+-return has only one value
+-===========================================================================
+-testng._22.mocks.MockTestContext.getFailedTests():::ENTER
+-this.suite has only one value
+-===========================================================================
+-testng._22.mocks.MockTestContext.getFailedTests():::EXIT
+-this.name == orig(this.name)
+-this.name.toString == orig(this.name.toString)
+-this.suite == orig(this.suite)
+-this.suite.getClass().getName() == orig(this.suite.getClass().getName())
+-this.startDate == orig(this.startDate)
+-this.endDate == orig(this.endDate)
+-this.outputDirectory == orig(this.outputDirectory)
+-this.outputDirectory.toString == orig(this.outputDirectory.toString)
+-this.attributes == orig(this.attributes)
+-this.attributes.getClass().getName() == orig(this.attributes.getClass().getName())
+-this.passedTests == orig(this.passedTests)
+-this.passedTests.getClass().getName() == return.getClass().getName()
+-this.failedTests == return
+-this.failedTests.getClass().getName() == return.getClass().getName()
+-this.skippedTests == orig(this.skippedTests)
+-this.skippedTests.getClass().getName() == return.getClass().getName()
+-this.failedButWithinSuccessPercentageTests == orig(this.failedButWithinSuccessPercentageTests)
+-this.failedButWithinSuccessPercentageTests.getClass().getName() == return.getClass().getName()
+-this.passedConfigurations == orig(this.passedConfigurations)
+-this.passedConfigurations.getClass().getName() == return.getClass().getName()
+-this.failedConfigurations == orig(this.failedConfigurations)
+-this.failedConfigurations.getClass().getName() == return.getClass().getName()
+-this.skippedConfigurations == orig(this.skippedConfigurations)
+-this.skippedConfigurations.getClass().getName() == return.getClass().getName()
+-return == orig(this.failedTests)
+-return.getClass().getName() == orig(this.passedTests.getClass().getName())
+-return.getClass().getName() == orig(this.failedTests.getClass().getName())
+-return.getClass().getName() == orig(this.skippedTests.getClass().getName())
+-return.getClass().getName() == orig(this.failedButWithinSuccessPercentageTests.getClass().getName())
+-return.getClass().getName() == orig(this.passedConfigurations.getClass().getName())
+-return.getClass().getName() == orig(this.failedConfigurations.getClass().getName())
+-return.getClass().getName() == orig(this.skippedConfigurations.getClass().getName())
+-this.suite has only one value
+-return has only one value
+-return.getClass().getName() == testng._22.mocks.MockResultMap.class
+-===========================================================================
+-testng._22.mocks.MockTestContext.getPassedTests():::ENTER
+-this.suite has only one value
+-===========================================================================
+-testng._22.mocks.MockTestContext.getPassedTests():::EXIT
+-this.name == orig(this.name)
+-this.name.toString == orig(this.name.toString)
+-this.suite == orig(this.suite)
+-this.suite.getClass().getName() == orig(this.suite.getClass().getName())
+-this.startDate == orig(this.startDate)
+-this.endDate == orig(this.endDate)
+-this.outputDirectory == orig(this.outputDirectory)
+-this.outputDirectory.toString == orig(this.outputDirectory.toString)
+-this.attributes == orig(this.attributes)
+-this.attributes.getClass().getName() == orig(this.attributes.getClass().getName())
+-this.passedTests == return
+-this.passedTests.getClass().getName() == return.getClass().getName()
+-this.failedTests == orig(this.failedTests)
+-this.failedTests.getClass().getName() == return.getClass().getName()
+-this.skippedTests == orig(this.skippedTests)
+-this.skippedTests.getClass().getName() == return.getClass().getName()
+-this.failedButWithinSuccessPercentageTests == orig(this.failedButWithinSuccessPercentageTests)
+-this.failedButWithinSuccessPercentageTests.getClass().getName() == return.getClass().getName()
+-this.passedConfigurations == orig(this.passedConfigurations)
+-this.passedConfigurations.getClass().getName() == return.getClass().getName()
+-this.failedConfigurations == orig(this.failedConfigurations)
+-this.failedConfigurations.getClass().getName() == return.getClass().getName()
+-this.skippedConfigurations == orig(this.skippedConfigurations)
+-this.skippedConfigurations.getClass().getName() == return.getClass().getName()
+-return == orig(this.passedTests)
+-return.getClass().getName() == orig(this.passedTests.getClass().getName())
+-return.getClass().getName() == orig(this.failedTests.getClass().getName())
+-return.getClass().getName() == orig(this.skippedTests.getClass().getName())
+-return.getClass().getName() == orig(this.failedButWithinSuccessPercentageTests.getClass().getName())
+-return.getClass().getName() == orig(this.passedConfigurations.getClass().getName())
+-return.getClass().getName() == orig(this.failedConfigurations.getClass().getName())
+-return.getClass().getName() == orig(this.skippedConfigurations.getClass().getName())
+-this.suite has only one value
+-return has only one value
+-return.getClass().getName() == testng._22.mocks.MockResultMap.class
+-===========================================================================
+-testng._22.mocks.MockTestContext.getSkippedTests():::ENTER
+-this.suite has only one value
+-===========================================================================
+-testng._22.mocks.MockTestContext.getSkippedTests():::EXIT
+-this.name == orig(this.name)
+-this.name.toString == orig(this.name.toString)
+-this.suite == orig(this.suite)
+-this.suite.getClass().getName() == orig(this.suite.getClass().getName())
+-this.startDate == orig(this.startDate)
+-this.endDate == orig(this.endDate)
+-this.outputDirectory == orig(this.outputDirectory)
+-this.outputDirectory.toString == orig(this.outputDirectory.toString)
+-this.attributes == orig(this.attributes)
+-this.attributes.getClass().getName() == orig(this.attributes.getClass().getName())
+-this.passedTests == orig(this.passedTests)
+-this.passedTests.getClass().getName() == return.getClass().getName()
+-this.failedTests == orig(this.failedTests)
+-this.failedTests.getClass().getName() == return.getClass().getName()
+-this.skippedTests == return
+-this.skippedTests.getClass().getName() == return.getClass().getName()
+-this.failedButWithinSuccessPercentageTests == orig(this.failedButWithinSuccessPercentageTests)
+-this.failedButWithinSuccessPercentageTests.getClass().getName() == return.getClass().getName()
+-this.passedConfigurations == orig(this.passedConfigurations)
+-this.passedConfigurations.getClass().getName() == return.getClass().getName()
+-this.failedConfigurations == orig(this.failedConfigurations)
+-this.failedConfigurations.getClass().getName() == return.getClass().getName()
+-this.skippedConfigurations == orig(this.skippedConfigurations)
+-this.skippedConfigurations.getClass().getName() == return.getClass().getName()
+-return == orig(this.skippedTests)
+-return.getClass().getName() == orig(this.passedTests.getClass().getName())
+-return.getClass().getName() == orig(this.failedTests.getClass().getName())
+-return.getClass().getName() == orig(this.skippedTests.getClass().getName())
+-return.getClass().getName() == orig(this.failedButWithinSuccessPercentageTests.getClass().getName())
+-return.getClass().getName() == orig(this.passedConfigurations.getClass().getName())
+-return.getClass().getName() == orig(this.failedConfigurations.getClass().getName())
+-return.getClass().getName() == orig(this.skippedConfigurations.getClass().getName())
+-this.suite has only one value
+-return has only one value
+-return.getClass().getName() == testng._22.mocks.MockResultMap.class
+-===========================================================================
+-testng._22.mocks.MockTestContext.getStartDate():::ENTER
+-this.suite has only one value
+-===========================================================================
+-testng._22.mocks.MockTestContext.getStartDate():::EXIT
+-this.name == orig(this.name)
+-this.name.toString == orig(this.name.toString)
+-this.suite == orig(this.suite)
+-this.suite.getClass().getName() == orig(this.suite.getClass().getName())
+-this.startDate == return
+-this.endDate == orig(this.endDate)
+-this.outputDirectory == orig(this.outputDirectory)
+-this.outputDirectory.toString == orig(this.outputDirectory.toString)
+-this.attributes == orig(this.attributes)
+-this.attributes.getClass().getName() == orig(this.attributes.getClass().getName())
+-this.passedTests == orig(this.passedTests)
+-this.passedTests.getClass().getName() == orig(this.passedTests.getClass().getName())
+-this.passedTests.getClass().getName() == orig(this.failedTests.getClass().getName())
+-this.passedTests.getClass().getName() == orig(this.skippedTests.getClass().getName())
+-this.passedTests.getClass().getName() == orig(this.failedButWithinSuccessPercentageTests.getClass().getName())
+-this.passedTests.getClass().getName() == orig(this.passedConfigurations.getClass().getName())
+-this.passedTests.getClass().getName() == orig(this.failedConfigurations.getClass().getName())
+-this.passedTests.getClass().getName() == orig(this.skippedConfigurations.getClass().getName())
+-this.failedTests == orig(this.failedTests)
+-this.skippedTests == orig(this.skippedTests)
+-this.failedButWithinSuccessPercentageTests == orig(this.failedButWithinSuccessPercentageTests)
+-this.passedConfigurations == orig(this.passedConfigurations)
+-this.failedConfigurations == orig(this.failedConfigurations)
+-this.skippedConfigurations == orig(this.skippedConfigurations)
+-return == orig(this.startDate)
+-this.suite has only one value
+-return has only one value
+-===========================================================================
+-testng._22.mocks.MockTestContext.setSuite(testng._22.requirements.org.testng.ISuite):::ENTER
+-this.suite == null
+-suite has only one value
+-suite.getClass().getName() == testng._22.mocks.MockSuite.class
+-===========================================================================
+-testng._22.mocks.MockTestContext.setSuite(testng._22.requirements.org.testng.ISuite):::EXIT
+-this.name == orig(this.name)
+-this.name.toString == orig(this.name.toString)
+-this.suite == orig(suite)
+-this.suite.getClass().getName() == orig(suite.getClass().getName())
+-this.startDate == orig(this.startDate)
+-this.endDate == orig(this.endDate)
+-this.outputDirectory == orig(this.outputDirectory)
+-this.outputDirectory.toString == orig(this.outputDirectory.toString)
+-this.attributes == orig(this.attributes)
+-this.attributes.getClass().getName() == orig(this.attributes.getClass().getName())
+-this.passedTests == orig(this.passedTests)
+-this.passedTests.getClass().getName() == orig(this.passedTests.getClass().getName())
+-this.passedTests.getClass().getName() == orig(this.failedTests.getClass().getName())
+-this.passedTests.getClass().getName() == orig(this.skippedTests.getClass().getName())
+-this.passedTests.getClass().getName() == orig(this.failedButWithinSuccessPercentageTests.getClass().getName())
+-this.passedTests.getClass().getName() == orig(this.passedConfigurations.getClass().getName())
+-this.passedTests.getClass().getName() == orig(this.failedConfigurations.getClass().getName())
+-this.passedTests.getClass().getName() == orig(this.skippedConfigurations.getClass().getName())
+-this.failedTests == orig(this.failedTests)
+-this.skippedTests == orig(this.skippedTests)
+-this.failedButWithinSuccessPercentageTests == orig(this.failedButWithinSuccessPercentageTests)
+-this.passedConfigurations == orig(this.passedConfigurations)
+-this.failedConfigurations == orig(this.failedConfigurations)
+-this.skippedConfigurations == orig(this.skippedConfigurations)
+-this.suite has only one value
+-===========================================================================
+ testng._22.VARIANT.XMLReporter:::CLASS
+ testng._22.VARIANT.XMLReporter.FILE_NAME has only one value
+ testng._22.VARIANT.XMLReporter.FILE_NAME != null
+@@ -7596,6 +7101,501 @@
+ xmlBuffer.defaultComment == null
+ orig(xmlBuffer.m_currentIndent) has only one value
+ ===========================================================================
++testng._22.mocks.MockResultMap:::OBJECT
++this.results != null
++this.results.getClass().getName() == java.util.Collections$SynchronizedSet.class
++===========================================================================
++testng._22.mocks.MockResultMap.MockResultMap():::EXIT
++===========================================================================
++testng._22.mocks.MockResultMap.size():::ENTER
++===========================================================================
++testng._22.mocks.MockResultMap.size():::EXIT
++this.results == orig(this.results)
++this.results.getClass().getName() == orig(this.results.getClass().getName())
++return == 0
++===========================================================================
++testng._22.mocks.MockSuite:::OBJECT
++this.attributes.getClass().getName() == this.results.getClass().getName()
++this.name has only one value
++this.name != null
++this.name.toString == "TestSuite"
++this.attributes != null
++this.attributes.getClass().getName() == java.util.Collections$SynchronizedMap.class
++this.results != null
++===========================================================================
++testng._22.mocks.MockSuite.MockSuite(java.lang.String):::ENTER
++name has only one value
++name.toString == "TestSuite"
++===========================================================================
++testng._22.mocks.MockSuite.MockSuite(java.lang.String):::EXIT
++this.name == orig(name)
++this.name.toString == name.toString
++name.toString == orig(name.toString)
++name.toString == "TestSuite"
++===========================================================================
++testng._22.mocks.MockSuite.addResult(java.lang.String, testng._22.requirements.org.testng.ISuiteResult):::ENTER
++this has only one value
++this.attributes has only one value
++this.results has only one value
++name has only one value
++name.toString == "test1"
++result has only one value
++result.getClass().getName() == testng._22.mocks.MockSuiteResult.class
++===========================================================================
++testng._22.mocks.MockSuite.addResult(java.lang.String, testng._22.requirements.org.testng.ISuiteResult):::EXIT
++this.name == orig(this.name)
++this.name.toString == orig(this.name.toString)
++this.attributes == orig(this.attributes)
++this.attributes.getClass().getName() == orig(this.attributes.getClass().getName())
++this.attributes.getClass().getName() == orig(this.results.getClass().getName())
++this.results == orig(this.results)
++name.toString == orig(name.toString)
++this.attributes has only one value
++this.results has only one value
++name.toString == "test1"
++===========================================================================
++testng._22.mocks.MockSuite.getAttribute(java.lang.String):::ENTER
++this has only one value
++this.attributes has only one value
++this.results has only one value
++name has only one value
++name.toString == "key"
++===========================================================================
++testng._22.mocks.MockSuite.getAttribute(java.lang.String):::EXIT
++this.name == orig(this.name)
++this.name.toString == orig(this.name.toString)
++this.attributes == orig(this.attributes)
++this.attributes.getClass().getName() == orig(this.attributes.getClass().getName())
++this.attributes.getClass().getName() == orig(this.results.getClass().getName())
++this.results == orig(this.results)
++name.toString == orig(name.toString)
++this.attributes has only one value
++this.results has only one value
++name.toString == "key"
++return.getClass().getName() == java.lang.String.class
++===========================================================================
++testng._22.mocks.MockSuite.getAttributeNames():::ENTER
++this has only one value
++this.attributes has only one value
++this.results has only one value
++===========================================================================
++testng._22.mocks.MockSuite.getAttributeNames():::EXIT
++this.name == orig(this.name)
++this.name.toString == orig(this.name.toString)
++this.attributes == orig(this.attributes)
++this.attributes.getClass().getName() == orig(this.attributes.getClass().getName())
++this.attributes.getClass().getName() == orig(this.results.getClass().getName())
++this.results == orig(this.results)
++this.attributes has only one value
++this.results has only one value
++return has only one value
++return.getClass().getName() == java.util.Collections$SynchronizedSet.class
++===========================================================================
++testng._22.mocks.MockSuite.getMethodsByGroups():::ENTER
++this has only one value
++this.attributes has only one value
++this.results has only one value
++===========================================================================
++testng._22.mocks.MockSuite.getMethodsByGroups():::EXIT
++this.name == orig(this.name)
++this.name.toString == orig(this.name.toString)
++this.attributes == orig(this.attributes)
++this.attributes.getClass().getName() == orig(this.attributes.getClass().getName())
++this.attributes.getClass().getName() == orig(this.results.getClass().getName())
++this.results == orig(this.results)
++this.attributes has only one value
++this.results has only one value
++return has only one value
++return.getClass().getName() == java.util.HashMap.class
++===========================================================================
++testng._22.mocks.MockSuite.getName():::ENTER
++this has only one value
++this.attributes has only one value
++this.results has only one value
++===========================================================================
++testng._22.mocks.MockSuite.getName():::EXIT
++this.name == return
++this.name.toString == return.toString
++this.attributes == orig(this.attributes)
++this.attributes.getClass().getName() == orig(this.attributes.getClass().getName())
++this.attributes.getClass().getName() == orig(this.results.getClass().getName())
++this.results == orig(this.results)
++return == orig(this.name)
++return.toString == orig(this.name.toString)
++this.attributes has only one value
++this.results has only one value
++return has only one value
++return.toString == "TestSuite"
++===========================================================================
++testng._22.mocks.MockSuite.getResults():::ENTER
++this has only one value
++this.attributes has only one value
++this.results has only one value
++===========================================================================
++testng._22.mocks.MockSuite.getResults():::EXIT
++this.name == orig(this.name)
++this.name.toString == orig(this.name.toString)
++this.attributes == orig(this.attributes)
++this.attributes.getClass().getName() == return.getClass().getName()
++this.results == return
++this.results.getClass().getName() == return.getClass().getName()
++return == orig(this.results)
++return.getClass().getName() == orig(this.attributes.getClass().getName())
++return.getClass().getName() == orig(this.results.getClass().getName())
++this.attributes has only one value
++return has only one value
++return.getClass().getName() == java.util.Collections$SynchronizedMap.class
++===========================================================================
++testng._22.mocks.MockSuite.getXmlSuite():::ENTER
++this has only one value
++this.attributes has only one value
++this.results has only one value
++===========================================================================
++testng._22.mocks.MockSuite.getXmlSuite():::EXIT
++this.name == orig(this.name)
++this.name.toString == orig(this.name.toString)
++this.attributes == orig(this.attributes)
++this.attributes.getClass().getName() == orig(this.attributes.getClass().getName())
++this.attributes.getClass().getName() == orig(this.results.getClass().getName())
++this.results == orig(this.results)
++this.attributes has only one value
++this.results has only one value
++return == null
++===========================================================================
++testng._22.mocks.MockSuite.removeAttribute(java.lang.String):::ENTER
++this has only one value
++this.attributes has only one value
++this.results has only one value
++name has only one value
++name.toString == "key"
++===========================================================================
++testng._22.mocks.MockSuite.removeAttribute(java.lang.String):::EXIT
++this.name == orig(this.name)
++this.name.toString == orig(this.name.toString)
++this.attributes == orig(this.attributes)
++this.attributes.getClass().getName() == orig(this.attributes.getClass().getName())
++this.attributes.getClass().getName() == orig(this.results.getClass().getName())
++this.results == orig(this.results)
++name.toString == orig(name.toString)
++this.attributes has only one value
++this.results has only one value
++name.toString == "key"
++return has only one value
++return.getClass().getName() == java.lang.String.class
++===========================================================================
++testng._22.mocks.MockSuite.setAttribute(java.lang.String, java.lang.Object):::ENTER
++this has only one value
++this.attributes has only one value
++this.results has only one value
++name has only one value
++name.toString == "key"
++value has only one value
++value.getClass().getName() == java.lang.String.class
++===========================================================================
++testng._22.mocks.MockSuite.setAttribute(java.lang.String, java.lang.Object):::EXIT
++this.name == orig(this.name)
++this.name.toString == orig(this.name.toString)
++this.attributes == orig(this.attributes)
++this.attributes.getClass().getName() == orig(this.attributes.getClass().getName())
++this.attributes.getClass().getName() == orig(this.results.getClass().getName())
++this.results == orig(this.results)
++name.toString == orig(name.toString)
++this.attributes has only one value
++this.results has only one value
++name.toString == "key"
++===========================================================================
++testng._22.mocks.MockSuiteResult:::OBJECT
++this has only one value
++this.testContext has only one value
++this.testContext.getClass().getName() == testng._22.mocks.MockTestContext.class
++===========================================================================
++testng._22.mocks.MockSuiteResult.MockSuiteResult(testng._22.requirements.org.testng.ITestContext):::ENTER
++testContext has only one value
++testContext.getClass().getName() == testng._22.mocks.MockTestContext.class
++===========================================================================
++testng._22.mocks.MockSuiteResult.MockSuiteResult(testng._22.requirements.org.testng.ITestContext):::EXIT
++this.testContext == orig(testContext)
++this.testContext.getClass().getName() == orig(testContext.getClass().getName())
++===========================================================================
++testng._22.mocks.MockSuiteResult.getTestContext():::ENTER
++===========================================================================
++testng._22.mocks.MockSuiteResult.getTestContext():::EXIT
++this.testContext == return
++this.testContext.getClass().getName() == return.getClass().getName()
++return == orig(this.testContext)
++return.getClass().getName() == orig(this.testContext.getClass().getName())
++return has only one value
++return.getClass().getName() == testng._22.mocks.MockTestContext.class
++===========================================================================
++testng._22.mocks.MockTestContext:::OBJECT
++this.passedTests.getClass().getName() == this.failedTests.getClass().getName()
++this.passedTests.getClass().getName() == this.skippedTests.getClass().getName()
++this.passedTests.getClass().getName() == this.failedButWithinSuccessPercentageTests.getClass().getName()
++this.passedTests.getClass().getName() == this.passedConfigurations.getClass().getName()
++this.passedTests.getClass().getName() == this.failedConfigurations.getClass().getName()
++this.passedTests.getClass().getName() == this.skippedConfigurations.getClass().getName()
++this has only one value
++this.name has only one value
++this.name != null
++this.name.toString == "TestContext"
++this.suite.getClass().getName() == testng._22.mocks.MockSuite.class
++this.startDate has only one value
++this.startDate != null
++this.endDate has only one value
++this.endDate != null
++this.outputDirectory has only one value
++this.outputDirectory != null
++this.outputDirectory.toString == "/tmp"
++this.attributes has only one value
++this.attributes != null
++this.attributes.getClass().getName() == java.util.Collections$SynchronizedMap.class
++this.passedTests has only one value
++this.passedTests != null
++this.passedTests.getClass().getName() == testng._22.mocks.MockResultMap.class
++this.failedTests has only one value
++this.failedTests != null
++this.skippedTests has only one value
++this.skippedTests != null
++this.failedButWithinSuccessPercentageTests has only one value
++this.failedButWithinSuccessPercentageTests != null
++this.passedConfigurations has only one value
++this.passedConfigurations != null
++this.failedConfigurations has only one value
++this.failedConfigurations != null
++this.skippedConfigurations has only one value
++this.skippedConfigurations != null
++this.name.toString > this.outputDirectory.toString
++this.suite.getClass().getName() != this.attributes.getClass().getName()
++this.suite.getClass().getName() != this.passedTests.getClass().getName()
++this.attributes.getClass().getName() != this.passedTests.getClass().getName()
++===========================================================================
++testng._22.mocks.MockTestContext.MockTestContext(java.lang.String):::ENTER
++name has only one value
++name.toString == "TestContext"
++===========================================================================
++testng._22.mocks.MockTestContext.MockTestContext(java.lang.String):::EXIT
++this.name == orig(name)
++this.name.toString == name.toString
++name.toString == orig(name.toString)
++this.suite == null
++name.toString == "TestContext"
++===========================================================================
++testng._22.mocks.MockTestContext.getEndDate():::ENTER
++this.suite has only one value
++===========================================================================
++testng._22.mocks.MockTestContext.getEndDate():::EXIT
++this.name == orig(this.name)
++this.name.toString == orig(this.name.toString)
++this.suite == orig(this.suite)
++this.suite.getClass().getName() == orig(this.suite.getClass().getName())
++this.startDate == orig(this.startDate)
++this.endDate == return
++this.outputDirectory == orig(this.outputDirectory)
++this.outputDirectory.toString == orig(this.outputDirectory.toString)
++this.attributes == orig(this.attributes)
++this.attributes.getClass().getName() == orig(this.attributes.getClass().getName())
++this.passedTests == orig(this.passedTests)
++this.passedTests.getClass().getName() == orig(this.passedTests.getClass().getName())
++this.passedTests.getClass().getName() == orig(this.failedTests.getClass().getName())
++this.passedTests.getClass().getName() == orig(this.skippedTests.getClass().getName())
++this.passedTests.getClass().getName() == orig(this.failedButWithinSuccessPercentageTests.getClass().getName())
++this.passedTests.getClass().getName() == orig(this.passedConfigurations.getClass().getName())
++this.passedTests.getClass().getName() == orig(this.failedConfigurations.getClass().getName())
++this.passedTests.getClass().getName() == orig(this.skippedConfigurations.getClass().getName())
++this.failedTests == orig(this.failedTests)
++this.skippedTests == orig(this.skippedTests)
++this.failedButWithinSuccessPercentageTests == orig(this.failedButWithinSuccessPercentageTests)
++this.passedConfigurations == orig(this.passedConfigurations)
++this.failedConfigurations == orig(this.failedConfigurations)
++this.skippedConfigurations == orig(this.skippedConfigurations)
++return == orig(this.endDate)
++this.suite has only one value
++return has only one value
++===========================================================================
++testng._22.mocks.MockTestContext.getFailedTests():::ENTER
++this.suite has only one value
++===========================================================================
++testng._22.mocks.MockTestContext.getFailedTests():::EXIT
++this.name == orig(this.name)
++this.name.toString == orig(this.name.toString)
++this.suite == orig(this.suite)
++this.suite.getClass().getName() == orig(this.suite.getClass().getName())
++this.startDate == orig(this.startDate)
++this.endDate == orig(this.endDate)
++this.outputDirectory == orig(this.outputDirectory)
++this.outputDirectory.toString == orig(this.outputDirectory.toString)
++this.attributes == orig(this.attributes)
++this.attributes.getClass().getName() == orig(this.attributes.getClass().getName())
++this.passedTests == orig(this.passedTests)
++this.passedTests.getClass().getName() == return.getClass().getName()
++this.failedTests == return
++this.failedTests.getClass().getName() == return.getClass().getName()
++this.skippedTests == orig(this.skippedTests)
++this.skippedTests.getClass().getName() == return.getClass().getName()
++this.failedButWithinSuccessPercentageTests == orig(this.failedButWithinSuccessPercentageTests)
++this.failedButWithinSuccessPercentageTests.getClass().getName() == return.getClass().getName()
++this.passedConfigurations == orig(this.passedConfigurations)
++this.passedConfigurations.getClass().getName() == return.getClass().getName()
++this.failedConfigurations == orig(this.failedConfigurations)
++this.failedConfigurations.getClass().getName() == return.getClass().getName()
++this.skippedConfigurations == orig(this.skippedConfigurations)
++this.skippedConfigurations.getClass().getName() == return.getClass().getName()
++return == orig(this.failedTests)
++return.getClass().getName() == orig(this.passedTests.getClass().getName())
++return.getClass().getName() == orig(this.failedTests.getClass().getName())
++return.getClass().getName() == orig(this.skippedTests.getClass().getName())
++return.getClass().getName() == orig(this.failedButWithinSuccessPercentageTests.getClass().getName())
++return.getClass().getName() == orig(this.passedConfigurations.getClass().getName())
++return.getClass().getName() == orig(this.failedConfigurations.getClass().getName())
++return.getClass().getName() == orig(this.skippedConfigurations.getClass().getName())
++this.suite has only one value
++return has only one value
++return.getClass().getName() == testng._22.mocks.MockResultMap.class
++===========================================================================
++testng._22.mocks.MockTestContext.getPassedTests():::ENTER
++this.suite has only one value
++===========================================================================
++testng._22.mocks.MockTestContext.getPassedTests():::EXIT
++this.name == orig(this.name)
++this.name.toString == orig(this.name.toString)
++this.suite == orig(this.suite)
++this.suite.getClass().getName() == orig(this.suite.getClass().getName())
++this.startDate == orig(this.startDate)
++this.endDate == orig(this.endDate)
++this.outputDirectory == orig(this.outputDirectory)
++this.outputDirectory.toString == orig(this.outputDirectory.toString)
++this.attributes == orig(this.attributes)
++this.attributes.getClass().getName() == orig(this.attributes.getClass().getName())
++this.passedTests == return
++this.passedTests.getClass().getName() == return.getClass().getName()
++this.failedTests == orig(this.failedTests)
++this.failedTests.getClass().getName() == return.getClass().getName()
++this.skippedTests == orig(this.skippedTests)
++this.skippedTests.getClass().getName() == return.getClass().getName()
++this.failedButWithinSuccessPercentageTests == orig(this.failedButWithinSuccessPercentageTests)
++this.failedButWithinSuccessPercentageTests.getClass().getName() == return.getClass().getName()
++this.passedConfigurations == orig(this.passedConfigurations)
++this.passedConfigurations.getClass().getName() == return.getClass().getName()
++this.failedConfigurations == orig(this.failedConfigurations)
++this.failedConfigurations.getClass().getName() == return.getClass().getName()
++this.skippedConfigurations == orig(this.skippedConfigurations)
++this.skippedConfigurations.getClass().getName() == return.getClass().getName()
++return == orig(this.passedTests)
++return.getClass().getName() == orig(this.passedTests.getClass().getName())
++return.getClass().getName() == orig(this.failedTests.getClass().getName())
++return.getClass().getName() == orig(this.skippedTests.getClass().getName())
++return.getClass().getName() == orig(this.failedButWithinSuccessPercentageTests.getClass().getName())
++return.getClass().getName() == orig(this.passedConfigurations.getClass().getName())
++return.getClass().getName() == orig(this.failedConfigurations.getClass().getName())
++return.getClass().getName() == orig(this.skippedConfigurations.getClass().getName())
++this.suite has only one value
++return has only one value
++return.getClass().getName() == testng._22.mocks.MockResultMap.class
++===========================================================================
++testng._22.mocks.MockTestContext.getSkippedTests():::ENTER
++this.suite has only one value
++===========================================================================
++testng._22.mocks.MockTestContext.getSkippedTests():::EXIT
++this.name == orig(this.name)
++this.name.toString == orig(this.name.toString)
++this.suite == orig(this.suite)
++this.suite.getClass().getName() == orig(this.suite.getClass().getName())
++this.startDate == orig(this.startDate)
++this.endDate == orig(this.endDate)
++this.outputDirectory == orig(this.outputDirectory)
++this.outputDirectory.toString == orig(this.outputDirectory.toString)
++this.attributes == orig(this.attributes)
++this.attributes.getClass().getName() == orig(this.attributes.getClass().getName())
++this.passedTests == orig(this.passedTests)
++this.passedTests.getClass().getName() == return.getClass().getName()
++this.failedTests == orig(this.failedTests)
++this.failedTests.getClass().getName() == return.getClass().getName()
++this.skippedTests == return
++this.skippedTests.getClass().getName() == return.getClass().getName()
++this.failedButWithinSuccessPercentageTests == orig(this.failedButWithinSuccessPercentageTests)
++this.failedButWithinSuccessPercentageTests.getClass().getName() == return.getClass().getName()
++this.passedConfigurations == orig(this.passedConfigurations)
++this.passedConfigurations.getClass().getName() == return.getClass().getName()
++this.failedConfigurations == orig(this.failedConfigurations)
++this.failedConfigurations.getClass().getName() == return.getClass().getName()
++this.skippedConfigurations == orig(this.skippedConfigurations)
++this.skippedConfigurations.getClass().getName() == return.getClass().getName()
++return == orig(this.skippedTests)
++return.getClass().getName() == orig(this.passedTests.getClass().getName())
++return.getClass().getName() == orig(this.failedTests.getClass().getName())
++return.getClass().getName() == orig(this.skippedTests.getClass().getName())
++return.getClass().getName() == orig(this.failedButWithinSuccessPercentageTests.getClass().getName())
++return.getClass().getName() == orig(this.passedConfigurations.getClass().getName())
++return.getClass().getName() == orig(this.failedConfigurations.getClass().getName())
++return.getClass().getName() == orig(this.skippedConfigurations.getClass().getName())
++this.suite has only one value
++return has only one value
++return.getClass().getName() == testng._22.mocks.MockResultMap.class
++===========================================================================
++testng._22.mocks.MockTestContext.getStartDate():::ENTER
++this.suite has only one value
++===========================================================================
++testng._22.mocks.MockTestContext.getStartDate():::EXIT
++this.name == orig(this.name)
++this.name.toString == orig(this.name.toString)
++this.suite == orig(this.suite)
++this.suite.getClass().getName() == orig(this.suite.getClass().getName())
++this.startDate == return
++this.endDate == orig(this.endDate)
++this.outputDirectory == orig(this.outputDirectory)
++this.outputDirectory.toString == orig(this.outputDirectory.toString)
++this.attributes == orig(this.attributes)
++this.attributes.getClass().getName() == orig(this.attributes.getClass().getName())
++this.passedTests == orig(this.passedTests)
++this.passedTests.getClass().getName() == orig(this.passedTests.getClass().getName())
++this.passedTests.getClass().getName() == orig(this.failedTests.getClass().getName())
++this.passedTests.getClass().getName() == orig(this.skippedTests.getClass().getName())
++this.passedTests.getClass().getName() == orig(this.failedButWithinSuccessPercentageTests.getClass().getName())
++this.passedTests.getClass().getName() == orig(this.passedConfigurations.getClass().getName())
++this.passedTests.getClass().getName() == orig(this.failedConfigurations.getClass().getName())
++this.passedTests.getClass().getName() == orig(this.skippedConfigurations.getClass().getName())
++this.failedTests == orig(this.failedTests)
++this.skippedTests == orig(this.skippedTests)
++this.failedButWithinSuccessPercentageTests == orig(this.failedButWithinSuccessPercentageTests)
++this.passedConfigurations == orig(this.passedConfigurations)
++this.failedConfigurations == orig(this.failedConfigurations)
++this.skippedConfigurations == orig(this.skippedConfigurations)
++return == orig(this.startDate)
++this.suite has only one value
++return has only one value
++===========================================================================
++testng._22.mocks.MockTestContext.setSuite(testng._22.requirements.org.testng.ISuite):::ENTER
++this.suite == null
++suite has only one value
++suite.getClass().getName() == testng._22.mocks.MockSuite.class
++===========================================================================
++testng._22.mocks.MockTestContext.setSuite(testng._22.requirements.org.testng.ISuite):::EXIT
++this.name == orig(this.name)
++this.name.toString == orig(this.name.toString)
++this.suite == orig(suite)
++this.suite.getClass().getName() == orig(suite.getClass().getName())
++this.startDate == orig(this.startDate)
++this.endDate == orig(this.endDate)
++this.outputDirectory == orig(this.outputDirectory)
++this.outputDirectory.toString == orig(this.outputDirectory.toString)
++this.attributes == orig(this.attributes)
++this.attributes.getClass().getName() == orig(this.attributes.getClass().getName())
++this.passedTests == orig(this.passedTests)
++this.passedTests.getClass().getName() == orig(this.passedTests.getClass().getName())
++this.passedTests.getClass().getName() == orig(this.failedTests.getClass().getName())
++this.passedTests.getClass().getName() == orig(this.skippedTests.getClass().getName())
++this.passedTests.getClass().getName() == orig(this.failedButWithinSuccessPercentageTests.getClass().getName())
++this.passedTests.getClass().getName() == orig(this.passedConfigurations.getClass().getName())
++this.passedTests.getClass().getName() == orig(this.failedConfigurations.getClass().getName())
++this.passedTests.getClass().getName() == orig(this.skippedConfigurations.getClass().getName())
++this.failedTests == orig(this.failedTests)
++this.skippedTests == orig(this.skippedTests)
++this.failedButWithinSuccessPercentageTests == orig(this.failedButWithinSuccessPercentageTests)
++this.passedConfigurations == orig(this.passedConfigurations)
++this.failedConfigurations == orig(this.failedConfigurations)
++this.skippedConfigurations == orig(this.skippedConfigurations)
++this.suite has only one value
++===========================================================================
+ testng._22.requirements.org.testng.Reporter:::CLASS
+ testng._22.requirements.org.testng.Reporter.m_currentTestResult has only one value
+ testng._22.requirements.org.testng.Reporter.m_output has only one value
+@@ -11898,7 +11898,7 @@
+ testng._22.requirements.org.testng.reporters.XMLUtils.EOL.toString == orig(testng._22.requirements.org.testng.reporters.XMLUtils.EOL.toString)
+ ===========================================================================
+ testng._22.requirements.org.testng.reporters.XMLUtils.escape(java.lang.String):::ENTER
+-input.toString one of { "0", "2025-12-20T06:53:25 UTC", "TestSuite" }
++input.toString one of { "0", "2025-12-20T06:56:30 UTC", "TestSuite" }
+ testng._22.requirements.org.testng.reporters.XMLUtils.EOL.toString < input.toString
+ ===========================================================================
+ testng._22.requirements.org.testng.reporters.XMLUtils.escape(java.lang.String):::EXIT
+@@ -11908,7 +11908,7 @@
+ testng._22.requirements.org.testng.reporters.XMLUtils.EOL.toString == orig(testng._22.requirements.org.testng.reporters.XMLUtils.EOL.toString)
+ input.toString == return.toString
+ input.toString == orig(input.toString)
+-input.toString one of { "0", "2025-12-20T06:53:25 UTC", "TestSuite" }
++input.toString one of { "0", "2025-12-20T06:56:30 UTC", "TestSuite" }
+ testng._22.requirements.org.testng.reporters.XMLUtils.EOL.toString < input.toString
+ ===========================================================================
+ testng._22.requirements.org.testng.reporters.XMLUtils.extractComment(java.lang.String, java.util.Properties):::ENTER

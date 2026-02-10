@@ -1,0 +1,11 @@
+--- /dev/fd/63	2025-12-20 07:52:18.771050674 +0000
++++ /dev/fd/62	2025-12-20 07:52:18.771050674 +0000
+@@ -2926,7 +2926,7 @@
+ org.slf4j.simple.SimpleLoggerConfiguration.LOG_FILE_DEFAULT.toString == org.slf4j.simple.SimpleLogger.CONFIG_PARAMS.logFile.toString
+ org.slf4j.simple.SimpleLoggerConfiguration.WARN_LEVELS_STRING_DEFAULT == org.slf4j.simple.SimpleLogger.CONFIG_PARAMS.warnLevelString
+ org.slf4j.simple.SimpleLoggerConfiguration.WARN_LEVELS_STRING_DEFAULT.toString == org.slf4j.simple.SimpleLogger.CONFIG_PARAMS.warnLevelString.toString
+-org.slf4j.simple.SimpleLogger.START_TIME == 1766208109110L
++org.slf4j.simple.SimpleLogger.START_TIME == 1766208116223L
+ org.slf4j.simple.SimpleLogger.SP == 32
+ org.slf4j.simple.SimpleLogger.TID_PREFIX has only one value
+ org.slf4j.simple.SimpleLogger.TID_PREFIX != null

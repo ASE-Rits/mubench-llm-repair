@@ -1,0 +1,661 @@
+--- /dev/fd/63	2025-12-20 07:52:18.968055867 +0000
++++ /dev/fd/62	2025-12-20 07:52:18.969055893 +0000
+@@ -1721,7 +1721,7 @@
+ org.slf4j.simple.SimpleLoggerConfiguration.LOG_FILE_DEFAULT.toString == org.slf4j.simple.SimpleLogger.CONFIG_PARAMS.logFile.toString
+ org.slf4j.simple.SimpleLoggerConfiguration.WARN_LEVELS_STRING_DEFAULT == org.slf4j.simple.SimpleLogger.CONFIG_PARAMS.warnLevelString
+ org.slf4j.simple.SimpleLoggerConfiguration.WARN_LEVELS_STRING_DEFAULT.toString == org.slf4j.simple.SimpleLogger.CONFIG_PARAMS.warnLevelString.toString
+-org.slf4j.simple.SimpleLogger.START_TIME == 1766213088592L
++org.slf4j.simple.SimpleLogger.START_TIME == 1766213267005L
+ org.slf4j.simple.SimpleLogger.SP == 32
+ org.slf4j.simple.SimpleLogger.TID_PREFIX has only one value
+ org.slf4j.simple.SimpleLogger.TID_PREFIX.toString == "tid="
+@@ -2836,281 +2836,7 @@
+ this.reporterClass == orig(this.reporterClass)
+ this.reporterInstance == null
+ this.reporterClass == null
+-return.toString == "package testng._18.VARIANT;\n\n\nimport testng._18.requirements.org.testng.ITestContext;\nimport testng._18.requirements.org.testng.ITestNGMethod;\nimport testng._18.requirements.org.testng.ITestResult;\nimport testng._18.requirements.org.testng.collections.Lists;\nimport testng._18.requirements.org.testng.collections.Maps;\nimport testng._18.requirements.org.testng.collections.Sets;\nimport testng._18.requirements.org.testng.internal.IResultListener2;\nimport testng._18.requirements.org.testng.internal.Utils;\nimport testng._18.requirements.org.testng.reporters.XMLConstants;\nimport testng._18.requirements.org.testng.reporters.XMLStringBuffer;\n\nimport java.net.InetAddress;\nimport java.net.UnknownHostException;\nimport java.util.Calendar;\nimport java.util.Collections;\nimport java.util.Date;\nimport java.util.List;\nimport java.util.Map;\nimport java.util.Properties;\nimport java.util.Set;\nimport java.util.regex.Pattern;\n\n/**\n * A JUnit XML report generator (replacing the VARIANT JUnitXMLReporter that was\n * based on XML APIs).\n *\n * @author <a href='mailto:the[dot]mindstorm[at]gmail[dot]com'>Alex Popescu</a>\n */\npublic class JUnitXMLReporter implements IResultListener2 {\n  private static final Pattern ENTITY= Pattern.compile(\"&[a-zA-Z]+;.*\");\n  private static final Pattern LESS= Pattern.compile(\"<\");\n  private static final Pattern GREATER= Pattern.compile(\">\");\n  private static final Pattern SINGLE_QUOTE = Pattern.compile(\"'\");\n  private static final Pattern QUOTE = Pattern.compile(\"\\\"\");\n  private static final Map<String, Pattern> ATTR_ESCAPES= Maps.newHashMap();\n\n  static {\n    ATTR_ESCAPES.put(\"&lt;\", LESS);\n    ATTR_ESCAPES.put(\"&gt;\", GREATER);\n    ATTR_ESCAPES.put(\"&apos;\", SINGLE_QUOTE);\n    ATTR_ESCAPES.put(\"&quot;\", QUOTE);\n  }\n\n\n  /**\n   * keep lists of all the results\n   */\n  private int m_numPassed= 0;\n  private int m_numFailed= 0;\n  private int m_numSkipped= 0;\n  private int m_numFailedButIgnored= 0;\n  private List<ITestResult> m_allTests =\n      Collections.synchronizedList(Lists.<ITestResult>newArrayList());\n  private List<ITestResult> m_configIssues =\n      Collections.synchronizedList(Lists.<ITestResult>newArrayList());\n  private Map<String, String> m_fileNameMap = Maps.newHashMap();\n  private int m_fileNameIncrementer = 0;\n\n  @Override\n  public void onTestStart(ITestResult result) {\n  }\n\n  @Override\n  public void beforeConfiguration(ITestResult tr) {\n  }\n\n  /**\n   * Invoked each time a test succeeds.\n   */\n  @Override\n  public void onTestSuccess(ITestResult tr) {\n    m_allTests.add(tr);\n    m_numPassed++;\n  }\n\n  @Override\n  public void onTestFailedButWithinSuccessPercentage(ITestResult tr) {\n    m_allTests.add(tr);\n    m_numFailedButIgnored++;\n  }\n\n  /**\n   * Invoked each time a test fails.\n   */\n  @Override\n  public void onTestFailure(ITestResult tr) {\n    m_allTests.add(tr);\n    m_numFailed++;\n  }\n\n  /**\n   * Invoked each time a test is skipped.\n   */\n  @Override\n  public void onTestSkipped(ITestResult tr) {\n    m_allTests.add(tr);\n    m_numSkipped++;\n  }\n\n  /**\n   * Invoked after the test class is instantiated and before\n   * any configuration method is called.\n   *\n   */\n  @Override\n  public void onStart(ITestContext context) {\n\n  }\n\n  /**\n   * Invoked after all the tests have run and all their\n   * Configuration methods have been called.\n   *\n   */\n  @Override\n  public void onFinish(ITestContext context) {\n\tgenerateReport(context);\n    resetAll();\n  }\n\n  /**\n   * @see org.testng.IConfigurationListener#onConfigurationFailure(org.testng.ITestResult)\n   */\n  @Override\n  public void onConfigurationFailure(ITestResult itr) {\n    m_configIssues.add(itr);\n  }\n\n  /**\n   * @see org.testng.IConfigurationListener#onConfigurationSkip(org.testng.ITestResult)\n   */\n  @Override\n  public void onConfigurationSkip(ITestResult itr) {\n    m_configIssues.add(itr);\n  }\n\n  /**\n   * @see org.testng.IConfigurationListener#onConfigurationSuccess(org.testng.ITestResult)\n   */\n  @Override\n  public void onConfigurationSuccess(ITestResult itr) {\n  }\n\n  /**\n   * generate the XML report given what we know from all the test results\n   */\n  protected void generateReport(ITestContext context) {\n\n      XMLStringBuffer document= new XMLStringBuffer();\n      document.addComment(\"Generated by \" + getClass().getName());\n\n      Properties attrs= new Properties();\n      attrs.setProperty(XMLConstants.ATTR_ERRORS, \"0\");\n      attrs.setProperty(XMLConstants.ATTR_FAILURES, \"\" + m_numFailed);\n      try {\n        attrs.setProperty(XMLConstants.ATTR_HOSTNAME, InetAddress.getLocalHost().getHostName());\n      } catch (UnknownHostException e) {\n        // ignore\n      }\n      Set<String> packages = getPackages(context);\n      if (packages.size() > 0) {\n        attrs.setProperty(XMLConstants.ATTR_NAME, context.getCurrentXmlTest().getName());\n//        attrs.setProperty(XMLConstants.ATTR_PACKAGE, packages.iterator().next());\n      }\n\n      attrs.setProperty(XMLConstants.ATTR_TESTS, \"\" + m_allTests.size());\n      attrs.setProperty(XMLConstants.ATTR_TIME, \"\"\n          + ((context.getEndDate().getTime() - context.getStartDate().getTime()) / 1000.0));\n\n      Date timeStamp = Calendar.getInstance().getTime();\n      attrs.setProperty(XMLConstants.ATTR_TIMESTAMP, timeStamp.toGMTString());\n\n      document.push(XMLConstants.TESTSUITE, attrs);\n//      document.addEmptyElement(XMLConstants.PROPERTIES);\n\n      synchronized(m_configIssues) {\n          for(ITestResult tr : m_configIssues) {\n              createElement(document, tr);\n          }\n      }\n      synchronized(m_allTests) {\n          for(ITestResult tr : m_allTests) {\n              createElement(document, tr);\n          }\n      }\n\n      document.pop();\n      Utils.writeUtf8File(context.getOutputDirectory(),generateFileName(context) + \".xml\", document.toXML());\n  }\n\n  private Set<String> getPackages(ITestContext context) {\n    Set<String> result = Sets.newHashSet();\n    for (ITestNGMethod m : context.getAllTestMethods()) {\n      Package pkg = m.getMethod().getDeclaringClass().getPackage();\n      if (pkg != null) {\n        result.add(pkg.getName());\n      }\n    }\n    return result;\n  }\n\n  private void createElement(XMLStringBuffer doc, ITestResult tr) {\n    Properties attrs= new Properties();\n    long elapsedTimeMillis= tr.getEndMillis() - tr.getStartMillis();\n    String name= tr.getMethod().isTest() ? tr.getName() : Utils.detailedMethodName(tr.getMethod(), false);\n    attrs.setProperty(XMLConstants.ATTR_NAME, name);\n    attrs.setProperty(XMLConstants.ATTR_CLASSNAME, tr.getTestClass().getRealClass().getName());\n    attrs.setProperty(XMLConstants.ATTR_TIME, \"\" + (((double) elapsedTimeMillis) / 1000));\n\n    if((ITestResult.FAILURE == tr.getStatus()) || (ITestResult.SKIP == tr.getStatus())) {\n      doc.push(XMLConstants.TESTCASE, attrs);\n\n      if(ITestResult.FAILURE == tr.getStatus()) {\n        createFailureElement(doc, tr);\n      }\n      else if(ITestResult.SKIP == tr.getStatus()) {\n        createSkipElement(doc, tr);\n      }\n\n      doc.pop();\n    }\n    else {\n      doc.addEmptyElement(XMLConstants.TESTCASE, attrs);\n    }\n  }\n\n  private void createFailureElement(XMLStringBuffer doc, ITestResult tr) {\n    Properties attrs= new Properties();\n    Throwable t= tr.getThrowable();\n    if(t != null) {\n      attrs.setProperty(XMLConstants.ATTR_TYPE, t.getClass().getName());\n      String message= t.getMessage();\n      if((message != null) && (message.length() > 0)) {\n        attrs.setProperty(XMLConstants.ATTR_MESSAGE, encodeAttr(message)); // ENCODE\n      }\n      doc.push(XMLConstants.FAILURE, attrs);\n      doc.addCDATA(Utils.stackTrace(t, false)[0]);\n      doc.pop();\n    }\n    else {\n      doc.addEmptyElement(XMLConstants.FAILURE); // THIS IS AN ERROR\n    }\n  }\n\n  private void createSkipElement(XMLStringBuffer doc, ITestResult tr) {\n    doc.addEmptyElement(\"skipped\");\n  }\n\n  private String encodeAttr(String attr) {\n    String result= replaceAmpersand(attr, ENTITY);\n    for(Map.Entry<String, Pattern> e: ATTR_ESCAPES.entrySet()) {\n      result= e.getValue().matcher(result).replaceAll(e.getKey());\n    }\n\n    return result;\n  }\n\n  private String replaceAmpersand(String str, Pattern pattern) {\n    int start = 0;\n    int idx = str.indexOf('&', start);\n    if(idx == -1) {\n      return str;\n    }\n    StringBuffer result= new StringBuffer();\n    while(idx != -1) {\n      result.append(str.substring(start, idx));\n      if(pattern.matcher(str.substring(idx)).matches()) {\n        // do nothing it is an entity;\n        result.append(\"&\");\n      }\n      else {\n        result.append(\"&amp;\");\n      }\n      start= idx + 1;\n      idx= str.indexOf('&', start);\n    }\n    result.append(str.substring(start));\n\n    return result.toString();\n  }\n\n\n  /**\n\t * Reset all member variables for next test.\n\t * */\n\tprivate void resetAll() {\n\t\tm_allTests = Collections.synchronizedList(Lists.<ITestResult>newArrayList());\n\t\tm_configIssues = Collections.synchronizedList(Lists.<ITestResult>newArrayList());\n\t\tm_numFailed = 0;\n\t\tm_numFailedButIgnored = 0;\n\t\tm_numPassed = 0;\n\t\tm_numSkipped = 0;\n\t}\n\n\t/**\n\t * @author Borojevic Created this method to guarantee unique file names for\n\t *         reports.<br>\n\t *         Also, this will guarantee that the old reports are overwritten\n\t *         when tests are run again.\n\t * @param context\n\t *            test context\n\t * @return unique name for the file associated with this test context.\n\t * */\n\tprivate String generateFileName(ITestContext context) {\n\t\tString fileName = null;\n\t\tString keyToSearch = context.getSuite().getName() + context.getName();\n\t\tif (m_fileNameMap.get(keyToSearch) == null) {\n\t\t\tfileName = context.getName();\n\t\t} else {\n\t\t\tfileName = context.getName() + m_fileNameIncrementer++;\n\t\t}\n\n\t\tm_fileNameMap.put(keyToSearch, fileName);\n\t\treturn fileName;\n\t}\n}\n"
+-===========================================================================
+-testng._18.mocks.MockResultMap:::OBJECT
+-this.results != null
+-this.results.getClass().getName() == java.util.Collections$SynchronizedSet.class
+-===========================================================================
+-testng._18.mocks.MockResultMap.MockResultMap():::EXIT
+-===========================================================================
+-testng._18.mocks.MockSuite:::OBJECT
+-this.attributes.getClass().getName() == this.results.getClass().getName()
+-this.name has only one value
+-this.name.toString == "TestSuite"
+-this.attributes.getClass().getName() == java.util.Collections$SynchronizedMap.class
+-===========================================================================
+-testng._18.mocks.MockSuite.MockSuite(java.lang.String):::ENTER
+-name has only one value
+-name.toString == "TestSuite"
+-===========================================================================
+-testng._18.mocks.MockSuite.MockSuite(java.lang.String):::EXIT
+-this.name == orig(name)
+-this.name.toString == name.toString
+-name.toString == orig(name.toString)
+-name.toString == "TestSuite"
+-===========================================================================
+-testng._18.mocks.MockSuite.getName():::ENTER
+-===========================================================================
+-testng._18.mocks.MockSuite.getName():::EXIT
+-this.name == return
+-this.name.toString == return.toString
+-this.attributes == orig(this.attributes)
+-this.attributes.getClass().getName() == orig(this.attributes.getClass().getName())
+-this.attributes.getClass().getName() == orig(this.results.getClass().getName())
+-this.results == orig(this.results)
+-return == orig(this.name)
+-return.toString == orig(this.name.toString)
+-return has only one value
+-return.toString == "TestSuite"
+-===========================================================================
+-testng._18.mocks.MockTestContext:::OBJECT
+-this.passedTests.getClass().getName() == this.failedTests.getClass().getName()
+-this.passedTests.getClass().getName() == this.skippedTests.getClass().getName()
+-this.passedTests.getClass().getName() == this.failedButWithinSuccessPercentageTests.getClass().getName()
+-this.passedTests.getClass().getName() == this.passedConfigurations.getClass().getName()
+-this.passedTests.getClass().getName() == this.failedConfigurations.getClass().getName()
+-this.passedTests.getClass().getName() == this.skippedConfigurations.getClass().getName()
+-this.name has only one value
+-this.name != null
+-this.name.toString == "TestContext"
+-this.suite != null
+-this.suite.getClass().getName() == testng._18.mocks.MockSuite.class
+-this.startDate != null
+-this.endDate != null
+-this.outputDirectory has only one value
+-this.outputDirectory != null
+-this.outputDirectory.toString == "/tmp"
+-this.attributes != null
+-this.attributes.getClass().getName() == java.util.Collections$SynchronizedMap.class
+-this.passedTests != null
+-this.passedTests.getClass().getName() == testng._18.mocks.MockResultMap.class
+-this.failedTests != null
+-this.skippedTests != null
+-this.failedButWithinSuccessPercentageTests != null
+-this.passedConfigurations != null
+-this.failedConfigurations != null
+-this.skippedConfigurations != null
+-this.name.toString > this.outputDirectory.toString
+-this.suite.getClass().getName() != this.attributes.getClass().getName()
+-this.suite.getClass().getName() != this.passedTests.getClass().getName()
+-this.attributes.getClass().getName() != this.passedTests.getClass().getName()
+-===========================================================================
+-testng._18.mocks.MockTestContext.MockTestContext(java.lang.String):::ENTER
+-name has only one value
+-name.toString == "TestContext"
+-===========================================================================
+-testng._18.mocks.MockTestContext.MockTestContext(java.lang.String):::EXIT
+-this.name == orig(name)
+-this.name.toString == name.toString
+-name.toString == orig(name.toString)
+-name.toString == "TestContext"
+-===========================================================================
+-testng._18.mocks.MockTestContext.MockTestContext(java.lang.String, testng._18.requirements.org.testng.ISuite):::ENTER
+-name has only one value
+-name.toString == "TestContext"
+-suite.getClass().getName() == testng._18.mocks.MockSuite.class
+-===========================================================================
+-testng._18.mocks.MockTestContext.MockTestContext(java.lang.String, testng._18.requirements.org.testng.ISuite):::EXIT
+-this.name == orig(name)
+-this.name.toString == name.toString
+-this.suite == orig(suite)
+-this.suite.getClass().getName() == orig(suite.getClass().getName())
+-name.toString == orig(name.toString)
+-name.toString == "TestContext"
+-===========================================================================
+-testng._18.mocks.MockTestContext.getAllTestMethods():::ENTER
+-===========================================================================
+-testng._18.mocks.MockTestContext.getAllTestMethods():::EXIT
+-this.name == orig(this.name)
+-this.name.toString == orig(this.name.toString)
+-this.suite == orig(this.suite)
+-this.suite.getClass().getName() == orig(this.suite.getClass().getName())
+-this.startDate == orig(this.startDate)
+-this.endDate == orig(this.endDate)
+-this.outputDirectory == orig(this.outputDirectory)
+-this.outputDirectory.toString == orig(this.outputDirectory.toString)
+-this.attributes == orig(this.attributes)
+-this.attributes.getClass().getName() == orig(this.attributes.getClass().getName())
+-this.passedTests == orig(this.passedTests)
+-this.passedTests.getClass().getName() == orig(this.passedTests.getClass().getName())
+-this.passedTests.getClass().getName() == orig(this.failedTests.getClass().getName())
+-this.passedTests.getClass().getName() == orig(this.skippedTests.getClass().getName())
+-this.passedTests.getClass().getName() == orig(this.failedButWithinSuccessPercentageTests.getClass().getName())
+-this.passedTests.getClass().getName() == orig(this.passedConfigurations.getClass().getName())
+-this.passedTests.getClass().getName() == orig(this.failedConfigurations.getClass().getName())
+-this.passedTests.getClass().getName() == orig(this.skippedConfigurations.getClass().getName())
+-this.failedTests == orig(this.failedTests)
+-this.skippedTests == orig(this.skippedTests)
+-this.failedButWithinSuccessPercentageTests == orig(this.failedButWithinSuccessPercentageTests)
+-this.passedConfigurations == orig(this.passedConfigurations)
+-this.failedConfigurations == orig(this.failedConfigurations)
+-this.skippedConfigurations == orig(this.skippedConfigurations)
+-return.getClass().getName() == testng._18.requirements.org.testng.ITestNGMethod[].class
+-return[] == []
+-===========================================================================
+-testng._18.mocks.MockTestContext.getEndDate():::ENTER
+-===========================================================================
+-testng._18.mocks.MockTestContext.getEndDate():::EXIT
+-this.name == orig(this.name)
+-this.name.toString == orig(this.name.toString)
+-this.suite == orig(this.suite)
+-this.suite.getClass().getName() == orig(this.suite.getClass().getName())
+-this.startDate == orig(this.startDate)
+-this.endDate == return
+-this.outputDirectory == orig(this.outputDirectory)
+-this.outputDirectory.toString == orig(this.outputDirectory.toString)
+-this.attributes == orig(this.attributes)
+-this.attributes.getClass().getName() == orig(this.attributes.getClass().getName())
+-this.passedTests == orig(this.passedTests)
+-this.passedTests.getClass().getName() == orig(this.passedTests.getClass().getName())
+-this.passedTests.getClass().getName() == orig(this.failedTests.getClass().getName())
+-this.passedTests.getClass().getName() == orig(this.skippedTests.getClass().getName())
+-this.passedTests.getClass().getName() == orig(this.failedButWithinSuccessPercentageTests.getClass().getName())
+-this.passedTests.getClass().getName() == orig(this.passedConfigurations.getClass().getName())
+-this.passedTests.getClass().getName() == orig(this.failedConfigurations.getClass().getName())
+-this.passedTests.getClass().getName() == orig(this.skippedConfigurations.getClass().getName())
+-this.failedTests == orig(this.failedTests)
+-this.skippedTests == orig(this.skippedTests)
+-this.failedButWithinSuccessPercentageTests == orig(this.failedButWithinSuccessPercentageTests)
+-this.passedConfigurations == orig(this.passedConfigurations)
+-this.failedConfigurations == orig(this.failedConfigurations)
+-this.skippedConfigurations == orig(this.skippedConfigurations)
+-return == orig(this.endDate)
+-===========================================================================
+-testng._18.mocks.MockTestContext.getName():::ENTER
+-===========================================================================
+-testng._18.mocks.MockTestContext.getName():::EXIT
+-this.name == return
+-this.name.toString == return.toString
+-this.suite == orig(this.suite)
+-this.suite.getClass().getName() == orig(this.suite.getClass().getName())
+-this.startDate == orig(this.startDate)
+-this.endDate == orig(this.endDate)
+-this.outputDirectory == orig(this.outputDirectory)
+-this.outputDirectory.toString == orig(this.outputDirectory.toString)
+-this.attributes == orig(this.attributes)
+-this.attributes.getClass().getName() == orig(this.attributes.getClass().getName())
+-this.passedTests == orig(this.passedTests)
+-this.passedTests.getClass().getName() == orig(this.passedTests.getClass().getName())
+-this.passedTests.getClass().getName() == orig(this.failedTests.getClass().getName())
+-this.passedTests.getClass().getName() == orig(this.skippedTests.getClass().getName())
+-this.passedTests.getClass().getName() == orig(this.failedButWithinSuccessPercentageTests.getClass().getName())
+-this.passedTests.getClass().getName() == orig(this.passedConfigurations.getClass().getName())
+-this.passedTests.getClass().getName() == orig(this.failedConfigurations.getClass().getName())
+-this.passedTests.getClass().getName() == orig(this.skippedConfigurations.getClass().getName())
+-this.failedTests == orig(this.failedTests)
+-this.skippedTests == orig(this.skippedTests)
+-this.failedButWithinSuccessPercentageTests == orig(this.failedButWithinSuccessPercentageTests)
+-this.passedConfigurations == orig(this.passedConfigurations)
+-this.failedConfigurations == orig(this.failedConfigurations)
+-this.skippedConfigurations == orig(this.skippedConfigurations)
+-return == orig(this.name)
+-return.toString == orig(this.name.toString)
+-return has only one value
+-return.toString == "TestContext"
+-===========================================================================
+-testng._18.mocks.MockTestContext.getOutputDirectory():::ENTER
+-===========================================================================
+-testng._18.mocks.MockTestContext.getOutputDirectory():::EXIT
+-this.name == orig(this.name)
+-this.name.toString == orig(this.name.toString)
+-this.suite == orig(this.suite)
+-this.suite.getClass().getName() == orig(this.suite.getClass().getName())
+-this.startDate == orig(this.startDate)
+-this.endDate == orig(this.endDate)
+-this.outputDirectory == return
+-this.outputDirectory.toString == return.toString
+-this.attributes == orig(this.attributes)
+-this.attributes.getClass().getName() == orig(this.attributes.getClass().getName())
+-this.passedTests == orig(this.passedTests)
+-this.passedTests.getClass().getName() == orig(this.passedTests.getClass().getName())
+-this.passedTests.getClass().getName() == orig(this.failedTests.getClass().getName())
+-this.passedTests.getClass().getName() == orig(this.skippedTests.getClass().getName())
+-this.passedTests.getClass().getName() == orig(this.failedButWithinSuccessPercentageTests.getClass().getName())
+-this.passedTests.getClass().getName() == orig(this.passedConfigurations.getClass().getName())
+-this.passedTests.getClass().getName() == orig(this.failedConfigurations.getClass().getName())
+-this.passedTests.getClass().getName() == orig(this.skippedConfigurations.getClass().getName())
+-this.failedTests == orig(this.failedTests)
+-this.skippedTests == orig(this.skippedTests)
+-this.failedButWithinSuccessPercentageTests == orig(this.failedButWithinSuccessPercentageTests)
+-this.passedConfigurations == orig(this.passedConfigurations)
+-this.failedConfigurations == orig(this.failedConfigurations)
+-this.skippedConfigurations == orig(this.skippedConfigurations)
+-return == orig(this.outputDirectory)
+-return.toString == orig(this.outputDirectory.toString)
+-return has only one value
+-return.toString == "/tmp"
+-===========================================================================
+-testng._18.mocks.MockTestContext.getStartDate():::ENTER
+-===========================================================================
+-testng._18.mocks.MockTestContext.getStartDate():::EXIT
+-this.name == orig(this.name)
+-this.name.toString == orig(this.name.toString)
+-this.suite == orig(this.suite)
+-this.suite.getClass().getName() == orig(this.suite.getClass().getName())
+-this.startDate == return
+-this.endDate == orig(this.endDate)
+-this.outputDirectory == orig(this.outputDirectory)
+-this.outputDirectory.toString == orig(this.outputDirectory.toString)
+-this.attributes == orig(this.attributes)
+-this.attributes.getClass().getName() == orig(this.attributes.getClass().getName())
+-this.passedTests == orig(this.passedTests)
+-this.passedTests.getClass().getName() == orig(this.passedTests.getClass().getName())
+-this.passedTests.getClass().getName() == orig(this.failedTests.getClass().getName())
+-this.passedTests.getClass().getName() == orig(this.skippedTests.getClass().getName())
+-this.passedTests.getClass().getName() == orig(this.failedButWithinSuccessPercentageTests.getClass().getName())
+-this.passedTests.getClass().getName() == orig(this.passedConfigurations.getClass().getName())
+-this.passedTests.getClass().getName() == orig(this.failedConfigurations.getClass().getName())
+-this.passedTests.getClass().getName() == orig(this.skippedConfigurations.getClass().getName())
+-this.failedTests == orig(this.failedTests)
+-this.skippedTests == orig(this.skippedTests)
+-this.failedButWithinSuccessPercentageTests == orig(this.failedButWithinSuccessPercentageTests)
+-this.passedConfigurations == orig(this.passedConfigurations)
+-this.failedConfigurations == orig(this.failedConfigurations)
+-this.skippedConfigurations == orig(this.skippedConfigurations)
+-return == orig(this.startDate)
+-===========================================================================
+-testng._18.mocks.MockTestContext.getSuite():::ENTER
+-===========================================================================
+-testng._18.mocks.MockTestContext.getSuite():::EXIT
+-this.name == orig(this.name)
+-this.name.toString == orig(this.name.toString)
+-this.suite == return
+-this.suite.getClass().getName() == return.getClass().getName()
+-this.startDate == orig(this.startDate)
+-this.endDate == orig(this.endDate)
+-this.outputDirectory == orig(this.outputDirectory)
+-this.outputDirectory.toString == orig(this.outputDirectory.toString)
+-this.attributes == orig(this.attributes)
+-this.attributes.getClass().getName() == orig(this.attributes.getClass().getName())
+-this.passedTests == orig(this.passedTests)
+-this.passedTests.getClass().getName() == orig(this.passedTests.getClass().getName())
+-this.passedTests.getClass().getName() == orig(this.failedTests.getClass().getName())
+-this.passedTests.getClass().getName() == orig(this.skippedTests.getClass().getName())
+-this.passedTests.getClass().getName() == orig(this.failedButWithinSuccessPercentageTests.getClass().getName())
+-this.passedTests.getClass().getName() == orig(this.passedConfigurations.getClass().getName())
+-this.passedTests.getClass().getName() == orig(this.failedConfigurations.getClass().getName())
+-this.passedTests.getClass().getName() == orig(this.skippedConfigurations.getClass().getName())
+-this.failedTests == orig(this.failedTests)
+-this.skippedTests == orig(this.skippedTests)
+-this.failedButWithinSuccessPercentageTests == orig(this.failedButWithinSuccessPercentageTests)
+-this.passedConfigurations == orig(this.passedConfigurations)
+-this.failedConfigurations == orig(this.failedConfigurations)
+-this.skippedConfigurations == orig(this.skippedConfigurations)
+-return == orig(this.suite)
+-return.getClass().getName() == orig(this.suite.getClass().getName())
+-return.getClass().getName() == testng._18.mocks.MockSuite.class
++return.toString == "package testng._18.VARIANT;\n\n\nimport testng._18.requirements.org.testng.ITestContext;\nimport testng._18.requirements.org.testng.ITestNGMethod;\nimport testng._18.requirements.org.testng.ITestResult;\nimport testng._18.requirements.org.testng.collections.Lists;\nimport testng._18.requirements.org.testng.collections.Maps;\nimport testng._18.requirements.org.testng.collections.Sets;\nimport testng._18.requirements.org.testng.internal.IResultListener2;\nimport testng._18.requirements.org.testng.internal.Utils;\nimport testng._18.requirements.org.testng.reporters.XMLConstants;\nimport testng._18.requirements.org.testng.reporters.XMLStringBuffer;\n\nimport java.net.InetAddress;\nimport java.net.UnknownHostException;\nimport java.util.Calendar;\nimport java.util.Collections;\nimport java.util.Date;\nimport java.util.List;\nimport java.util.Map;\nimport java.util.Properties;\nimport java.util.Set;\nimport java.util.regex.Pattern;\n\n/**\n * A JUnit XML report generator (replacing the VARIANT JUnitXMLReporter that was\n * based on XML APIs).\n *\n * @author <a href='mailto:the[dot]mindstorm[at]gmail[dot]com'>Alex Popescu</a>\n */\npublic class JUnitXMLReporter implements IResultListener2 {\n  private static final Pattern ENTITY= Pattern.compile(\"&[a-zA-Z]+;.*\");\n  private static final Pattern LESS= Pattern.compile(\"<\");\n  private static final Pattern GREATER= Pattern.compile(\">\");\n  private static final Pattern SINGLE_QUOTE = Pattern.compile(\"'\");\n  private static final Pattern QUOTE = Pattern.compile(\"\\\"\");\n  private static final Map<String, Pattern> ATTR_ESCAPES= Maps.newHashMap();\n\n  static {\n    ATTR_ESCAPES.put(\"&lt;\", LESS);\n    ATTR_ESCAPES.put(\"&gt;\", GREATER);\n    ATTR_ESCAPES.put(\"&apos;\", SINGLE_QUOTE);\n    ATTR_ESCAPES.put(\"&quot;\", QUOTE);\n  }\n\n\n  /**\n   * keep lists of all the results\n   */\n  private int m_numPassed= 0;\n  private int m_numFailed= 0;\n  private int m_numSkipped= 0;\n  private int m_numFailedButIgnored= 0;\n  private List<ITestResult> m_allTests =\n      Collections.synchronizedList(Lists.<ITestResult>newArrayList());\n  private List<ITestResult> m_configIssues =\n      Collections.synchronizedList(Lists.<ITestResult>newArrayList());\n  private Map<String, String> m_fileNameMap = Maps.newHashMap();\n  private int m_fileNameIncrementer = 0;\n\n  @Override\n  public void onTestStart(ITestResult result) {\n  }\n\n  @Override\n  public void beforeConfiguration(ITestResult tr) {\n  }\n\n  /**\n   * Invoked each time a test succeeds.\n   */\n  @Override\n  public void onTestSuccess(ITestResult tr) {\n    m_allTests.add(tr);\n    m_numPassed++;\n  }\n\n  @Override\n  public void onTestFailedButWithinSuccessPercentage(ITestResult tr) {\n    m_allTests.add(tr);\n    m_numFailedButIgnored++;\n  }\n\n  /**\n   * Invoked each time a test fails.\n   */\n  @Override\n  public void onTestFailure(ITestResult tr) {\n    m_allTests.add(tr);\n    m_numFailed++;\n  }\n\n  /**\n   * Invoked each time a test is skipped.\n   */\n  @Override\n  public void onTestSkipped(ITestResult tr) {\n    m_allTests.add(tr);\n    m_numSkipped++;\n  }\n\n  /**\n   * Invoked after the test class is instantiated and before\n   * any configuration method is called.\n   *\n   */\n  @Override\n  public void onStart(ITestContext context) {\n\n  }\n\n  /**\n   * Invoked after all the tests have run and all their\n   * Configuration methods have been called.\n   *\n   */\n  @Override\n  public void onFinish(ITestContext context) {\n\tgenerateReport(context);\n    resetAll();\n  }\n\n  /**\n   * @see org.testng.IConfigurationListener#onConfigurationFailure(org.testng.ITestResult)\n   */\n  @Override\n  public void onConfigurationFailure(ITestResult itr) {\n    m_configIssues.add(itr);\n  }\n\n  /**\n   * @see org.testng.IConfigurationListener#onConfigurationSkip(org.testng.ITestResult)\n   */\n  @Override\n  public void onConfigurationSkip(ITestResult itr) {\n    m_configIssues.add(itr);\n  }\n\n  /**\n   * @see org.testng.IConfigurationListener#onConfigurationSuccess(org.testng.ITestResult)\n   */\n  @Override\n  public void onConfigurationSuccess(ITestResult itr) {\n  }\n\n  /**\n   * generate the XML report given what we know from all the test results\n   */\n  protected void generateReport(ITestContext context) {\n\n      XMLStringBuffer document= new XMLStringBuffer();\n      document.addComment(\"Generated by \" + getClass().getName());\n\n      Properties attrs= new Properties();\n      attrs.setProperty(XMLConstants.ATTR_ERRORS, \"0\");\n      attrs.setProperty(XMLConstants.ATTR_FAILURES, \"\" + m_numFailed);\n      try {\n        attrs.setProperty(XMLConstants.ATTR_HOSTNAME, InetAddress.getLocalHost().getHostName());\n      } catch (UnknownHostException e) {\n        // ignore\n      }\n      Set<String> packages = getPackages(context);\n      if (packages.size() > 0) {\n        attrs.setProperty(XMLConstants.ATTR_NAME, context.getCurrentXmlTest().getName());\n//        attrs.setProperty(XMLConstants.ATTR_PACKAGE, packages.iterator().next());\n      }\n\n      attrs.setProperty(XMLConstants.ATTR_TESTS, \"\" + m_allTests.size());\n      attrs.setProperty(XMLConstants.ATTR_TIME, \"\"\n          + ((context.getEndDate().getTime() - context.getStartDate().getTime()) / 1000.0));\n\n      Date timeStamp = Calendar.getInstance().getTime();\n      attrs.setProperty(XMLConstants.ATTR_TIMESTAMP, timeStamp.toGMTString());\n\n      document.push(XMLConstants.TESTSUITE, attrs);\n//      document.addEmptyElement(XMLConstants.PROPERTIES);\n\n      synchronized (m_configIssues) {\n        for(ITestResult tr : m_configIssues) {\n          createElement(document, tr);\n        }\n      }\n      synchronized (m_allTests) {\n        for(ITestResult tr : m_allTests) {\n          createElement(document, tr);\n        }\n      }\n\n      document.pop();\n      Utils.writeUtf8File(context.getOutputDirectory(),generateFileName(context) + \".xml\", document.toXML());\n  }\n\n  private Set<String> getPackages(ITestContext context) {\n    Set<String> result = Sets.newHashSet();\n    for (ITestNGMethod m : context.getAllTestMethods()) {\n      Package pkg = m.getMethod().getDeclaringClass().getPackage();\n      if (pkg != null) {\n        result.add(pkg.getName());\n      }\n    }\n    return result;\n  }\n\n  private void createElement(XMLStringBuffer doc, ITestResult tr) {\n    Properties attrs= new Properties();\n    long elapsedTimeMillis= tr.getEndMillis() - tr.getStartMillis();\n    String name= tr.getMethod().isTest() ? tr.getName() : Utils.detailedMethodName(tr.getMethod(), false);\n    attrs.setProperty(XMLConstants.ATTR_NAME, name);\n    attrs.setProperty(XMLConstants.ATTR_CLASSNAME, tr.getTestClass().getRealClass().getName());\n    attrs.setProperty(XMLConstants.ATTR_TIME, \"\" + (((double) elapsedTimeMillis) / 1000));\n\n    if((ITestResult.FAILURE == tr.getStatus()) || (ITestResult.SKIP == tr.getStatus())) {\n      doc.push(XMLConstants.TESTCASE, attrs);\n\n      if(ITestResult.FAILURE == tr.getStatus()) {\n        createFailureElement(doc, tr);\n      }\n      else if(ITestResult.SKIP == tr.getStatus()) {\n        createSkipElement(doc, tr);\n      }\n\n      doc.pop();\n    }\n    else {\n      doc.addEmptyElement(XMLConstants.TESTCASE, attrs);\n    }\n  }\n\n  private void createFailureElement(XMLStringBuffer doc, ITestResult tr) {\n    Properties attrs= new Properties();\n    Throwable t= tr.getThrowable();\n    if(t != null) {\n      attrs.setProperty(XMLConstants.ATTR_TYPE, t.getClass().getName());\n      String message= t.getMessage();\n      if((message != null) && (message.length() > 0)) {\n        attrs.setProperty(XMLConstants.ATTR_MESSAGE, encodeAttr(message)); // ENCODE\n      }\n      doc.push(XMLConstants.FAILURE, attrs);\n      doc.addCDATA(Utils.stackTrace(t, false)[0]);\n      doc.pop();\n    }\n    else {\n      doc.addEmptyElement(XMLConstants.FAILURE); // THIS IS AN ERROR\n    }\n  }\n\n  private void createSkipElement(XMLStringBuffer doc, ITestResult tr) {\n    doc.addEmptyElement(\"skipped\");\n  }\n\n  private String encodeAttr(String attr) {\n    String result= replaceAmpersand(attr, ENTITY);\n    for(Map.Entry<String, Pattern> e: ATTR_ESCAPES.entrySet()) {\n      result= e.getValue().matcher(result).replaceAll(e.getKey());\n    }\n\n    return result;\n  }\n\n  private String replaceAmpersand(String str, Pattern pattern) {\n    int start = 0;\n    int idx = str.indexOf('&', start);\n    if(idx == -1) {\n      return str;\n    }\n    StringBuffer result= new StringBuffer();\n    while(idx != -1) {\n      result.append(str.substring(start, idx));\n      if(pattern.matcher(str.substring(idx)).matches()) {\n        // do nothing it is an entity;\n        result.append(\"&\");\n      }\n      else {\n        result.append(\"&amp;\");\n      }\n      start= idx + 1;\n      idx= str.indexOf('&', start);\n    }\n    result.append(str.substring(start));\n\n    return result.toString();\n  }\n\n\n  /**\n\t * Reset all member variables for next test.\n\t * */\n\tprivate void resetAll() {\n\t\tm_allTests = Collections.synchronizedList(Lists.<ITestResult>newArrayList());\n\t\tm_configIssues = Collections.synchronizedList(Lists.<ITestResult>newArrayList());\n\t\tm_numFailed = 0;\n\t\tm_numFailedButIgnored = 0;\n\t\tm_numPassed = 0;\n\t\tm_numSkipped = 0;\n\t}\n\n\t/**\n\t * @author Borojevic Created this method to guarantee unique file names for\n\t *         reports.<br>\n\t *         Also, this will guarantee that the old reports are overwritten\n\t *         when tests are run again.\n\t * @param context\n\t *            test context\n\t * @return unique name for the file associated with this test context.\n\t * */\n\tprivate String generateFileName(ITestContext context) {\n\t\tString fileName = null;\n\t\tString keyToSearch = context.getSuite().getName() + context.getName();\n\t\tif (m_fileNameMap.get(keyToSearch) == null) {\n\t\t\tfileName = context.getName();\n\t\t} else {\n\t\t\tfileName = context.getName() + m_fileNameIncrementer++;\n\t\t}\n\n\t\tm_fileNameMap.put(keyToSearch, fileName);\n\t\treturn fileName;\n\t}\n}\n"
+ ===========================================================================
+ testng._18.VARIANT.JUnitXMLReporter:::CLASS
+ testng._18.VARIANT.JUnitXMLReporter.ENTITY has only one value
+@@ -3578,6 +3304,280 @@
+ this.m_configIssues has only one value
+ this.m_fileNameMap has only one value
+ ===========================================================================
++testng._18.mocks.MockResultMap:::OBJECT
++this.results != null
++this.results.getClass().getName() == java.util.Collections$SynchronizedSet.class
++===========================================================================
++testng._18.mocks.MockResultMap.MockResultMap():::EXIT
++===========================================================================
++testng._18.mocks.MockSuite:::OBJECT
++this.attributes.getClass().getName() == this.results.getClass().getName()
++this.name has only one value
++this.name.toString == "TestSuite"
++this.attributes.getClass().getName() == java.util.Collections$SynchronizedMap.class
++===========================================================================
++testng._18.mocks.MockSuite.MockSuite(java.lang.String):::ENTER
++name has only one value
++name.toString == "TestSuite"
++===========================================================================
++testng._18.mocks.MockSuite.MockSuite(java.lang.String):::EXIT
++this.name == orig(name)
++this.name.toString == name.toString
++name.toString == orig(name.toString)
++name.toString == "TestSuite"
++===========================================================================
++testng._18.mocks.MockSuite.getName():::ENTER
++===========================================================================
++testng._18.mocks.MockSuite.getName():::EXIT
++this.name == return
++this.name.toString == return.toString
++this.attributes == orig(this.attributes)
++this.attributes.getClass().getName() == orig(this.attributes.getClass().getName())
++this.attributes.getClass().getName() == orig(this.results.getClass().getName())
++this.results == orig(this.results)
++return == orig(this.name)
++return.toString == orig(this.name.toString)
++return has only one value
++return.toString == "TestSuite"
++===========================================================================
++testng._18.mocks.MockTestContext:::OBJECT
++this.passedTests.getClass().getName() == this.failedTests.getClass().getName()
++this.passedTests.getClass().getName() == this.skippedTests.getClass().getName()
++this.passedTests.getClass().getName() == this.failedButWithinSuccessPercentageTests.getClass().getName()
++this.passedTests.getClass().getName() == this.passedConfigurations.getClass().getName()
++this.passedTests.getClass().getName() == this.failedConfigurations.getClass().getName()
++this.passedTests.getClass().getName() == this.skippedConfigurations.getClass().getName()
++this.name has only one value
++this.name != null
++this.name.toString == "TestContext"
++this.suite != null
++this.suite.getClass().getName() == testng._18.mocks.MockSuite.class
++this.startDate != null
++this.endDate != null
++this.outputDirectory has only one value
++this.outputDirectory != null
++this.outputDirectory.toString == "/tmp"
++this.attributes != null
++this.attributes.getClass().getName() == java.util.Collections$SynchronizedMap.class
++this.passedTests != null
++this.passedTests.getClass().getName() == testng._18.mocks.MockResultMap.class
++this.failedTests != null
++this.skippedTests != null
++this.failedButWithinSuccessPercentageTests != null
++this.passedConfigurations != null
++this.failedConfigurations != null
++this.skippedConfigurations != null
++this.name.toString > this.outputDirectory.toString
++this.suite.getClass().getName() != this.attributes.getClass().getName()
++this.suite.getClass().getName() != this.passedTests.getClass().getName()
++this.attributes.getClass().getName() != this.passedTests.getClass().getName()
++===========================================================================
++testng._18.mocks.MockTestContext.MockTestContext(java.lang.String):::ENTER
++name has only one value
++name.toString == "TestContext"
++===========================================================================
++testng._18.mocks.MockTestContext.MockTestContext(java.lang.String):::EXIT
++this.name == orig(name)
++this.name.toString == name.toString
++name.toString == orig(name.toString)
++name.toString == "TestContext"
++===========================================================================
++testng._18.mocks.MockTestContext.MockTestContext(java.lang.String, testng._18.requirements.org.testng.ISuite):::ENTER
++name has only one value
++name.toString == "TestContext"
++suite.getClass().getName() == testng._18.mocks.MockSuite.class
++===========================================================================
++testng._18.mocks.MockTestContext.MockTestContext(java.lang.String, testng._18.requirements.org.testng.ISuite):::EXIT
++this.name == orig(name)
++this.name.toString == name.toString
++this.suite == orig(suite)
++this.suite.getClass().getName() == orig(suite.getClass().getName())
++name.toString == orig(name.toString)
++name.toString == "TestContext"
++===========================================================================
++testng._18.mocks.MockTestContext.getAllTestMethods():::ENTER
++===========================================================================
++testng._18.mocks.MockTestContext.getAllTestMethods():::EXIT
++this.name == orig(this.name)
++this.name.toString == orig(this.name.toString)
++this.suite == orig(this.suite)
++this.suite.getClass().getName() == orig(this.suite.getClass().getName())
++this.startDate == orig(this.startDate)
++this.endDate == orig(this.endDate)
++this.outputDirectory == orig(this.outputDirectory)
++this.outputDirectory.toString == orig(this.outputDirectory.toString)
++this.attributes == orig(this.attributes)
++this.attributes.getClass().getName() == orig(this.attributes.getClass().getName())
++this.passedTests == orig(this.passedTests)
++this.passedTests.getClass().getName() == orig(this.passedTests.getClass().getName())
++this.passedTests.getClass().getName() == orig(this.failedTests.getClass().getName())
++this.passedTests.getClass().getName() == orig(this.skippedTests.getClass().getName())
++this.passedTests.getClass().getName() == orig(this.failedButWithinSuccessPercentageTests.getClass().getName())
++this.passedTests.getClass().getName() == orig(this.passedConfigurations.getClass().getName())
++this.passedTests.getClass().getName() == orig(this.failedConfigurations.getClass().getName())
++this.passedTests.getClass().getName() == orig(this.skippedConfigurations.getClass().getName())
++this.failedTests == orig(this.failedTests)
++this.skippedTests == orig(this.skippedTests)
++this.failedButWithinSuccessPercentageTests == orig(this.failedButWithinSuccessPercentageTests)
++this.passedConfigurations == orig(this.passedConfigurations)
++this.failedConfigurations == orig(this.failedConfigurations)
++this.skippedConfigurations == orig(this.skippedConfigurations)
++return.getClass().getName() == testng._18.requirements.org.testng.ITestNGMethod[].class
++return[] == []
++===========================================================================
++testng._18.mocks.MockTestContext.getEndDate():::ENTER
++===========================================================================
++testng._18.mocks.MockTestContext.getEndDate():::EXIT
++this.name == orig(this.name)
++this.name.toString == orig(this.name.toString)
++this.suite == orig(this.suite)
++this.suite.getClass().getName() == orig(this.suite.getClass().getName())
++this.startDate == orig(this.startDate)
++this.endDate == return
++this.outputDirectory == orig(this.outputDirectory)
++this.outputDirectory.toString == orig(this.outputDirectory.toString)
++this.attributes == orig(this.attributes)
++this.attributes.getClass().getName() == orig(this.attributes.getClass().getName())
++this.passedTests == orig(this.passedTests)
++this.passedTests.getClass().getName() == orig(this.passedTests.getClass().getName())
++this.passedTests.getClass().getName() == orig(this.failedTests.getClass().getName())
++this.passedTests.getClass().getName() == orig(this.skippedTests.getClass().getName())
++this.passedTests.getClass().getName() == orig(this.failedButWithinSuccessPercentageTests.getClass().getName())
++this.passedTests.getClass().getName() == orig(this.passedConfigurations.getClass().getName())
++this.passedTests.getClass().getName() == orig(this.failedConfigurations.getClass().getName())
++this.passedTests.getClass().getName() == orig(this.skippedConfigurations.getClass().getName())
++this.failedTests == orig(this.failedTests)
++this.skippedTests == orig(this.skippedTests)
++this.failedButWithinSuccessPercentageTests == orig(this.failedButWithinSuccessPercentageTests)
++this.passedConfigurations == orig(this.passedConfigurations)
++this.failedConfigurations == orig(this.failedConfigurations)
++this.skippedConfigurations == orig(this.skippedConfigurations)
++return == orig(this.endDate)
++===========================================================================
++testng._18.mocks.MockTestContext.getName():::ENTER
++===========================================================================
++testng._18.mocks.MockTestContext.getName():::EXIT
++this.name == return
++this.name.toString == return.toString
++this.suite == orig(this.suite)
++this.suite.getClass().getName() == orig(this.suite.getClass().getName())
++this.startDate == orig(this.startDate)
++this.endDate == orig(this.endDate)
++this.outputDirectory == orig(this.outputDirectory)
++this.outputDirectory.toString == orig(this.outputDirectory.toString)
++this.attributes == orig(this.attributes)
++this.attributes.getClass().getName() == orig(this.attributes.getClass().getName())
++this.passedTests == orig(this.passedTests)
++this.passedTests.getClass().getName() == orig(this.passedTests.getClass().getName())
++this.passedTests.getClass().getName() == orig(this.failedTests.getClass().getName())
++this.passedTests.getClass().getName() == orig(this.skippedTests.getClass().getName())
++this.passedTests.getClass().getName() == orig(this.failedButWithinSuccessPercentageTests.getClass().getName())
++this.passedTests.getClass().getName() == orig(this.passedConfigurations.getClass().getName())
++this.passedTests.getClass().getName() == orig(this.failedConfigurations.getClass().getName())
++this.passedTests.getClass().getName() == orig(this.skippedConfigurations.getClass().getName())
++this.failedTests == orig(this.failedTests)
++this.skippedTests == orig(this.skippedTests)
++this.failedButWithinSuccessPercentageTests == orig(this.failedButWithinSuccessPercentageTests)
++this.passedConfigurations == orig(this.passedConfigurations)
++this.failedConfigurations == orig(this.failedConfigurations)
++this.skippedConfigurations == orig(this.skippedConfigurations)
++return == orig(this.name)
++return.toString == orig(this.name.toString)
++return has only one value
++return.toString == "TestContext"
++===========================================================================
++testng._18.mocks.MockTestContext.getOutputDirectory():::ENTER
++===========================================================================
++testng._18.mocks.MockTestContext.getOutputDirectory():::EXIT
++this.name == orig(this.name)
++this.name.toString == orig(this.name.toString)
++this.suite == orig(this.suite)
++this.suite.getClass().getName() == orig(this.suite.getClass().getName())
++this.startDate == orig(this.startDate)
++this.endDate == orig(this.endDate)
++this.outputDirectory == return
++this.outputDirectory.toString == return.toString
++this.attributes == orig(this.attributes)
++this.attributes.getClass().getName() == orig(this.attributes.getClass().getName())
++this.passedTests == orig(this.passedTests)
++this.passedTests.getClass().getName() == orig(this.passedTests.getClass().getName())
++this.passedTests.getClass().getName() == orig(this.failedTests.getClass().getName())
++this.passedTests.getClass().getName() == orig(this.skippedTests.getClass().getName())
++this.passedTests.getClass().getName() == orig(this.failedButWithinSuccessPercentageTests.getClass().getName())
++this.passedTests.getClass().getName() == orig(this.passedConfigurations.getClass().getName())
++this.passedTests.getClass().getName() == orig(this.failedConfigurations.getClass().getName())
++this.passedTests.getClass().getName() == orig(this.skippedConfigurations.getClass().getName())
++this.failedTests == orig(this.failedTests)
++this.skippedTests == orig(this.skippedTests)
++this.failedButWithinSuccessPercentageTests == orig(this.failedButWithinSuccessPercentageTests)
++this.passedConfigurations == orig(this.passedConfigurations)
++this.failedConfigurations == orig(this.failedConfigurations)
++this.skippedConfigurations == orig(this.skippedConfigurations)
++return == orig(this.outputDirectory)
++return.toString == orig(this.outputDirectory.toString)
++return has only one value
++return.toString == "/tmp"
++===========================================================================
++testng._18.mocks.MockTestContext.getStartDate():::ENTER
++===========================================================================
++testng._18.mocks.MockTestContext.getStartDate():::EXIT
++this.name == orig(this.name)
++this.name.toString == orig(this.name.toString)
++this.suite == orig(this.suite)
++this.suite.getClass().getName() == orig(this.suite.getClass().getName())
++this.startDate == return
++this.endDate == orig(this.endDate)
++this.outputDirectory == orig(this.outputDirectory)
++this.outputDirectory.toString == orig(this.outputDirectory.toString)
++this.attributes == orig(this.attributes)
++this.attributes.getClass().getName() == orig(this.attributes.getClass().getName())
++this.passedTests == orig(this.passedTests)
++this.passedTests.getClass().getName() == orig(this.passedTests.getClass().getName())
++this.passedTests.getClass().getName() == orig(this.failedTests.getClass().getName())
++this.passedTests.getClass().getName() == orig(this.skippedTests.getClass().getName())
++this.passedTests.getClass().getName() == orig(this.failedButWithinSuccessPercentageTests.getClass().getName())
++this.passedTests.getClass().getName() == orig(this.passedConfigurations.getClass().getName())
++this.passedTests.getClass().getName() == orig(this.failedConfigurations.getClass().getName())
++this.passedTests.getClass().getName() == orig(this.skippedConfigurations.getClass().getName())
++this.failedTests == orig(this.failedTests)
++this.skippedTests == orig(this.skippedTests)
++this.failedButWithinSuccessPercentageTests == orig(this.failedButWithinSuccessPercentageTests)
++this.passedConfigurations == orig(this.passedConfigurations)
++this.failedConfigurations == orig(this.failedConfigurations)
++this.skippedConfigurations == orig(this.skippedConfigurations)
++return == orig(this.startDate)
++===========================================================================
++testng._18.mocks.MockTestContext.getSuite():::ENTER
++===========================================================================
++testng._18.mocks.MockTestContext.getSuite():::EXIT
++this.name == orig(this.name)
++this.name.toString == orig(this.name.toString)
++this.suite == return
++this.suite.getClass().getName() == return.getClass().getName()
++this.startDate == orig(this.startDate)
++this.endDate == orig(this.endDate)
++this.outputDirectory == orig(this.outputDirectory)
++this.outputDirectory.toString == orig(this.outputDirectory.toString)
++this.attributes == orig(this.attributes)
++this.attributes.getClass().getName() == orig(this.attributes.getClass().getName())
++this.passedTests == orig(this.passedTests)
++this.passedTests.getClass().getName() == orig(this.passedTests.getClass().getName())
++this.passedTests.getClass().getName() == orig(this.failedTests.getClass().getName())
++this.passedTests.getClass().getName() == orig(this.skippedTests.getClass().getName())
++this.passedTests.getClass().getName() == orig(this.failedButWithinSuccessPercentageTests.getClass().getName())
++this.passedTests.getClass().getName() == orig(this.passedConfigurations.getClass().getName())
++this.passedTests.getClass().getName() == orig(this.failedConfigurations.getClass().getName())
++this.passedTests.getClass().getName() == orig(this.skippedConfigurations.getClass().getName())
++this.failedTests == orig(this.failedTests)
++this.skippedTests == orig(this.skippedTests)
++this.failedButWithinSuccessPercentageTests == orig(this.failedButWithinSuccessPercentageTests)
++this.passedConfigurations == orig(this.passedConfigurations)
++this.failedConfigurations == orig(this.failedConfigurations)
++this.skippedConfigurations == orig(this.skippedConfigurations)
++return == orig(this.suite)
++return.getClass().getName() == orig(this.suite.getClass().getName())
++return.getClass().getName() == testng._18.mocks.MockSuite.class
++===========================================================================
+ testng._18.requirements.org.testng.collections.Lists.newArrayList():::EXIT
+ return != null
+ return[] == []
+@@ -3693,7 +3693,7 @@
+ testng._18.requirements.org.testng.internal.Utils.LOG.logger.getClass().getName() != testng._18.requirements.org.testng.internal.Utils.ESCAPES.getClass().getName()
+ ===========================================================================
+ testng._18.requirements.org.testng.internal.Utils.escapeUnicode(java.lang.String):::ENTER
+-s.toString == "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<!-- Generated by testng._18.VARIANT.JUnitXMLReporter -->\n<testsuite hostname=\"sdlab-msr1\" failures=\"0\" tests=\"0\" time=\"0.0\" errors=\"0\" timestamp=\"20 Dec 2025 06:44:48 GMT\">\n</testsuite>\n"
++s.toString == "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<!-- Generated by testng._18.VARIANT.JUnitXMLReporter -->\n<testsuite hostname=\"sdlab-msr1\" failures=\"0\" tests=\"0\" time=\"0.0\" errors=\"0\" timestamp=\"20 Dec 2025 06:47:47 GMT\">\n</testsuite>\n"
+ ===========================================================================
+ testng._18.requirements.org.testng.internal.Utils.escapeUnicode(java.lang.String):::EXIT
+ ===========================================================================
+@@ -3716,7 +3716,7 @@
+ testng._18.requirements.org.testng.internal.Utils.m_verbose == orig(testng._18.requirements.org.testng.internal.Utils.m_verbose)
+ s.toString == return.toString
+ s.toString == orig(s.toString)
+-s.toString == "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<!-- Generated by testng._18.VARIANT.JUnitXMLReporter -->\n<testsuite hostname=\"sdlab-msr1\" failures=\"0\" tests=\"0\" time=\"0.0\" errors=\"0\" timestamp=\"20 Dec 2025 06:44:48 GMT\">\n</testsuite>\n"
++s.toString == "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<!-- Generated by testng._18.VARIANT.JUnitXMLReporter -->\n<testsuite hostname=\"sdlab-msr1\" failures=\"0\" tests=\"0\" time=\"0.0\" errors=\"0\" timestamp=\"20 Dec 2025 06:47:47 GMT\">\n</testsuite>\n"
+ ===========================================================================
+ testng._18.requirements.org.testng.internal.Utils.getVerbose():::ENTER
+ ===========================================================================
+@@ -3822,7 +3822,7 @@
+ fileNameParameter.toString == "TestContext.xml"
+ ===========================================================================
+ testng._18.requirements.org.testng.internal.Utils.writeFile(java.io.File, java.lang.String, java.lang.String):::ENTER
+-sb.toString == "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<!-- Generated by testng._18.VARIANT.JUnitXMLReporter -->\n<testsuite hostname=\"sdlab-msr1\" failures=\"0\" tests=\"0\" time=\"0.0\" errors=\"0\" timestamp=\"20 Dec 2025 06:44:48 GMT\">\n</testsuite>\n"
++sb.toString == "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<!-- Generated by testng._18.VARIANT.JUnitXMLReporter -->\n<testsuite hostname=\"sdlab-msr1\" failures=\"0\" tests=\"0\" time=\"0.0\" errors=\"0\" timestamp=\"20 Dec 2025 06:47:47 GMT\">\n</testsuite>\n"
+ encoding has only one value
+ encoding.toString == "UTF-8"
+ ===========================================================================
+@@ -3845,12 +3845,12 @@
+ testng._18.requirements.org.testng.internal.Utils.m_verbose == orig(testng._18.requirements.org.testng.internal.Utils.m_verbose)
+ sb.toString == orig(sb.toString)
+ encoding.toString == orig(encoding.toString)
+-sb.toString == "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<!-- Generated by testng._18.VARIANT.JUnitXMLReporter -->\n<testsuite hostname=\"sdlab-msr1\" failures=\"0\" tests=\"0\" time=\"0.0\" errors=\"0\" timestamp=\"20 Dec 2025 06:44:48 GMT\">\n</testsuite>\n"
++sb.toString == "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<!-- Generated by testng._18.VARIANT.JUnitXMLReporter -->\n<testsuite hostname=\"sdlab-msr1\" failures=\"0\" tests=\"0\" time=\"0.0\" errors=\"0\" timestamp=\"20 Dec 2025 06:47:47 GMT\">\n</testsuite>\n"
+ encoding.toString == "UTF-8"
+ ===========================================================================
+ testng._18.requirements.org.testng.internal.Utils.writeFile(java.io.File, java.lang.String, java.lang.String, java.lang.String):::ENTER
+ fileNameParameter.toString == "TestContext.xml"
+-sb.toString == "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<!-- Generated by testng._18.VARIANT.JUnitXMLReporter -->\n<testsuite hostname=\"sdlab-msr1\" failures=\"0\" tests=\"0\" time=\"0.0\" errors=\"0\" timestamp=\"20 Dec 2025 06:44:48 GMT\">\n</testsuite>\n"
++sb.toString == "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<!-- Generated by testng._18.VARIANT.JUnitXMLReporter -->\n<testsuite hostname=\"sdlab-msr1\" failures=\"0\" tests=\"0\" time=\"0.0\" errors=\"0\" timestamp=\"20 Dec 2025 06:47:47 GMT\">\n</testsuite>\n"
+ encoding has only one value
+ encoding.toString == "UTF-8"
+ ===========================================================================
+@@ -3875,14 +3875,14 @@
+ sb.toString == orig(sb.toString)
+ encoding.toString == orig(encoding.toString)
+ fileNameParameter.toString == "TestContext.xml"
+-sb.toString == "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<!-- Generated by testng._18.VARIANT.JUnitXMLReporter -->\n<testsuite hostname=\"sdlab-msr1\" failures=\"0\" tests=\"0\" time=\"0.0\" errors=\"0\" timestamp=\"20 Dec 2025 06:44:48 GMT\">\n</testsuite>\n"
++sb.toString == "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<!-- Generated by testng._18.VARIANT.JUnitXMLReporter -->\n<testsuite hostname=\"sdlab-msr1\" failures=\"0\" tests=\"0\" time=\"0.0\" errors=\"0\" timestamp=\"20 Dec 2025 06:47:47 GMT\">\n</testsuite>\n"
+ encoding.toString == "UTF-8"
+ ===========================================================================
+ testng._18.requirements.org.testng.internal.Utils.writeUtf8File(java.lang.String, java.lang.String, java.lang.String):::ENTER
+ outputDir has only one value
+ outputDir.toString == "/tmp"
+ fileName.toString == "TestContext.xml"
+-sb.toString == "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<!-- Generated by testng._18.VARIANT.JUnitXMLReporter -->\n<testsuite hostname=\"sdlab-msr1\" failures=\"0\" tests=\"0\" time=\"0.0\" errors=\"0\" timestamp=\"20 Dec 2025 06:44:48 GMT\">\n</testsuite>\n"
++sb.toString == "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<!-- Generated by testng._18.VARIANT.JUnitXMLReporter -->\n<testsuite hostname=\"sdlab-msr1\" failures=\"0\" tests=\"0\" time=\"0.0\" errors=\"0\" timestamp=\"20 Dec 2025 06:47:47 GMT\">\n</testsuite>\n"
+ ===========================================================================
+ testng._18.requirements.org.testng.internal.Utils.writeUtf8File(java.lang.String, java.lang.String, java.lang.String):::EXIT
+ testng._18.requirements.org.testng.internal.Utils.LINE_SEP == orig(testng._18.requirements.org.testng.internal.Utils.LINE_SEP)
+@@ -3906,7 +3906,7 @@
+ sb.toString == orig(sb.toString)
+ outputDir.toString == "/tmp"
+ fileName.toString == "TestContext.xml"
+-sb.toString == "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<!-- Generated by testng._18.VARIANT.JUnitXMLReporter -->\n<testsuite hostname=\"sdlab-msr1\" failures=\"0\" tests=\"0\" time=\"0.0\" errors=\"0\" timestamp=\"20 Dec 2025 06:44:48 GMT\">\n</testsuite>\n"
++sb.toString == "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<!-- Generated by testng._18.VARIANT.JUnitXMLReporter -->\n<testsuite hostname=\"sdlab-msr1\" failures=\"0\" tests=\"0\" time=\"0.0\" errors=\"0\" timestamp=\"20 Dec 2025 06:47:47 GMT\">\n</testsuite>\n"
+ ===========================================================================
+ testng._18.requirements.org.testng.log4testng.Logger:::CLASS
+ testng._18.requirements.org.testng.log4testng.Logger.loggers has only one value
+@@ -4006,7 +4006,7 @@
+ org.slf4j.Logger.ROOT_LOGGER_NAME.toString == orig(org.slf4j.Logger.ROOT_LOGGER_NAME.toString)
+ this.m_file == orig(this.m_file)
+ this.m_sb == orig(this.m_sb)
+-return.toString one of { "", "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<!-- Generated by testng._18.VARIANT.JUnitXMLReporter -->\n<testsuite hostname=\"sdlab-msr1\" failures=\"0\" tests=\"0\" time=\"0.0\" errors=\"0\" timestamp=\"20 Dec 2025 06:44:48 GMT\">\n</testsuite>\n" }
++return.toString one of { "", "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<!-- Generated by testng._18.VARIANT.JUnitXMLReporter -->\n<testsuite hostname=\"sdlab-msr1\" failures=\"0\" tests=\"0\" time=\"0.0\" errors=\"0\" timestamp=\"20 Dec 2025 06:47:47 GMT\">\n</testsuite>\n" }
+ ===========================================================================
+ testng._18.requirements.org.testng.reporters.RuntimeBehavior:::CLASS
+ testng._18.requirements.org.testng.reporters.RuntimeBehavior.FILE_NAME has only one value
+@@ -4267,7 +4267,7 @@
+ testng._18.requirements.org.testng.reporters.XMLStringBuffer.INVALID_XML_CHARS == orig(testng._18.requirements.org.testng.reporters.XMLStringBuffer.INVALID_XML_CHARS)
+ this.m_currentIndent has only one value
+ this.m_currentIndent.toString == ""
+-return.toString == "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<!-- Generated by testng._18.VARIANT.JUnitXMLReporter -->\n<testsuite hostname=\"sdlab-msr1\" failures=\"0\" tests=\"0\" time=\"0.0\" errors=\"0\" timestamp=\"20 Dec 2025 06:44:48 GMT\">\n</testsuite>\n"
++return.toString == "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<!-- Generated by testng._18.VARIANT.JUnitXMLReporter -->\n<testsuite hostname=\"sdlab-msr1\" failures=\"0\" tests=\"0\" time=\"0.0\" errors=\"0\" timestamp=\"20 Dec 2025 06:47:47 GMT\">\n</testsuite>\n"
+ ===========================================================================
+ testng._18.requirements.org.testng.reporters.XMLUtils:::CLASS
+ testng._18.requirements.org.testng.reporters.XMLUtils.EOL has only one value

@@ -1,0 +1,57 @@
+--- /dev/fd/63	2025-12-20 07:52:18.814051807 +0000
++++ /dev/fd/62	2025-12-20 07:52:18.814051807 +0000
+@@ -74,28 +74,6 @@
+ return == null
+ paramTypes[] is the reverse of args[]
+ ===========================================================================
+-lnreadera._1.mocks.SherlockActivity:::OBJECT
+-this has only one value
+-===========================================================================
+-lnreadera._1.mocks.SherlockActivity.SherlockActivity():::EXIT
+-this.superOnDestroyCalled == false
+-===========================================================================
+-lnreadera._1.mocks.SherlockActivity.isSuperOnDestroyCalled():::ENTER
+-this.superOnDestroyCalled == true
+-===========================================================================
+-lnreadera._1.mocks.SherlockActivity.isSuperOnDestroyCalled():::EXIT
+-this.superOnDestroyCalled == return
+-return == orig(this.superOnDestroyCalled)
+-return == true
+-===========================================================================
+-lnreadera._1.mocks.SherlockActivity.isSuperOnDestroyCalled():::EXIT;condition="return == true"
+-===========================================================================
+-lnreadera._1.mocks.SherlockActivity.onDestroy():::ENTER
+-this.superOnDestroyCalled == false
+-===========================================================================
+-lnreadera._1.mocks.SherlockActivity.onDestroy():::EXIT
+-this.superOnDestroyCalled == true
+-===========================================================================
+ lnreadera._1.VARIANT.DisplayImageActivity:::CLASS
+ lnreadera._1.VARIANT.DisplayImageActivity.TAG has only one value
+ lnreadera._1.VARIANT.DisplayImageActivity.TAG.toString == "class lnreadera._1.VARIANT.DisplayImageActivity"
+@@ -121,3 +99,25 @@
+ this.url == orig(this.url)
+ this.dialog == orig(this.dialog)
+ this.superOnDestroyCalled == true
++===========================================================================
++lnreadera._1.mocks.SherlockActivity:::OBJECT
++this has only one value
++===========================================================================
++lnreadera._1.mocks.SherlockActivity.SherlockActivity():::EXIT
++this.superOnDestroyCalled == false
++===========================================================================
++lnreadera._1.mocks.SherlockActivity.isSuperOnDestroyCalled():::ENTER
++this.superOnDestroyCalled == true
++===========================================================================
++lnreadera._1.mocks.SherlockActivity.isSuperOnDestroyCalled():::EXIT
++this.superOnDestroyCalled == return
++return == orig(this.superOnDestroyCalled)
++return == true
++===========================================================================
++lnreadera._1.mocks.SherlockActivity.isSuperOnDestroyCalled():::EXIT;condition="return == true"
++===========================================================================
++lnreadera._1.mocks.SherlockActivity.onDestroy():::ENTER
++this.superOnDestroyCalled == false
++===========================================================================
++lnreadera._1.mocks.SherlockActivity.onDestroy():::EXIT
++this.superOnDestroyCalled == true

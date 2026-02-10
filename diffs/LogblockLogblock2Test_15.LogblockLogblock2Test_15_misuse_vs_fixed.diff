@@ -1,0 +1,11 @@
+--- /dev/fd/63	2025-12-20 07:52:18.832052282 +0000
++++ /dev/fd/62	2025-12-20 07:52:18.832052282 +0000
+@@ -39,7 +39,7 @@
+ this.blobTestInstance.getClass().getName() == logblock_logblock_2._15.VARIANT.BlobTest.class
+ this.blobTestClass has only one value
+ this.sourceFilePath.toString == "src/main/java/logblock_logblock_2/_15/VARIANT/BlobTest.java"
+-logblock_logblock_2._15.Driver.BASE_PACKAGE.toString < this.variant.toString
++logblock_logblock_2._15.Driver.BASE_PACKAGE.toString > this.variant.toString
+ logblock_logblock_2._15.Driver.BASE_PACKAGE.toString < this.sourceFilePath.toString
+ this.variant.toString < this.sourceFilePath.toString
+ ===========================================================================

@@ -1,0 +1,47 @@
+--- /dev/fd/63	2025-12-20 07:52:18.581045666 +0000
++++ /dev/fd/62	2025-12-20 07:52:18.581045666 +0000
+@@ -55,27 +55,16 @@
+ callId.toString == orig(callId.toString)
+ callId.toString > return.toString
+ ===========================================================================
+-android_rcs_rcsjta._1.mocks.AndroidFactory.getApplicationContext():::EXIT
+-return has only one value
+-return.getClass().getName() == java.lang.Object.class
+-===========================================================================
+-android_rcs_rcsjta._1.mocks.DeviceUtils.getDeviceUUID(java.lang.Object):::ENTER
+-context has only one value
+-context.getClass().getName() == java.lang.Object.class
+-===========================================================================
+-android_rcs_rcsjta._1.mocks.DeviceUtils.getDeviceUUID(java.lang.Object):::EXIT
+-return has only one value
+-===========================================================================
+ android_rcs_rcsjta._1.VARIANT.ContributionIdGenerator:::CLASS
+ android_rcs_rcsjta._1.VARIANT.ContributionIdGenerator.secretKey has only one value
+ android_rcs_rcsjta._1.VARIANT.ContributionIdGenerator.secretKey != null
+-android_rcs_rcsjta._1.VARIANT.ContributionIdGenerator.secretKey[] == [98, 100, 51, 55, 49, 53, 100, 97, 45, 48, 52, 100, 48, 45, 52, 50]
++android_rcs_rcsjta._1.VARIANT.ContributionIdGenerator.secretKey[] == [55, 101, 102, 101, 49, 54, 97, 98, 45, 101, 57, 55, 52, 45, 52, 56]
+ size(android_rcs_rcsjta._1.VARIANT.ContributionIdGenerator.secretKey[]) == 16
+ android_rcs_rcsjta._1.VARIANT.ContributionIdGenerator.secretKey[] elements > size(android_rcs_rcsjta._1.VARIANT.ContributionIdGenerator.secretKey[])
+ ===========================================================================
+ android_rcs_rcsjta._1.VARIANT.ContributionIdGenerator.generateSecretKey():::EXIT
+ return has only one value
+-return[] == [98, 100, 51, 55, 49, 53, 100, 97, 45, 48, 52, 100, 48, 45, 52, 50]
++return[] == [55, 101, 102, 101, 49, 54, 97, 98, 45, 101, 57, 55, 52, 45, 52, 56]
+ size(return[]) == 16
+ ===========================================================================
+ android_rcs_rcsjta._1.VARIANT.ContributionIdGenerator.getContributionId(java.lang.String):::ENTER
+@@ -87,3 +76,14 @@
+ android_rcs_rcsjta._1.VARIANT.ContributionIdGenerator.secretKey[] == orig(android_rcs_rcsjta._1.VARIANT.ContributionIdGenerator.secretKey[])
+ callId.toString == orig(callId.toString)
+ callId.toString > return.toString
++===========================================================================
++android_rcs_rcsjta._1.mocks.AndroidFactory.getApplicationContext():::EXIT
++return has only one value
++return.getClass().getName() == java.lang.Object.class
++===========================================================================
++android_rcs_rcsjta._1.mocks.DeviceUtils.getDeviceUUID(java.lang.Object):::ENTER
++context has only one value
++context.getClass().getName() == java.lang.Object.class
++===========================================================================
++android_rcs_rcsjta._1.mocks.DeviceUtils.getDeviceUUID(java.lang.Object):::EXIT
++return has only one value

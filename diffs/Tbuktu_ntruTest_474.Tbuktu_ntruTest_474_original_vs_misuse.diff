@@ -1,0 +1,23 @@
+--- /dev/fd/63	2025-12-20 07:52:18.901054100 +0000
++++ /dev/fd/62	2025-12-20 07:52:18.901054100 +0000
+@@ -14,11 +14,6 @@
+ ===========================================================================
+ tbuktu_ntru.Tbuktu_ntruTest_474$CommonLogic.testWriteToConsistentLength():::EXIT
+ ===========================================================================
+-tbuktu_ntru.Tbuktu_ntruTest_474$CommonLogic.testWriteToFlushesBuffer():::ENTER
+-this has only one value
+-===========================================================================
+-tbuktu_ntru.Tbuktu_ntruTest_474$CommonLogic.testWriteToFlushesBuffer():::EXIT
+-===========================================================================
+ tbuktu_ntru.Tbuktu_ntruTest_474$CommonLogic.testWriteToOutputsData():::ENTER
+ this has only one value
+ ===========================================================================
+@@ -75,7 +70,7 @@
+ this.instance == orig(this.instance)
+ this.instance.getClass().getName() == orig(this.instance.getClass().getName())
+ this.clazz == orig(this.clazz)
+-return == 65
++return == 0
+ ===========================================================================
+ tbuktu_ntru._474.VARIANT.SignatureParameters$BasisType:::OBJECT
+ ===========================================================================

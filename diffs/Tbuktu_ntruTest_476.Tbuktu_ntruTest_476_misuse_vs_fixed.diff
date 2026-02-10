@@ -1,0 +1,35 @@
+--- /dev/fd/63	2025-12-20 07:52:18.925054733 +0000
++++ /dev/fd/62	2025-12-20 07:52:18.926054759 +0000
+@@ -4,6 +4,11 @@
+ ===========================================================================
+ tbuktu_ntru.Tbuktu_ntruTest_476$CommonLogic.CommonLogic():::EXIT
+ ===========================================================================
++tbuktu_ntru.Tbuktu_ntruTest_476$CommonLogic.testGetEncodedCallsFlushOrClose():::ENTER
++this has only one value
++===========================================================================
++tbuktu_ntru.Tbuktu_ntruTest_476$CommonLogic.testGetEncodedCallsFlushOrClose():::EXIT
++===========================================================================
+ tbuktu_ntru.Tbuktu_ntruTest_476$CommonLogic.testGetEncodedConsistent():::ENTER
+ this has only one value
+ ===========================================================================
+@@ -114,7 +119,7 @@
+ ===========================================================================
+ tbuktu_ntru._476.Driver.hasFlushOrCloseInGetEncoded():::EXIT
+ ===========================================================================
+-tbuktu_ntru._476.Driver.hasFlushOrCloseInGetEncoded():::EXIT;condition="not(return == true)"
++tbuktu_ntru._476.Driver.hasFlushOrCloseInGetEncoded():::EXIT;condition="return == true"
+ ===========================================================================
+ tbuktu_ntru._476.Driver.hasFlushOrCloseInGetEncoded():::EXIT
+ tbuktu_ntru._476.Driver.VARIANT_PACKAGE == orig(tbuktu_ntru._476.Driver.VARIANT_PACKAGE)
+@@ -125,9 +130,9 @@
+ this.variant == orig(this.variant)
+ this.variant.toString == orig(this.variant.toString)
+ this.instance has only one value
+-return == false
++return == true
+ ===========================================================================
+-tbuktu_ntru._476.Driver.hasFlushOrCloseInGetEncoded():::EXIT;condition="not(return == true)"
++tbuktu_ntru._476.Driver.hasFlushOrCloseInGetEncoded():::EXIT;condition="return == true"
+ ===========================================================================
+ tbuktu_ntru._476.VARIANT.SignaturePublicKey:::OBJECT
+ this.h != null
