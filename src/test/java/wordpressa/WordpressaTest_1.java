@@ -23,7 +23,7 @@ class WordpressaTest_1 {
         abstract Driver driver();
 
         @Before
-        void setUp() {
+        public void setUp() {
             SimperiumUtils.reset();
         }
 

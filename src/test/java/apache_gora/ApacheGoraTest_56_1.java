@@ -39,7 +39,7 @@ public class ApacheGoraTest_56_1 {
         abstract Driver getTargetDriver();
 
         @Before
-        void setUp() {
+        public void setUp() {
             // no-op (他テストとの一貫性のため)
         }
 
