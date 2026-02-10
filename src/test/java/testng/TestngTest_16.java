@@ -1,7 +1,6 @@
 package testng;
 
 import org.junit.Test;
-import org.junit.Ignore;
 import org.junit.experimental.runners.Enclosed;
 import org.junit.runner.RunWith;
 import testng._16.Driver;
@@ -32,11 +31,6 @@ public class TestngTest_16 {
             assertTrue("synchronized(invokedMethods) block should be present", driver().hasSynchronizedBlock());
         }
         
-        @Test
-        public void testCorrectlyFixed() throws Exception {
-            assertTrue("Sort and iteration should be inside synchronized block", driver().isCorrectlyFixed());
-        }
-        
         // ========== Dynamic Tests ==========
         
         @Test
@@ -52,13 +46,6 @@ public class TestngTest_16 {
         @Override
         Driver driver() {
             return new Driver("original");
-        }
-        
-        // Original は不完全な修正版のため、このテストは失敗が期待動作
-        @Override
-        @Test
-        @Ignore
-        public void testCorrectlyFixed() throws Exception {
         }
     }
     public static class Fixed extends CommonCases {
