@@ -1,0 +1,30 @@
+--- invariant/thomas_s_b_visualee/_30/original/invariants.txt	2026-02-11 03:57:40.215209572 +0900
++++ invariant/thomas_s_b_visualee/_30/misuse/invariants.txt	2026-02-11 03:57:44.285109445 +0900
+@@ -2,23 +2,23 @@
+ daikon_runner.DaikonRunner.createDriverInstance(java.lang.Class, java.lang.String):::ENTER
+ driverClass has only one value
+ variant has only one value
+-variant.toString == "original"
++variant.toString == "misuse"
+ ===========================================================================
+ daikon_runner.DaikonRunner.createDriverInstance(java.lang.Class, java.lang.String):::EXIT121
+ ===========================================================================
+ daikon_runner.DaikonRunner.createDriverInstance(java.lang.Class, java.lang.String):::EXIT
+ variant.toString == orig(variant.toString)
+-variant.toString == "original"
++variant.toString == "misuse"
+ return == null
+ ===========================================================================
+ daikon_runner.DaikonRunner.getDefaultValue(java.lang.Class, java.lang.String):::ENTER
+ type has only one value
+ variant has only one value
+-variant.toString == "original"
++variant.toString == "misuse"
+ ===========================================================================
+ daikon_runner.DaikonRunner.getDefaultValue(java.lang.Class, java.lang.String):::EXIT146
+ ===========================================================================
+ daikon_runner.DaikonRunner.getDefaultValue(java.lang.Class, java.lang.String):::EXIT
+ variant.toString == orig(variant.toString)
+-variant.toString == "original"
++variant.toString == "misuse"
+ return == null

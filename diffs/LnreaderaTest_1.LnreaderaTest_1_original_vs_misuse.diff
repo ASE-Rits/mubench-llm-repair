@@ -1,124 +1,32 @@
---- /dev/fd/63	2025-12-20 07:52:18.808051649 +0000
-+++ /dev/fd/62	2025-12-20 07:52:18.807051623 +0000
-@@ -5,10 +5,6 @@
+--- invariant/lnreadera/_1/original/invariants.txt	2026-02-11 03:45:21.527414534 +0900
++++ invariant/lnreadera/_1/misuse/invariants.txt	2026-02-11 03:45:25.685602017 +0900
+@@ -2,25 +2,25 @@
+ daikon_runner.DaikonRunner.createDriverInstance(java.lang.Class, java.lang.String):::ENTER
+ driverClass has only one value
+ variant has only one value
+-variant.toString == "original"
++variant.toString == "misuse"
  ===========================================================================
- lnreadera.LnreaderaTest_1$CommonCases.CommonCases():::EXIT
+ daikon_runner.DaikonRunner.createDriverInstance(java.lang.Class, java.lang.String):::EXIT121
  ===========================================================================
--lnreadera.LnreaderaTest_1$CommonCases.testOnDestroyCallsSuper():::ENTER
--===========================================================================
--lnreadera.LnreaderaTest_1$CommonCases.testOnDestroyCallsSuper():::EXIT
--===========================================================================
- lnreadera.LnreaderaTest_1$Variant:::OBJECT
- this has only one value
- ===========================================================================
-@@ -26,6 +22,7 @@
- this has only one value
- this.targetClass has only one value
- this.activity has only one value
-+this.activity.superOnDestroyCalled == false
- ===========================================================================
- lnreadera._1.Driver.Driver(java.lang.String):::ENTER
- targetClassName has only one value
-@@ -33,23 +30,21 @@
- ===========================================================================
- lnreadera._1.Driver.Driver(java.lang.String):::EXIT
- targetClassName.toString == orig(targetClassName.toString)
--this.activity.superOnDestroyCalled == false
- targetClassName.toString == "lnreadera._1.VARIANT.DisplayImageActivity"
- ===========================================================================
- lnreadera._1.Driver.executeOnDestroyAndCheckSuperCalled():::ENTER
--this.activity.superOnDestroyCalled == false
- ===========================================================================
- lnreadera._1.Driver.executeOnDestroyAndCheckSuperCalled():::EXIT
- this.targetClass == orig(this.targetClass)
- this.activity == orig(this.activity)
- this.activity.superOnDestroyCalled == return
--return == true
-+return == orig(this.activity.superOnDestroyCalled)
-+return == false
- ===========================================================================
--lnreadera._1.Driver.executeOnDestroyAndCheckSuperCalled():::EXIT;condition="return == true"
-+lnreadera._1.Driver.executeOnDestroyAndCheckSuperCalled():::EXIT;condition="not(return == true)"
- ===========================================================================
- lnreadera._1.Driver.invoke(java.lang.String, java.lang.Class[], java.lang.Object[]):::ENTER
- paramTypes[] == args[]
--this.activity.superOnDestroyCalled == false
- methodName has only one value
- methodName.toString == "onDestroy"
- paramTypes has only one value
-@@ -63,39 +58,17 @@
- lnreadera._1.Driver.invoke(java.lang.String, java.lang.Class[], java.lang.Object[]):::EXIT
- this.targetClass == orig(this.targetClass)
- this.activity == orig(this.activity)
-+this.activity.superOnDestroyCalled == orig(this.activity.superOnDestroyCalled)
- methodName.toString == orig(methodName.toString)
- paramTypes[] == args[]
- paramTypes[] == orig(paramTypes[])
- args[] == orig(args[])
--this.activity.superOnDestroyCalled == true
- methodName.toString == "onDestroy"
- paramTypes[] == []
- args[] == []
+ daikon_runner.DaikonRunner.createDriverInstance(java.lang.Class, java.lang.String):::EXIT
+ variant.toString == orig(variant.toString)
+-variant.toString == "original"
++variant.toString == "misuse"
  return == null
- paramTypes[] is the reverse of args[]
  ===========================================================================
--lnreadera._1.mocks.SherlockActivity:::OBJECT
--this has only one value
--===========================================================================
--lnreadera._1.mocks.SherlockActivity.SherlockActivity():::EXIT
--this.superOnDestroyCalled == false
--===========================================================================
--lnreadera._1.mocks.SherlockActivity.isSuperOnDestroyCalled():::ENTER
--this.superOnDestroyCalled == true
--===========================================================================
--lnreadera._1.mocks.SherlockActivity.isSuperOnDestroyCalled():::EXIT
--this.superOnDestroyCalled == return
--return == orig(this.superOnDestroyCalled)
--return == true
--===========================================================================
--lnreadera._1.mocks.SherlockActivity.isSuperOnDestroyCalled():::EXIT;condition="return == true"
--===========================================================================
--lnreadera._1.mocks.SherlockActivity.onDestroy():::ENTER
--this.superOnDestroyCalled == false
--===========================================================================
--lnreadera._1.mocks.SherlockActivity.onDestroy():::EXIT
--this.superOnDestroyCalled == true
--===========================================================================
- lnreadera._1.VARIANT.DisplayImageActivity:::CLASS
- lnreadera._1.VARIANT.DisplayImageActivity.TAG has only one value
- lnreadera._1.VARIANT.DisplayImageActivity.TAG.toString == "class lnreadera._1.VARIANT.DisplayImageActivity"
-@@ -106,12 +79,11 @@
- this.task == null
- this.url == null
- this.dialog == null
-+this.superOnDestroyCalled == false
+ daikon_runner.DaikonRunner.getDefaultValue(java.lang.Class, java.lang.String):::ENTER
+ type has only one value
+ variant has only one value
+-variant.toString == "original"
++variant.toString == "misuse"
  ===========================================================================
- lnreadera._1.VARIANT.DisplayImageActivity.DisplayImageActivity():::EXIT
--this.superOnDestroyCalled == false
+ daikon_runner.DaikonRunner.getDefaultValue(java.lang.Class, java.lang.String):::EXIT128
  ===========================================================================
- lnreadera._1.VARIANT.DisplayImageActivity.onDestroy():::ENTER
--this.superOnDestroyCalled == false
- ===========================================================================
- lnreadera._1.VARIANT.DisplayImageActivity.onDestroy():::EXIT
- lnreadera._1.VARIANT.DisplayImageActivity.TAG == orig(lnreadera._1.VARIANT.DisplayImageActivity.TAG)
-@@ -120,4 +92,19 @@
- this.task == orig(this.task)
- this.url == orig(this.url)
- this.dialog == orig(this.dialog)
--this.superOnDestroyCalled == true
-+this.superOnDestroyCalled == orig(this.superOnDestroyCalled)
-+===========================================================================
-+lnreadera._1.mocks.SherlockActivity:::OBJECT
-+this has only one value
-+this.superOnDestroyCalled == false
-+===========================================================================
-+lnreadera._1.mocks.SherlockActivity.SherlockActivity():::EXIT
-+===========================================================================
-+lnreadera._1.mocks.SherlockActivity.isSuperOnDestroyCalled():::ENTER
-+===========================================================================
-+lnreadera._1.mocks.SherlockActivity.isSuperOnDestroyCalled():::EXIT
-+this.superOnDestroyCalled == return
-+return == orig(this.superOnDestroyCalled)
-+return == false
-+===========================================================================
-+lnreadera._1.mocks.SherlockActivity.isSuperOnDestroyCalled():::EXIT;condition="not(return == true)"
+ daikon_runner.DaikonRunner.getDefaultValue(java.lang.Class, java.lang.String):::EXIT
+ variant.toString == orig(variant.toString)
+ return == orig(variant)
+-variant.toString == "original"
++variant.toString == "misuse"
+ return has only one value
+ return.getClass().getName() == java.lang.String.class

@@ -1,0 +1,33 @@
+--- invariant/tbuktu_ntru/_476/original/invariants.txt	2026-02-11 03:49:40.320416475 +0900
++++ invariant/tbuktu_ntru/_476/misuse/invariants.txt	2026-02-11 03:49:44.702816440 +0900
+@@ -2,18 +2,18 @@
+ daikon_runner.DaikonRunner.createDriverInstance(java.lang.Class, java.lang.String):::ENTER
+ driverClass has only one value
+ variant has only one value
+-variant.toString == "original"
++variant.toString == "misuse"
+ ===========================================================================
+ daikon_runner.DaikonRunner.createDriverInstance(java.lang.Class, java.lang.String):::EXIT121
+ ===========================================================================
+ daikon_runner.DaikonRunner.createDriverInstance(java.lang.Class, java.lang.String):::EXIT
+ variant.toString == orig(variant.toString)
+-variant.toString == "original"
++variant.toString == "misuse"
+ return == null
+ ===========================================================================
+ daikon_runner.DaikonRunner.getDefaultValue(java.lang.Class, java.lang.String):::ENTER
+ variant has only one value
+-variant.toString == "original"
++variant.toString == "misuse"
+ ===========================================================================
+ daikon_runner.DaikonRunner.getDefaultValue(java.lang.Class, java.lang.String):::EXIT128
+ return == orig(variant)
+@@ -28,7 +28,7 @@
+ ===========================================================================
+ daikon_runner.DaikonRunner.getDefaultValue(java.lang.Class, java.lang.String):::EXIT
+ variant.toString == orig(variant.toString)
+-variant.toString == "original"
++variant.toString == "misuse"
+ ===========================================================================
+ tbuktu_ntru._476.requirements.NtruException:::CLASS
+ ===========================================================================

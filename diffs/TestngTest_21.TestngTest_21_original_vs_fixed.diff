@@ -1,11 +1,271 @@
---- /dev/fd/63	2025-12-20 07:52:18.982056235 +0000
-+++ /dev/fd/62	2025-12-20 07:52:18.982056235 +0000
-@@ -283,7 +283,7 @@
- this.modelClass == orig(this.modelClass)
+--- invariant/testng/_21/original/invariants.txt	2026-02-11 03:54:32.800269455 +0900
++++ invariant/testng/_21/fixed/invariants.txt	2026-02-11 03:55:27.754140472 +0900
+@@ -2,13 +2,13 @@
+ daikon_runner.DaikonRunner.createDriverInstance(java.lang.Class, java.lang.String):::ENTER
+ driverClass has only one value
+ variant has only one value
+-variant.toString == "original"
++variant.toString == "fixed"
+ ===========================================================================
+ daikon_runner.DaikonRunner.createDriverInstance(java.lang.Class, java.lang.String):::EXIT70
+ ===========================================================================
+ daikon_runner.DaikonRunner.createDriverInstance(java.lang.Class, java.lang.String):::EXIT
+ variant.toString == orig(variant.toString)
+-variant.toString == "original"
++variant.toString == "fixed"
+ return has only one value
+ return.getClass().getName() == testng._21.Driver.class
+ ===========================================================================
+@@ -16,15 +16,15 @@
+ args has only one value
+ args.getClass().getName() == java.lang.String[].class
+ args[] contains no nulls and has only one value, of length 2
+-args[].toString == [testng._21, original]
+-args[].toString elements one of { "original", "testng._21" }
++args[].toString == [testng._21, fixed]
++args[].toString elements one of { "fixed", "testng._21" }
+ size(args[]) == 2
+ ===========================================================================
+ daikon_runner.DaikonRunner.main(java.lang.String[]):::EXIT
+ args[] == orig(args[])
+ args[] contains no nulls and has only one value, of length 2
+-args[].toString == [testng._21, original]
+-args[].toString elements one of { "original", "testng._21" }
++args[].toString == [testng._21, fixed]
++args[].toString elements one of { "fixed", "testng._21" }
+ ===========================================================================
+ testng._21.Driver:::CLASS
+ testng._21.Driver.BASE_PACKAGE has only one value
+@@ -33,18 +33,18 @@
+ testng._21.Driver:::OBJECT
+ this has only one value
+ this.variant has only one value
+-this.variant.toString == "original"
+-this.modelInstance.getClass().getName() == testng._21.original.Model.class
++this.variant.toString == "fixed"
++this.modelInstance.getClass().getName() == testng._21.fixed.Model.class
+ ===========================================================================
+ testng._21.Driver.Driver(java.lang.String):::ENTER
+ variant has only one value
+-variant.toString == "original"
++variant.toString == "fixed"
+ ===========================================================================
+ testng._21.Driver.Driver(java.lang.String):::EXIT
+ variant.toString == orig(variant.toString)
  this.modelInstance == null
  this.modelClass == null
--return.toString == "package testng._21.VARIANT;\n\nimport testng._21.requirements.org.testng.IResultMap;\nimport testng._21.requirements.org.testng.ISuite;\nimport testng._21.requirements.org.testng.ISuiteResult;\nimport testng._21.requirements.org.testng.ITestContext;\nimport testng._21.requirements.org.testng.ITestResult;\nimport testng._21.requirements.org.testng.collections.ListMultiMap;\nimport testng._21.requirements.org.testng.collections.Lists;\nimport testng._21.requirements.org.testng.collections.Maps;\nimport testng._21.requirements.org.testng.collections.SetMultiMap;\nimport testng._21.requirements.org.testng.internal.Utils;\nimport testng._21.requirements.org.testng.reporters.jq.ResultsByClass;\n\nimport java.util.Arrays;\nimport java.util.Collections;\nimport java.util.List;\nimport java.util.Map;\nimport java.util.Set;\n\npublic class Model {\n  private ListMultiMap<ISuite, ITestResult> m_model = Maps.newListMultiMap();\n  private List<ISuite> m_suites = null;\n  private Map<String, String> m_testTags = Maps.newHashMap();\n  private Map<ITestResult, String> m_testResultMap = Maps.newHashMap();\n  private Map<ISuite, ResultsByClass> m_failedResultsByClass = Maps.newHashMap();\n  private Map<ISuite, ResultsByClass> m_skippedResultsByClass = Maps.newHashMap();\n  private Map<ISuite, ResultsByClass> m_passedResultsByClass = Maps.newHashMap();\n  private List<ITestResult> m_allFailedResults = Lists.newArrayList();\n  // Each suite is mapped to failed.png, skipped.png or nothing (which means passed.png)\n  private Map<String, String> m_statusBySuiteName = Maps.newHashMap();\n  private SetMultiMap<String, String> m_groupsBySuiteName = Maps.newSetMultiMap();\n  private SetMultiMap<String, String> m_methodsByGroup = Maps.newSetMultiMap();\n\n  public Model(List<ISuite> suites) {\n    m_suites = suites;\n    init();\n  }\n\n  public List<ISuite> getSuites() {\n    return m_suites;\n  }\n\n  private void init() {\n    int testCounter = 0;\n    for (ISuite suite : m_suites) {\n      List<ITestResult> passed = Lists.newArrayList();\n      List<ITestResult> failed = Lists.newArrayList();\n      List<ITestResult> skipped = Lists.newArrayList();\n      Map<String, ISuiteResult> suiteResults = suite.getResults();\n      synchronized(suiteResults) {\n        for (ISuiteResult sr : suiteResults.values()) {\n          ITestContext context = sr.getTestContext();\n          m_testTags.put(context.getName(), \"test-\" + testCounter++);\n          failed.addAll(context.getFailedTests().getAllResults());\n          skipped.addAll(context.getSkippedTests().getAllResults());\n          passed.addAll(context.getPassedTests().getAllResults());\n          IResultMap[] map = new IResultMap[] {\n              context.getFailedTests(),\n              context.getSkippedTests(),\n              context.getPassedTests()\n          };\n          for (IResultMap m : map) {\n            for (ITestResult tr : m.getAllResults()) {\n              m_testResultMap.put(tr, getTestResultName(tr));\n            }\n          }\n        }\n      }\n\n      // Process them in the order passed, skipped and failed, so that the failed\n      // icon overrides all the others and the skipped icon overrides passed.\n\n      // Passed\n      {\n        ResultsByClass rbc = new ResultsByClass();\n        for (ITestResult tr : passed) {\n          rbc.addResult(tr.getTestClass().getRealClass(), tr);\n          updateGroups(suite, tr);\n        }\n        m_passedResultsByClass.put(suite, rbc);\n      }\n\n      // Skipped\n      {\n        ResultsByClass rbc = new ResultsByClass();\n        for (ITestResult tr : skipped) {\n          m_statusBySuiteName.put(suite.getName(), \"skipped\");\n          rbc.addResult(tr.getTestClass().getRealClass(), tr);\n          updateGroups(suite, tr);\n        }\n        m_skippedResultsByClass.put(suite, rbc);\n      }\n\n      // Failed\n      {\n        ResultsByClass rbc = new ResultsByClass();\n        for (ITestResult tr : failed) {\n          m_statusBySuiteName.put(suite.getName(), \"failed\");\n          rbc.addResult(tr.getTestClass().getRealClass(), tr);\n          m_allFailedResults.add(tr);\n          updateGroups(suite, tr);\n        }\n        m_failedResultsByClass.put(suite, rbc);\n      }\n\n      m_model.putAll(suite, failed);\n      m_model.putAll(suite, skipped);\n      m_model.putAll(suite, passed);\n    }\n  }\n\n  private void updateGroups(ISuite suite, ITestResult tr) {\n    String[] groups = tr.getMethod().getGroups();\n    m_groupsBySuiteName.putAll(suite.getName(),\n        Arrays.asList(groups));\n    for (String group : groups) {\n      m_methodsByGroup.put(group, tr.getMethod().getMethodName());\n    }\n  }\n\n  public ResultsByClass getFailedResultsByClass(ISuite suite) {\n    return m_failedResultsByClass.get(suite);\n  }\n\n  public ResultsByClass getSkippedResultsByClass(ISuite suite) {\n    return m_skippedResultsByClass.get(suite);\n  }\n\n  public ResultsByClass getPassedResultsByClass(ISuite suite) {\n    return m_passedResultsByClass.get(suite);\n  }\n\n  public String getTag(ITestResult tr) {\n    return m_testResultMap.get(tr);\n  }\n\n  public List<ITestResult> getTestResults(ISuite suite) {\n    return nonnullList(m_model.get(suite));\n   }\n\n  public static String getTestResultName(ITestResult tr) {\n    StringBuilder result = new StringBuilder(tr.getMethod().getMethodName());\n    Object[] parameters = tr.getParameters();\n    if (parameters.length > 0) {\n      result.append(\"(\");\n      StringBuilder p = new StringBuilder();\n      for (int i = 0; i < parameters.length; i++) {\n        if (i > 0) p.append(\", \");\n        p.append(Utils.toString(parameters[i]));\n      }\n      if (p.length() > 100) {\n        String s = p.toString().substring(0, 100);\n        s = s + \"...\";\n        result.append(s);\n      } else {\n        result.append(p.toString());\n      }\n      result.append(\")\");\n    }\n\n    return result.toString();\n  }\n\n  public List<ITestResult> getAllFailedResults() {\n    return m_allFailedResults;\n  }\n\n  public static String getImage(String tagClass) {\n    return tagClass + \".png\";\n  }\n\n  public String getStatusForSuite(String suiteName) {\n    String result = m_statusBySuiteName.get(suiteName);\n    return result != null ? result : \"passed\";\n  }\n\n  public <T> Set<T> nonnullSet(Set<T> l) {\n    return l != null ? l : Collections.<T>emptySet();\n  }\n\n  public <T> List<T> nonnullList(List<T> l) {\n    return l != null ? l : Collections.<T>emptyList();\n  }\n\n  public List<String> getGroups(String name) {\n    List<String> result = Lists.newArrayList(nonnullSet(m_groupsBySuiteName.get(name)));\n    Collections.sort(result);\n    return result;\n  }\n\n  public List<String> getMethodsInGroup(String groupName) {\n    List<String> result = Lists.newArrayList(nonnullSet(m_methodsByGroup.get(groupName)));\n    Collections.sort(result);\n    return result;\n  }\n\n  public List<ITestResult> getAllTestResults(ISuite suite) {\n    return getAllTestResults(suite, true /* tests only */);\n  }\n\n  public List<ITestResult> getAllTestResults(ISuite suite, boolean testsOnly) {\n    List<ITestResult> result = Lists.newArrayList();\n    for (ISuiteResult sr : suite.getResults().values()) {\n      result.addAll(sr.getTestContext().getPassedTests().getAllResults());\n      result.addAll(sr.getTestContext().getFailedTests().getAllResults());\n      result.addAll(sr.getTestContext().getSkippedTests().getAllResults());\n      if (! testsOnly) {\n        result.addAll(sr.getTestContext().getPassedConfigurations().getAllResults());\n        result.addAll(sr.getTestContext().getFailedConfigurations().getAllResults());\n        result.addAll(sr.getTestContext().getSkippedConfigurations().getAllResults());\n      }\n    }\n    return result;\n  }\n}\n"
-+return.toString == "package testng._21.VARIANT;\n\nimport testng._21.requirements.org.testng.reporters.jq.ResultsByClass;\nimport testng._21.requirements.org.testng.IResultMap;\nimport testng._21.requirements.org.testng.ISuite;\nimport testng._21.requirements.org.testng.ISuiteResult;\nimport testng._21.requirements.org.testng.ITestContext;\nimport testng._21.requirements.org.testng.ITestResult;\nimport testng._21.requirements.org.testng.collections.ListMultiMap;\nimport testng._21.requirements.org.testng.collections.Lists;\nimport testng._21.requirements.org.testng.collections.Maps;\nimport testng._21.requirements.org.testng.collections.SetMultiMap;\nimport testng._21.requirements.org.testng.internal.Utils;\n\nimport java.util.Arrays;\nimport java.util.Collections;\nimport java.util.List;\nimport java.util.Map;\nimport java.util.Set;\n\npublic class Model {\n  private ListMultiMap<ISuite, ITestResult> m_model = Maps.newListMultiMap();\n  private List<ISuite> m_suites = null;\n  private Map<String, String> m_testTags = Maps.newHashMap();\n  private Map<ITestResult, String> m_testResultMap = Maps.newHashMap();\n  private Map<ISuite, ResultsByClass> m_failedResultsByClass = Maps.newHashMap();\n  private Map<ISuite, ResultsByClass> m_skippedResultsByClass = Maps.newHashMap();\n  private Map<ISuite, ResultsByClass> m_passedResultsByClass = Maps.newHashMap();\n  private List<ITestResult> m_allFailedResults = Lists.newArrayList();\n  // Each suite is mapped to failed.png, skipped.png or nothing (which means passed.png)\n  private Map<String, String> m_statusBySuiteName = Maps.newHashMap();\n  private SetMultiMap<String, String> m_groupsBySuiteName = Maps.newSetMultiMap();\n  private SetMultiMap<String, String> m_methodsByGroup = Maps.newSetMultiMap();\n\n  public Model(List<ISuite> suites) {\n    m_suites = suites;\n    init();\n  }\n\n  public List<ISuite> getSuites() {\n    return m_suites;\n  }\n\n  private void init() {\n    int testCounter = 0;\n    for (ISuite suite : m_suites) {\n      List<ITestResult> passed = Lists.newArrayList();\n      List<ITestResult> failed = Lists.newArrayList();\n      List<ITestResult> skipped = Lists.newArrayList();\n      Map<String, ISuiteResult> results = suite.getResults();\n      synchronized (results) {\n        for (ISuiteResult sr : results.values()) {\n          ITestContext context = sr.getTestContext();\n          m_testTags.put(context.getName(), \"test-\" + testCounter++);\n          failed.addAll(context.getFailedTests().getAllResults());\n          skipped.addAll(context.getSkippedTests().getAllResults());\n          passed.addAll(context.getPassedTests().getAllResults());\n          IResultMap[] map = new IResultMap[] {\n              context.getFailedTests(),\n              context.getSkippedTests(),\n              context.getPassedTests()\n          };\n          for (IResultMap m : map) {\n            for (ITestResult tr : m.getAllResults()) {\n              m_testResultMap.put(tr, getTestResultName(tr));\n            }\n          }\n        }\n      }\n\n      // Process them in the order passed, skipped and failed, so that the failed\n      // icon overrides all the others and the skipped icon overrides passed.\n\n      // Passed\n      {\n        ResultsByClass rbc = new ResultsByClass();\n        for (ITestResult tr : passed) {\n          rbc.addResult(tr.getTestClass().getRealClass(), tr);\n          updateGroups(suite, tr);\n        }\n        m_passedResultsByClass.put(suite, rbc);\n      }\n\n      // Skipped\n      {\n        ResultsByClass rbc = new ResultsByClass();\n        for (ITestResult tr : skipped) {\n          m_statusBySuiteName.put(suite.getName(), \"skipped\");\n          rbc.addResult(tr.getTestClass().getRealClass(), tr);\n          updateGroups(suite, tr);\n        }\n        m_skippedResultsByClass.put(suite, rbc);\n      }\n\n      // Failed\n      {\n        ResultsByClass rbc = new ResultsByClass();\n        for (ITestResult tr : failed) {\n          m_statusBySuiteName.put(suite.getName(), \"failed\");\n          rbc.addResult(tr.getTestClass().getRealClass(), tr);\n          m_allFailedResults.add(tr);\n          updateGroups(suite, tr);\n        }\n        m_failedResultsByClass.put(suite, rbc);\n      }\n\n      m_model.putAll(suite, failed);\n      m_model.putAll(suite, skipped);\n      m_model.putAll(suite, passed);\n    }\n  }\n\n  private void updateGroups(ISuite suite, ITestResult tr) {\n    String[] groups = tr.getMethod().getGroups();\n    m_groupsBySuiteName.putAll(suite.getName(),\n        Arrays.asList(groups));\n    for (String group : groups) {\n      m_methodsByGroup.put(group, tr.getMethod().getMethodName());\n    }\n  }\n\n  public ResultsByClass getFailedResultsByClass(ISuite suite) {\n    return m_failedResultsByClass.get(suite);\n  }\n\n  public ResultsByClass getSkippedResultsByClass(ISuite suite) {\n    return m_skippedResultsByClass.get(suite);\n  }\n\n  public ResultsByClass getPassedResultsByClass(ISuite suite) {\n    return m_passedResultsByClass.get(suite);\n  }\n\n  public String getTag(ITestResult tr) {\n    return m_testResultMap.get(tr);\n  }\n\n  public List<ITestResult> getTestResults(ISuite suite) {\n    return nonnullList(m_model.get(suite));\n   }\n\n  public static String getTestResultName(ITestResult tr) {\n    StringBuilder result = new StringBuilder(tr.getMethod().getMethodName());\n    Object[] parameters = tr.getParameters();\n    if (parameters.length > 0) {\n      result.append(\"(\");\n      StringBuilder p = new StringBuilder();\n      for (int i = 0; i < parameters.length; i++) {\n        if (i > 0) p.append(\", \");\n        p.append(Utils.toString(parameters[i]));\n      }\n      if (p.length() > 100) {\n        String s = p.toString().substring(0, 100);\n        s = s + \"...\";\n        result.append(s);\n      } else {\n        result.append(p.toString());\n      }\n      result.append(\")\");\n    }\n\n    return result.toString();\n  }\n\n  public List<ITestResult> getAllFailedResults() {\n    return m_allFailedResults;\n  }\n\n  public static String getImage(String tagClass) {\n    return tagClass + \".png\";\n  }\n\n  public String getStatusForSuite(String suiteName) {\n    String result = m_statusBySuiteName.get(suiteName);\n    return result != null ? result : \"passed\";\n  }\n\n  public <T> Set<T> nonnullSet(Set<T> l) {\n    return l != null ? l : Collections.<T>emptySet();\n  }\n\n  public <T> List<T> nonnullList(List<T> l) {\n    return l != null ? l : Collections.<T>emptyList();\n  }\n\n  public List<String> getGroups(String name) {\n    List<String> result = Lists.newArrayList(nonnullSet(m_groupsBySuiteName.get(name)));\n    Collections.sort(result);\n    return result;\n  }\n\n  public List<String> getMethodsInGroup(String groupName) {\n    List<String> result = Lists.newArrayList(nonnullSet(m_methodsByGroup.get(groupName)));\n    Collections.sort(result);\n    return result;\n  }\n\n  public List<ITestResult> getAllTestResults(ISuite suite) {\n    return getAllTestResults(suite, true /* tests only */);\n  }\n\n  public List<ITestResult> getAllTestResults(ISuite suite, boolean testsOnly) {\n    List<ITestResult> result = Lists.newArrayList();\n    for (ISuiteResult sr : suite.getResults().values()) {\n      result.addAll(sr.getTestContext().getPassedTests().getAllResults());\n      result.addAll(sr.getTestContext().getFailedTests().getAllResults());\n      result.addAll(sr.getTestContext().getSkippedTests().getAllResults());\n      if (! testsOnly) {\n        result.addAll(sr.getTestContext().getPassedConfigurations().getAllResults());\n        result.addAll(sr.getTestContext().getFailedConfigurations().getAllResults());\n        result.addAll(sr.getTestContext().getSkippedConfigurations().getAllResults());\n      }\n    }\n    return result;\n  }\n}\n"
+-variant.toString == "original"
++variant.toString == "fixed"
  ===========================================================================
- testng._21.VARIANT.Model:::OBJECT
- this.m_model.m_objects.getClass().getName() == this.m_testTags.getClass().getName()
+ testng._21.Driver.getAllFailedResults():::ENTER
+ this.modelInstance has only one value
+@@ -66,14 +66,17 @@
+ return.getClass().getName() == java.util.ArrayList.class
+ ===========================================================================
+ testng._21.Driver.getSuites():::ENTER
+-this.modelInstance == null
+-this.modelClass == null
++this.modelInstance has only one value
++this.modelClass has only one value
+ ===========================================================================
+ testng._21.Driver.getSuites():::EXIT
+ testng._21.Driver.BASE_PACKAGE == orig(testng._21.Driver.BASE_PACKAGE)
+ testng._21.Driver.BASE_PACKAGE.toString == orig(testng._21.Driver.BASE_PACKAGE.toString)
+ this.variant == orig(this.variant)
+ this.variant.toString == orig(this.variant.toString)
++this.modelInstance == orig(this.modelInstance)
++this.modelInstance.getClass().getName() == orig(this.modelInstance.getClass().getName())
++this.modelClass == orig(this.modelClass)
+ this.modelInstance has only one value
+ this.modelClass has only one value
+ return has only one value
+@@ -82,60 +85,63 @@
+ return.getClass().getName() == java.util.ArrayList.class
+ ===========================================================================
+ testng._21.Driver.initializeModel():::ENTER
++this.modelInstance == null
++this.modelClass == null
+ ===========================================================================
+ testng._21.Driver.initializeModel():::EXIT
+ testng._21.Driver.BASE_PACKAGE == orig(testng._21.Driver.BASE_PACKAGE)
+ testng._21.Driver.BASE_PACKAGE.toString == orig(testng._21.Driver.BASE_PACKAGE.toString)
+ this.variant == orig(this.variant)
+ this.variant.toString == orig(this.variant.toString)
+-this.modelInstance.getClass().getName() == orig(this.modelInstance.getClass().getName())
++this.modelInstance has only one value
+ this.modelClass has only one value
+ ===========================================================================
+-testng._21.original.Model:::OBJECT
++testng._21.fixed.Model:::OBJECT
++this has only one value
++this.m_model has only one value
++this.m_model.m_objects has only one value
+ this.m_model.m_objects.getClass().getName() == java.util.HashMap.class
++this.m_suites has only one value
+ this.m_suites[] == []
+ this.m_suites[].getClass().getName() == []
+ this.m_suites.getClass().getName() == java.util.ArrayList.class
++this.m_testTags has only one value
+ this.m_testTags.getClass().getName() == java.util.HashMap.class
++this.m_testResultMap has only one value
+ this.m_testResultMap.getClass().getName() == java.util.HashMap.class
++this.m_failedResultsByClass has only one value
+ this.m_failedResultsByClass.getClass().getName() == java.util.HashMap.class
++this.m_skippedResultsByClass has only one value
+ this.m_skippedResultsByClass.getClass().getName() == java.util.HashMap.class
++this.m_passedResultsByClass has only one value
+ this.m_passedResultsByClass.getClass().getName() == java.util.HashMap.class
++this.m_allFailedResults has only one value
+ this.m_allFailedResults[] == []
+ this.m_allFailedResults[].getClass().getName() == []
+ this.m_allFailedResults.getClass().getName() == java.util.ArrayList.class
++this.m_statusBySuiteName has only one value
+ this.m_statusBySuiteName.getClass().getName() == java.util.HashMap.class
++this.m_groupsBySuiteName has only one value
++this.m_groupsBySuiteName.m_objects has only one value
+ this.m_groupsBySuiteName.m_objects.getClass().getName() == java.util.HashMap.class
++this.m_methodsByGroup has only one value
++this.m_methodsByGroup.m_objects has only one value
+ this.m_methodsByGroup.m_objects.getClass().getName() == java.util.HashMap.class
+ ===========================================================================
+-testng._21.original.Model.Model(java.util.List):::ENTER
++testng._21.fixed.Model.Model(java.util.List):::ENTER
++suites has only one value
+ suites[] == []
+ suites[].getClass().getName() == []
+ suites.getClass().getName() == java.util.ArrayList.class
+ ===========================================================================
+-testng._21.original.Model.Model(java.util.List):::EXIT
++testng._21.fixed.Model.Model(java.util.List):::EXIT
+ suites[] == orig(suites[])
+ suites[] == []
+ suites[].getClass().getName() == []
+ ===========================================================================
+-testng._21.original.Model.getAllFailedResults():::ENTER
+-this has only one value
+-this.m_model has only one value
+-this.m_model.m_objects has only one value
+-this.m_suites has only one value
+-this.m_testTags has only one value
+-this.m_testResultMap has only one value
+-this.m_failedResultsByClass has only one value
+-this.m_skippedResultsByClass has only one value
+-this.m_passedResultsByClass has only one value
+-this.m_allFailedResults has only one value
+-this.m_statusBySuiteName has only one value
+-this.m_groupsBySuiteName has only one value
+-this.m_groupsBySuiteName.m_objects has only one value
+-this.m_methodsByGroup has only one value
+-this.m_methodsByGroup.m_objects has only one value
++testng._21.fixed.Model.getAllFailedResults():::ENTER
+ ===========================================================================
+-testng._21.original.Model.getAllFailedResults():::EXIT
++testng._21.fixed.Model.getAllFailedResults():::EXIT
+ this.m_model == orig(this.m_model)
+ this.m_model.m_objects == orig(this.m_model.m_objects)
+ this.m_model.m_objects.getClass().getName() == orig(this.m_model.m_objects.getClass().getName())
+@@ -163,43 +169,14 @@
+ this.m_methodsByGroup == orig(this.m_methodsByGroup)
+ this.m_methodsByGroup.m_objects == orig(this.m_methodsByGroup.m_objects)
+ this.m_methodsByGroup.m_objects.getClass().getName() == orig(this.m_methodsByGroup.m_objects.getClass().getName())
+-this.m_model has only one value
+-this.m_model.m_objects has only one value
+-this.m_suites has only one value
+-this.m_testTags has only one value
+-this.m_testResultMap has only one value
+-this.m_failedResultsByClass has only one value
+-this.m_skippedResultsByClass has only one value
+-this.m_passedResultsByClass has only one value
+-this.m_allFailedResults has only one value
+-this.m_statusBySuiteName has only one value
+-this.m_groupsBySuiteName has only one value
+-this.m_groupsBySuiteName.m_objects has only one value
+-this.m_methodsByGroup has only one value
+-this.m_methodsByGroup.m_objects has only one value
+ return has only one value
+ return[] == []
+ return[].getClass().getName() == []
+ return.getClass().getName() == java.util.ArrayList.class
+ ===========================================================================
+-testng._21.original.Model.getSuites():::ENTER
+-this has only one value
+-this.m_model has only one value
+-this.m_model.m_objects has only one value
+-this.m_suites has only one value
+-this.m_testTags has only one value
+-this.m_testResultMap has only one value
+-this.m_failedResultsByClass has only one value
+-this.m_skippedResultsByClass has only one value
+-this.m_passedResultsByClass has only one value
+-this.m_allFailedResults has only one value
+-this.m_statusBySuiteName has only one value
+-this.m_groupsBySuiteName has only one value
+-this.m_groupsBySuiteName.m_objects has only one value
+-this.m_methodsByGroup has only one value
+-this.m_methodsByGroup.m_objects has only one value
++testng._21.fixed.Model.getSuites():::ENTER
+ ===========================================================================
+-testng._21.original.Model.getSuites():::EXIT
++testng._21.fixed.Model.getSuites():::EXIT
+ this.m_model == orig(this.m_model)
+ this.m_model.m_objects == orig(this.m_model.m_objects)
+ this.m_model.m_objects.getClass().getName() == orig(this.m_model.m_objects.getClass().getName())
+@@ -227,28 +204,14 @@
+ this.m_methodsByGroup == orig(this.m_methodsByGroup)
+ this.m_methodsByGroup.m_objects == orig(this.m_methodsByGroup.m_objects)
+ this.m_methodsByGroup.m_objects.getClass().getName() == orig(this.m_methodsByGroup.m_objects.getClass().getName())
+-this.m_model has only one value
+-this.m_model.m_objects has only one value
+-this.m_suites has only one value
+-this.m_testTags has only one value
+-this.m_testResultMap has only one value
+-this.m_failedResultsByClass has only one value
+-this.m_skippedResultsByClass has only one value
+-this.m_passedResultsByClass has only one value
+-this.m_allFailedResults has only one value
+-this.m_statusBySuiteName has only one value
+-this.m_groupsBySuiteName has only one value
+-this.m_groupsBySuiteName.m_objects has only one value
+-this.m_methodsByGroup has only one value
+-this.m_methodsByGroup.m_objects has only one value
+ return has only one value
+ return[] == []
+ return[].getClass().getName() == []
+ return.getClass().getName() == java.util.ArrayList.class
+ ===========================================================================
+-testng._21.original.Model.init():::ENTER
++testng._21.fixed.Model.init():::ENTER
+ ===========================================================================
+-testng._21.original.Model.init():::EXIT
++testng._21.fixed.Model.init():::EXIT
+ this.m_model == orig(this.m_model)
+ this.m_model.m_objects == orig(this.m_model.m_objects)
+ this.m_model.m_objects.getClass().getName() == orig(this.m_model.m_objects.getClass().getName())
+@@ -278,6 +241,8 @@
+ this.m_methodsByGroup.m_objects.getClass().getName() == orig(this.m_methodsByGroup.m_objects.getClass().getName())
+ ===========================================================================
+ testng._21.requirements.org.testng.collections.ListMultiMap:::OBJECT
++this has only one value
++this.m_objects has only one value
+ this.m_objects.getClass().getName() == java.util.HashMap.class
+ ===========================================================================
+ testng._21.requirements.org.testng.collections.ListMultiMap.ListMultiMap(boolean):::ENTER
+@@ -286,15 +251,17 @@
+ testng._21.requirements.org.testng.collections.ListMultiMap.ListMultiMap(boolean):::EXIT
+ ===========================================================================
+ testng._21.requirements.org.testng.collections.Lists.newArrayList():::EXIT
++return has only one value
+ return[] == []
+ return[].getClass().getName() == []
+ return.getClass().getName() == java.util.ArrayList.class
+ ===========================================================================
+ testng._21.requirements.org.testng.collections.Maps.newHashMap():::EXIT
+-return != null
+ return.getClass().getName() == java.util.HashMap.class
+ ===========================================================================
+ testng._21.requirements.org.testng.collections.Maps.newListMultiMap():::EXIT
++return has only one value
++return.m_objects has only one value
+ return.m_objects.getClass().getName() == java.util.HashMap.class
+ ===========================================================================
+ testng._21.requirements.org.testng.collections.Maps.newSetMultiMap():::EXIT

@@ -1,0 +1,17 @@
+--- invariant/tbuktu_ntru/_475/original/invariants.txt	2026-02-11 03:49:26.277806737 +0900
++++ invariant/tbuktu_ntru/_475/fixed/invariants.txt	2026-02-11 03:49:38.989406427 +0900
+@@ -1,7 +1,7 @@
+ ===========================================================================
+ daikon_runner.DaikonRunner.getDefaultValue(java.lang.Class, java.lang.String):::ENTER
+ variant has only one value
+-variant.toString == "original"
++variant.toString == "fixed"
+ ===========================================================================
+ daikon_runner.DaikonRunner.getDefaultValue(java.lang.Class, java.lang.String):::EXIT128
+ return == orig(variant)
+@@ -16,4 +16,4 @@
+ ===========================================================================
+ daikon_runner.DaikonRunner.getDefaultValue(java.lang.Class, java.lang.String):::EXIT
+ variant.toString == orig(variant.toString)
+-variant.toString == "original"
++variant.toString == "fixed"

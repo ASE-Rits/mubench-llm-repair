@@ -1,11 +1,32 @@
---- /dev/fd/63	2025-12-20 07:52:18.851052782 +0000
-+++ /dev/fd/62	2025-12-20 07:52:18.852052809 +0000
-@@ -445,7 +445,7 @@
- size(this.logConstructorSignature[]) == size(this.logMethodSignature[])
- this has only one value
- this.useTCCL == true
--this.diagnosticPrefix.toString == "[LogFactoryImpl@807834289 from jdk.internal.loader.ClassLoaders$AppClassLoader@146589023] "
-+this.diagnosticPrefix.toString == "[LogFactoryImpl@134432690 from jdk.internal.loader.ClassLoaders$AppClassLoader@146589023] "
- this.attributes has only one value
- this.attributes != null
- this.instances has only one value
+--- invariant/pawotag/_1/original/invariants.txt	2026-02-11 03:46:42.835560503 +0900
++++ invariant/pawotag/_1/misuse/invariants.txt	2026-02-11 03:46:43.916124391 +0900
+@@ -2,25 +2,25 @@
+ daikon_runner.DaikonRunner.createDriverInstance(java.lang.Class, java.lang.String):::ENTER
+ driverClass has only one value
+ variant has only one value
+-variant.toString == "original"
++variant.toString == "misuse"
+ ===========================================================================
+ daikon_runner.DaikonRunner.createDriverInstance(java.lang.Class, java.lang.String):::EXIT121
+ ===========================================================================
+ daikon_runner.DaikonRunner.createDriverInstance(java.lang.Class, java.lang.String):::EXIT
+ variant.toString == orig(variant.toString)
+-variant.toString == "original"
++variant.toString == "misuse"
+ return == null
+ ===========================================================================
+ daikon_runner.DaikonRunner.getDefaultValue(java.lang.Class, java.lang.String):::ENTER
+ type has only one value
+ variant has only one value
+-variant.toString == "original"
++variant.toString == "misuse"
+ ===========================================================================
+ daikon_runner.DaikonRunner.getDefaultValue(java.lang.Class, java.lang.String):::EXIT128
+ ===========================================================================
+ daikon_runner.DaikonRunner.getDefaultValue(java.lang.Class, java.lang.String):::EXIT
+ variant.toString == orig(variant.toString)
+ return == orig(variant)
+-variant.toString == "original"
++variant.toString == "misuse"
+ return has only one value
+ return.getClass().getName() == java.lang.String.class

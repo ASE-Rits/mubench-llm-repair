@@ -1,0 +1,409 @@
+--- invariant/ivantrendafilov_confucius/_93/misuse/invariants.txt	2026-02-11 03:38:13.956260948 +0900
++++ invariant/ivantrendafilov_confucius/_93/fixed/invariants.txt	2026-02-11 03:38:28.876856588 +0900
+@@ -2,13 +2,13 @@
+ daikon_runner.DaikonRunner.createDriverInstance(java.lang.Class, java.lang.String):::ENTER
+ driverClass has only one value
+ variant has only one value
+-variant.toString == "misuse"
++variant.toString == "fixed"
+ ===========================================================================
+ daikon_runner.DaikonRunner.createDriverInstance(java.lang.Class, java.lang.String):::EXIT85
+ ===========================================================================
+ daikon_runner.DaikonRunner.createDriverInstance(java.lang.Class, java.lang.String):::EXIT
+ variant.toString == orig(variant.toString)
+-variant.toString == "misuse"
++variant.toString == "fixed"
+ return has only one value
+ return.getClass().getName() == ivantrendafilov_confucius._93.Driver.class
+ ===========================================================================
+@@ -16,15 +16,15 @@
+ args has only one value
+ args.getClass().getName() == java.lang.String[].class
+ args[] contains no nulls and has only one value, of length 2
+-args[].toString == [ivantrendafilov_confucius._93, misuse]
+-args[].toString elements one of { "ivantrendafilov_confucius._93", "misuse" }
++args[].toString == [ivantrendafilov_confucius._93, fixed]
++args[].toString elements one of { "fixed", "ivantrendafilov_confucius._93" }
+ size(args[]) == 2
+ ===========================================================================
+ daikon_runner.DaikonRunner.main(java.lang.String[]):::EXIT
+ args[] == orig(args[])
+ args[] contains no nulls and has only one value, of length 2
+-args[].toString == [ivantrendafilov_confucius._93, misuse]
+-args[].toString elements one of { "ivantrendafilov_confucius._93", "misuse" }
++args[].toString == [ivantrendafilov_confucius._93, fixed]
++args[].toString elements one of { "fixed", "ivantrendafilov_confucius._93" }
+ ===========================================================================
+ ivantrendafilov_confucius._93.Driver:::CLASS
+ ivantrendafilov_confucius._93.Driver.BASE_PACKAGE has only one value
+@@ -32,17 +32,17 @@
+ ===========================================================================
+ ivantrendafilov_confucius._93.Driver:::OBJECT
+ this has only one value
+-this.configInstance.getClass().getName() == ivantrendafilov_confucius._93.misuse.AbstractConfiguration.class
++this.configInstance.getClass().getName() == ivantrendafilov_confucius._93.fixed.AbstractConfiguration.class
+ ===========================================================================
+ ivantrendafilov_confucius._93.Driver.Driver(java.lang.String, java.util.Properties):::ENTER
+ variant has only one value
+-variant.toString == "misuse"
++variant.toString == "fixed"
+ properties has only one value
+ ===========================================================================
+ ivantrendafilov_confucius._93.Driver.Driver(java.lang.String, java.util.Properties):::EXIT
+ variant.toString == orig(variant.toString)
+ this.configInstance has only one value
+-variant.toString == "misuse"
++variant.toString == "fixed"
+ ===========================================================================
+ ivantrendafilov_confucius._93.Driver.getProperties():::ENTER
+ this.configInstance has only one value
+@@ -89,24 +89,24 @@
+ this.configInstance.getClass().getName() == orig(this.configInstance.getClass().getName())
+ this.configInstance has only one value
+ ===========================================================================
+-ivantrendafilov_confucius._93.misuse.AbstractConfiguration:::CLASS
+-ivantrendafilov_confucius._93.misuse.AbstractConfiguration.LOG has only one value
+-ivantrendafilov_confucius._93.misuse.AbstractConfiguration.LOG != null
+-ivantrendafilov_confucius._93.misuse.AbstractConfiguration.LOG.getClass().getName() == org.slf4j.simple.SimpleLogger.class
++ivantrendafilov_confucius._93.fixed.AbstractConfiguration:::CLASS
++ivantrendafilov_confucius._93.fixed.AbstractConfiguration.LOG has only one value
++ivantrendafilov_confucius._93.fixed.AbstractConfiguration.LOG != null
++ivantrendafilov_confucius._93.fixed.AbstractConfiguration.LOG.getClass().getName() == org.slf4j.simple.SimpleLogger.class
+ org.slf4j.Logger.ROOT_LOGGER_NAME has only one value
+ org.slf4j.Logger.ROOT_LOGGER_NAME != null
+ org.slf4j.Logger.ROOT_LOGGER_NAME.toString == "ROOT"
+-ivantrendafilov_confucius._93.misuse.AbstractConfiguration.ITEM_SEPARATOR has only one value
+-ivantrendafilov_confucius._93.misuse.AbstractConfiguration.ITEM_SEPARATOR != null
+-ivantrendafilov_confucius._93.misuse.AbstractConfiguration.ITEM_SEPARATOR.toString == ","
+-ivantrendafilov_confucius._93.misuse.AbstractConfiguration.FILE_PARAM has only one value
+-ivantrendafilov_confucius._93.misuse.AbstractConfiguration.FILE_PARAM != null
+-ivantrendafilov_confucius._93.misuse.AbstractConfiguration.FILE_PARAM.toString == "conf.properties"
+-ivantrendafilov_confucius._93.misuse.AbstractConfiguration.CONTEXT_PARAM has only one value
+-ivantrendafilov_confucius._93.misuse.AbstractConfiguration.CONTEXT_PARAM != null
+-ivantrendafilov_confucius._93.misuse.AbstractConfiguration.CONTEXT_PARAM.toString == "conf.context"
++ivantrendafilov_confucius._93.fixed.AbstractConfiguration.ITEM_SEPARATOR has only one value
++ivantrendafilov_confucius._93.fixed.AbstractConfiguration.ITEM_SEPARATOR != null
++ivantrendafilov_confucius._93.fixed.AbstractConfiguration.ITEM_SEPARATOR.toString == ","
++ivantrendafilov_confucius._93.fixed.AbstractConfiguration.FILE_PARAM has only one value
++ivantrendafilov_confucius._93.fixed.AbstractConfiguration.FILE_PARAM != null
++ivantrendafilov_confucius._93.fixed.AbstractConfiguration.FILE_PARAM.toString == "conf.properties"
++ivantrendafilov_confucius._93.fixed.AbstractConfiguration.CONTEXT_PARAM has only one value
++ivantrendafilov_confucius._93.fixed.AbstractConfiguration.CONTEXT_PARAM != null
++ivantrendafilov_confucius._93.fixed.AbstractConfiguration.CONTEXT_PARAM.toString == "conf.context"
+ ===========================================================================
+-ivantrendafilov_confucius._93.misuse.AbstractConfiguration:::OBJECT
++ivantrendafilov_confucius._93.fixed.AbstractConfiguration:::OBJECT
+ this has only one value
+ this.configurationDataProvider has only one value
+ this.configurationDataProvider != null
+@@ -115,31 +115,31 @@
+ this.initialState has only one value
+ this.initialState != null
+ this.initialState.getClass().getName() == java.util.Collections$UnmodifiableMap.class
+-ivantrendafilov_confucius._93.misuse.AbstractConfiguration.LOG.getClass().getName() != this.configurationDataProvider.getClass().getName()
+-ivantrendafilov_confucius._93.misuse.AbstractConfiguration.LOG.getClass().getName() != this.initialState.getClass().getName()
++ivantrendafilov_confucius._93.fixed.AbstractConfiguration.LOG.getClass().getName() != this.configurationDataProvider.getClass().getName()
++ivantrendafilov_confucius._93.fixed.AbstractConfiguration.LOG.getClass().getName() != this.initialState.getClass().getName()
+ this.configurationDataProvider.getClass().getName() != this.initialState.getClass().getName()
+ ===========================================================================
+-ivantrendafilov_confucius._93.misuse.AbstractConfiguration.AbstractConfiguration(java.io.InputStream, java.lang.String):::ENTER
++ivantrendafilov_confucius._93.fixed.AbstractConfiguration.AbstractConfiguration(java.io.InputStream, java.lang.String):::ENTER
+ inputStream has only one value
+ inputStream.getClass().getName() == java.io.ByteArrayInputStream.class
+ context == null
+ ===========================================================================
+-ivantrendafilov_confucius._93.misuse.AbstractConfiguration.AbstractConfiguration(java.io.InputStream, java.lang.String):::EXIT
++ivantrendafilov_confucius._93.fixed.AbstractConfiguration.AbstractConfiguration(java.io.InputStream, java.lang.String):::EXIT
+ ===========================================================================
+-ivantrendafilov_confucius._93.misuse.AbstractConfiguration.clearProperty(java.lang.String):::ENTER
++ivantrendafilov_confucius._93.fixed.AbstractConfiguration.clearProperty(java.lang.String):::ENTER
+ key != null
+ ===========================================================================
+-ivantrendafilov_confucius._93.misuse.AbstractConfiguration.clearProperty(java.lang.String):::EXIT
+-ivantrendafilov_confucius._93.misuse.AbstractConfiguration.LOG == orig(ivantrendafilov_confucius._93.misuse.AbstractConfiguration.LOG)
+-ivantrendafilov_confucius._93.misuse.AbstractConfiguration.LOG.getClass().getName() == orig(ivantrendafilov_confucius._93.misuse.AbstractConfiguration.LOG.getClass().getName())
++ivantrendafilov_confucius._93.fixed.AbstractConfiguration.clearProperty(java.lang.String):::EXIT
++ivantrendafilov_confucius._93.fixed.AbstractConfiguration.LOG == orig(ivantrendafilov_confucius._93.fixed.AbstractConfiguration.LOG)
++ivantrendafilov_confucius._93.fixed.AbstractConfiguration.LOG.getClass().getName() == orig(ivantrendafilov_confucius._93.fixed.AbstractConfiguration.LOG.getClass().getName())
+ org.slf4j.Logger.ROOT_LOGGER_NAME == orig(org.slf4j.Logger.ROOT_LOGGER_NAME)
+ org.slf4j.Logger.ROOT_LOGGER_NAME.toString == orig(org.slf4j.Logger.ROOT_LOGGER_NAME.toString)
+-ivantrendafilov_confucius._93.misuse.AbstractConfiguration.ITEM_SEPARATOR == orig(ivantrendafilov_confucius._93.misuse.AbstractConfiguration.ITEM_SEPARATOR)
+-ivantrendafilov_confucius._93.misuse.AbstractConfiguration.ITEM_SEPARATOR.toString == orig(ivantrendafilov_confucius._93.misuse.AbstractConfiguration.ITEM_SEPARATOR.toString)
+-ivantrendafilov_confucius._93.misuse.AbstractConfiguration.FILE_PARAM == orig(ivantrendafilov_confucius._93.misuse.AbstractConfiguration.FILE_PARAM)
+-ivantrendafilov_confucius._93.misuse.AbstractConfiguration.FILE_PARAM.toString == orig(ivantrendafilov_confucius._93.misuse.AbstractConfiguration.FILE_PARAM.toString)
+-ivantrendafilov_confucius._93.misuse.AbstractConfiguration.CONTEXT_PARAM == orig(ivantrendafilov_confucius._93.misuse.AbstractConfiguration.CONTEXT_PARAM)
+-ivantrendafilov_confucius._93.misuse.AbstractConfiguration.CONTEXT_PARAM.toString == orig(ivantrendafilov_confucius._93.misuse.AbstractConfiguration.CONTEXT_PARAM.toString)
++ivantrendafilov_confucius._93.fixed.AbstractConfiguration.ITEM_SEPARATOR == orig(ivantrendafilov_confucius._93.fixed.AbstractConfiguration.ITEM_SEPARATOR)
++ivantrendafilov_confucius._93.fixed.AbstractConfiguration.ITEM_SEPARATOR.toString == orig(ivantrendafilov_confucius._93.fixed.AbstractConfiguration.ITEM_SEPARATOR.toString)
++ivantrendafilov_confucius._93.fixed.AbstractConfiguration.FILE_PARAM == orig(ivantrendafilov_confucius._93.fixed.AbstractConfiguration.FILE_PARAM)
++ivantrendafilov_confucius._93.fixed.AbstractConfiguration.FILE_PARAM.toString == orig(ivantrendafilov_confucius._93.fixed.AbstractConfiguration.FILE_PARAM.toString)
++ivantrendafilov_confucius._93.fixed.AbstractConfiguration.CONTEXT_PARAM == orig(ivantrendafilov_confucius._93.fixed.AbstractConfiguration.CONTEXT_PARAM)
++ivantrendafilov_confucius._93.fixed.AbstractConfiguration.CONTEXT_PARAM.toString == orig(ivantrendafilov_confucius._93.fixed.AbstractConfiguration.CONTEXT_PARAM.toString)
+ this.configurationDataProvider == orig(this.configurationDataProvider)
+ this.configurationDataProvider.getClass().getName() == orig(this.configurationDataProvider.getClass().getName())
+ this.context == orig(this.context)
+@@ -147,19 +147,19 @@
+ this.initialState.getClass().getName() == orig(this.initialState.getClass().getName())
+ key.toString == orig(key.toString)
+ ===========================================================================
+-ivantrendafilov_confucius._93.misuse.AbstractConfiguration.getProperties():::ENTER
++ivantrendafilov_confucius._93.fixed.AbstractConfiguration.getProperties():::ENTER
+ ===========================================================================
+-ivantrendafilov_confucius._93.misuse.AbstractConfiguration.getProperties():::EXIT
+-ivantrendafilov_confucius._93.misuse.AbstractConfiguration.LOG == orig(ivantrendafilov_confucius._93.misuse.AbstractConfiguration.LOG)
+-ivantrendafilov_confucius._93.misuse.AbstractConfiguration.LOG.getClass().getName() == orig(ivantrendafilov_confucius._93.misuse.AbstractConfiguration.LOG.getClass().getName())
++ivantrendafilov_confucius._93.fixed.AbstractConfiguration.getProperties():::EXIT
++ivantrendafilov_confucius._93.fixed.AbstractConfiguration.LOG == orig(ivantrendafilov_confucius._93.fixed.AbstractConfiguration.LOG)
++ivantrendafilov_confucius._93.fixed.AbstractConfiguration.LOG.getClass().getName() == orig(ivantrendafilov_confucius._93.fixed.AbstractConfiguration.LOG.getClass().getName())
+ org.slf4j.Logger.ROOT_LOGGER_NAME == orig(org.slf4j.Logger.ROOT_LOGGER_NAME)
+ org.slf4j.Logger.ROOT_LOGGER_NAME.toString == orig(org.slf4j.Logger.ROOT_LOGGER_NAME.toString)
+-ivantrendafilov_confucius._93.misuse.AbstractConfiguration.ITEM_SEPARATOR == orig(ivantrendafilov_confucius._93.misuse.AbstractConfiguration.ITEM_SEPARATOR)
+-ivantrendafilov_confucius._93.misuse.AbstractConfiguration.ITEM_SEPARATOR.toString == orig(ivantrendafilov_confucius._93.misuse.AbstractConfiguration.ITEM_SEPARATOR.toString)
+-ivantrendafilov_confucius._93.misuse.AbstractConfiguration.FILE_PARAM == orig(ivantrendafilov_confucius._93.misuse.AbstractConfiguration.FILE_PARAM)
+-ivantrendafilov_confucius._93.misuse.AbstractConfiguration.FILE_PARAM.toString == orig(ivantrendafilov_confucius._93.misuse.AbstractConfiguration.FILE_PARAM.toString)
+-ivantrendafilov_confucius._93.misuse.AbstractConfiguration.CONTEXT_PARAM == orig(ivantrendafilov_confucius._93.misuse.AbstractConfiguration.CONTEXT_PARAM)
+-ivantrendafilov_confucius._93.misuse.AbstractConfiguration.CONTEXT_PARAM.toString == orig(ivantrendafilov_confucius._93.misuse.AbstractConfiguration.CONTEXT_PARAM.toString)
++ivantrendafilov_confucius._93.fixed.AbstractConfiguration.ITEM_SEPARATOR == orig(ivantrendafilov_confucius._93.fixed.AbstractConfiguration.ITEM_SEPARATOR)
++ivantrendafilov_confucius._93.fixed.AbstractConfiguration.ITEM_SEPARATOR.toString == orig(ivantrendafilov_confucius._93.fixed.AbstractConfiguration.ITEM_SEPARATOR.toString)
++ivantrendafilov_confucius._93.fixed.AbstractConfiguration.FILE_PARAM == orig(ivantrendafilov_confucius._93.fixed.AbstractConfiguration.FILE_PARAM)
++ivantrendafilov_confucius._93.fixed.AbstractConfiguration.FILE_PARAM.toString == orig(ivantrendafilov_confucius._93.fixed.AbstractConfiguration.FILE_PARAM.toString)
++ivantrendafilov_confucius._93.fixed.AbstractConfiguration.CONTEXT_PARAM == orig(ivantrendafilov_confucius._93.fixed.AbstractConfiguration.CONTEXT_PARAM)
++ivantrendafilov_confucius._93.fixed.AbstractConfiguration.CONTEXT_PARAM.toString == orig(ivantrendafilov_confucius._93.fixed.AbstractConfiguration.CONTEXT_PARAM.toString)
+ this.configurationDataProvider == orig(this.configurationDataProvider)
+ this.configurationDataProvider.getClass().getName() == orig(this.configurationDataProvider.getClass().getName())
+ this.context == orig(this.context)
+@@ -167,38 +167,38 @@
+ this.initialState.getClass().getName() == orig(this.initialState.getClass().getName())
+ return has only one value
+ ===========================================================================
+-ivantrendafilov_confucius._93.misuse.AbstractConfiguration.init():::ENTER
++ivantrendafilov_confucius._93.fixed.AbstractConfiguration.init():::ENTER
+ ===========================================================================
+-ivantrendafilov_confucius._93.misuse.AbstractConfiguration.init():::EXIT
+-ivantrendafilov_confucius._93.misuse.AbstractConfiguration.LOG == orig(ivantrendafilov_confucius._93.misuse.AbstractConfiguration.LOG)
+-ivantrendafilov_confucius._93.misuse.AbstractConfiguration.LOG.getClass().getName() == orig(ivantrendafilov_confucius._93.misuse.AbstractConfiguration.LOG.getClass().getName())
++ivantrendafilov_confucius._93.fixed.AbstractConfiguration.init():::EXIT
++ivantrendafilov_confucius._93.fixed.AbstractConfiguration.LOG == orig(ivantrendafilov_confucius._93.fixed.AbstractConfiguration.LOG)
++ivantrendafilov_confucius._93.fixed.AbstractConfiguration.LOG.getClass().getName() == orig(ivantrendafilov_confucius._93.fixed.AbstractConfiguration.LOG.getClass().getName())
+ org.slf4j.Logger.ROOT_LOGGER_NAME == orig(org.slf4j.Logger.ROOT_LOGGER_NAME)
+ org.slf4j.Logger.ROOT_LOGGER_NAME.toString == orig(org.slf4j.Logger.ROOT_LOGGER_NAME.toString)
+-ivantrendafilov_confucius._93.misuse.AbstractConfiguration.ITEM_SEPARATOR == orig(ivantrendafilov_confucius._93.misuse.AbstractConfiguration.ITEM_SEPARATOR)
+-ivantrendafilov_confucius._93.misuse.AbstractConfiguration.ITEM_SEPARATOR.toString == orig(ivantrendafilov_confucius._93.misuse.AbstractConfiguration.ITEM_SEPARATOR.toString)
+-ivantrendafilov_confucius._93.misuse.AbstractConfiguration.FILE_PARAM == orig(ivantrendafilov_confucius._93.misuse.AbstractConfiguration.FILE_PARAM)
+-ivantrendafilov_confucius._93.misuse.AbstractConfiguration.FILE_PARAM.toString == orig(ivantrendafilov_confucius._93.misuse.AbstractConfiguration.FILE_PARAM.toString)
+-ivantrendafilov_confucius._93.misuse.AbstractConfiguration.CONTEXT_PARAM == orig(ivantrendafilov_confucius._93.misuse.AbstractConfiguration.CONTEXT_PARAM)
+-ivantrendafilov_confucius._93.misuse.AbstractConfiguration.CONTEXT_PARAM.toString == orig(ivantrendafilov_confucius._93.misuse.AbstractConfiguration.CONTEXT_PARAM.toString)
++ivantrendafilov_confucius._93.fixed.AbstractConfiguration.ITEM_SEPARATOR == orig(ivantrendafilov_confucius._93.fixed.AbstractConfiguration.ITEM_SEPARATOR)
++ivantrendafilov_confucius._93.fixed.AbstractConfiguration.ITEM_SEPARATOR.toString == orig(ivantrendafilov_confucius._93.fixed.AbstractConfiguration.ITEM_SEPARATOR.toString)
++ivantrendafilov_confucius._93.fixed.AbstractConfiguration.FILE_PARAM == orig(ivantrendafilov_confucius._93.fixed.AbstractConfiguration.FILE_PARAM)
++ivantrendafilov_confucius._93.fixed.AbstractConfiguration.FILE_PARAM.toString == orig(ivantrendafilov_confucius._93.fixed.AbstractConfiguration.FILE_PARAM.toString)
++ivantrendafilov_confucius._93.fixed.AbstractConfiguration.CONTEXT_PARAM == orig(ivantrendafilov_confucius._93.fixed.AbstractConfiguration.CONTEXT_PARAM)
++ivantrendafilov_confucius._93.fixed.AbstractConfiguration.CONTEXT_PARAM.toString == orig(ivantrendafilov_confucius._93.fixed.AbstractConfiguration.CONTEXT_PARAM.toString)
+ this.configurationDataProvider == orig(this.configurationDataProvider)
+ this.configurationDataProvider.getClass().getName() == orig(this.configurationDataProvider.getClass().getName())
+ this.context == orig(this.context)
+ this.initialState == orig(this.initialState)
+ this.initialState.getClass().getName() == orig(this.initialState.getClass().getName())
+ ===========================================================================
+-ivantrendafilov_confucius._93.misuse.AbstractConfiguration.keySet():::ENTER
++ivantrendafilov_confucius._93.fixed.AbstractConfiguration.keySet():::ENTER
+ ===========================================================================
+-ivantrendafilov_confucius._93.misuse.AbstractConfiguration.keySet():::EXIT
+-ivantrendafilov_confucius._93.misuse.AbstractConfiguration.LOG == orig(ivantrendafilov_confucius._93.misuse.AbstractConfiguration.LOG)
+-ivantrendafilov_confucius._93.misuse.AbstractConfiguration.LOG.getClass().getName() == orig(ivantrendafilov_confucius._93.misuse.AbstractConfiguration.LOG.getClass().getName())
++ivantrendafilov_confucius._93.fixed.AbstractConfiguration.keySet():::EXIT
++ivantrendafilov_confucius._93.fixed.AbstractConfiguration.LOG == orig(ivantrendafilov_confucius._93.fixed.AbstractConfiguration.LOG)
++ivantrendafilov_confucius._93.fixed.AbstractConfiguration.LOG.getClass().getName() == orig(ivantrendafilov_confucius._93.fixed.AbstractConfiguration.LOG.getClass().getName())
+ org.slf4j.Logger.ROOT_LOGGER_NAME == orig(org.slf4j.Logger.ROOT_LOGGER_NAME)
+ org.slf4j.Logger.ROOT_LOGGER_NAME.toString == orig(org.slf4j.Logger.ROOT_LOGGER_NAME.toString)
+-ivantrendafilov_confucius._93.misuse.AbstractConfiguration.ITEM_SEPARATOR == orig(ivantrendafilov_confucius._93.misuse.AbstractConfiguration.ITEM_SEPARATOR)
+-ivantrendafilov_confucius._93.misuse.AbstractConfiguration.ITEM_SEPARATOR.toString == orig(ivantrendafilov_confucius._93.misuse.AbstractConfiguration.ITEM_SEPARATOR.toString)
+-ivantrendafilov_confucius._93.misuse.AbstractConfiguration.FILE_PARAM == orig(ivantrendafilov_confucius._93.misuse.AbstractConfiguration.FILE_PARAM)
+-ivantrendafilov_confucius._93.misuse.AbstractConfiguration.FILE_PARAM.toString == orig(ivantrendafilov_confucius._93.misuse.AbstractConfiguration.FILE_PARAM.toString)
+-ivantrendafilov_confucius._93.misuse.AbstractConfiguration.CONTEXT_PARAM == orig(ivantrendafilov_confucius._93.misuse.AbstractConfiguration.CONTEXT_PARAM)
+-ivantrendafilov_confucius._93.misuse.AbstractConfiguration.CONTEXT_PARAM.toString == orig(ivantrendafilov_confucius._93.misuse.AbstractConfiguration.CONTEXT_PARAM.toString)
++ivantrendafilov_confucius._93.fixed.AbstractConfiguration.ITEM_SEPARATOR == orig(ivantrendafilov_confucius._93.fixed.AbstractConfiguration.ITEM_SEPARATOR)
++ivantrendafilov_confucius._93.fixed.AbstractConfiguration.ITEM_SEPARATOR.toString == orig(ivantrendafilov_confucius._93.fixed.AbstractConfiguration.ITEM_SEPARATOR.toString)
++ivantrendafilov_confucius._93.fixed.AbstractConfiguration.FILE_PARAM == orig(ivantrendafilov_confucius._93.fixed.AbstractConfiguration.FILE_PARAM)
++ivantrendafilov_confucius._93.fixed.AbstractConfiguration.FILE_PARAM.toString == orig(ivantrendafilov_confucius._93.fixed.AbstractConfiguration.FILE_PARAM.toString)
++ivantrendafilov_confucius._93.fixed.AbstractConfiguration.CONTEXT_PARAM == orig(ivantrendafilov_confucius._93.fixed.AbstractConfiguration.CONTEXT_PARAM)
++ivantrendafilov_confucius._93.fixed.AbstractConfiguration.CONTEXT_PARAM.toString == orig(ivantrendafilov_confucius._93.fixed.AbstractConfiguration.CONTEXT_PARAM.toString)
+ this.configurationDataProvider == orig(this.configurationDataProvider)
+ this.configurationDataProvider.getClass().getName() == orig(this.configurationDataProvider.getClass().getName())
+ this.context == orig(this.context)
+@@ -207,70 +207,70 @@
+ return has only one value
+ return.getClass().getName() == java.util.HashMap$KeySet.class
+ ===========================================================================
+-ivantrendafilov_confucius._93.misuse.AbstractConfiguration.reset():::ENTER
++ivantrendafilov_confucius._93.fixed.AbstractConfiguration.reset():::ENTER
+ ===========================================================================
+-ivantrendafilov_confucius._93.misuse.AbstractConfiguration.reset():::EXIT
+-ivantrendafilov_confucius._93.misuse.AbstractConfiguration.LOG == orig(ivantrendafilov_confucius._93.misuse.AbstractConfiguration.LOG)
+-ivantrendafilov_confucius._93.misuse.AbstractConfiguration.LOG.getClass().getName() == orig(ivantrendafilov_confucius._93.misuse.AbstractConfiguration.LOG.getClass().getName())
++ivantrendafilov_confucius._93.fixed.AbstractConfiguration.reset():::EXIT
++ivantrendafilov_confucius._93.fixed.AbstractConfiguration.LOG == orig(ivantrendafilov_confucius._93.fixed.AbstractConfiguration.LOG)
++ivantrendafilov_confucius._93.fixed.AbstractConfiguration.LOG.getClass().getName() == orig(ivantrendafilov_confucius._93.fixed.AbstractConfiguration.LOG.getClass().getName())
+ org.slf4j.Logger.ROOT_LOGGER_NAME == orig(org.slf4j.Logger.ROOT_LOGGER_NAME)
+ org.slf4j.Logger.ROOT_LOGGER_NAME.toString == orig(org.slf4j.Logger.ROOT_LOGGER_NAME.toString)
+-ivantrendafilov_confucius._93.misuse.AbstractConfiguration.ITEM_SEPARATOR == orig(ivantrendafilov_confucius._93.misuse.AbstractConfiguration.ITEM_SEPARATOR)
+-ivantrendafilov_confucius._93.misuse.AbstractConfiguration.ITEM_SEPARATOR.toString == orig(ivantrendafilov_confucius._93.misuse.AbstractConfiguration.ITEM_SEPARATOR.toString)
+-ivantrendafilov_confucius._93.misuse.AbstractConfiguration.FILE_PARAM == orig(ivantrendafilov_confucius._93.misuse.AbstractConfiguration.FILE_PARAM)
+-ivantrendafilov_confucius._93.misuse.AbstractConfiguration.FILE_PARAM.toString == orig(ivantrendafilov_confucius._93.misuse.AbstractConfiguration.FILE_PARAM.toString)
+-ivantrendafilov_confucius._93.misuse.AbstractConfiguration.CONTEXT_PARAM == orig(ivantrendafilov_confucius._93.misuse.AbstractConfiguration.CONTEXT_PARAM)
+-ivantrendafilov_confucius._93.misuse.AbstractConfiguration.CONTEXT_PARAM.toString == orig(ivantrendafilov_confucius._93.misuse.AbstractConfiguration.CONTEXT_PARAM.toString)
++ivantrendafilov_confucius._93.fixed.AbstractConfiguration.ITEM_SEPARATOR == orig(ivantrendafilov_confucius._93.fixed.AbstractConfiguration.ITEM_SEPARATOR)
++ivantrendafilov_confucius._93.fixed.AbstractConfiguration.ITEM_SEPARATOR.toString == orig(ivantrendafilov_confucius._93.fixed.AbstractConfiguration.ITEM_SEPARATOR.toString)
++ivantrendafilov_confucius._93.fixed.AbstractConfiguration.FILE_PARAM == orig(ivantrendafilov_confucius._93.fixed.AbstractConfiguration.FILE_PARAM)
++ivantrendafilov_confucius._93.fixed.AbstractConfiguration.FILE_PARAM.toString == orig(ivantrendafilov_confucius._93.fixed.AbstractConfiguration.FILE_PARAM.toString)
++ivantrendafilov_confucius._93.fixed.AbstractConfiguration.CONTEXT_PARAM == orig(ivantrendafilov_confucius._93.fixed.AbstractConfiguration.CONTEXT_PARAM)
++ivantrendafilov_confucius._93.fixed.AbstractConfiguration.CONTEXT_PARAM.toString == orig(ivantrendafilov_confucius._93.fixed.AbstractConfiguration.CONTEXT_PARAM.toString)
+ this.configurationDataProvider == orig(this.configurationDataProvider)
+ this.configurationDataProvider.getClass().getName() == orig(this.configurationDataProvider.getClass().getName())
+ this.context == orig(this.context)
+ this.initialState == orig(this.initialState)
+ this.initialState.getClass().getName() == orig(this.initialState.getClass().getName())
+ ===========================================================================
+-ivantrendafilov_confucius._93.misuse.AbstractConfiguration.setProperties(java.util.Map):::ENTER
++ivantrendafilov_confucius._93.fixed.AbstractConfiguration.setProperties(java.util.Map):::ENTER
+ ===========================================================================
+-ivantrendafilov_confucius._93.misuse.AbstractConfiguration.setProperties(java.util.Map):::EXIT
+-ivantrendafilov_confucius._93.misuse.AbstractConfiguration.LOG == orig(ivantrendafilov_confucius._93.misuse.AbstractConfiguration.LOG)
+-ivantrendafilov_confucius._93.misuse.AbstractConfiguration.LOG.getClass().getName() == orig(ivantrendafilov_confucius._93.misuse.AbstractConfiguration.LOG.getClass().getName())
++ivantrendafilov_confucius._93.fixed.AbstractConfiguration.setProperties(java.util.Map):::EXIT
++ivantrendafilov_confucius._93.fixed.AbstractConfiguration.LOG == orig(ivantrendafilov_confucius._93.fixed.AbstractConfiguration.LOG)
++ivantrendafilov_confucius._93.fixed.AbstractConfiguration.LOG.getClass().getName() == orig(ivantrendafilov_confucius._93.fixed.AbstractConfiguration.LOG.getClass().getName())
+ org.slf4j.Logger.ROOT_LOGGER_NAME == orig(org.slf4j.Logger.ROOT_LOGGER_NAME)
+ org.slf4j.Logger.ROOT_LOGGER_NAME.toString == orig(org.slf4j.Logger.ROOT_LOGGER_NAME.toString)
+-ivantrendafilov_confucius._93.misuse.AbstractConfiguration.ITEM_SEPARATOR == orig(ivantrendafilov_confucius._93.misuse.AbstractConfiguration.ITEM_SEPARATOR)
+-ivantrendafilov_confucius._93.misuse.AbstractConfiguration.ITEM_SEPARATOR.toString == orig(ivantrendafilov_confucius._93.misuse.AbstractConfiguration.ITEM_SEPARATOR.toString)
+-ivantrendafilov_confucius._93.misuse.AbstractConfiguration.FILE_PARAM == orig(ivantrendafilov_confucius._93.misuse.AbstractConfiguration.FILE_PARAM)
+-ivantrendafilov_confucius._93.misuse.AbstractConfiguration.FILE_PARAM.toString == orig(ivantrendafilov_confucius._93.misuse.AbstractConfiguration.FILE_PARAM.toString)
+-ivantrendafilov_confucius._93.misuse.AbstractConfiguration.CONTEXT_PARAM == orig(ivantrendafilov_confucius._93.misuse.AbstractConfiguration.CONTEXT_PARAM)
+-ivantrendafilov_confucius._93.misuse.AbstractConfiguration.CONTEXT_PARAM.toString == orig(ivantrendafilov_confucius._93.misuse.AbstractConfiguration.CONTEXT_PARAM.toString)
++ivantrendafilov_confucius._93.fixed.AbstractConfiguration.ITEM_SEPARATOR == orig(ivantrendafilov_confucius._93.fixed.AbstractConfiguration.ITEM_SEPARATOR)
++ivantrendafilov_confucius._93.fixed.AbstractConfiguration.ITEM_SEPARATOR.toString == orig(ivantrendafilov_confucius._93.fixed.AbstractConfiguration.ITEM_SEPARATOR.toString)
++ivantrendafilov_confucius._93.fixed.AbstractConfiguration.FILE_PARAM == orig(ivantrendafilov_confucius._93.fixed.AbstractConfiguration.FILE_PARAM)
++ivantrendafilov_confucius._93.fixed.AbstractConfiguration.FILE_PARAM.toString == orig(ivantrendafilov_confucius._93.fixed.AbstractConfiguration.FILE_PARAM.toString)
++ivantrendafilov_confucius._93.fixed.AbstractConfiguration.CONTEXT_PARAM == orig(ivantrendafilov_confucius._93.fixed.AbstractConfiguration.CONTEXT_PARAM)
++ivantrendafilov_confucius._93.fixed.AbstractConfiguration.CONTEXT_PARAM.toString == orig(ivantrendafilov_confucius._93.fixed.AbstractConfiguration.CONTEXT_PARAM.toString)
+ this.configurationDataProvider == orig(this.configurationDataProvider)
+ this.configurationDataProvider.getClass().getName() == orig(this.configurationDataProvider.getClass().getName())
+ this.context == orig(this.context)
+ this.initialState == orig(this.initialState)
+ this.initialState.getClass().getName() == orig(this.initialState.getClass().getName())
+ ===========================================================================
+-ivantrendafilov_confucius._93.misuse.AbstractConfiguration.setProperty(java.lang.String, java.lang.Object):::ENTER
++ivantrendafilov_confucius._93.fixed.AbstractConfiguration.setProperty(java.lang.String, java.lang.Object):::ENTER
+ key != null
+ value != null
+ value.getClass().getName() == java.lang.String.class
+-ivantrendafilov_confucius._93.misuse.AbstractConfiguration.LOG.getClass().getName() != value.getClass().getName()
++ivantrendafilov_confucius._93.fixed.AbstractConfiguration.LOG.getClass().getName() != value.getClass().getName()
+ this.configurationDataProvider.getClass().getName() != value.getClass().getName()
+ this.initialState.getClass().getName() != value.getClass().getName()
+ ===========================================================================
+-ivantrendafilov_confucius._93.misuse.AbstractConfiguration.setProperty(java.lang.String, java.lang.Object):::EXIT
+-ivantrendafilov_confucius._93.misuse.AbstractConfiguration.LOG == orig(ivantrendafilov_confucius._93.misuse.AbstractConfiguration.LOG)
+-ivantrendafilov_confucius._93.misuse.AbstractConfiguration.LOG.getClass().getName() == orig(ivantrendafilov_confucius._93.misuse.AbstractConfiguration.LOG.getClass().getName())
++ivantrendafilov_confucius._93.fixed.AbstractConfiguration.setProperty(java.lang.String, java.lang.Object):::EXIT
++ivantrendafilov_confucius._93.fixed.AbstractConfiguration.LOG == orig(ivantrendafilov_confucius._93.fixed.AbstractConfiguration.LOG)
++ivantrendafilov_confucius._93.fixed.AbstractConfiguration.LOG.getClass().getName() == orig(ivantrendafilov_confucius._93.fixed.AbstractConfiguration.LOG.getClass().getName())
+ org.slf4j.Logger.ROOT_LOGGER_NAME == orig(org.slf4j.Logger.ROOT_LOGGER_NAME)
+ org.slf4j.Logger.ROOT_LOGGER_NAME.toString == orig(org.slf4j.Logger.ROOT_LOGGER_NAME.toString)
+-ivantrendafilov_confucius._93.misuse.AbstractConfiguration.ITEM_SEPARATOR == orig(ivantrendafilov_confucius._93.misuse.AbstractConfiguration.ITEM_SEPARATOR)
+-ivantrendafilov_confucius._93.misuse.AbstractConfiguration.ITEM_SEPARATOR.toString == orig(ivantrendafilov_confucius._93.misuse.AbstractConfiguration.ITEM_SEPARATOR.toString)
+-ivantrendafilov_confucius._93.misuse.AbstractConfiguration.FILE_PARAM == orig(ivantrendafilov_confucius._93.misuse.AbstractConfiguration.FILE_PARAM)
+-ivantrendafilov_confucius._93.misuse.AbstractConfiguration.FILE_PARAM.toString == orig(ivantrendafilov_confucius._93.misuse.AbstractConfiguration.FILE_PARAM.toString)
+-ivantrendafilov_confucius._93.misuse.AbstractConfiguration.CONTEXT_PARAM == orig(ivantrendafilov_confucius._93.misuse.AbstractConfiguration.CONTEXT_PARAM)
+-ivantrendafilov_confucius._93.misuse.AbstractConfiguration.CONTEXT_PARAM.toString == orig(ivantrendafilov_confucius._93.misuse.AbstractConfiguration.CONTEXT_PARAM.toString)
++ivantrendafilov_confucius._93.fixed.AbstractConfiguration.ITEM_SEPARATOR == orig(ivantrendafilov_confucius._93.fixed.AbstractConfiguration.ITEM_SEPARATOR)
++ivantrendafilov_confucius._93.fixed.AbstractConfiguration.ITEM_SEPARATOR.toString == orig(ivantrendafilov_confucius._93.fixed.AbstractConfiguration.ITEM_SEPARATOR.toString)
++ivantrendafilov_confucius._93.fixed.AbstractConfiguration.FILE_PARAM == orig(ivantrendafilov_confucius._93.fixed.AbstractConfiguration.FILE_PARAM)
++ivantrendafilov_confucius._93.fixed.AbstractConfiguration.FILE_PARAM.toString == orig(ivantrendafilov_confucius._93.fixed.AbstractConfiguration.FILE_PARAM.toString)
++ivantrendafilov_confucius._93.fixed.AbstractConfiguration.CONTEXT_PARAM == orig(ivantrendafilov_confucius._93.fixed.AbstractConfiguration.CONTEXT_PARAM)
++ivantrendafilov_confucius._93.fixed.AbstractConfiguration.CONTEXT_PARAM.toString == orig(ivantrendafilov_confucius._93.fixed.AbstractConfiguration.CONTEXT_PARAM.toString)
+ this.configurationDataProvider == orig(this.configurationDataProvider)
+ this.configurationDataProvider.getClass().getName() == orig(this.configurationDataProvider.getClass().getName())
+ this.context == orig(this.context)
+ this.initialState == orig(this.initialState)
+ this.initialState.getClass().getName() == orig(this.initialState.getClass().getName())
+ key.toString == orig(key.toString)
+-ivantrendafilov_confucius._93.misuse.AbstractConfiguration.LOG.getClass().getName() != orig(value.getClass().getName())
++ivantrendafilov_confucius._93.fixed.AbstractConfiguration.LOG.getClass().getName() != orig(value.getClass().getName())
+ this.configurationDataProvider.getClass().getName() != orig(value.getClass().getName())
+ this.initialState.getClass().getName() != orig(value.getClass().getName())
+ ===========================================================================
+@@ -927,7 +927,7 @@
+ org.slf4j.LoggerFactory.SUBST_PROVIDER.loggerFactory.postInitialization == false
+ org.slf4j.LoggerFactory.PROVIDER == null
+ name has only one value
+-name.toString == "ivantrendafilov_confucius._93.misuse.AbstractConfiguration"
++name.toString == "ivantrendafilov_confucius._93.fixed.AbstractConfiguration"
+ ===========================================================================
+ org.slf4j.LoggerFactory.getLogger(java.lang.String):::EXIT
+ org.slf4j.LoggerFactory.CODES_PREFIX == orig(org.slf4j.LoggerFactory.CODES_PREFIX)
+@@ -984,7 +984,7 @@
+ org.slf4j.LoggerFactory.INITIALIZATION_STATE == 3
+ org.slf4j.LoggerFactory.SUBST_PROVIDER.loggerFactory.postInitialization == true
+ org.slf4j.LoggerFactory.PROVIDER has only one value
+-name.toString == "ivantrendafilov_confucius._93.misuse.AbstractConfiguration"
++name.toString == "ivantrendafilov_confucius._93.fixed.AbstractConfiguration"
+ return has only one value
+ return.getClass().getName() == org.slf4j.simple.SimpleLogger.class
+ org.slf4j.Logger.ROOT_LOGGER_NAME has only one value
+@@ -1758,7 +1758,7 @@
+ org.slf4j.helpers.AbstractLogger:::OBJECT
+ this has only one value
+ this.getClass().getName() == org.slf4j.simple.SimpleLogger.class
+-this.name.toString == "ivantrendafilov_confucius._93.misuse.AbstractConfiguration"
++this.name.toString == "ivantrendafilov_confucius._93.fixed.AbstractConfiguration"
+ ===========================================================================
+ org.slf4j.helpers.AbstractLogger.AbstractLogger():::EXIT
+ this.name == null
+@@ -2651,7 +2651,7 @@
+ return != null
+ ===========================================================================
+ org.slf4j.simple.SimpleLogger:::CLASS
+-org.slf4j.simple.SimpleLogger.START_TIME == 1770748679828L
++org.slf4j.simple.SimpleLogger.START_TIME == 1770748697237L
+ org.slf4j.simple.SimpleLogger.SP == 32
+ org.slf4j.simple.SimpleLogger.TID_PREFIX has only one value
+ org.slf4j.simple.SimpleLogger.TID_PREFIX != null
+@@ -2739,15 +2739,15 @@
+ this.shortLogName == null
+ this.name has only one value
+ this.name != null
+-this.name.toString == "ivantrendafilov_confucius._93.misuse.AbstractConfiguration"
++this.name.toString == "ivantrendafilov_confucius._93.fixed.AbstractConfiguration"
+ ===========================================================================
+ org.slf4j.simple.SimpleLogger.SimpleLogger(java.lang.String):::ENTER
+ name has only one value
+-name.toString == "ivantrendafilov_confucius._93.misuse.AbstractConfiguration"
++name.toString == "ivantrendafilov_confucius._93.fixed.AbstractConfiguration"
+ ===========================================================================
+ org.slf4j.simple.SimpleLogger.SimpleLogger(java.lang.String):::EXIT
+ name.toString == orig(name.toString)
+-name.toString == "ivantrendafilov_confucius._93.misuse.AbstractConfiguration"
++name.toString == "ivantrendafilov_confucius._93.fixed.AbstractConfiguration"
+ ===========================================================================
+ org.slf4j.simple.SimpleLogger.handleNormalizedLoggingCall(org.slf4j.event.Level, org.slf4j.Marker, java.lang.String, java.lang.Object[], java.lang.Throwable):::ENTER
+ level has only one value
+@@ -3908,7 +3908,7 @@
+ ===========================================================================
+ org.slf4j.simple.SimpleLoggerFactory.getLogger(java.lang.String):::ENTER
+ name has only one value
+-name.toString == "ivantrendafilov_confucius._93.misuse.AbstractConfiguration"
++name.toString == "ivantrendafilov_confucius._93.fixed.AbstractConfiguration"
+ ===========================================================================
+ org.slf4j.simple.SimpleLoggerFactory.getLogger(java.lang.String):::EXIT58
+ ===========================================================================
+@@ -3916,7 +3916,7 @@
+ this.loggerMap == orig(this.loggerMap)
+ this.loggerMap.getClass().getName() == orig(this.loggerMap.getClass().getName())
+ name.toString == orig(name.toString)
+-name.toString == "ivantrendafilov_confucius._93.misuse.AbstractConfiguration"
++name.toString == "ivantrendafilov_confucius._93.fixed.AbstractConfiguration"
+ return has only one value
+ return.getClass().getName() == org.slf4j.simple.SimpleLogger.class
+ org.slf4j.Logger.ROOT_LOGGER_NAME has only one value

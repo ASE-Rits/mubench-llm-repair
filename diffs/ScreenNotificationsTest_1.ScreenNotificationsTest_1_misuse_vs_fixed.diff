@@ -1,165 +1,32 @@
---- /dev/fd/63	2025-12-20 07:52:18.885053679 +0000
-+++ /dev/fd/62	2025-12-20 07:52:18.885053679 +0000
-@@ -4,6 +4,11 @@
+--- invariant/screen_notifications/_1/misuse/invariants.txt	2026-02-11 03:47:12.710978174 +0900
++++ invariant/screen_notifications/_1/fixed/invariants.txt	2026-02-11 03:47:13.809448165 +0900
+@@ -2,25 +2,25 @@
+ daikon_runner.DaikonRunner.createDriverInstance(java.lang.Class, java.lang.String):::ENTER
+ driverClass has only one value
+ variant has only one value
+-variant.toString == "misuse"
++variant.toString == "fixed"
  ===========================================================================
- screen_notifications.ScreenNotificationsTest_1$CommonCases.CommonCases():::EXIT
+ daikon_runner.DaikonRunner.createDriverInstance(java.lang.Class, java.lang.String):::EXIT121
  ===========================================================================
-+screen_notifications.ScreenNotificationsTest_1$CommonCases.loadInBackgroundHandlesOOM():::ENTER
-+this has only one value
-+===========================================================================
-+screen_notifications.ScreenNotificationsTest_1$CommonCases.loadInBackgroundHandlesOOM():::EXIT
-+===========================================================================
- screen_notifications.ScreenNotificationsTest_1$CommonCases.loadInBackgroundReturnsData():::ENTER
- this has only one value
+ daikon_runner.DaikonRunner.createDriverInstance(java.lang.Class, java.lang.String):::EXIT
+ variant.toString == orig(variant.toString)
+-variant.toString == "misuse"
++variant.toString == "fixed"
+ return == null
  ===========================================================================
-@@ -20,6 +25,7 @@
- return.activityInstance.getClass().getName() == screen_notifications._1.VARIANT.AppsActivity.class
+ daikon_runner.DaikonRunner.getDefaultValue(java.lang.Class, java.lang.String):::ENTER
+ type has only one value
+ variant has only one value
+-variant.toString == "misuse"
++variant.toString == "fixed"
  ===========================================================================
- screen_notifications.ScreenNotificationsTest_1$Variant.variantName():::ENTER
-+this has only one value
+ daikon_runner.DaikonRunner.getDefaultValue(java.lang.Class, java.lang.String):::EXIT128
  ===========================================================================
- screen_notifications.ScreenNotificationsTest_1$Variant.variantName():::EXIT
+ daikon_runner.DaikonRunner.getDefaultValue(java.lang.Class, java.lang.String):::EXIT
+ variant.toString == orig(variant.toString)
+ return == orig(variant)
+-variant.toString == "misuse"
++variant.toString == "fixed"
  return has only one value
-@@ -66,15 +72,11 @@
- ===========================================================================
- screen_notifications._1.Driver.invokeInstance(java.lang.String, java.lang.Class[], java.lang.Object[]):::ENTER
- size(types[]) == size(args[])
--this has only one value
--this.activityInstance has only one value
- name has only one value
- name.toString == "loadInBackground"
--types has only one value
- types.getClass().getName() == java.lang.Class[].class
- types[] contains no nulls and has only one value, of length 1
- types[] elements has only one value
--args has only one value
- args.getClass().getName() == java.lang.Object[].class
- args[] contains no nulls and has only one value, of length 1
- args[] elements has only one value
-@@ -87,26 +89,20 @@
- name.toString == orig(name.toString)
- types[] == orig(types[])
- args[] == orig(args[])
--this.activityInstance has only one value
- name.toString == "loadInBackground"
- types[] contains no nulls and has only one value, of length 1
- types[] elements has only one value
- args[] contains no nulls and has only one value, of length 1
- args[] elements has only one value
--return has only one value
- return.getClass().getName() == screen_notifications._1.VARIANT.Data.class
- ===========================================================================
- screen_notifications._1.Driver.loadInBackground(int):::ENTER
--this has only one value
--this.activityInstance has only one value
- id == 0
- ===========================================================================
- screen_notifications._1.Driver.loadInBackground(int):::EXIT
- this.targetClass == orig(this.targetClass)
- this.activityInstance == orig(this.activityInstance)
- this.activityInstance.getClass().getName() == orig(this.activityInstance.getClass().getName())
--this.activityInstance has only one value
--return has only one value
- return.getClass().getName() == screen_notifications._1.VARIANT.Data.class
- ===========================================================================
- screen_notifications._1.VARIANT.App:::OBJECT
-@@ -122,9 +118,8 @@
- this.views.getClass().getName() == java.util.HashMap.class
- this.contentViewId == 0
- this.packageManager.installedApps[].getClass().getName() elements == screen_notifications._1.mocks.android.content.pm.ApplicationInfo.class
--this.packageManager.installedApps[].getClass().getName() one of { [], [screen_notifications._1.mocks.android.content.pm.ApplicationInfo, screen_notifications._1.mocks.android.content.pm.ApplicationInfo] }
- this.packageManager.installedApps.getClass().getName() == java.util.ArrayList.class
--size(this.packageManager.installedApps[]) one of { 0, 2 }
-+size(this.packageManager.installedApps[]) one of { 0, 1, 2 }
- ===========================================================================
- screen_notifications._1.VARIANT.AppsActivity.AppsActivity():::EXIT
- this.contentViewId == size(this.packageManager.installedApps[])
-@@ -133,17 +128,8 @@
- ===========================================================================
- screen_notifications._1.VARIANT.AppsActivity.loadInBackground(int):::ENTER
- this.contentViewId == id
--this has only one value
--this.loaderManager has only one value
--this.menuInflater has only one value
--this.views has only one value
--this.packageManager has only one value
--this.packageManager.installedApps has only one value
--this.packageManager.installedApps[] contains no nulls and has only one value, of length 2
--this.packageManager.installedApps[].getClass().getName() == [screen_notifications._1.mocks.android.content.pm.ApplicationInfo, screen_notifications._1.mocks.android.content.pm.ApplicationInfo]
--this.resources has only one value
--size(this.packageManager.installedApps[]) == 2
--this.packageManager.installedApps[this.contentViewId] has only one value
-+this.packageManager.installedApps[].getClass().getName() one of { [screen_notifications._1.mocks.android.content.pm.ApplicationInfo], [screen_notifications._1.mocks.android.content.pm.ApplicationInfo, screen_notifications._1.mocks.android.content.pm.ApplicationInfo] }
-+size(this.packageManager.installedApps[]) one of { 1, 2 }
- ===========================================================================
- screen_notifications._1.VARIANT.AppsActivity.loadInBackground(int):::EXIT
- this.mLoadingDialog == orig(this.mLoadingDialog)
-@@ -162,38 +148,17 @@
- size(this.packageManager.installedApps[]) == size(return.sections[])
- size(return.sections[]) == size(return.apps[])
- size(return.sections[]) == orig(size(this.packageManager.installedApps[]))
--this.loaderManager has only one value
--this.menuInflater has only one value
--this.views has only one value
--this.packageManager has only one value
--this.packageManager.installedApps has only one value
--this.packageManager.installedApps[] contains no nulls and has only one value, of length 2
--this.packageManager.installedApps[].getClass().getName() == [screen_notifications._1.mocks.android.content.pm.ApplicationInfo, screen_notifications._1.mocks.android.content.pm.ApplicationInfo]
--this.resources has only one value
--return has only one value
--return.sections has only one value
--return.sections[] contains no nulls and has only one value, of length 2
--return.sections[].getClass().getName() == [screen_notifications._1.VARIANT.Section, screen_notifications._1.VARIANT.Section]
-+this.packageManager.installedApps[].getClass().getName() one of { [screen_notifications._1.mocks.android.content.pm.ApplicationInfo], [screen_notifications._1.mocks.android.content.pm.ApplicationInfo, screen_notifications._1.mocks.android.content.pm.ApplicationInfo] }
- return.sections[].getClass().getName() elements == screen_notifications._1.VARIANT.Section.class
--return.apps has only one value
-+return.sections[].getClass().getName() one of { [screen_notifications._1.VARIANT.Section], [screen_notifications._1.VARIANT.Section, screen_notifications._1.VARIANT.Section] }
- return.apps.getClass().getName() == screen_notifications._1.VARIANT.App[].class
--return.apps[] contains no nulls and has only one value, of length 2
--return.apps[].getClass().getName() == [screen_notifications._1.VARIANT.App, screen_notifications._1.VARIANT.App]
- return.apps[].getClass().getName() elements == screen_notifications._1.VARIANT.App.class
--return.apps[].name contains no nulls and has only one value, of length 2
--return.apps[].name.toString == [Alpha App, Beta App]
--return.apps[].name.toString elements one of { "Alpha App", "Beta App" }
--return.apps[].packageName contains no nulls and has only one value, of length 2
--return.apps[].packageName.toString == [com.test.app1, com.test.app2]
--return.apps[].packageName.toString elements one of { "com.test.app1", "com.test.app2" }
--return.apps[].icon contains no nulls and has only one value, of length 2
--size(return.sections[]) == 2
--this.packageManager.installedApps[this.contentViewId] has only one value
--return.sections[this.contentViewId] has only one value
--return.apps[this.contentViewId] has only one value
--return.apps[this.contentViewId].name has only one value
--return.apps[this.contentViewId].packageName has only one value
--return.apps[this.contentViewId].icon has only one value
-+return.apps[].getClass().getName() one of { [screen_notifications._1.VARIANT.App], [screen_notifications._1.VARIANT.App, screen_notifications._1.VARIANT.App] }
-+return.apps[].name.toString elements one of { "Alpha App", "Beta App", "OOM App" }
-+return.apps[].name.toString one of { [Alpha App, Beta App], [OOM App] }
-+return.apps[].packageName.toString elements one of { "com.test.app1", "com.test.app2", "com.test.oom" }
-+return.apps[].packageName.toString one of { [com.test.app1, com.test.app2], [com.test.oom] }
-+size(return.sections[]) one of { 1, 2 }
- ===========================================================================
- screen_notifications._1.VARIANT.Data:::OBJECT
- this.sections == null
-@@ -203,18 +168,18 @@
- ===========================================================================
- screen_notifications._1.VARIANT.Section:::OBJECT
- this.startingIndex one of { 0, 1 }
--this.section.toString one of { "A", "B" }
-+this.section.toString one of { "A", "B", "O" }
- ===========================================================================
- screen_notifications._1.VARIANT.Section.Section(int, java.lang.String):::ENTER
- startingIndex one of { 0, 1 }
--section.toString one of { "A", "B" }
-+section.toString one of { "A", "B", "O" }
- ===========================================================================
- screen_notifications._1.VARIANT.Section.Section(int, java.lang.String):::EXIT
- this.startingIndex == orig(startingIndex)
- this.section == orig(section)
- this.section.toString == section.toString
- section.toString == orig(section.toString)
--section.toString one of { "A", "B" }
-+section.toString one of { "A", "B", "O" }
- ===========================================================================
- screen_notifications._1.mocks.android.content.Context:::OBJECT
- this.packageManager != null
+ return.getClass().getName() == java.lang.String.class

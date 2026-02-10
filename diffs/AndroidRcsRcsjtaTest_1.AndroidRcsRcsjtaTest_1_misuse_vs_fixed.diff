@@ -1,18 +1,49 @@
---- /dev/fd/63	2025-12-20 07:52:18.585045771 +0000
-+++ /dev/fd/62	2025-12-20 07:52:18.584045745 +0000
-@@ -58,13 +58,13 @@
- android_rcs_rcsjta._1.VARIANT.ContributionIdGenerator:::CLASS
- android_rcs_rcsjta._1.VARIANT.ContributionIdGenerator.secretKey has only one value
- android_rcs_rcsjta._1.VARIANT.ContributionIdGenerator.secretKey != null
--android_rcs_rcsjta._1.VARIANT.ContributionIdGenerator.secretKey[] == [55, 101, 102, 101, 49, 54, 97, 98, 45, 101, 57, 55, 52, 45, 52, 56]
-+android_rcs_rcsjta._1.VARIANT.ContributionIdGenerator.secretKey[] == [101, 57, 48, 100, 51, 100, 102, 98, 45, 53, 51, 97, 54, 45, 52, 56]
- size(android_rcs_rcsjta._1.VARIANT.ContributionIdGenerator.secretKey[]) == 16
- android_rcs_rcsjta._1.VARIANT.ContributionIdGenerator.secretKey[] elements > size(android_rcs_rcsjta._1.VARIANT.ContributionIdGenerator.secretKey[])
+--- invariant/android_rcs_rcsjta/_1/misuse/invariants.txt	2026-02-11 03:34:02.631942725 +0900
++++ invariant/android_rcs_rcsjta/_1/fixed/invariants.txt	2026-02-11 03:34:06.328803170 +0900
+@@ -11,38 +11,38 @@
+ daikon_runner.DaikonRunner.createDriverInstance(java.lang.Class, java.lang.String):::ENTER
+ driverClass has only one value
+ variant has only one value
+-variant.toString == "misuse"
++variant.toString == "fixed"
  ===========================================================================
- android_rcs_rcsjta._1.VARIANT.ContributionIdGenerator.generateSecretKey():::EXIT
+ daikon_runner.DaikonRunner.createDriverInstance(java.lang.Class, java.lang.String):::EXIT117
+ ===========================================================================
+ daikon_runner.DaikonRunner.createDriverInstance(java.lang.Class, java.lang.String):::EXIT
+ variant.toString == orig(variant.toString)
+-variant.toString == "misuse"
++variant.toString == "fixed"
  return has only one value
--return[] == [55, 101, 102, 101, 49, 54, 97, 98, 45, 101, 57, 55, 52, 45, 52, 56]
-+return[] == [101, 57, 48, 100, 51, 100, 102, 98, 45, 53, 51, 97, 54, 45, 52, 56]
- size(return[]) == 16
+ return.getClass().getName() == android_rcs_rcsjta._1.Driver.class
  ===========================================================================
- android_rcs_rcsjta._1.VARIANT.ContributionIdGenerator.getContributionId(java.lang.String):::ENTER
+ daikon_runner.DaikonRunner.getDefaultValue(java.lang.Class, java.lang.String):::ENTER
+ type has only one value
+ variant has only one value
+-variant.toString == "misuse"
++variant.toString == "fixed"
+ ===========================================================================
+ daikon_runner.DaikonRunner.getDefaultValue(java.lang.Class, java.lang.String):::EXIT146
+ ===========================================================================
+ daikon_runner.DaikonRunner.getDefaultValue(java.lang.Class, java.lang.String):::EXIT
+ variant.toString == orig(variant.toString)
+-variant.toString == "misuse"
++variant.toString == "fixed"
+ return == null
+ ===========================================================================
+ daikon_runner.DaikonRunner.main(java.lang.String[]):::ENTER
+ args has only one value
+ args.getClass().getName() == java.lang.String[].class
+ args[] contains no nulls and has only one value, of length 2
+-args[].toString == [android_rcs_rcsjta._1, misuse]
+-args[].toString elements one of { "android_rcs_rcsjta._1", "misuse" }
++args[].toString == [android_rcs_rcsjta._1, fixed]
++args[].toString elements one of { "android_rcs_rcsjta._1", "fixed" }
+ size(args[]) == 2
+ ===========================================================================
+ daikon_runner.DaikonRunner.main(java.lang.String[]):::EXIT
+ args[] == orig(args[])
+ args[] contains no nulls and has only one value, of length 2
+-args[].toString == [android_rcs_rcsjta._1, misuse]
+-args[].toString elements one of { "android_rcs_rcsjta._1", "misuse" }
++args[].toString == [android_rcs_rcsjta._1, fixed]
++args[].toString elements one of { "android_rcs_rcsjta._1", "fixed" }

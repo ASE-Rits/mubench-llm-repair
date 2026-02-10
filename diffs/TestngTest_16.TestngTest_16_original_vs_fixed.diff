@@ -1,0 +1,140 @@
+--- invariant/testng/_16/original/invariants.txt	2026-02-11 03:50:17.346688545 +0900
++++ invariant/testng/_16/fixed/invariants.txt	2026-02-11 03:51:15.187486184 +0900
+@@ -2,13 +2,13 @@
+ daikon_runner.DaikonRunner.createDriverInstance(java.lang.Class, java.lang.String):::ENTER
+ driverClass has only one value
+ variant has only one value
+-variant.toString == "original"
++variant.toString == "fixed"
+ ===========================================================================
+ daikon_runner.DaikonRunner.createDriverInstance(java.lang.Class, java.lang.String):::EXIT70
+ ===========================================================================
+ daikon_runner.DaikonRunner.createDriverInstance(java.lang.Class, java.lang.String):::EXIT
+ variant.toString == orig(variant.toString)
+-variant.toString == "original"
++variant.toString == "fixed"
+ return has only one value
+ return.getClass().getName() == testng._16.Driver.class
+ ===========================================================================
+@@ -16,15 +16,15 @@
+ args has only one value
+ args.getClass().getName() == java.lang.String[].class
+ args[] contains no nulls and has only one value, of length 2
+-args[].toString == [testng._16, original]
+-args[].toString elements one of { "original", "testng._16" }
++args[].toString == [testng._16, fixed]
++args[].toString elements one of { "fixed", "testng._16" }
+ size(args[]) == 2
+ ===========================================================================
+ daikon_runner.DaikonRunner.main(java.lang.String[]):::EXIT
+ args[] == orig(args[])
+ args[] contains no nulls and has only one value, of length 2
+-args[].toString == [testng._16, original]
+-args[].toString elements one of { "original", "testng._16" }
++args[].toString == [testng._16, fixed]
++args[].toString elements one of { "fixed", "testng._16" }
+ ===========================================================================
+ testng._16.Driver:::CLASS
+ testng._16.Driver.BASE_PACKAGE has only one value
+@@ -33,10 +33,10 @@
+ testng._16.Driver:::OBJECT
+ this has only one value
+ this.sourceFilePath has only one value
+-this.sourceFilePath.toString == "src/main/java/testng/_16/original/ChronologicalPanel.java"
++this.sourceFilePath.toString == "src/main/java/testng/_16/fixed/ChronologicalPanel.java"
+ this.variant has only one value
+-this.variant.toString == "original"
+-this.panelInstance.getClass().getName() == testng._16.original.ChronologicalPanel.class
++this.variant.toString == "fixed"
++this.panelInstance.getClass().getName() == testng._16.fixed.ChronologicalPanel.class
+ this.model.m_model has only one value
+ this.model.m_model.m_objects has only one value
+ this.model.m_model.m_objects.getClass().getName() == java.util.HashMap.class
+@@ -69,13 +69,13 @@
+ ===========================================================================
+ testng._16.Driver.Driver(java.lang.String):::ENTER
+ variant has only one value
+-variant.toString == "original"
++variant.toString == "fixed"
+ ===========================================================================
+ testng._16.Driver.Driver(java.lang.String):::EXIT
+ variant.toString == orig(variant.toString)
+ this.panelInstance == null
+ this.model == null
+-variant.toString == "original"
++variant.toString == "fixed"
+ ===========================================================================
+ testng._16.Driver.getSourceFilePath():::ENTER
+ this.panelInstance == null
+@@ -93,7 +93,7 @@
+ this.panelInstance == null
+ this.model == null
+ return has only one value
+-return.toString == "src/main/java/testng/_16/original/ChronologicalPanel.java"
++return.toString == "src/main/java/testng/_16/fixed/ChronologicalPanel.java"
+ ===========================================================================
+ testng._16.Driver.getVariant():::ENTER
+ this.panelInstance == null
+@@ -111,7 +111,7 @@
+ this.panelInstance == null
+ this.model == null
+ return has only one value
+-return.toString == "original"
++return.toString == "fixed"
+ ===========================================================================
+ testng._16.Driver.initializePanel():::ENTER
+ this.panelInstance == null
+@@ -127,7 +127,7 @@
+ this.panelInstance has only one value
+ this.model has only one value
+ ===========================================================================
+-testng._16.original.ChronologicalPanel:::CLASS
++testng._16.fixed.ChronologicalPanel:::CLASS
+ testng._16.requirements.org.testng.reporters.jq.BasePanel.C has only one value
+ testng._16.requirements.org.testng.reporters.jq.BasePanel.C.toString == "class"
+ testng._16.requirements.org.testng.reporters.jq.BasePanel.D has only one value
+@@ -139,7 +139,7 @@
+ testng._16.requirements.org.testng.reporters.jq.BasePanel.I has only one value
+ testng._16.requirements.org.testng.reporters.jq.BasePanel.I.toString == "id"
+ ===========================================================================
+-testng._16.original.ChronologicalPanel:::OBJECT
++testng._16.fixed.ChronologicalPanel:::OBJECT
+ this has only one value
+ this.m_model has only one value
+ this.m_model.m_model has only one value
+@@ -172,7 +172,7 @@
+ this.m_model.m_methodsByGroup.m_objects has only one value
+ this.m_model.m_methodsByGroup.m_objects.getClass().getName() == java.util.HashMap.class
+ ===========================================================================
+-testng._16.original.ChronologicalPanel.ChronologicalPanel(testng._16.requirements.org.testng.reporters.jq.Model):::ENTER
++testng._16.fixed.ChronologicalPanel.ChronologicalPanel(testng._16.requirements.org.testng.reporters.jq.Model):::ENTER
+ model has only one value
+ model.m_model has only one value
+ model.m_model.m_objects has only one value
+@@ -204,7 +204,7 @@
+ model.m_methodsByGroup.m_objects has only one value
+ model.m_methodsByGroup.m_objects.getClass().getName() == java.util.HashMap.class
+ ===========================================================================
+-testng._16.original.ChronologicalPanel.ChronologicalPanel(testng._16.requirements.org.testng.reporters.jq.Model):::EXIT
++testng._16.fixed.ChronologicalPanel.ChronologicalPanel(testng._16.requirements.org.testng.reporters.jq.Model):::EXIT
+ model.m_model == orig(model.m_model)
+ model.m_model.m_objects == orig(model.m_model.m_objects)
+ model.m_model.m_objects.getClass().getName() == orig(model.m_model.m_objects.getClass().getName())
+@@ -319,7 +319,7 @@
+ ===========================================================================
+ testng._16.requirements.org.testng.reporters.jq.BaseMultiSuitePanel:::OBJECT
+ this has only one value
+-this.getClass().getName() == testng._16.original.ChronologicalPanel.class
++this.getClass().getName() == testng._16.fixed.ChronologicalPanel.class
+ this.m_model has only one value
+ this.m_model.m_model has only one value
+ this.m_model.m_model.m_objects has only one value
+@@ -455,7 +455,7 @@
+ ===========================================================================
+ testng._16.requirements.org.testng.reporters.jq.BasePanel:::OBJECT
+ this has only one value
+-this.getClass().getName() == testng._16.original.ChronologicalPanel.class
++this.getClass().getName() == testng._16.fixed.ChronologicalPanel.class
+ this.m_model has only one value
+ this.m_model.m_model has only one value
+ this.m_model.m_model.m_objects has only one value

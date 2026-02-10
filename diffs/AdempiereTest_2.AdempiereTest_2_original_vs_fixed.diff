@@ -1,0 +1,49 @@
+--- invariant/adempiere/_2/original/invariants.txt	2026-02-11 03:33:27.855305434 +0900
++++ invariant/adempiere/_2/fixed/invariants.txt	2026-02-11 03:33:36.295270159 +0900
+@@ -11,38 +11,38 @@
+ daikon_runner.DaikonRunner.createDriverInstance(java.lang.Class, java.lang.String):::ENTER
+ driverClass has only one value
+ variant has only one value
+-variant.toString == "original"
++variant.toString == "fixed"
+ ===========================================================================
+ daikon_runner.DaikonRunner.createDriverInstance(java.lang.Class, java.lang.String):::EXIT117
+ ===========================================================================
+ daikon_runner.DaikonRunner.createDriverInstance(java.lang.Class, java.lang.String):::EXIT
+ variant.toString == orig(variant.toString)
+-variant.toString == "original"
++variant.toString == "fixed"
+ return has only one value
+ return.getClass().getName() == adempiere._2.Driver.class
+ ===========================================================================
+ daikon_runner.DaikonRunner.getDefaultValue(java.lang.Class, java.lang.String):::ENTER
+ type has only one value
+ variant has only one value
+-variant.toString == "original"
++variant.toString == "fixed"
+ ===========================================================================
+ daikon_runner.DaikonRunner.getDefaultValue(java.lang.Class, java.lang.String):::EXIT146
+ ===========================================================================
+ daikon_runner.DaikonRunner.getDefaultValue(java.lang.Class, java.lang.String):::EXIT
+ variant.toString == orig(variant.toString)
+-variant.toString == "original"
++variant.toString == "fixed"
+ return == null
+ ===========================================================================
+ daikon_runner.DaikonRunner.main(java.lang.String[]):::ENTER
+ args has only one value
+ args.getClass().getName() == java.lang.String[].class
+ args[] contains no nulls and has only one value, of length 2
+-args[].toString == [adempiere._2, original]
+-args[].toString elements one of { "adempiere._2", "original" }
++args[].toString == [adempiere._2, fixed]
++args[].toString elements one of { "adempiere._2", "fixed" }
+ size(args[]) == 2
+ ===========================================================================
+ daikon_runner.DaikonRunner.main(java.lang.String[]):::EXIT
+ args[] == orig(args[])
+ args[] contains no nulls and has only one value, of length 2
+-args[].toString == [adempiere._2, original]
+-args[].toString elements one of { "adempiere._2", "original" }
++args[].toString == [adempiere._2, fixed]
++args[].toString elements one of { "adempiere._2", "fixed" }

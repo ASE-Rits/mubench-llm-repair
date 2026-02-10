@@ -1,17 +1,52 @@
---- /dev/fd/63	2025-12-20 07:52:18.597046088 +0000
-+++ /dev/fd/62	2025-12-20 07:52:18.596046061 +0000
-@@ -95,14 +95,6 @@
- hoverruan_weiboclient4j._128.params.Cid:::OBJECT
- this.value == 12345
+--- invariant/hoverruan_weiboclient4j/_128/misuse/invariants.txt	2026-02-11 03:35:59.338577902 +0900
++++ invariant/hoverruan_weiboclient4j/_128/fixed/invariants.txt	2026-02-11 03:36:03.402148751 +0900
+@@ -2,41 +2,41 @@
+ daikon_runner.DaikonRunner.createDriverInstance(java.lang.Class, java.lang.String):::ENTER
+ driverClass has only one value
+ variant has only one value
+-variant.toString == "misuse"
++variant.toString == "fixed"
  ===========================================================================
--hoverruan_weiboclient4j._128.params.Cid.Cid(java.lang.String):::ENTER
--value has only one value
--value.toString == "12345"
--===========================================================================
--hoverruan_weiboclient4j._128.params.Cid.Cid(java.lang.String):::EXIT
--value.toString == orig(value.toString)
--value.toString == "12345"
--===========================================================================
- hoverruan_weiboclient4j._128.params.Cid.Cid(long):::ENTER
- value == 12345
+ daikon_runner.DaikonRunner.createDriverInstance(java.lang.Class, java.lang.String):::EXIT117
  ===========================================================================
+ daikon_runner.DaikonRunner.createDriverInstance(java.lang.Class, java.lang.String):::EXIT
+ variant.toString == orig(variant.toString)
+-variant.toString == "misuse"
++variant.toString == "fixed"
+ return has only one value
+ return.getClass().getName() == hoverruan_weiboclient4j._128.Driver.class
+ ===========================================================================
+ daikon_runner.DaikonRunner.getDefaultValue(java.lang.Class, java.lang.String):::ENTER
+ type has only one value
+ variant has only one value
+-variant.toString == "misuse"
++variant.toString == "fixed"
+ ===========================================================================
+ daikon_runner.DaikonRunner.getDefaultValue(java.lang.Class, java.lang.String):::EXIT146
+ ===========================================================================
+ daikon_runner.DaikonRunner.getDefaultValue(java.lang.Class, java.lang.String):::EXIT
+ variant.toString == orig(variant.toString)
+-variant.toString == "misuse"
++variant.toString == "fixed"
+ return == null
+ ===========================================================================
+ daikon_runner.DaikonRunner.main(java.lang.String[]):::ENTER
+ args has only one value
+ args.getClass().getName() == java.lang.String[].class
+ args[] contains no nulls and has only one value, of length 2
+-args[].toString == [hoverruan_weiboclient4j._128, misuse]
+-args[].toString elements one of { "hoverruan_weiboclient4j._128", "misuse" }
++args[].toString == [hoverruan_weiboclient4j._128, fixed]
++args[].toString elements one of { "fixed", "hoverruan_weiboclient4j._128" }
+ size(args[]) == 2
+ ===========================================================================
+ daikon_runner.DaikonRunner.main(java.lang.String[]):::EXIT
+ args[] == orig(args[])
+ args[] contains no nulls and has only one value, of length 2
+-args[].toString == [hoverruan_weiboclient4j._128, misuse]
+-args[].toString elements one of { "hoverruan_weiboclient4j._128", "misuse" }
++args[].toString == [hoverruan_weiboclient4j._128, fixed]
++args[].toString elements one of { "fixed", "hoverruan_weiboclient4j._128" }
+ ===========================================================================
+ hoverruan_weiboclient4j._128.Driver:::OBJECT
+ this has only one value

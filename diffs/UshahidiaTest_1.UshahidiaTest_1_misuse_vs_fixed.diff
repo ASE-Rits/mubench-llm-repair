@@ -1,161 +1,116 @@
---- /dev/fd/63	2025-12-20 07:52:19.080058817 +0000
-+++ /dev/fd/62	2025-12-20 07:52:19.080058817 +0000
-@@ -9,6 +9,16 @@
+--- invariant/ushahidia/_1/misuse/invariants.txt	2026-02-11 03:58:15.435531746 +0900
++++ invariant/ushahidia/_1/fixed/invariants.txt	2026-02-11 03:58:19.900269655 +0900
+@@ -2,13 +2,13 @@
+ daikon_runner.DaikonRunner.createDriverInstance(java.lang.Class, java.lang.String):::ENTER
+ driverClass has only one value
+ variant has only one value
+-variant.toString == "misuse"
++variant.toString == "fixed"
  ===========================================================================
- ushahidia.UshahidiaTest_1$CommonLogic.testAddReport():::EXIT
+ daikon_runner.DaikonRunner.createDriverInstance(java.lang.Class, java.lang.String):::EXIT70
  ===========================================================================
-+ushahidia.UshahidiaTest_1$CommonLogic.testCursorClosedWhenNoRecords():::ENTER
-+this has only one value
-+===========================================================================
-+ushahidia.UshahidiaTest_1$CommonLogic.testCursorClosedWhenNoRecords():::EXIT
-+===========================================================================
-+ushahidia.UshahidiaTest_1$CommonLogic.testCursorClosedWhenRecordsExist():::ENTER
-+this has only one value
-+===========================================================================
-+ushahidia.UshahidiaTest_1$CommonLogic.testCursorClosedWhenRecordsExist():::EXIT
-+===========================================================================
- ushahidia.UshahidiaTest_1$CommonLogic.testDeleteReport():::ENTER
+ daikon_runner.DaikonRunner.createDriverInstance(java.lang.Class, java.lang.String):::EXIT
+ variant.toString == orig(variant.toString)
+-variant.toString == "misuse"
++variant.toString == "fixed"
+ return has only one value
+ return.getClass().getName() == ushahidia._1.Driver.class
+ ===========================================================================
+@@ -16,15 +16,15 @@
+ args has only one value
+ args.getClass().getName() == java.lang.String[].class
+ args[] contains no nulls and has only one value, of length 2
+-args[].toString == [ushahidia._1, misuse]
+-args[].toString elements one of { "misuse", "ushahidia._1" }
++args[].toString == [ushahidia._1, fixed]
++args[].toString elements one of { "fixed", "ushahidia._1" }
+ size(args[]) == 2
+ ===========================================================================
+ daikon_runner.DaikonRunner.main(java.lang.String[]):::EXIT
+ args[] == orig(args[])
+ args[] contains no nulls and has only one value, of length 2
+-args[].toString == [ushahidia._1, misuse]
+-args[].toString elements one of { "misuse", "ushahidia._1" }
++args[].toString == [ushahidia._1, fixed]
++args[].toString elements one of { "fixed", "ushahidia._1" }
+ ===========================================================================
+ ushahidia._1.Driver:::CLASS
+ ushahidia._1.Driver.BASE_PACKAGE has only one value
+@@ -33,7 +33,7 @@
+ ushahidia._1.Driver:::OBJECT
  this has only one value
+ this.instance has only one value
+-this.instance.getClass().getName() == ushahidia._1.misuse.OpenGeoSmsDao.class
++this.instance.getClass().getName() == ushahidia._1.fixed.OpenGeoSmsDao.class
+ this.targetClass has only one value
+ this.mockDb has only one value
+ this.mockDb.lastCursor == null
+@@ -42,11 +42,11 @@
  ===========================================================================
-@@ -62,7 +72,7 @@
- this.mockDb.lastCursor.currentPosition one of { -1, 0 }
- this.mockDb.lastCursor.intValues[] == [0]
- this.mockDb.lastCursor.intValues[] elements == 0
--this.mockDb.lastCursor.closed == false
-+this.mockDb.lastCursor.closed == true
- this.mockDb.queryResultCount one of { 0, 1 }
- this.mockDb.queryResultValue == 0
- size(this.mockDb.lastCursor.intValues[]) == 1
-@@ -190,7 +200,7 @@
- return.currentPosition one of { -1, 0 }
- return.intValues[] == [0]
- return.intValues[] elements == 0
--return.closed == false
-+return.closed == true
- size(return.intValues[]) == 1
- return.intValues[] elements == this.mockDb.queryResultValue
+ ushahidia._1.Driver.Driver(java.lang.String):::ENTER
+ variant has only one value
+-variant.toString == "misuse"
++variant.toString == "fixed"
  ===========================================================================
-@@ -280,7 +290,7 @@
- this.mDb.lastCursor.currentPosition one of { -1, 0 }
- this.mDb.lastCursor.intValues[] == [0]
- this.mDb.lastCursor.intValues[] elements == 0
--this.mDb.lastCursor.closed == false
-+this.mDb.lastCursor.closed == true
- this.mDb.queryResultCount one of { 0, 1 }
+ ushahidia._1.Driver.Driver(java.lang.String):::EXIT
+ variant.toString == orig(variant.toString)
+-variant.toString == "misuse"
++variant.toString == "fixed"
+ ===========================================================================
+ ushahidia._1.Driver.deleteReports():::ENTER
+ ===========================================================================
+@@ -78,24 +78,24 @@
+ this.mockDb.queryResultValue == orig(this.mockDb.queryResultValue)
+ return == null
+ ===========================================================================
+-ushahidia._1.misuse.OpenGeoSmsDao:::CLASS
+-ushahidia._1.misuse.OpenGeoSmsDao.WHERE has only one value
+-ushahidia._1.misuse.OpenGeoSmsDao.WHERE.toString == "report_id=?"
++ushahidia._1.fixed.OpenGeoSmsDao:::CLASS
++ushahidia._1.fixed.OpenGeoSmsDao.WHERE has only one value
++ushahidia._1.fixed.OpenGeoSmsDao.WHERE.toString == "report_id=?"
+ ===========================================================================
+-ushahidia._1.misuse.OpenGeoSmsDao:::OBJECT
++ushahidia._1.fixed.OpenGeoSmsDao:::OBJECT
+ this has only one value
+ this.mDb has only one value
+ this.mDb.lastCursor == null
+ this.mDb.queryResultCount == 1
  this.mDb.queryResultValue == 0
- size(this.mDb.lastCursor.intValues[]) == 1
-@@ -550,7 +560,6 @@
- this.intValues != null
- this.intValues[] == [0]
- this.intValues[] elements == 0
--this.closed == false
- size(this.intValues[]) == 1
- this.count > this.currentPosition
- this.count <= size(this.intValues[])
-@@ -573,13 +582,25 @@
- this.intValues[] == values[]
- values[] == orig(values[])
- this.currentPosition == -1
-+this.closed == false
- values[] == [0]
- values[] elements == 0
- size(values[])-1 in values[]
- values[] elements == size(values[])-1
  ===========================================================================
-+ushahidia._1.mocks.Cursor.close():::ENTER
-+this.closed == false
-+===========================================================================
-+ushahidia._1.mocks.Cursor.close():::EXIT
-+this.count == orig(this.count)
-+this.currentPosition == orig(this.currentPosition)
-+this.intValues == orig(this.intValues)
-+this.intValues[] == orig(this.intValues[])
-+this.closed == true
-+===========================================================================
- ushahidia._1.mocks.Cursor.getCount():::ENTER
- this.currentPosition == -1
-+this.closed == false
+-ushahidia._1.misuse.OpenGeoSmsDao.OpenGeoSmsDao(ushahidia._1.mocks.SQLiteDatabase):::ENTER
++ushahidia._1.fixed.OpenGeoSmsDao.OpenGeoSmsDao(ushahidia._1.mocks.SQLiteDatabase):::ENTER
+ db has only one value
+ db.lastCursor == null
+ db.queryResultCount == 1
+ db.queryResultValue == 0
  ===========================================================================
- ushahidia._1.mocks.Cursor.getCount():::EXIT
- this.count == return
-@@ -589,6 +610,7 @@
- this.closed == orig(this.closed)
- return == orig(this.count)
- this.currentPosition == -1
-+this.closed == false
- return one of { 0, 1 }
+-ushahidia._1.misuse.OpenGeoSmsDao.OpenGeoSmsDao(ushahidia._1.mocks.SQLiteDatabase):::EXIT
++ushahidia._1.fixed.OpenGeoSmsDao.OpenGeoSmsDao(ushahidia._1.mocks.SQLiteDatabase):::EXIT
+ db.lastCursor == orig(db.lastCursor)
+ db.queryResultCount == orig(db.queryResultCount)
+ db.queryResultValue == orig(db.queryResultValue)
+@@ -103,18 +103,18 @@
+ db.queryResultCount == 1
+ db.queryResultValue == 0
  ===========================================================================
- ushahidia._1.mocks.Cursor.getInt(int):::ENTER
-@@ -601,6 +623,7 @@
- this has only one value
- this.count == 1
- this.intValues has only one value
-+this.closed == false
- this.intValues[] elements == this.currentPosition
+-ushahidia._1.misuse.OpenGeoSmsDao.deleteReports():::ENTER
++ushahidia._1.fixed.OpenGeoSmsDao.deleteReports():::ENTER
  ===========================================================================
- ushahidia._1.mocks.Cursor.getInt(int):::EXIT
-@@ -632,9 +655,11 @@
- return == orig(this.intValues[columnIndex])
- this.count == 1
- this.intValues has only one value
-+this.closed == false
- this.intValues[] elements == return
- ===========================================================================
- ushahidia._1.mocks.Cursor.isClosed():::ENTER
-+this.closed == true
- ===========================================================================
- ushahidia._1.mocks.Cursor.isClosed():::EXIT
- this.count == orig(this.count)
-@@ -643,9 +668,9 @@
- this.intValues[] == orig(this.intValues[])
- this.closed == return
- return == orig(this.closed)
--return == false
-+return == true
- ===========================================================================
--ushahidia._1.mocks.Cursor.isClosed():::EXIT;condition="not(return == true)"
-+ushahidia._1.mocks.Cursor.isClosed():::EXIT;condition="return == true"
- ===========================================================================
- ushahidia._1.mocks.Cursor.moveToFirst():::ENTER
- this.count == size(this.intValues[])
-@@ -654,6 +679,7 @@
- this.count == 1
- this.currentPosition == -1
- this.intValues has only one value
-+this.closed == false
- ===========================================================================
- ushahidia._1.mocks.Cursor.moveToFirst():::EXIT
- ===========================================================================
-@@ -676,6 +702,7 @@
- this.closed == orig(this.closed)
- this.count == 1
- this.intValues has only one value
-+this.closed == false
+-ushahidia._1.misuse.OpenGeoSmsDao.deleteReports():::EXIT
++ushahidia._1.fixed.OpenGeoSmsDao.deleteReports():::EXIT
+ this.mDb == orig(this.mDb)
+ this.mDb.lastCursor == orig(this.mDb.lastCursor)
+ this.mDb.queryResultCount == orig(this.mDb.queryResultCount)
+ this.mDb.queryResultValue == orig(this.mDb.queryResultValue)
+-ushahidia._1.misuse.OpenGeoSmsDao.WHERE == orig(ushahidia._1.misuse.OpenGeoSmsDao.WHERE)
+-ushahidia._1.misuse.OpenGeoSmsDao.WHERE.toString == orig(ushahidia._1.misuse.OpenGeoSmsDao.WHERE.toString)
++ushahidia._1.fixed.OpenGeoSmsDao.WHERE == orig(ushahidia._1.fixed.OpenGeoSmsDao.WHERE)
++ushahidia._1.fixed.OpenGeoSmsDao.WHERE.toString == orig(ushahidia._1.fixed.OpenGeoSmsDao.WHERE.toString)
  return == true
- this.intValues[] elements == this.currentPosition
  ===========================================================================
-@@ -689,7 +716,6 @@
- this.lastCursor.currentPosition one of { -1, 0 }
- this.lastCursor.intValues[] == [0]
- this.lastCursor.intValues[] elements == 0
--this.lastCursor.closed == false
- this.queryResultCount one of { 0, 1 }
- this.queryResultValue == 0
- size(this.lastCursor.intValues[]) == 1
-@@ -740,6 +766,7 @@
+-ushahidia._1.misuse.OpenGeoSmsDao.deleteReports():::EXIT;condition="return == true"
++ushahidia._1.fixed.OpenGeoSmsDao.deleteReports():::EXIT;condition="return == true"
  ===========================================================================
- ushahidia._1.mocks.SQLiteDatabase.getLastCursor():::ENTER
- this.queryResultValue == this.lastCursor.intValues[this.queryResultValue]
-+this.lastCursor.closed == true
- ===========================================================================
- ushahidia._1.mocks.SQLiteDatabase.getLastCursor():::EXIT
- this.lastCursor == return
-@@ -767,7 +794,7 @@
- return.currentPosition one of { -1, 0 }
- return.intValues[] == [0]
- return.intValues[] elements == 0
--return.closed == false
-+return.closed == true
- size(return.intValues[]) == 1
- return.intValues[] elements == this.queryResultValue
- ===========================================================================
+ ushahidia._1.mocks.SQLiteDatabase:::OBJECT
+ this has only one value

@@ -1,0 +1,32 @@
+--- invariant/calligraphy/_1/original/invariants.txt	2026-02-11 03:35:02.442895060 +0900
++++ invariant/calligraphy/_1/misuse/invariants.txt	2026-02-11 03:35:06.305152757 +0900
+@@ -2,25 +2,25 @@
+ daikon_runner.DaikonRunner.createDriverInstance(java.lang.Class, java.lang.String):::ENTER
+ driverClass has only one value
+ variant has only one value
+-variant.toString == "original"
++variant.toString == "misuse"
+ ===========================================================================
+ daikon_runner.DaikonRunner.createDriverInstance(java.lang.Class, java.lang.String):::EXIT121
+ ===========================================================================
+ daikon_runner.DaikonRunner.createDriverInstance(java.lang.Class, java.lang.String):::EXIT
+ variant.toString == orig(variant.toString)
+-variant.toString == "original"
++variant.toString == "misuse"
+ return == null
+ ===========================================================================
+ daikon_runner.DaikonRunner.getDefaultValue(java.lang.Class, java.lang.String):::ENTER
+ type has only one value
+ variant has only one value
+-variant.toString == "original"
++variant.toString == "misuse"
+ ===========================================================================
+ daikon_runner.DaikonRunner.getDefaultValue(java.lang.Class, java.lang.String):::EXIT128
+ ===========================================================================
+ daikon_runner.DaikonRunner.getDefaultValue(java.lang.Class, java.lang.String):::EXIT
+ variant.toString == orig(variant.toString)
+ return == orig(variant)
+-variant.toString == "original"
++variant.toString == "misuse"
+ return has only one value
+ return.getClass().getName() == java.lang.String.class

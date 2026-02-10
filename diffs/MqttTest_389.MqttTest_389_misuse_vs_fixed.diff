@@ -1,0 +1,179 @@
+--- invariant/mqtt/_389/misuse/invariants.txt	2026-02-11 03:46:11.626333892 +0900
++++ invariant/mqtt/_389/fixed/invariants.txt	2026-02-11 03:46:15.648224379 +0900
+@@ -2,13 +2,13 @@
+ daikon_runner.DaikonRunner.createDriverInstance(java.lang.Class, java.lang.String):::ENTER
+ driverClass has only one value
+ variant has only one value
+-variant.toString == "misuse"
++variant.toString == "fixed"
+ ===========================================================================
+ daikon_runner.DaikonRunner.createDriverInstance(java.lang.Class, java.lang.String):::EXIT91
+ ===========================================================================
+ daikon_runner.DaikonRunner.createDriverInstance(java.lang.Class, java.lang.String):::EXIT
+ variant.toString == orig(variant.toString)
+-variant.toString == "misuse"
++variant.toString == "fixed"
+ return has only one value
+ return.getClass().getName() == mqtt._389.Driver.class
+ ===========================================================================
+@@ -16,15 +16,15 @@
+ args has only one value
+ args.getClass().getName() == java.lang.String[].class
+ args[] contains no nulls and has only one value, of length 2
+-args[].toString == [mqtt._389, misuse]
+-args[].toString elements one of { "misuse", "mqtt._389" }
++args[].toString == [mqtt._389, fixed]
++args[].toString elements one of { "fixed", "mqtt._389" }
+ size(args[]) == 2
+ ===========================================================================
+ daikon_runner.DaikonRunner.main(java.lang.String[]):::EXIT
+ args[] == orig(args[])
+ args[] contains no nulls and has only one value, of length 2
+-args[].toString == [mqtt._389, misuse]
+-args[].toString elements one of { "misuse", "mqtt._389" }
++args[].toString == [mqtt._389, fixed]
++args[].toString elements one of { "fixed", "mqtt._389" }
+ ===========================================================================
+ mqtt._389.Driver:::CLASS
+ mqtt._389.Driver.BASE_PACKAGE has only one value
+@@ -35,19 +35,19 @@
+ this has only one value
+ this.variant has only one value
+ this.variant != null
+-this.variant.toString == "misuse"
++this.variant.toString == "fixed"
+ this.instance has only one value
+ this.instance != null
+-this.instance.getClass().getName() == mqtt._389.misuse.MqttSubscribe.class
++this.instance.getClass().getName() == mqtt._389.fixed.MqttSubscribe.class
+ this.targetClass has only one value
+ this.targetClass != null
+ this.sourceFilePath has only one value
+ this.sourceFilePath != null
+-this.sourceFilePath.toString == "src/main/java/mqtt/_389/misuse/MqttSubscribe.java"
++this.sourceFilePath.toString == "src/main/java/mqtt/_389/fixed/MqttSubscribe.java"
+ ===========================================================================
+ mqtt._389.Driver.Driver(java.lang.String, java.lang.String[], int[]):::ENTER
+ variant has only one value
+-variant.toString == "misuse"
++variant.toString == "fixed"
+ names has only one value
+ names.getClass().getName() == java.lang.String[].class
+ names[] contains no nulls and has only one value, of length 1
+@@ -64,7 +64,7 @@
+ variant.toString == orig(variant.toString)
+ names[] == orig(names[])
+ qos[] == orig(qos[])
+-variant.toString == "misuse"
++variant.toString == "fixed"
+ names[] contains no nulls and has only one value, of length 1
+ names[] elements has only one value
+ names[].toString == [topic1]
+@@ -226,7 +226,7 @@
+ return has only one value
+ return.toString == "SUBSCRIBE names:[] qos:[]"
+ ===========================================================================
+-mqtt._389.misuse.MqttSubscribe:::CLASS
++mqtt._389.fixed.MqttSubscribe:::CLASS
+ mqtt._389.requirements.internal.wire.MqttWireMessage.STRING_ENCODING has only one value
+ mqtt._389.requirements.internal.wire.MqttWireMessage.STRING_ENCODING != null
+ mqtt._389.requirements.internal.wire.MqttWireMessage.STRING_ENCODING.toString == "UTF-8"
+@@ -240,7 +240,7 @@
+ mqtt._389.requirements.internal.wire.MqttWireMessage.PACKET_NAMES[].toString == [reserved, CONNECT, CONNACK, PUBLISH, PUBACK, PUBREC, PUBREL, PUBCOMP, SUBSCRIBE, SUBACK, UNSUBSCRIBE, UNSUBACK, PINGREQ, PINGRESP, DISCONNECT]
+ size(mqtt._389.requirements.internal.wire.MqttWireMessage.PACKET_NAMES[]) == 15
+ ===========================================================================
+-mqtt._389.misuse.MqttSubscribe:::OBJECT
++mqtt._389.fixed.MqttSubscribe:::OBJECT
+ this has only one value
+ this.names has only one value
+ this.names != null
+@@ -263,7 +263,7 @@
+ size(this.names[]) == 1
+ size(this.qos[]) == 1
+ ===========================================================================
+-mqtt._389.misuse.MqttSubscribe.MqttSubscribe(java.lang.String[], int[]):::ENTER
++mqtt._389.fixed.MqttSubscribe.MqttSubscribe(java.lang.String[], int[]):::ENTER
+ names has only one value
+ names.getClass().getName() == java.lang.String[].class
+ names[] contains no nulls and has only one value, of length 1
+@@ -276,7 +276,7 @@
+ size(names[]) == 1
+ size(qos[]) == 1
+ ===========================================================================
+-mqtt._389.misuse.MqttSubscribe.MqttSubscribe(java.lang.String[], int[]):::EXIT
++mqtt._389.fixed.MqttSubscribe.MqttSubscribe(java.lang.String[], int[]):::EXIT
+ names[] == orig(names[])
+ qos[] == orig(qos[])
+ names[] contains no nulls and has only one value, of length 1
+@@ -286,9 +286,9 @@
+ qos[] == [0]
+ qos[] elements == 0
+ ===========================================================================
+-mqtt._389.misuse.MqttSubscribe.getMessageInfo():::ENTER
++mqtt._389.fixed.MqttSubscribe.getMessageInfo():::ENTER
+ ===========================================================================
+-mqtt._389.misuse.MqttSubscribe.getMessageInfo():::EXIT
++mqtt._389.fixed.MqttSubscribe.getMessageInfo():::EXIT
+ this.names == orig(this.names)
+ this.names.getClass().getName() == orig(this.names.getClass().getName())
+ this.names[] == orig(this.names[])
+@@ -305,9 +305,9 @@
+ this.duplicate == orig(this.duplicate)
+ return == 2
+ ===========================================================================
+-mqtt._389.misuse.MqttSubscribe.getPayload():::ENTER
++mqtt._389.fixed.MqttSubscribe.getPayload():::ENTER
+ ===========================================================================
+-mqtt._389.misuse.MqttSubscribe.getPayload():::EXIT
++mqtt._389.fixed.MqttSubscribe.getPayload():::EXIT
+ this.names == orig(this.names)
+ this.names.getClass().getName() == orig(this.names.getClass().getName())
+ this.names[] == orig(this.names[])
+@@ -326,9 +326,9 @@
+ return[] elements >= 0
+ size(return[]) == 9
+ ===========================================================================
+-mqtt._389.misuse.MqttSubscribe.getVariableHeader():::ENTER
++mqtt._389.fixed.MqttSubscribe.getVariableHeader():::ENTER
+ ===========================================================================
+-mqtt._389.misuse.MqttSubscribe.getVariableHeader():::EXIT
++mqtt._389.fixed.MqttSubscribe.getVariableHeader():::EXIT
+ this.names == orig(this.names)
+ this.names.getClass().getName() == orig(this.names.getClass().getName())
+ this.names[] == orig(this.names[])
+@@ -347,9 +347,9 @@
+ return[] elements == 0
+ size(return[]) == 2
+ ===========================================================================
+-mqtt._389.misuse.MqttSubscribe.isRetryable():::ENTER
++mqtt._389.fixed.MqttSubscribe.isRetryable():::ENTER
+ ===========================================================================
+-mqtt._389.misuse.MqttSubscribe.isRetryable():::EXIT
++mqtt._389.fixed.MqttSubscribe.isRetryable():::EXIT
+ this.names == orig(this.names)
+ this.names.getClass().getName() == orig(this.names.getClass().getName())
+ this.names[] == orig(this.names[])
+@@ -366,11 +366,11 @@
+ this.duplicate == orig(this.duplicate)
+ return == true
+ ===========================================================================
+-mqtt._389.misuse.MqttSubscribe.isRetryable():::EXIT;condition="return == true"
++mqtt._389.fixed.MqttSubscribe.isRetryable():::EXIT;condition="return == true"
+ ===========================================================================
+-mqtt._389.misuse.MqttSubscribe.toString():::ENTER
++mqtt._389.fixed.MqttSubscribe.toString():::ENTER
+ ===========================================================================
+-mqtt._389.misuse.MqttSubscribe.toString():::EXIT
++mqtt._389.fixed.MqttSubscribe.toString():::EXIT
+ this.names == orig(this.names)
+ this.names.getClass().getName() == orig(this.names.getClass().getName())
+ this.names[] == orig(this.names[])
+@@ -409,7 +409,7 @@
+ ===========================================================================
+ mqtt._389.requirements.internal.wire.MqttWireMessage:::OBJECT
+ this has only one value
+-this.getClass().getName() == mqtt._389.misuse.MqttSubscribe.class
++this.getClass().getName() == mqtt._389.fixed.MqttSubscribe.class
+ this.type == 8
+ this.msgId == 0
+ this.duplicate == false

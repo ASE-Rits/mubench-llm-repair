@@ -1,95 +1,440 @@
---- /dev/fd/63	2025-12-20 07:52:19.002056763 +0000
-+++ /dev/fd/62	2025-12-20 07:52:19.002056763 +0000
-@@ -1721,7 +1721,7 @@
- org.slf4j.simple.SimpleLoggerConfiguration.LOG_FILE_DEFAULT.toString == org.slf4j.simple.SimpleLogger.CONFIG_PARAMS.logFile.toString
- org.slf4j.simple.SimpleLoggerConfiguration.WARN_LEVELS_STRING_DEFAULT == org.slf4j.simple.SimpleLogger.CONFIG_PARAMS.warnLevelString
- org.slf4j.simple.SimpleLoggerConfiguration.WARN_LEVELS_STRING_DEFAULT.toString == org.slf4j.simple.SimpleLogger.CONFIG_PARAMS.warnLevelString.toString
--org.slf4j.simple.SimpleLogger.START_TIME == 1766213699121L
-+org.slf4j.simple.SimpleLogger.START_TIME == 1766213790995L
- org.slf4j.simple.SimpleLogger.SP == 32
- org.slf4j.simple.SimpleLogger.TID_PREFIX has only one value
- org.slf4j.simple.SimpleLogger.TID_PREFIX.toString == "tid="
-@@ -2489,6 +2489,11 @@
+--- invariant/testng/_22/misuse/invariants.txt	2026-02-11 03:56:44.273882092 +0900
++++ invariant/testng/_22/fixed/invariants.txt	2026-02-11 03:57:23.548600469 +0900
+@@ -2,13 +2,13 @@
+ daikon_runner.DaikonRunner.createDriverInstance(java.lang.Class, java.lang.String):::ENTER
+ driverClass has only one value
+ variant has only one value
+-variant.toString == "misuse"
++variant.toString == "fixed"
  ===========================================================================
- testng.TestngTest_22$CommonCases.CommonCases():::EXIT
+ daikon_runner.DaikonRunner.createDriverInstance(java.lang.Class, java.lang.String):::EXIT70
  ===========================================================================
-+testng.TestngTest_22$CommonCases.testCorrectlyVariant():::ENTER
-+this has only one value
-+===========================================================================
-+testng.TestngTest_22$CommonCases.testCorrectlyVariant():::EXIT
-+===========================================================================
- testng.TestngTest_22$CommonCases.testGenerateReportWithMockSuite():::ENTER
+ daikon_runner.DaikonRunner.createDriverInstance(java.lang.Class, java.lang.String):::EXIT
+ variant.toString == orig(variant.toString)
+-variant.toString == "misuse"
++variant.toString == "fixed"
+ return has only one value
+ return.getClass().getName() == testng._22.Driver.class
+ ===========================================================================
+@@ -16,15 +16,15 @@
+ args has only one value
+ args.getClass().getName() == java.lang.String[].class
+ args[] contains no nulls and has only one value, of length 2
+-args[].toString == [testng._22, misuse]
+-args[].toString elements one of { "misuse", "testng._22" }
++args[].toString == [testng._22, fixed]
++args[].toString elements one of { "fixed", "testng._22" }
+ size(args[]) == 2
+ ===========================================================================
+ daikon_runner.DaikonRunner.main(java.lang.String[]):::EXIT
+ args[] == orig(args[])
+ args[] contains no nulls and has only one value, of length 2
+-args[].toString == [testng._22, misuse]
+-args[].toString elements one of { "misuse", "testng._22" }
++args[].toString == [testng._22, fixed]
++args[].toString elements one of { "fixed", "testng._22" }
+ ===========================================================================
+ testng._22.Driver:::CLASS
+ testng._22.Driver.BASE_PACKAGE has only one value
+@@ -35,18 +35,18 @@
  this has only one value
+ this.variant has only one value
+ this.variant != null
+-this.variant.toString == "misuse"
+-this.reporterInstance.getClass().getName() == testng._22.misuse.XMLReporter.class
++this.variant.toString == "fixed"
++this.reporterInstance.getClass().getName() == testng._22.fixed.XMLReporter.class
  ===========================================================================
-@@ -2524,6 +2529,11 @@
+ testng._22.Driver.Driver(java.lang.String):::ENTER
+ variant has only one value
+-variant.toString == "misuse"
++variant.toString == "fixed"
  ===========================================================================
- testng.TestngTest_22$CommonCases.testResultsVariableExists():::EXIT
- ===========================================================================
-+testng.TestngTest_22$CommonCases.testSynchronizedBlockPresent():::ENTER
-+this has only one value
-+===========================================================================
-+testng.TestngTest_22$CommonCases.testSynchronizedBlockPresent():::EXIT
-+===========================================================================
- testng.TestngTest_22$CommonCases.testTimestampFormat():::ENTER
- this has only one value
- ===========================================================================
-@@ -2897,9 +2907,9 @@
- this.reporterClass == orig(this.reporterClass)
+ testng._22.Driver.Driver(java.lang.String):::EXIT
+ variant.toString == orig(variant.toString)
  this.reporterInstance == null
  this.reporterClass == null
--return == false
-+return == true
+-variant.toString == "misuse"
++variant.toString == "fixed"
  ===========================================================================
--testng._22.Driver.hasSynchronizedBlock():::EXIT;condition="not(return == true)"
-+testng._22.Driver.hasSynchronizedBlock():::EXIT;condition="return == true"
+ testng._22.Driver.getFileFragmentationLevel():::ENTER
+ this.reporterInstance has only one value
+@@ -114,24 +114,29 @@
+ return.toString == "yyyy-MM-dd'T'HH:mm:ss z"
  ===========================================================================
  testng._22.Driver.initializeReporter():::ENTER
- this.reporterInstance == this.reporterClass
-@@ -2921,7 +2931,7 @@
++this.reporterInstance == null
++this.reporterClass == null
  ===========================================================================
- testng._22.Driver.isCorrectlyVariant():::EXIT
- ===========================================================================
--testng._22.Driver.isCorrectlyVariant():::EXIT;condition="not(return == true)"
-+testng._22.Driver.isCorrectlyVariant():::EXIT;condition="return == true"
- ===========================================================================
- testng._22.Driver.isCorrectlyVariant():::EXIT
+ testng._22.Driver.initializeReporter():::EXIT
  testng._22.Driver.BASE_PACKAGE == orig(testng._22.Driver.BASE_PACKAGE)
-@@ -2933,9 +2943,9 @@
- this.reporterClass == orig(this.reporterClass)
- this.reporterInstance == null
- this.reporterClass == null
--return == false
-+return == true
+ testng._22.Driver.BASE_PACKAGE.toString == orig(testng._22.Driver.BASE_PACKAGE.toString)
+ this.variant == orig(this.variant)
+ this.variant.toString == orig(this.variant.toString)
+-this.reporterInstance.getClass().getName() == orig(this.reporterInstance.getClass().getName())
++this.reporterInstance has only one value
+ this.reporterClass has only one value
  ===========================================================================
--testng._22.Driver.isCorrectlyVariant():::EXIT;condition="not(return == true)"
-+testng._22.Driver.isCorrectlyVariant():::EXIT;condition="return == true"
+ testng._22.Driver.isGenerateDependsOnGroups():::ENTER
+-this.reporterInstance == null
+-this.reporterClass == null
++this.reporterInstance has only one value
++this.reporterClass has only one value
  ===========================================================================
- testng._22.Driver.isGenerateGroupsAttribute():::ENTER
- this has only one value
-@@ -2971,7 +2981,7 @@
- this.reporterClass == orig(this.reporterClass)
- this.reporterInstance == null
- this.reporterClass == null
--return.toString == "package testng._22.VARIANT;\n\nimport testng._22.requirements.org.testng.IReporter;\nimport testng._22.requirements.org.testng.ISuite;\nimport testng._22.requirements.org.testng.ISuiteResult;\nimport testng._22.requirements.org.testng.ITestContext;\nimport testng._22.requirements.org.testng.ITestNGMethod;\nimport testng._22.requirements.org.testng.Reporter;\nimport testng._22.requirements.org.testng.internal.Utils;\nimport testng._22.requirements.org.testng.xml.XmlSuite;\nimport testng._22.requirements.org.testng.reporters.XMLReporterConfig;\nimport testng._22.requirements.org.testng.reporters.XMLStringBuffer;\nimport testng._22.requirements.org.testng.reporters.XMLSuiteResultWriter;\n\nimport java.io.File;\nimport java.text.SimpleDateFormat;\nimport java.util.Collection;\nimport java.util.Date;\nimport java.util.LinkedHashSet;\nimport java.util.List;\nimport java.util.Map;\nimport java.util.Properties;\nimport java.util.Set;\nimport java.util.TimeZone;\n\n/**\n * The main entry for the XML generation operation\n * \n * @author Cosmin Marginean, Mar 16, 2007\n */\npublic class XMLReporter implements IReporter {\n  public static final String FILE_NAME = \"testng-results.xml\";\n\n  private final XMLReporterConfig config = new XMLReporterConfig();\n  private XMLStringBuffer rootBuffer;\n\n  @Override\n  public void generateReport(List<XmlSuite> xmlSuites, List<ISuite> suites,\n      String outputDirectory) {\n    if (Utils.isStringEmpty(config.getOutputDirectory())) {\n      config.setOutputDirectory(outputDirectory);\n    }\n\n    // Calculate passed/failed/skipped\n    int passed = 0;\n    int failed = 0;\n    int skipped = 0;\n    for (ISuite s : suites) {\n      Map<String, ISuiteResult> suiteResults = s.getResults();\n      synchronized(suiteResults) {\n        for (ISuiteResult sr : suiteResults.values()) {\n          ITestContext testContext = sr.getTestContext();\n          passed += testContext.getPassedTests().size();\n          failed += testContext.getFailedTests().size();\n          skipped += testContext.getSkippedTests().size();\n        }\n      }\n    }\n\n    rootBuffer = new XMLStringBuffer();\n    Properties p = new Properties();\n    p.put(\"passed\", passed);\n    p.put(\"failed\", failed);\n    p.put(\"skipped\", skipped);\n    p.put(\"total\", passed + failed + skipped);\n    rootBuffer.push(XMLReporterConfig.TAG_TESTNG_RESULTS, p);\n    writeReporterOutput(rootBuffer);\n    for (ISuite suite : suites) {\n      writeSuite(suite.getXmlSuite(), suite);\n    }\n    rootBuffer.pop();\n    Utils.writeUtf8File(config.getOutputDirectory(), FILE_NAME, rootBuffer, null /* no prefix */);\n  }\n\n  private void writeReporterOutput(XMLStringBuffer xmlBuffer) {\n    // TODO: Cosmin - maybe a <line> element isn't indicated for each line\n    xmlBuffer.push(XMLReporterConfig.TAG_REPORTER_OUTPUT);\n    List<String> output = Reporter.getOutput();\n    for (String line : output) {\n      if (line != null) {\n        xmlBuffer.push(XMLReporterConfig.TAG_LINE);\n        xmlBuffer.addCDATA(line);\n        xmlBuffer.pop();\n      }\n    }\n    xmlBuffer.pop();\n  }\n\n  private void writeSuite(XmlSuite xmlSuite, ISuite suite) {\n    switch (config.getFileFragmentationLevel()) {\n    case XMLReporterConfig.FF_LEVEL_NONE:\n      writeSuiteToBuffer(rootBuffer, suite);\n      break;\n    case XMLReporterConfig.FF_LEVEL_SUITE:\n    case XMLReporterConfig.FF_LEVEL_SUITE_RESULT:\n      File suiteFile = referenceSuite(rootBuffer, suite);\n      writeSuiteToFile(suiteFile, suite);\n    }\n  }\n\n  private void writeSuiteToFile(File suiteFile, ISuite suite) {\n    XMLStringBuffer xmlBuffer = new XMLStringBuffer();\n    writeSuiteToBuffer(xmlBuffer, suite);\n    File parentDir = suiteFile.getParentFile();\n    if (parentDir.exists() || suiteFile.getParentFile().mkdirs()) {\n      Utils.writeFile(parentDir.getAbsolutePath(), FILE_NAME, xmlBuffer.toXML());\n    }\n  }\n\n  private File referenceSuite(XMLStringBuffer xmlBuffer, ISuite suite) {\n    String relativePath = suite.getName() + File.separatorChar + FILE_NAME;\n    File suiteFile = new File(config.getOutputDirectory(), relativePath);\n    Properties attrs = new Properties();\n    attrs.setProperty(XMLReporterConfig.ATTR_URL, relativePath);\n    xmlBuffer.addEmptyElement(XMLReporterConfig.TAG_SUITE, attrs);\n    return suiteFile;\n  }\n\n  private void writeSuiteToBuffer(XMLStringBuffer xmlBuffer, ISuite suite) {\n    xmlBuffer.push(XMLReporterConfig.TAG_SUITE, getSuiteAttributes(suite));\n    writeSuiteGroups(xmlBuffer, suite);\n\n    Map<String, ISuiteResult> results = suite.getResults();\n    XMLSuiteResultWriter suiteResultWriter = new XMLSuiteResultWriter(config);\n    for (Map.Entry<String, ISuiteResult> result : results.entrySet()) {\n      suiteResultWriter.writeSuiteResult(xmlBuffer, result.getValue());\n    }\n\n    xmlBuffer.pop();\n  }\n\n  private void writeSuiteGroups(XMLStringBuffer xmlBuffer, ISuite suite) {\n    xmlBuffer.push(XMLReporterConfig.TAG_GROUPS);\n    Map<String, Collection<ITestNGMethod>> methodsByGroups = suite.getMethodsByGroups();\n    for (Map.Entry<String, Collection<ITestNGMethod>> entry : methodsByGroups.entrySet()) {\n      Properties groupAttrs = new Properties();\n      groupAttrs.setProperty(XMLReporterConfig.ATTR_NAME, entry.getKey());\n      xmlBuffer.push(XMLReporterConfig.TAG_GROUP, groupAttrs);\n      Set<ITestNGMethod> groupMethods = getUniqueMethodSet(entry.getValue());\n      for (ITestNGMethod groupMethod : groupMethods) {\n        Properties methodAttrs = new Properties();\n        methodAttrs.setProperty(XMLReporterConfig.ATTR_NAME, groupMethod.getMethodName());\n        methodAttrs.setProperty(XMLReporterConfig.ATTR_METHOD_SIG, groupMethod.toString());\n        methodAttrs.setProperty(XMLReporterConfig.ATTR_CLASS, groupMethod.getRealClass().getName());\n        xmlBuffer.addEmptyElement(XMLReporterConfig.TAG_METHOD, methodAttrs);\n      }\n      xmlBuffer.pop();\n    }\n    xmlBuffer.pop();\n  }\n\n  private Properties getSuiteAttributes(ISuite suite) {\n    Properties props = new Properties();\n    props.setProperty(XMLReporterConfig.ATTR_NAME, suite.getName());\n\n    // Calculate the duration\n    Map<String, ISuiteResult> results = suite.getResults();\n    Date minStartDate = new Date();\n    Date maxEndDate = null;\n    // TODO: We could probably optimize this in order not to traverse this twice\n    for (Map.Entry<String, ISuiteResult> result : results.entrySet()) {\n      ITestContext testContext = result.getValue().getTestContext();\n      Date startDate = testContext.getStartDate();\n      Date endDate = testContext.getEndDate();\n      if (minStartDate.after(startDate)) {\n        minStartDate = startDate;\n      }\n      if (maxEndDate == null || maxEndDate.before(endDate)) {\n        maxEndDate = endDate != null ? endDate : startDate;\n      }\n    }\n\n    // The suite could be completely empty\n    if (maxEndDate == null) {\n      maxEndDate = minStartDate;\n    }\n    addDurationAttributes(config, props, minStartDate, maxEndDate);\n    return props;\n  }\n\n  /**\n   * Add started-at, finished-at and duration-ms attributes to the <suite> tag\n   */\n  public static void addDurationAttributes(XMLReporterConfig config, Properties attributes,\n      Date minStartDate, Date maxEndDate) {\n    SimpleDateFormat format = new SimpleDateFormat(config.getTimestampFormat());\n    TimeZone utc = TimeZone.getTimeZone(\"UTC\");\n    format.setTimeZone(utc);\n    String startTime = format.format(minStartDate);\n    String endTime = format.format(maxEndDate);\n    long duration = maxEndDate.getTime() - minStartDate.getTime();\n\n    attributes.setProperty(XMLReporterConfig.ATTR_STARTED_AT, startTime);\n    attributes.setProperty(XMLReporterConfig.ATTR_FINISHED_AT, endTime);\n    attributes.setProperty(XMLReporterConfig.ATTR_DURATION_MS, Long.toString(duration));\n  }\n\n  private Set<ITestNGMethod> getUniqueMethodSet(Collection<ITestNGMethod> methods) {\n    Set<ITestNGMethod> result = new LinkedHashSet<>();\n    for (ITestNGMethod method : methods) {\n      result.add(method);\n    }\n    return result;\n  }\n\n  // TODO: This is not the smartest way to implement the config\n  public int getFileFragmentationLevel() {\n    return config.getFileFragmentationLevel();\n  }\n\n  public void setFileFragmentationLevel(int fileFragmentationLevel) {\n    config.setFileFragmentationLevel(fileFragmentationLevel);\n  }\n\n  public int getStackTraceOutputMethod() {\n    return config.getStackTraceOutputMethod();\n  }\n\n  public void setStackTraceOutputMethod(int stackTraceOutputMethod) {\n    config.setStackTraceOutputMethod(stackTraceOutputMethod);\n  }\n\n  public String getOutputDirectory() {\n    return config.getOutputDirectory();\n  }\n\n  public void setOutputDirectory(String outputDirectory) {\n    config.setOutputDirectory(outputDirectory);\n  }\n\n  public boolean isGenerateGroupsAttribute() {\n    return config.isGenerateGroupsAttribute();\n  }\n\n  public void setGenerateGroupsAttribute(boolean generateGroupsAttribute) {\n    config.setGenerateGroupsAttribute(generateGroupsAttribute);\n  }\n\n  public boolean isSplitClassAndPackageNames() {\n    return config.isSplitClassAndPackageNames();\n  }\n\n  public void setSplitClassAndPackageNames(boolean splitClassAndPackageNames) {\n    config.setSplitClassAndPackageNames(splitClassAndPackageNames);\n  }\n\n  public String getTimestampFormat() {\n    return config.getTimestampFormat();\n  }\n\n  public void setTimestampFormat(String timestampFormat) {\n    config.setTimestampFormat(timestampFormat);\n  }\n\n  public boolean isGenerateDependsOnMethods() {\n    return config.isGenerateDependsOnMethods();\n  }\n\n  public void setGenerateDependsOnMethods(boolean generateDependsOnMethods) {\n    config.setGenerateDependsOnMethods(generateDependsOnMethods);\n  }\n\n  public void setGenerateDependsOnGroups(boolean generateDependsOnGroups) {\n    config.setGenerateDependsOnGroups(generateDependsOnGroups);\n  }\n\n  public boolean isGenerateDependsOnGroups() {\n    return config.isGenerateDependsOnGroups();\n  }\n\n  public void setGenerateTestResultAttributes(boolean generateTestResultAttributes) {\n    config.setGenerateTestResultAttributes(generateTestResultAttributes);\n  }\n\n  public boolean isGenerateTestResultAttributes() {\n    return config.isGenerateTestResultAttributes();\n  }\n\n}\n"
-+return.toString == "package testng._22.VARIANT;\n\nimport testng._22.requirements.org.testng.IReporter;\nimport testng._22.requirements.org.testng.ISuite;\nimport testng._22.requirements.org.testng.ISuiteResult;\nimport testng._22.requirements.org.testng.ITestContext;\nimport testng._22.requirements.org.testng.ITestNGMethod;\nimport testng._22.requirements.org.testng.Reporter;\nimport testng._22.requirements.org.testng.internal.Utils;\nimport testng._22.requirements.org.testng.xml.XmlSuite;\nimport testng._22.requirements.org.testng.reporters.XMLReporterConfig;\nimport testng._22.requirements.org.testng.reporters.XMLStringBuffer;\nimport testng._22.requirements.org.testng.reporters.XMLSuiteResultWriter;\n\nimport java.io.File;\nimport java.text.SimpleDateFormat;\nimport java.util.Collection;\nimport java.util.Date;\nimport java.util.LinkedHashSet;\nimport java.util.List;\nimport java.util.Map;\nimport java.util.Properties;\nimport java.util.Set;\nimport java.util.TimeZone;\n\n/**\n * The main entry for the XML generation operation\n * \n * @author Cosmin Marginean, Mar 16, 2007\n */\npublic class XMLReporter implements IReporter {\n  public static final String FILE_NAME = \"testng-results.xml\";\n\n  private final XMLReporterConfig config = new XMLReporterConfig();\n  private XMLStringBuffer rootBuffer;\n\n  @Override\n  public void generateReport(List<XmlSuite> xmlSuites, List<ISuite> suites,\n      String outputDirectory) {\n    if (Utils.isStringEmpty(config.getOutputDirectory())) {\n      config.setOutputDirectory(outputDirectory);\n    }\n\n    // Calculate passed/failed/skipped\n    int passed = 0;\n    int failed = 0;\n    int skipped = 0;\n    for (ISuite s : suites) {\n      Map<String, ISuiteResult> suiteResults = s.getResults();\n      synchronized(suiteResults) {\n        for (ISuiteResult sr : suiteResults.values()) {\n          ITestContext testContext = sr.getTestContext();\n          passed += testContext.getPassedTests().size();\n          failed += testContext.getFailedTests().size();\n          skipped += testContext.getSkippedTests().size();\n        }\n      }\n    }\n\n    rootBuffer = new XMLStringBuffer();\n    Properties p = new Properties();\n    p.put(\"passed\", passed);\n    p.put(\"failed\", failed);\n    p.put(\"skipped\", skipped);\n    p.put(\"total\", passed + failed + skipped);\n    rootBuffer.push(XMLReporterConfig.TAG_TESTNG_RESULTS, p);\n    writeReporterOutput(rootBuffer);\n    for (ISuite suite : suites) {\n      writeSuite(suite.getXmlSuite(), suite);\n    }\n    rootBuffer.pop();\n    Utils.writeUtf8File(config.getOutputDirectory(), FILE_NAME, rootBuffer, null /* no prefix */);\n  }\n\n  private void writeReporterOutput(XMLStringBuffer xmlBuffer) {\n    // TODO: Cosmin - maybe a <line> element isn't indicated for each line\n    xmlBuffer.push(XMLReporterConfig.TAG_REPORTER_OUTPUT);\n    List<String> output = Reporter.getOutput();\n    for (String line : output) {\n      if (line != null) {\n        xmlBuffer.push(XMLReporterConfig.TAG_LINE);\n        xmlBuffer.addCDATA(line);\n        xmlBuffer.pop();\n      }\n    }\n    xmlBuffer.pop();\n  }\n\n  private void writeSuite(XmlSuite xmlSuite, ISuite suite) {\n    switch (config.getFileFragmentationLevel()) {\n    case XMLReporterConfig.FF_LEVEL_NONE:\n      writeSuiteToBuffer(rootBuffer, suite);\n      break;\n    case XMLReporterConfig.FF_LEVEL_SUITE:\n    case XMLReporterConfig.FF_LEVEL_SUITE_RESULT:\n      File suiteFile = referenceSuite(rootBuffer, suite);\n      writeSuiteToFile(suiteFile, suite);\n    }\n  }\n\n  private void writeSuiteToFile(File suiteFile, ISuite suite) {\n    XMLStringBuffer xmlBuffer = new XMLStringBuffer();\n    writeSuiteToBuffer(xmlBuffer, suite);\n    File parentDir = suiteFile.getParentFile();\n    if (parentDir.exists() || suiteFile.getParentFile().mkdirs()) {\n      Utils.writeFile(parentDir.getAbsolutePath(), FILE_NAME, xmlBuffer.toXML());\n    }\n  }\n\n  private File referenceSuite(XMLStringBuffer xmlBuffer, ISuite suite) {\n    String relativePath = suite.getName() + File.separatorChar + FILE_NAME;\n    File suiteFile = new File(config.getOutputDirectory(), relativePath);\n    Properties attrs = new Properties();\n    attrs.setProperty(XMLReporterConfig.ATTR_URL, relativePath);\n    xmlBuffer.addEmptyElement(XMLReporterConfig.TAG_SUITE, attrs);\n    return suiteFile;\n  }\n\n  private void writeSuiteToBuffer(XMLStringBuffer xmlBuffer, ISuite suite) {\n    xmlBuffer.push(XMLReporterConfig.TAG_SUITE, getSuiteAttributes(suite));\n    writeSuiteGroups(xmlBuffer, suite);\n\n    Map<String, ISuiteResult> results = suite.getResults();\n    XMLSuiteResultWriter suiteResultWriter = new XMLSuiteResultWriter(config);\n    synchronized (results) {\n      for (Map.Entry<String, ISuiteResult> result : results.entrySet()) {\n        suiteResultWriter.writeSuiteResult(xmlBuffer, result.getValue());\n      }\n    }\n\n    xmlBuffer.pop();\n  }\n\n  private void writeSuiteGroups(XMLStringBuffer xmlBuffer, ISuite suite) {\n    xmlBuffer.push(XMLReporterConfig.TAG_GROUPS);\n    Map<String, Collection<ITestNGMethod>> methodsByGroups = suite.getMethodsByGroups();\n    for (Map.Entry<String, Collection<ITestNGMethod>> entry : methodsByGroups.entrySet()) {\n      Properties groupAttrs = new Properties();\n      groupAttrs.setProperty(XMLReporterConfig.ATTR_NAME, entry.getKey());\n      xmlBuffer.push(XMLReporterConfig.TAG_GROUP, groupAttrs);\n      Set<ITestNGMethod> groupMethods = getUniqueMethodSet(entry.getValue());\n      for (ITestNGMethod groupMethod : groupMethods) {\n        Properties methodAttrs = new Properties();\n        methodAttrs.setProperty(XMLReporterConfig.ATTR_NAME, groupMethod.getMethodName());\n        methodAttrs.setProperty(XMLReporterConfig.ATTR_METHOD_SIG, groupMethod.toString());\n        methodAttrs.setProperty(XMLReporterConfig.ATTR_CLASS, groupMethod.getRealClass().getName());\n        xmlBuffer.addEmptyElement(XMLReporterConfig.TAG_METHOD, methodAttrs);\n      }\n      xmlBuffer.pop();\n    }\n    xmlBuffer.pop();\n  }\n\n  private Properties getSuiteAttributes(ISuite suite) {\n    Properties props = new Properties();\n    props.setProperty(XMLReporterConfig.ATTR_NAME, suite.getName());\n\n    // Calculate the duration\n    Map<String, ISuiteResult> results = suite.getResults();\n    Date minStartDate = new Date();\n    Date maxEndDate = null;\n    // TODO: We could probably optimize this in order not to traverse this twice\n    synchronized (results) {\n      for (Map.Entry<String, ISuiteResult> result : results.entrySet()) {\n        ITestContext testContext = result.getValue().getTestContext();\n        Date startDate = testContext.getStartDate();\n        Date endDate = testContext.getEndDate();\n        if (minStartDate.after(startDate)) {\n          minStartDate = startDate;\n        }\n        if (maxEndDate == null || maxEndDate.before(endDate)) {\n          maxEndDate = endDate != null ? endDate : startDate;\n        }\n      }\n    }\n\n    // The suite could be completely empty\n    if (maxEndDate == null) {\n      maxEndDate = minStartDate;\n    }\n    addDurationAttributes(config, props, minStartDate, maxEndDate);\n    return props;\n  }\n\n  /**\n   * Add started-at, finished-at and duration-ms attributes to the <suite> tag\n   */\n  public static void addDurationAttributes(XMLReporterConfig config, Properties attributes,\n      Date minStartDate, Date maxEndDate) {\n    SimpleDateFormat format = new SimpleDateFormat(config.getTimestampFormat());\n    TimeZone utc = TimeZone.getTimeZone(\"UTC\");\n    format.setTimeZone(utc);\n    String startTime = format.format(minStartDate);\n    String endTime = format.format(maxEndDate);\n    long duration = maxEndDate.getTime() - minStartDate.getTime();\n\n    attributes.setProperty(XMLReporterConfig.ATTR_STARTED_AT, startTime);\n    attributes.setProperty(XMLReporterConfig.ATTR_FINISHED_AT, endTime);\n    attributes.setProperty(XMLReporterConfig.ATTR_DURATION_MS, Long.toString(duration));\n  }\n\n  private Set<ITestNGMethod> getUniqueMethodSet(Collection<ITestNGMethod> methods) {\n    Set<ITestNGMethod> result = new LinkedHashSet<>();\n    for (ITestNGMethod method : methods) {\n      result.add(method);\n    }\n    return result;\n  }\n\n  // TODO: This is not the smartest way to implement the config\n  public int getFileFragmentationLevel() {\n    return config.getFileFragmentationLevel();\n  }\n\n  public void setFileFragmentationLevel(int fileFragmentationLevel) {\n    config.setFileFragmentationLevel(fileFragmentationLevel);\n  }\n\n  public int getStackTraceOutputMethod() {\n    return config.getStackTraceOutputMethod();\n  }\n\n  public void setStackTraceOutputMethod(int stackTraceOutputMethod) {\n    config.setStackTraceOutputMethod(stackTraceOutputMethod);\n  }\n\n  public String getOutputDirectory() {\n    return config.getOutputDirectory();\n  }\n\n  public void setOutputDirectory(String outputDirectory) {\n    config.setOutputDirectory(outputDirectory);\n  }\n\n  public boolean isGenerateGroupsAttribute() {\n    return config.isGenerateGroupsAttribute();\n  }\n\n  public void setGenerateGroupsAttribute(boolean generateGroupsAttribute) {\n    config.setGenerateGroupsAttribute(generateGroupsAttribute);\n  }\n\n  public boolean isSplitClassAndPackageNames() {\n    return config.isSplitClassAndPackageNames();\n  }\n\n  public void setSplitClassAndPackageNames(boolean splitClassAndPackageNames) {\n    config.setSplitClassAndPackageNames(splitClassAndPackageNames);\n  }\n\n  public String getTimestampFormat() {\n    return config.getTimestampFormat();\n  }\n\n  public void setTimestampFormat(String timestampFormat) {\n    config.setTimestampFormat(timestampFormat);\n  }\n\n  public boolean isGenerateDependsOnMethods() {\n    return config.isGenerateDependsOnMethods();\n  }\n\n  public void setGenerateDependsOnMethods(boolean generateDependsOnMethods) {\n    config.setGenerateDependsOnMethods(generateDependsOnMethods);\n  }\n\n  public void setGenerateDependsOnGroups(boolean generateDependsOnGroups) {\n    config.setGenerateDependsOnGroups(generateDependsOnGroups);\n  }\n\n  public boolean isGenerateDependsOnGroups() {\n    return config.isGenerateDependsOnGroups();\n  }\n\n  public void setGenerateTestResultAttributes(boolean generateTestResultAttributes) {\n    config.setGenerateTestResultAttributes(generateTestResultAttributes);\n  }\n\n  public boolean isGenerateTestResultAttributes() {\n    return config.isGenerateTestResultAttributes();\n  }\n\n}\n"
+ testng._22.Driver.isGenerateDependsOnGroups():::EXIT
+ testng._22.Driver.BASE_PACKAGE == orig(testng._22.Driver.BASE_PACKAGE)
+ testng._22.Driver.BASE_PACKAGE.toString == orig(testng._22.Driver.BASE_PACKAGE.toString)
+ this.variant == orig(this.variant)
+ this.variant.toString == orig(this.variant.toString)
++this.reporterInstance == orig(this.reporterInstance)
++this.reporterInstance.getClass().getName() == orig(this.reporterInstance.getClass().getName())
++this.reporterClass == orig(this.reporterClass)
+ this.reporterInstance has only one value
+ this.reporterClass has only one value
+ return == true
+@@ -210,12 +215,14 @@
  ===========================================================================
- testng._22.Driver.setFileFragmentationLevel(int):::ENTER
- this has only one value
-@@ -11888,7 +11898,7 @@
- testng._22.requirements.org.testng.reporters.XMLUtils.EOL.toString == orig(testng._22.requirements.org.testng.reporters.XMLUtils.EOL.toString)
+ testng._22.Driver.isSplitClassAndPackageNames():::EXIT;condition="not(return == true)"
  ===========================================================================
- testng._22.requirements.org.testng.reporters.XMLUtils.escape(java.lang.String):::ENTER
--input.toString one of { "0", "2025-12-20T06:54:58 UTC", "TestSuite" }
-+input.toString one of { "0", "2025-12-20T06:56:30 UTC", "TestSuite" }
- testng._22.requirements.org.testng.reporters.XMLUtils.EOL.toString < input.toString
+-testng._22.misuse.XMLReporter:::CLASS
+-testng._22.misuse.XMLReporter.FILE_NAME has only one value
+-testng._22.misuse.XMLReporter.FILE_NAME != null
+-testng._22.misuse.XMLReporter.FILE_NAME.toString == "testng-results.xml"
++testng._22.fixed.XMLReporter:::CLASS
++testng._22.fixed.XMLReporter.FILE_NAME has only one value
++testng._22.fixed.XMLReporter.FILE_NAME != null
++testng._22.fixed.XMLReporter.FILE_NAME.toString == "testng-results.xml"
  ===========================================================================
- testng._22.requirements.org.testng.reporters.XMLUtils.escape(java.lang.String):::EXIT
-@@ -11898,7 +11908,7 @@
- testng._22.requirements.org.testng.reporters.XMLUtils.EOL.toString == orig(testng._22.requirements.org.testng.reporters.XMLUtils.EOL.toString)
- input.toString == return.toString
- input.toString == orig(input.toString)
--input.toString one of { "0", "2025-12-20T06:54:58 UTC", "TestSuite" }
-+input.toString one of { "0", "2025-12-20T06:56:30 UTC", "TestSuite" }
- testng._22.requirements.org.testng.reporters.XMLUtils.EOL.toString < input.toString
+-testng._22.misuse.XMLReporter:::OBJECT
++testng._22.fixed.XMLReporter:::OBJECT
++this has only one value
++this.config has only one value
+ this.config != null
+ testng._22.requirements.org.testng.reporters.XMLReporterConfig.TAG_TEST has only one value
+ testng._22.requirements.org.testng.reporters.XMLReporterConfig.TAG_TEST != null
+@@ -395,15 +402,13 @@
+ this.rootBuffer == null
+ size(testng._22.requirements.org.testng.reporters.XMLReporterConfig$StackTraceLevels.$VALUES[]) == 4
  ===========================================================================
- testng._22.requirements.org.testng.reporters.XMLUtils.extractComment(java.lang.String, java.util.Properties):::ENTER
+-testng._22.misuse.XMLReporter.XMLReporter():::EXIT
++testng._22.fixed.XMLReporter.XMLReporter():::EXIT
+ ===========================================================================
+-testng._22.misuse.XMLReporter.getFileFragmentationLevel():::ENTER
+-this has only one value
+-this.config has only one value
++testng._22.fixed.XMLReporter.getFileFragmentationLevel():::ENTER
+ ===========================================================================
+-testng._22.misuse.XMLReporter.getFileFragmentationLevel():::EXIT
+-testng._22.misuse.XMLReporter.FILE_NAME == orig(testng._22.misuse.XMLReporter.FILE_NAME)
+-testng._22.misuse.XMLReporter.FILE_NAME.toString == orig(testng._22.misuse.XMLReporter.FILE_NAME.toString)
++testng._22.fixed.XMLReporter.getFileFragmentationLevel():::EXIT
++testng._22.fixed.XMLReporter.FILE_NAME == orig(testng._22.fixed.XMLReporter.FILE_NAME)
++testng._22.fixed.XMLReporter.FILE_NAME.toString == orig(testng._22.fixed.XMLReporter.FILE_NAME.toString)
+ this.config == orig(this.config)
+ testng._22.requirements.org.testng.reporters.XMLReporterConfig.TAG_TEST == orig(testng._22.requirements.org.testng.reporters.XMLReporterConfig.TAG_TEST)
+ testng._22.requirements.org.testng.reporters.XMLReporterConfig.TAG_TEST.toString == orig(testng._22.requirements.org.testng.reporters.XMLReporterConfig.TAG_TEST.toString)
+@@ -521,16 +526,13 @@
+ this.config.timestampFormat == orig(this.config.timestampFormat)
+ this.config.timestampFormat.toString == orig(this.config.timestampFormat.toString)
+ this.rootBuffer == orig(this.rootBuffer)
+-this.config has only one value
+ return == 1
+ ===========================================================================
+-testng._22.misuse.XMLReporter.getOutputDirectory():::ENTER
+-this has only one value
+-this.config has only one value
++testng._22.fixed.XMLReporter.getOutputDirectory():::ENTER
+ ===========================================================================
+-testng._22.misuse.XMLReporter.getOutputDirectory():::EXIT
+-testng._22.misuse.XMLReporter.FILE_NAME == orig(testng._22.misuse.XMLReporter.FILE_NAME)
+-testng._22.misuse.XMLReporter.FILE_NAME.toString == orig(testng._22.misuse.XMLReporter.FILE_NAME.toString)
++testng._22.fixed.XMLReporter.getOutputDirectory():::EXIT
++testng._22.fixed.XMLReporter.FILE_NAME == orig(testng._22.fixed.XMLReporter.FILE_NAME)
++testng._22.fixed.XMLReporter.FILE_NAME.toString == orig(testng._22.fixed.XMLReporter.FILE_NAME.toString)
+ this.config == orig(this.config)
+ testng._22.requirements.org.testng.reporters.XMLReporterConfig.TAG_TEST == orig(testng._22.requirements.org.testng.reporters.XMLReporterConfig.TAG_TEST)
+ testng._22.requirements.org.testng.reporters.XMLReporterConfig.TAG_TEST.toString == orig(testng._22.requirements.org.testng.reporters.XMLReporterConfig.TAG_TEST.toString)
+@@ -648,16 +650,13 @@
+ this.config.timestampFormat == orig(this.config.timestampFormat)
+ this.config.timestampFormat.toString == orig(this.config.timestampFormat.toString)
+ this.rootBuffer == orig(this.rootBuffer)
+-this.config has only one value
+ return == null
+ ===========================================================================
+-testng._22.misuse.XMLReporter.getStackTraceOutputMethod():::ENTER
+-this has only one value
+-this.config has only one value
++testng._22.fixed.XMLReporter.getStackTraceOutputMethod():::ENTER
+ ===========================================================================
+-testng._22.misuse.XMLReporter.getStackTraceOutputMethod():::EXIT
+-testng._22.misuse.XMLReporter.FILE_NAME == orig(testng._22.misuse.XMLReporter.FILE_NAME)
+-testng._22.misuse.XMLReporter.FILE_NAME.toString == orig(testng._22.misuse.XMLReporter.FILE_NAME.toString)
++testng._22.fixed.XMLReporter.getStackTraceOutputMethod():::EXIT
++testng._22.fixed.XMLReporter.FILE_NAME == orig(testng._22.fixed.XMLReporter.FILE_NAME)
++testng._22.fixed.XMLReporter.FILE_NAME.toString == orig(testng._22.fixed.XMLReporter.FILE_NAME.toString)
+ this.config == orig(this.config)
+ testng._22.requirements.org.testng.reporters.XMLReporterConfig.TAG_TEST == orig(testng._22.requirements.org.testng.reporters.XMLReporterConfig.TAG_TEST)
+ testng._22.requirements.org.testng.reporters.XMLReporterConfig.TAG_TEST.toString == orig(testng._22.requirements.org.testng.reporters.XMLReporterConfig.TAG_TEST.toString)
+@@ -775,16 +774,13 @@
+ this.config.timestampFormat == orig(this.config.timestampFormat)
+ this.config.timestampFormat.toString == orig(this.config.timestampFormat.toString)
+ this.rootBuffer == orig(this.rootBuffer)
+-this.config has only one value
+ return == 2
+ ===========================================================================
+-testng._22.misuse.XMLReporter.getTimestampFormat():::ENTER
+-this has only one value
+-this.config has only one value
++testng._22.fixed.XMLReporter.getTimestampFormat():::ENTER
+ ===========================================================================
+-testng._22.misuse.XMLReporter.getTimestampFormat():::EXIT
+-testng._22.misuse.XMLReporter.FILE_NAME == orig(testng._22.misuse.XMLReporter.FILE_NAME)
+-testng._22.misuse.XMLReporter.FILE_NAME.toString == orig(testng._22.misuse.XMLReporter.FILE_NAME.toString)
++testng._22.fixed.XMLReporter.getTimestampFormat():::EXIT
++testng._22.fixed.XMLReporter.FILE_NAME == orig(testng._22.fixed.XMLReporter.FILE_NAME)
++testng._22.fixed.XMLReporter.FILE_NAME.toString == orig(testng._22.fixed.XMLReporter.FILE_NAME.toString)
+ this.config == orig(this.config)
+ testng._22.requirements.org.testng.reporters.XMLReporterConfig.TAG_TEST == orig(testng._22.requirements.org.testng.reporters.XMLReporterConfig.TAG_TEST)
+ testng._22.requirements.org.testng.reporters.XMLReporterConfig.TAG_TEST.toString == orig(testng._22.requirements.org.testng.reporters.XMLReporterConfig.TAG_TEST.toString)
+@@ -902,17 +898,14 @@
+ this.config.timestampFormat == orig(this.config.timestampFormat)
+ this.config.timestampFormat.toString == orig(this.config.timestampFormat.toString)
+ this.rootBuffer == orig(this.rootBuffer)
+-this.config has only one value
+ return has only one value
+ return.toString == "yyyy-MM-dd'T'HH:mm:ss z"
+ ===========================================================================
+-testng._22.misuse.XMLReporter.isGenerateDependsOnGroups():::ENTER
+-this has only one value
+-this.config has only one value
++testng._22.fixed.XMLReporter.isGenerateDependsOnGroups():::ENTER
+ ===========================================================================
+-testng._22.misuse.XMLReporter.isGenerateDependsOnGroups():::EXIT
+-testng._22.misuse.XMLReporter.FILE_NAME == orig(testng._22.misuse.XMLReporter.FILE_NAME)
+-testng._22.misuse.XMLReporter.FILE_NAME.toString == orig(testng._22.misuse.XMLReporter.FILE_NAME.toString)
++testng._22.fixed.XMLReporter.isGenerateDependsOnGroups():::EXIT
++testng._22.fixed.XMLReporter.FILE_NAME == orig(testng._22.fixed.XMLReporter.FILE_NAME)
++testng._22.fixed.XMLReporter.FILE_NAME.toString == orig(testng._22.fixed.XMLReporter.FILE_NAME.toString)
+ this.config == orig(this.config)
+ testng._22.requirements.org.testng.reporters.XMLReporterConfig.TAG_TEST == orig(testng._22.requirements.org.testng.reporters.XMLReporterConfig.TAG_TEST)
+ testng._22.requirements.org.testng.reporters.XMLReporterConfig.TAG_TEST.toString == orig(testng._22.requirements.org.testng.reporters.XMLReporterConfig.TAG_TEST.toString)
+@@ -1030,18 +1023,15 @@
+ this.config.timestampFormat == orig(this.config.timestampFormat)
+ this.config.timestampFormat.toString == orig(this.config.timestampFormat.toString)
+ this.rootBuffer == orig(this.rootBuffer)
+-this.config has only one value
+ return == true
+ ===========================================================================
+-testng._22.misuse.XMLReporter.isGenerateDependsOnGroups():::EXIT;condition="return == true"
++testng._22.fixed.XMLReporter.isGenerateDependsOnGroups():::EXIT;condition="return == true"
+ ===========================================================================
+-testng._22.misuse.XMLReporter.isGenerateDependsOnMethods():::ENTER
+-this has only one value
+-this.config has only one value
++testng._22.fixed.XMLReporter.isGenerateDependsOnMethods():::ENTER
+ ===========================================================================
+-testng._22.misuse.XMLReporter.isGenerateDependsOnMethods():::EXIT
+-testng._22.misuse.XMLReporter.FILE_NAME == orig(testng._22.misuse.XMLReporter.FILE_NAME)
+-testng._22.misuse.XMLReporter.FILE_NAME.toString == orig(testng._22.misuse.XMLReporter.FILE_NAME.toString)
++testng._22.fixed.XMLReporter.isGenerateDependsOnMethods():::EXIT
++testng._22.fixed.XMLReporter.FILE_NAME == orig(testng._22.fixed.XMLReporter.FILE_NAME)
++testng._22.fixed.XMLReporter.FILE_NAME.toString == orig(testng._22.fixed.XMLReporter.FILE_NAME.toString)
+ this.config == orig(this.config)
+ testng._22.requirements.org.testng.reporters.XMLReporterConfig.TAG_TEST == orig(testng._22.requirements.org.testng.reporters.XMLReporterConfig.TAG_TEST)
+ testng._22.requirements.org.testng.reporters.XMLReporterConfig.TAG_TEST.toString == orig(testng._22.requirements.org.testng.reporters.XMLReporterConfig.TAG_TEST.toString)
+@@ -1159,18 +1149,15 @@
+ this.config.timestampFormat == orig(this.config.timestampFormat)
+ this.config.timestampFormat.toString == orig(this.config.timestampFormat.toString)
+ this.rootBuffer == orig(this.rootBuffer)
+-this.config has only one value
+ return == true
+ ===========================================================================
+-testng._22.misuse.XMLReporter.isGenerateDependsOnMethods():::EXIT;condition="return == true"
++testng._22.fixed.XMLReporter.isGenerateDependsOnMethods():::EXIT;condition="return == true"
+ ===========================================================================
+-testng._22.misuse.XMLReporter.isGenerateGroupsAttribute():::ENTER
+-this has only one value
+-this.config has only one value
++testng._22.fixed.XMLReporter.isGenerateGroupsAttribute():::ENTER
+ ===========================================================================
+-testng._22.misuse.XMLReporter.isGenerateGroupsAttribute():::EXIT
+-testng._22.misuse.XMLReporter.FILE_NAME == orig(testng._22.misuse.XMLReporter.FILE_NAME)
+-testng._22.misuse.XMLReporter.FILE_NAME.toString == orig(testng._22.misuse.XMLReporter.FILE_NAME.toString)
++testng._22.fixed.XMLReporter.isGenerateGroupsAttribute():::EXIT
++testng._22.fixed.XMLReporter.FILE_NAME == orig(testng._22.fixed.XMLReporter.FILE_NAME)
++testng._22.fixed.XMLReporter.FILE_NAME.toString == orig(testng._22.fixed.XMLReporter.FILE_NAME.toString)
+ this.config == orig(this.config)
+ testng._22.requirements.org.testng.reporters.XMLReporterConfig.TAG_TEST == orig(testng._22.requirements.org.testng.reporters.XMLReporterConfig.TAG_TEST)
+ testng._22.requirements.org.testng.reporters.XMLReporterConfig.TAG_TEST.toString == orig(testng._22.requirements.org.testng.reporters.XMLReporterConfig.TAG_TEST.toString)
+@@ -1288,18 +1275,15 @@
+ this.config.timestampFormat == orig(this.config.timestampFormat)
+ this.config.timestampFormat.toString == orig(this.config.timestampFormat.toString)
+ this.rootBuffer == orig(this.rootBuffer)
+-this.config has only one value
+ return == false
+ ===========================================================================
+-testng._22.misuse.XMLReporter.isGenerateGroupsAttribute():::EXIT;condition="not(return == true)"
++testng._22.fixed.XMLReporter.isGenerateGroupsAttribute():::EXIT;condition="not(return == true)"
+ ===========================================================================
+-testng._22.misuse.XMLReporter.isGenerateTestResultAttributes():::ENTER
+-this has only one value
+-this.config has only one value
++testng._22.fixed.XMLReporter.isGenerateTestResultAttributes():::ENTER
+ ===========================================================================
+-testng._22.misuse.XMLReporter.isGenerateTestResultAttributes():::EXIT
+-testng._22.misuse.XMLReporter.FILE_NAME == orig(testng._22.misuse.XMLReporter.FILE_NAME)
+-testng._22.misuse.XMLReporter.FILE_NAME.toString == orig(testng._22.misuse.XMLReporter.FILE_NAME.toString)
++testng._22.fixed.XMLReporter.isGenerateTestResultAttributes():::EXIT
++testng._22.fixed.XMLReporter.FILE_NAME == orig(testng._22.fixed.XMLReporter.FILE_NAME)
++testng._22.fixed.XMLReporter.FILE_NAME.toString == orig(testng._22.fixed.XMLReporter.FILE_NAME.toString)
+ this.config == orig(this.config)
+ testng._22.requirements.org.testng.reporters.XMLReporterConfig.TAG_TEST == orig(testng._22.requirements.org.testng.reporters.XMLReporterConfig.TAG_TEST)
+ testng._22.requirements.org.testng.reporters.XMLReporterConfig.TAG_TEST.toString == orig(testng._22.requirements.org.testng.reporters.XMLReporterConfig.TAG_TEST.toString)
+@@ -1417,18 +1401,15 @@
+ this.config.timestampFormat == orig(this.config.timestampFormat)
+ this.config.timestampFormat.toString == orig(this.config.timestampFormat.toString)
+ this.rootBuffer == orig(this.rootBuffer)
+-this.config has only one value
+ return == false
+ ===========================================================================
+-testng._22.misuse.XMLReporter.isGenerateTestResultAttributes():::EXIT;condition="not(return == true)"
++testng._22.fixed.XMLReporter.isGenerateTestResultAttributes():::EXIT;condition="not(return == true)"
+ ===========================================================================
+-testng._22.misuse.XMLReporter.isSplitClassAndPackageNames():::ENTER
+-this has only one value
+-this.config has only one value
++testng._22.fixed.XMLReporter.isSplitClassAndPackageNames():::ENTER
+ ===========================================================================
+-testng._22.misuse.XMLReporter.isSplitClassAndPackageNames():::EXIT
+-testng._22.misuse.XMLReporter.FILE_NAME == orig(testng._22.misuse.XMLReporter.FILE_NAME)
+-testng._22.misuse.XMLReporter.FILE_NAME.toString == orig(testng._22.misuse.XMLReporter.FILE_NAME.toString)
++testng._22.fixed.XMLReporter.isSplitClassAndPackageNames():::EXIT
++testng._22.fixed.XMLReporter.FILE_NAME == orig(testng._22.fixed.XMLReporter.FILE_NAME)
++testng._22.fixed.XMLReporter.FILE_NAME.toString == orig(testng._22.fixed.XMLReporter.FILE_NAME.toString)
+ this.config == orig(this.config)
+ testng._22.requirements.org.testng.reporters.XMLReporterConfig.TAG_TEST == orig(testng._22.requirements.org.testng.reporters.XMLReporterConfig.TAG_TEST)
+ testng._22.requirements.org.testng.reporters.XMLReporterConfig.TAG_TEST.toString == orig(testng._22.requirements.org.testng.reporters.XMLReporterConfig.TAG_TEST.toString)
+@@ -1546,10 +1527,9 @@
+ this.config.timestampFormat == orig(this.config.timestampFormat)
+ this.config.timestampFormat.toString == orig(this.config.timestampFormat.toString)
+ this.rootBuffer == orig(this.rootBuffer)
+-this.config has only one value
+ return == false
+ ===========================================================================
+-testng._22.misuse.XMLReporter.isSplitClassAndPackageNames():::EXIT;condition="not(return == true)"
++testng._22.fixed.XMLReporter.isSplitClassAndPackageNames():::EXIT;condition="not(return == true)"
+ ===========================================================================
+ testng._22.requirements.org.testng.reporters.RuntimeBehavior:::CLASS
+ testng._22.requirements.org.testng.reporters.RuntimeBehavior.FILE_NAME has only one value
+@@ -1560,6 +1540,7 @@
+ testng._22.requirements.org.testng.reporters.RuntimeBehavior.getDefaultStacktraceLevels():::EXIT
+ testng._22.requirements.org.testng.reporters.RuntimeBehavior.FILE_NAME == orig(testng._22.requirements.org.testng.reporters.RuntimeBehavior.FILE_NAME)
+ testng._22.requirements.org.testng.reporters.RuntimeBehavior.FILE_NAME.toString == orig(testng._22.requirements.org.testng.reporters.RuntimeBehavior.FILE_NAME.toString)
++return has only one value
+ return.toString == "2"
+ ===========================================================================
+ testng._22.requirements.org.testng.reporters.XMLReporterConfig$StackTraceLevels:::CLASS
+@@ -1636,6 +1617,7 @@
+ return.level == 2
+ ===========================================================================
+ testng._22.requirements.org.testng.reporters.XMLReporterConfig$StackTraceLevels.parse(java.lang.String):::ENTER
++raw has only one value
+ raw.toString == "2"
+ ===========================================================================
+ testng._22.requirements.org.testng.reporters.XMLReporterConfig$StackTraceLevels.parse(java.lang.String):::EXIT
+@@ -1675,6 +1657,7 @@
+ testng._22.requirements.org.testng.reporters.XMLReporterConfig$StackTraceLevels.BOTH.level == orig(testng._22.requirements.org.testng.reporters.XMLReporterConfig$StackTraceLevels.BOTH.level)
+ this.level == orig(this.level)
+ this.level == 2
++return has only one value
+ return.toString == "2"
+ ===========================================================================
+ testng._22.requirements.org.testng.reporters.XMLReporterConfig$StackTraceLevels.values():::ENTER
+@@ -1693,6 +1676,7 @@
+ testng._22.requirements.org.testng.reporters.XMLReporterConfig$StackTraceLevels.SHORT.level == orig(testng._22.requirements.org.testng.reporters.XMLReporterConfig$StackTraceLevels.SHORT.level)
+ testng._22.requirements.org.testng.reporters.XMLReporterConfig$StackTraceLevels.FULL.level == orig(testng._22.requirements.org.testng.reporters.XMLReporterConfig$StackTraceLevels.FULL.level)
+ testng._22.requirements.org.testng.reporters.XMLReporterConfig$StackTraceLevels.BOTH.level == orig(testng._22.requirements.org.testng.reporters.XMLReporterConfig$StackTraceLevels.BOTH.level)
++return has only one value
+ return[] contains no nulls and has only one value, of length 4
+ return[].level == [0, 1, 2, 3]
+ size(return[]) == 4
+@@ -1841,6 +1825,7 @@
+ testng._22.requirements.org.testng.reporters.XMLReporterConfig.FMT_DEFAULT.toString == "yyyy-MM-dd'T'HH:mm:ss z"
+ ===========================================================================
+ testng._22.requirements.org.testng.reporters.XMLReporterConfig:::OBJECT
++this has only one value
+ this.fileFragmentationLevel == 1
+ this.stackTraceOutputMethod has only one value
+ this.stackTraceOutputMethod != null
+@@ -1885,7 +1870,6 @@
+ testng._22.requirements.org.testng.reporters.XMLReporterConfig.XMLReporterConfig():::EXIT
+ ===========================================================================
+ testng._22.requirements.org.testng.reporters.XMLReporterConfig.getFileFragmentationLevel():::ENTER
+-this has only one value
+ ===========================================================================
+ testng._22.requirements.org.testng.reporters.XMLReporterConfig.getFileFragmentationLevel():::EXIT
+ testng._22.requirements.org.testng.reporters.XMLReporterConfig.TAG_TEST == orig(testng._22.requirements.org.testng.reporters.XMLReporterConfig.TAG_TEST)
+@@ -2010,7 +1994,6 @@
+ return == 1
+ ===========================================================================
+ testng._22.requirements.org.testng.reporters.XMLReporterConfig.getOutputDirectory():::ENTER
+-this has only one value
+ ===========================================================================
+ testng._22.requirements.org.testng.reporters.XMLReporterConfig.getOutputDirectory():::EXIT
+ testng._22.requirements.org.testng.reporters.XMLReporterConfig.TAG_TEST == orig(testng._22.requirements.org.testng.reporters.XMLReporterConfig.TAG_TEST)
+@@ -2135,7 +2118,6 @@
+ return == null
+ ===========================================================================
+ testng._22.requirements.org.testng.reporters.XMLReporterConfig.getStackTraceOutputMethod():::ENTER
+-this has only one value
+ ===========================================================================
+ testng._22.requirements.org.testng.reporters.XMLReporterConfig.getStackTraceOutputMethod():::EXIT
+ testng._22.requirements.org.testng.reporters.XMLReporterConfig.TAG_TEST == orig(testng._22.requirements.org.testng.reporters.XMLReporterConfig.TAG_TEST)
+@@ -2260,7 +2242,6 @@
+ return == 2
+ ===========================================================================
+ testng._22.requirements.org.testng.reporters.XMLReporterConfig.getTimestampFormat():::ENTER
+-this has only one value
+ ===========================================================================
+ testng._22.requirements.org.testng.reporters.XMLReporterConfig.getTimestampFormat():::EXIT
+ testng._22.requirements.org.testng.reporters.XMLReporterConfig.TAG_TEST == orig(testng._22.requirements.org.testng.reporters.XMLReporterConfig.TAG_TEST)
+@@ -2386,7 +2367,6 @@
+ return.toString == "yyyy-MM-dd'T'HH:mm:ss z"
+ ===========================================================================
+ testng._22.requirements.org.testng.reporters.XMLReporterConfig.isGenerateDependsOnGroups():::ENTER
+-this has only one value
+ ===========================================================================
+ testng._22.requirements.org.testng.reporters.XMLReporterConfig.isGenerateDependsOnGroups():::EXIT
+ testng._22.requirements.org.testng.reporters.XMLReporterConfig.TAG_TEST == orig(testng._22.requirements.org.testng.reporters.XMLReporterConfig.TAG_TEST)
+@@ -2513,7 +2493,6 @@
+ testng._22.requirements.org.testng.reporters.XMLReporterConfig.isGenerateDependsOnGroups():::EXIT;condition="return == true"
+ ===========================================================================
+ testng._22.requirements.org.testng.reporters.XMLReporterConfig.isGenerateDependsOnMethods():::ENTER
+-this has only one value
+ ===========================================================================
+ testng._22.requirements.org.testng.reporters.XMLReporterConfig.isGenerateDependsOnMethods():::EXIT
+ testng._22.requirements.org.testng.reporters.XMLReporterConfig.TAG_TEST == orig(testng._22.requirements.org.testng.reporters.XMLReporterConfig.TAG_TEST)
+@@ -2640,7 +2619,6 @@
+ testng._22.requirements.org.testng.reporters.XMLReporterConfig.isGenerateDependsOnMethods():::EXIT;condition="return == true"
+ ===========================================================================
+ testng._22.requirements.org.testng.reporters.XMLReporterConfig.isGenerateGroupsAttribute():::ENTER
+-this has only one value
+ ===========================================================================
+ testng._22.requirements.org.testng.reporters.XMLReporterConfig.isGenerateGroupsAttribute():::EXIT
+ testng._22.requirements.org.testng.reporters.XMLReporterConfig.TAG_TEST == orig(testng._22.requirements.org.testng.reporters.XMLReporterConfig.TAG_TEST)
+@@ -2767,7 +2745,6 @@
+ testng._22.requirements.org.testng.reporters.XMLReporterConfig.isGenerateGroupsAttribute():::EXIT;condition="not(return == true)"
+ ===========================================================================
+ testng._22.requirements.org.testng.reporters.XMLReporterConfig.isGenerateTestResultAttributes():::ENTER
+-this has only one value
+ ===========================================================================
+ testng._22.requirements.org.testng.reporters.XMLReporterConfig.isGenerateTestResultAttributes():::EXIT
+ testng._22.requirements.org.testng.reporters.XMLReporterConfig.TAG_TEST == orig(testng._22.requirements.org.testng.reporters.XMLReporterConfig.TAG_TEST)
+@@ -2894,7 +2871,6 @@
+ testng._22.requirements.org.testng.reporters.XMLReporterConfig.isGenerateTestResultAttributes():::EXIT;condition="not(return == true)"
+ ===========================================================================
+ testng._22.requirements.org.testng.reporters.XMLReporterConfig.isSplitClassAndPackageNames():::ENTER
+-this has only one value
+ ===========================================================================
+ testng._22.requirements.org.testng.reporters.XMLReporterConfig.isSplitClassAndPackageNames():::EXIT
+ testng._22.requirements.org.testng.reporters.XMLReporterConfig.TAG_TEST == orig(testng._22.requirements.org.testng.reporters.XMLReporterConfig.TAG_TEST)
