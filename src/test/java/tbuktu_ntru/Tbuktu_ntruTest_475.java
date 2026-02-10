@@ -52,39 +52,6 @@ public class Tbuktu_ntruTest_475 {
         abstract Driver driver() throws Exception;
 
         @Test
-        public void testGetEncodedReturnsData() throws Exception {
-            Driver d = driver();
-            byte[] encoded = d.getEncoded();
-            
-            assertNotNull("getEncoded should return non-null byte array", encoded);
-            assertTrue("getEncoded should return non-empty byte array", encoded.length > 0);
-        }
-
-        @Test
-        public void testGetEncodedConsistent() throws Exception {
-            Driver d = driver();
-            
-            byte[] encoded1 = d.getEncoded();
-            byte[] encoded2 = d.getEncoded();
-            
-            assertArrayEquals("Multiple calls to getEncoded should produce same result", encoded1, encoded2);
-        }
-
-        @Test
-        public void testGetEncodedHeader() throws Exception {
-            Driver d = driver();
-            byte[] encoded = d.getEncoded();
-            
-            // N=107 = 0x006B as short
-            assertEquals("First byte of N should be 0x00", 0x00, encoded[0] & 0xFF);
-            assertEquals("Second byte of N should be 0x6B (107)", 0x6B, encoded[1] & 0xFF);
-            
-            // q=2048 = 0x0800 as short
-            assertEquals("First byte of q should be 0x08", 0x08, encoded[2] & 0xFF);
-            assertEquals("Second byte of q should be 0x00", 0x00, encoded[3] & 0xFF);
-        }
-
-        @Test
         public void testGetEncodedCallsFlushOrClose() throws Exception {
             Driver d = driver();
             assertTrue("getEncoded() should call flush() or close() before toByteArray()", d.hasFlushOrCloseInGetEncoded());

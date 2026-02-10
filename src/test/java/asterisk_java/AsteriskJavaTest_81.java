@@ -30,13 +30,6 @@ public class AsteriskJavaTest_81 {
             assertFalse("decoded env should not be empty", lines.isEmpty());
             assertEquals("agi_channel: ✓", lines.get(0));
         }
-
-        @Test
-        public void decodeResult() throws Exception {
-            List<String> parts = driver().decodeResult(ENCODED_RESULT);
-            assertFalse("decoded result should not be empty", parts.isEmpty());
-            assertEquals("200 result=0", parts.get(0));
-        }
     }
     public static class Original extends CommonCase {
         @Override

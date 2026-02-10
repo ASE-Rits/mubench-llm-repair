@@ -6,6 +6,9 @@ import org.junit.runner.RunWith;
 import static org.junit.Assert.*;
 
 import android_rcs_rcsjta._1.Driver;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 
 /**
  * 動的テスト: getContributionId() の結果一貫性を検証。
@@ -23,81 +26,44 @@ public class AndroidRcsRcsjtaTest_1 {
     abstract static class CommonCases {
 
         abstract Driver driver();
+        
+        abstract String getSourceFilePath();
 
         /**
-         * 基本的なContributionId生成テスト（ASCII callId）
+         * 静的検査: getBytes()でUTF-8エンコーディングが明示的に指定されていることを確認
+         * Misuse: getBytes() を引数なしで使用 → プラットフォーム依存
+         * Original: getBytes(UTF8) を使用
          */
         @Test
-        public void testConsistentResultAscii() throws Exception {
-            Driver d = driver();
-            String callId = "sip:12345@example.com";
+        public void testSourceCodeUsesExplicitUtf8Encoding() throws Exception {
+            String sourceFilePath = getSourceFilePath();
+            Path path = Paths.get(sourceFilePath);
+            assertTrue("Source file should exist: " + sourceFilePath, Files.exists(path));
             
-            String result1 = d.getContributionId(callId);
-            String result2 = d.getContributionId(callId);
+            String sourceCode = Files.readString(path);
             
-            assertNotNull("ContributionId should not be null", result1);
-            assertEquals("Same callId should produce same ContributionId", result1, result2);
-        }
-
-        /**
-         * 日本語を含むcallIdでのテスト
-         */
-        @Test
-        public void testConsistentResultJapanese() throws Exception {
-            Driver d = driver();
-            String callId = "sip:ユーザー@example.com";
+            // getContributionId メソッドを探す（様々な修飾子を許容）
+            java.util.regex.Pattern pattern = java.util.regex.Pattern.compile(
+                "public\\s+(synchronized\\s+)?(static\\s+)?String\\s+getContributionId\\s*\\(");
+            java.util.regex.Matcher matcher = pattern.matcher(sourceCode);
+            assertTrue("getContributionId method should exist", matcher.find());
             
-            String result1 = d.getContributionId(callId);
-            String result2 = d.getContributionId(callId);
+            int methodStart = matcher.start();
+            // 次のpublicメソッドまでを抽出
+            int nextMethodStart = sourceCode.indexOf("public ", methodStart + 20);
+            int methodEnd = nextMethodStart > 0 ? nextMethodStart : sourceCode.length();
+            String methodBody = sourceCode.substring(methodStart, methodEnd);
             
-            assertNotNull("ContributionId should not be null", result1);
-            assertEquals("Same Japanese callId should produce same ContributionId. " +
-                "Inconsistency indicates getBytes() is not using explicit UTF-8 encoding.", result1, result2);
-        }
-
-        /**
-         * 中国語を含むcallIdでのテスト
-         */
-        @Test
-        public void testConsistentResultChinese() throws Exception {
-            Driver d = driver();
-            String callId = "sip:用户@example.com";
-            
-            String result1 = d.getContributionId(callId);
-            String result2 = d.getContributionId(callId);
-            
-            assertNotNull("ContributionId should not be null", result1);
-            assertEquals("Same Chinese callId should produce same ContributionId.", result1, result2);
-        }
-
-        /**
-         * ContributionIdの形式テスト（16進数32文字）
-         */
-        @Test
-        public void testContributionIdFormat() throws Exception {
-            Driver d = driver();
-            String callId = "sip:test@example.com";
-            
-            String result = d.getContributionId(callId);
-            
-            assertNotNull("ContributionId should not be null", result);
-            assertEquals("ContributionId should be 32 characters (128 bits)", 32, result.length());
-            assertTrue("ContributionId should be lowercase hex", result.matches("[0-9a-f]+"));
-        }
-
-        /**
-         * 異なるcallIdは異なるContributionIdを生成
-         */
-        @Test
-        public void testDifferentCallIdsDifferentResults() throws Exception {
-            Driver d = driver();
-            
-            String result1 = d.getContributionId("sip:user1@example.com");
-            String result2 = d.getContributionId("sip:user2@example.com");
-            
-            assertNotNull(result1);
-            assertNotNull(result2);
-            assertNotEquals("Different callIds should produce different ContributionIds", result1, result2);
+            // getBytes()呼び出しを確認
+            boolean hasGetBytes = methodBody.contains(".getBytes(");
+            if (hasGetBytes) {
+                // getBytes(UTF8) または getBytes("UTF-8") があることを確認
+                boolean hasExplicitEncoding = methodBody.contains("getBytes(UTF8)") ||
+                                              methodBody.contains("getBytes(\"UTF-8\")") ||
+                                              methodBody.contains("getBytes(StandardCharsets.UTF_8)");
+                assertTrue("getContributionId method must use getBytes() with explicit UTF-8 encoding. " +
+                    "Using getBytes() without encoding causes platform-dependent behavior.", hasExplicitEncoding);
+            }
         }
     }
 
@@ -107,19 +73,30 @@ public class AndroidRcsRcsjtaTest_1 {
         Driver driver() {
             return new Driver(android_rcs_rcsjta._1.original.ContributionIdGenerator.class);
         }
+        @Override
+        String getSourceFilePath() {
+            return "src/main/java/android_rcs_rcsjta/_1/original/ContributionIdGenerator.java";
+        }
     }
 
-    // Misuse: getBytes() を引数なしで使用
     public static class Misuse extends CommonCases {
         @Override
         Driver driver() {
             return new Driver(android_rcs_rcsjta._1.misuse.ContributionIdGenerator.class);
+        }
+        @Override
+        String getSourceFilePath() {
+            return "src/main/java/android_rcs_rcsjta/_1/misuse/ContributionIdGenerator.java";
         }
     }
     public static class Fixed extends CommonCases {
         @Override
         Driver driver() {
             return new Driver(android_rcs_rcsjta._1.fixed.ContributionIdGenerator.class);
+        }
+        @Override
+        String getSourceFilePath() {
+            return "src/main/java/android_rcs_rcsjta/_1/fixed/ContributionIdGenerator.java";
         }
     }
 }

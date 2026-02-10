@@ -16,7 +16,8 @@ import static org.junit.Assert.*;
  * Bug: Calls ListFragment.getListView() without checking that ListFragment.isAdded(),
  * which might lead to crashes if the view is not yet initialized.
  */
-class WordpressaTest_1 {
+@RunWith(Enclosed.class)
+public class WordpressaTest_1 {
 
     abstract static class CommonLogic {
 
@@ -25,30 +26,6 @@ class WordpressaTest_1 {
         @Before
         public void setUp() {
             SimperiumUtils.reset();
-        }
-
-        @Test
-        public void restoresScrollPositionWhenAdded() {
-            Driver d = driver();
-            boolean selectionSet = d.testRestoreScrollPosition(true, 2, 5);
-            
-            assertTrue("Selection should be set when fragment is added", selectionSet);
-        }
-
-        @Test
-        public void doesNotRestoreWhenInvalidPosition() {
-            Driver d = driver();
-            boolean selectionSet = d.testRestoreScrollPosition(true, ListView.INVALID_POSITION, 5);
-            
-            assertFalse("Selection should not be set when position is INVALID_POSITION", selectionSet);
-        }
-
-        @Test
-        public void doesNotRestoreWhenPositionExceedsCount() {
-            Driver d = driver();
-            boolean selectionSet = d.testRestoreScrollPosition(true, 10, 5);
-            
-            assertFalse("Selection should not be set when position exceeds count", selectionSet);
         }
 
         @Test

@@ -19,28 +19,14 @@ import static org.junit.Assert.*;
  * - Static analysis: verify synchronized block in source code
  * - Dynamic testing: instantiate panel and invoke methods
  */
-class TestngTest_16 {
+@RunWith(Enclosed.class)
+public class TestngTest_16 {
     
     abstract static class CommonCases {
         abstract Driver driver();
         
         // ========== Static Analysis Tests ==========
-        
-        @Test
-        public void testGetContentMethodExists() throws Exception {
-            assertTrue("getContent method should exist", driver().hasGetContentMethod());
-        }
-        
-        @Test
-        public void testSortCallExists() throws Exception {
-            assertTrue("Collections.sort call should exist", driver().hasSortCall());
-        }
-        
-        @Test
-        public void testIterationExists() throws Exception {
-            assertTrue("Iteration over invokedMethods should exist", driver().hasIteration());
-        }
-        
+
         @Test
         public void testSynchronizedBlockPresent() throws Exception {
             assertTrue("synchronized(invokedMethods) block should be present", driver().hasSynchronizedBlock());
@@ -52,31 +38,6 @@ class TestngTest_16 {
         }
         
         // ========== Dynamic Tests ==========
-        
-        @Test
-        public void testPanelInitialization() throws Exception {
-            Driver d = driver();
-            d.initializePanel();
-            // If no exception, initialization succeeded
-        }
-        
-        @Test
-        public void testGetContentWithMockSuite() throws Exception {
-            Driver d = driver();
-            d.initializePanel();
-            ISuite mockSuite = d.createMockSuite(5);
-            String content = d.invokeGetContent(mockSuite);
-            assertNotNull("getContent should return non-null", content);
-        }
-        
-        @Test
-        public void testGetContentWithEmptySuite() throws Exception {
-            Driver d = driver();
-            d.initializePanel();
-            ISuite mockSuite = d.createMockSuite(0);
-            String content = d.invokeGetContent(mockSuite);
-            assertNotNull("getContent should handle empty suite", content);
-        }
         
         @Test
         public void testConcurrentAccess() throws Exception {

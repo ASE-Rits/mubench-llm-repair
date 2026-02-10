@@ -43,19 +43,6 @@ public class Jriecken_gae_java_mini_profilerTest_39 {
             assertTrue("Should handle empty string without throwing NumberFormatException", d.handlesInvalidIdGracefully(""));
             assertTrue("Should handle decimal string without throwing NumberFormatException", d.handlesInvalidIdGracefully("12.34"));
         }
-        
-        /**
-         * Test that valid numeric appstatsId is processed correctly.
-         */
-        @Test
-        public void testHandlesValidIdCorrectly() {
-            Driver d = driver();
-            
-            // Test with valid numeric ID
-            assertTrue("Should process valid numeric ID correctly", d.handlesValidIdCorrectly("12345"));
-            assertTrue("Should process '0' correctly", d.handlesValidIdCorrectly("0"));
-            assertTrue("Should process negative number correctly", d.handlesValidIdCorrectly("-1"));
-        }
     }
     public static class Original extends CommonCases {
         

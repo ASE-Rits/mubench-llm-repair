@@ -16,7 +16,8 @@ import static org.junit.Assert.*;
  * 
  * Fix: Check if inbytes.length == 0 and use a different doFinal() variant.
  */
-class PawotagTest_1 {
+@RunWith(Enclosed.class)
+public class PawotagTest_1 {
 
     private static final String BASE_PACKAGE = "pawotag._1";
 
@@ -25,7 +26,7 @@ class PawotagTest_1 {
         abstract Driver driver();
 
         @Before
-        void resetKey() {
+        public void resetKey() {
             driver().resetSecretKey();
         }
 

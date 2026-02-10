@@ -7,7 +7,8 @@ import org.junit.runner.RunWith;
 
 import static org.junit.Assert.*;
 
-class LnreaderaTest_1 {
+@RunWith(Enclosed.class)
+public class LnreaderaTest_1 {
 
     private static final String BASE_PACKAGE = "lnreadera._1";
 

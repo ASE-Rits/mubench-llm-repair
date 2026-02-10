@@ -7,7 +7,8 @@ import org.junit.runner.RunWith;
 
 import static org.junit.Assert.assertEquals;
 
-class OpenaiabTest_1 {
+@RunWith(Enclosed.class)
+public class OpenaiabTest_1 {
 
     private static final String BASE_PACKAGE = "openaiab._1";
     private static final String TARGET_CLASS = ".BillingActivity";

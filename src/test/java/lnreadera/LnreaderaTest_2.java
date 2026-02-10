@@ -11,7 +11,8 @@ import static org.junit.Assert.*;
  * Test class for lnreadera case 2: DisplayLightNovelContentActivity
  * Tests the fix for missing super.onDestroy() call
  */
-class LnreaderaTest_2 {
+@RunWith(Enclosed.class)
+public class LnreaderaTest_2 {
 
     private static final String BASE_PACKAGE = "lnreadera._2";
 

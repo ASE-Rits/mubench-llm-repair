@@ -20,18 +20,20 @@ public class Ivantrendafilov_confuciusTest_101 {
         abstract Driver createDriver(Properties props) throws Exception;
 
         @Test
-        public void testGetShortListValidInput() throws Exception {
+        public void testGetShortListInvalidInputContainsKey() throws Exception {
             Properties props = new Properties();
-            props.setProperty("valid.list", "10,20,30");
+            String testKey = "invalid.list";
+            props.setProperty(testKey, "10,not_a_number,30");
             
             Driver driver = createDriver(props);
             
-            List<Short> result = driver.getShortList("valid.list", ",");
-            assertNotNull(result);
-            assertEquals(3, result.size());
-            assertEquals(Short.valueOf((short) 10), result.get(0));
-            assertEquals(Short.valueOf((short) 20), result.get(1));
-            assertEquals(Short.valueOf((short) 30), result.get(2));
+            try {
+                driver.getShortList(testKey, ",");
+                fail("Should throw an exception for invalid input");
+            } catch (Exception ex) {
+                assertTrue("Exception message should contain the key name. Got: " + ex.getMessage(),
+                    ex.getMessage() != null && ex.getMessage().contains(testKey));
+            }
         }
     }
     public static class Original extends CommonLogic {

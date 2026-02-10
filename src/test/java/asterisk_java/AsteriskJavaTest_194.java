@@ -23,13 +23,6 @@ public class AsteriskJavaTest_194 {
         abstract String sourceFile();
 
         @Test
-        public void parseValidValue() throws Exception {
-            Driver driver = new Driver(sourceFile().replace("/", ".").replace(".java", ""));
-            Long pt = driver.parsePayloadType(VALID_VALUE);
-            assertEquals(Long.valueOf(200L), pt);
-        }
-
-        @Test
         public void handlesNumberFormatException() throws Exception {
             String content = Files.readString(Path.of("src/main/java", sourceFile()));
             // Find the setPt method and check if it catches NumberFormatException

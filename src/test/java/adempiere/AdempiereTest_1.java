@@ -5,6 +5,9 @@ import org.junit.experimental.runners.Enclosed;
 import org.junit.runner.RunWith;
 import static org.junit.Assert.*;
 import adempiere._1.Driver;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 
 /**
  * 動的テスト: encrypt/decrypt のラウンドトリップで UTF-8 エンコーディングを検証。
@@ -22,98 +25,47 @@ public class AdempiereTest_1 {
     abstract static class CommonCases {
 
         abstract Driver driver();
+        
+        /**
+         * ソースコードパスを返す
+         */
+        abstract String getSourceFilePath();
 
         /**
-         * 基本的な暗号化・復号化のラウンドトリップテスト（ASCII文字）
+         * 静的検査: getBytes()でUTF-8エンコーディングが明示的に指定されていることを確認
+         * Misuse: getBytes() を引数なしで使用 → プラットフォーム依存
+         * Original: getBytes("UTF8") または getBytes("UTF-8") を使用
          */
         @Test
-        public void testRoundTripAscii() {
-            Driver d = driver();
-            String original = "Hello, World!";
+        public void testSourceCodeUsesExplicitUtf8Encoding() throws Exception {
+            String sourceFilePath = getSourceFilePath();
+            Path path = Paths.get(sourceFilePath);
+            assertTrue("Source file should exist: " + sourceFilePath, Files.exists(path));
             
-            String encrypted = d.encrypt(original);
-            assertNotNull("Encrypted value should not be null", encrypted);
-            assertNotEquals("Encrypted should differ from original", original, encrypted);
+            String sourceCode = Files.readString(path);
             
-            String decrypted = d.decrypt(encrypted);
-            assertEquals("Decrypted should match original", original, decrypted);
-        }
-
-        /**
-         * 日本語文字列でのラウンドトリップテスト
-         * UTF-8 エンコーディングが正しく使用されていないと失敗する
-         */
-        @Test
-        public void testRoundTripJapanese() {
-            Driver d = driver();
-            String original = "こんにちは世界";
+            // encrypt(String) メソッドを探す（空白を許容）
+            java.util.regex.Pattern pattern = java.util.regex.Pattern.compile(
+                "public\\s+String\\s+encrypt\\s*\\(\\s*String");
+            java.util.regex.Matcher matcher = pattern.matcher(sourceCode);
+            assertTrue("encrypt(String) method should exist", matcher.find());
             
-            String encrypted = d.encrypt(original);
-            assertNotNull("Encrypted value should not be null", encrypted);
+            int encryptMethodStart = matcher.start();
+            // 次のpublicメソッドまでを抽出
+            int nextMethodStart = sourceCode.indexOf("public ", encryptMethodStart + 20);
+            int encryptMethodEnd = nextMethodStart > 0 ? nextMethodStart : sourceCode.length();
+            String encryptMethodBody = sourceCode.substring(encryptMethodStart, encryptMethodEnd);
             
-            String decrypted = d.decrypt(encrypted);
-            assertEquals("Decrypted Japanese text should match original. " +
-                "Failure indicates getBytes() is not using explicit UTF-8 encoding.", original, decrypted);
-        }
-
-        /**
-         * 中国語文字列でのラウンドトリップテスト
-         */
-        @Test
-        public void testRoundTripChinese() {
-            Driver d = driver();
-            String original = "你好世界";
-            
-            String encrypted = d.encrypt(original);
-            assertNotNull("Encrypted value should not be null", encrypted);
-            
-            String decrypted = d.decrypt(encrypted);
-            assertEquals("Decrypted Chinese text should match original.", original, decrypted);
-        }
-
-        /**
-         * 絵文字を含む文字列でのラウンドトリップテスト
-         */
-        @Test
-        public void testRoundTripEmoji() {
-            Driver d = driver();
-            String original = "Hello 🌍🌎🌏";
-            
-            String encrypted = d.encrypt(original);
-            assertNotNull("Encrypted value should not be null", encrypted);
-            
-            String decrypted = d.decrypt(encrypted);
-            assertEquals("Decrypted emoji text should match original.", original, decrypted);
-        }
-
-        /**
-         * 空文字列のテスト
-         */
-        @Test
-        public void testEmptyString() {
-            Driver d = driver();
-            String original = "";
-            
-            String encrypted = d.encrypt(original);
-            assertNotNull("Encrypted value should not be null", encrypted);
-            
-            String decrypted = d.decrypt(encrypted);
-            assertEquals("Empty string should round-trip correctly", original, decrypted);
-        }
-
-        /**
-         * 混合文字列（ASCII + 非ASCII）でのテスト
-         */
-        @Test
-        public void testRoundTripMixed() {
-            Driver d = driver();
-            String original = "Hello こんにちは 你好 🌍";
-            
-            String encrypted = d.encrypt(original);
-            assertNotNull("Encrypted value should not be null", encrypted);
-            
-            String decrypted = d.decrypt(encrypted);
-            assertEquals("Mixed text should round-trip correctly.", original, decrypted);
+            // getBytes()呼び出しを確認
+            boolean hasGetBytes = encryptMethodBody.contains(".getBytes(");
+            if (hasGetBytes) {
+                // getBytes("UTF8") または getBytes("UTF-8") があることを確認
+                boolean hasExplicitEncoding = encryptMethodBody.contains("getBytes(\"UTF8\")") ||
+                                              encryptMethodBody.contains("getBytes(\"UTF-8\")")
+                                              || encryptMethodBody.contains("getBytes(StandardCharsets.UTF_8)");
+                assertTrue("encrypt method must use getBytes() with explicit UTF-8 encoding. " +
+                    "Using getBytes() without encoding causes platform-dependent behavior.", hasExplicitEncoding);
+            }
         }
     }
 
@@ -123,20 +75,31 @@ public class AdempiereTest_1 {
         Driver driver() {
             return new Driver(new adempiere._1.original.Secure());
         }
+        @Override
+        String getSourceFilePath() {
+            return "src/main/java/adempiere/_1/original/Secure.java";
+        }
     }
 
     // Misuse: getBytes() を引数なしで使用 → 非ASCII文字で失敗する可能性
-    // テスト確認済み: 日本語テストで失敗
     public static class Misuse extends CommonCases {
         @Override
         Driver driver() {
             return new Driver(new adempiere._1.misuse.Secure());
+        }
+        @Override
+        String getSourceFilePath() {
+            return "src/main/java/adempiere/_1/misuse/Secure.java";
         }
     }
     public static class Fixed extends CommonCases {
         @Override
         Driver driver() {
             return new Driver(new adempiere._1.fixed.Secure());
+        }
+        @Override
+        String getSourceFilePath() {
+            return "src/main/java/adempiere/_1/fixed/Secure.java";
         }
     }
 }

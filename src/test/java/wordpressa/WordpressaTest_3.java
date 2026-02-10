@@ -26,7 +26,8 @@ import static org.junit.Assert.*;
  * 
  * This test uses dynamic testing via reflection to verify the bounds check.
  */
-class WordpressaTest_3 {
+@RunWith(Enclosed.class)
+public class WordpressaTest_3 {
 
     abstract static class CommonLogic {
 

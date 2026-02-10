@@ -10,7 +10,8 @@ import org.junit.runner.RunWith;
 import java.io.IOException;
 
 
-class OnosendaiTest_1 {
+@RunWith(Enclosed.class)
+public class OnosendaiTest_1 {
 
     private static final String BASE_PACKAGE = "onosendai._1";
     private static final String TARGET_CLASS = ".AlarmReceiver";

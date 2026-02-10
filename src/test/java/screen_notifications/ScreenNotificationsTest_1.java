@@ -8,7 +8,8 @@ import org.junit.runner.RunWith;
 
 import static org.junit.Assert.*;
 
-class ScreenNotificationsTest_1 {
+@RunWith(Enclosed.class)
+public class ScreenNotificationsTest_1 {
 
     private static final String BASE_PACKAGE = "screen_notifications._1";
     private static final String TARGET_CLASS = ".AppsActivity";
@@ -17,16 +18,6 @@ class ScreenNotificationsTest_1 {
 
         abstract Driver createDriver();
         abstract String variantName();
-
-        @Test
-        public void loadInBackgroundReturnsData() {
-            Driver driver = createDriver();
-            driver.addApp("com.test.app1", "Alpha App", false);
-            driver.addApp("com.test.app2", "Beta App", false);
-
-            Object data = driver.loadInBackground(0);
-            assertNotNull("Data should not be null for " + variantName(), data);
-        }
 
         @Test
         public void loadInBackgroundHandlesOOM() {

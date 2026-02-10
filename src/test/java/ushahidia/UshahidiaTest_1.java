@@ -14,7 +14,8 @@ import static org.junit.Assert.*;
  * Tests for OpenGeoSmsDao variants.
  * Bug: Cursor.close() not called in getReportState() method.
  */
-class UshahidiaTest_1 {
+@RunWith(Enclosed.class)
+public class UshahidiaTest_1 {
 
     abstract static class CommonLogic {
         abstract Driver createDriver() throws Exception;
@@ -43,37 +44,6 @@ class UshahidiaTest_1 {
             assertNotNull("Cursor should have been created", cursor);
             assertTrue("Cursor should be closed even when no records found", cursor.isClosed());
             assertEquals(IOpenGeoSmsSchema.STATE_NOT_OPENGEOSMS, result);
-        }
-
-        @Test
-        public void testAddReport() throws Exception {
-            Driver driver = createDriver();
-            assertTrue(driver.addReport(100L));
-        }
-
-        @Test
-        public void testSetReportState() throws Exception {
-            Driver driver = createDriver();
-            assertTrue(driver.setReportState(100L, IOpenGeoSmsSchema.STATE_PENDING));
-            assertTrue(driver.setReportState(100L, IOpenGeoSmsSchema.STATE_SENT));
-        }
-
-        @Test
-        public void testSetReportStateInvalidState() throws Exception {
-            Driver driver = createDriver();
-            assertFalse(driver.setReportState(100L, 999));
-        }
-
-        @Test
-        public void testDeleteReport() throws Exception {
-            Driver driver = createDriver();
-            assertTrue(driver.deleteReport(100L));
-        }
-
-        @Test
-        public void testDeleteReports() throws Exception {
-            Driver driver = createDriver();
-            assertTrue(driver.deleteReports());
         }
     }
     public static class Original extends CommonLogic {

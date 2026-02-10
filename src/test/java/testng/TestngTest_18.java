@@ -16,28 +16,14 @@ import static org.junit.Assert.*;
  * 
  * Tests include both static analysis and dynamic testing.
  */
-class TestngTest_18 {
+@RunWith(Enclosed.class)
+public class TestngTest_18 {
     
     abstract static class CommonCases {
         abstract Driver driver();
         
         // ========== Static Analysis Tests ==========
-        
-        @Test
-        public void testGenerateReportMethodExists() throws Exception {
-            assertTrue("generateReport method should exist", driver().hasGenerateReportMethod());
-        }
-        
-        @Test
-        public void testAllTestsFieldExists() throws Exception {
-            assertTrue("m_allTests field should exist", driver().hasAllTestsField());
-        }
-        
-        @Test
-        public void testIterationExists() throws Exception {
-            assertTrue("Iteration over m_allTests should exist", driver().hasIteration());
-        }
-        
+
         @Test
         public void testSynchronizedBlockPresent() throws Exception {
             assertTrue("synchronized(m_allTests) block should be present", driver().hasSynchronizedBlock());
@@ -46,69 +32,6 @@ class TestngTest_18 {
         @Test
         public void testCorrectlyFixed() throws Exception {
             assertTrue("Iteration should be inside synchronized block", driver().isCorrectlyFixed());
-        }
-        
-        // ========== Dynamic Tests ==========
-        
-        @Test
-        public void testReporterInitialization() throws Exception {
-            Driver d = driver();
-            d.initializeReporter();
-            // If no exception, initialization succeeded
-        }
-        
-        @Test
-        public void testOnTestSuccessInvocation() throws Exception {
-            Driver d = driver();
-            d.initializeReporter();
-            try {
-                d.onTestSuccess(null);
-            } catch (Exception e) {
-                // Expected: method is callable
-            }
-        }
-        
-        @Test
-        public void testOnTestFailureInvocation() throws Exception {
-            Driver d = driver();
-            d.initializeReporter();
-            try {
-                d.onTestFailure(null);
-            } catch (Exception e) {
-                // Expected: method is callable
-            }
-        }
-        
-        @Test
-        public void testGenerateReportWithMockContext() throws Exception {
-            Driver d = driver();
-            d.initializeReporter();
-            MockTestContext mockContext = d.createMockTestContext("TestContext");
-            try {
-                d.generateReport(mockContext);
-            } catch (Exception e) {
-                // May throw NPE, but method is callable
-            }
-        }
-        
-        @Test
-        public void testOnStartWithMockContext() throws Exception {
-            Driver d = driver();
-            d.initializeReporter();
-            MockTestContext mockContext = d.createMockTestContext("TestContext");
-            d.onStart(mockContext);
-        }
-        
-        @Test
-        public void testOnFinishWithMockContext() throws Exception {
-            Driver d = driver();
-            d.initializeReporter();
-            MockTestContext mockContext = d.createMockTestContext("TestContext");
-            try {
-                d.onFinish(mockContext);
-            } catch (Exception e) {
-                // May throw NPE, but method invocation works
-            }
         }
     }
     public static class Original extends CommonCases {

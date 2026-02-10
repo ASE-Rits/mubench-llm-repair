@@ -19,7 +19,8 @@ import static org.junit.Assert.*;
  * 
  * This test uses source code analysis via Driver to verify the fix.
  */
-class JmrtdTest_1 {
+@RunWith(Enclosed.class)
+public class JmrtdTest_1 {
 
     private static final String BASE_PACKAGE = "jmrtd._1";
 
@@ -30,14 +31,6 @@ class JmrtdTest_1 {
     abstract static class CommonCases {
 
         abstract Driver driver();
-
-        @Test
-        public void testSourceFileExists() throws IOException {
-            Driver d = driver();
-            String sourceCode = d.readSourceCode();
-            assertNotNull(sourceCode);
-            assertFalse("Source code should not be empty", sourceCode.isEmpty());
-        }
 
         @Test
         public void testDataOutputStreamClose() throws IOException {

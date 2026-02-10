@@ -9,7 +9,8 @@ import org.junit.runner.RunWith;
 
 import static org.junit.Assert.*;
 
-class CegoTest_1 {
+@RunWith(Enclosed.class)
+public class CegoTest_1 {
 
     abstract static class CommonCases {
 
@@ -18,7 +19,7 @@ class CegoTest_1 {
         abstract String expectedMime();
 
         @Before
-        void resetLog() {
+        public void resetLog() {
             Log.reset();
         }
 

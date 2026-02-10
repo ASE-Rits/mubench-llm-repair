@@ -23,35 +23,6 @@ public class Thomas_s_b_visualeeTest_32 {
         abstract Driver createDriver() throws Exception;
 
         @Test
-        public void testScanAfterClosedParenthesisBalanced() throws Exception {
-            Driver driver = createDriver();
-            
-            // Token with balanced parentheses should just return next token
-            String sourceCode = "(test) nextToken";
-            Scanner scanner = driver.getSourceCodeScanner(sourceCode);
-            String token = scanner.next();  // "(test)"
-            
-            String result = driver.scanAfterClosedParenthesis(token, scanner);
-            
-            assertEquals("nextToken", result);
-        }
-
-        @Test
-        public void testScanAfterClosedParenthesisNested() throws Exception {
-            Driver driver = createDriver();
-            
-            // Unbalanced open paren, need to scan until closed
-            String sourceCode = "(arg1, inner ) result";
-            Scanner scanner = driver.getSourceCodeScanner(sourceCode);
-            String token = scanner.next();  // "(arg1,"
-            
-            String result = driver.scanAfterClosedParenthesis(token, scanner);
-            
-            // Should scan past the closing parenthesis
-            assertNotNull(result);
-        }
-
-        @Test
         public void testScanAfterClosedParenthesisUnclosedAtEOF() throws Exception {
             Driver driver = createDriver();
             

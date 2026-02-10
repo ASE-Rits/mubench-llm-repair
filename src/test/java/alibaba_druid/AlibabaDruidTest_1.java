@@ -58,12 +58,36 @@ public class AlibabaDruidTest_1 {
             
             String decryptMethodBody = sourceCode.substring(decryptMethodStart, decryptMethodEnd);
             
-            // catch ブロック内で Cipher.getInstance を呼び出しているかチェック
-            // Original は "cipher = Cipher.getInstance" を含む
-            boolean createNewCipherInCatch = decryptMethodBody.contains("cipher = Cipher.getInstance");
+            // catch (InvalidKeyException ブロックを見つける
+            int catchBlockStart = decryptMethodBody.indexOf("catch (InvalidKeyException");
+            assertTrue("InvalidKeyException catch block should exist", catchBlockStart >= 0);
             
-            assertTrue("decrypt method must create a new Cipher instance in the InvalidKeyException catch block. " +
-                "Reusing the same Cipher instance causes issues on IBM JDK.", createNewCipherInCatch);
+            // catch ブロックの範囲を取得（次の catch まで、または } が閉じるまで）
+            int catchBodyStart = decryptMethodBody.indexOf("{", catchBlockStart);
+            int braceCount = 0;
+            int catchBodyEnd = catchBodyStart;
+            for (int i = catchBodyStart; i < decryptMethodBody.length(); i++) {
+                char c = decryptMethodBody.charAt(i);
+                if (c == '{') braceCount++;
+                else if (c == '}') {
+                    braceCount--;
+                    if (braceCount == 0) {
+                        catchBodyEnd = i;
+                        break;
+                    }
+                }
+            }
+            
+            String catchBlockBody = decryptMethodBody.substring(catchBodyStart, catchBodyEnd);
+            
+            // catch ブロック内で Cipher.getInstance を呼び出して新しいインスタンスを作成しているかチェック
+            // "cipher = Cipher.getInstance" のパターンを探す（既存の変数への再代入）
+            boolean createNewCipherInCatch = catchBlockBody.contains("cipher = Cipher.getInstance");
+            
+            assertTrue("decrypt method must create a NEW Cipher instance in the InvalidKeyException catch block. " +
+                "Reusing the same Cipher instance causes issues on IBM JDK. " +
+                "The catch block should contain 'cipher = Cipher.getInstance(\"RSA\")' to create a new instance.", 
+                createNewCipherInCatch);
         }
     }
 

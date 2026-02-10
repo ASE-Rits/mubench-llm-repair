@@ -19,14 +19,20 @@ public class Ivantrendafilov_confuciusTest_100 {
         abstract Driver createDriver(Properties props) throws Exception;
 
         @Test
-        public void testGetShortValueWithDefaultValidInput() throws Exception {
+        public void testGetShortValueWithDefaultInvalidInputContainsKey() throws Exception {
             Properties props = new Properties();
-            props.setProperty("valid.key", "1234");
+            String testKey = "invalid.key";
+            props.setProperty(testKey, "not_a_number");
             
             Driver driver = createDriver(props);
             
-            short result = driver.getShortValue("valid.key", (short) 0);
-            assertEquals((short) 1234, result);
+            try {
+                driver.getShortValue(testKey, (short) 0);
+                fail("Should throw an exception for invalid input");
+            } catch (Exception ex) {
+                assertTrue("Exception message should contain the key name. Got: " + ex.getMessage(),
+                    ex.getMessage() != null && ex.getMessage().contains(testKey));
+            }
         }
     }
     public static class Original extends CommonLogic {

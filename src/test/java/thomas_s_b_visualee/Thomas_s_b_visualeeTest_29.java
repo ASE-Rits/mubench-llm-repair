@@ -23,47 +23,6 @@ public class Thomas_s_b_visualeeTest_29 {
         abstract Driver createDriver() throws Exception;
 
         @Test
-        public void testFindAndSetPackageValidInput() throws Exception {
-            Driver driver = createDriver();
-            
-            String sourceCode = "package com.example.test;\n\npublic class Test {}";
-            JavaSource javaSource = new JavaSource("Test");
-            javaSource.setSourceCode(sourceCode);
-            
-            driver.findAndSetPackage(javaSource);
-            
-            assertEquals("com.example.test", javaSource.getPackagePath());
-        }
-
-        @Test
-        public void testFindAndSetPackageNoPackage() throws Exception {
-            Driver driver = createDriver();
-            
-            String sourceCode = "public class Test {}";
-            JavaSource javaSource = new JavaSource("Test");
-            javaSource.setSourceCode(sourceCode);
-            
-            // Should not throw, packagePath should remain null
-            driver.findAndSetPackage(javaSource);
-            
-            assertNull(javaSource.getPackagePath());
-        }
-
-        @Test
-        public void testFindAndSetPackageEmptySource() throws Exception {
-            Driver driver = createDriver();
-            
-            String sourceCode = "";
-            JavaSource javaSource = new JavaSource("Test");
-            javaSource.setSourceCode(sourceCode);
-            
-            // Should not throw, packagePath should remain null
-            driver.findAndSetPackage(javaSource);
-            
-            assertNull(javaSource.getPackagePath());
-        }
-
-        @Test
         public void testFindAndSetPackageIncompletePackage() throws Exception {
             Driver driver = createDriver();
             

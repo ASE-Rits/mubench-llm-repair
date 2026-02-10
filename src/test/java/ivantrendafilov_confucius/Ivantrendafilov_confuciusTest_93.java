@@ -18,15 +18,27 @@ public class Ivantrendafilov_confuciusTest_93 {
 
         abstract Driver createDriver(Properties props) throws Exception;
 
+        /**
+         * 無効な入力に対して、例外メッセージにキー名が含まれていることを確認。
+         * Original/Fixed: カスタム例外でキー名を含むメッセージ
+         * Misuse: 生のNumberFormatException（キー名が含まれない）
+         */
         @Test
-        public void testGetByteValueValidInput() throws Exception {
+        public void testGetByteValueInvalidInputContainsKey() throws Exception {
             Properties props = new Properties();
-            props.setProperty("valid.key", "42");
+            String testKey = "invalid.key";
+            props.setProperty(testKey, "not_a_number");
             
             Driver driver = createDriver(props);
             
-            byte result = driver.getByteValue("valid.key");
-            assertEquals((byte) 42, result);
+            try {
+                driver.getByteValue(testKey);
+                fail("Should throw an exception for invalid input");
+            } catch (Exception ex) {
+                assertTrue("Exception message should contain the key name for debugging. " +
+                    "Got: " + ex.getMessage(),
+                    ex.getMessage() != null && ex.getMessage().contains(testKey));
+            }
         }
     }
     public static class Original extends CommonLogic {

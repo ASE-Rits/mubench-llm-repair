@@ -21,31 +21,30 @@ public class HoverruanWeiboclient4jTest_128 {
         @Test
         public void testCidHandlesInvalidInputGracefully() {
             Driver driver = getTargetDriver();
+            String invalidValue = "not_a_number";
             
-            // 不正な文字列を渡した場合、カスタムメッセージ付きの例外がスローされるべき
-            Exception exception = assertThrows(Exception.class, () -> {
-                driver.cid("not_a_number");
-            });
-            
-            // 例外メッセージに有用な情報が含まれていることを確認
-            assertNotNull("Exception should have a message", exception.getMessage());
-        }
-
-        @Test
-        public void testCidValidInput() {
-            Driver driver = getTargetDriver();
-            
-            // 有効な数値文字列を渡した場合、正常に処理されるべき
-            Object result = driver.cid("12345");
-            assertNotNull("cid should return a valid Cid object for valid input", result);
-        }
-
-        @Test
-        public void testCidLongInput() {
-            Driver driver = getTargetDriver();
-            
-            Object result = driver.cid(12345L);
-            assertNotNull("cid should return a valid Cid object for long input", result);
+            // 不正な文字列を渡した場合、エラーハンドリングされた例外がスローされるべき
+            // Misuse: 生のNumberFormatException（"For input string: ..."形式）→ 失敗
+            // Original/Fixed: 入力値を含む説明的なメッセージ付きの例外 → 成功
+            try {
+                driver.cid(invalidValue);
+                fail("Should throw an exception for invalid input");
+            } catch (RuntimeException e) {
+                // 例外メッセージに入力値が含まれていることを確認
+                // 生のNumberFormatExceptionは "For input string: X" 形式
+                // ラップされた例外は入力値を含む独自メッセージ
+                String message = e.getMessage();
+                assertNotNull("Exception should have a message", message);
+                
+                // 生の NumberFormatException の形式かどうかチェック
+                boolean isRawNFE = message.startsWith("For input string:");
+                assertFalse("cid() should provide a helpful error message containing the invalid value, " +
+                    "not the raw NumberFormatException format. Got: " + message, isRawNFE);
+                
+                assertTrue("Exception message should contain the invalid input value for debugging. " +
+                    "Got message: " + message,
+                    message.contains(invalidValue));
+            }
         }
     }
     public static class Original extends CommonLogic {

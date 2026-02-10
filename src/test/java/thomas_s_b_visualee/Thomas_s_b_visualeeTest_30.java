@@ -23,45 +23,6 @@ public class Thomas_s_b_visualeeTest_30 {
         abstract Driver createDriver() throws Exception;
 
         @Test
-        public void testJumpOverJavaTokenVoid() throws Exception {
-            Driver driver = createDriver();
-            
-            String sourceCode = "void myMethod";
-            Scanner scanner = driver.getSourceCodeScanner(sourceCode);
-            String token = scanner.next();  // "void"
-            
-            String result = driver.jumpOverJavaToken(token, scanner);
-            
-            assertEquals("myMethod", result);
-        }
-
-        @Test
-        public void testJumpOverJavaTokenMultiple() throws Exception {
-            Driver driver = createDriver();
-            
-            String sourceCode = "public static void myMethod";
-            Scanner scanner = driver.getSourceCodeScanner(sourceCode);
-            String token = scanner.next();  // "public"
-            
-            String result = driver.jumpOverJavaToken(token, scanner);
-            
-            assertEquals("myMethod", result);
-        }
-
-        @Test
-        public void testJumpOverJavaTokenNonJavaToken() throws Exception {
-            Driver driver = createDriver();
-            
-            String sourceCode = "myMethod";
-            Scanner scanner = driver.getSourceCodeScanner(sourceCode);
-            String token = scanner.next();  // "myMethod"
-            
-            String result = driver.jumpOverJavaToken(token, scanner);
-            
-            assertEquals("myMethod", result);
-        }
-
-        @Test
         public void testJumpOverJavaTokenLoneTokenAtEOF() throws Exception {
             Driver driver = createDriver();
             

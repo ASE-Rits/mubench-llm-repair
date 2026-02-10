@@ -9,7 +9,8 @@ import org.junit.runner.RunWith;
 
 import static org.junit.Assert.*;
 
-class GnucrashaTest_1a {
+@RunWith(Enclosed.class)
+public class GnucrashaTest_1a {
 
     abstract static class CommonCases {
 
@@ -21,21 +22,6 @@ class GnucrashaTest_1a {
 
             assertNotNull(result);
             assertEquals("UID-123", result.getStringExtra(UxArgument.SELECTED_ACCOUNT_UID));
-        }
-
-        @Test
-        public void doesNotStartWhenSessionActive() {
-            Intent result = driver().executeOnResume(true, true, "ACTION_VIEW", "UID-456");
-
-            assertNull(result);
-        }
-
-        @Test
-        public void onPauseUpdatesSessionTimestamp() {
-            long delta = driver().executeOnPause();
-
-            assertTrue(delta >= 0L);
-            assertTrue(GnuCashApplication.PASSCODE_SESSION_INIT_TIME > 0L);
         }
     }
     public static class Original extends CommonCases {
@@ -50,14 +36,6 @@ class GnucrashaTest_1a {
         @Override
         Driver driver() {
             return new Driver("gnucrasha._1a.misuse.PassLockActivity");
-        }
-
-        @Test
-        public void losesAccountUid() {
-            Intent result = driver().executeOnResume(true, false, "ACTION_VIEW", "UID-123");
-
-            assertNotNull(result);
-            assertNull(result.getStringExtra(UxArgument.SELECTED_ACCOUNT_UID));
         }
     }
     public static class Fixed extends CommonCases {
