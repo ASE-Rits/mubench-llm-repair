@@ -1,0 +1,48 @@
+===========================================================================
+daikon_runner.DaikonRunner.createDriverInstance(java.lang.Class, java.lang.String):::ENTER
+driverClass has only one value
+variant has only one value
+variant.toString == "fixed"
+===========================================================================
+daikon_runner.DaikonRunner.createDriverInstance(java.lang.Class, java.lang.String):::EXIT117
+===========================================================================
+daikon_runner.DaikonRunner.createDriverInstance(java.lang.Class, java.lang.String):::EXIT
+variant.toString == orig(variant.toString)
+variant.toString == "fixed"
+return has only one value
+return.getClass().getName() == hoverruan_weiboclient4j._128.Driver.class
+===========================================================================
+daikon_runner.DaikonRunner.getDefaultValue(java.lang.Class, java.lang.String):::ENTER
+type has only one value
+variant has only one value
+variant.toString == "fixed"
+===========================================================================
+daikon_runner.DaikonRunner.getDefaultValue(java.lang.Class, java.lang.String):::EXIT146
+===========================================================================
+daikon_runner.DaikonRunner.getDefaultValue(java.lang.Class, java.lang.String):::EXIT
+variant.toString == orig(variant.toString)
+variant.toString == "fixed"
+return == null
+===========================================================================
+daikon_runner.DaikonRunner.main(java.lang.String[]):::ENTER
+args has only one value
+args.getClass().getName() == java.lang.String[].class
+args[] contains no nulls and has only one value, of length 2
+args[].toString == [hoverruan_weiboclient4j._128, fixed]
+args[].toString elements one of { "fixed", "hoverruan_weiboclient4j._128" }
+size(args[]) == 2
+===========================================================================
+daikon_runner.DaikonRunner.main(java.lang.String[]):::EXIT
+args[] == orig(args[])
+args[] contains no nulls and has only one value, of length 2
+args[].toString == [hoverruan_weiboclient4j._128, fixed]
+args[].toString elements one of { "fixed", "hoverruan_weiboclient4j._128" }
+===========================================================================
+hoverruan_weiboclient4j._128.Driver:::OBJECT
+this has only one value
+this.targetClass == null
+===========================================================================
+hoverruan_weiboclient4j._128.Driver.Driver(java.lang.Class):::ENTER
+targetClass == null
+===========================================================================
+hoverruan_weiboclient4j._128.Driver.Driver(java.lang.Class):::EXIT

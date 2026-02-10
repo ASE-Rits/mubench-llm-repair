@@ -1,0 +1,96 @@
+===========================================================================
+daikon_runner.DaikonRunner.createDriverInstance(java.lang.Class, java.lang.String):::ENTER
+driverClass has only one value
+variant has only one value
+variant.toString == "misuse"
+===========================================================================
+daikon_runner.DaikonRunner.createDriverInstance(java.lang.Class, java.lang.String):::EXIT70
+===========================================================================
+daikon_runner.DaikonRunner.createDriverInstance(java.lang.Class, java.lang.String):::EXIT
+variant.toString == orig(variant.toString)
+variant.toString == "misuse"
+return has only one value
+return.getClass().getName() == testng._17.Driver.class
+===========================================================================
+daikon_runner.DaikonRunner.main(java.lang.String[]):::ENTER
+args has only one value
+args.getClass().getName() == java.lang.String[].class
+args[] contains no nulls and has only one value, of length 2
+args[].toString == [testng._17, misuse]
+args[].toString elements one of { "misuse", "testng._17" }
+size(args[]) == 2
+===========================================================================
+daikon_runner.DaikonRunner.main(java.lang.String[]):::EXIT
+args[] == orig(args[])
+args[] contains no nulls and has only one value, of length 2
+args[].toString == [testng._17, misuse]
+args[].toString elements one of { "misuse", "testng._17" }
+===========================================================================
+testng._17.Driver:::CLASS
+testng._17.Driver.BASE_PACKAGE has only one value
+testng._17.Driver.BASE_PACKAGE.toString == "testng._17"
+===========================================================================
+testng._17.Driver:::OBJECT
+this has only one value
+this.variant has only one value
+this.variant.toString == "misuse"
+this.reporterInstance.getClass().getName() == testng._17.misuse.JUnitXMLReporter.class
+===========================================================================
+testng._17.Driver.Driver(java.lang.String):::ENTER
+variant has only one value
+variant.toString == "misuse"
+===========================================================================
+testng._17.Driver.Driver(java.lang.String):::EXIT
+variant.toString == orig(variant.toString)
+this.reporterInstance == null
+this.reporterClass == null
+variant.toString == "misuse"
+===========================================================================
+testng._17.Driver.initializeReporter():::ENTER
+this.reporterInstance == null
+this.reporterClass == null
+===========================================================================
+testng._17.Driver.initializeReporter():::EXIT
+testng._17.Driver.BASE_PACKAGE == orig(testng._17.Driver.BASE_PACKAGE)
+testng._17.Driver.BASE_PACKAGE.toString == orig(testng._17.Driver.BASE_PACKAGE.toString)
+this.variant == orig(this.variant)
+this.variant.toString == orig(this.variant.toString)
+this.reporterInstance has only one value
+this.reporterClass has only one value
+===========================================================================
+testng._17.misuse.JUnitXMLReporter:::CLASS
+testng._17.misuse.JUnitXMLReporter.ENTITY has only one value
+testng._17.misuse.JUnitXMLReporter.LESS has only one value
+testng._17.misuse.JUnitXMLReporter.GREATER has only one value
+testng._17.misuse.JUnitXMLReporter.SINGLE_QUOTE has only one value
+testng._17.misuse.JUnitXMLReporter.QUOTE has only one value
+testng._17.misuse.JUnitXMLReporter.ATTR_ESCAPES has only one value
+testng._17.misuse.JUnitXMLReporter.ATTR_ESCAPES.getClass().getName() == java.util.HashMap.class
+===========================================================================
+testng._17.misuse.JUnitXMLReporter:::OBJECT
+testng._17.misuse.JUnitXMLReporter.ATTR_ESCAPES.getClass().getName() == this.m_fileNameMap.getClass().getName()
+this.m_allTests.getClass().getName() == this.m_configIssues.getClass().getName()
+this has only one value
+this.m_numPassed == 0
+this.m_numFailed == 0
+this.m_numSkipped == 0
+this.m_numFailedButIgnored == 0
+this.m_allTests has only one value
+this.m_allTests[] == []
+this.m_allTests[].getClass().getName() == []
+this.m_allTests.getClass().getName() == java.util.Collections$SynchronizedRandomAccessList.class
+this.m_configIssues has only one value
+this.m_configIssues[] == []
+this.m_configIssues[].getClass().getName() == []
+this.m_fileNameMap has only one value
+this.m_fileNameIncrementer == 0
+===========================================================================
+testng._17.misuse.JUnitXMLReporter.JUnitXMLReporter():::EXIT
+===========================================================================
+testng._17.requirements.org.testng.collections.Lists.newArrayList():::EXIT
+return[] == []
+return[].getClass().getName() == []
+return.getClass().getName() == java.util.ArrayList.class
+===========================================================================
+testng._17.requirements.org.testng.collections.Maps.newHashMap():::EXIT
+return.getClass().getName() == java.util.HashMap.class

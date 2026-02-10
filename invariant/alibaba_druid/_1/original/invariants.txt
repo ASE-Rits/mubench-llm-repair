@@ -1,0 +1,48 @@
+===========================================================================
+alibaba_druid._1.Driver:::OBJECT
+this has only one value
+this.targetClass == null
+===========================================================================
+alibaba_druid._1.Driver.Driver(java.lang.Class):::ENTER
+initialTargetClass == null
+===========================================================================
+alibaba_druid._1.Driver.Driver(java.lang.Class):::EXIT
+===========================================================================
+daikon_runner.DaikonRunner.createDriverInstance(java.lang.Class, java.lang.String):::ENTER
+driverClass has only one value
+variant has only one value
+variant.toString == "original"
+===========================================================================
+daikon_runner.DaikonRunner.createDriverInstance(java.lang.Class, java.lang.String):::EXIT117
+===========================================================================
+daikon_runner.DaikonRunner.createDriverInstance(java.lang.Class, java.lang.String):::EXIT
+variant.toString == orig(variant.toString)
+variant.toString == "original"
+return has only one value
+return.getClass().getName() == alibaba_druid._1.Driver.class
+===========================================================================
+daikon_runner.DaikonRunner.getDefaultValue(java.lang.Class, java.lang.String):::ENTER
+type has only one value
+variant has only one value
+variant.toString == "original"
+===========================================================================
+daikon_runner.DaikonRunner.getDefaultValue(java.lang.Class, java.lang.String):::EXIT146
+===========================================================================
+daikon_runner.DaikonRunner.getDefaultValue(java.lang.Class, java.lang.String):::EXIT
+variant.toString == orig(variant.toString)
+variant.toString == "original"
+return == null
+===========================================================================
+daikon_runner.DaikonRunner.main(java.lang.String[]):::ENTER
+args has only one value
+args.getClass().getName() == java.lang.String[].class
+args[] contains no nulls and has only one value, of length 2
+args[].toString == [alibaba_druid._1, original]
+args[].toString elements one of { "alibaba_druid._1", "original" }
+size(args[]) == 2
+===========================================================================
+daikon_runner.DaikonRunner.main(java.lang.String[]):::EXIT
+args[] == orig(args[])
+args[] contains no nulls and has only one value, of length 2
+args[].toString == [alibaba_druid._1, original]
+args[].toString elements one of { "alibaba_druid._1", "original" }

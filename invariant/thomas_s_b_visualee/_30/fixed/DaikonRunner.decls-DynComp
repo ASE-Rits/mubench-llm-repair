@@ -1,0 +1,3142 @@
+// Declarations for daikon_runner.DaikonRunner
+// Declarations written 2026-02-11T03:57:42.302472858 by daikon.DynComp
+
+decl-version 2.0
+var-comparability implicit
+
+ppt daikon_runner.DaikonRunner:::CLASS
+ppt-type class
+
+ppt daikon_runner.DaikonRunner:::OBJECT
+ppt-type object
+variable this
+  var-kind variable
+  dec-type daikon_runner.DaikonRunner
+  rep-type hashcode
+  flags is_param non_null
+  comparability 2
+
+ppt daikon_runner.DaikonRunner.DaikonRunner():::ENTER
+ppt-type enter
+
+ppt daikon_runner.DaikonRunner.DaikonRunner():::EXIT14
+ppt-type subexit
+variable this
+  var-kind variable
+  dec-type daikon_runner.DaikonRunner
+  rep-type hashcode
+  flags is_param non_null
+  comparability 2
+
+ppt daikon_runner.DaikonRunner.main(java.lang.String[]):::ENTER
+ppt-type enter
+variable args
+  var-kind variable
+  dec-type java.lang.String[]
+  rep-type hashcode
+  flags is_param
+  comparability 2
+variable args.getClass().getName()
+  var-kind function getClass().getName()
+  dec-type java.lang.Class
+  rep-type java.lang.String
+  function-args args
+  flags synthetic classname non_null
+  comparability 1
+variable args[..]
+  var-kind array
+  array 1
+  dec-type java.lang.String[]
+  rep-type hashcode[]
+  comparability 3[5]
+variable args[..].toString
+  var-kind function toString()
+  array 1
+  dec-type java.lang.String[]
+  rep-type java.lang.String[]
+  function-args args[]
+  flags synthetic to_string
+  comparability 4[6]
+
+ppt daikon_runner.DaikonRunner.main(java.lang.String[]):::EXIT61
+ppt-type subexit
+variable args
+  var-kind variable
+  dec-type java.lang.String[]
+  rep-type hashcode
+  flags is_param
+  comparability 2
+variable args.getClass().getName()
+  var-kind function getClass().getName()
+  dec-type java.lang.Class
+  rep-type java.lang.String
+  function-args args
+  flags synthetic classname non_null
+  comparability 1
+variable args[..]
+  var-kind array
+  array 1
+  dec-type java.lang.String[]
+  rep-type hashcode[]
+  comparability 3[5]
+variable args[..].toString
+  var-kind function toString()
+  array 1
+  dec-type java.lang.String[]
+  rep-type java.lang.String[]
+  function-args args[]
+  flags synthetic to_string
+  comparability 4[6]
+
+ppt daikon_runner.DaikonRunner.createDriverInstance(java.lang.Class, java.lang.String):::ENTER
+ppt-type enter
+variable driverClass
+  var-kind variable
+  dec-type java.lang.Class
+  rep-type hashcode
+  flags is_param
+  comparability 2
+variable variant
+  var-kind variable
+  dec-type java.lang.String
+  rep-type hashcode
+  flags is_param
+  comparability 3
+variable variant.toString
+  var-kind function toString()
+  dec-type java.lang.String
+  rep-type java.lang.String
+  function-args variant
+  flags synthetic to_string
+  comparability 4
+
+ppt daikon_runner.DaikonRunner.createDriverInstance(java.lang.Class, java.lang.String):::EXIT70
+ppt-type subexit
+variable driverClass
+  var-kind variable
+  dec-type java.lang.Class
+  rep-type hashcode
+  flags is_param
+  comparability 2
+variable variant
+  var-kind variable
+  dec-type java.lang.String
+  rep-type hashcode
+  flags is_param
+  comparability 4
+variable variant.toString
+  var-kind function toString()
+  dec-type java.lang.String
+  rep-type java.lang.String
+  function-args variant
+  flags synthetic to_string
+  comparability 5
+variable return
+  var-kind return
+  dec-type java.lang.Object
+  rep-type hashcode
+  comparability 3
+variable return.getClass().getName()
+  var-kind function getClass().getName()
+  dec-type java.lang.Class
+  rep-type java.lang.String
+  function-args return
+  flags synthetic classname non_null
+  comparability 1
+
+ppt daikon_runner.DaikonRunner.createDriverInstance(java.lang.Class, java.lang.String):::EXIT85
+ppt-type subexit
+variable driverClass
+  var-kind variable
+  dec-type java.lang.Class
+  rep-type hashcode
+  flags is_param
+  comparability 2
+variable variant
+  var-kind variable
+  dec-type java.lang.String
+  rep-type hashcode
+  flags is_param
+  comparability 4
+variable variant.toString
+  var-kind function toString()
+  dec-type java.lang.String
+  rep-type java.lang.String
+  function-args variant
+  flags synthetic to_string
+  comparability 5
+variable return
+  var-kind return
+  dec-type java.lang.Object
+  rep-type hashcode
+  comparability 3
+variable return.getClass().getName()
+  var-kind function getClass().getName()
+  dec-type java.lang.Class
+  rep-type java.lang.String
+  function-args return
+  flags synthetic classname non_null
+  comparability 1
+
+ppt daikon_runner.DaikonRunner.createDriverInstance(java.lang.Class, java.lang.String):::EXIT91
+ppt-type subexit
+variable driverClass
+  var-kind variable
+  dec-type java.lang.Class
+  rep-type hashcode
+  flags is_param
+  comparability 2
+variable variant
+  var-kind variable
+  dec-type java.lang.String
+  rep-type hashcode
+  flags is_param
+  comparability 4
+variable variant.toString
+  var-kind function toString()
+  dec-type java.lang.String
+  rep-type java.lang.String
+  function-args variant
+  flags synthetic to_string
+  comparability 5
+variable return
+  var-kind return
+  dec-type java.lang.Object
+  rep-type hashcode
+  comparability 3
+variable return.getClass().getName()
+  var-kind function getClass().getName()
+  dec-type java.lang.Class
+  rep-type java.lang.String
+  function-args return
+  flags synthetic classname non_null
+  comparability 1
+
+ppt daikon_runner.DaikonRunner.createDriverInstance(java.lang.Class, java.lang.String):::EXIT97
+ppt-type subexit
+variable driverClass
+  var-kind variable
+  dec-type java.lang.Class
+  rep-type hashcode
+  flags is_param
+  comparability 2
+variable variant
+  var-kind variable
+  dec-type java.lang.String
+  rep-type hashcode
+  flags is_param
+  comparability 4
+variable variant.toString
+  var-kind function toString()
+  dec-type java.lang.String
+  rep-type java.lang.String
+  function-args variant
+  flags synthetic to_string
+  comparability 5
+variable return
+  var-kind return
+  dec-type java.lang.Object
+  rep-type hashcode
+  comparability 3
+variable return.getClass().getName()
+  var-kind function getClass().getName()
+  dec-type java.lang.Class
+  rep-type java.lang.String
+  function-args return
+  flags synthetic classname non_null
+  comparability 1
+
+ppt daikon_runner.DaikonRunner.createDriverInstance(java.lang.Class, java.lang.String):::EXIT103
+ppt-type subexit
+variable driverClass
+  var-kind variable
+  dec-type java.lang.Class
+  rep-type hashcode
+  flags is_param
+  comparability 2
+variable variant
+  var-kind variable
+  dec-type java.lang.String
+  rep-type hashcode
+  flags is_param
+  comparability 4
+variable variant.toString
+  var-kind function toString()
+  dec-type java.lang.String
+  rep-type java.lang.String
+  function-args variant
+  flags synthetic to_string
+  comparability 5
+variable return
+  var-kind return
+  dec-type java.lang.Object
+  rep-type hashcode
+  comparability 3
+variable return.getClass().getName()
+  var-kind function getClass().getName()
+  dec-type java.lang.Class
+  rep-type java.lang.String
+  function-args return
+  flags synthetic classname non_null
+  comparability 1
+
+ppt daikon_runner.DaikonRunner.createDriverInstance(java.lang.Class, java.lang.String):::EXIT117
+ppt-type subexit
+variable driverClass
+  var-kind variable
+  dec-type java.lang.Class
+  rep-type hashcode
+  flags is_param
+  comparability 2
+variable variant
+  var-kind variable
+  dec-type java.lang.String
+  rep-type hashcode
+  flags is_param
+  comparability 4
+variable variant.toString
+  var-kind function toString()
+  dec-type java.lang.String
+  rep-type java.lang.String
+  function-args variant
+  flags synthetic to_string
+  comparability 5
+variable return
+  var-kind return
+  dec-type java.lang.Object
+  rep-type hashcode
+  comparability 3
+variable return.getClass().getName()
+  var-kind function getClass().getName()
+  dec-type java.lang.Class
+  rep-type java.lang.String
+  function-args return
+  flags synthetic classname non_null
+  comparability 1
+
+ppt daikon_runner.DaikonRunner.createDriverInstance(java.lang.Class, java.lang.String):::EXIT121
+ppt-type subexit
+variable driverClass
+  var-kind variable
+  dec-type java.lang.Class
+  rep-type hashcode
+  flags is_param
+  comparability 2
+variable variant
+  var-kind variable
+  dec-type java.lang.String
+  rep-type hashcode
+  flags is_param
+  comparability 4
+variable variant.toString
+  var-kind function toString()
+  dec-type java.lang.String
+  rep-type java.lang.String
+  function-args variant
+  flags synthetic to_string
+  comparability 5
+variable return
+  var-kind return
+  dec-type java.lang.Object
+  rep-type hashcode
+  comparability 3
+variable return.getClass().getName()
+  var-kind function getClass().getName()
+  dec-type java.lang.Class
+  rep-type java.lang.String
+  function-args return
+  flags synthetic classname non_null
+  comparability 1
+
+ppt daikon_runner.DaikonRunner.getDefaultValue(java.lang.Class, java.lang.String):::ENTER
+ppt-type enter
+variable type
+  var-kind variable
+  dec-type java.lang.Class
+  rep-type hashcode
+  flags is_param
+  comparability 2
+variable variant
+  var-kind variable
+  dec-type java.lang.String
+  rep-type hashcode
+  flags is_param
+  comparability 3
+variable variant.toString
+  var-kind function toString()
+  dec-type java.lang.String
+  rep-type java.lang.String
+  function-args variant
+  flags synthetic to_string
+  comparability 4
+
+ppt daikon_runner.DaikonRunner.getDefaultValue(java.lang.Class, java.lang.String):::EXIT128
+ppt-type subexit
+variable type
+  var-kind variable
+  dec-type java.lang.Class
+  rep-type hashcode
+  flags is_param
+  comparability 3
+variable variant
+  var-kind variable
+  dec-type java.lang.String
+  rep-type hashcode
+  flags is_param
+  comparability 4
+variable variant.toString
+  var-kind function toString()
+  dec-type java.lang.String
+  rep-type java.lang.String
+  function-args variant
+  flags synthetic to_string
+  comparability 5
+variable return
+  var-kind return
+  dec-type java.lang.Object
+  rep-type hashcode
+  comparability 2
+variable return.getClass().getName()
+  var-kind function getClass().getName()
+  dec-type java.lang.Class
+  rep-type java.lang.String
+  function-args return
+  flags synthetic classname non_null
+  comparability 1
+
+ppt daikon_runner.DaikonRunner.getDefaultValue(java.lang.Class, java.lang.String):::EXIT129
+ppt-type subexit
+variable type
+  var-kind variable
+  dec-type java.lang.Class
+  rep-type hashcode
+  flags is_param
+  comparability 3
+variable variant
+  var-kind variable
+  dec-type java.lang.String
+  rep-type hashcode
+  flags is_param
+  comparability 4
+variable variant.toString
+  var-kind function toString()
+  dec-type java.lang.String
+  rep-type java.lang.String
+  function-args variant
+  flags synthetic to_string
+  comparability 5
+variable return
+  var-kind return
+  dec-type java.lang.Object
+  rep-type hashcode
+  comparability 2
+variable return.getClass().getName()
+  var-kind function getClass().getName()
+  dec-type java.lang.Class
+  rep-type java.lang.String
+  function-args return
+  flags synthetic classname non_null
+  comparability 1
+
+ppt daikon_runner.DaikonRunner.getDefaultValue(java.lang.Class, java.lang.String):::EXIT130
+ppt-type subexit
+variable type
+  var-kind variable
+  dec-type java.lang.Class
+  rep-type hashcode
+  flags is_param
+  comparability 3
+variable variant
+  var-kind variable
+  dec-type java.lang.String
+  rep-type hashcode
+  flags is_param
+  comparability 4
+variable variant.toString
+  var-kind function toString()
+  dec-type java.lang.String
+  rep-type java.lang.String
+  function-args variant
+  flags synthetic to_string
+  comparability 5
+variable return
+  var-kind return
+  dec-type java.lang.Object
+  rep-type hashcode
+  comparability 2
+variable return.getClass().getName()
+  var-kind function getClass().getName()
+  dec-type java.lang.Class
+  rep-type java.lang.String
+  function-args return
+  flags synthetic classname non_null
+  comparability 1
+
+ppt daikon_runner.DaikonRunner.getDefaultValue(java.lang.Class, java.lang.String):::EXIT131
+ppt-type subexit
+variable type
+  var-kind variable
+  dec-type java.lang.Class
+  rep-type hashcode
+  flags is_param
+  comparability 3
+variable variant
+  var-kind variable
+  dec-type java.lang.String
+  rep-type hashcode
+  flags is_param
+  comparability 4
+variable variant.toString
+  var-kind function toString()
+  dec-type java.lang.String
+  rep-type java.lang.String
+  function-args variant
+  flags synthetic to_string
+  comparability 5
+variable return
+  var-kind return
+  dec-type java.lang.Object
+  rep-type hashcode
+  comparability 2
+variable return.getClass().getName()
+  var-kind function getClass().getName()
+  dec-type java.lang.Class
+  rep-type java.lang.String
+  function-args return
+  flags synthetic classname non_null
+  comparability 1
+
+ppt daikon_runner.DaikonRunner.getDefaultValue(java.lang.Class, java.lang.String):::EXIT132
+ppt-type subexit
+variable type
+  var-kind variable
+  dec-type java.lang.Class
+  rep-type hashcode
+  flags is_param
+  comparability 3
+variable variant
+  var-kind variable
+  dec-type java.lang.String
+  rep-type hashcode
+  flags is_param
+  comparability 4
+variable variant.toString
+  var-kind function toString()
+  dec-type java.lang.String
+  rep-type java.lang.String
+  function-args variant
+  flags synthetic to_string
+  comparability 5
+variable return
+  var-kind return
+  dec-type java.lang.Object
+  rep-type hashcode
+  comparability 2
+variable return.getClass().getName()
+  var-kind function getClass().getName()
+  dec-type java.lang.Class
+  rep-type java.lang.String
+  function-args return
+  flags synthetic classname non_null
+  comparability 1
+
+ppt daikon_runner.DaikonRunner.getDefaultValue(java.lang.Class, java.lang.String):::EXIT133
+ppt-type subexit
+variable type
+  var-kind variable
+  dec-type java.lang.Class
+  rep-type hashcode
+  flags is_param
+  comparability 3
+variable variant
+  var-kind variable
+  dec-type java.lang.String
+  rep-type hashcode
+  flags is_param
+  comparability 4
+variable variant.toString
+  var-kind function toString()
+  dec-type java.lang.String
+  rep-type java.lang.String
+  function-args variant
+  flags synthetic to_string
+  comparability 5
+variable return
+  var-kind return
+  dec-type java.lang.Object
+  rep-type hashcode
+  comparability 2
+variable return.getClass().getName()
+  var-kind function getClass().getName()
+  dec-type java.lang.Class
+  rep-type java.lang.String
+  function-args return
+  flags synthetic classname non_null
+  comparability 1
+
+ppt daikon_runner.DaikonRunner.getDefaultValue(java.lang.Class, java.lang.String):::EXIT134
+ppt-type subexit
+variable type
+  var-kind variable
+  dec-type java.lang.Class
+  rep-type hashcode
+  flags is_param
+  comparability 3
+variable variant
+  var-kind variable
+  dec-type java.lang.String
+  rep-type hashcode
+  flags is_param
+  comparability 4
+variable variant.toString
+  var-kind function toString()
+  dec-type java.lang.String
+  rep-type java.lang.String
+  function-args variant
+  flags synthetic to_string
+  comparability 5
+variable return
+  var-kind return
+  dec-type java.lang.Object
+  rep-type hashcode
+  comparability 2
+variable return.getClass().getName()
+  var-kind function getClass().getName()
+  dec-type java.lang.Class
+  rep-type java.lang.String
+  function-args return
+  flags synthetic classname non_null
+  comparability 1
+
+ppt daikon_runner.DaikonRunner.getDefaultValue(java.lang.Class, java.lang.String):::EXIT135
+ppt-type subexit
+variable type
+  var-kind variable
+  dec-type java.lang.Class
+  rep-type hashcode
+  flags is_param
+  comparability 3
+variable variant
+  var-kind variable
+  dec-type java.lang.String
+  rep-type hashcode
+  flags is_param
+  comparability 4
+variable variant.toString
+  var-kind function toString()
+  dec-type java.lang.String
+  rep-type java.lang.String
+  function-args variant
+  flags synthetic to_string
+  comparability 5
+variable return
+  var-kind return
+  dec-type java.lang.Object
+  rep-type hashcode
+  comparability 2
+variable return.getClass().getName()
+  var-kind function getClass().getName()
+  dec-type java.lang.Class
+  rep-type java.lang.String
+  function-args return
+  flags synthetic classname non_null
+  comparability 1
+
+ppt daikon_runner.DaikonRunner.getDefaultValue(java.lang.Class, java.lang.String):::EXIT136
+ppt-type subexit
+variable type
+  var-kind variable
+  dec-type java.lang.Class
+  rep-type hashcode
+  flags is_param
+  comparability 3
+variable variant
+  var-kind variable
+  dec-type java.lang.String
+  rep-type hashcode
+  flags is_param
+  comparability 4
+variable variant.toString
+  var-kind function toString()
+  dec-type java.lang.String
+  rep-type java.lang.String
+  function-args variant
+  flags synthetic to_string
+  comparability 5
+variable return
+  var-kind return
+  dec-type java.lang.Object
+  rep-type hashcode
+  comparability 2
+variable return.getClass().getName()
+  var-kind function getClass().getName()
+  dec-type java.lang.Class
+  rep-type java.lang.String
+  function-args return
+  flags synthetic classname non_null
+  comparability 1
+
+ppt daikon_runner.DaikonRunner.getDefaultValue(java.lang.Class, java.lang.String):::EXIT137
+ppt-type subexit
+variable type
+  var-kind variable
+  dec-type java.lang.Class
+  rep-type hashcode
+  flags is_param
+  comparability 3
+variable variant
+  var-kind variable
+  dec-type java.lang.String
+  rep-type hashcode
+  flags is_param
+  comparability 4
+variable variant.toString
+  var-kind function toString()
+  dec-type java.lang.String
+  rep-type java.lang.String
+  function-args variant
+  flags synthetic to_string
+  comparability 5
+variable return
+  var-kind return
+  dec-type java.lang.Object
+  rep-type hashcode
+  comparability 2
+variable return.getClass().getName()
+  var-kind function getClass().getName()
+  dec-type java.lang.Class
+  rep-type java.lang.String
+  function-args return
+  flags synthetic classname non_null
+  comparability 1
+
+ppt daikon_runner.DaikonRunner.getDefaultValue(java.lang.Class, java.lang.String):::EXIT138
+ppt-type subexit
+variable type
+  var-kind variable
+  dec-type java.lang.Class
+  rep-type hashcode
+  flags is_param
+  comparability 3
+variable variant
+  var-kind variable
+  dec-type java.lang.String
+  rep-type hashcode
+  flags is_param
+  comparability 4
+variable variant.toString
+  var-kind function toString()
+  dec-type java.lang.String
+  rep-type java.lang.String
+  function-args variant
+  flags synthetic to_string
+  comparability 5
+variable return
+  var-kind return
+  dec-type java.lang.Object
+  rep-type hashcode
+  comparability 2
+variable return.getClass().getName()
+  var-kind function getClass().getName()
+  dec-type java.lang.Class
+  rep-type java.lang.String
+  function-args return
+  flags synthetic classname non_null
+  comparability 1
+
+ppt daikon_runner.DaikonRunner.getDefaultValue(java.lang.Class, java.lang.String):::EXIT139
+ppt-type subexit
+variable type
+  var-kind variable
+  dec-type java.lang.Class
+  rep-type hashcode
+  flags is_param
+  comparability 3
+variable variant
+  var-kind variable
+  dec-type java.lang.String
+  rep-type hashcode
+  flags is_param
+  comparability 4
+variable variant.toString
+  var-kind function toString()
+  dec-type java.lang.String
+  rep-type java.lang.String
+  function-args variant
+  flags synthetic to_string
+  comparability 5
+variable return
+  var-kind return
+  dec-type java.lang.Object
+  rep-type hashcode
+  comparability 2
+variable return.getClass().getName()
+  var-kind function getClass().getName()
+  dec-type java.lang.Class
+  rep-type java.lang.String
+  function-args return
+  flags synthetic classname non_null
+  comparability 1
+
+ppt daikon_runner.DaikonRunner.getDefaultValue(java.lang.Class, java.lang.String):::EXIT143
+ppt-type subexit
+variable type
+  var-kind variable
+  dec-type java.lang.Class
+  rep-type hashcode
+  flags is_param
+  comparability 3
+variable variant
+  var-kind variable
+  dec-type java.lang.String
+  rep-type hashcode
+  flags is_param
+  comparability 4
+variable variant.toString
+  var-kind function toString()
+  dec-type java.lang.String
+  rep-type java.lang.String
+  function-args variant
+  flags synthetic to_string
+  comparability 5
+variable return
+  var-kind return
+  dec-type java.lang.Object
+  rep-type hashcode
+  comparability 2
+variable return.getClass().getName()
+  var-kind function getClass().getName()
+  dec-type java.lang.Class
+  rep-type java.lang.String
+  function-args return
+  flags synthetic classname non_null
+  comparability 1
+
+ppt daikon_runner.DaikonRunner.getDefaultValue(java.lang.Class, java.lang.String):::EXIT145
+ppt-type subexit
+variable type
+  var-kind variable
+  dec-type java.lang.Class
+  rep-type hashcode
+  flags is_param
+  comparability 3
+variable variant
+  var-kind variable
+  dec-type java.lang.String
+  rep-type hashcode
+  flags is_param
+  comparability 4
+variable variant.toString
+  var-kind function toString()
+  dec-type java.lang.String
+  rep-type java.lang.String
+  function-args variant
+  flags synthetic to_string
+  comparability 5
+variable return
+  var-kind return
+  dec-type java.lang.Object
+  rep-type hashcode
+  comparability 2
+variable return.getClass().getName()
+  var-kind function getClass().getName()
+  dec-type java.lang.Class
+  rep-type java.lang.String
+  function-args return
+  flags synthetic classname non_null
+  comparability 1
+
+ppt daikon_runner.DaikonRunner.getDefaultValue(java.lang.Class, java.lang.String):::EXIT146
+ppt-type subexit
+variable type
+  var-kind variable
+  dec-type java.lang.Class
+  rep-type hashcode
+  flags is_param
+  comparability 3
+variable variant
+  var-kind variable
+  dec-type java.lang.String
+  rep-type hashcode
+  flags is_param
+  comparability 4
+variable variant.toString
+  var-kind function toString()
+  dec-type java.lang.String
+  rep-type java.lang.String
+  function-args variant
+  flags synthetic to_string
+  comparability 5
+variable return
+  var-kind return
+  dec-type java.lang.Object
+  rep-type hashcode
+  comparability 2
+variable return.getClass().getName()
+  var-kind function getClass().getName()
+  dec-type java.lang.Class
+  rep-type java.lang.String
+  function-args return
+  flags synthetic classname non_null
+  comparability 1
+
+ppt daikon_runner.DaikonRunner.equals(java.lang.Object):::ENTER
+ppt-type enter
+variable this
+  var-kind variable
+  dec-type daikon_runner.DaikonRunner
+  rep-type hashcode
+  flags is_param non_null
+  comparability 3
+variable obj
+  var-kind variable
+  dec-type java.lang.Object
+  rep-type hashcode
+  flags is_param
+  comparability 2
+variable obj.getClass().getName()
+  var-kind function getClass().getName()
+  dec-type java.lang.Class
+  rep-type java.lang.String
+  function-args obj
+  flags synthetic classname non_null
+  comparability 1
+
+ppt daikon_runner.DaikonRunner.equals(java.lang.Object):::EXIT1
+ppt-type subexit
+variable this
+  var-kind variable
+  dec-type daikon_runner.DaikonRunner
+  rep-type hashcode
+  flags is_param non_null
+  comparability 4
+variable obj
+  var-kind variable
+  dec-type java.lang.Object
+  rep-type hashcode
+  flags is_param
+  comparability 2
+variable obj.getClass().getName()
+  var-kind function getClass().getName()
+  dec-type java.lang.Class
+  rep-type java.lang.String
+  function-args obj
+  flags synthetic classname non_null
+  comparability 1
+variable return
+  var-kind return
+  dec-type boolean
+  rep-type boolean
+  comparability 3
+
+ppt daikon_runner.DaikonRunner.equals_dcomp_instrumented(java.lang.Object):::ENTER
+ppt-type enter
+variable this
+  var-kind variable
+  dec-type daikon_runner.DaikonRunner
+  rep-type hashcode
+  flags is_param non_null
+  comparability 3
+variable obj
+  var-kind variable
+  dec-type java.lang.Object
+  rep-type hashcode
+  flags is_param
+  comparability 2
+variable obj.getClass().getName()
+  var-kind function getClass().getName()
+  dec-type java.lang.Class
+  rep-type java.lang.String
+  function-args obj
+  flags synthetic classname non_null
+  comparability 1
+
+ppt daikon_runner.DaikonRunner.equals_dcomp_instrumented(java.lang.Object):::EXIT1
+ppt-type subexit
+variable this
+  var-kind variable
+  dec-type daikon_runner.DaikonRunner
+  rep-type hashcode
+  flags is_param non_null
+  comparability 4
+variable obj
+  var-kind variable
+  dec-type java.lang.Object
+  rep-type hashcode
+  flags is_param
+  comparability 2
+variable obj.getClass().getName()
+  var-kind function getClass().getName()
+  dec-type java.lang.Class
+  rep-type java.lang.String
+  function-args obj
+  flags synthetic classname non_null
+  comparability 1
+variable return
+  var-kind return
+  dec-type boolean
+  rep-type boolean
+  comparability 3
+
+ppt thomas_s_b_visualee._30.Driver:::CLASS
+ppt-type class
+
+ppt thomas_s_b_visualee._30.Driver:::OBJECT
+ppt-type object
+variable this
+  var-kind variable
+  dec-type thomas_s_b_visualee._30.Driver
+  rep-type hashcode
+  flags is_param non_null
+  comparability 2
+variable this.examinerClass
+  var-kind field examinerClass
+  dec-type java.lang.Class
+  rep-type hashcode
+  comparability 4
+variable this.findAndSetPackageMethod
+  var-kind field findAndSetPackageMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 6
+variable this.getSourceCodeScannerMethod
+  var-kind field getSourceCodeScannerMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 8
+variable this.getClassBodyMethod
+  var-kind field getClassBodyMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 7
+variable this.countCharMethod
+  var-kind field countCharMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 3
+variable this.scanAfterQuoteMethod
+  var-kind field scanAfterQuoteMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 12
+variable this.scanAfterClosedParenthesisMethod
+  var-kind field scanAfterClosedParenthesisMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 11
+variable this.isAJavaTokenMethod
+  var-kind field isAJavaTokenMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 9
+variable this.jumpOverJavaTokenMethod
+  var-kind field jumpOverJavaTokenMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 10
+variable this.extractClassInstanceOrEventMethod
+  var-kind field extractClassInstanceOrEventMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 5
+
+ppt thomas_s_b_visualee._30.Driver.Driver(java.lang.Class):::ENTER
+ppt-type enter
+variable examinerClass
+  var-kind variable
+  dec-type java.lang.Class
+  rep-type hashcode
+  flags is_param
+  comparability 2
+
+ppt thomas_s_b_visualee._30.Driver.Driver(java.lang.Class):::EXIT54
+ppt-type subexit
+variable this
+  var-kind variable
+  dec-type thomas_s_b_visualee._30.Driver
+  rep-type hashcode
+  flags is_param non_null
+  comparability 3
+variable this.examinerClass
+  var-kind field examinerClass
+  dec-type java.lang.Class
+  rep-type hashcode
+  comparability 5
+variable this.findAndSetPackageMethod
+  var-kind field findAndSetPackageMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 7
+variable this.getSourceCodeScannerMethod
+  var-kind field getSourceCodeScannerMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 9
+variable this.getClassBodyMethod
+  var-kind field getClassBodyMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 8
+variable this.countCharMethod
+  var-kind field countCharMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 4
+variable this.scanAfterQuoteMethod
+  var-kind field scanAfterQuoteMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 13
+variable this.scanAfterClosedParenthesisMethod
+  var-kind field scanAfterClosedParenthesisMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 12
+variable this.isAJavaTokenMethod
+  var-kind field isAJavaTokenMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 10
+variable this.jumpOverJavaTokenMethod
+  var-kind field jumpOverJavaTokenMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 11
+variable this.extractClassInstanceOrEventMethod
+  var-kind field extractClassInstanceOrEventMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 6
+variable examinerClass
+  var-kind variable
+  dec-type java.lang.Class
+  rep-type hashcode
+  flags is_param
+  comparability 2
+
+ppt thomas_s_b_visualee._30.Driver.findAndSetPackage(thomas_s_b_visualee._30.requirements.source.entity.JavaSource):::ENTER
+ppt-type enter
+variable this
+  var-kind variable
+  dec-type thomas_s_b_visualee._30.Driver
+  rep-type hashcode
+  flags is_param non_null
+  comparability 12
+variable this.examinerClass
+  var-kind field examinerClass
+  dec-type java.lang.Class
+  rep-type hashcode
+  comparability 14
+variable this.findAndSetPackageMethod
+  var-kind field findAndSetPackageMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 16
+variable this.getSourceCodeScannerMethod
+  var-kind field getSourceCodeScannerMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 18
+variable this.getClassBodyMethod
+  var-kind field getClassBodyMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 17
+variable this.countCharMethod
+  var-kind field countCharMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 13
+variable this.scanAfterQuoteMethod
+  var-kind field scanAfterQuoteMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 22
+variable this.scanAfterClosedParenthesisMethod
+  var-kind field scanAfterClosedParenthesisMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 21
+variable this.isAJavaTokenMethod
+  var-kind field isAJavaTokenMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 19
+variable this.jumpOverJavaTokenMethod
+  var-kind field jumpOverJavaTokenMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 20
+variable this.extractClassInstanceOrEventMethod
+  var-kind field extractClassInstanceOrEventMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 15
+variable javaSource
+  var-kind variable
+  dec-type thomas_s_b_visualee._30.requirements.source.entity.JavaSource
+  rep-type hashcode
+  flags is_param
+  comparability 2
+variable thomas_s_b_visualee._30.requirements.source.entity.JavaSource.HASH
+  var-kind variable
+  dec-type int
+  rep-type int
+  flags nomod
+  comparability 23
+variable thomas_s_b_visualee._30.requirements.source.entity.JavaSource.HASH_MULTIPLIER
+  var-kind variable
+  dec-type int
+  rep-type int
+  flags nomod
+  comparability 24
+variable javaSource.javaFile
+  var-kind field javaFile
+  dec-type java.nio.file.Path
+  rep-type hashcode
+  comparability 5
+variable javaSource.javaFile.getClass().getName()
+  var-kind function getClass().getName()
+  dec-type java.lang.Class
+  rep-type java.lang.String
+  function-args javaSource.javaFile
+  flags synthetic classname non_null
+  comparability 1
+variable javaSource.id
+  var-kind field id
+  dec-type int
+  rep-type int
+  comparability 4
+variable javaSource.group
+  var-kind field group
+  dec-type int
+  rep-type int
+  comparability 3
+variable javaSource.packagePath
+  var-kind field packagePath
+  dec-type java.lang.String
+  rep-type hashcode
+  comparability 8
+variable javaSource.packagePath.toString
+  var-kind function toString()
+  dec-type java.lang.String
+  rep-type java.lang.String
+  function-args javaSource.packagePath
+  flags synthetic to_string
+  comparability 9
+variable javaSource.sourceCode
+  var-kind field sourceCode
+  dec-type java.lang.String
+  rep-type hashcode
+  comparability 10
+variable javaSource.sourceCode.toString
+  var-kind function toString()
+  dec-type java.lang.String
+  rep-type java.lang.String
+  function-args javaSource.sourceCode
+  flags synthetic to_string
+  comparability 11
+variable javaSource.name
+  var-kind field name
+  dec-type java.lang.String
+  rep-type hashcode
+  comparability 6
+variable javaSource.name.toString
+  var-kind function toString()
+  dec-type java.lang.String
+  rep-type java.lang.String
+  function-args javaSource.name
+  flags synthetic to_string
+  comparability 7
+
+ppt thomas_s_b_visualee._30.Driver.findAndSetPackage(thomas_s_b_visualee._30.requirements.source.entity.JavaSource):::EXIT66
+ppt-type subexit
+variable this
+  var-kind variable
+  dec-type thomas_s_b_visualee._30.Driver
+  rep-type hashcode
+  flags is_param non_null
+  comparability 12
+variable this.examinerClass
+  var-kind field examinerClass
+  dec-type java.lang.Class
+  rep-type hashcode
+  comparability 14
+variable this.findAndSetPackageMethod
+  var-kind field findAndSetPackageMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 16
+variable this.getSourceCodeScannerMethod
+  var-kind field getSourceCodeScannerMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 18
+variable this.getClassBodyMethod
+  var-kind field getClassBodyMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 17
+variable this.countCharMethod
+  var-kind field countCharMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 13
+variable this.scanAfterQuoteMethod
+  var-kind field scanAfterQuoteMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 22
+variable this.scanAfterClosedParenthesisMethod
+  var-kind field scanAfterClosedParenthesisMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 21
+variable this.isAJavaTokenMethod
+  var-kind field isAJavaTokenMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 19
+variable this.jumpOverJavaTokenMethod
+  var-kind field jumpOverJavaTokenMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 20
+variable this.extractClassInstanceOrEventMethod
+  var-kind field extractClassInstanceOrEventMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 15
+variable javaSource
+  var-kind variable
+  dec-type thomas_s_b_visualee._30.requirements.source.entity.JavaSource
+  rep-type hashcode
+  flags is_param
+  comparability 2
+variable thomas_s_b_visualee._30.requirements.source.entity.JavaSource.HASH
+  var-kind variable
+  dec-type int
+  rep-type int
+  flags nomod
+  comparability 23
+variable thomas_s_b_visualee._30.requirements.source.entity.JavaSource.HASH_MULTIPLIER
+  var-kind variable
+  dec-type int
+  rep-type int
+  flags nomod
+  comparability 24
+variable javaSource.javaFile
+  var-kind field javaFile
+  dec-type java.nio.file.Path
+  rep-type hashcode
+  comparability 5
+variable javaSource.javaFile.getClass().getName()
+  var-kind function getClass().getName()
+  dec-type java.lang.Class
+  rep-type java.lang.String
+  function-args javaSource.javaFile
+  flags synthetic classname non_null
+  comparability 1
+variable javaSource.id
+  var-kind field id
+  dec-type int
+  rep-type int
+  comparability 4
+variable javaSource.group
+  var-kind field group
+  dec-type int
+  rep-type int
+  comparability 3
+variable javaSource.packagePath
+  var-kind field packagePath
+  dec-type java.lang.String
+  rep-type hashcode
+  comparability 8
+variable javaSource.packagePath.toString
+  var-kind function toString()
+  dec-type java.lang.String
+  rep-type java.lang.String
+  function-args javaSource.packagePath
+  flags synthetic to_string
+  comparability 9
+variable javaSource.sourceCode
+  var-kind field sourceCode
+  dec-type java.lang.String
+  rep-type hashcode
+  comparability 10
+variable javaSource.sourceCode.toString
+  var-kind function toString()
+  dec-type java.lang.String
+  rep-type java.lang.String
+  function-args javaSource.sourceCode
+  flags synthetic to_string
+  comparability 11
+variable javaSource.name
+  var-kind field name
+  dec-type java.lang.String
+  rep-type hashcode
+  comparability 6
+variable javaSource.name.toString
+  var-kind function toString()
+  dec-type java.lang.String
+  rep-type java.lang.String
+  function-args javaSource.name
+  flags synthetic to_string
+  comparability 7
+
+ppt thomas_s_b_visualee._30.Driver.getSourceCodeScanner(java.lang.String):::ENTER
+ppt-type enter
+variable this
+  var-kind variable
+  dec-type thomas_s_b_visualee._30.Driver
+  rep-type hashcode
+  flags is_param non_null
+  comparability 4
+variable this.examinerClass
+  var-kind field examinerClass
+  dec-type java.lang.Class
+  rep-type hashcode
+  comparability 6
+variable this.findAndSetPackageMethod
+  var-kind field findAndSetPackageMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 8
+variable this.getSourceCodeScannerMethod
+  var-kind field getSourceCodeScannerMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 10
+variable this.getClassBodyMethod
+  var-kind field getClassBodyMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 9
+variable this.countCharMethod
+  var-kind field countCharMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 5
+variable this.scanAfterQuoteMethod
+  var-kind field scanAfterQuoteMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 14
+variable this.scanAfterClosedParenthesisMethod
+  var-kind field scanAfterClosedParenthesisMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 13
+variable this.isAJavaTokenMethod
+  var-kind field isAJavaTokenMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 11
+variable this.jumpOverJavaTokenMethod
+  var-kind field jumpOverJavaTokenMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 12
+variable this.extractClassInstanceOrEventMethod
+  var-kind field extractClassInstanceOrEventMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 7
+variable sourceCode
+  var-kind variable
+  dec-type java.lang.String
+  rep-type hashcode
+  flags is_param
+  comparability 2
+variable sourceCode.toString
+  var-kind function toString()
+  dec-type java.lang.String
+  rep-type java.lang.String
+  function-args sourceCode
+  flags synthetic to_string
+  comparability 3
+
+ppt thomas_s_b_visualee._30.Driver.getSourceCodeScanner(java.lang.String):::EXIT69
+ppt-type subexit
+variable this
+  var-kind variable
+  dec-type thomas_s_b_visualee._30.Driver
+  rep-type hashcode
+  flags is_param non_null
+  comparability 5
+variable this.examinerClass
+  var-kind field examinerClass
+  dec-type java.lang.Class
+  rep-type hashcode
+  comparability 7
+variable this.findAndSetPackageMethod
+  var-kind field findAndSetPackageMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 9
+variable this.getSourceCodeScannerMethod
+  var-kind field getSourceCodeScannerMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 11
+variable this.getClassBodyMethod
+  var-kind field getClassBodyMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 10
+variable this.countCharMethod
+  var-kind field countCharMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 6
+variable this.scanAfterQuoteMethod
+  var-kind field scanAfterQuoteMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 15
+variable this.scanAfterClosedParenthesisMethod
+  var-kind field scanAfterClosedParenthesisMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 14
+variable this.isAJavaTokenMethod
+  var-kind field isAJavaTokenMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 12
+variable this.jumpOverJavaTokenMethod
+  var-kind field jumpOverJavaTokenMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 13
+variable this.extractClassInstanceOrEventMethod
+  var-kind field extractClassInstanceOrEventMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 8
+variable sourceCode
+  var-kind variable
+  dec-type java.lang.String
+  rep-type hashcode
+  flags is_param
+  comparability 3
+variable sourceCode.toString
+  var-kind function toString()
+  dec-type java.lang.String
+  rep-type java.lang.String
+  function-args sourceCode
+  flags synthetic to_string
+  comparability 4
+variable return
+  var-kind return
+  dec-type java.util.Scanner
+  rep-type hashcode
+  comparability 2
+
+ppt thomas_s_b_visualee._30.Driver.getClassBody(java.lang.String):::ENTER
+ppt-type enter
+variable this
+  var-kind variable
+  dec-type thomas_s_b_visualee._30.Driver
+  rep-type hashcode
+  flags is_param non_null
+  comparability 4
+variable this.examinerClass
+  var-kind field examinerClass
+  dec-type java.lang.Class
+  rep-type hashcode
+  comparability 6
+variable this.findAndSetPackageMethod
+  var-kind field findAndSetPackageMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 8
+variable this.getSourceCodeScannerMethod
+  var-kind field getSourceCodeScannerMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 10
+variable this.getClassBodyMethod
+  var-kind field getClassBodyMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 9
+variable this.countCharMethod
+  var-kind field countCharMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 5
+variable this.scanAfterQuoteMethod
+  var-kind field scanAfterQuoteMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 14
+variable this.scanAfterClosedParenthesisMethod
+  var-kind field scanAfterClosedParenthesisMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 13
+variable this.isAJavaTokenMethod
+  var-kind field isAJavaTokenMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 11
+variable this.jumpOverJavaTokenMethod
+  var-kind field jumpOverJavaTokenMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 12
+variable this.extractClassInstanceOrEventMethod
+  var-kind field extractClassInstanceOrEventMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 7
+variable sourceCode
+  var-kind variable
+  dec-type java.lang.String
+  rep-type hashcode
+  flags is_param
+  comparability 2
+variable sourceCode.toString
+  var-kind function toString()
+  dec-type java.lang.String
+  rep-type java.lang.String
+  function-args sourceCode
+  flags synthetic to_string
+  comparability 3
+
+ppt thomas_s_b_visualee._30.Driver.getClassBody(java.lang.String):::EXIT73
+ppt-type subexit
+variable this
+  var-kind variable
+  dec-type thomas_s_b_visualee._30.Driver
+  rep-type hashcode
+  flags is_param non_null
+  comparability 6
+variable this.examinerClass
+  var-kind field examinerClass
+  dec-type java.lang.Class
+  rep-type hashcode
+  comparability 8
+variable this.findAndSetPackageMethod
+  var-kind field findAndSetPackageMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 10
+variable this.getSourceCodeScannerMethod
+  var-kind field getSourceCodeScannerMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 12
+variable this.getClassBodyMethod
+  var-kind field getClassBodyMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 11
+variable this.countCharMethod
+  var-kind field countCharMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 7
+variable this.scanAfterQuoteMethod
+  var-kind field scanAfterQuoteMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 16
+variable this.scanAfterClosedParenthesisMethod
+  var-kind field scanAfterClosedParenthesisMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 15
+variable this.isAJavaTokenMethod
+  var-kind field isAJavaTokenMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 13
+variable this.jumpOverJavaTokenMethod
+  var-kind field jumpOverJavaTokenMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 14
+variable this.extractClassInstanceOrEventMethod
+  var-kind field extractClassInstanceOrEventMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 9
+variable sourceCode
+  var-kind variable
+  dec-type java.lang.String
+  rep-type hashcode
+  flags is_param
+  comparability 4
+variable sourceCode.toString
+  var-kind function toString()
+  dec-type java.lang.String
+  rep-type java.lang.String
+  function-args sourceCode
+  flags synthetic to_string
+  comparability 5
+variable return
+  var-kind return
+  dec-type java.lang.String
+  rep-type hashcode
+  comparability 2
+variable return.toString
+  var-kind function toString()
+  dec-type java.lang.String
+  rep-type java.lang.String
+  function-args return
+  flags synthetic to_string
+  comparability 3
+
+ppt thomas_s_b_visualee._30.Driver.countChar(java.lang.String, char):::ENTER
+ppt-type enter
+variable this
+  var-kind variable
+  dec-type thomas_s_b_visualee._30.Driver
+  rep-type hashcode
+  flags is_param non_null
+  comparability 5
+variable this.examinerClass
+  var-kind field examinerClass
+  dec-type java.lang.Class
+  rep-type hashcode
+  comparability 7
+variable this.findAndSetPackageMethod
+  var-kind field findAndSetPackageMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 9
+variable this.getSourceCodeScannerMethod
+  var-kind field getSourceCodeScannerMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 11
+variable this.getClassBodyMethod
+  var-kind field getClassBodyMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 10
+variable this.countCharMethod
+  var-kind field countCharMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 6
+variable this.scanAfterQuoteMethod
+  var-kind field scanAfterQuoteMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 15
+variable this.scanAfterClosedParenthesisMethod
+  var-kind field scanAfterClosedParenthesisMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 14
+variable this.isAJavaTokenMethod
+  var-kind field isAJavaTokenMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 12
+variable this.jumpOverJavaTokenMethod
+  var-kind field jumpOverJavaTokenMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 13
+variable this.extractClassInstanceOrEventMethod
+  var-kind field extractClassInstanceOrEventMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 8
+variable string
+  var-kind variable
+  dec-type java.lang.String
+  rep-type hashcode
+  flags is_param
+  comparability 3
+variable string.toString
+  var-kind function toString()
+  dec-type java.lang.String
+  rep-type java.lang.String
+  function-args string
+  flags synthetic to_string
+  comparability 4
+variable char2Find
+  var-kind variable
+  dec-type char
+  rep-type int
+  flags is_param
+  comparability 2
+
+ppt thomas_s_b_visualee._30.Driver.countChar(java.lang.String, char):::EXIT77
+ppt-type subexit
+variable this
+  var-kind variable
+  dec-type thomas_s_b_visualee._30.Driver
+  rep-type hashcode
+  flags is_param non_null
+  comparability 6
+variable this.examinerClass
+  var-kind field examinerClass
+  dec-type java.lang.Class
+  rep-type hashcode
+  comparability 8
+variable this.findAndSetPackageMethod
+  var-kind field findAndSetPackageMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 10
+variable this.getSourceCodeScannerMethod
+  var-kind field getSourceCodeScannerMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 12
+variable this.getClassBodyMethod
+  var-kind field getClassBodyMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 11
+variable this.countCharMethod
+  var-kind field countCharMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 7
+variable this.scanAfterQuoteMethod
+  var-kind field scanAfterQuoteMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 16
+variable this.scanAfterClosedParenthesisMethod
+  var-kind field scanAfterClosedParenthesisMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 15
+variable this.isAJavaTokenMethod
+  var-kind field isAJavaTokenMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 13
+variable this.jumpOverJavaTokenMethod
+  var-kind field jumpOverJavaTokenMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 14
+variable this.extractClassInstanceOrEventMethod
+  var-kind field extractClassInstanceOrEventMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 9
+variable string
+  var-kind variable
+  dec-type java.lang.String
+  rep-type hashcode
+  flags is_param
+  comparability 4
+variable string.toString
+  var-kind function toString()
+  dec-type java.lang.String
+  rep-type java.lang.String
+  function-args string
+  flags synthetic to_string
+  comparability 5
+variable char2Find
+  var-kind variable
+  dec-type char
+  rep-type int
+  flags is_param
+  comparability 2
+variable return
+  var-kind return
+  dec-type int
+  rep-type int
+  comparability 3
+
+ppt thomas_s_b_visualee._30.Driver.scanAfterQuote(java.lang.String, java.util.Scanner):::ENTER
+ppt-type enter
+variable this
+  var-kind variable
+  dec-type thomas_s_b_visualee._30.Driver
+  rep-type hashcode
+  flags is_param non_null
+  comparability 5
+variable this.examinerClass
+  var-kind field examinerClass
+  dec-type java.lang.Class
+  rep-type hashcode
+  comparability 7
+variable this.findAndSetPackageMethod
+  var-kind field findAndSetPackageMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 9
+variable this.getSourceCodeScannerMethod
+  var-kind field getSourceCodeScannerMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 11
+variable this.getClassBodyMethod
+  var-kind field getClassBodyMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 10
+variable this.countCharMethod
+  var-kind field countCharMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 6
+variable this.scanAfterQuoteMethod
+  var-kind field scanAfterQuoteMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 15
+variable this.scanAfterClosedParenthesisMethod
+  var-kind field scanAfterClosedParenthesisMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 14
+variable this.isAJavaTokenMethod
+  var-kind field isAJavaTokenMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 12
+variable this.jumpOverJavaTokenMethod
+  var-kind field jumpOverJavaTokenMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 13
+variable this.extractClassInstanceOrEventMethod
+  var-kind field extractClassInstanceOrEventMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 8
+variable currentToken
+  var-kind variable
+  dec-type java.lang.String
+  rep-type hashcode
+  flags is_param
+  comparability 2
+variable currentToken.toString
+  var-kind function toString()
+  dec-type java.lang.String
+  rep-type java.lang.String
+  function-args currentToken
+  flags synthetic to_string
+  comparability 3
+variable scanner
+  var-kind variable
+  dec-type java.util.Scanner
+  rep-type hashcode
+  flags is_param
+  comparability 4
+
+ppt thomas_s_b_visualee._30.Driver.scanAfterQuote(java.lang.String, java.util.Scanner):::EXIT82
+ppt-type subexit
+variable this
+  var-kind variable
+  dec-type thomas_s_b_visualee._30.Driver
+  rep-type hashcode
+  flags is_param non_null
+  comparability 7
+variable this.examinerClass
+  var-kind field examinerClass
+  dec-type java.lang.Class
+  rep-type hashcode
+  comparability 9
+variable this.findAndSetPackageMethod
+  var-kind field findAndSetPackageMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 11
+variable this.getSourceCodeScannerMethod
+  var-kind field getSourceCodeScannerMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 13
+variable this.getClassBodyMethod
+  var-kind field getClassBodyMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 12
+variable this.countCharMethod
+  var-kind field countCharMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 8
+variable this.scanAfterQuoteMethod
+  var-kind field scanAfterQuoteMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 17
+variable this.scanAfterClosedParenthesisMethod
+  var-kind field scanAfterClosedParenthesisMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 16
+variable this.isAJavaTokenMethod
+  var-kind field isAJavaTokenMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 14
+variable this.jumpOverJavaTokenMethod
+  var-kind field jumpOverJavaTokenMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 15
+variable this.extractClassInstanceOrEventMethod
+  var-kind field extractClassInstanceOrEventMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 10
+variable currentToken
+  var-kind variable
+  dec-type java.lang.String
+  rep-type hashcode
+  flags is_param
+  comparability 2
+variable currentToken.toString
+  var-kind function toString()
+  dec-type java.lang.String
+  rep-type java.lang.String
+  function-args currentToken
+  flags synthetic to_string
+  comparability 3
+variable scanner
+  var-kind variable
+  dec-type java.util.Scanner
+  rep-type hashcode
+  flags is_param
+  comparability 6
+variable return
+  var-kind return
+  dec-type java.lang.String
+  rep-type hashcode
+  comparability 4
+variable return.toString
+  var-kind function toString()
+  dec-type java.lang.String
+  rep-type java.lang.String
+  function-args return
+  flags synthetic to_string
+  comparability 5
+
+ppt thomas_s_b_visualee._30.Driver.scanAfterClosedParenthesis(java.lang.String, java.util.Scanner):::ENTER
+ppt-type enter
+variable this
+  var-kind variable
+  dec-type thomas_s_b_visualee._30.Driver
+  rep-type hashcode
+  flags is_param non_null
+  comparability 5
+variable this.examinerClass
+  var-kind field examinerClass
+  dec-type java.lang.Class
+  rep-type hashcode
+  comparability 7
+variable this.findAndSetPackageMethod
+  var-kind field findAndSetPackageMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 9
+variable this.getSourceCodeScannerMethod
+  var-kind field getSourceCodeScannerMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 11
+variable this.getClassBodyMethod
+  var-kind field getClassBodyMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 10
+variable this.countCharMethod
+  var-kind field countCharMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 6
+variable this.scanAfterQuoteMethod
+  var-kind field scanAfterQuoteMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 15
+variable this.scanAfterClosedParenthesisMethod
+  var-kind field scanAfterClosedParenthesisMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 14
+variable this.isAJavaTokenMethod
+  var-kind field isAJavaTokenMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 12
+variable this.jumpOverJavaTokenMethod
+  var-kind field jumpOverJavaTokenMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 13
+variable this.extractClassInstanceOrEventMethod
+  var-kind field extractClassInstanceOrEventMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 8
+variable currentToken
+  var-kind variable
+  dec-type java.lang.String
+  rep-type hashcode
+  flags is_param
+  comparability 2
+variable currentToken.toString
+  var-kind function toString()
+  dec-type java.lang.String
+  rep-type java.lang.String
+  function-args currentToken
+  flags synthetic to_string
+  comparability 3
+variable scanner
+  var-kind variable
+  dec-type java.util.Scanner
+  rep-type hashcode
+  flags is_param
+  comparability 4
+
+ppt thomas_s_b_visualee._30.Driver.scanAfterClosedParenthesis(java.lang.String, java.util.Scanner):::EXIT94
+ppt-type subexit
+variable this
+  var-kind variable
+  dec-type thomas_s_b_visualee._30.Driver
+  rep-type hashcode
+  flags is_param non_null
+  comparability 7
+variable this.examinerClass
+  var-kind field examinerClass
+  dec-type java.lang.Class
+  rep-type hashcode
+  comparability 9
+variable this.findAndSetPackageMethod
+  var-kind field findAndSetPackageMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 11
+variable this.getSourceCodeScannerMethod
+  var-kind field getSourceCodeScannerMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 13
+variable this.getClassBodyMethod
+  var-kind field getClassBodyMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 12
+variable this.countCharMethod
+  var-kind field countCharMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 8
+variable this.scanAfterQuoteMethod
+  var-kind field scanAfterQuoteMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 17
+variable this.scanAfterClosedParenthesisMethod
+  var-kind field scanAfterClosedParenthesisMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 16
+variable this.isAJavaTokenMethod
+  var-kind field isAJavaTokenMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 14
+variable this.jumpOverJavaTokenMethod
+  var-kind field jumpOverJavaTokenMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 15
+variable this.extractClassInstanceOrEventMethod
+  var-kind field extractClassInstanceOrEventMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 10
+variable currentToken
+  var-kind variable
+  dec-type java.lang.String
+  rep-type hashcode
+  flags is_param
+  comparability 2
+variable currentToken.toString
+  var-kind function toString()
+  dec-type java.lang.String
+  rep-type java.lang.String
+  function-args currentToken
+  flags synthetic to_string
+  comparability 3
+variable scanner
+  var-kind variable
+  dec-type java.util.Scanner
+  rep-type hashcode
+  flags is_param
+  comparability 6
+variable return
+  var-kind return
+  dec-type java.lang.String
+  rep-type hashcode
+  comparability 4
+variable return.toString
+  var-kind function toString()
+  dec-type java.lang.String
+  rep-type java.lang.String
+  function-args return
+  flags synthetic to_string
+  comparability 5
+
+ppt thomas_s_b_visualee._30.Driver.isAJavaToken(java.lang.String):::ENTER
+ppt-type enter
+variable this
+  var-kind variable
+  dec-type thomas_s_b_visualee._30.Driver
+  rep-type hashcode
+  flags is_param non_null
+  comparability 2
+variable this.examinerClass
+  var-kind field examinerClass
+  dec-type java.lang.Class
+  rep-type hashcode
+  comparability 4
+variable this.findAndSetPackageMethod
+  var-kind field findAndSetPackageMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 6
+variable this.getSourceCodeScannerMethod
+  var-kind field getSourceCodeScannerMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 8
+variable this.getClassBodyMethod
+  var-kind field getClassBodyMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 7
+variable this.countCharMethod
+  var-kind field countCharMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 3
+variable this.scanAfterQuoteMethod
+  var-kind field scanAfterQuoteMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 12
+variable this.scanAfterClosedParenthesisMethod
+  var-kind field scanAfterClosedParenthesisMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 11
+variable this.isAJavaTokenMethod
+  var-kind field isAJavaTokenMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 9
+variable this.jumpOverJavaTokenMethod
+  var-kind field jumpOverJavaTokenMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 10
+variable this.extractClassInstanceOrEventMethod
+  var-kind field extractClassInstanceOrEventMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 5
+variable token
+  var-kind variable
+  dec-type java.lang.String
+  rep-type hashcode
+  flags is_param
+  comparability 13
+variable token.toString
+  var-kind function toString()
+  dec-type java.lang.String
+  rep-type java.lang.String
+  function-args token
+  flags synthetic to_string
+  comparability 14
+
+ppt thomas_s_b_visualee._30.Driver.isAJavaToken(java.lang.String):::EXIT105
+ppt-type subexit
+variable this
+  var-kind variable
+  dec-type thomas_s_b_visualee._30.Driver
+  rep-type hashcode
+  flags is_param non_null
+  comparability 3
+variable this.examinerClass
+  var-kind field examinerClass
+  dec-type java.lang.Class
+  rep-type hashcode
+  comparability 5
+variable this.findAndSetPackageMethod
+  var-kind field findAndSetPackageMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 7
+variable this.getSourceCodeScannerMethod
+  var-kind field getSourceCodeScannerMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 9
+variable this.getClassBodyMethod
+  var-kind field getClassBodyMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 8
+variable this.countCharMethod
+  var-kind field countCharMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 4
+variable this.scanAfterQuoteMethod
+  var-kind field scanAfterQuoteMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 13
+variable this.scanAfterClosedParenthesisMethod
+  var-kind field scanAfterClosedParenthesisMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 12
+variable this.isAJavaTokenMethod
+  var-kind field isAJavaTokenMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 10
+variable this.jumpOverJavaTokenMethod
+  var-kind field jumpOverJavaTokenMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 11
+variable this.extractClassInstanceOrEventMethod
+  var-kind field extractClassInstanceOrEventMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 6
+variable token
+  var-kind variable
+  dec-type java.lang.String
+  rep-type hashcode
+  flags is_param
+  comparability 14
+variable token.toString
+  var-kind function toString()
+  dec-type java.lang.String
+  rep-type java.lang.String
+  function-args token
+  flags synthetic to_string
+  comparability 15
+variable return
+  var-kind return
+  dec-type boolean
+  rep-type boolean
+  comparability 2
+
+ppt thomas_s_b_visualee._30.Driver.jumpOverJavaToken(java.lang.String, java.util.Scanner):::ENTER
+ppt-type enter
+variable this
+  var-kind variable
+  dec-type thomas_s_b_visualee._30.Driver
+  rep-type hashcode
+  flags is_param non_null
+  comparability 3
+variable this.examinerClass
+  var-kind field examinerClass
+  dec-type java.lang.Class
+  rep-type hashcode
+  comparability 5
+variable this.findAndSetPackageMethod
+  var-kind field findAndSetPackageMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 7
+variable this.getSourceCodeScannerMethod
+  var-kind field getSourceCodeScannerMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 9
+variable this.getClassBodyMethod
+  var-kind field getClassBodyMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 8
+variable this.countCharMethod
+  var-kind field countCharMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 4
+variable this.scanAfterQuoteMethod
+  var-kind field scanAfterQuoteMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 13
+variable this.scanAfterClosedParenthesisMethod
+  var-kind field scanAfterClosedParenthesisMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 12
+variable this.isAJavaTokenMethod
+  var-kind field isAJavaTokenMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 10
+variable this.jumpOverJavaTokenMethod
+  var-kind field jumpOverJavaTokenMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 11
+variable this.extractClassInstanceOrEventMethod
+  var-kind field extractClassInstanceOrEventMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 6
+variable token
+  var-kind variable
+  dec-type java.lang.String
+  rep-type hashcode
+  flags is_param
+  comparability 14
+variable token.toString
+  var-kind function toString()
+  dec-type java.lang.String
+  rep-type java.lang.String
+  function-args token
+  flags synthetic to_string
+  comparability 15
+variable scanner
+  var-kind variable
+  dec-type java.util.Scanner
+  rep-type hashcode
+  flags is_param
+  comparability 2
+
+ppt thomas_s_b_visualee._30.Driver.jumpOverJavaToken(java.lang.String, java.util.Scanner):::EXIT110
+ppt-type subexit
+variable this
+  var-kind variable
+  dec-type thomas_s_b_visualee._30.Driver
+  rep-type hashcode
+  flags is_param non_null
+  comparability 5
+variable this.examinerClass
+  var-kind field examinerClass
+  dec-type java.lang.Class
+  rep-type hashcode
+  comparability 7
+variable this.findAndSetPackageMethod
+  var-kind field findAndSetPackageMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 9
+variable this.getSourceCodeScannerMethod
+  var-kind field getSourceCodeScannerMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 11
+variable this.getClassBodyMethod
+  var-kind field getClassBodyMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 10
+variable this.countCharMethod
+  var-kind field countCharMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 6
+variable this.scanAfterQuoteMethod
+  var-kind field scanAfterQuoteMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 15
+variable this.scanAfterClosedParenthesisMethod
+  var-kind field scanAfterClosedParenthesisMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 14
+variable this.isAJavaTokenMethod
+  var-kind field isAJavaTokenMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 12
+variable this.jumpOverJavaTokenMethod
+  var-kind field jumpOverJavaTokenMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 13
+variable this.extractClassInstanceOrEventMethod
+  var-kind field extractClassInstanceOrEventMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 8
+variable token
+  var-kind variable
+  dec-type java.lang.String
+  rep-type hashcode
+  flags is_param
+  comparability 16
+variable token.toString
+  var-kind function toString()
+  dec-type java.lang.String
+  rep-type java.lang.String
+  function-args token
+  flags synthetic to_string
+  comparability 17
+variable scanner
+  var-kind variable
+  dec-type java.util.Scanner
+  rep-type hashcode
+  flags is_param
+  comparability 4
+variable return
+  var-kind return
+  dec-type java.lang.String
+  rep-type hashcode
+  comparability 2
+variable return.toString
+  var-kind function toString()
+  dec-type java.lang.String
+  rep-type java.lang.String
+  function-args return
+  flags synthetic to_string
+  comparability 3
+
+ppt thomas_s_b_visualee._30.Driver.extractClassInstanceOrEvent(java.lang.String):::ENTER
+ppt-type enter
+variable this
+  var-kind variable
+  dec-type thomas_s_b_visualee._30.Driver
+  rep-type hashcode
+  flags is_param non_null
+  comparability 2
+variable this.examinerClass
+  var-kind field examinerClass
+  dec-type java.lang.Class
+  rep-type hashcode
+  comparability 4
+variable this.findAndSetPackageMethod
+  var-kind field findAndSetPackageMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 6
+variable this.getSourceCodeScannerMethod
+  var-kind field getSourceCodeScannerMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 8
+variable this.getClassBodyMethod
+  var-kind field getClassBodyMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 7
+variable this.countCharMethod
+  var-kind field countCharMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 3
+variable this.scanAfterQuoteMethod
+  var-kind field scanAfterQuoteMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 12
+variable this.scanAfterClosedParenthesisMethod
+  var-kind field scanAfterClosedParenthesisMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 11
+variable this.isAJavaTokenMethod
+  var-kind field isAJavaTokenMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 9
+variable this.jumpOverJavaTokenMethod
+  var-kind field jumpOverJavaTokenMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 10
+variable this.extractClassInstanceOrEventMethod
+  var-kind field extractClassInstanceOrEventMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 5
+variable token
+  var-kind variable
+  dec-type java.lang.String
+  rep-type hashcode
+  flags is_param
+  comparability 13
+variable token.toString
+  var-kind function toString()
+  dec-type java.lang.String
+  rep-type java.lang.String
+  function-args token
+  flags synthetic to_string
+  comparability 14
+
+ppt thomas_s_b_visualee._30.Driver.extractClassInstanceOrEvent(java.lang.String):::EXIT121
+ppt-type subexit
+variable this
+  var-kind variable
+  dec-type thomas_s_b_visualee._30.Driver
+  rep-type hashcode
+  flags is_param non_null
+  comparability 4
+variable this.examinerClass
+  var-kind field examinerClass
+  dec-type java.lang.Class
+  rep-type hashcode
+  comparability 6
+variable this.findAndSetPackageMethod
+  var-kind field findAndSetPackageMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 8
+variable this.getSourceCodeScannerMethod
+  var-kind field getSourceCodeScannerMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 10
+variable this.getClassBodyMethod
+  var-kind field getClassBodyMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 9
+variable this.countCharMethod
+  var-kind field countCharMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 5
+variable this.scanAfterQuoteMethod
+  var-kind field scanAfterQuoteMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 14
+variable this.scanAfterClosedParenthesisMethod
+  var-kind field scanAfterClosedParenthesisMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 13
+variable this.isAJavaTokenMethod
+  var-kind field isAJavaTokenMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 11
+variable this.jumpOverJavaTokenMethod
+  var-kind field jumpOverJavaTokenMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 12
+variable this.extractClassInstanceOrEventMethod
+  var-kind field extractClassInstanceOrEventMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 7
+variable token
+  var-kind variable
+  dec-type java.lang.String
+  rep-type hashcode
+  flags is_param
+  comparability 15
+variable token.toString
+  var-kind function toString()
+  dec-type java.lang.String
+  rep-type java.lang.String
+  function-args token
+  flags synthetic to_string
+  comparability 16
+variable return
+  var-kind return
+  dec-type java.lang.String
+  rep-type hashcode
+  comparability 2
+variable return.toString
+  var-kind function toString()
+  dec-type java.lang.String
+  rep-type java.lang.String
+  function-args return
+  flags synthetic to_string
+  comparability 3
+
+ppt thomas_s_b_visualee._30.Driver.createOriginal():::ENTER
+ppt-type enter
+
+ppt thomas_s_b_visualee._30.Driver.createOriginal():::EXIT128
+ppt-type subexit
+variable return
+  var-kind return
+  dec-type thomas_s_b_visualee._30.Driver
+  rep-type hashcode
+  comparability 2
+variable return.examinerClass
+  var-kind field examinerClass
+  dec-type java.lang.Class
+  rep-type hashcode
+  comparability 4
+variable return.findAndSetPackageMethod
+  var-kind field findAndSetPackageMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 6
+variable return.getSourceCodeScannerMethod
+  var-kind field getSourceCodeScannerMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 8
+variable return.getClassBodyMethod
+  var-kind field getClassBodyMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 7
+variable return.countCharMethod
+  var-kind field countCharMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 3
+variable return.scanAfterQuoteMethod
+  var-kind field scanAfterQuoteMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 12
+variable return.scanAfterClosedParenthesisMethod
+  var-kind field scanAfterClosedParenthesisMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 11
+variable return.isAJavaTokenMethod
+  var-kind field isAJavaTokenMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 9
+variable return.jumpOverJavaTokenMethod
+  var-kind field jumpOverJavaTokenMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 10
+variable return.extractClassInstanceOrEventMethod
+  var-kind field extractClassInstanceOrEventMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 5
+
+ppt thomas_s_b_visualee._30.Driver.createMisuse():::ENTER
+ppt-type enter
+
+ppt thomas_s_b_visualee._30.Driver.createMisuse():::EXIT135
+ppt-type subexit
+variable return
+  var-kind return
+  dec-type thomas_s_b_visualee._30.Driver
+  rep-type hashcode
+  comparability 2
+variable return.examinerClass
+  var-kind field examinerClass
+  dec-type java.lang.Class
+  rep-type hashcode
+  comparability 4
+variable return.findAndSetPackageMethod
+  var-kind field findAndSetPackageMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 6
+variable return.getSourceCodeScannerMethod
+  var-kind field getSourceCodeScannerMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 8
+variable return.getClassBodyMethod
+  var-kind field getClassBodyMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 7
+variable return.countCharMethod
+  var-kind field countCharMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 3
+variable return.scanAfterQuoteMethod
+  var-kind field scanAfterQuoteMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 12
+variable return.scanAfterClosedParenthesisMethod
+  var-kind field scanAfterClosedParenthesisMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 11
+variable return.isAJavaTokenMethod
+  var-kind field isAJavaTokenMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 9
+variable return.jumpOverJavaTokenMethod
+  var-kind field jumpOverJavaTokenMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 10
+variable return.extractClassInstanceOrEventMethod
+  var-kind field extractClassInstanceOrEventMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 5
+
+ppt thomas_s_b_visualee._30.Driver.createFixed():::ENTER
+ppt-type enter
+
+ppt thomas_s_b_visualee._30.Driver.createFixed():::EXIT142
+ppt-type subexit
+variable return
+  var-kind return
+  dec-type thomas_s_b_visualee._30.Driver
+  rep-type hashcode
+  comparability 2
+variable return.examinerClass
+  var-kind field examinerClass
+  dec-type java.lang.Class
+  rep-type hashcode
+  comparability 4
+variable return.findAndSetPackageMethod
+  var-kind field findAndSetPackageMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 6
+variable return.getSourceCodeScannerMethod
+  var-kind field getSourceCodeScannerMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 8
+variable return.getClassBodyMethod
+  var-kind field getClassBodyMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 7
+variable return.countCharMethod
+  var-kind field countCharMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 3
+variable return.scanAfterQuoteMethod
+  var-kind field scanAfterQuoteMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 12
+variable return.scanAfterClosedParenthesisMethod
+  var-kind field scanAfterClosedParenthesisMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 11
+variable return.isAJavaTokenMethod
+  var-kind field isAJavaTokenMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 9
+variable return.jumpOverJavaTokenMethod
+  var-kind field jumpOverJavaTokenMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 10
+variable return.extractClassInstanceOrEventMethod
+  var-kind field extractClassInstanceOrEventMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 5
+
+ppt thomas_s_b_visualee._30.Driver.equals(java.lang.Object):::ENTER
+ppt-type enter
+variable this
+  var-kind variable
+  dec-type thomas_s_b_visualee._30.Driver
+  rep-type hashcode
+  flags is_param non_null
+  comparability 3
+variable this.examinerClass
+  var-kind field examinerClass
+  dec-type java.lang.Class
+  rep-type hashcode
+  comparability 5
+variable this.findAndSetPackageMethod
+  var-kind field findAndSetPackageMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 7
+variable this.getSourceCodeScannerMethod
+  var-kind field getSourceCodeScannerMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 9
+variable this.getClassBodyMethod
+  var-kind field getClassBodyMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 8
+variable this.countCharMethod
+  var-kind field countCharMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 4
+variable this.scanAfterQuoteMethod
+  var-kind field scanAfterQuoteMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 13
+variable this.scanAfterClosedParenthesisMethod
+  var-kind field scanAfterClosedParenthesisMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 12
+variable this.isAJavaTokenMethod
+  var-kind field isAJavaTokenMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 10
+variable this.jumpOverJavaTokenMethod
+  var-kind field jumpOverJavaTokenMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 11
+variable this.extractClassInstanceOrEventMethod
+  var-kind field extractClassInstanceOrEventMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 6
+variable obj
+  var-kind variable
+  dec-type java.lang.Object
+  rep-type hashcode
+  flags is_param
+  comparability 2
+variable obj.getClass().getName()
+  var-kind function getClass().getName()
+  dec-type java.lang.Class
+  rep-type java.lang.String
+  function-args obj
+  flags synthetic classname non_null
+  comparability 1
+
+ppt thomas_s_b_visualee._30.Driver.equals(java.lang.Object):::EXIT1
+ppt-type subexit
+variable this
+  var-kind variable
+  dec-type thomas_s_b_visualee._30.Driver
+  rep-type hashcode
+  flags is_param non_null
+  comparability 4
+variable this.examinerClass
+  var-kind field examinerClass
+  dec-type java.lang.Class
+  rep-type hashcode
+  comparability 6
+variable this.findAndSetPackageMethod
+  var-kind field findAndSetPackageMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 8
+variable this.getSourceCodeScannerMethod
+  var-kind field getSourceCodeScannerMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 10
+variable this.getClassBodyMethod
+  var-kind field getClassBodyMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 9
+variable this.countCharMethod
+  var-kind field countCharMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 5
+variable this.scanAfterQuoteMethod
+  var-kind field scanAfterQuoteMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 14
+variable this.scanAfterClosedParenthesisMethod
+  var-kind field scanAfterClosedParenthesisMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 13
+variable this.isAJavaTokenMethod
+  var-kind field isAJavaTokenMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 11
+variable this.jumpOverJavaTokenMethod
+  var-kind field jumpOverJavaTokenMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 12
+variable this.extractClassInstanceOrEventMethod
+  var-kind field extractClassInstanceOrEventMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 7
+variable obj
+  var-kind variable
+  dec-type java.lang.Object
+  rep-type hashcode
+  flags is_param
+  comparability 2
+variable obj.getClass().getName()
+  var-kind function getClass().getName()
+  dec-type java.lang.Class
+  rep-type java.lang.String
+  function-args obj
+  flags synthetic classname non_null
+  comparability 1
+variable return
+  var-kind return
+  dec-type boolean
+  rep-type boolean
+  comparability 3
+
+ppt thomas_s_b_visualee._30.Driver.equals_dcomp_instrumented(java.lang.Object):::ENTER
+ppt-type enter
+variable this
+  var-kind variable
+  dec-type thomas_s_b_visualee._30.Driver
+  rep-type hashcode
+  flags is_param non_null
+  comparability 3
+variable this.examinerClass
+  var-kind field examinerClass
+  dec-type java.lang.Class
+  rep-type hashcode
+  comparability 5
+variable this.findAndSetPackageMethod
+  var-kind field findAndSetPackageMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 7
+variable this.getSourceCodeScannerMethod
+  var-kind field getSourceCodeScannerMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 9
+variable this.getClassBodyMethod
+  var-kind field getClassBodyMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 8
+variable this.countCharMethod
+  var-kind field countCharMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 4
+variable this.scanAfterQuoteMethod
+  var-kind field scanAfterQuoteMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 13
+variable this.scanAfterClosedParenthesisMethod
+  var-kind field scanAfterClosedParenthesisMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 12
+variable this.isAJavaTokenMethod
+  var-kind field isAJavaTokenMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 10
+variable this.jumpOverJavaTokenMethod
+  var-kind field jumpOverJavaTokenMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 11
+variable this.extractClassInstanceOrEventMethod
+  var-kind field extractClassInstanceOrEventMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 6
+variable obj
+  var-kind variable
+  dec-type java.lang.Object
+  rep-type hashcode
+  flags is_param
+  comparability 2
+variable obj.getClass().getName()
+  var-kind function getClass().getName()
+  dec-type java.lang.Class
+  rep-type java.lang.String
+  function-args obj
+  flags synthetic classname non_null
+  comparability 1
+
+ppt thomas_s_b_visualee._30.Driver.equals_dcomp_instrumented(java.lang.Object):::EXIT1
+ppt-type subexit
+variable this
+  var-kind variable
+  dec-type thomas_s_b_visualee._30.Driver
+  rep-type hashcode
+  flags is_param non_null
+  comparability 4
+variable this.examinerClass
+  var-kind field examinerClass
+  dec-type java.lang.Class
+  rep-type hashcode
+  comparability 6
+variable this.findAndSetPackageMethod
+  var-kind field findAndSetPackageMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 8
+variable this.getSourceCodeScannerMethod
+  var-kind field getSourceCodeScannerMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 10
+variable this.getClassBodyMethod
+  var-kind field getClassBodyMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 9
+variable this.countCharMethod
+  var-kind field countCharMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 5
+variable this.scanAfterQuoteMethod
+  var-kind field scanAfterQuoteMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 14
+variable this.scanAfterClosedParenthesisMethod
+  var-kind field scanAfterClosedParenthesisMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 13
+variable this.isAJavaTokenMethod
+  var-kind field isAJavaTokenMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 11
+variable this.jumpOverJavaTokenMethod
+  var-kind field jumpOverJavaTokenMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 12
+variable this.extractClassInstanceOrEventMethod
+  var-kind field extractClassInstanceOrEventMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 7
+variable obj
+  var-kind variable
+  dec-type java.lang.Object
+  rep-type hashcode
+  flags is_param
+  comparability 2
+variable obj.getClass().getName()
+  var-kind function getClass().getName()
+  dec-type java.lang.Class
+  rep-type java.lang.String
+  function-args obj
+  flags synthetic classname non_null
+  comparability 1
+variable return
+  var-kind return
+  dec-type boolean
+  rep-type boolean
+  comparability 3
+

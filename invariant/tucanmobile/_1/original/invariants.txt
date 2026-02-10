@@ -1,0 +1,41 @@
+===========================================================================
+daikon_runner.DaikonRunner.createDriverInstance(java.lang.Class, java.lang.String):::ENTER
+driverClass has only one value
+variant has only one value
+variant.toString == "original"
+===========================================================================
+daikon_runner.DaikonRunner.createDriverInstance(java.lang.Class, java.lang.String):::EXIT121
+===========================================================================
+daikon_runner.DaikonRunner.createDriverInstance(java.lang.Class, java.lang.String):::EXIT
+variant.toString == orig(variant.toString)
+variant.toString == "original"
+return == null
+===========================================================================
+daikon_runner.DaikonRunner.getDefaultValue(java.lang.Class, java.lang.String):::ENTER
+variant has only one value
+variant.toString == "original"
+===========================================================================
+daikon_runner.DaikonRunner.getDefaultValue(java.lang.Class, java.lang.String):::EXIT128
+return == orig(variant)
+return has only one value
+orig(type) has only one value
+===========================================================================
+daikon_runner.DaikonRunner.getDefaultValue(java.lang.Class, java.lang.String):::EXIT146
+return == null
+orig(type) has only one value
+===========================================================================
+daikon_runner.DaikonRunner.getDefaultValue(java.lang.Class, java.lang.String):::EXIT
+variant.toString == orig(variant.toString)
+variant.toString == "original"
+return.getClass().getName() == java.lang.String.class
+===========================================================================
+tucanmobile._1.mocks.Resources:::OBJECT
+this has only one value
+===========================================================================
+tucanmobile._1.mocks.Resources.Resources():::EXIT
+===========================================================================
+tucanmobile._1.mocks.SimpleWebListActivity:::OBJECT
+this has only one value
+this.resources has only one value
+===========================================================================
+tucanmobile._1.mocks.SimpleWebListActivity.SimpleWebListActivity():::EXIT

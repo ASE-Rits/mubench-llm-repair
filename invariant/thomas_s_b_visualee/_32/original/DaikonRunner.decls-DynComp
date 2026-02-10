@@ -1,0 +1,980 @@
+// Declarations for daikon_runner.DaikonRunner
+// Declarations written 2026-02-11T03:57:46.338768437 by daikon.DynComp
+
+decl-version 2.0
+var-comparability implicit
+
+ppt daikon_runner.DaikonRunner:::CLASS
+ppt-type class
+
+ppt daikon_runner.DaikonRunner:::OBJECT
+ppt-type object
+variable this
+  var-kind variable
+  dec-type daikon_runner.DaikonRunner
+  rep-type hashcode
+  flags is_param non_null
+  comparability 2
+
+ppt daikon_runner.DaikonRunner.DaikonRunner():::ENTER
+ppt-type enter
+
+ppt daikon_runner.DaikonRunner.DaikonRunner():::EXIT14
+ppt-type subexit
+variable this
+  var-kind variable
+  dec-type daikon_runner.DaikonRunner
+  rep-type hashcode
+  flags is_param non_null
+  comparability 2
+
+ppt daikon_runner.DaikonRunner.main(java.lang.String[]):::ENTER
+ppt-type enter
+variable args
+  var-kind variable
+  dec-type java.lang.String[]
+  rep-type hashcode
+  flags is_param
+  comparability 2
+variable args.getClass().getName()
+  var-kind function getClass().getName()
+  dec-type java.lang.Class
+  rep-type java.lang.String
+  function-args args
+  flags synthetic classname non_null
+  comparability 1
+variable args[..]
+  var-kind array
+  array 1
+  dec-type java.lang.String[]
+  rep-type hashcode[]
+  comparability 3[5]
+variable args[..].toString
+  var-kind function toString()
+  array 1
+  dec-type java.lang.String[]
+  rep-type java.lang.String[]
+  function-args args[]
+  flags synthetic to_string
+  comparability 4[6]
+
+ppt daikon_runner.DaikonRunner.main(java.lang.String[]):::EXIT61
+ppt-type subexit
+variable args
+  var-kind variable
+  dec-type java.lang.String[]
+  rep-type hashcode
+  flags is_param
+  comparability 2
+variable args.getClass().getName()
+  var-kind function getClass().getName()
+  dec-type java.lang.Class
+  rep-type java.lang.String
+  function-args args
+  flags synthetic classname non_null
+  comparability 1
+variable args[..]
+  var-kind array
+  array 1
+  dec-type java.lang.String[]
+  rep-type hashcode[]
+  comparability 3[5]
+variable args[..].toString
+  var-kind function toString()
+  array 1
+  dec-type java.lang.String[]
+  rep-type java.lang.String[]
+  function-args args[]
+  flags synthetic to_string
+  comparability 4[6]
+
+ppt daikon_runner.DaikonRunner.createDriverInstance(java.lang.Class, java.lang.String):::ENTER
+ppt-type enter
+variable driverClass
+  var-kind variable
+  dec-type java.lang.Class
+  rep-type hashcode
+  flags is_param
+  comparability 2
+variable variant
+  var-kind variable
+  dec-type java.lang.String
+  rep-type hashcode
+  flags is_param
+  comparability 3
+variable variant.toString
+  var-kind function toString()
+  dec-type java.lang.String
+  rep-type java.lang.String
+  function-args variant
+  flags synthetic to_string
+  comparability 4
+
+ppt daikon_runner.DaikonRunner.createDriverInstance(java.lang.Class, java.lang.String):::EXIT70
+ppt-type subexit
+variable driverClass
+  var-kind variable
+  dec-type java.lang.Class
+  rep-type hashcode
+  flags is_param
+  comparability 2
+variable variant
+  var-kind variable
+  dec-type java.lang.String
+  rep-type hashcode
+  flags is_param
+  comparability 4
+variable variant.toString
+  var-kind function toString()
+  dec-type java.lang.String
+  rep-type java.lang.String
+  function-args variant
+  flags synthetic to_string
+  comparability 5
+variable return
+  var-kind return
+  dec-type java.lang.Object
+  rep-type hashcode
+  comparability 3
+variable return.getClass().getName()
+  var-kind function getClass().getName()
+  dec-type java.lang.Class
+  rep-type java.lang.String
+  function-args return
+  flags synthetic classname non_null
+  comparability 1
+
+ppt daikon_runner.DaikonRunner.createDriverInstance(java.lang.Class, java.lang.String):::EXIT85
+ppt-type subexit
+variable driverClass
+  var-kind variable
+  dec-type java.lang.Class
+  rep-type hashcode
+  flags is_param
+  comparability 2
+variable variant
+  var-kind variable
+  dec-type java.lang.String
+  rep-type hashcode
+  flags is_param
+  comparability 4
+variable variant.toString
+  var-kind function toString()
+  dec-type java.lang.String
+  rep-type java.lang.String
+  function-args variant
+  flags synthetic to_string
+  comparability 5
+variable return
+  var-kind return
+  dec-type java.lang.Object
+  rep-type hashcode
+  comparability 3
+variable return.getClass().getName()
+  var-kind function getClass().getName()
+  dec-type java.lang.Class
+  rep-type java.lang.String
+  function-args return
+  flags synthetic classname non_null
+  comparability 1
+
+ppt daikon_runner.DaikonRunner.createDriverInstance(java.lang.Class, java.lang.String):::EXIT91
+ppt-type subexit
+variable driverClass
+  var-kind variable
+  dec-type java.lang.Class
+  rep-type hashcode
+  flags is_param
+  comparability 2
+variable variant
+  var-kind variable
+  dec-type java.lang.String
+  rep-type hashcode
+  flags is_param
+  comparability 4
+variable variant.toString
+  var-kind function toString()
+  dec-type java.lang.String
+  rep-type java.lang.String
+  function-args variant
+  flags synthetic to_string
+  comparability 5
+variable return
+  var-kind return
+  dec-type java.lang.Object
+  rep-type hashcode
+  comparability 3
+variable return.getClass().getName()
+  var-kind function getClass().getName()
+  dec-type java.lang.Class
+  rep-type java.lang.String
+  function-args return
+  flags synthetic classname non_null
+  comparability 1
+
+ppt daikon_runner.DaikonRunner.createDriverInstance(java.lang.Class, java.lang.String):::EXIT97
+ppt-type subexit
+variable driverClass
+  var-kind variable
+  dec-type java.lang.Class
+  rep-type hashcode
+  flags is_param
+  comparability 2
+variable variant
+  var-kind variable
+  dec-type java.lang.String
+  rep-type hashcode
+  flags is_param
+  comparability 4
+variable variant.toString
+  var-kind function toString()
+  dec-type java.lang.String
+  rep-type java.lang.String
+  function-args variant
+  flags synthetic to_string
+  comparability 5
+variable return
+  var-kind return
+  dec-type java.lang.Object
+  rep-type hashcode
+  comparability 3
+variable return.getClass().getName()
+  var-kind function getClass().getName()
+  dec-type java.lang.Class
+  rep-type java.lang.String
+  function-args return
+  flags synthetic classname non_null
+  comparability 1
+
+ppt daikon_runner.DaikonRunner.createDriverInstance(java.lang.Class, java.lang.String):::EXIT103
+ppt-type subexit
+variable driverClass
+  var-kind variable
+  dec-type java.lang.Class
+  rep-type hashcode
+  flags is_param
+  comparability 2
+variable variant
+  var-kind variable
+  dec-type java.lang.String
+  rep-type hashcode
+  flags is_param
+  comparability 4
+variable variant.toString
+  var-kind function toString()
+  dec-type java.lang.String
+  rep-type java.lang.String
+  function-args variant
+  flags synthetic to_string
+  comparability 5
+variable return
+  var-kind return
+  dec-type java.lang.Object
+  rep-type hashcode
+  comparability 3
+variable return.getClass().getName()
+  var-kind function getClass().getName()
+  dec-type java.lang.Class
+  rep-type java.lang.String
+  function-args return
+  flags synthetic classname non_null
+  comparability 1
+
+ppt daikon_runner.DaikonRunner.createDriverInstance(java.lang.Class, java.lang.String):::EXIT117
+ppt-type subexit
+variable driverClass
+  var-kind variable
+  dec-type java.lang.Class
+  rep-type hashcode
+  flags is_param
+  comparability 2
+variable variant
+  var-kind variable
+  dec-type java.lang.String
+  rep-type hashcode
+  flags is_param
+  comparability 4
+variable variant.toString
+  var-kind function toString()
+  dec-type java.lang.String
+  rep-type java.lang.String
+  function-args variant
+  flags synthetic to_string
+  comparability 5
+variable return
+  var-kind return
+  dec-type java.lang.Object
+  rep-type hashcode
+  comparability 3
+variable return.getClass().getName()
+  var-kind function getClass().getName()
+  dec-type java.lang.Class
+  rep-type java.lang.String
+  function-args return
+  flags synthetic classname non_null
+  comparability 1
+
+ppt daikon_runner.DaikonRunner.createDriverInstance(java.lang.Class, java.lang.String):::EXIT121
+ppt-type subexit
+variable driverClass
+  var-kind variable
+  dec-type java.lang.Class
+  rep-type hashcode
+  flags is_param
+  comparability 2
+variable variant
+  var-kind variable
+  dec-type java.lang.String
+  rep-type hashcode
+  flags is_param
+  comparability 4
+variable variant.toString
+  var-kind function toString()
+  dec-type java.lang.String
+  rep-type java.lang.String
+  function-args variant
+  flags synthetic to_string
+  comparability 5
+variable return
+  var-kind return
+  dec-type java.lang.Object
+  rep-type hashcode
+  comparability 3
+variable return.getClass().getName()
+  var-kind function getClass().getName()
+  dec-type java.lang.Class
+  rep-type java.lang.String
+  function-args return
+  flags synthetic classname non_null
+  comparability 1
+
+ppt daikon_runner.DaikonRunner.getDefaultValue(java.lang.Class, java.lang.String):::ENTER
+ppt-type enter
+variable type
+  var-kind variable
+  dec-type java.lang.Class
+  rep-type hashcode
+  flags is_param
+  comparability 2
+variable variant
+  var-kind variable
+  dec-type java.lang.String
+  rep-type hashcode
+  flags is_param
+  comparability 3
+variable variant.toString
+  var-kind function toString()
+  dec-type java.lang.String
+  rep-type java.lang.String
+  function-args variant
+  flags synthetic to_string
+  comparability 4
+
+ppt daikon_runner.DaikonRunner.getDefaultValue(java.lang.Class, java.lang.String):::EXIT128
+ppt-type subexit
+variable type
+  var-kind variable
+  dec-type java.lang.Class
+  rep-type hashcode
+  flags is_param
+  comparability 3
+variable variant
+  var-kind variable
+  dec-type java.lang.String
+  rep-type hashcode
+  flags is_param
+  comparability 4
+variable variant.toString
+  var-kind function toString()
+  dec-type java.lang.String
+  rep-type java.lang.String
+  function-args variant
+  flags synthetic to_string
+  comparability 5
+variable return
+  var-kind return
+  dec-type java.lang.Object
+  rep-type hashcode
+  comparability 2
+variable return.getClass().getName()
+  var-kind function getClass().getName()
+  dec-type java.lang.Class
+  rep-type java.lang.String
+  function-args return
+  flags synthetic classname non_null
+  comparability 1
+
+ppt daikon_runner.DaikonRunner.getDefaultValue(java.lang.Class, java.lang.String):::EXIT129
+ppt-type subexit
+variable type
+  var-kind variable
+  dec-type java.lang.Class
+  rep-type hashcode
+  flags is_param
+  comparability 3
+variable variant
+  var-kind variable
+  dec-type java.lang.String
+  rep-type hashcode
+  flags is_param
+  comparability 4
+variable variant.toString
+  var-kind function toString()
+  dec-type java.lang.String
+  rep-type java.lang.String
+  function-args variant
+  flags synthetic to_string
+  comparability 5
+variable return
+  var-kind return
+  dec-type java.lang.Object
+  rep-type hashcode
+  comparability 2
+variable return.getClass().getName()
+  var-kind function getClass().getName()
+  dec-type java.lang.Class
+  rep-type java.lang.String
+  function-args return
+  flags synthetic classname non_null
+  comparability 1
+
+ppt daikon_runner.DaikonRunner.getDefaultValue(java.lang.Class, java.lang.String):::EXIT130
+ppt-type subexit
+variable type
+  var-kind variable
+  dec-type java.lang.Class
+  rep-type hashcode
+  flags is_param
+  comparability 3
+variable variant
+  var-kind variable
+  dec-type java.lang.String
+  rep-type hashcode
+  flags is_param
+  comparability 4
+variable variant.toString
+  var-kind function toString()
+  dec-type java.lang.String
+  rep-type java.lang.String
+  function-args variant
+  flags synthetic to_string
+  comparability 5
+variable return
+  var-kind return
+  dec-type java.lang.Object
+  rep-type hashcode
+  comparability 2
+variable return.getClass().getName()
+  var-kind function getClass().getName()
+  dec-type java.lang.Class
+  rep-type java.lang.String
+  function-args return
+  flags synthetic classname non_null
+  comparability 1
+
+ppt daikon_runner.DaikonRunner.getDefaultValue(java.lang.Class, java.lang.String):::EXIT131
+ppt-type subexit
+variable type
+  var-kind variable
+  dec-type java.lang.Class
+  rep-type hashcode
+  flags is_param
+  comparability 3
+variable variant
+  var-kind variable
+  dec-type java.lang.String
+  rep-type hashcode
+  flags is_param
+  comparability 4
+variable variant.toString
+  var-kind function toString()
+  dec-type java.lang.String
+  rep-type java.lang.String
+  function-args variant
+  flags synthetic to_string
+  comparability 5
+variable return
+  var-kind return
+  dec-type java.lang.Object
+  rep-type hashcode
+  comparability 2
+variable return.getClass().getName()
+  var-kind function getClass().getName()
+  dec-type java.lang.Class
+  rep-type java.lang.String
+  function-args return
+  flags synthetic classname non_null
+  comparability 1
+
+ppt daikon_runner.DaikonRunner.getDefaultValue(java.lang.Class, java.lang.String):::EXIT132
+ppt-type subexit
+variable type
+  var-kind variable
+  dec-type java.lang.Class
+  rep-type hashcode
+  flags is_param
+  comparability 3
+variable variant
+  var-kind variable
+  dec-type java.lang.String
+  rep-type hashcode
+  flags is_param
+  comparability 4
+variable variant.toString
+  var-kind function toString()
+  dec-type java.lang.String
+  rep-type java.lang.String
+  function-args variant
+  flags synthetic to_string
+  comparability 5
+variable return
+  var-kind return
+  dec-type java.lang.Object
+  rep-type hashcode
+  comparability 2
+variable return.getClass().getName()
+  var-kind function getClass().getName()
+  dec-type java.lang.Class
+  rep-type java.lang.String
+  function-args return
+  flags synthetic classname non_null
+  comparability 1
+
+ppt daikon_runner.DaikonRunner.getDefaultValue(java.lang.Class, java.lang.String):::EXIT133
+ppt-type subexit
+variable type
+  var-kind variable
+  dec-type java.lang.Class
+  rep-type hashcode
+  flags is_param
+  comparability 3
+variable variant
+  var-kind variable
+  dec-type java.lang.String
+  rep-type hashcode
+  flags is_param
+  comparability 4
+variable variant.toString
+  var-kind function toString()
+  dec-type java.lang.String
+  rep-type java.lang.String
+  function-args variant
+  flags synthetic to_string
+  comparability 5
+variable return
+  var-kind return
+  dec-type java.lang.Object
+  rep-type hashcode
+  comparability 2
+variable return.getClass().getName()
+  var-kind function getClass().getName()
+  dec-type java.lang.Class
+  rep-type java.lang.String
+  function-args return
+  flags synthetic classname non_null
+  comparability 1
+
+ppt daikon_runner.DaikonRunner.getDefaultValue(java.lang.Class, java.lang.String):::EXIT134
+ppt-type subexit
+variable type
+  var-kind variable
+  dec-type java.lang.Class
+  rep-type hashcode
+  flags is_param
+  comparability 3
+variable variant
+  var-kind variable
+  dec-type java.lang.String
+  rep-type hashcode
+  flags is_param
+  comparability 4
+variable variant.toString
+  var-kind function toString()
+  dec-type java.lang.String
+  rep-type java.lang.String
+  function-args variant
+  flags synthetic to_string
+  comparability 5
+variable return
+  var-kind return
+  dec-type java.lang.Object
+  rep-type hashcode
+  comparability 2
+variable return.getClass().getName()
+  var-kind function getClass().getName()
+  dec-type java.lang.Class
+  rep-type java.lang.String
+  function-args return
+  flags synthetic classname non_null
+  comparability 1
+
+ppt daikon_runner.DaikonRunner.getDefaultValue(java.lang.Class, java.lang.String):::EXIT135
+ppt-type subexit
+variable type
+  var-kind variable
+  dec-type java.lang.Class
+  rep-type hashcode
+  flags is_param
+  comparability 3
+variable variant
+  var-kind variable
+  dec-type java.lang.String
+  rep-type hashcode
+  flags is_param
+  comparability 4
+variable variant.toString
+  var-kind function toString()
+  dec-type java.lang.String
+  rep-type java.lang.String
+  function-args variant
+  flags synthetic to_string
+  comparability 5
+variable return
+  var-kind return
+  dec-type java.lang.Object
+  rep-type hashcode
+  comparability 2
+variable return.getClass().getName()
+  var-kind function getClass().getName()
+  dec-type java.lang.Class
+  rep-type java.lang.String
+  function-args return
+  flags synthetic classname non_null
+  comparability 1
+
+ppt daikon_runner.DaikonRunner.getDefaultValue(java.lang.Class, java.lang.String):::EXIT136
+ppt-type subexit
+variable type
+  var-kind variable
+  dec-type java.lang.Class
+  rep-type hashcode
+  flags is_param
+  comparability 3
+variable variant
+  var-kind variable
+  dec-type java.lang.String
+  rep-type hashcode
+  flags is_param
+  comparability 4
+variable variant.toString
+  var-kind function toString()
+  dec-type java.lang.String
+  rep-type java.lang.String
+  function-args variant
+  flags synthetic to_string
+  comparability 5
+variable return
+  var-kind return
+  dec-type java.lang.Object
+  rep-type hashcode
+  comparability 2
+variable return.getClass().getName()
+  var-kind function getClass().getName()
+  dec-type java.lang.Class
+  rep-type java.lang.String
+  function-args return
+  flags synthetic classname non_null
+  comparability 1
+
+ppt daikon_runner.DaikonRunner.getDefaultValue(java.lang.Class, java.lang.String):::EXIT137
+ppt-type subexit
+variable type
+  var-kind variable
+  dec-type java.lang.Class
+  rep-type hashcode
+  flags is_param
+  comparability 3
+variable variant
+  var-kind variable
+  dec-type java.lang.String
+  rep-type hashcode
+  flags is_param
+  comparability 4
+variable variant.toString
+  var-kind function toString()
+  dec-type java.lang.String
+  rep-type java.lang.String
+  function-args variant
+  flags synthetic to_string
+  comparability 5
+variable return
+  var-kind return
+  dec-type java.lang.Object
+  rep-type hashcode
+  comparability 2
+variable return.getClass().getName()
+  var-kind function getClass().getName()
+  dec-type java.lang.Class
+  rep-type java.lang.String
+  function-args return
+  flags synthetic classname non_null
+  comparability 1
+
+ppt daikon_runner.DaikonRunner.getDefaultValue(java.lang.Class, java.lang.String):::EXIT138
+ppt-type subexit
+variable type
+  var-kind variable
+  dec-type java.lang.Class
+  rep-type hashcode
+  flags is_param
+  comparability 3
+variable variant
+  var-kind variable
+  dec-type java.lang.String
+  rep-type hashcode
+  flags is_param
+  comparability 4
+variable variant.toString
+  var-kind function toString()
+  dec-type java.lang.String
+  rep-type java.lang.String
+  function-args variant
+  flags synthetic to_string
+  comparability 5
+variable return
+  var-kind return
+  dec-type java.lang.Object
+  rep-type hashcode
+  comparability 2
+variable return.getClass().getName()
+  var-kind function getClass().getName()
+  dec-type java.lang.Class
+  rep-type java.lang.String
+  function-args return
+  flags synthetic classname non_null
+  comparability 1
+
+ppt daikon_runner.DaikonRunner.getDefaultValue(java.lang.Class, java.lang.String):::EXIT139
+ppt-type subexit
+variable type
+  var-kind variable
+  dec-type java.lang.Class
+  rep-type hashcode
+  flags is_param
+  comparability 3
+variable variant
+  var-kind variable
+  dec-type java.lang.String
+  rep-type hashcode
+  flags is_param
+  comparability 4
+variable variant.toString
+  var-kind function toString()
+  dec-type java.lang.String
+  rep-type java.lang.String
+  function-args variant
+  flags synthetic to_string
+  comparability 5
+variable return
+  var-kind return
+  dec-type java.lang.Object
+  rep-type hashcode
+  comparability 2
+variable return.getClass().getName()
+  var-kind function getClass().getName()
+  dec-type java.lang.Class
+  rep-type java.lang.String
+  function-args return
+  flags synthetic classname non_null
+  comparability 1
+
+ppt daikon_runner.DaikonRunner.getDefaultValue(java.lang.Class, java.lang.String):::EXIT143
+ppt-type subexit
+variable type
+  var-kind variable
+  dec-type java.lang.Class
+  rep-type hashcode
+  flags is_param
+  comparability 3
+variable variant
+  var-kind variable
+  dec-type java.lang.String
+  rep-type hashcode
+  flags is_param
+  comparability 4
+variable variant.toString
+  var-kind function toString()
+  dec-type java.lang.String
+  rep-type java.lang.String
+  function-args variant
+  flags synthetic to_string
+  comparability 5
+variable return
+  var-kind return
+  dec-type java.lang.Object
+  rep-type hashcode
+  comparability 2
+variable return.getClass().getName()
+  var-kind function getClass().getName()
+  dec-type java.lang.Class
+  rep-type java.lang.String
+  function-args return
+  flags synthetic classname non_null
+  comparability 1
+
+ppt daikon_runner.DaikonRunner.getDefaultValue(java.lang.Class, java.lang.String):::EXIT145
+ppt-type subexit
+variable type
+  var-kind variable
+  dec-type java.lang.Class
+  rep-type hashcode
+  flags is_param
+  comparability 3
+variable variant
+  var-kind variable
+  dec-type java.lang.String
+  rep-type hashcode
+  flags is_param
+  comparability 4
+variable variant.toString
+  var-kind function toString()
+  dec-type java.lang.String
+  rep-type java.lang.String
+  function-args variant
+  flags synthetic to_string
+  comparability 5
+variable return
+  var-kind return
+  dec-type java.lang.Object
+  rep-type hashcode
+  comparability 2
+variable return.getClass().getName()
+  var-kind function getClass().getName()
+  dec-type java.lang.Class
+  rep-type java.lang.String
+  function-args return
+  flags synthetic classname non_null
+  comparability 1
+
+ppt daikon_runner.DaikonRunner.getDefaultValue(java.lang.Class, java.lang.String):::EXIT146
+ppt-type subexit
+variable type
+  var-kind variable
+  dec-type java.lang.Class
+  rep-type hashcode
+  flags is_param
+  comparability 3
+variable variant
+  var-kind variable
+  dec-type java.lang.String
+  rep-type hashcode
+  flags is_param
+  comparability 4
+variable variant.toString
+  var-kind function toString()
+  dec-type java.lang.String
+  rep-type java.lang.String
+  function-args variant
+  flags synthetic to_string
+  comparability 5
+variable return
+  var-kind return
+  dec-type java.lang.Object
+  rep-type hashcode
+  comparability 2
+variable return.getClass().getName()
+  var-kind function getClass().getName()
+  dec-type java.lang.Class
+  rep-type java.lang.String
+  function-args return
+  flags synthetic classname non_null
+  comparability 1
+
+ppt daikon_runner.DaikonRunner.equals(java.lang.Object):::ENTER
+ppt-type enter
+variable this
+  var-kind variable
+  dec-type daikon_runner.DaikonRunner
+  rep-type hashcode
+  flags is_param non_null
+  comparability 3
+variable obj
+  var-kind variable
+  dec-type java.lang.Object
+  rep-type hashcode
+  flags is_param
+  comparability 2
+variable obj.getClass().getName()
+  var-kind function getClass().getName()
+  dec-type java.lang.Class
+  rep-type java.lang.String
+  function-args obj
+  flags synthetic classname non_null
+  comparability 1
+
+ppt daikon_runner.DaikonRunner.equals(java.lang.Object):::EXIT1
+ppt-type subexit
+variable this
+  var-kind variable
+  dec-type daikon_runner.DaikonRunner
+  rep-type hashcode
+  flags is_param non_null
+  comparability 4
+variable obj
+  var-kind variable
+  dec-type java.lang.Object
+  rep-type hashcode
+  flags is_param
+  comparability 2
+variable obj.getClass().getName()
+  var-kind function getClass().getName()
+  dec-type java.lang.Class
+  rep-type java.lang.String
+  function-args obj
+  flags synthetic classname non_null
+  comparability 1
+variable return
+  var-kind return
+  dec-type boolean
+  rep-type boolean
+  comparability 3
+
+ppt daikon_runner.DaikonRunner.equals_dcomp_instrumented(java.lang.Object):::ENTER
+ppt-type enter
+variable this
+  var-kind variable
+  dec-type daikon_runner.DaikonRunner
+  rep-type hashcode
+  flags is_param non_null
+  comparability 3
+variable obj
+  var-kind variable
+  dec-type java.lang.Object
+  rep-type hashcode
+  flags is_param
+  comparability 2
+variable obj.getClass().getName()
+  var-kind function getClass().getName()
+  dec-type java.lang.Class
+  rep-type java.lang.String
+  function-args obj
+  flags synthetic classname non_null
+  comparability 1
+
+ppt daikon_runner.DaikonRunner.equals_dcomp_instrumented(java.lang.Object):::EXIT1
+ppt-type subexit
+variable this
+  var-kind variable
+  dec-type daikon_runner.DaikonRunner
+  rep-type hashcode
+  flags is_param non_null
+  comparability 4
+variable obj
+  var-kind variable
+  dec-type java.lang.Object
+  rep-type hashcode
+  flags is_param
+  comparability 2
+variable obj.getClass().getName()
+  var-kind function getClass().getName()
+  dec-type java.lang.Class
+  rep-type java.lang.String
+  function-args obj
+  flags synthetic classname non_null
+  comparability 1
+variable return
+  var-kind return
+  dec-type boolean
+  rep-type boolean
+  comparability 3
+

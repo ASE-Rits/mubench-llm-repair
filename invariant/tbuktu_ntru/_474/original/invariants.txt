@@ -1,0 +1,1875 @@
+===========================================================================
+daikon_runner.DaikonRunner.createDriverInstance(java.lang.Class, java.lang.String):::ENTER
+driverClass has only one value
+variant has only one value
+variant.toString == "original"
+===========================================================================
+daikon_runner.DaikonRunner.createDriverInstance(java.lang.Class, java.lang.String):::EXIT70
+===========================================================================
+daikon_runner.DaikonRunner.createDriverInstance(java.lang.Class, java.lang.String):::EXIT
+variant.toString == orig(variant.toString)
+variant.toString == "original"
+return has only one value
+return.getClass().getName() == tbuktu_ntru._474.Driver.class
+===========================================================================
+daikon_runner.DaikonRunner.main(java.lang.String[]):::ENTER
+args has only one value
+args.getClass().getName() == java.lang.String[].class
+args[] contains no nulls and has only one value, of length 2
+args[].toString == [tbuktu_ntru._474, original]
+args[].toString elements one of { "original", "tbuktu_ntru._474" }
+size(args[]) == 2
+===========================================================================
+daikon_runner.DaikonRunner.main(java.lang.String[]):::EXIT
+args[] == orig(args[])
+args[] contains no nulls and has only one value, of length 2
+args[].toString == [tbuktu_ntru._474, original]
+args[].toString elements one of { "original", "tbuktu_ntru._474" }
+===========================================================================
+tbuktu_ntru._474.Driver:::CLASS
+tbuktu_ntru._474.Driver.VARIANT_PACKAGE has only one value
+tbuktu_ntru._474.Driver.VARIANT_PACKAGE != null
+tbuktu_ntru._474.Driver.VARIANT_PACKAGE.toString == "tbuktu_ntru._474"
+===========================================================================
+tbuktu_ntru._474.Driver:::OBJECT
+this has only one value
+this.instance has only one value
+this.instance != null
+this.instance.getClass().getName() == tbuktu_ntru._474.original.SignatureParameters.class
+this.clazz has only one value
+this.clazz != null
+===========================================================================
+tbuktu_ntru._474.Driver.Driver(java.lang.String):::ENTER
+variant has only one value
+variant.toString == "original"
+===========================================================================
+tbuktu_ntru._474.Driver.Driver(java.lang.String):::EXIT
+variant.toString == orig(variant.toString)
+variant.toString == "original"
+===========================================================================
+tbuktu_ntru._474.Driver.getInstance():::ENTER
+===========================================================================
+tbuktu_ntru._474.Driver.getInstance():::EXIT
+tbuktu_ntru._474.Driver.VARIANT_PACKAGE == orig(tbuktu_ntru._474.Driver.VARIANT_PACKAGE)
+tbuktu_ntru._474.Driver.VARIANT_PACKAGE.toString == orig(tbuktu_ntru._474.Driver.VARIANT_PACKAGE.toString)
+this.instance == orig(this.instance)
+this.instance.getClass().getName() == orig(this.instance.getClass().getName())
+this.clazz == orig(this.clazz)
+return has only one value
+return.getClass().getName() == tbuktu_ntru._474.original.SignatureParameters.class
+===========================================================================
+tbuktu_ntru._474.Driver.getOutputLength():::ENTER
+===========================================================================
+tbuktu_ntru._474.Driver.getOutputLength():::EXIT
+tbuktu_ntru._474.Driver.VARIANT_PACKAGE == orig(tbuktu_ntru._474.Driver.VARIANT_PACKAGE)
+tbuktu_ntru._474.Driver.VARIANT_PACKAGE.toString == orig(tbuktu_ntru._474.Driver.VARIANT_PACKAGE.toString)
+this.instance == orig(this.instance)
+this.instance.getClass().getName() == orig(this.instance.getClass().getName())
+this.clazz == orig(this.clazz)
+return == 608
+===========================================================================
+tbuktu_ntru._474.Driver.invokeClone():::ENTER
+===========================================================================
+tbuktu_ntru._474.Driver.invokeClone():::EXIT
+tbuktu_ntru._474.Driver.VARIANT_PACKAGE == orig(tbuktu_ntru._474.Driver.VARIANT_PACKAGE)
+tbuktu_ntru._474.Driver.VARIANT_PACKAGE.toString == orig(tbuktu_ntru._474.Driver.VARIANT_PACKAGE.toString)
+this.instance == orig(this.instance)
+this.instance.getClass().getName() == orig(this.instance.getClass().getName())
+this.clazz == orig(this.clazz)
+return has only one value
+return.getClass().getName() == tbuktu_ntru._474.original.SignatureParameters.class
+===========================================================================
+tbuktu_ntru._474.Driver.invokeHashCode():::ENTER
+===========================================================================
+tbuktu_ntru._474.Driver.invokeHashCode():::EXIT
+tbuktu_ntru._474.Driver.VARIANT_PACKAGE == orig(tbuktu_ntru._474.Driver.VARIANT_PACKAGE)
+tbuktu_ntru._474.Driver.VARIANT_PACKAGE.toString == orig(tbuktu_ntru._474.Driver.VARIANT_PACKAGE.toString)
+this.instance == orig(this.instance)
+this.instance.getClass().getName() == orig(this.instance.getClass().getName())
+this.clazz == orig(this.clazz)
+return == -1988958030
+===========================================================================
+tbuktu_ntru._474.Driver.invokeToString():::ENTER
+===========================================================================
+tbuktu_ntru._474.Driver.invokeToString():::EXIT
+tbuktu_ntru._474.Driver.VARIANT_PACKAGE == orig(tbuktu_ntru._474.Driver.VARIANT_PACKAGE)
+tbuktu_ntru._474.Driver.VARIANT_PACKAGE.toString == orig(tbuktu_ntru._474.Driver.VARIANT_PACKAGE.toString)
+this.instance == orig(this.instance)
+this.instance.getClass().getName() == orig(this.instance.getClass().getName())
+this.clazz == orig(this.clazz)
+return has only one value
+return.toString == "SignatureParameters(N=439 q=2048 polyType=SIMPLE d=146 B=1 basisType=TRANSPOSE beta=0.17 normBound=400.00 keyNormBound=280.00 prime=false sparse=true keyGenAlg=RESULTANT hashAlg=SHA-256)"
+===========================================================================
+tbuktu_ntru._474.Driver.writeTo(java.io.OutputStream):::ENTER
+os has only one value
+os.getClass().getName() == java.io.BufferedOutputStream.class
+===========================================================================
+tbuktu_ntru._474.Driver.writeTo(java.io.OutputStream):::EXIT
+tbuktu_ntru._474.Driver.VARIANT_PACKAGE == orig(tbuktu_ntru._474.Driver.VARIANT_PACKAGE)
+tbuktu_ntru._474.Driver.VARIANT_PACKAGE.toString == orig(tbuktu_ntru._474.Driver.VARIANT_PACKAGE.toString)
+this.instance == orig(this.instance)
+this.instance.getClass().getName() == orig(this.instance.getClass().getName())
+this.clazz == orig(this.clazz)
+===========================================================================
+tbuktu_ntru._474.Driver.writeToBuffered():::ENTER
+===========================================================================
+tbuktu_ntru._474.Driver.writeToBuffered():::EXIT
+tbuktu_ntru._474.Driver.VARIANT_PACKAGE == orig(tbuktu_ntru._474.Driver.VARIANT_PACKAGE)
+tbuktu_ntru._474.Driver.VARIANT_PACKAGE.toString == orig(tbuktu_ntru._474.Driver.VARIANT_PACKAGE.toString)
+this.instance == orig(this.instance)
+this.instance.getClass().getName() == orig(this.instance.getClass().getName())
+this.clazz == orig(this.clazz)
+return == 65
+===========================================================================
+tbuktu_ntru._474.original.SignatureParameters$BasisType:::OBJECT
+===========================================================================
+tbuktu_ntru._474.original.SignatureParameters$BasisType.BasisType(java.lang.String, int):::ENTER
+$hidden$1.toString one of { "STANDARD", "TRANSPOSE" }
+$hidden$2 one of { 0, 1 }
+===========================================================================
+tbuktu_ntru._474.original.SignatureParameters$BasisType.BasisType(java.lang.String, int):::EXIT
+$hidden$1.toString == orig($hidden$1.toString)
+$hidden$1.toString one of { "STANDARD", "TRANSPOSE" }
+===========================================================================
+tbuktu_ntru._474.original.SignatureParameters$KeyGenAlg:::OBJECT
+===========================================================================
+tbuktu_ntru._474.original.SignatureParameters$KeyGenAlg.KeyGenAlg(java.lang.String, int):::ENTER
+$hidden$1.toString one of { "FLOAT", "RESULTANT" }
+$hidden$2 one of { 0, 1 }
+===========================================================================
+tbuktu_ntru._474.original.SignatureParameters$KeyGenAlg.KeyGenAlg(java.lang.String, int):::EXIT
+$hidden$1.toString == orig($hidden$1.toString)
+$hidden$1.toString one of { "FLOAT", "RESULTANT" }
+===========================================================================
+tbuktu_ntru._474.original.SignatureParameters$TernaryPolynomialType:::OBJECT
+===========================================================================
+tbuktu_ntru._474.original.SignatureParameters$TernaryPolynomialType.TernaryPolynomialType(java.lang.String, int):::ENTER
+$hidden$1.toString one of { "PRODUCT", "SIMPLE" }
+$hidden$2 one of { 0, 1 }
+===========================================================================
+tbuktu_ntru._474.original.SignatureParameters$TernaryPolynomialType.TernaryPolynomialType(java.lang.String, int):::EXIT
+$hidden$1.toString == orig($hidden$1.toString)
+$hidden$1.toString one of { "PRODUCT", "SIMPLE" }
+===========================================================================
+tbuktu_ntru._474.original.SignatureParameters:::CLASS
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439 has only one value
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439 != null
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD has only one value
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD != null
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743 has only one value
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743 != null
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD has only one value
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD != null
+tbuktu_ntru._474.original.SignatureParameters.TEST157 has only one value
+tbuktu_ntru._474.original.SignatureParameters.TEST157 != null
+tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD has only one value
+tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD != null
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439.N == 439
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439.q == 2048
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439.d == 146
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439.d1 == 0
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439.d2 == 0
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439.d3 == 0
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439.B == 1
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439.beta == 0.165
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439.betaSq == 0.027225003
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439.normBound == 400.0
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439.normBoundSq == 160000.0
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439.signFailTolerance == 100
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439.keyNormBound == 280.0
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439.keyNormBoundSq == 78400.0
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439.primeCheck == false
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439.basisType has only one value
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439.basisType != null
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439.bitsF == 6
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439.sparse == true
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439.keyGenAlg has only one value
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439.keyGenAlg != null
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439.hashAlg has only one value
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439.hashAlg != null
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439.hashAlg.toString == "SHA-256"
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439.polyType has only one value
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439.polyType != null
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.N == 439
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.q == 2048
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.d == 0
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.d1 == 9
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.d2 == 8
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.d3 == 5
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.B == 1
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.beta == 0.165
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.betaSq == 0.027225003
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.normBound == 400.0
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.normBoundSq == 160000.0
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.signFailTolerance == 100
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.keyNormBound == 280.0
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.keyNormBoundSq == 78400.0
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.primeCheck == false
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.basisType has only one value
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.basisType != null
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.bitsF == 6
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.sparse == true
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.keyGenAlg has only one value
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.keyGenAlg != null
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.hashAlg has only one value
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.hashAlg != null
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.hashAlg.toString == "SHA-256"
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.polyType has only one value
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.polyType != null
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743.N == 743
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743.q == 2048
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743.d == 248
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743.d1 == 0
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743.d2 == 0
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743.d3 == 0
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743.B == 1
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743.beta == 0.127
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743.betaSq == 0.016129
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743.normBound == 405.0
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743.normBoundSq == 164025.0
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743.signFailTolerance == 100
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743.keyNormBound == 360.0
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743.keyNormBoundSq == 129600.0
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743.primeCheck == true
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743.basisType has only one value
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743.basisType != null
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743.bitsF == 6
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743.sparse == false
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743.keyGenAlg has only one value
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743.keyGenAlg != null
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743.hashAlg has only one value
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743.hashAlg != null
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743.hashAlg.toString == "SHA-512"
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743.polyType has only one value
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743.polyType != null
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.N == 743
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.q == 2048
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.d == 0
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.d1 == 11
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.d2 == 11
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.d3 == 15
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.B == 1
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.beta == 0.127
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.betaSq == 0.016129
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.normBound == 405.0
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.normBoundSq == 164025.0
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.signFailTolerance == 100
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.keyNormBound == 360.0
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.keyNormBoundSq == 129600.0
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.primeCheck == true
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.basisType has only one value
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.basisType != null
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.bitsF == 6
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.sparse == false
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.keyGenAlg has only one value
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.keyGenAlg != null
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.hashAlg has only one value
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.hashAlg != null
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.hashAlg.toString == "SHA-512"
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.polyType has only one value
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.polyType != null
+tbuktu_ntru._474.original.SignatureParameters.TEST157.N == 157
+tbuktu_ntru._474.original.SignatureParameters.TEST157.q == 256
+tbuktu_ntru._474.original.SignatureParameters.TEST157.d == 29
+tbuktu_ntru._474.original.SignatureParameters.TEST157.d1 == 0
+tbuktu_ntru._474.original.SignatureParameters.TEST157.d2 == 0
+tbuktu_ntru._474.original.SignatureParameters.TEST157.d3 == 0
+tbuktu_ntru._474.original.SignatureParameters.TEST157.B == 1
+tbuktu_ntru._474.original.SignatureParameters.TEST157.beta == 0.38
+tbuktu_ntru._474.original.SignatureParameters.TEST157.betaSq == 0.1444
+tbuktu_ntru._474.original.SignatureParameters.TEST157.normBound == 200.0
+tbuktu_ntru._474.original.SignatureParameters.TEST157.normBoundSq == 40000.0
+tbuktu_ntru._474.original.SignatureParameters.TEST157.signFailTolerance == 100
+tbuktu_ntru._474.original.SignatureParameters.TEST157.keyNormBound == 80.0
+tbuktu_ntru._474.original.SignatureParameters.TEST157.keyNormBoundSq == 6400.0
+tbuktu_ntru._474.original.SignatureParameters.TEST157.primeCheck == false
+tbuktu_ntru._474.original.SignatureParameters.TEST157.basisType has only one value
+tbuktu_ntru._474.original.SignatureParameters.TEST157.basisType != null
+tbuktu_ntru._474.original.SignatureParameters.TEST157.bitsF == 6
+tbuktu_ntru._474.original.SignatureParameters.TEST157.sparse == false
+tbuktu_ntru._474.original.SignatureParameters.TEST157.keyGenAlg has only one value
+tbuktu_ntru._474.original.SignatureParameters.TEST157.keyGenAlg != null
+tbuktu_ntru._474.original.SignatureParameters.TEST157.hashAlg has only one value
+tbuktu_ntru._474.original.SignatureParameters.TEST157.hashAlg != null
+tbuktu_ntru._474.original.SignatureParameters.TEST157.hashAlg.toString == "SHA-256"
+tbuktu_ntru._474.original.SignatureParameters.TEST157.polyType has only one value
+tbuktu_ntru._474.original.SignatureParameters.TEST157.polyType != null
+tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.N == 157
+tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.q == 256
+tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.d == 0
+tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.d1 == 5
+tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.d2 == 5
+tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.d3 == 8
+tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.B == 1
+tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.beta == 0.38
+tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.betaSq == 0.1444
+tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.normBound == 200.0
+tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.normBoundSq == 40000.0
+tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.signFailTolerance == 100
+tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.keyNormBound == 80.0
+tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.keyNormBoundSq == 6400.0
+tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.primeCheck == false
+tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.basisType has only one value
+tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.basisType != null
+tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.bitsF == 6
+tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.sparse == false
+tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.keyGenAlg has only one value
+tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.keyGenAlg != null
+tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.hashAlg has only one value
+tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.hashAlg != null
+tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.hashAlg.toString == "SHA-256"
+tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.polyType has only one value
+tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.polyType != null
+tbuktu_ntru._474.original.SignatureParameters$BasisType.STANDARD has only one value
+tbuktu_ntru._474.original.SignatureParameters$BasisType.STANDARD != null
+tbuktu_ntru._474.original.SignatureParameters$BasisType.TRANSPOSE has only one value
+tbuktu_ntru._474.original.SignatureParameters$BasisType.TRANSPOSE != null
+tbuktu_ntru._474.original.SignatureParameters$BasisType.$VALUES has only one value
+tbuktu_ntru._474.original.SignatureParameters$BasisType.$VALUES != null
+tbuktu_ntru._474.original.SignatureParameters$BasisType.$VALUES.getClass().getName() == tbuktu_ntru._474.original.SignatureParameters$BasisType[].class
+tbuktu_ntru._474.original.SignatureParameters$BasisType.$VALUES[] contains no nulls and has only one value, of length 2
+tbuktu_ntru._474.original.SignatureParameters$BasisType.$VALUES[] elements != null
+tbuktu_ntru._474.original.SignatureParameters$BasisType.$VALUES[].getClass().getName() == [tbuktu_ntru._474.original.SignatureParameters.BasisType, tbuktu_ntru._474.original.SignatureParameters.BasisType]
+tbuktu_ntru._474.original.SignatureParameters$BasisType.$VALUES[].getClass().getName() elements == tbuktu_ntru._474.original.SignatureParameters.BasisType.class
+tbuktu_ntru._474.original.SignatureParameters$KeyGenAlg.RESULTANT has only one value
+tbuktu_ntru._474.original.SignatureParameters$KeyGenAlg.RESULTANT != null
+tbuktu_ntru._474.original.SignatureParameters$KeyGenAlg.FLOAT has only one value
+tbuktu_ntru._474.original.SignatureParameters$KeyGenAlg.FLOAT != null
+tbuktu_ntru._474.original.SignatureParameters$KeyGenAlg.$VALUES has only one value
+tbuktu_ntru._474.original.SignatureParameters$KeyGenAlg.$VALUES != null
+tbuktu_ntru._474.original.SignatureParameters$KeyGenAlg.$VALUES.getClass().getName() == tbuktu_ntru._474.original.SignatureParameters$KeyGenAlg[].class
+tbuktu_ntru._474.original.SignatureParameters$KeyGenAlg.$VALUES[] contains no nulls and has only one value, of length 2
+tbuktu_ntru._474.original.SignatureParameters$KeyGenAlg.$VALUES[] elements != null
+tbuktu_ntru._474.original.SignatureParameters$KeyGenAlg.$VALUES[].getClass().getName() == [tbuktu_ntru._474.original.SignatureParameters.KeyGenAlg, tbuktu_ntru._474.original.SignatureParameters.KeyGenAlg]
+tbuktu_ntru._474.original.SignatureParameters$KeyGenAlg.$VALUES[].getClass().getName() elements == tbuktu_ntru._474.original.SignatureParameters.KeyGenAlg.class
+tbuktu_ntru._474.original.SignatureParameters$TernaryPolynomialType.SIMPLE has only one value
+tbuktu_ntru._474.original.SignatureParameters$TernaryPolynomialType.SIMPLE != null
+tbuktu_ntru._474.original.SignatureParameters$TernaryPolynomialType.PRODUCT has only one value
+tbuktu_ntru._474.original.SignatureParameters$TernaryPolynomialType.PRODUCT != null
+tbuktu_ntru._474.original.SignatureParameters$TernaryPolynomialType.$VALUES has only one value
+tbuktu_ntru._474.original.SignatureParameters$TernaryPolynomialType.$VALUES != null
+tbuktu_ntru._474.original.SignatureParameters$TernaryPolynomialType.$VALUES.getClass().getName() == tbuktu_ntru._474.original.SignatureParameters$TernaryPolynomialType[].class
+tbuktu_ntru._474.original.SignatureParameters$TernaryPolynomialType.$VALUES[] contains no nulls and has only one value, of length 2
+tbuktu_ntru._474.original.SignatureParameters$TernaryPolynomialType.$VALUES[] elements != null
+tbuktu_ntru._474.original.SignatureParameters$TernaryPolynomialType.$VALUES[].getClass().getName() == [tbuktu_ntru._474.original.SignatureParameters.TernaryPolynomialType, tbuktu_ntru._474.original.SignatureParameters.TernaryPolynomialType]
+tbuktu_ntru._474.original.SignatureParameters$TernaryPolynomialType.$VALUES[].getClass().getName() elements == tbuktu_ntru._474.original.SignatureParameters.TernaryPolynomialType.class
+size(tbuktu_ntru._474.original.SignatureParameters$BasisType.$VALUES[]) == 2
+size(tbuktu_ntru._474.original.SignatureParameters$KeyGenAlg.$VALUES[]) == 2
+size(tbuktu_ntru._474.original.SignatureParameters$TernaryPolynomialType.$VALUES[]) == 2
+===========================================================================
+tbuktu_ntru._474.original.SignatureParameters:::OBJECT
+this.N one of { 157, 439, 743 }
+this.q one of { 256, 2048 }
+this.d >= 0
+this.d1 >= 0
+this.d2 >= 0
+this.d3 >= 0
+this.B == 1
+this.beta one of { 0.127, 0.165, 0.38 }
+this.normBound one of { 200.0, 400.0, 405.0 }
+this.normBoundSq >= 0.0
+this.signFailTolerance == 100
+this.keyNormBound one of { 80.0, 280.0, 360.0 }
+this.keyNormBoundSq >= 0.0
+this.basisType has only one value
+this.basisType != null
+this.bitsF == 6
+this.keyGenAlg has only one value
+this.keyGenAlg != null
+this.hashAlg != null
+this.hashAlg.toString one of { "SHA-256", "SHA-512" }
+this.polyType != null
+===========================================================================
+tbuktu_ntru._474.original.SignatureParameters.SignatureParameters(int, int, int, int, int, int, tbuktu_ntru._474.original.SignatureParameters$BasisType, float, float, float, boolean, boolean, tbuktu_ntru._474.original.SignatureParameters$KeyGenAlg, java.lang.String):::ENTER
+basisType == tbuktu_ntru._474.original.SignatureParameters$BasisType.TRANSPOSE
+keyGenAlg == tbuktu_ntru._474.original.SignatureParameters$KeyGenAlg.RESULTANT
+N one of { 157, 439, 743 }
+q one of { 256, 2048 }
+d1 one of { 5, 9, 11 }
+d2 one of { 5, 8, 11 }
+d3 one of { 5, 8, 15 }
+B == 1
+tbuktu_ntru._474.original.SignatureParameters$BasisType.STANDARD has only one value
+tbuktu_ntru._474.original.SignatureParameters$BasisType.TRANSPOSE has only one value
+tbuktu_ntru._474.original.SignatureParameters$BasisType.$VALUES has only one value
+tbuktu_ntru._474.original.SignatureParameters$BasisType.$VALUES.getClass().getName() == tbuktu_ntru._474.original.SignatureParameters$BasisType[].class
+tbuktu_ntru._474.original.SignatureParameters$BasisType.$VALUES[] contains no nulls and has only one value, of length 2
+tbuktu_ntru._474.original.SignatureParameters$BasisType.$VALUES[].getClass().getName() == [tbuktu_ntru._474.original.SignatureParameters.BasisType, tbuktu_ntru._474.original.SignatureParameters.BasisType]
+tbuktu_ntru._474.original.SignatureParameters$BasisType.$VALUES[].getClass().getName() elements == tbuktu_ntru._474.original.SignatureParameters.BasisType.class
+beta one of { 0.127, 0.165, 0.38 }
+normBound one of { 200.0, 400.0, 405.0 }
+keyNormBound one of { 80.0, 280.0, 360.0 }
+tbuktu_ntru._474.original.SignatureParameters$KeyGenAlg.RESULTANT has only one value
+tbuktu_ntru._474.original.SignatureParameters$KeyGenAlg.FLOAT has only one value
+tbuktu_ntru._474.original.SignatureParameters$KeyGenAlg.$VALUES has only one value
+tbuktu_ntru._474.original.SignatureParameters$KeyGenAlg.$VALUES.getClass().getName() == tbuktu_ntru._474.original.SignatureParameters$KeyGenAlg[].class
+tbuktu_ntru._474.original.SignatureParameters$KeyGenAlg.$VALUES[] contains no nulls and has only one value, of length 2
+tbuktu_ntru._474.original.SignatureParameters$KeyGenAlg.$VALUES[].getClass().getName() == [tbuktu_ntru._474.original.SignatureParameters.KeyGenAlg, tbuktu_ntru._474.original.SignatureParameters.KeyGenAlg]
+tbuktu_ntru._474.original.SignatureParameters$KeyGenAlg.$VALUES[].getClass().getName() elements == tbuktu_ntru._474.original.SignatureParameters.KeyGenAlg.class
+hashAlg.toString one of { "SHA-256", "SHA-512" }
+size(tbuktu_ntru._474.original.SignatureParameters$BasisType.$VALUES[]) == 2
+size(tbuktu_ntru._474.original.SignatureParameters$KeyGenAlg.$VALUES[]) == 2
+===========================================================================
+tbuktu_ntru._474.original.SignatureParameters.SignatureParameters(int, int, int, int, int, int, tbuktu_ntru._474.original.SignatureParameters$BasisType, float, float, float, boolean, boolean, tbuktu_ntru._474.original.SignatureParameters$KeyGenAlg, java.lang.String):::EXIT
+tbuktu_ntru._474.original.SignatureParameters$BasisType.STANDARD == orig(tbuktu_ntru._474.original.SignatureParameters$BasisType.STANDARD)
+tbuktu_ntru._474.original.SignatureParameters$BasisType.TRANSPOSE == this.basisType
+tbuktu_ntru._474.original.SignatureParameters$BasisType.TRANSPOSE == orig(basisType)
+tbuktu_ntru._474.original.SignatureParameters$BasisType.TRANSPOSE == orig(tbuktu_ntru._474.original.SignatureParameters$BasisType.TRANSPOSE)
+tbuktu_ntru._474.original.SignatureParameters$BasisType.$VALUES == orig(tbuktu_ntru._474.original.SignatureParameters$BasisType.$VALUES)
+tbuktu_ntru._474.original.SignatureParameters$BasisType.$VALUES.getClass().getName() == orig(tbuktu_ntru._474.original.SignatureParameters$BasisType.$VALUES.getClass().getName())
+tbuktu_ntru._474.original.SignatureParameters$BasisType.$VALUES[] == orig(tbuktu_ntru._474.original.SignatureParameters$BasisType.$VALUES[])
+tbuktu_ntru._474.original.SignatureParameters$KeyGenAlg.RESULTANT == this.keyGenAlg
+tbuktu_ntru._474.original.SignatureParameters$KeyGenAlg.RESULTANT == orig(keyGenAlg)
+tbuktu_ntru._474.original.SignatureParameters$KeyGenAlg.RESULTANT == orig(tbuktu_ntru._474.original.SignatureParameters$KeyGenAlg.RESULTANT)
+tbuktu_ntru._474.original.SignatureParameters$KeyGenAlg.FLOAT == orig(tbuktu_ntru._474.original.SignatureParameters$KeyGenAlg.FLOAT)
+tbuktu_ntru._474.original.SignatureParameters$KeyGenAlg.$VALUES == orig(tbuktu_ntru._474.original.SignatureParameters$KeyGenAlg.$VALUES)
+tbuktu_ntru._474.original.SignatureParameters$KeyGenAlg.$VALUES.getClass().getName() == orig(tbuktu_ntru._474.original.SignatureParameters$KeyGenAlg.$VALUES.getClass().getName())
+tbuktu_ntru._474.original.SignatureParameters$KeyGenAlg.$VALUES[] == orig(tbuktu_ntru._474.original.SignatureParameters$KeyGenAlg.$VALUES[])
+tbuktu_ntru._474.original.SignatureParameters$TernaryPolynomialType.PRODUCT == this.polyType
+this.N == orig(N)
+this.q == orig(q)
+this.d1 == orig(d1)
+this.d2 == orig(d2)
+this.d3 == orig(d3)
+this.B == orig(B)
+this.beta == orig(beta)
+this.normBound == orig(normBound)
+this.keyNormBound == orig(keyNormBound)
+this.primeCheck == orig(primeCheck)
+this.sparse == orig(sparse)
+this.hashAlg == orig(hashAlg)
+hashAlg.toString == orig(hashAlg.toString)
+this.d == 0
+this.d1 one of { 5, 9, 11 }
+this.d2 one of { 5, 8, 11 }
+this.d3 one of { 5, 8, 15 }
+this.betaSq one of { 0.016129, 0.027225003, 0.1444 }
+this.normBoundSq one of { 40000.0, 160000.0, 164025.0 }
+this.keyNormBoundSq one of { 6400.0, 78400.0, 129600.0 }
+hashAlg.toString one of { "SHA-256", "SHA-512" }
+===========================================================================
+tbuktu_ntru._474.original.SignatureParameters.SignatureParameters(int, int, int, int, tbuktu_ntru._474.original.SignatureParameters$BasisType, float, float, float, boolean, boolean, tbuktu_ntru._474.original.SignatureParameters$KeyGenAlg, java.lang.String):::ENTER
+basisType == tbuktu_ntru._474.original.SignatureParameters$BasisType.TRANSPOSE
+keyGenAlg == tbuktu_ntru._474.original.SignatureParameters$KeyGenAlg.RESULTANT
+N one of { 157, 439, 743 }
+q one of { 256, 2048 }
+d one of { 29, 146, 248 }
+B == 1
+tbuktu_ntru._474.original.SignatureParameters$BasisType.STANDARD has only one value
+tbuktu_ntru._474.original.SignatureParameters$BasisType.TRANSPOSE has only one value
+tbuktu_ntru._474.original.SignatureParameters$BasisType.$VALUES has only one value
+tbuktu_ntru._474.original.SignatureParameters$BasisType.$VALUES.getClass().getName() == tbuktu_ntru._474.original.SignatureParameters$BasisType[].class
+tbuktu_ntru._474.original.SignatureParameters$BasisType.$VALUES[] contains no nulls and has only one value, of length 2
+tbuktu_ntru._474.original.SignatureParameters$BasisType.$VALUES[].getClass().getName() == [tbuktu_ntru._474.original.SignatureParameters.BasisType, tbuktu_ntru._474.original.SignatureParameters.BasisType]
+tbuktu_ntru._474.original.SignatureParameters$BasisType.$VALUES[].getClass().getName() elements == tbuktu_ntru._474.original.SignatureParameters.BasisType.class
+beta one of { 0.127, 0.165, 0.38 }
+normBound one of { 200.0, 400.0, 405.0 }
+keyNormBound one of { 80.0, 280.0, 360.0 }
+tbuktu_ntru._474.original.SignatureParameters$KeyGenAlg.RESULTANT has only one value
+tbuktu_ntru._474.original.SignatureParameters$KeyGenAlg.FLOAT has only one value
+tbuktu_ntru._474.original.SignatureParameters$KeyGenAlg.$VALUES has only one value
+tbuktu_ntru._474.original.SignatureParameters$KeyGenAlg.$VALUES.getClass().getName() == tbuktu_ntru._474.original.SignatureParameters$KeyGenAlg[].class
+tbuktu_ntru._474.original.SignatureParameters$KeyGenAlg.$VALUES[] contains no nulls and has only one value, of length 2
+tbuktu_ntru._474.original.SignatureParameters$KeyGenAlg.$VALUES[].getClass().getName() == [tbuktu_ntru._474.original.SignatureParameters.KeyGenAlg, tbuktu_ntru._474.original.SignatureParameters.KeyGenAlg]
+tbuktu_ntru._474.original.SignatureParameters$KeyGenAlg.$VALUES[].getClass().getName() elements == tbuktu_ntru._474.original.SignatureParameters.KeyGenAlg.class
+hashAlg.toString one of { "SHA-256", "SHA-512" }
+size(tbuktu_ntru._474.original.SignatureParameters$BasisType.$VALUES[]) == 2
+size(tbuktu_ntru._474.original.SignatureParameters$KeyGenAlg.$VALUES[]) == 2
+===========================================================================
+tbuktu_ntru._474.original.SignatureParameters.SignatureParameters(int, int, int, int, tbuktu_ntru._474.original.SignatureParameters$BasisType, float, float, float, boolean, boolean, tbuktu_ntru._474.original.SignatureParameters$KeyGenAlg, java.lang.String):::EXIT
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439.basisType == tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.basisType
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439.basisType == tbuktu_ntru._474.original.SignatureParameters.APR2011_743.basisType
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439.basisType == tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.basisType
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439.basisType == tbuktu_ntru._474.original.SignatureParameters.TEST157.basisType
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439.basisType == tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.basisType
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439.keyGenAlg == tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.keyGenAlg
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439.keyGenAlg == tbuktu_ntru._474.original.SignatureParameters.APR2011_743.keyGenAlg
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439.keyGenAlg == tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.keyGenAlg
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439.keyGenAlg == tbuktu_ntru._474.original.SignatureParameters.TEST157.keyGenAlg
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439.keyGenAlg == tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.keyGenAlg
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439.hashAlg == tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.hashAlg
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439.hashAlg == tbuktu_ntru._474.original.SignatureParameters.TEST157.hashAlg
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439.hashAlg == tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.hashAlg
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439.polyType == tbuktu_ntru._474.original.SignatureParameters.APR2011_743.polyType
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439.polyType == tbuktu_ntru._474.original.SignatureParameters.TEST157.polyType
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.polyType == tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.polyType
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.polyType == tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.polyType
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743.hashAlg == tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.hashAlg
+tbuktu_ntru._474.original.SignatureParameters$BasisType.STANDARD == orig(tbuktu_ntru._474.original.SignatureParameters$BasisType.STANDARD)
+tbuktu_ntru._474.original.SignatureParameters$BasisType.TRANSPOSE == this.basisType
+tbuktu_ntru._474.original.SignatureParameters$BasisType.TRANSPOSE == orig(basisType)
+tbuktu_ntru._474.original.SignatureParameters$BasisType.TRANSPOSE == orig(tbuktu_ntru._474.original.SignatureParameters$BasisType.TRANSPOSE)
+tbuktu_ntru._474.original.SignatureParameters$BasisType.$VALUES == orig(tbuktu_ntru._474.original.SignatureParameters$BasisType.$VALUES)
+tbuktu_ntru._474.original.SignatureParameters$BasisType.$VALUES.getClass().getName() == orig(tbuktu_ntru._474.original.SignatureParameters$BasisType.$VALUES.getClass().getName())
+tbuktu_ntru._474.original.SignatureParameters$BasisType.$VALUES[] == orig(tbuktu_ntru._474.original.SignatureParameters$BasisType.$VALUES[])
+tbuktu_ntru._474.original.SignatureParameters$KeyGenAlg.RESULTANT == this.keyGenAlg
+tbuktu_ntru._474.original.SignatureParameters$KeyGenAlg.RESULTANT == orig(keyGenAlg)
+tbuktu_ntru._474.original.SignatureParameters$KeyGenAlg.RESULTANT == orig(tbuktu_ntru._474.original.SignatureParameters$KeyGenAlg.RESULTANT)
+tbuktu_ntru._474.original.SignatureParameters$KeyGenAlg.FLOAT == orig(tbuktu_ntru._474.original.SignatureParameters$KeyGenAlg.FLOAT)
+tbuktu_ntru._474.original.SignatureParameters$KeyGenAlg.$VALUES == orig(tbuktu_ntru._474.original.SignatureParameters$KeyGenAlg.$VALUES)
+tbuktu_ntru._474.original.SignatureParameters$KeyGenAlg.$VALUES.getClass().getName() == orig(tbuktu_ntru._474.original.SignatureParameters$KeyGenAlg.$VALUES.getClass().getName())
+tbuktu_ntru._474.original.SignatureParameters$KeyGenAlg.$VALUES[] == orig(tbuktu_ntru._474.original.SignatureParameters$KeyGenAlg.$VALUES[])
+tbuktu_ntru._474.original.SignatureParameters$TernaryPolynomialType.SIMPLE == this.polyType
+this.N == orig(N)
+this.q == orig(q)
+this.d == orig(d)
+this.B == orig(B)
+this.beta == orig(beta)
+this.normBound == orig(normBound)
+this.keyNormBound == orig(keyNormBound)
+this.primeCheck == orig(primeCheck)
+this.sparse == orig(sparse)
+this.hashAlg == orig(hashAlg)
+hashAlg.toString == orig(hashAlg.toString)
+this.d one of { 29, 146, 248 }
+this.d1 == 0
+this.d2 == 0
+this.d3 == 0
+this.betaSq one of { 0.016129, 0.027225003, 0.1444 }
+this.normBoundSq one of { 40000.0, 160000.0, 164025.0 }
+this.keyNormBoundSq one of { 6400.0, 78400.0, 129600.0 }
+hashAlg.toString one of { "SHA-256", "SHA-512" }
+===========================================================================
+tbuktu_ntru._474.original.SignatureParameters.clone():::ENTER
+this has only one value
+this.N == 439
+this.q == 2048
+this.d == 146
+this.d1 == 0
+this.d2 == 0
+this.d3 == 0
+this.beta == 0.165
+this.betaSq == 0.027225003
+this.normBound == 400.0
+this.normBoundSq == 160000.0
+this.keyNormBound == 280.0
+this.keyNormBoundSq == 78400.0
+this.primeCheck == false
+this.sparse == true
+this.hashAlg has only one value
+this.hashAlg.toString == "SHA-256"
+this.polyType has only one value
+===========================================================================
+tbuktu_ntru._474.original.SignatureParameters.clone():::EXIT220
+===========================================================================
+tbuktu_ntru._474.original.SignatureParameters.clone():::EXIT
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439 == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743 == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD)
+tbuktu_ntru._474.original.SignatureParameters.TEST157 == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157)
+tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439.N == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439.N)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439.q == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439.q)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439.d == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439.d)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439.d1 == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439.d1)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439.d2 == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439.d2)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439.d3 == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439.d3)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439.B == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439.B)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439.beta == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439.beta)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439.betaSq == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439.betaSq)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439.normBound == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439.normBound)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439.normBoundSq == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439.normBoundSq)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439.signFailTolerance == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439.signFailTolerance)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439.keyNormBound == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439.keyNormBound)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439.keyNormBoundSq == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439.keyNormBoundSq)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439.primeCheck == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439.primeCheck)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439.basisType == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439.basisType)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439.bitsF == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439.bitsF)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439.sparse == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439.sparse)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439.keyGenAlg == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439.keyGenAlg)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439.hashAlg == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439.hashAlg)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439.hashAlg.toString == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439.hashAlg.toString)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439.polyType == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439.polyType)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.N == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.N)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.q == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.q)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.d == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.d)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.d1 == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.d1)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.d2 == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.d2)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.d3 == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.d3)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.B == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.B)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.beta == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.beta)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.betaSq == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.betaSq)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.normBound == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.normBound)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.normBoundSq == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.normBoundSq)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.signFailTolerance == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.signFailTolerance)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.keyNormBound == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.keyNormBound)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.keyNormBoundSq == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.keyNormBoundSq)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.primeCheck == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.primeCheck)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.basisType == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.basisType)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.bitsF == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.bitsF)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.sparse == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.sparse)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.keyGenAlg == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.keyGenAlg)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.hashAlg == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.hashAlg)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.hashAlg.toString == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.hashAlg.toString)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.polyType == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.polyType)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743.N == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743.N)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743.q == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743.q)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743.d == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743.d)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743.d1 == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743.d1)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743.d2 == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743.d2)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743.d3 == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743.d3)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743.B == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743.B)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743.beta == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743.beta)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743.betaSq == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743.betaSq)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743.normBound == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743.normBound)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743.normBoundSq == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743.normBoundSq)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743.signFailTolerance == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743.signFailTolerance)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743.keyNormBound == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743.keyNormBound)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743.keyNormBoundSq == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743.keyNormBoundSq)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743.primeCheck == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743.primeCheck)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743.basisType == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743.basisType)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743.bitsF == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743.bitsF)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743.sparse == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743.sparse)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743.keyGenAlg == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743.keyGenAlg)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743.hashAlg == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743.hashAlg)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743.hashAlg.toString == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743.hashAlg.toString)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743.polyType == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743.polyType)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.N == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.N)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.q == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.q)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.d == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.d)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.d1 == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.d1)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.d2 == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.d2)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.d3 == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.d3)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.B == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.B)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.beta == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.beta)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.betaSq == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.betaSq)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.normBound == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.normBound)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.normBoundSq == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.normBoundSq)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.signFailTolerance == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.signFailTolerance)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.keyNormBound == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.keyNormBound)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.keyNormBoundSq == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.keyNormBoundSq)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.primeCheck == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.primeCheck)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.basisType == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.basisType)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.bitsF == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.bitsF)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.sparse == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.sparse)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.keyGenAlg == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.keyGenAlg)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.hashAlg == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.hashAlg)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.hashAlg.toString == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.hashAlg.toString)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.polyType == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.polyType)
+tbuktu_ntru._474.original.SignatureParameters.TEST157.N == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157.N)
+tbuktu_ntru._474.original.SignatureParameters.TEST157.q == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157.q)
+tbuktu_ntru._474.original.SignatureParameters.TEST157.d == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157.d)
+tbuktu_ntru._474.original.SignatureParameters.TEST157.d1 == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157.d1)
+tbuktu_ntru._474.original.SignatureParameters.TEST157.d2 == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157.d2)
+tbuktu_ntru._474.original.SignatureParameters.TEST157.d3 == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157.d3)
+tbuktu_ntru._474.original.SignatureParameters.TEST157.B == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157.B)
+tbuktu_ntru._474.original.SignatureParameters.TEST157.beta == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157.beta)
+tbuktu_ntru._474.original.SignatureParameters.TEST157.betaSq == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157.betaSq)
+tbuktu_ntru._474.original.SignatureParameters.TEST157.normBound == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157.normBound)
+tbuktu_ntru._474.original.SignatureParameters.TEST157.normBoundSq == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157.normBoundSq)
+tbuktu_ntru._474.original.SignatureParameters.TEST157.signFailTolerance == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157.signFailTolerance)
+tbuktu_ntru._474.original.SignatureParameters.TEST157.keyNormBound == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157.keyNormBound)
+tbuktu_ntru._474.original.SignatureParameters.TEST157.keyNormBoundSq == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157.keyNormBoundSq)
+tbuktu_ntru._474.original.SignatureParameters.TEST157.primeCheck == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157.primeCheck)
+tbuktu_ntru._474.original.SignatureParameters.TEST157.basisType == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157.basisType)
+tbuktu_ntru._474.original.SignatureParameters.TEST157.bitsF == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157.bitsF)
+tbuktu_ntru._474.original.SignatureParameters.TEST157.sparse == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157.sparse)
+tbuktu_ntru._474.original.SignatureParameters.TEST157.keyGenAlg == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157.keyGenAlg)
+tbuktu_ntru._474.original.SignatureParameters.TEST157.hashAlg == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157.hashAlg)
+tbuktu_ntru._474.original.SignatureParameters.TEST157.hashAlg.toString == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157.hashAlg.toString)
+tbuktu_ntru._474.original.SignatureParameters.TEST157.polyType == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157.polyType)
+tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.N == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.N)
+tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.q == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.q)
+tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.d == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.d)
+tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.d1 == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.d1)
+tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.d2 == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.d2)
+tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.d3 == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.d3)
+tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.B == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.B)
+tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.beta == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.beta)
+tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.betaSq == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.betaSq)
+tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.normBound == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.normBound)
+tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.normBoundSq == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.normBoundSq)
+tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.signFailTolerance == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.signFailTolerance)
+tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.keyNormBound == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.keyNormBound)
+tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.keyNormBoundSq == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.keyNormBoundSq)
+tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.primeCheck == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.primeCheck)
+tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.basisType == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.basisType)
+tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.bitsF == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.bitsF)
+tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.sparse == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.sparse)
+tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.keyGenAlg == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.keyGenAlg)
+tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.hashAlg == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.hashAlg)
+tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.hashAlg.toString == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.hashAlg.toString)
+tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.polyType == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.polyType)
+tbuktu_ntru._474.original.SignatureParameters$BasisType.STANDARD == orig(tbuktu_ntru._474.original.SignatureParameters$BasisType.STANDARD)
+tbuktu_ntru._474.original.SignatureParameters$BasisType.TRANSPOSE == orig(tbuktu_ntru._474.original.SignatureParameters$BasisType.TRANSPOSE)
+tbuktu_ntru._474.original.SignatureParameters$BasisType.$VALUES == orig(tbuktu_ntru._474.original.SignatureParameters$BasisType.$VALUES)
+tbuktu_ntru._474.original.SignatureParameters$BasisType.$VALUES.getClass().getName() == orig(tbuktu_ntru._474.original.SignatureParameters$BasisType.$VALUES.getClass().getName())
+tbuktu_ntru._474.original.SignatureParameters$BasisType.$VALUES[] == orig(tbuktu_ntru._474.original.SignatureParameters$BasisType.$VALUES[])
+tbuktu_ntru._474.original.SignatureParameters$KeyGenAlg.RESULTANT == orig(tbuktu_ntru._474.original.SignatureParameters$KeyGenAlg.RESULTANT)
+tbuktu_ntru._474.original.SignatureParameters$KeyGenAlg.FLOAT == orig(tbuktu_ntru._474.original.SignatureParameters$KeyGenAlg.FLOAT)
+tbuktu_ntru._474.original.SignatureParameters$KeyGenAlg.$VALUES == orig(tbuktu_ntru._474.original.SignatureParameters$KeyGenAlg.$VALUES)
+tbuktu_ntru._474.original.SignatureParameters$KeyGenAlg.$VALUES.getClass().getName() == orig(tbuktu_ntru._474.original.SignatureParameters$KeyGenAlg.$VALUES.getClass().getName())
+tbuktu_ntru._474.original.SignatureParameters$KeyGenAlg.$VALUES[] == orig(tbuktu_ntru._474.original.SignatureParameters$KeyGenAlg.$VALUES[])
+tbuktu_ntru._474.original.SignatureParameters$TernaryPolynomialType.SIMPLE == orig(tbuktu_ntru._474.original.SignatureParameters$TernaryPolynomialType.SIMPLE)
+tbuktu_ntru._474.original.SignatureParameters$TernaryPolynomialType.PRODUCT == orig(tbuktu_ntru._474.original.SignatureParameters$TernaryPolynomialType.PRODUCT)
+tbuktu_ntru._474.original.SignatureParameters$TernaryPolynomialType.$VALUES == orig(tbuktu_ntru._474.original.SignatureParameters$TernaryPolynomialType.$VALUES)
+tbuktu_ntru._474.original.SignatureParameters$TernaryPolynomialType.$VALUES.getClass().getName() == orig(tbuktu_ntru._474.original.SignatureParameters$TernaryPolynomialType.$VALUES.getClass().getName())
+tbuktu_ntru._474.original.SignatureParameters$TernaryPolynomialType.$VALUES[] == orig(tbuktu_ntru._474.original.SignatureParameters$TernaryPolynomialType.$VALUES[])
+this.N == orig(this.N)
+this.q == orig(this.q)
+this.d == orig(this.d)
+this.d1 == orig(this.d1)
+this.d2 == orig(this.d2)
+this.d3 == orig(this.d3)
+this.B == orig(this.B)
+this.beta == orig(this.beta)
+this.betaSq == orig(this.betaSq)
+this.normBound == orig(this.normBound)
+this.normBoundSq == orig(this.normBoundSq)
+this.signFailTolerance == orig(this.signFailTolerance)
+this.keyNormBound == orig(this.keyNormBound)
+this.keyNormBoundSq == orig(this.keyNormBoundSq)
+this.primeCheck == orig(this.primeCheck)
+this.basisType == orig(this.basisType)
+this.bitsF == orig(this.bitsF)
+this.sparse == orig(this.sparse)
+this.keyGenAlg == orig(this.keyGenAlg)
+this.hashAlg == orig(this.hashAlg)
+this.hashAlg.toString == orig(this.hashAlg.toString)
+this.polyType == orig(this.polyType)
+this.N == 439
+this.q == 2048
+this.d == 146
+this.d1 == 0
+this.d2 == 0
+this.d3 == 0
+this.beta == 0.165
+this.betaSq == 0.027225003
+this.normBound == 400.0
+this.normBoundSq == 160000.0
+this.keyNormBound == 280.0
+this.keyNormBoundSq == 78400.0
+this.primeCheck == false
+this.sparse == true
+this.hashAlg has only one value
+this.hashAlg.toString == "SHA-256"
+this.polyType has only one value
+return has only one value
+return.N == 439
+return.q == 2048
+return.d == 146
+return.d1 == 0
+return.d2 == 0
+return.d3 == 0
+return.B == 1
+return.beta == 0.165
+return.betaSq == 0.027225003
+return.normBound == 400.0
+return.normBoundSq == 160000.0
+return.signFailTolerance == 100
+return.keyNormBound == 280.0
+return.keyNormBoundSq == 78400.0
+return.primeCheck == false
+return.basisType has only one value
+return.bitsF == 6
+return.sparse == true
+return.keyGenAlg has only one value
+return.hashAlg has only one value
+return.hashAlg.toString == "SHA-256"
+return.polyType has only one value
+===========================================================================
+tbuktu_ntru._474.original.SignatureParameters.getOutputLength():::ENTER
+this has only one value
+this.N == 439
+this.q == 2048
+this.d == 146
+this.d1 == 0
+this.d2 == 0
+this.d3 == 0
+this.beta == 0.165
+this.betaSq == 0.027225003
+this.normBound == 400.0
+this.normBoundSq == 160000.0
+this.keyNormBound == 280.0
+this.keyNormBoundSq == 78400.0
+this.primeCheck == false
+this.sparse == true
+this.hashAlg has only one value
+this.hashAlg.toString == "SHA-256"
+this.polyType has only one value
+===========================================================================
+tbuktu_ntru._474.original.SignatureParameters.getOutputLength():::EXIT
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439 == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743 == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD)
+tbuktu_ntru._474.original.SignatureParameters.TEST157 == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157)
+tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439.N == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439.N)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439.q == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439.q)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439.d == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439.d)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439.d1 == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439.d1)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439.d2 == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439.d2)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439.d3 == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439.d3)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439.B == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439.B)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439.beta == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439.beta)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439.betaSq == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439.betaSq)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439.normBound == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439.normBound)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439.normBoundSq == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439.normBoundSq)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439.signFailTolerance == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439.signFailTolerance)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439.keyNormBound == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439.keyNormBound)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439.keyNormBoundSq == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439.keyNormBoundSq)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439.primeCheck == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439.primeCheck)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439.basisType == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439.basisType)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439.bitsF == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439.bitsF)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439.sparse == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439.sparse)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439.keyGenAlg == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439.keyGenAlg)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439.hashAlg == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439.hashAlg)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439.hashAlg.toString == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439.hashAlg.toString)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439.polyType == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439.polyType)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.N == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.N)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.q == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.q)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.d == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.d)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.d1 == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.d1)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.d2 == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.d2)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.d3 == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.d3)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.B == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.B)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.beta == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.beta)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.betaSq == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.betaSq)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.normBound == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.normBound)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.normBoundSq == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.normBoundSq)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.signFailTolerance == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.signFailTolerance)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.keyNormBound == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.keyNormBound)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.keyNormBoundSq == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.keyNormBoundSq)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.primeCheck == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.primeCheck)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.basisType == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.basisType)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.bitsF == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.bitsF)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.sparse == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.sparse)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.keyGenAlg == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.keyGenAlg)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.hashAlg == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.hashAlg)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.hashAlg.toString == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.hashAlg.toString)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.polyType == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.polyType)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743.N == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743.N)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743.q == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743.q)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743.d == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743.d)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743.d1 == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743.d1)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743.d2 == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743.d2)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743.d3 == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743.d3)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743.B == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743.B)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743.beta == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743.beta)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743.betaSq == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743.betaSq)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743.normBound == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743.normBound)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743.normBoundSq == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743.normBoundSq)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743.signFailTolerance == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743.signFailTolerance)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743.keyNormBound == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743.keyNormBound)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743.keyNormBoundSq == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743.keyNormBoundSq)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743.primeCheck == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743.primeCheck)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743.basisType == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743.basisType)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743.bitsF == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743.bitsF)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743.sparse == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743.sparse)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743.keyGenAlg == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743.keyGenAlg)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743.hashAlg == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743.hashAlg)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743.hashAlg.toString == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743.hashAlg.toString)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743.polyType == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743.polyType)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.N == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.N)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.q == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.q)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.d == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.d)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.d1 == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.d1)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.d2 == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.d2)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.d3 == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.d3)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.B == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.B)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.beta == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.beta)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.betaSq == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.betaSq)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.normBound == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.normBound)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.normBoundSq == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.normBoundSq)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.signFailTolerance == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.signFailTolerance)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.keyNormBound == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.keyNormBound)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.keyNormBoundSq == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.keyNormBoundSq)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.primeCheck == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.primeCheck)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.basisType == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.basisType)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.bitsF == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.bitsF)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.sparse == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.sparse)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.keyGenAlg == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.keyGenAlg)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.hashAlg == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.hashAlg)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.hashAlg.toString == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.hashAlg.toString)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.polyType == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.polyType)
+tbuktu_ntru._474.original.SignatureParameters.TEST157.N == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157.N)
+tbuktu_ntru._474.original.SignatureParameters.TEST157.q == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157.q)
+tbuktu_ntru._474.original.SignatureParameters.TEST157.d == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157.d)
+tbuktu_ntru._474.original.SignatureParameters.TEST157.d1 == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157.d1)
+tbuktu_ntru._474.original.SignatureParameters.TEST157.d2 == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157.d2)
+tbuktu_ntru._474.original.SignatureParameters.TEST157.d3 == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157.d3)
+tbuktu_ntru._474.original.SignatureParameters.TEST157.B == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157.B)
+tbuktu_ntru._474.original.SignatureParameters.TEST157.beta == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157.beta)
+tbuktu_ntru._474.original.SignatureParameters.TEST157.betaSq == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157.betaSq)
+tbuktu_ntru._474.original.SignatureParameters.TEST157.normBound == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157.normBound)
+tbuktu_ntru._474.original.SignatureParameters.TEST157.normBoundSq == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157.normBoundSq)
+tbuktu_ntru._474.original.SignatureParameters.TEST157.signFailTolerance == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157.signFailTolerance)
+tbuktu_ntru._474.original.SignatureParameters.TEST157.keyNormBound == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157.keyNormBound)
+tbuktu_ntru._474.original.SignatureParameters.TEST157.keyNormBoundSq == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157.keyNormBoundSq)
+tbuktu_ntru._474.original.SignatureParameters.TEST157.primeCheck == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157.primeCheck)
+tbuktu_ntru._474.original.SignatureParameters.TEST157.basisType == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157.basisType)
+tbuktu_ntru._474.original.SignatureParameters.TEST157.bitsF == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157.bitsF)
+tbuktu_ntru._474.original.SignatureParameters.TEST157.sparse == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157.sparse)
+tbuktu_ntru._474.original.SignatureParameters.TEST157.keyGenAlg == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157.keyGenAlg)
+tbuktu_ntru._474.original.SignatureParameters.TEST157.hashAlg == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157.hashAlg)
+tbuktu_ntru._474.original.SignatureParameters.TEST157.hashAlg.toString == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157.hashAlg.toString)
+tbuktu_ntru._474.original.SignatureParameters.TEST157.polyType == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157.polyType)
+tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.N == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.N)
+tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.q == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.q)
+tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.d == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.d)
+tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.d1 == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.d1)
+tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.d2 == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.d2)
+tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.d3 == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.d3)
+tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.B == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.B)
+tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.beta == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.beta)
+tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.betaSq == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.betaSq)
+tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.normBound == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.normBound)
+tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.normBoundSq == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.normBoundSq)
+tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.signFailTolerance == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.signFailTolerance)
+tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.keyNormBound == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.keyNormBound)
+tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.keyNormBoundSq == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.keyNormBoundSq)
+tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.primeCheck == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.primeCheck)
+tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.basisType == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.basisType)
+tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.bitsF == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.bitsF)
+tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.sparse == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.sparse)
+tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.keyGenAlg == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.keyGenAlg)
+tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.hashAlg == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.hashAlg)
+tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.hashAlg.toString == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.hashAlg.toString)
+tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.polyType == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.polyType)
+tbuktu_ntru._474.original.SignatureParameters$BasisType.STANDARD == orig(tbuktu_ntru._474.original.SignatureParameters$BasisType.STANDARD)
+tbuktu_ntru._474.original.SignatureParameters$BasisType.TRANSPOSE == orig(tbuktu_ntru._474.original.SignatureParameters$BasisType.TRANSPOSE)
+tbuktu_ntru._474.original.SignatureParameters$BasisType.$VALUES == orig(tbuktu_ntru._474.original.SignatureParameters$BasisType.$VALUES)
+tbuktu_ntru._474.original.SignatureParameters$BasisType.$VALUES.getClass().getName() == orig(tbuktu_ntru._474.original.SignatureParameters$BasisType.$VALUES.getClass().getName())
+tbuktu_ntru._474.original.SignatureParameters$BasisType.$VALUES[] == orig(tbuktu_ntru._474.original.SignatureParameters$BasisType.$VALUES[])
+tbuktu_ntru._474.original.SignatureParameters$KeyGenAlg.RESULTANT == orig(tbuktu_ntru._474.original.SignatureParameters$KeyGenAlg.RESULTANT)
+tbuktu_ntru._474.original.SignatureParameters$KeyGenAlg.FLOAT == orig(tbuktu_ntru._474.original.SignatureParameters$KeyGenAlg.FLOAT)
+tbuktu_ntru._474.original.SignatureParameters$KeyGenAlg.$VALUES == orig(tbuktu_ntru._474.original.SignatureParameters$KeyGenAlg.$VALUES)
+tbuktu_ntru._474.original.SignatureParameters$KeyGenAlg.$VALUES.getClass().getName() == orig(tbuktu_ntru._474.original.SignatureParameters$KeyGenAlg.$VALUES.getClass().getName())
+tbuktu_ntru._474.original.SignatureParameters$KeyGenAlg.$VALUES[] == orig(tbuktu_ntru._474.original.SignatureParameters$KeyGenAlg.$VALUES[])
+tbuktu_ntru._474.original.SignatureParameters$TernaryPolynomialType.SIMPLE == orig(tbuktu_ntru._474.original.SignatureParameters$TernaryPolynomialType.SIMPLE)
+tbuktu_ntru._474.original.SignatureParameters$TernaryPolynomialType.PRODUCT == orig(tbuktu_ntru._474.original.SignatureParameters$TernaryPolynomialType.PRODUCT)
+tbuktu_ntru._474.original.SignatureParameters$TernaryPolynomialType.$VALUES == orig(tbuktu_ntru._474.original.SignatureParameters$TernaryPolynomialType.$VALUES)
+tbuktu_ntru._474.original.SignatureParameters$TernaryPolynomialType.$VALUES.getClass().getName() == orig(tbuktu_ntru._474.original.SignatureParameters$TernaryPolynomialType.$VALUES.getClass().getName())
+tbuktu_ntru._474.original.SignatureParameters$TernaryPolynomialType.$VALUES[] == orig(tbuktu_ntru._474.original.SignatureParameters$TernaryPolynomialType.$VALUES[])
+this.N == orig(this.N)
+this.q == orig(this.q)
+this.d == orig(this.d)
+this.d1 == orig(this.d1)
+this.d2 == orig(this.d2)
+this.d3 == orig(this.d3)
+this.B == orig(this.B)
+this.beta == orig(this.beta)
+this.betaSq == orig(this.betaSq)
+this.normBound == orig(this.normBound)
+this.normBoundSq == orig(this.normBoundSq)
+this.signFailTolerance == orig(this.signFailTolerance)
+this.keyNormBound == orig(this.keyNormBound)
+this.keyNormBoundSq == orig(this.keyNormBoundSq)
+this.primeCheck == orig(this.primeCheck)
+this.basisType == orig(this.basisType)
+this.bitsF == orig(this.bitsF)
+this.sparse == orig(this.sparse)
+this.keyGenAlg == orig(this.keyGenAlg)
+this.hashAlg == orig(this.hashAlg)
+this.hashAlg.toString == orig(this.hashAlg.toString)
+this.polyType == orig(this.polyType)
+this.N == 439
+this.q == 2048
+this.d == 146
+this.d1 == 0
+this.d2 == 0
+this.d3 == 0
+this.beta == 0.165
+this.betaSq == 0.027225003
+this.normBound == 400.0
+this.normBoundSq == 160000.0
+this.keyNormBound == 280.0
+this.keyNormBoundSq == 78400.0
+this.primeCheck == false
+this.sparse == true
+this.hashAlg has only one value
+this.hashAlg.toString == "SHA-256"
+this.polyType has only one value
+return == 608
+===========================================================================
+tbuktu_ntru._474.original.SignatureParameters.hashCode():::ENTER
+this has only one value
+this.N == 439
+this.q == 2048
+this.d == 146
+this.d1 == 0
+this.d2 == 0
+this.d3 == 0
+this.beta == 0.165
+this.betaSq == 0.027225003
+this.normBound == 400.0
+this.normBoundSq == 160000.0
+this.keyNormBound == 280.0
+this.keyNormBoundSq == 78400.0
+this.primeCheck == false
+this.sparse == true
+this.hashAlg has only one value
+this.hashAlg.toString == "SHA-256"
+this.polyType has only one value
+===========================================================================
+tbuktu_ntru._474.original.SignatureParameters.hashCode():::EXIT
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439 == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743 == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD)
+tbuktu_ntru._474.original.SignatureParameters.TEST157 == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157)
+tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439.N == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439.N)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439.q == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439.q)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439.d == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439.d)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439.d1 == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439.d1)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439.d2 == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439.d2)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439.d3 == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439.d3)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439.B == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439.B)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439.beta == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439.beta)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439.betaSq == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439.betaSq)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439.normBound == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439.normBound)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439.normBoundSq == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439.normBoundSq)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439.signFailTolerance == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439.signFailTolerance)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439.keyNormBound == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439.keyNormBound)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439.keyNormBoundSq == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439.keyNormBoundSq)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439.primeCheck == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439.primeCheck)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439.basisType == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439.basisType)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439.bitsF == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439.bitsF)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439.sparse == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439.sparse)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439.keyGenAlg == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439.keyGenAlg)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439.hashAlg == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439.hashAlg)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439.hashAlg.toString == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439.hashAlg.toString)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439.polyType == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439.polyType)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.N == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.N)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.q == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.q)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.d == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.d)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.d1 == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.d1)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.d2 == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.d2)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.d3 == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.d3)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.B == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.B)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.beta == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.beta)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.betaSq == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.betaSq)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.normBound == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.normBound)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.normBoundSq == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.normBoundSq)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.signFailTolerance == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.signFailTolerance)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.keyNormBound == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.keyNormBound)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.keyNormBoundSq == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.keyNormBoundSq)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.primeCheck == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.primeCheck)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.basisType == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.basisType)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.bitsF == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.bitsF)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.sparse == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.sparse)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.keyGenAlg == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.keyGenAlg)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.hashAlg == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.hashAlg)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.hashAlg.toString == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.hashAlg.toString)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.polyType == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.polyType)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743.N == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743.N)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743.q == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743.q)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743.d == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743.d)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743.d1 == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743.d1)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743.d2 == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743.d2)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743.d3 == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743.d3)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743.B == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743.B)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743.beta == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743.beta)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743.betaSq == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743.betaSq)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743.normBound == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743.normBound)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743.normBoundSq == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743.normBoundSq)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743.signFailTolerance == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743.signFailTolerance)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743.keyNormBound == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743.keyNormBound)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743.keyNormBoundSq == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743.keyNormBoundSq)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743.primeCheck == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743.primeCheck)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743.basisType == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743.basisType)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743.bitsF == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743.bitsF)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743.sparse == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743.sparse)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743.keyGenAlg == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743.keyGenAlg)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743.hashAlg == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743.hashAlg)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743.hashAlg.toString == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743.hashAlg.toString)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743.polyType == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743.polyType)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.N == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.N)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.q == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.q)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.d == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.d)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.d1 == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.d1)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.d2 == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.d2)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.d3 == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.d3)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.B == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.B)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.beta == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.beta)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.betaSq == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.betaSq)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.normBound == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.normBound)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.normBoundSq == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.normBoundSq)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.signFailTolerance == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.signFailTolerance)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.keyNormBound == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.keyNormBound)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.keyNormBoundSq == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.keyNormBoundSq)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.primeCheck == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.primeCheck)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.basisType == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.basisType)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.bitsF == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.bitsF)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.sparse == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.sparse)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.keyGenAlg == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.keyGenAlg)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.hashAlg == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.hashAlg)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.hashAlg.toString == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.hashAlg.toString)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.polyType == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.polyType)
+tbuktu_ntru._474.original.SignatureParameters.TEST157.N == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157.N)
+tbuktu_ntru._474.original.SignatureParameters.TEST157.q == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157.q)
+tbuktu_ntru._474.original.SignatureParameters.TEST157.d == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157.d)
+tbuktu_ntru._474.original.SignatureParameters.TEST157.d1 == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157.d1)
+tbuktu_ntru._474.original.SignatureParameters.TEST157.d2 == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157.d2)
+tbuktu_ntru._474.original.SignatureParameters.TEST157.d3 == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157.d3)
+tbuktu_ntru._474.original.SignatureParameters.TEST157.B == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157.B)
+tbuktu_ntru._474.original.SignatureParameters.TEST157.beta == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157.beta)
+tbuktu_ntru._474.original.SignatureParameters.TEST157.betaSq == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157.betaSq)
+tbuktu_ntru._474.original.SignatureParameters.TEST157.normBound == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157.normBound)
+tbuktu_ntru._474.original.SignatureParameters.TEST157.normBoundSq == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157.normBoundSq)
+tbuktu_ntru._474.original.SignatureParameters.TEST157.signFailTolerance == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157.signFailTolerance)
+tbuktu_ntru._474.original.SignatureParameters.TEST157.keyNormBound == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157.keyNormBound)
+tbuktu_ntru._474.original.SignatureParameters.TEST157.keyNormBoundSq == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157.keyNormBoundSq)
+tbuktu_ntru._474.original.SignatureParameters.TEST157.primeCheck == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157.primeCheck)
+tbuktu_ntru._474.original.SignatureParameters.TEST157.basisType == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157.basisType)
+tbuktu_ntru._474.original.SignatureParameters.TEST157.bitsF == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157.bitsF)
+tbuktu_ntru._474.original.SignatureParameters.TEST157.sparse == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157.sparse)
+tbuktu_ntru._474.original.SignatureParameters.TEST157.keyGenAlg == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157.keyGenAlg)
+tbuktu_ntru._474.original.SignatureParameters.TEST157.hashAlg == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157.hashAlg)
+tbuktu_ntru._474.original.SignatureParameters.TEST157.hashAlg.toString == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157.hashAlg.toString)
+tbuktu_ntru._474.original.SignatureParameters.TEST157.polyType == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157.polyType)
+tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.N == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.N)
+tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.q == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.q)
+tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.d == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.d)
+tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.d1 == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.d1)
+tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.d2 == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.d2)
+tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.d3 == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.d3)
+tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.B == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.B)
+tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.beta == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.beta)
+tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.betaSq == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.betaSq)
+tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.normBound == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.normBound)
+tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.normBoundSq == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.normBoundSq)
+tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.signFailTolerance == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.signFailTolerance)
+tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.keyNormBound == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.keyNormBound)
+tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.keyNormBoundSq == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.keyNormBoundSq)
+tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.primeCheck == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.primeCheck)
+tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.basisType == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.basisType)
+tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.bitsF == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.bitsF)
+tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.sparse == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.sparse)
+tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.keyGenAlg == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.keyGenAlg)
+tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.hashAlg == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.hashAlg)
+tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.hashAlg.toString == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.hashAlg.toString)
+tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.polyType == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.polyType)
+tbuktu_ntru._474.original.SignatureParameters$BasisType.STANDARD == orig(tbuktu_ntru._474.original.SignatureParameters$BasisType.STANDARD)
+tbuktu_ntru._474.original.SignatureParameters$BasisType.TRANSPOSE == orig(tbuktu_ntru._474.original.SignatureParameters$BasisType.TRANSPOSE)
+tbuktu_ntru._474.original.SignatureParameters$BasisType.$VALUES == orig(tbuktu_ntru._474.original.SignatureParameters$BasisType.$VALUES)
+tbuktu_ntru._474.original.SignatureParameters$BasisType.$VALUES.getClass().getName() == orig(tbuktu_ntru._474.original.SignatureParameters$BasisType.$VALUES.getClass().getName())
+tbuktu_ntru._474.original.SignatureParameters$BasisType.$VALUES[] == orig(tbuktu_ntru._474.original.SignatureParameters$BasisType.$VALUES[])
+tbuktu_ntru._474.original.SignatureParameters$KeyGenAlg.RESULTANT == orig(tbuktu_ntru._474.original.SignatureParameters$KeyGenAlg.RESULTANT)
+tbuktu_ntru._474.original.SignatureParameters$KeyGenAlg.FLOAT == orig(tbuktu_ntru._474.original.SignatureParameters$KeyGenAlg.FLOAT)
+tbuktu_ntru._474.original.SignatureParameters$KeyGenAlg.$VALUES == orig(tbuktu_ntru._474.original.SignatureParameters$KeyGenAlg.$VALUES)
+tbuktu_ntru._474.original.SignatureParameters$KeyGenAlg.$VALUES.getClass().getName() == orig(tbuktu_ntru._474.original.SignatureParameters$KeyGenAlg.$VALUES.getClass().getName())
+tbuktu_ntru._474.original.SignatureParameters$KeyGenAlg.$VALUES[] == orig(tbuktu_ntru._474.original.SignatureParameters$KeyGenAlg.$VALUES[])
+tbuktu_ntru._474.original.SignatureParameters$TernaryPolynomialType.SIMPLE == orig(tbuktu_ntru._474.original.SignatureParameters$TernaryPolynomialType.SIMPLE)
+tbuktu_ntru._474.original.SignatureParameters$TernaryPolynomialType.PRODUCT == orig(tbuktu_ntru._474.original.SignatureParameters$TernaryPolynomialType.PRODUCT)
+tbuktu_ntru._474.original.SignatureParameters$TernaryPolynomialType.$VALUES == orig(tbuktu_ntru._474.original.SignatureParameters$TernaryPolynomialType.$VALUES)
+tbuktu_ntru._474.original.SignatureParameters$TernaryPolynomialType.$VALUES.getClass().getName() == orig(tbuktu_ntru._474.original.SignatureParameters$TernaryPolynomialType.$VALUES.getClass().getName())
+tbuktu_ntru._474.original.SignatureParameters$TernaryPolynomialType.$VALUES[] == orig(tbuktu_ntru._474.original.SignatureParameters$TernaryPolynomialType.$VALUES[])
+this.N == orig(this.N)
+this.q == orig(this.q)
+this.d == orig(this.d)
+this.d1 == orig(this.d1)
+this.d2 == orig(this.d2)
+this.d3 == orig(this.d3)
+this.B == orig(this.B)
+this.beta == orig(this.beta)
+this.betaSq == orig(this.betaSq)
+this.normBound == orig(this.normBound)
+this.normBoundSq == orig(this.normBoundSq)
+this.signFailTolerance == orig(this.signFailTolerance)
+this.keyNormBound == orig(this.keyNormBound)
+this.keyNormBoundSq == orig(this.keyNormBoundSq)
+this.primeCheck == orig(this.primeCheck)
+this.basisType == orig(this.basisType)
+this.bitsF == orig(this.bitsF)
+this.sparse == orig(this.sparse)
+this.keyGenAlg == orig(this.keyGenAlg)
+this.hashAlg == orig(this.hashAlg)
+this.hashAlg.toString == orig(this.hashAlg.toString)
+this.polyType == orig(this.polyType)
+this.N == 439
+this.q == 2048
+this.d == 146
+this.d1 == 0
+this.d2 == 0
+this.d3 == 0
+this.beta == 0.165
+this.betaSq == 0.027225003
+this.normBound == 400.0
+this.normBoundSq == 160000.0
+this.keyNormBound == 280.0
+this.keyNormBoundSq == 78400.0
+this.primeCheck == false
+this.sparse == true
+this.hashAlg has only one value
+this.hashAlg.toString == "SHA-256"
+this.polyType has only one value
+return == -1988958030
+===========================================================================
+tbuktu_ntru._474.original.SignatureParameters.init():::ENTER
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439.basisType == tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.basisType
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439.basisType == tbuktu_ntru._474.original.SignatureParameters.APR2011_743.basisType
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439.basisType == tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.basisType
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439.basisType == tbuktu_ntru._474.original.SignatureParameters.TEST157.basisType
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439.basisType == tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.basisType
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439.keyGenAlg == tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.keyGenAlg
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439.keyGenAlg == tbuktu_ntru._474.original.SignatureParameters.APR2011_743.keyGenAlg
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439.keyGenAlg == tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.keyGenAlg
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439.keyGenAlg == tbuktu_ntru._474.original.SignatureParameters.TEST157.keyGenAlg
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439.keyGenAlg == tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.keyGenAlg
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439.hashAlg == tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.hashAlg
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439.hashAlg == tbuktu_ntru._474.original.SignatureParameters.TEST157.hashAlg
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439.hashAlg == tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.hashAlg
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439.polyType == tbuktu_ntru._474.original.SignatureParameters.APR2011_743.polyType
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439.polyType == tbuktu_ntru._474.original.SignatureParameters.TEST157.polyType
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.polyType == tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.polyType
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.polyType == tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.polyType
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743.hashAlg == tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.hashAlg
+tbuktu_ntru._474.original.SignatureParameters$BasisType.TRANSPOSE == this.basisType
+tbuktu_ntru._474.original.SignatureParameters$KeyGenAlg.RESULTANT == this.keyGenAlg
+this.betaSq == 0.0
+this.normBoundSq == 0.0
+this.keyNormBoundSq == 0.0
+tbuktu_ntru._474.original.SignatureParameters$BasisType.$VALUES.getClass().getName() != tbuktu_ntru._474.original.SignatureParameters$KeyGenAlg.$VALUES.getClass().getName()
+tbuktu_ntru._474.original.SignatureParameters$BasisType.$VALUES.getClass().getName() != tbuktu_ntru._474.original.SignatureParameters$TernaryPolynomialType.$VALUES.getClass().getName()
+tbuktu_ntru._474.original.SignatureParameters$KeyGenAlg.$VALUES.getClass().getName() != tbuktu_ntru._474.original.SignatureParameters$TernaryPolynomialType.$VALUES.getClass().getName()
+this.beta > this.betaSq
+this.normBound > this.normBoundSq
+this.keyNormBound > this.keyNormBoundSq
+===========================================================================
+tbuktu_ntru._474.original.SignatureParameters.init():::EXIT
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439 == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743 == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD)
+tbuktu_ntru._474.original.SignatureParameters.TEST157 == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157)
+tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439.N == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439.N)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439.q == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439.q)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439.d == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439.d)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439.d1 == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439.d1)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439.d2 == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439.d2)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439.d3 == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439.d3)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439.B == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439.B)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439.beta == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439.beta)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439.betaSq == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439.betaSq)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439.normBound == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439.normBound)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439.normBoundSq == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439.normBoundSq)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439.signFailTolerance == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439.signFailTolerance)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439.keyNormBound == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439.keyNormBound)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439.keyNormBoundSq == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439.keyNormBoundSq)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439.primeCheck == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439.primeCheck)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439.basisType == tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.basisType
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439.basisType == tbuktu_ntru._474.original.SignatureParameters.APR2011_743.basisType
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439.basisType == tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.basisType
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439.basisType == tbuktu_ntru._474.original.SignatureParameters.TEST157.basisType
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439.basisType == tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.basisType
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439.basisType == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439.basisType)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439.basisType == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.basisType)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439.basisType == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743.basisType)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439.basisType == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.basisType)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439.basisType == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157.basisType)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439.basisType == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.basisType)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439.bitsF == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439.bitsF)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439.sparse == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439.sparse)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439.keyGenAlg == tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.keyGenAlg
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439.keyGenAlg == tbuktu_ntru._474.original.SignatureParameters.APR2011_743.keyGenAlg
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439.keyGenAlg == tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.keyGenAlg
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439.keyGenAlg == tbuktu_ntru._474.original.SignatureParameters.TEST157.keyGenAlg
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439.keyGenAlg == tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.keyGenAlg
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439.keyGenAlg == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439.keyGenAlg)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439.keyGenAlg == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.keyGenAlg)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439.keyGenAlg == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743.keyGenAlg)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439.keyGenAlg == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.keyGenAlg)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439.keyGenAlg == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157.keyGenAlg)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439.keyGenAlg == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.keyGenAlg)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439.hashAlg == tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.hashAlg
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439.hashAlg == tbuktu_ntru._474.original.SignatureParameters.TEST157.hashAlg
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439.hashAlg == tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.hashAlg
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439.hashAlg == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439.hashAlg)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439.hashAlg == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.hashAlg)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439.hashAlg == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157.hashAlg)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439.hashAlg == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.hashAlg)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439.hashAlg.toString == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439.hashAlg.toString)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439.polyType == tbuktu_ntru._474.original.SignatureParameters.APR2011_743.polyType
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439.polyType == tbuktu_ntru._474.original.SignatureParameters.TEST157.polyType
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439.polyType == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439.polyType)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439.polyType == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743.polyType)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439.polyType == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157.polyType)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.N == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.N)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.q == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.q)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.d == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.d)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.d1 == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.d1)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.d2 == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.d2)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.d3 == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.d3)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.B == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.B)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.beta == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.beta)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.betaSq == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.betaSq)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.normBound == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.normBound)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.normBoundSq == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.normBoundSq)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.signFailTolerance == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.signFailTolerance)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.keyNormBound == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.keyNormBound)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.keyNormBoundSq == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.keyNormBoundSq)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.primeCheck == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.primeCheck)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.bitsF == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.bitsF)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.sparse == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.sparse)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.hashAlg.toString == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.hashAlg.toString)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.polyType == tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.polyType
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.polyType == tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.polyType
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.polyType == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.polyType)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.polyType == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.polyType)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.polyType == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.polyType)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743.N == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743.N)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743.q == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743.q)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743.d == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743.d)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743.d1 == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743.d1)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743.d2 == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743.d2)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743.d3 == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743.d3)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743.B == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743.B)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743.beta == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743.beta)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743.betaSq == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743.betaSq)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743.normBound == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743.normBound)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743.normBoundSq == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743.normBoundSq)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743.signFailTolerance == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743.signFailTolerance)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743.keyNormBound == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743.keyNormBound)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743.keyNormBoundSq == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743.keyNormBoundSq)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743.primeCheck == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743.primeCheck)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743.bitsF == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743.bitsF)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743.sparse == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743.sparse)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743.hashAlg == tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.hashAlg
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743.hashAlg == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743.hashAlg)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743.hashAlg == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.hashAlg)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743.hashAlg.toString == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743.hashAlg.toString)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.N == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.N)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.q == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.q)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.d == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.d)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.d1 == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.d1)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.d2 == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.d2)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.d3 == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.d3)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.B == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.B)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.beta == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.beta)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.betaSq == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.betaSq)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.normBound == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.normBound)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.normBoundSq == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.normBoundSq)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.signFailTolerance == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.signFailTolerance)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.keyNormBound == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.keyNormBound)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.keyNormBoundSq == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.keyNormBoundSq)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.primeCheck == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.primeCheck)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.bitsF == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.bitsF)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.sparse == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.sparse)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.hashAlg.toString == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.hashAlg.toString)
+tbuktu_ntru._474.original.SignatureParameters.TEST157.N == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157.N)
+tbuktu_ntru._474.original.SignatureParameters.TEST157.q == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157.q)
+tbuktu_ntru._474.original.SignatureParameters.TEST157.d == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157.d)
+tbuktu_ntru._474.original.SignatureParameters.TEST157.d1 == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157.d1)
+tbuktu_ntru._474.original.SignatureParameters.TEST157.d2 == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157.d2)
+tbuktu_ntru._474.original.SignatureParameters.TEST157.d3 == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157.d3)
+tbuktu_ntru._474.original.SignatureParameters.TEST157.B == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157.B)
+tbuktu_ntru._474.original.SignatureParameters.TEST157.beta == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157.beta)
+tbuktu_ntru._474.original.SignatureParameters.TEST157.betaSq == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157.betaSq)
+tbuktu_ntru._474.original.SignatureParameters.TEST157.normBound == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157.normBound)
+tbuktu_ntru._474.original.SignatureParameters.TEST157.normBoundSq == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157.normBoundSq)
+tbuktu_ntru._474.original.SignatureParameters.TEST157.signFailTolerance == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157.signFailTolerance)
+tbuktu_ntru._474.original.SignatureParameters.TEST157.keyNormBound == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157.keyNormBound)
+tbuktu_ntru._474.original.SignatureParameters.TEST157.keyNormBoundSq == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157.keyNormBoundSq)
+tbuktu_ntru._474.original.SignatureParameters.TEST157.primeCheck == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157.primeCheck)
+tbuktu_ntru._474.original.SignatureParameters.TEST157.bitsF == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157.bitsF)
+tbuktu_ntru._474.original.SignatureParameters.TEST157.sparse == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157.sparse)
+tbuktu_ntru._474.original.SignatureParameters.TEST157.hashAlg.toString == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157.hashAlg.toString)
+tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.N == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.N)
+tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.q == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.q)
+tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.d == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.d)
+tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.d1 == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.d1)
+tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.d2 == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.d2)
+tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.d3 == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.d3)
+tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.B == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.B)
+tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.beta == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.beta)
+tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.betaSq == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.betaSq)
+tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.normBound == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.normBound)
+tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.normBoundSq == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.normBoundSq)
+tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.signFailTolerance == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.signFailTolerance)
+tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.keyNormBound == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.keyNormBound)
+tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.keyNormBoundSq == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.keyNormBoundSq)
+tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.primeCheck == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.primeCheck)
+tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.bitsF == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.bitsF)
+tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.sparse == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.sparse)
+tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.hashAlg.toString == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.hashAlg.toString)
+tbuktu_ntru._474.original.SignatureParameters$BasisType.STANDARD == orig(tbuktu_ntru._474.original.SignatureParameters$BasisType.STANDARD)
+tbuktu_ntru._474.original.SignatureParameters$BasisType.TRANSPOSE == this.basisType
+tbuktu_ntru._474.original.SignatureParameters$BasisType.TRANSPOSE == orig(tbuktu_ntru._474.original.SignatureParameters$BasisType.TRANSPOSE)
+tbuktu_ntru._474.original.SignatureParameters$BasisType.TRANSPOSE == orig(this.basisType)
+tbuktu_ntru._474.original.SignatureParameters$BasisType.$VALUES == orig(tbuktu_ntru._474.original.SignatureParameters$BasisType.$VALUES)
+tbuktu_ntru._474.original.SignatureParameters$BasisType.$VALUES.getClass().getName() == orig(tbuktu_ntru._474.original.SignatureParameters$BasisType.$VALUES.getClass().getName())
+tbuktu_ntru._474.original.SignatureParameters$BasisType.$VALUES[] == orig(tbuktu_ntru._474.original.SignatureParameters$BasisType.$VALUES[])
+tbuktu_ntru._474.original.SignatureParameters$KeyGenAlg.RESULTANT == this.keyGenAlg
+tbuktu_ntru._474.original.SignatureParameters$KeyGenAlg.RESULTANT == orig(tbuktu_ntru._474.original.SignatureParameters$KeyGenAlg.RESULTANT)
+tbuktu_ntru._474.original.SignatureParameters$KeyGenAlg.RESULTANT == orig(this.keyGenAlg)
+tbuktu_ntru._474.original.SignatureParameters$KeyGenAlg.FLOAT == orig(tbuktu_ntru._474.original.SignatureParameters$KeyGenAlg.FLOAT)
+tbuktu_ntru._474.original.SignatureParameters$KeyGenAlg.$VALUES == orig(tbuktu_ntru._474.original.SignatureParameters$KeyGenAlg.$VALUES)
+tbuktu_ntru._474.original.SignatureParameters$KeyGenAlg.$VALUES.getClass().getName() == orig(tbuktu_ntru._474.original.SignatureParameters$KeyGenAlg.$VALUES.getClass().getName())
+tbuktu_ntru._474.original.SignatureParameters$KeyGenAlg.$VALUES[] == orig(tbuktu_ntru._474.original.SignatureParameters$KeyGenAlg.$VALUES[])
+tbuktu_ntru._474.original.SignatureParameters$TernaryPolynomialType.SIMPLE == orig(tbuktu_ntru._474.original.SignatureParameters$TernaryPolynomialType.SIMPLE)
+tbuktu_ntru._474.original.SignatureParameters$TernaryPolynomialType.PRODUCT == orig(tbuktu_ntru._474.original.SignatureParameters$TernaryPolynomialType.PRODUCT)
+tbuktu_ntru._474.original.SignatureParameters$TernaryPolynomialType.$VALUES == orig(tbuktu_ntru._474.original.SignatureParameters$TernaryPolynomialType.$VALUES)
+tbuktu_ntru._474.original.SignatureParameters$TernaryPolynomialType.$VALUES.getClass().getName() == orig(tbuktu_ntru._474.original.SignatureParameters$TernaryPolynomialType.$VALUES.getClass().getName())
+tbuktu_ntru._474.original.SignatureParameters$TernaryPolynomialType.$VALUES[] == orig(tbuktu_ntru._474.original.SignatureParameters$TernaryPolynomialType.$VALUES[])
+this.N == orig(this.N)
+this.q == orig(this.q)
+this.d == orig(this.d)
+this.d1 == orig(this.d1)
+this.d2 == orig(this.d2)
+this.d3 == orig(this.d3)
+this.B == orig(this.B)
+this.beta == orig(this.beta)
+this.normBound == orig(this.normBound)
+this.signFailTolerance == orig(this.signFailTolerance)
+this.keyNormBound == orig(this.keyNormBound)
+this.primeCheck == orig(this.primeCheck)
+this.bitsF == orig(this.bitsF)
+this.sparse == orig(this.sparse)
+this.hashAlg == orig(this.hashAlg)
+this.hashAlg.toString == orig(this.hashAlg.toString)
+this.polyType == orig(this.polyType)
+this.betaSq one of { 0.016129, 0.027225003, 0.1444 }
+this.normBoundSq one of { 40000.0, 160000.0, 164025.0 }
+this.keyNormBoundSq one of { 6400.0, 78400.0, 129600.0 }
+tbuktu_ntru._474.original.SignatureParameters$BasisType.$VALUES.getClass().getName() != tbuktu_ntru._474.original.SignatureParameters$KeyGenAlg.$VALUES.getClass().getName()
+tbuktu_ntru._474.original.SignatureParameters$BasisType.$VALUES.getClass().getName() != tbuktu_ntru._474.original.SignatureParameters$TernaryPolynomialType.$VALUES.getClass().getName()
+tbuktu_ntru._474.original.SignatureParameters$KeyGenAlg.$VALUES.getClass().getName() != tbuktu_ntru._474.original.SignatureParameters$TernaryPolynomialType.$VALUES.getClass().getName()
+this.beta > this.betaSq
+this.betaSq == this.beta**2
+this.beta > orig(this.betaSq)
+this.betaSq > orig(this.betaSq)
+this.normBound < this.normBoundSq
+this.normBoundSq % this.normBound == 0
+this.normBoundSq == this.normBound**2
+this.normBound > orig(this.normBoundSq)
+this.normBoundSq > orig(this.normBoundSq)
+this.keyNormBound < this.keyNormBoundSq
+this.keyNormBoundSq % this.keyNormBound == 0
+this.keyNormBoundSq == this.keyNormBound**2
+this.keyNormBound > orig(this.keyNormBoundSq)
+this.keyNormBoundSq > orig(this.keyNormBoundSq)
+===========================================================================
+tbuktu_ntru._474.original.SignatureParameters.toString():::ENTER
+this.N == 439
+this.q == 2048
+this.d == 146
+this.d1 == 0
+this.d2 == 0
+this.d3 == 0
+this.beta == 0.165
+this.betaSq == 0.027225003
+this.normBound == 400.0
+this.normBoundSq == 160000.0
+this.keyNormBound == 280.0
+this.keyNormBoundSq == 78400.0
+this.primeCheck == false
+this.sparse == true
+this.hashAlg has only one value
+this.hashAlg.toString == "SHA-256"
+this.polyType has only one value
+===========================================================================
+tbuktu_ntru._474.original.SignatureParameters.toString():::EXIT
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439 == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743 == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD)
+tbuktu_ntru._474.original.SignatureParameters.TEST157 == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157)
+tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439.N == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439.N)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439.q == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439.q)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439.d == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439.d)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439.d1 == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439.d1)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439.d2 == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439.d2)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439.d3 == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439.d3)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439.B == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439.B)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439.beta == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439.beta)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439.betaSq == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439.betaSq)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439.normBound == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439.normBound)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439.normBoundSq == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439.normBoundSq)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439.signFailTolerance == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439.signFailTolerance)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439.keyNormBound == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439.keyNormBound)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439.keyNormBoundSq == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439.keyNormBoundSq)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439.primeCheck == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439.primeCheck)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439.basisType == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439.basisType)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439.bitsF == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439.bitsF)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439.sparse == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439.sparse)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439.keyGenAlg == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439.keyGenAlg)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439.hashAlg == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439.hashAlg)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439.hashAlg.toString == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439.hashAlg.toString)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439.polyType == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439.polyType)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.N == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.N)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.q == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.q)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.d == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.d)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.d1 == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.d1)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.d2 == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.d2)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.d3 == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.d3)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.B == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.B)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.beta == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.beta)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.betaSq == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.betaSq)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.normBound == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.normBound)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.normBoundSq == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.normBoundSq)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.signFailTolerance == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.signFailTolerance)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.keyNormBound == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.keyNormBound)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.keyNormBoundSq == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.keyNormBoundSq)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.primeCheck == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.primeCheck)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.basisType == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.basisType)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.bitsF == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.bitsF)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.sparse == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.sparse)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.keyGenAlg == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.keyGenAlg)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.hashAlg == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.hashAlg)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.hashAlg.toString == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.hashAlg.toString)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.polyType == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.polyType)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743.N == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743.N)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743.q == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743.q)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743.d == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743.d)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743.d1 == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743.d1)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743.d2 == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743.d2)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743.d3 == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743.d3)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743.B == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743.B)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743.beta == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743.beta)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743.betaSq == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743.betaSq)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743.normBound == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743.normBound)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743.normBoundSq == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743.normBoundSq)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743.signFailTolerance == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743.signFailTolerance)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743.keyNormBound == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743.keyNormBound)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743.keyNormBoundSq == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743.keyNormBoundSq)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743.primeCheck == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743.primeCheck)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743.basisType == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743.basisType)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743.bitsF == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743.bitsF)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743.sparse == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743.sparse)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743.keyGenAlg == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743.keyGenAlg)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743.hashAlg == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743.hashAlg)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743.hashAlg.toString == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743.hashAlg.toString)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743.polyType == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743.polyType)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.N == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.N)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.q == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.q)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.d == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.d)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.d1 == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.d1)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.d2 == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.d2)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.d3 == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.d3)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.B == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.B)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.beta == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.beta)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.betaSq == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.betaSq)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.normBound == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.normBound)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.normBoundSq == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.normBoundSq)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.signFailTolerance == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.signFailTolerance)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.keyNormBound == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.keyNormBound)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.keyNormBoundSq == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.keyNormBoundSq)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.primeCheck == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.primeCheck)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.basisType == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.basisType)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.bitsF == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.bitsF)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.sparse == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.sparse)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.keyGenAlg == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.keyGenAlg)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.hashAlg == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.hashAlg)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.hashAlg.toString == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.hashAlg.toString)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.polyType == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.polyType)
+tbuktu_ntru._474.original.SignatureParameters.TEST157.N == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157.N)
+tbuktu_ntru._474.original.SignatureParameters.TEST157.q == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157.q)
+tbuktu_ntru._474.original.SignatureParameters.TEST157.d == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157.d)
+tbuktu_ntru._474.original.SignatureParameters.TEST157.d1 == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157.d1)
+tbuktu_ntru._474.original.SignatureParameters.TEST157.d2 == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157.d2)
+tbuktu_ntru._474.original.SignatureParameters.TEST157.d3 == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157.d3)
+tbuktu_ntru._474.original.SignatureParameters.TEST157.B == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157.B)
+tbuktu_ntru._474.original.SignatureParameters.TEST157.beta == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157.beta)
+tbuktu_ntru._474.original.SignatureParameters.TEST157.betaSq == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157.betaSq)
+tbuktu_ntru._474.original.SignatureParameters.TEST157.normBound == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157.normBound)
+tbuktu_ntru._474.original.SignatureParameters.TEST157.normBoundSq == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157.normBoundSq)
+tbuktu_ntru._474.original.SignatureParameters.TEST157.signFailTolerance == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157.signFailTolerance)
+tbuktu_ntru._474.original.SignatureParameters.TEST157.keyNormBound == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157.keyNormBound)
+tbuktu_ntru._474.original.SignatureParameters.TEST157.keyNormBoundSq == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157.keyNormBoundSq)
+tbuktu_ntru._474.original.SignatureParameters.TEST157.primeCheck == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157.primeCheck)
+tbuktu_ntru._474.original.SignatureParameters.TEST157.basisType == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157.basisType)
+tbuktu_ntru._474.original.SignatureParameters.TEST157.bitsF == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157.bitsF)
+tbuktu_ntru._474.original.SignatureParameters.TEST157.sparse == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157.sparse)
+tbuktu_ntru._474.original.SignatureParameters.TEST157.keyGenAlg == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157.keyGenAlg)
+tbuktu_ntru._474.original.SignatureParameters.TEST157.hashAlg == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157.hashAlg)
+tbuktu_ntru._474.original.SignatureParameters.TEST157.hashAlg.toString == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157.hashAlg.toString)
+tbuktu_ntru._474.original.SignatureParameters.TEST157.polyType == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157.polyType)
+tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.N == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.N)
+tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.q == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.q)
+tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.d == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.d)
+tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.d1 == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.d1)
+tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.d2 == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.d2)
+tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.d3 == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.d3)
+tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.B == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.B)
+tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.beta == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.beta)
+tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.betaSq == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.betaSq)
+tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.normBound == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.normBound)
+tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.normBoundSq == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.normBoundSq)
+tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.signFailTolerance == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.signFailTolerance)
+tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.keyNormBound == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.keyNormBound)
+tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.keyNormBoundSq == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.keyNormBoundSq)
+tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.primeCheck == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.primeCheck)
+tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.basisType == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.basisType)
+tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.bitsF == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.bitsF)
+tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.sparse == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.sparse)
+tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.keyGenAlg == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.keyGenAlg)
+tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.hashAlg == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.hashAlg)
+tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.hashAlg.toString == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.hashAlg.toString)
+tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.polyType == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.polyType)
+tbuktu_ntru._474.original.SignatureParameters$BasisType.STANDARD == orig(tbuktu_ntru._474.original.SignatureParameters$BasisType.STANDARD)
+tbuktu_ntru._474.original.SignatureParameters$BasisType.TRANSPOSE == orig(tbuktu_ntru._474.original.SignatureParameters$BasisType.TRANSPOSE)
+tbuktu_ntru._474.original.SignatureParameters$BasisType.$VALUES == orig(tbuktu_ntru._474.original.SignatureParameters$BasisType.$VALUES)
+tbuktu_ntru._474.original.SignatureParameters$BasisType.$VALUES.getClass().getName() == orig(tbuktu_ntru._474.original.SignatureParameters$BasisType.$VALUES.getClass().getName())
+tbuktu_ntru._474.original.SignatureParameters$BasisType.$VALUES[] == orig(tbuktu_ntru._474.original.SignatureParameters$BasisType.$VALUES[])
+tbuktu_ntru._474.original.SignatureParameters$KeyGenAlg.RESULTANT == orig(tbuktu_ntru._474.original.SignatureParameters$KeyGenAlg.RESULTANT)
+tbuktu_ntru._474.original.SignatureParameters$KeyGenAlg.FLOAT == orig(tbuktu_ntru._474.original.SignatureParameters$KeyGenAlg.FLOAT)
+tbuktu_ntru._474.original.SignatureParameters$KeyGenAlg.$VALUES == orig(tbuktu_ntru._474.original.SignatureParameters$KeyGenAlg.$VALUES)
+tbuktu_ntru._474.original.SignatureParameters$KeyGenAlg.$VALUES.getClass().getName() == orig(tbuktu_ntru._474.original.SignatureParameters$KeyGenAlg.$VALUES.getClass().getName())
+tbuktu_ntru._474.original.SignatureParameters$KeyGenAlg.$VALUES[] == orig(tbuktu_ntru._474.original.SignatureParameters$KeyGenAlg.$VALUES[])
+tbuktu_ntru._474.original.SignatureParameters$TernaryPolynomialType.SIMPLE == orig(tbuktu_ntru._474.original.SignatureParameters$TernaryPolynomialType.SIMPLE)
+tbuktu_ntru._474.original.SignatureParameters$TernaryPolynomialType.PRODUCT == orig(tbuktu_ntru._474.original.SignatureParameters$TernaryPolynomialType.PRODUCT)
+tbuktu_ntru._474.original.SignatureParameters$TernaryPolynomialType.$VALUES == orig(tbuktu_ntru._474.original.SignatureParameters$TernaryPolynomialType.$VALUES)
+tbuktu_ntru._474.original.SignatureParameters$TernaryPolynomialType.$VALUES.getClass().getName() == orig(tbuktu_ntru._474.original.SignatureParameters$TernaryPolynomialType.$VALUES.getClass().getName())
+tbuktu_ntru._474.original.SignatureParameters$TernaryPolynomialType.$VALUES[] == orig(tbuktu_ntru._474.original.SignatureParameters$TernaryPolynomialType.$VALUES[])
+this.N == orig(this.N)
+this.q == orig(this.q)
+this.d == orig(this.d)
+this.d1 == orig(this.d1)
+this.d2 == orig(this.d2)
+this.d3 == orig(this.d3)
+this.B == orig(this.B)
+this.beta == orig(this.beta)
+this.betaSq == orig(this.betaSq)
+this.normBound == orig(this.normBound)
+this.normBoundSq == orig(this.normBoundSq)
+this.signFailTolerance == orig(this.signFailTolerance)
+this.keyNormBound == orig(this.keyNormBound)
+this.keyNormBoundSq == orig(this.keyNormBoundSq)
+this.primeCheck == orig(this.primeCheck)
+this.basisType == orig(this.basisType)
+this.bitsF == orig(this.bitsF)
+this.sparse == orig(this.sparse)
+this.keyGenAlg == orig(this.keyGenAlg)
+this.hashAlg == orig(this.hashAlg)
+this.hashAlg.toString == orig(this.hashAlg.toString)
+this.polyType == orig(this.polyType)
+this.N == 439
+this.q == 2048
+this.d == 146
+this.d1 == 0
+this.d2 == 0
+this.d3 == 0
+this.beta == 0.165
+this.betaSq == 0.027225003
+this.normBound == 400.0
+this.normBoundSq == 160000.0
+this.keyNormBound == 280.0
+this.keyNormBoundSq == 78400.0
+this.primeCheck == false
+this.sparse == true
+this.hashAlg has only one value
+this.hashAlg.toString == "SHA-256"
+this.polyType has only one value
+return.toString == "SignatureParameters(N=439 q=2048 polyType=SIMPLE d=146 B=1 basisType=TRANSPOSE beta=0.17 normBound=400.00 keyNormBound=280.00 prime=false sparse=true keyGenAlg=RESULTANT hashAlg=SHA-256)"
+===========================================================================
+tbuktu_ntru._474.original.SignatureParameters.writeTo(java.io.OutputStream):::ENTER
+this has only one value
+this.N == 439
+this.q == 2048
+this.d == 146
+this.d1 == 0
+this.d2 == 0
+this.d3 == 0
+this.beta == 0.165
+this.betaSq == 0.027225003
+this.normBound == 400.0
+this.normBoundSq == 160000.0
+this.keyNormBound == 280.0
+this.keyNormBoundSq == 78400.0
+this.primeCheck == false
+this.sparse == true
+this.hashAlg has only one value
+this.hashAlg.toString == "SHA-256"
+this.polyType has only one value
+os has only one value
+os.getClass().getName() == java.io.BufferedOutputStream.class
+===========================================================================
+tbuktu_ntru._474.original.SignatureParameters.writeTo(java.io.OutputStream):::EXIT
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439 == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743 == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD)
+tbuktu_ntru._474.original.SignatureParameters.TEST157 == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157)
+tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439.N == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439.N)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439.q == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439.q)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439.d == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439.d)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439.d1 == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439.d1)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439.d2 == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439.d2)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439.d3 == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439.d3)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439.B == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439.B)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439.beta == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439.beta)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439.betaSq == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439.betaSq)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439.normBound == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439.normBound)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439.normBoundSq == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439.normBoundSq)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439.signFailTolerance == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439.signFailTolerance)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439.keyNormBound == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439.keyNormBound)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439.keyNormBoundSq == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439.keyNormBoundSq)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439.primeCheck == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439.primeCheck)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439.basisType == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439.basisType)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439.bitsF == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439.bitsF)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439.sparse == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439.sparse)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439.keyGenAlg == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439.keyGenAlg)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439.hashAlg == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439.hashAlg)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439.hashAlg.toString == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439.hashAlg.toString)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439.polyType == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439.polyType)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.N == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.N)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.q == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.q)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.d == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.d)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.d1 == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.d1)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.d2 == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.d2)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.d3 == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.d3)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.B == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.B)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.beta == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.beta)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.betaSq == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.betaSq)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.normBound == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.normBound)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.normBoundSq == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.normBoundSq)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.signFailTolerance == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.signFailTolerance)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.keyNormBound == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.keyNormBound)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.keyNormBoundSq == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.keyNormBoundSq)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.primeCheck == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.primeCheck)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.basisType == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.basisType)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.bitsF == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.bitsF)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.sparse == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.sparse)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.keyGenAlg == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.keyGenAlg)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.hashAlg == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.hashAlg)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.hashAlg.toString == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.hashAlg.toString)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.polyType == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_439_PROD.polyType)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743.N == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743.N)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743.q == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743.q)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743.d == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743.d)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743.d1 == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743.d1)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743.d2 == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743.d2)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743.d3 == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743.d3)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743.B == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743.B)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743.beta == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743.beta)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743.betaSq == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743.betaSq)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743.normBound == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743.normBound)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743.normBoundSq == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743.normBoundSq)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743.signFailTolerance == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743.signFailTolerance)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743.keyNormBound == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743.keyNormBound)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743.keyNormBoundSq == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743.keyNormBoundSq)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743.primeCheck == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743.primeCheck)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743.basisType == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743.basisType)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743.bitsF == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743.bitsF)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743.sparse == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743.sparse)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743.keyGenAlg == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743.keyGenAlg)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743.hashAlg == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743.hashAlg)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743.hashAlg.toString == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743.hashAlg.toString)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743.polyType == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743.polyType)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.N == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.N)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.q == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.q)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.d == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.d)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.d1 == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.d1)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.d2 == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.d2)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.d3 == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.d3)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.B == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.B)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.beta == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.beta)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.betaSq == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.betaSq)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.normBound == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.normBound)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.normBoundSq == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.normBoundSq)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.signFailTolerance == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.signFailTolerance)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.keyNormBound == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.keyNormBound)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.keyNormBoundSq == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.keyNormBoundSq)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.primeCheck == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.primeCheck)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.basisType == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.basisType)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.bitsF == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.bitsF)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.sparse == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.sparse)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.keyGenAlg == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.keyGenAlg)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.hashAlg == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.hashAlg)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.hashAlg.toString == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.hashAlg.toString)
+tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.polyType == orig(tbuktu_ntru._474.original.SignatureParameters.APR2011_743_PROD.polyType)
+tbuktu_ntru._474.original.SignatureParameters.TEST157.N == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157.N)
+tbuktu_ntru._474.original.SignatureParameters.TEST157.q == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157.q)
+tbuktu_ntru._474.original.SignatureParameters.TEST157.d == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157.d)
+tbuktu_ntru._474.original.SignatureParameters.TEST157.d1 == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157.d1)
+tbuktu_ntru._474.original.SignatureParameters.TEST157.d2 == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157.d2)
+tbuktu_ntru._474.original.SignatureParameters.TEST157.d3 == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157.d3)
+tbuktu_ntru._474.original.SignatureParameters.TEST157.B == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157.B)
+tbuktu_ntru._474.original.SignatureParameters.TEST157.beta == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157.beta)
+tbuktu_ntru._474.original.SignatureParameters.TEST157.betaSq == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157.betaSq)
+tbuktu_ntru._474.original.SignatureParameters.TEST157.normBound == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157.normBound)
+tbuktu_ntru._474.original.SignatureParameters.TEST157.normBoundSq == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157.normBoundSq)
+tbuktu_ntru._474.original.SignatureParameters.TEST157.signFailTolerance == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157.signFailTolerance)
+tbuktu_ntru._474.original.SignatureParameters.TEST157.keyNormBound == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157.keyNormBound)
+tbuktu_ntru._474.original.SignatureParameters.TEST157.keyNormBoundSq == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157.keyNormBoundSq)
+tbuktu_ntru._474.original.SignatureParameters.TEST157.primeCheck == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157.primeCheck)
+tbuktu_ntru._474.original.SignatureParameters.TEST157.basisType == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157.basisType)
+tbuktu_ntru._474.original.SignatureParameters.TEST157.bitsF == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157.bitsF)
+tbuktu_ntru._474.original.SignatureParameters.TEST157.sparse == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157.sparse)
+tbuktu_ntru._474.original.SignatureParameters.TEST157.keyGenAlg == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157.keyGenAlg)
+tbuktu_ntru._474.original.SignatureParameters.TEST157.hashAlg == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157.hashAlg)
+tbuktu_ntru._474.original.SignatureParameters.TEST157.hashAlg.toString == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157.hashAlg.toString)
+tbuktu_ntru._474.original.SignatureParameters.TEST157.polyType == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157.polyType)
+tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.N == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.N)
+tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.q == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.q)
+tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.d == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.d)
+tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.d1 == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.d1)
+tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.d2 == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.d2)
+tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.d3 == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.d3)
+tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.B == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.B)
+tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.beta == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.beta)
+tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.betaSq == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.betaSq)
+tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.normBound == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.normBound)
+tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.normBoundSq == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.normBoundSq)
+tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.signFailTolerance == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.signFailTolerance)
+tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.keyNormBound == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.keyNormBound)
+tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.keyNormBoundSq == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.keyNormBoundSq)
+tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.primeCheck == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.primeCheck)
+tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.basisType == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.basisType)
+tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.bitsF == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.bitsF)
+tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.sparse == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.sparse)
+tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.keyGenAlg == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.keyGenAlg)
+tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.hashAlg == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.hashAlg)
+tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.hashAlg.toString == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.hashAlg.toString)
+tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.polyType == orig(tbuktu_ntru._474.original.SignatureParameters.TEST157_PROD.polyType)
+tbuktu_ntru._474.original.SignatureParameters$BasisType.STANDARD == orig(tbuktu_ntru._474.original.SignatureParameters$BasisType.STANDARD)
+tbuktu_ntru._474.original.SignatureParameters$BasisType.TRANSPOSE == orig(tbuktu_ntru._474.original.SignatureParameters$BasisType.TRANSPOSE)
+tbuktu_ntru._474.original.SignatureParameters$BasisType.$VALUES == orig(tbuktu_ntru._474.original.SignatureParameters$BasisType.$VALUES)
+tbuktu_ntru._474.original.SignatureParameters$BasisType.$VALUES.getClass().getName() == orig(tbuktu_ntru._474.original.SignatureParameters$BasisType.$VALUES.getClass().getName())
+tbuktu_ntru._474.original.SignatureParameters$BasisType.$VALUES[] == orig(tbuktu_ntru._474.original.SignatureParameters$BasisType.$VALUES[])
+tbuktu_ntru._474.original.SignatureParameters$KeyGenAlg.RESULTANT == orig(tbuktu_ntru._474.original.SignatureParameters$KeyGenAlg.RESULTANT)
+tbuktu_ntru._474.original.SignatureParameters$KeyGenAlg.FLOAT == orig(tbuktu_ntru._474.original.SignatureParameters$KeyGenAlg.FLOAT)
+tbuktu_ntru._474.original.SignatureParameters$KeyGenAlg.$VALUES == orig(tbuktu_ntru._474.original.SignatureParameters$KeyGenAlg.$VALUES)
+tbuktu_ntru._474.original.SignatureParameters$KeyGenAlg.$VALUES.getClass().getName() == orig(tbuktu_ntru._474.original.SignatureParameters$KeyGenAlg.$VALUES.getClass().getName())
+tbuktu_ntru._474.original.SignatureParameters$KeyGenAlg.$VALUES[] == orig(tbuktu_ntru._474.original.SignatureParameters$KeyGenAlg.$VALUES[])
+tbuktu_ntru._474.original.SignatureParameters$TernaryPolynomialType.SIMPLE == orig(tbuktu_ntru._474.original.SignatureParameters$TernaryPolynomialType.SIMPLE)
+tbuktu_ntru._474.original.SignatureParameters$TernaryPolynomialType.PRODUCT == orig(tbuktu_ntru._474.original.SignatureParameters$TernaryPolynomialType.PRODUCT)
+tbuktu_ntru._474.original.SignatureParameters$TernaryPolynomialType.$VALUES == orig(tbuktu_ntru._474.original.SignatureParameters$TernaryPolynomialType.$VALUES)
+tbuktu_ntru._474.original.SignatureParameters$TernaryPolynomialType.$VALUES.getClass().getName() == orig(tbuktu_ntru._474.original.SignatureParameters$TernaryPolynomialType.$VALUES.getClass().getName())
+tbuktu_ntru._474.original.SignatureParameters$TernaryPolynomialType.$VALUES[] == orig(tbuktu_ntru._474.original.SignatureParameters$TernaryPolynomialType.$VALUES[])
+this.N == orig(this.N)
+this.q == orig(this.q)
+this.d == orig(this.d)
+this.d1 == orig(this.d1)
+this.d2 == orig(this.d2)
+this.d3 == orig(this.d3)
+this.B == orig(this.B)
+this.beta == orig(this.beta)
+this.betaSq == orig(this.betaSq)
+this.normBound == orig(this.normBound)
+this.normBoundSq == orig(this.normBoundSq)
+this.signFailTolerance == orig(this.signFailTolerance)
+this.keyNormBound == orig(this.keyNormBound)
+this.keyNormBoundSq == orig(this.keyNormBoundSq)
+this.primeCheck == orig(this.primeCheck)
+this.basisType == orig(this.basisType)
+this.bitsF == orig(this.bitsF)
+this.sparse == orig(this.sparse)
+this.keyGenAlg == orig(this.keyGenAlg)
+this.hashAlg == orig(this.hashAlg)
+this.hashAlg.toString == orig(this.hashAlg.toString)
+this.polyType == orig(this.polyType)
+this.N == 439
+this.q == 2048
+this.d == 146
+this.d1 == 0
+this.d2 == 0
+this.d3 == 0
+this.beta == 0.165
+this.betaSq == 0.027225003
+this.normBound == 400.0
+this.normBoundSq == 160000.0
+this.keyNormBound == 280.0
+this.keyNormBoundSq == 78400.0
+this.primeCheck == false
+this.sparse == true
+this.hashAlg has only one value
+this.hashAlg.toString == "SHA-256"
+this.polyType has only one value

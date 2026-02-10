@@ -1,0 +1,535 @@
+===========================================================================
+daikon_runner.DaikonRunner.createDriverInstance(java.lang.Class, java.lang.String):::ENTER
+driverClass has only one value
+variant has only one value
+variant.toString == "misuse"
+===========================================================================
+daikon_runner.DaikonRunner.createDriverInstance(java.lang.Class, java.lang.String):::EXIT91
+===========================================================================
+daikon_runner.DaikonRunner.createDriverInstance(java.lang.Class, java.lang.String):::EXIT
+variant.toString == orig(variant.toString)
+variant.toString == "misuse"
+return has only one value
+return.getClass().getName() == mqtt._389.Driver.class
+===========================================================================
+daikon_runner.DaikonRunner.main(java.lang.String[]):::ENTER
+args has only one value
+args.getClass().getName() == java.lang.String[].class
+args[] contains no nulls and has only one value, of length 2
+args[].toString == [mqtt._389, misuse]
+args[].toString elements one of { "misuse", "mqtt._389" }
+size(args[]) == 2
+===========================================================================
+daikon_runner.DaikonRunner.main(java.lang.String[]):::EXIT
+args[] == orig(args[])
+args[] contains no nulls and has only one value, of length 2
+args[].toString == [mqtt._389, misuse]
+args[].toString elements one of { "misuse", "mqtt._389" }
+===========================================================================
+mqtt._389.Driver:::CLASS
+mqtt._389.Driver.BASE_PACKAGE has only one value
+mqtt._389.Driver.BASE_PACKAGE != null
+mqtt._389.Driver.BASE_PACKAGE.toString == "mqtt._389"
+===========================================================================
+mqtt._389.Driver:::OBJECT
+this has only one value
+this.variant has only one value
+this.variant != null
+this.variant.toString == "misuse"
+this.instance has only one value
+this.instance != null
+this.instance.getClass().getName() == mqtt._389.misuse.MqttSubscribe.class
+this.targetClass has only one value
+this.targetClass != null
+this.sourceFilePath has only one value
+this.sourceFilePath != null
+this.sourceFilePath.toString == "src/main/java/mqtt/_389/misuse/MqttSubscribe.java"
+===========================================================================
+mqtt._389.Driver.Driver(java.lang.String, java.lang.String[], int[]):::ENTER
+variant has only one value
+variant.toString == "misuse"
+names has only one value
+names.getClass().getName() == java.lang.String[].class
+names[] contains no nulls and has only one value, of length 1
+names[] elements has only one value
+names[].toString == [topic1]
+names[].toString elements == "topic1"
+qos has only one value
+qos[] == [0]
+qos[] elements == 0
+size(names[]) == 1
+size(qos[]) == 1
+===========================================================================
+mqtt._389.Driver.Driver(java.lang.String, java.lang.String[], int[]):::EXIT
+variant.toString == orig(variant.toString)
+names[] == orig(names[])
+qos[] == orig(qos[])
+variant.toString == "misuse"
+names[] contains no nulls and has only one value, of length 1
+names[] elements has only one value
+names[].toString == [topic1]
+names[].toString elements == "topic1"
+qos[] == [0]
+qos[] elements == 0
+===========================================================================
+mqtt._389.Driver.getHeader():::ENTER
+===========================================================================
+mqtt._389.Driver.getHeader():::EXIT
+mqtt._389.Driver.BASE_PACKAGE == orig(mqtt._389.Driver.BASE_PACKAGE)
+mqtt._389.Driver.BASE_PACKAGE.toString == orig(mqtt._389.Driver.BASE_PACKAGE.toString)
+this.variant == orig(this.variant)
+this.variant.toString == orig(this.variant.toString)
+this.instance == orig(this.instance)
+this.instance.getClass().getName() == orig(this.instance.getClass().getName())
+this.targetClass == orig(this.targetClass)
+this.sourceFilePath == orig(this.sourceFilePath)
+this.sourceFilePath.toString == orig(this.sourceFilePath.toString)
+return has only one value
+return[] == [-126, 11, 0, 0]
+return[] elements one of { -126, 0, 11 }
+size(return[]) == 4
+===========================================================================
+mqtt._389.Driver.getKey():::ENTER
+===========================================================================
+mqtt._389.Driver.getKey():::EXIT
+mqtt._389.Driver.BASE_PACKAGE == orig(mqtt._389.Driver.BASE_PACKAGE)
+mqtt._389.Driver.BASE_PACKAGE.toString == orig(mqtt._389.Driver.BASE_PACKAGE.toString)
+this.variant == orig(this.variant)
+this.variant.toString == orig(this.variant.toString)
+this.instance == orig(this.instance)
+this.instance.getClass().getName() == orig(this.instance.getClass().getName())
+this.targetClass == orig(this.targetClass)
+this.sourceFilePath == orig(this.sourceFilePath)
+this.sourceFilePath.toString == orig(this.sourceFilePath.toString)
+return has only one value
+return.toString == "0"
+===========================================================================
+mqtt._389.Driver.getMessageId():::ENTER
+===========================================================================
+mqtt._389.Driver.getMessageId():::EXIT
+mqtt._389.Driver.BASE_PACKAGE == orig(mqtt._389.Driver.BASE_PACKAGE)
+mqtt._389.Driver.BASE_PACKAGE.toString == orig(mqtt._389.Driver.BASE_PACKAGE.toString)
+this.variant == orig(this.variant)
+this.variant.toString == orig(this.variant.toString)
+this.instance == orig(this.instance)
+this.instance.getClass().getName() == orig(this.instance.getClass().getName())
+this.targetClass == orig(this.targetClass)
+this.sourceFilePath == orig(this.sourceFilePath)
+this.sourceFilePath.toString == orig(this.sourceFilePath.toString)
+return == 0
+===========================================================================
+mqtt._389.Driver.getMessageInfo():::ENTER
+===========================================================================
+mqtt._389.Driver.getMessageInfo():::EXIT
+mqtt._389.Driver.BASE_PACKAGE == orig(mqtt._389.Driver.BASE_PACKAGE)
+mqtt._389.Driver.BASE_PACKAGE.toString == orig(mqtt._389.Driver.BASE_PACKAGE.toString)
+this.variant == orig(this.variant)
+this.variant.toString == orig(this.variant.toString)
+this.instance == orig(this.instance)
+this.instance.getClass().getName() == orig(this.instance.getClass().getName())
+this.targetClass == orig(this.targetClass)
+this.sourceFilePath == orig(this.sourceFilePath)
+this.sourceFilePath.toString == orig(this.sourceFilePath.toString)
+return == 2
+===========================================================================
+mqtt._389.Driver.getPayload():::ENTER
+===========================================================================
+mqtt._389.Driver.getPayload():::EXIT
+mqtt._389.Driver.BASE_PACKAGE == orig(mqtt._389.Driver.BASE_PACKAGE)
+mqtt._389.Driver.BASE_PACKAGE.toString == orig(mqtt._389.Driver.BASE_PACKAGE.toString)
+this.variant == orig(this.variant)
+this.variant.toString == orig(this.variant.toString)
+this.instance == orig(this.instance)
+this.instance.getClass().getName() == orig(this.instance.getClass().getName())
+this.targetClass == orig(this.targetClass)
+this.sourceFilePath == orig(this.sourceFilePath)
+this.sourceFilePath.toString == orig(this.sourceFilePath.toString)
+return has only one value
+return[] == [0, 6, 116, 111, 112, 105, 99, 49, 0]
+size(return[]) == 9
+===========================================================================
+mqtt._389.Driver.getType():::ENTER
+===========================================================================
+mqtt._389.Driver.getType():::EXIT
+mqtt._389.Driver.BASE_PACKAGE == orig(mqtt._389.Driver.BASE_PACKAGE)
+mqtt._389.Driver.BASE_PACKAGE.toString == orig(mqtt._389.Driver.BASE_PACKAGE.toString)
+this.variant == orig(this.variant)
+this.variant.toString == orig(this.variant.toString)
+this.instance == orig(this.instance)
+this.instance.getClass().getName() == orig(this.instance.getClass().getName())
+this.targetClass == orig(this.targetClass)
+this.sourceFilePath == orig(this.sourceFilePath)
+this.sourceFilePath.toString == orig(this.sourceFilePath.toString)
+return == 8
+===========================================================================
+mqtt._389.Driver.getVariableHeader():::ENTER
+===========================================================================
+mqtt._389.Driver.getVariableHeader():::EXIT
+mqtt._389.Driver.BASE_PACKAGE == orig(mqtt._389.Driver.BASE_PACKAGE)
+mqtt._389.Driver.BASE_PACKAGE.toString == orig(mqtt._389.Driver.BASE_PACKAGE.toString)
+this.variant == orig(this.variant)
+this.variant.toString == orig(this.variant.toString)
+this.instance == orig(this.instance)
+this.instance.getClass().getName() == orig(this.instance.getClass().getName())
+this.targetClass == orig(this.targetClass)
+this.sourceFilePath == orig(this.sourceFilePath)
+this.sourceFilePath.toString == orig(this.sourceFilePath.toString)
+return has only one value
+return[] == [0, 0]
+return[] elements == 0
+size(return[]) == 2
+===========================================================================
+mqtt._389.Driver.isMessageIdRequired():::ENTER
+===========================================================================
+mqtt._389.Driver.isMessageIdRequired():::EXIT
+mqtt._389.Driver.BASE_PACKAGE == orig(mqtt._389.Driver.BASE_PACKAGE)
+mqtt._389.Driver.BASE_PACKAGE.toString == orig(mqtt._389.Driver.BASE_PACKAGE.toString)
+this.variant == orig(this.variant)
+this.variant.toString == orig(this.variant.toString)
+this.instance == orig(this.instance)
+this.instance.getClass().getName() == orig(this.instance.getClass().getName())
+this.targetClass == orig(this.targetClass)
+this.sourceFilePath == orig(this.sourceFilePath)
+this.sourceFilePath.toString == orig(this.sourceFilePath.toString)
+return == true
+===========================================================================
+mqtt._389.Driver.isMessageIdRequired():::EXIT;condition="return == true"
+===========================================================================
+mqtt._389.Driver.isRetryable():::ENTER
+===========================================================================
+mqtt._389.Driver.isRetryable():::EXIT
+mqtt._389.Driver.BASE_PACKAGE == orig(mqtt._389.Driver.BASE_PACKAGE)
+mqtt._389.Driver.BASE_PACKAGE.toString == orig(mqtt._389.Driver.BASE_PACKAGE.toString)
+this.variant == orig(this.variant)
+this.variant.toString == orig(this.variant.toString)
+this.instance == orig(this.instance)
+this.instance.getClass().getName() == orig(this.instance.getClass().getName())
+this.targetClass == orig(this.targetClass)
+this.sourceFilePath == orig(this.sourceFilePath)
+this.sourceFilePath.toString == orig(this.sourceFilePath.toString)
+return == true
+===========================================================================
+mqtt._389.Driver.isRetryable():::EXIT;condition="return == true"
+===========================================================================
+mqtt._389.Driver.toStringValue():::ENTER
+===========================================================================
+mqtt._389.Driver.toStringValue():::EXIT
+mqtt._389.Driver.BASE_PACKAGE == orig(mqtt._389.Driver.BASE_PACKAGE)
+mqtt._389.Driver.BASE_PACKAGE.toString == orig(mqtt._389.Driver.BASE_PACKAGE.toString)
+this.variant == orig(this.variant)
+this.variant.toString == orig(this.variant.toString)
+this.instance == orig(this.instance)
+this.instance.getClass().getName() == orig(this.instance.getClass().getName())
+this.targetClass == orig(this.targetClass)
+this.sourceFilePath == orig(this.sourceFilePath)
+this.sourceFilePath.toString == orig(this.sourceFilePath.toString)
+return has only one value
+return.toString == "SUBSCRIBE names:[] qos:[]"
+===========================================================================
+mqtt._389.misuse.MqttSubscribe:::CLASS
+mqtt._389.requirements.internal.wire.MqttWireMessage.STRING_ENCODING has only one value
+mqtt._389.requirements.internal.wire.MqttWireMessage.STRING_ENCODING != null
+mqtt._389.requirements.internal.wire.MqttWireMessage.STRING_ENCODING.toString == "UTF-8"
+mqtt._389.requirements.internal.wire.MqttWireMessage.PACKET_NAMES has only one value
+mqtt._389.requirements.internal.wire.MqttWireMessage.PACKET_NAMES != null
+mqtt._389.requirements.internal.wire.MqttWireMessage.PACKET_NAMES.getClass().getName() == java.lang.String[].class
+mqtt._389.requirements.internal.wire.MqttWireMessage.PACKET_NAMES[] contains no nulls and has only one value, of length 15
+mqtt._389.requirements.internal.wire.MqttWireMessage.PACKET_NAMES[] elements != null
+mqtt._389.requirements.internal.wire.MqttWireMessage.PACKET_NAMES[].getClass().getName() == [java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String]
+mqtt._389.requirements.internal.wire.MqttWireMessage.PACKET_NAMES[].getClass().getName() elements == java.lang.String.class
+mqtt._389.requirements.internal.wire.MqttWireMessage.PACKET_NAMES[].toString == [reserved, CONNECT, CONNACK, PUBLISH, PUBACK, PUBREC, PUBREL, PUBCOMP, SUBSCRIBE, SUBACK, UNSUBSCRIBE, UNSUBACK, PINGREQ, PINGRESP, DISCONNECT]
+size(mqtt._389.requirements.internal.wire.MqttWireMessage.PACKET_NAMES[]) == 15
+===========================================================================
+mqtt._389.misuse.MqttSubscribe:::OBJECT
+this has only one value
+this.names has only one value
+this.names != null
+this.names.getClass().getName() == java.lang.String[].class
+this.names[] contains no nulls and has only one value, of length 1
+this.names[] elements has only one value
+this.names[] elements != null
+this.names[].getClass().getName() == [java.lang.String]
+this.names[].getClass().getName() elements == java.lang.String.class
+this.names[].toString == [topic1]
+this.names[].toString elements == "topic1"
+this.qos has only one value
+this.qos != null
+this.qos[] == [0]
+this.qos[] elements == 0
+this.count == 0
+this.type == 8
+this.msgId == 0
+this.duplicate == false
+size(this.names[]) == 1
+size(this.qos[]) == 1
+===========================================================================
+mqtt._389.misuse.MqttSubscribe.MqttSubscribe(java.lang.String[], int[]):::ENTER
+names has only one value
+names.getClass().getName() == java.lang.String[].class
+names[] contains no nulls and has only one value, of length 1
+names[] elements has only one value
+names[].toString == [topic1]
+names[].toString elements == "topic1"
+qos has only one value
+qos[] == [0]
+qos[] elements == 0
+size(names[]) == 1
+size(qos[]) == 1
+===========================================================================
+mqtt._389.misuse.MqttSubscribe.MqttSubscribe(java.lang.String[], int[]):::EXIT
+names[] == orig(names[])
+qos[] == orig(qos[])
+names[] contains no nulls and has only one value, of length 1
+names[] elements has only one value
+names[].toString == [topic1]
+names[].toString elements == "topic1"
+qos[] == [0]
+qos[] elements == 0
+===========================================================================
+mqtt._389.misuse.MqttSubscribe.getMessageInfo():::ENTER
+===========================================================================
+mqtt._389.misuse.MqttSubscribe.getMessageInfo():::EXIT
+this.names == orig(this.names)
+this.names.getClass().getName() == orig(this.names.getClass().getName())
+this.names[] == orig(this.names[])
+this.qos == orig(this.qos)
+this.qos[] == orig(this.qos[])
+this.count == orig(this.count)
+mqtt._389.requirements.internal.wire.MqttWireMessage.STRING_ENCODING == orig(mqtt._389.requirements.internal.wire.MqttWireMessage.STRING_ENCODING)
+mqtt._389.requirements.internal.wire.MqttWireMessage.STRING_ENCODING.toString == orig(mqtt._389.requirements.internal.wire.MqttWireMessage.STRING_ENCODING.toString)
+mqtt._389.requirements.internal.wire.MqttWireMessage.PACKET_NAMES == orig(mqtt._389.requirements.internal.wire.MqttWireMessage.PACKET_NAMES)
+mqtt._389.requirements.internal.wire.MqttWireMessage.PACKET_NAMES.getClass().getName() == orig(mqtt._389.requirements.internal.wire.MqttWireMessage.PACKET_NAMES.getClass().getName())
+mqtt._389.requirements.internal.wire.MqttWireMessage.PACKET_NAMES[] == orig(mqtt._389.requirements.internal.wire.MqttWireMessage.PACKET_NAMES[])
+this.type == orig(this.type)
+this.msgId == orig(this.msgId)
+this.duplicate == orig(this.duplicate)
+return == 2
+===========================================================================
+mqtt._389.misuse.MqttSubscribe.getPayload():::ENTER
+===========================================================================
+mqtt._389.misuse.MqttSubscribe.getPayload():::EXIT
+this.names == orig(this.names)
+this.names.getClass().getName() == orig(this.names.getClass().getName())
+this.names[] == orig(this.names[])
+this.qos == orig(this.qos)
+this.qos[] == orig(this.qos[])
+this.count == orig(this.count)
+mqtt._389.requirements.internal.wire.MqttWireMessage.STRING_ENCODING == orig(mqtt._389.requirements.internal.wire.MqttWireMessage.STRING_ENCODING)
+mqtt._389.requirements.internal.wire.MqttWireMessage.STRING_ENCODING.toString == orig(mqtt._389.requirements.internal.wire.MqttWireMessage.STRING_ENCODING.toString)
+mqtt._389.requirements.internal.wire.MqttWireMessage.PACKET_NAMES == orig(mqtt._389.requirements.internal.wire.MqttWireMessage.PACKET_NAMES)
+mqtt._389.requirements.internal.wire.MqttWireMessage.PACKET_NAMES.getClass().getName() == orig(mqtt._389.requirements.internal.wire.MqttWireMessage.PACKET_NAMES.getClass().getName())
+mqtt._389.requirements.internal.wire.MqttWireMessage.PACKET_NAMES[] == orig(mqtt._389.requirements.internal.wire.MqttWireMessage.PACKET_NAMES[])
+this.type == orig(this.type)
+this.msgId == orig(this.msgId)
+this.duplicate == orig(this.duplicate)
+return[] == [0, 6, 116, 111, 112, 105, 99, 49, 0]
+return[] elements >= 0
+size(return[]) == 9
+===========================================================================
+mqtt._389.misuse.MqttSubscribe.getVariableHeader():::ENTER
+===========================================================================
+mqtt._389.misuse.MqttSubscribe.getVariableHeader():::EXIT
+this.names == orig(this.names)
+this.names.getClass().getName() == orig(this.names.getClass().getName())
+this.names[] == orig(this.names[])
+this.qos == orig(this.qos)
+this.qos[] == orig(this.qos[])
+this.count == orig(this.count)
+mqtt._389.requirements.internal.wire.MqttWireMessage.STRING_ENCODING == orig(mqtt._389.requirements.internal.wire.MqttWireMessage.STRING_ENCODING)
+mqtt._389.requirements.internal.wire.MqttWireMessage.STRING_ENCODING.toString == orig(mqtt._389.requirements.internal.wire.MqttWireMessage.STRING_ENCODING.toString)
+mqtt._389.requirements.internal.wire.MqttWireMessage.PACKET_NAMES == orig(mqtt._389.requirements.internal.wire.MqttWireMessage.PACKET_NAMES)
+mqtt._389.requirements.internal.wire.MqttWireMessage.PACKET_NAMES.getClass().getName() == orig(mqtt._389.requirements.internal.wire.MqttWireMessage.PACKET_NAMES.getClass().getName())
+mqtt._389.requirements.internal.wire.MqttWireMessage.PACKET_NAMES[] == orig(mqtt._389.requirements.internal.wire.MqttWireMessage.PACKET_NAMES[])
+this.type == orig(this.type)
+this.msgId == orig(this.msgId)
+this.duplicate == orig(this.duplicate)
+return[] == [0, 0]
+return[] elements == 0
+size(return[]) == 2
+===========================================================================
+mqtt._389.misuse.MqttSubscribe.isRetryable():::ENTER
+===========================================================================
+mqtt._389.misuse.MqttSubscribe.isRetryable():::EXIT
+this.names == orig(this.names)
+this.names.getClass().getName() == orig(this.names.getClass().getName())
+this.names[] == orig(this.names[])
+this.qos == orig(this.qos)
+this.qos[] == orig(this.qos[])
+this.count == orig(this.count)
+mqtt._389.requirements.internal.wire.MqttWireMessage.STRING_ENCODING == orig(mqtt._389.requirements.internal.wire.MqttWireMessage.STRING_ENCODING)
+mqtt._389.requirements.internal.wire.MqttWireMessage.STRING_ENCODING.toString == orig(mqtt._389.requirements.internal.wire.MqttWireMessage.STRING_ENCODING.toString)
+mqtt._389.requirements.internal.wire.MqttWireMessage.PACKET_NAMES == orig(mqtt._389.requirements.internal.wire.MqttWireMessage.PACKET_NAMES)
+mqtt._389.requirements.internal.wire.MqttWireMessage.PACKET_NAMES.getClass().getName() == orig(mqtt._389.requirements.internal.wire.MqttWireMessage.PACKET_NAMES.getClass().getName())
+mqtt._389.requirements.internal.wire.MqttWireMessage.PACKET_NAMES[] == orig(mqtt._389.requirements.internal.wire.MqttWireMessage.PACKET_NAMES[])
+this.type == orig(this.type)
+this.msgId == orig(this.msgId)
+this.duplicate == orig(this.duplicate)
+return == true
+===========================================================================
+mqtt._389.misuse.MqttSubscribe.isRetryable():::EXIT;condition="return == true"
+===========================================================================
+mqtt._389.misuse.MqttSubscribe.toString():::ENTER
+===========================================================================
+mqtt._389.misuse.MqttSubscribe.toString():::EXIT
+this.names == orig(this.names)
+this.names.getClass().getName() == orig(this.names.getClass().getName())
+this.names[] == orig(this.names[])
+this.qos == orig(this.qos)
+this.qos[] == orig(this.qos[])
+this.count == orig(this.count)
+mqtt._389.requirements.internal.wire.MqttWireMessage.STRING_ENCODING == orig(mqtt._389.requirements.internal.wire.MqttWireMessage.STRING_ENCODING)
+mqtt._389.requirements.internal.wire.MqttWireMessage.STRING_ENCODING.toString == orig(mqtt._389.requirements.internal.wire.MqttWireMessage.STRING_ENCODING.toString)
+mqtt._389.requirements.internal.wire.MqttWireMessage.PACKET_NAMES == orig(mqtt._389.requirements.internal.wire.MqttWireMessage.PACKET_NAMES)
+mqtt._389.requirements.internal.wire.MqttWireMessage.PACKET_NAMES.getClass().getName() == orig(mqtt._389.requirements.internal.wire.MqttWireMessage.PACKET_NAMES.getClass().getName())
+mqtt._389.requirements.internal.wire.MqttWireMessage.PACKET_NAMES[] == orig(mqtt._389.requirements.internal.wire.MqttWireMessage.PACKET_NAMES[])
+this.type == orig(this.type)
+this.msgId == orig(this.msgId)
+this.duplicate == orig(this.duplicate)
+return has only one value
+return.toString == "SUBSCRIBE names:[] qos:[]"
+===========================================================================
+mqtt._389.requirements.MqttMessage.validateQos(int):::ENTER
+qos == 0
+===========================================================================
+mqtt._389.requirements.MqttMessage.validateQos(int):::EXIT
+===========================================================================
+mqtt._389.requirements.internal.wire.MqttWireMessage:::CLASS
+mqtt._389.requirements.internal.wire.MqttWireMessage.STRING_ENCODING has only one value
+mqtt._389.requirements.internal.wire.MqttWireMessage.STRING_ENCODING != null
+mqtt._389.requirements.internal.wire.MqttWireMessage.STRING_ENCODING.toString == "UTF-8"
+mqtt._389.requirements.internal.wire.MqttWireMessage.PACKET_NAMES has only one value
+mqtt._389.requirements.internal.wire.MqttWireMessage.PACKET_NAMES != null
+mqtt._389.requirements.internal.wire.MqttWireMessage.PACKET_NAMES.getClass().getName() == java.lang.String[].class
+mqtt._389.requirements.internal.wire.MqttWireMessage.PACKET_NAMES[] contains no nulls and has only one value, of length 15
+mqtt._389.requirements.internal.wire.MqttWireMessage.PACKET_NAMES[] elements != null
+mqtt._389.requirements.internal.wire.MqttWireMessage.PACKET_NAMES[].getClass().getName() == [java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String]
+mqtt._389.requirements.internal.wire.MqttWireMessage.PACKET_NAMES[].getClass().getName() elements == java.lang.String.class
+mqtt._389.requirements.internal.wire.MqttWireMessage.PACKET_NAMES[].toString == [reserved, CONNECT, CONNACK, PUBLISH, PUBACK, PUBREC, PUBREL, PUBCOMP, SUBSCRIBE, SUBACK, UNSUBSCRIBE, UNSUBACK, PINGREQ, PINGRESP, DISCONNECT]
+size(mqtt._389.requirements.internal.wire.MqttWireMessage.PACKET_NAMES[]) == 15
+===========================================================================
+mqtt._389.requirements.internal.wire.MqttWireMessage:::OBJECT
+this has only one value
+this.getClass().getName() == mqtt._389.misuse.MqttSubscribe.class
+this.type == 8
+this.msgId == 0
+this.duplicate == false
+===========================================================================
+mqtt._389.requirements.internal.wire.MqttWireMessage.MqttWireMessage(byte):::ENTER
+type == 8
+===========================================================================
+mqtt._389.requirements.internal.wire.MqttWireMessage.MqttWireMessage(byte):::EXIT
+===========================================================================
+mqtt._389.requirements.internal.wire.MqttWireMessage.encodeMBI(long):::ENTER
+number == 11
+===========================================================================
+mqtt._389.requirements.internal.wire.MqttWireMessage.encodeMBI(long):::EXIT
+mqtt._389.requirements.internal.wire.MqttWireMessage.STRING_ENCODING == orig(mqtt._389.requirements.internal.wire.MqttWireMessage.STRING_ENCODING)
+mqtt._389.requirements.internal.wire.MqttWireMessage.STRING_ENCODING.toString == orig(mqtt._389.requirements.internal.wire.MqttWireMessage.STRING_ENCODING.toString)
+mqtt._389.requirements.internal.wire.MqttWireMessage.PACKET_NAMES == orig(mqtt._389.requirements.internal.wire.MqttWireMessage.PACKET_NAMES)
+mqtt._389.requirements.internal.wire.MqttWireMessage.PACKET_NAMES.getClass().getName() == orig(mqtt._389.requirements.internal.wire.MqttWireMessage.PACKET_NAMES.getClass().getName())
+mqtt._389.requirements.internal.wire.MqttWireMessage.PACKET_NAMES[] == orig(mqtt._389.requirements.internal.wire.MqttWireMessage.PACKET_NAMES[])
+return has only one value
+return[] == [11]
+return[] elements == 11
+size(return[]) == 1
+===========================================================================
+mqtt._389.requirements.internal.wire.MqttWireMessage.encodeUTF8(java.io.DataOutputStream, java.lang.String):::ENTER
+stringToEncode has only one value
+stringToEncode.toString == "topic1"
+===========================================================================
+mqtt._389.requirements.internal.wire.MqttWireMessage.encodeUTF8(java.io.DataOutputStream, java.lang.String):::EXIT
+mqtt._389.requirements.internal.wire.MqttWireMessage.STRING_ENCODING == orig(mqtt._389.requirements.internal.wire.MqttWireMessage.STRING_ENCODING)
+mqtt._389.requirements.internal.wire.MqttWireMessage.STRING_ENCODING.toString == orig(mqtt._389.requirements.internal.wire.MqttWireMessage.STRING_ENCODING.toString)
+mqtt._389.requirements.internal.wire.MqttWireMessage.PACKET_NAMES == orig(mqtt._389.requirements.internal.wire.MqttWireMessage.PACKET_NAMES)
+mqtt._389.requirements.internal.wire.MqttWireMessage.PACKET_NAMES.getClass().getName() == orig(mqtt._389.requirements.internal.wire.MqttWireMessage.PACKET_NAMES.getClass().getName())
+mqtt._389.requirements.internal.wire.MqttWireMessage.PACKET_NAMES[] == orig(mqtt._389.requirements.internal.wire.MqttWireMessage.PACKET_NAMES[])
+this.type == orig(this.type)
+this.msgId == orig(this.msgId)
+this.duplicate == orig(this.duplicate)
+stringToEncode.toString == orig(stringToEncode.toString)
+stringToEncode.toString == "topic1"
+===========================================================================
+mqtt._389.requirements.internal.wire.MqttWireMessage.getHeader():::ENTER
+===========================================================================
+mqtt._389.requirements.internal.wire.MqttWireMessage.getHeader():::EXIT
+mqtt._389.requirements.internal.wire.MqttWireMessage.STRING_ENCODING == orig(mqtt._389.requirements.internal.wire.MqttWireMessage.STRING_ENCODING)
+mqtt._389.requirements.internal.wire.MqttWireMessage.STRING_ENCODING.toString == orig(mqtt._389.requirements.internal.wire.MqttWireMessage.STRING_ENCODING.toString)
+mqtt._389.requirements.internal.wire.MqttWireMessage.PACKET_NAMES == orig(mqtt._389.requirements.internal.wire.MqttWireMessage.PACKET_NAMES)
+mqtt._389.requirements.internal.wire.MqttWireMessage.PACKET_NAMES.getClass().getName() == orig(mqtt._389.requirements.internal.wire.MqttWireMessage.PACKET_NAMES.getClass().getName())
+mqtt._389.requirements.internal.wire.MqttWireMessage.PACKET_NAMES[] == orig(mqtt._389.requirements.internal.wire.MqttWireMessage.PACKET_NAMES[])
+this.type == orig(this.type)
+this.msgId == orig(this.msgId)
+this.duplicate == orig(this.duplicate)
+return has only one value
+return[] == [-126, 11, 0, 0]
+return[] elements one of { -126, 0, 11 }
+size(return[]) == 4
+===========================================================================
+mqtt._389.requirements.internal.wire.MqttWireMessage.getKey():::ENTER
+===========================================================================
+mqtt._389.requirements.internal.wire.MqttWireMessage.getKey():::EXIT
+mqtt._389.requirements.internal.wire.MqttWireMessage.STRING_ENCODING == orig(mqtt._389.requirements.internal.wire.MqttWireMessage.STRING_ENCODING)
+mqtt._389.requirements.internal.wire.MqttWireMessage.STRING_ENCODING.toString == orig(mqtt._389.requirements.internal.wire.MqttWireMessage.STRING_ENCODING.toString)
+mqtt._389.requirements.internal.wire.MqttWireMessage.PACKET_NAMES == orig(mqtt._389.requirements.internal.wire.MqttWireMessage.PACKET_NAMES)
+mqtt._389.requirements.internal.wire.MqttWireMessage.PACKET_NAMES.getClass().getName() == orig(mqtt._389.requirements.internal.wire.MqttWireMessage.PACKET_NAMES.getClass().getName())
+mqtt._389.requirements.internal.wire.MqttWireMessage.PACKET_NAMES[] == orig(mqtt._389.requirements.internal.wire.MqttWireMessage.PACKET_NAMES[])
+this.type == orig(this.type)
+this.msgId == orig(this.msgId)
+this.duplicate == orig(this.duplicate)
+return has only one value
+return.toString == "0"
+===========================================================================
+mqtt._389.requirements.internal.wire.MqttWireMessage.getMessageId():::ENTER
+===========================================================================
+mqtt._389.requirements.internal.wire.MqttWireMessage.getMessageId():::EXIT
+mqtt._389.requirements.internal.wire.MqttWireMessage.STRING_ENCODING == orig(mqtt._389.requirements.internal.wire.MqttWireMessage.STRING_ENCODING)
+mqtt._389.requirements.internal.wire.MqttWireMessage.STRING_ENCODING.toString == orig(mqtt._389.requirements.internal.wire.MqttWireMessage.STRING_ENCODING.toString)
+mqtt._389.requirements.internal.wire.MqttWireMessage.PACKET_NAMES == orig(mqtt._389.requirements.internal.wire.MqttWireMessage.PACKET_NAMES)
+mqtt._389.requirements.internal.wire.MqttWireMessage.PACKET_NAMES.getClass().getName() == orig(mqtt._389.requirements.internal.wire.MqttWireMessage.PACKET_NAMES.getClass().getName())
+mqtt._389.requirements.internal.wire.MqttWireMessage.PACKET_NAMES[] == orig(mqtt._389.requirements.internal.wire.MqttWireMessage.PACKET_NAMES[])
+this.type == orig(this.type)
+this.msgId == orig(this.msgId)
+this.duplicate == orig(this.duplicate)
+return == 0
+===========================================================================
+mqtt._389.requirements.internal.wire.MqttWireMessage.getType():::ENTER
+===========================================================================
+mqtt._389.requirements.internal.wire.MqttWireMessage.getType():::EXIT
+mqtt._389.requirements.internal.wire.MqttWireMessage.STRING_ENCODING == orig(mqtt._389.requirements.internal.wire.MqttWireMessage.STRING_ENCODING)
+mqtt._389.requirements.internal.wire.MqttWireMessage.STRING_ENCODING.toString == orig(mqtt._389.requirements.internal.wire.MqttWireMessage.STRING_ENCODING.toString)
+mqtt._389.requirements.internal.wire.MqttWireMessage.PACKET_NAMES == orig(mqtt._389.requirements.internal.wire.MqttWireMessage.PACKET_NAMES)
+mqtt._389.requirements.internal.wire.MqttWireMessage.PACKET_NAMES.getClass().getName() == orig(mqtt._389.requirements.internal.wire.MqttWireMessage.PACKET_NAMES.getClass().getName())
+mqtt._389.requirements.internal.wire.MqttWireMessage.PACKET_NAMES[] == orig(mqtt._389.requirements.internal.wire.MqttWireMessage.PACKET_NAMES[])
+this.type == orig(this.type)
+this.msgId == orig(this.msgId)
+this.duplicate == orig(this.duplicate)
+return == 8
+===========================================================================
+mqtt._389.requirements.internal.wire.MqttWireMessage.isMessageIdRequired():::ENTER
+===========================================================================
+mqtt._389.requirements.internal.wire.MqttWireMessage.isMessageIdRequired():::EXIT
+mqtt._389.requirements.internal.wire.MqttWireMessage.STRING_ENCODING == orig(mqtt._389.requirements.internal.wire.MqttWireMessage.STRING_ENCODING)
+mqtt._389.requirements.internal.wire.MqttWireMessage.STRING_ENCODING.toString == orig(mqtt._389.requirements.internal.wire.MqttWireMessage.STRING_ENCODING.toString)
+mqtt._389.requirements.internal.wire.MqttWireMessage.PACKET_NAMES == orig(mqtt._389.requirements.internal.wire.MqttWireMessage.PACKET_NAMES)
+mqtt._389.requirements.internal.wire.MqttWireMessage.PACKET_NAMES.getClass().getName() == orig(mqtt._389.requirements.internal.wire.MqttWireMessage.PACKET_NAMES.getClass().getName())
+mqtt._389.requirements.internal.wire.MqttWireMessage.PACKET_NAMES[] == orig(mqtt._389.requirements.internal.wire.MqttWireMessage.PACKET_NAMES[])
+this.type == orig(this.type)
+this.msgId == orig(this.msgId)
+this.duplicate == orig(this.duplicate)
+return == true
+===========================================================================
+mqtt._389.requirements.internal.wire.MqttWireMessage.isMessageIdRequired():::EXIT;condition="return == true"
+===========================================================================
+mqtt._389.requirements.internal.wire.MqttWireMessage.toString():::ENTER
+===========================================================================
+mqtt._389.requirements.internal.wire.MqttWireMessage.toString():::EXIT
+mqtt._389.requirements.internal.wire.MqttWireMessage.STRING_ENCODING == orig(mqtt._389.requirements.internal.wire.MqttWireMessage.STRING_ENCODING)
+mqtt._389.requirements.internal.wire.MqttWireMessage.STRING_ENCODING.toString == orig(mqtt._389.requirements.internal.wire.MqttWireMessage.STRING_ENCODING.toString)
+mqtt._389.requirements.internal.wire.MqttWireMessage.PACKET_NAMES == orig(mqtt._389.requirements.internal.wire.MqttWireMessage.PACKET_NAMES)
+mqtt._389.requirements.internal.wire.MqttWireMessage.PACKET_NAMES.getClass().getName() == orig(mqtt._389.requirements.internal.wire.MqttWireMessage.PACKET_NAMES.getClass().getName())
+mqtt._389.requirements.internal.wire.MqttWireMessage.PACKET_NAMES[] == orig(mqtt._389.requirements.internal.wire.MqttWireMessage.PACKET_NAMES[])
+this.type == orig(this.type)
+this.msgId == orig(this.msgId)
+this.duplicate == orig(this.duplicate)
+return has only one value
+return.toString == "SUBSCRIBE"

@@ -1,0 +1,645 @@
+===========================================================================
+daikon_runner.DaikonRunner.createDriverInstance(java.lang.Class, java.lang.String):::ENTER
+driverClass has only one value
+variant has only one value
+variant.toString == "misuse"
+===========================================================================
+daikon_runner.DaikonRunner.createDriverInstance(java.lang.Class, java.lang.String):::EXIT70
+===========================================================================
+daikon_runner.DaikonRunner.createDriverInstance(java.lang.Class, java.lang.String):::EXIT
+variant.toString == orig(variant.toString)
+variant.toString == "misuse"
+return has only one value
+return.getClass().getName() == wordpressa._1.Driver.class
+===========================================================================
+daikon_runner.DaikonRunner.main(java.lang.String[]):::ENTER
+args has only one value
+args.getClass().getName() == java.lang.String[].class
+args[] contains no nulls and has only one value, of length 2
+args[].toString == [wordpressa._1, misuse]
+args[].toString elements one of { "misuse", "wordpressa._1" }
+size(args[]) == 2
+===========================================================================
+daikon_runner.DaikonRunner.main(java.lang.String[]):::EXIT
+args[] == orig(args[])
+args[] contains no nulls and has only one value, of length 2
+args[].toString == [wordpressa._1, misuse]
+args[].toString elements one of { "misuse", "wordpressa._1" }
+===========================================================================
+wordpressa._1.Driver:::CLASS
+wordpressa._1.Driver.BASE_PACKAGE has only one value
+wordpressa._1.Driver.BASE_PACKAGE != null
+wordpressa._1.Driver.BASE_PACKAGE.toString == "wordpressa._1"
+===========================================================================
+wordpressa._1.Driver:::OBJECT
+this has only one value
+this.fragment has only one value
+this.fragment != null
+this.fragment.getClass().getName() == wordpressa._1.misuse.NotificationsListFragment.class
+this.fragmentClass has only one value
+this.fragmentClass != null
+this.restoreListScrollPosition has only one value
+this.restoreListScrollPosition != null
+this.refreshNotes has only one value
+this.refreshNotes != null
+===========================================================================
+wordpressa._1.Driver.Driver(java.lang.String):::ENTER
+variant has only one value
+variant.toString == "misuse"
+===========================================================================
+wordpressa._1.Driver.Driver(java.lang.String):::EXIT
+variant.toString == orig(variant.toString)
+variant.toString == "misuse"
+===========================================================================
+wordpressa._1.Driver.callRestoreListScrollPosition():::ENTER
+===========================================================================
+wordpressa._1.Driver.callRestoreListScrollPosition():::EXIT
+wordpressa._1.Driver.BASE_PACKAGE == orig(wordpressa._1.Driver.BASE_PACKAGE)
+wordpressa._1.Driver.BASE_PACKAGE.toString == orig(wordpressa._1.Driver.BASE_PACKAGE.toString)
+this.fragment == orig(this.fragment)
+this.fragment.getClass().getName() == orig(this.fragment.getClass().getName())
+this.fragmentClass == orig(this.fragmentClass)
+this.restoreListScrollPosition == orig(this.restoreListScrollPosition)
+this.refreshNotes == orig(this.refreshNotes)
+===========================================================================
+wordpressa._1.Driver.checksIsAddedBeforeGetListView():::ENTER
+===========================================================================
+wordpressa._1.Driver.checksIsAddedBeforeGetListView():::EXIT
+wordpressa._1.Driver.BASE_PACKAGE == orig(wordpressa._1.Driver.BASE_PACKAGE)
+wordpressa._1.Driver.BASE_PACKAGE.toString == orig(wordpressa._1.Driver.BASE_PACKAGE.toString)
+this.fragment == orig(this.fragment)
+this.fragment.getClass().getName() == orig(this.fragment.getClass().getName())
+this.fragmentClass == orig(this.fragmentClass)
+this.restoreListScrollPosition == orig(this.restoreListScrollPosition)
+this.refreshNotes == orig(this.refreshNotes)
+return == false
+===========================================================================
+wordpressa._1.Driver.checksIsAddedBeforeGetListView():::EXIT;condition="not(return == true)"
+===========================================================================
+wordpressa._1.Driver.getListView():::ENTER
+===========================================================================
+wordpressa._1.Driver.getListView():::EXIT
+wordpressa._1.Driver.BASE_PACKAGE == orig(wordpressa._1.Driver.BASE_PACKAGE)
+wordpressa._1.Driver.BASE_PACKAGE.toString == orig(wordpressa._1.Driver.BASE_PACKAGE.toString)
+this.fragment == orig(this.fragment)
+this.fragment.getClass().getName() == orig(this.fragment.getClass().getName())
+this.fragmentClass == orig(this.fragmentClass)
+this.restoreListScrollPosition == orig(this.restoreListScrollPosition)
+this.refreshNotes == orig(this.refreshNotes)
+return has only one value
+return.firstVisiblePosition == 0
+return.selectionFromTop one of { -1, 0 }
+return.emptyView == null
+===========================================================================
+wordpressa._1.Driver.getNotesAdapter():::ENTER
+===========================================================================
+wordpressa._1.Driver.getNotesAdapter():::EXIT
+wordpressa._1.Driver.BASE_PACKAGE == orig(wordpressa._1.Driver.BASE_PACKAGE)
+wordpressa._1.Driver.BASE_PACKAGE.toString == orig(wordpressa._1.Driver.BASE_PACKAGE.toString)
+this.fragment == orig(this.fragment)
+this.fragment.getClass().getName() == orig(this.fragment.getClass().getName())
+this.fragmentClass == orig(this.fragmentClass)
+this.restoreListScrollPosition == orig(this.restoreListScrollPosition)
+this.refreshNotes == orig(this.refreshNotes)
+return has only one value
+return.notes has only one value
+return.notes[].getClass().getName() == [wordpressa._1.mocks.Note, wordpressa._1.mocks.Note, wordpressa._1.mocks.Note, wordpressa._1.mocks.Note, wordpressa._1.mocks.Note]
+return.notes[].getClass().getName() elements == wordpressa._1.mocks.Note.class
+return.notes.getClass().getName() == java.util.ArrayList.class
+return.hiddenNoteIds has only one value
+return.hiddenNoteIds.getClass().getName() == java.util.HashSet.class
+return.moderatingNoteIds has only one value
+return.moderatingNoteIds.getClass().getName() == java.util.HashSet.class
+return.cursorClosed == false
+size(return.notes[]) == 5
+===========================================================================
+wordpressa._1.Driver.getRestoredListPosition():::ENTER
+===========================================================================
+wordpressa._1.Driver.getRestoredListPosition():::EXIT
+wordpressa._1.Driver.BASE_PACKAGE == orig(wordpressa._1.Driver.BASE_PACKAGE)
+wordpressa._1.Driver.BASE_PACKAGE.toString == orig(wordpressa._1.Driver.BASE_PACKAGE.toString)
+this.fragment == orig(this.fragment)
+this.fragment.getClass().getName() == orig(this.fragment.getClass().getName())
+this.fragmentClass == orig(this.fragmentClass)
+this.restoreListScrollPosition == orig(this.restoreListScrollPosition)
+this.refreshNotes == orig(this.refreshNotes)
+return == 0
+===========================================================================
+wordpressa._1.Driver.getScrollPosition():::ENTER
+===========================================================================
+wordpressa._1.Driver.getScrollPosition():::EXIT
+wordpressa._1.Driver.BASE_PACKAGE == orig(wordpressa._1.Driver.BASE_PACKAGE)
+wordpressa._1.Driver.BASE_PACKAGE.toString == orig(wordpressa._1.Driver.BASE_PACKAGE.toString)
+this.fragment == orig(this.fragment)
+this.fragment.getClass().getName() == orig(this.fragment.getClass().getName())
+this.fragmentClass == orig(this.fragmentClass)
+this.restoreListScrollPosition == orig(this.restoreListScrollPosition)
+this.refreshNotes == orig(this.refreshNotes)
+return == -1
+===========================================================================
+wordpressa._1.Driver.initializeFragment():::ENTER
+===========================================================================
+wordpressa._1.Driver.initializeFragment():::EXIT
+wordpressa._1.Driver.BASE_PACKAGE == orig(wordpressa._1.Driver.BASE_PACKAGE)
+wordpressa._1.Driver.BASE_PACKAGE.toString == orig(wordpressa._1.Driver.BASE_PACKAGE.toString)
+this.fragment == orig(this.fragment)
+this.fragment.getClass().getName() == orig(this.fragment.getClass().getName())
+this.fragmentClass == orig(this.fragmentClass)
+this.restoreListScrollPosition == orig(this.restoreListScrollPosition)
+this.refreshNotes == orig(this.refreshNotes)
+===========================================================================
+wordpressa._1.Driver.onPause():::ENTER
+===========================================================================
+wordpressa._1.Driver.onPause():::EXIT
+wordpressa._1.Driver.BASE_PACKAGE == orig(wordpressa._1.Driver.BASE_PACKAGE)
+wordpressa._1.Driver.BASE_PACKAGE.toString == orig(wordpressa._1.Driver.BASE_PACKAGE.toString)
+this.fragment == orig(this.fragment)
+this.fragment.getClass().getName() == orig(this.fragment.getClass().getName())
+this.fragmentClass == orig(this.fragmentClass)
+this.restoreListScrollPosition == orig(this.restoreListScrollPosition)
+this.refreshNotes == orig(this.refreshNotes)
+===========================================================================
+wordpressa._1.Driver.onResume():::ENTER
+===========================================================================
+wordpressa._1.Driver.onResume():::EXIT
+wordpressa._1.Driver.BASE_PACKAGE == orig(wordpressa._1.Driver.BASE_PACKAGE)
+wordpressa._1.Driver.BASE_PACKAGE.toString == orig(wordpressa._1.Driver.BASE_PACKAGE.toString)
+this.fragment == orig(this.fragment)
+this.fragment.getClass().getName() == orig(this.fragment.getClass().getName())
+this.fragmentClass == orig(this.fragmentClass)
+this.restoreListScrollPosition == orig(this.restoreListScrollPosition)
+this.refreshNotes == orig(this.refreshNotes)
+===========================================================================
+wordpressa._1.Driver.setIsAdded(boolean):::ENTER
+isAdded == false
+===========================================================================
+wordpressa._1.Driver.setIsAdded(boolean):::EXIT
+wordpressa._1.Driver.BASE_PACKAGE == orig(wordpressa._1.Driver.BASE_PACKAGE)
+wordpressa._1.Driver.BASE_PACKAGE.toString == orig(wordpressa._1.Driver.BASE_PACKAGE.toString)
+this.fragment == orig(this.fragment)
+this.fragment.getClass().getName() == orig(this.fragment.getClass().getName())
+this.fragmentClass == orig(this.fragmentClass)
+this.restoreListScrollPosition == orig(this.restoreListScrollPosition)
+this.refreshNotes == orig(this.refreshNotes)
+===========================================================================
+wordpressa._1.Driver.setRestoredListPosition(int):::ENTER
+position == 0
+===========================================================================
+wordpressa._1.Driver.setRestoredListPosition(int):::EXIT
+wordpressa._1.Driver.BASE_PACKAGE == orig(wordpressa._1.Driver.BASE_PACKAGE)
+wordpressa._1.Driver.BASE_PACKAGE.toString == orig(wordpressa._1.Driver.BASE_PACKAGE.toString)
+this.fragment == orig(this.fragment)
+this.fragment.getClass().getName() == orig(this.fragment.getClass().getName())
+this.fragmentClass == orig(this.fragmentClass)
+this.restoreListScrollPosition == orig(this.restoreListScrollPosition)
+this.refreshNotes == orig(this.refreshNotes)
+===========================================================================
+wordpressa._1.misuse.NotificationsListFragment:::OBJECT
+this has only one value
+this.mFauxPullToRefreshHelper == null
+this.mNotesAdapter.notes has only one value
+this.mNotesAdapter.notes != null
+this.mNotesAdapter.notes[] contains no nulls and has only one value, of length 5
+this.mNotesAdapter.notes[] elements != null
+this.mNotesAdapter.notes[].getClass().getName() == [wordpressa._1.mocks.Note, wordpressa._1.mocks.Note, wordpressa._1.mocks.Note, wordpressa._1.mocks.Note, wordpressa._1.mocks.Note]
+this.mNotesAdapter.notes[].getClass().getName() elements == wordpressa._1.mocks.Note.class
+this.mNotesAdapter.notes.getClass().getName() == java.util.ArrayList.class
+this.mNotesAdapter.hiddenNoteIds has only one value
+this.mNotesAdapter.hiddenNoteIds != null
+this.mNotesAdapter.hiddenNoteIds.getClass().getName() == java.util.HashSet.class
+this.mNotesAdapter.moderatingNoteIds has only one value
+this.mNotesAdapter.moderatingNoteIds != null
+this.mNotesAdapter.moderatingNoteIds.getClass().getName() == java.util.HashSet.class
+this.mNoteClickListener == null
+this.mRestoredListPosition one of { -1, 0 }
+this.mBucket == null
+this.listView has only one value
+this.listView != null
+this.listView.firstVisiblePosition == 0
+this.listView.selectionFromTop one of { -1, 0 }
+this.listView.emptyView == null
+this.activity has only one value
+this.activity != null
+this.listAdapter == null
+size(this.mNotesAdapter.notes[]) == 5
+===========================================================================
+wordpressa._1.misuse.NotificationsListFragment.NotificationsListFragment():::EXIT
+this.mNotesAdapter == null
+this.mRestoredListPosition == 0
+this.isAdded == true
+this.listView.selectionFromTop == -1
+===========================================================================
+wordpressa._1.misuse.NotificationsListFragment.getScrollPosition():::ENTER
+this.mNotesAdapter has only one value
+this.mNotesAdapter.cursorClosed == true
+this.mRestoredListPosition == -1
+this.isAdded == false
+this.listView.selectionFromTop == 0
+===========================================================================
+wordpressa._1.misuse.NotificationsListFragment.getScrollPosition():::EXIT224
+===========================================================================
+wordpressa._1.misuse.NotificationsListFragment.getScrollPosition():::EXIT
+this.mFauxPullToRefreshHelper == orig(this.mFauxPullToRefreshHelper)
+this.mNotesAdapter == orig(this.mNotesAdapter)
+this.mNotesAdapter.notes == orig(this.mNotesAdapter.notes)
+this.mNotesAdapter.notes[] == orig(this.mNotesAdapter.notes[])
+this.mNotesAdapter.notes.getClass().getName() == orig(this.mNotesAdapter.notes.getClass().getName())
+this.mNotesAdapter.hiddenNoteIds == orig(this.mNotesAdapter.hiddenNoteIds)
+this.mNotesAdapter.hiddenNoteIds.getClass().getName() == orig(this.mNotesAdapter.hiddenNoteIds.getClass().getName())
+this.mNotesAdapter.moderatingNoteIds == orig(this.mNotesAdapter.moderatingNoteIds)
+this.mNotesAdapter.moderatingNoteIds.getClass().getName() == orig(this.mNotesAdapter.moderatingNoteIds.getClass().getName())
+this.mNotesAdapter.cursorClosed == orig(this.mNotesAdapter.cursorClosed)
+this.mNoteClickListener == orig(this.mNoteClickListener)
+this.mRestoredListPosition == orig(this.mRestoredListPosition)
+this.mBucket == orig(this.mBucket)
+this.isAdded == orig(this.isAdded)
+this.listView == orig(this.listView)
+this.listView.firstVisiblePosition == orig(this.listView.firstVisiblePosition)
+this.listView.selectionFromTop == orig(this.listView.selectionFromTop)
+this.listView.emptyView == orig(this.listView.emptyView)
+this.activity == orig(this.activity)
+this.listAdapter == orig(this.listAdapter)
+this.mNotesAdapter has only one value
+this.mNotesAdapter.cursorClosed == true
+this.mRestoredListPosition == -1
+this.isAdded == false
+this.listView.selectionFromTop == 0
+return == -1
+===========================================================================
+wordpressa._1.misuse.NotificationsListFragment.onPause():::ENTER
+this.mNotesAdapter has only one value
+this.mNotesAdapter.cursorClosed == false
+this.mRestoredListPosition == -1
+this.isAdded == false
+this.listView.selectionFromTop == 0
+===========================================================================
+wordpressa._1.misuse.NotificationsListFragment.onPause():::EXIT
+this.mFauxPullToRefreshHelper == orig(this.mFauxPullToRefreshHelper)
+this.mNotesAdapter == orig(this.mNotesAdapter)
+this.mNotesAdapter.notes == orig(this.mNotesAdapter.notes)
+this.mNotesAdapter.notes[] == orig(this.mNotesAdapter.notes[])
+this.mNotesAdapter.notes.getClass().getName() == orig(this.mNotesAdapter.notes.getClass().getName())
+this.mNotesAdapter.hiddenNoteIds == orig(this.mNotesAdapter.hiddenNoteIds)
+this.mNotesAdapter.hiddenNoteIds.getClass().getName() == orig(this.mNotesAdapter.hiddenNoteIds.getClass().getName())
+this.mNotesAdapter.moderatingNoteIds == orig(this.mNotesAdapter.moderatingNoteIds)
+this.mNotesAdapter.moderatingNoteIds.getClass().getName() == orig(this.mNotesAdapter.moderatingNoteIds.getClass().getName())
+this.mNotesAdapter.cursorClosed == orig(this.mNotesAdapter.cursorClosed)
+this.mNoteClickListener == orig(this.mNoteClickListener)
+this.mRestoredListPosition == orig(this.mRestoredListPosition)
+this.mBucket == orig(this.mBucket)
+this.isAdded == orig(this.isAdded)
+this.listView == orig(this.listView)
+this.listView.firstVisiblePosition == orig(this.listView.firstVisiblePosition)
+this.listView.selectionFromTop == orig(this.listView.selectionFromTop)
+this.listView.emptyView == orig(this.listView.emptyView)
+this.activity == orig(this.activity)
+this.listAdapter == orig(this.listAdapter)
+this.mNotesAdapter has only one value
+this.mNotesAdapter.cursorClosed == false
+this.mRestoredListPosition == -1
+this.isAdded == false
+this.listView.selectionFromTop == 0
+===========================================================================
+wordpressa._1.misuse.NotificationsListFragment.onResume():::ENTER
+this.mNotesAdapter has only one value
+this.mNotesAdapter.cursorClosed == false
+this.mRestoredListPosition == -1
+this.isAdded == false
+this.listView.selectionFromTop == 0
+===========================================================================
+wordpressa._1.misuse.NotificationsListFragment.onResume():::EXIT
+this.mFauxPullToRefreshHelper == orig(this.mFauxPullToRefreshHelper)
+this.mNotesAdapter == orig(this.mNotesAdapter)
+this.mNotesAdapter.notes == orig(this.mNotesAdapter.notes)
+this.mNotesAdapter.notes[] == orig(this.mNotesAdapter.notes[])
+this.mNotesAdapter.notes.getClass().getName() == orig(this.mNotesAdapter.notes.getClass().getName())
+this.mNotesAdapter.hiddenNoteIds == orig(this.mNotesAdapter.hiddenNoteIds)
+this.mNotesAdapter.hiddenNoteIds.getClass().getName() == orig(this.mNotesAdapter.hiddenNoteIds.getClass().getName())
+this.mNotesAdapter.moderatingNoteIds == orig(this.mNotesAdapter.moderatingNoteIds)
+this.mNotesAdapter.moderatingNoteIds.getClass().getName() == orig(this.mNotesAdapter.moderatingNoteIds.getClass().getName())
+this.mNotesAdapter.cursorClosed == orig(this.mNotesAdapter.cursorClosed)
+this.mNoteClickListener == orig(this.mNoteClickListener)
+this.mRestoredListPosition == orig(this.mRestoredListPosition)
+this.mBucket == orig(this.mBucket)
+this.isAdded == orig(this.isAdded)
+this.listView == orig(this.listView)
+this.listView.firstVisiblePosition == orig(this.listView.firstVisiblePosition)
+this.listView.selectionFromTop == orig(this.listView.selectionFromTop)
+this.listView.emptyView == orig(this.listView.emptyView)
+this.activity == orig(this.activity)
+this.listAdapter == orig(this.listAdapter)
+this.mNotesAdapter has only one value
+this.mNotesAdapter.cursorClosed == false
+this.mRestoredListPosition == -1
+this.isAdded == false
+this.listView.selectionFromTop == 0
+===========================================================================
+wordpressa._1.misuse.NotificationsListFragment.refreshNotes():::ENTER
+this.mNotesAdapter has only one value
+this.mNotesAdapter.cursorClosed == false
+this.mRestoredListPosition == -1
+this.isAdded == false
+this.listView.selectionFromTop == 0
+===========================================================================
+wordpressa._1.misuse.NotificationsListFragment.refreshNotes():::EXIT190
+===========================================================================
+wordpressa._1.misuse.NotificationsListFragment.refreshNotes():::EXIT
+this.mFauxPullToRefreshHelper == orig(this.mFauxPullToRefreshHelper)
+this.mNotesAdapter == orig(this.mNotesAdapter)
+this.mNotesAdapter.notes == orig(this.mNotesAdapter.notes)
+this.mNotesAdapter.notes[] == orig(this.mNotesAdapter.notes[])
+this.mNotesAdapter.notes.getClass().getName() == orig(this.mNotesAdapter.notes.getClass().getName())
+this.mNotesAdapter.hiddenNoteIds == orig(this.mNotesAdapter.hiddenNoteIds)
+this.mNotesAdapter.hiddenNoteIds.getClass().getName() == orig(this.mNotesAdapter.hiddenNoteIds.getClass().getName())
+this.mNotesAdapter.moderatingNoteIds == orig(this.mNotesAdapter.moderatingNoteIds)
+this.mNotesAdapter.moderatingNoteIds.getClass().getName() == orig(this.mNotesAdapter.moderatingNoteIds.getClass().getName())
+this.mNotesAdapter.cursorClosed == orig(this.mNotesAdapter.cursorClosed)
+this.mNoteClickListener == orig(this.mNoteClickListener)
+this.mRestoredListPosition == orig(this.mRestoredListPosition)
+this.mBucket == orig(this.mBucket)
+this.isAdded == orig(this.isAdded)
+this.listView == orig(this.listView)
+this.listView.firstVisiblePosition == orig(this.listView.firstVisiblePosition)
+this.listView.selectionFromTop == orig(this.listView.selectionFromTop)
+this.listView.emptyView == orig(this.listView.emptyView)
+this.activity == orig(this.activity)
+this.listAdapter == orig(this.listAdapter)
+this.mNotesAdapter has only one value
+this.mNotesAdapter.cursorClosed == false
+this.mRestoredListPosition == -1
+this.isAdded == false
+this.listView.selectionFromTop == 0
+===========================================================================
+wordpressa._1.misuse.NotificationsListFragment.restoreListScrollPosition():::ENTER
+this.mNotesAdapter has only one value
+this.mNotesAdapter.cursorClosed == false
+this.isAdded == false
+===========================================================================
+wordpressa._1.misuse.NotificationsListFragment.restoreListScrollPosition():::EXIT
+this.mFauxPullToRefreshHelper == orig(this.mFauxPullToRefreshHelper)
+this.mNotesAdapter == orig(this.mNotesAdapter)
+this.mNotesAdapter.notes == orig(this.mNotesAdapter.notes)
+this.mNotesAdapter.notes[] == orig(this.mNotesAdapter.notes[])
+this.mNotesAdapter.notes.getClass().getName() == orig(this.mNotesAdapter.notes.getClass().getName())
+this.mNotesAdapter.hiddenNoteIds == orig(this.mNotesAdapter.hiddenNoteIds)
+this.mNotesAdapter.hiddenNoteIds.getClass().getName() == orig(this.mNotesAdapter.hiddenNoteIds.getClass().getName())
+this.mNotesAdapter.moderatingNoteIds == orig(this.mNotesAdapter.moderatingNoteIds)
+this.mNotesAdapter.moderatingNoteIds.getClass().getName() == orig(this.mNotesAdapter.moderatingNoteIds.getClass().getName())
+this.mNotesAdapter.cursorClosed == orig(this.mNotesAdapter.cursorClosed)
+this.mNoteClickListener == orig(this.mNoteClickListener)
+this.mBucket == orig(this.mBucket)
+this.isAdded == orig(this.isAdded)
+this.listView == orig(this.listView)
+this.listView.firstVisiblePosition == orig(this.listView.firstVisiblePosition)
+this.listView.emptyView == orig(this.listView.emptyView)
+this.activity == orig(this.activity)
+this.listAdapter == orig(this.listAdapter)
+this.mNotesAdapter has only one value
+this.mNotesAdapter.cursorClosed == false
+this.mRestoredListPosition == -1
+this.isAdded == false
+this.listView.selectionFromTop == 0
+===========================================================================
+wordpressa._1.mocks.Activity:::OBJECT
+this has only one value
+===========================================================================
+wordpressa._1.mocks.Activity.Activity():::EXIT
+===========================================================================
+wordpressa._1.mocks.Bucket:::OBJECT
+===========================================================================
+wordpressa._1.mocks.Bucket.Bucket():::EXIT
+===========================================================================
+wordpressa._1.mocks.Context:::OBJECT
+this has only one value
+===========================================================================
+wordpressa._1.mocks.Context.Context():::EXIT
+===========================================================================
+wordpressa._1.mocks.ListFragment:::OBJECT
+this has only one value
+this.listView has only one value
+this.listView != null
+this.listView.firstVisiblePosition == 0
+this.listView.selectionFromTop one of { -1, 0 }
+this.listView.emptyView == null
+this.activity has only one value
+this.activity != null
+this.listAdapter == null
+===========================================================================
+wordpressa._1.mocks.ListFragment.ListFragment():::EXIT
+this.isAdded == true
+this.listView.selectionFromTop == -1
+===========================================================================
+wordpressa._1.mocks.ListFragment.getActivity():::ENTER
+this.isAdded == false
+this.listView.selectionFromTop == 0
+===========================================================================
+wordpressa._1.mocks.ListFragment.getActivity():::EXIT
+this.isAdded == orig(this.isAdded)
+this.listView == orig(this.listView)
+this.listView.firstVisiblePosition == orig(this.listView.firstVisiblePosition)
+this.listView.selectionFromTop == orig(this.listView.selectionFromTop)
+this.listView.emptyView == orig(this.listView.emptyView)
+this.activity == orig(this.activity)
+this.listAdapter == orig(this.listAdapter)
+this.isAdded == false
+this.listView.selectionFromTop == 0
+return has only one value
+===========================================================================
+wordpressa._1.mocks.ListFragment.getListView():::ENTER
+this.isAdded == false
+===========================================================================
+wordpressa._1.mocks.ListFragment.getListView():::EXIT
+this.isAdded == orig(this.isAdded)
+this.listView == orig(this.listView)
+this.listView.firstVisiblePosition == orig(this.listView.firstVisiblePosition)
+this.listView.selectionFromTop == orig(this.listView.selectionFromTop)
+this.listView.emptyView == orig(this.listView.emptyView)
+this.activity == orig(this.activity)
+this.listAdapter == orig(this.listAdapter)
+this.isAdded == false
+return has only one value
+return.firstVisiblePosition == 0
+return.selectionFromTop one of { -1, 0 }
+return.emptyView == null
+===========================================================================
+wordpressa._1.mocks.ListFragment.isAdded():::ENTER
+this.isAdded == false
+this.listView.selectionFromTop == 0
+===========================================================================
+wordpressa._1.mocks.ListFragment.isAdded():::EXIT
+this.isAdded == orig(this.isAdded)
+this.listView == orig(this.listView)
+this.listView.firstVisiblePosition == orig(this.listView.firstVisiblePosition)
+this.listView.selectionFromTop == orig(this.listView.selectionFromTop)
+this.listView.emptyView == orig(this.listView.emptyView)
+this.activity == orig(this.activity)
+this.listAdapter == orig(this.listAdapter)
+this.isAdded == false
+this.listView.selectionFromTop == 0
+return == false
+===========================================================================
+wordpressa._1.mocks.ListFragment.isAdded():::EXIT;condition="not(return == true)"
+===========================================================================
+wordpressa._1.mocks.ListFragment.onPause():::ENTER
+this.isAdded == false
+this.listView.selectionFromTop == 0
+===========================================================================
+wordpressa._1.mocks.ListFragment.onPause():::EXIT
+this.isAdded == orig(this.isAdded)
+this.listView == orig(this.listView)
+this.listView.firstVisiblePosition == orig(this.listView.firstVisiblePosition)
+this.listView.selectionFromTop == orig(this.listView.selectionFromTop)
+this.listView.emptyView == orig(this.listView.emptyView)
+this.activity == orig(this.activity)
+this.listAdapter == orig(this.listAdapter)
+this.isAdded == false
+this.listView.selectionFromTop == 0
+===========================================================================
+wordpressa._1.mocks.ListFragment.onResume():::ENTER
+this.isAdded == false
+this.listView.selectionFromTop == 0
+===========================================================================
+wordpressa._1.mocks.ListFragment.onResume():::EXIT
+this.isAdded == orig(this.isAdded)
+this.listView == orig(this.listView)
+this.listView.firstVisiblePosition == orig(this.listView.firstVisiblePosition)
+this.listView.selectionFromTop == orig(this.listView.selectionFromTop)
+this.listView.emptyView == orig(this.listView.emptyView)
+this.activity == orig(this.activity)
+this.listAdapter == orig(this.listAdapter)
+this.isAdded == false
+this.listView.selectionFromTop == 0
+===========================================================================
+wordpressa._1.mocks.ListFragment.setIsAdded(boolean):::ENTER
+this.isAdded == true
+this.listView.selectionFromTop == -1
+added == false
+===========================================================================
+wordpressa._1.mocks.ListFragment.setIsAdded(boolean):::EXIT
+this.listView == orig(this.listView)
+this.listView.firstVisiblePosition == orig(this.listView.firstVisiblePosition)
+this.listView.selectionFromTop == orig(this.listView.selectionFromTop)
+this.listView.emptyView == orig(this.listView.emptyView)
+this.activity == orig(this.activity)
+this.listAdapter == orig(this.listAdapter)
+this.isAdded == false
+this.listView.selectionFromTop == -1
+===========================================================================
+wordpressa._1.mocks.ListView:::CLASS
+===========================================================================
+wordpressa._1.mocks.ListView:::OBJECT
+this has only one value
+this.firstVisiblePosition == 0
+this.selectionFromTop one of { -1, 0 }
+this.emptyView == null
+===========================================================================
+wordpressa._1.mocks.ListView.ListView():::EXIT
+this.selectionFromTop == -1
+===========================================================================
+wordpressa._1.mocks.ListView.getSelectionFromTop():::ENTER
+this.selectionFromTop == 0
+===========================================================================
+wordpressa._1.mocks.ListView.getSelectionFromTop():::EXIT
+this.firstVisiblePosition == orig(this.firstVisiblePosition)
+this.selectionFromTop == orig(this.selectionFromTop)
+this.emptyView == orig(this.emptyView)
+this.selectionFromTop == 0
+return == 0
+===========================================================================
+wordpressa._1.mocks.ListView.setSelectionFromTop(int, int):::ENTER
+this.selectionFromTop == -1
+position one of { -1, 0 }
+y == 0
+===========================================================================
+wordpressa._1.mocks.ListView.setSelectionFromTop(int, int):::EXIT
+this.firstVisiblePosition == orig(this.firstVisiblePosition)
+this.emptyView == orig(this.emptyView)
+===========================================================================
+wordpressa._1.mocks.Note:::OBJECT
+===========================================================================
+wordpressa._1.mocks.Note.Note():::EXIT
+===========================================================================
+wordpressa._1.mocks.NotesAdapter:::OBJECT
+this has only one value
+this.notes has only one value
+this.notes[].getClass().getName() == [wordpressa._1.mocks.Note, wordpressa._1.mocks.Note, wordpressa._1.mocks.Note, wordpressa._1.mocks.Note, wordpressa._1.mocks.Note]
+this.notes[].getClass().getName() elements == wordpressa._1.mocks.Note.class
+this.notes.getClass().getName() == java.util.ArrayList.class
+this.hiddenNoteIds has only one value
+this.hiddenNoteIds.getClass().getName() == java.util.HashSet.class
+this.moderatingNoteIds has only one value
+this.moderatingNoteIds.getClass().getName() == java.util.HashSet.class
+size(this.notes[]) == 5
+===========================================================================
+wordpressa._1.mocks.NotesAdapter.NotesAdapter(wordpressa._1.mocks.Activity, wordpressa._1.mocks.Bucket):::ENTER
+activity == null
+bucket has only one value
+===========================================================================
+wordpressa._1.mocks.NotesAdapter.NotesAdapter(wordpressa._1.mocks.Activity, wordpressa._1.mocks.Bucket):::EXIT
+this.notes[] contains no nulls and has only one value, of length 5
+this.cursorClosed == false
+===========================================================================
+wordpressa._1.mocks.NotesAdapter.closeCursor():::ENTER
+this.notes[] contains no nulls and has only one value, of length 5
+this.cursorClosed == false
+===========================================================================
+wordpressa._1.mocks.NotesAdapter.closeCursor():::EXIT
+this.notes == orig(this.notes)
+this.notes[] == orig(this.notes[])
+this.notes.getClass().getName() == orig(this.notes.getClass().getName())
+this.hiddenNoteIds == orig(this.hiddenNoteIds)
+this.hiddenNoteIds.getClass().getName() == orig(this.hiddenNoteIds.getClass().getName())
+this.moderatingNoteIds == orig(this.moderatingNoteIds)
+this.moderatingNoteIds.getClass().getName() == orig(this.moderatingNoteIds.getClass().getName())
+this.notes[] contains no nulls and has only one value, of length 5
+this.cursorClosed == true
+===========================================================================
+wordpressa._1.mocks.NotesAdapter.getCount():::ENTER
+this.notes[] contains no nulls and has only one value, of length 5
+this.cursorClosed == false
+===========================================================================
+wordpressa._1.mocks.NotesAdapter.getCount():::EXIT
+this.notes == orig(this.notes)
+this.notes[] == orig(this.notes[])
+this.notes.getClass().getName() == orig(this.notes.getClass().getName())
+this.hiddenNoteIds == orig(this.hiddenNoteIds)
+this.hiddenNoteIds.getClass().getName() == orig(this.hiddenNoteIds.getClass().getName())
+this.moderatingNoteIds == orig(this.moderatingNoteIds)
+this.moderatingNoteIds.getClass().getName() == orig(this.moderatingNoteIds.getClass().getName())
+this.cursorClosed == orig(this.cursorClosed)
+this.notes[] contains no nulls and has only one value, of length 5
+this.cursorClosed == false
+return == 5
+===========================================================================
+wordpressa._1.mocks.NotesAdapter.setCount(int):::ENTER
+this.notes[] contains no nulls and has only one value, of length 5
+this.cursorClosed == false
+count == 5
+===========================================================================
+wordpressa._1.mocks.NotesAdapter.setCount(int):::EXIT
+this.notes == orig(this.notes)
+this.notes.getClass().getName() == orig(this.notes.getClass().getName())
+this.hiddenNoteIds == orig(this.hiddenNoteIds)
+this.hiddenNoteIds.getClass().getName() == orig(this.hiddenNoteIds.getClass().getName())
+this.moderatingNoteIds == orig(this.moderatingNoteIds)
+this.moderatingNoteIds.getClass().getName() == orig(this.moderatingNoteIds.getClass().getName())
+this.cursorClosed == orig(this.cursorClosed)
+size(this.notes[]) == orig(size(this.notes[]))
+this.notes[] contains no nulls and has only one value, of length 5
+this.cursorClosed == false
+===========================================================================
+wordpressa._1.mocks.SimperiumUtils:::CLASS
+wordpressa._1.mocks.SimperiumUtils.notesBucket has only one value
+wordpressa._1.mocks.SimperiumUtils.metaBucket has only one value
+===========================================================================
+wordpressa._1.mocks.SimperiumUtils.getNotesBucket():::ENTER
+===========================================================================
+wordpressa._1.mocks.SimperiumUtils.getNotesBucket():::EXIT
+wordpressa._1.mocks.SimperiumUtils.notesBucket == orig(wordpressa._1.mocks.SimperiumUtils.notesBucket)
+wordpressa._1.mocks.SimperiumUtils.metaBucket == orig(wordpressa._1.mocks.SimperiumUtils.metaBucket)
+return has only one value
+===========================================================================
+wordpressa._1.mocks.View:::OBJECT
+this has only one value
+===========================================================================
+wordpressa._1.mocks.View.View():::EXIT

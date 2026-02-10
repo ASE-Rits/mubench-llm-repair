@@ -1,0 +1,317 @@
+===========================================================================
+daikon_runner.DaikonRunner.createDriverInstance(java.lang.Class, java.lang.String):::ENTER
+driverClass has only one value
+variant has only one value
+variant.toString == "misuse"
+===========================================================================
+daikon_runner.DaikonRunner.createDriverInstance(java.lang.Class, java.lang.String):::EXIT70
+===========================================================================
+daikon_runner.DaikonRunner.createDriverInstance(java.lang.Class, java.lang.String):::EXIT
+variant.toString == orig(variant.toString)
+variant.toString == "misuse"
+return has only one value
+return.getClass().getName() == testng._21.Driver.class
+===========================================================================
+daikon_runner.DaikonRunner.main(java.lang.String[]):::ENTER
+args has only one value
+args.getClass().getName() == java.lang.String[].class
+args[] contains no nulls and has only one value, of length 2
+args[].toString == [testng._21, misuse]
+args[].toString elements one of { "misuse", "testng._21" }
+size(args[]) == 2
+===========================================================================
+daikon_runner.DaikonRunner.main(java.lang.String[]):::EXIT
+args[] == orig(args[])
+args[] contains no nulls and has only one value, of length 2
+args[].toString == [testng._21, misuse]
+args[].toString elements one of { "misuse", "testng._21" }
+===========================================================================
+testng._21.Driver:::CLASS
+testng._21.Driver.BASE_PACKAGE has only one value
+testng._21.Driver.BASE_PACKAGE.toString == "testng._21"
+===========================================================================
+testng._21.Driver:::OBJECT
+this has only one value
+this.variant has only one value
+this.variant.toString == "misuse"
+this.modelInstance.getClass().getName() == testng._21.misuse.Model.class
+===========================================================================
+testng._21.Driver.Driver(java.lang.String):::ENTER
+variant has only one value
+variant.toString == "misuse"
+===========================================================================
+testng._21.Driver.Driver(java.lang.String):::EXIT
+variant.toString == orig(variant.toString)
+this.modelInstance == null
+this.modelClass == null
+variant.toString == "misuse"
+===========================================================================
+testng._21.Driver.getAllFailedResults():::ENTER
+this.modelInstance has only one value
+this.modelClass has only one value
+===========================================================================
+testng._21.Driver.getAllFailedResults():::EXIT
+testng._21.Driver.BASE_PACKAGE == orig(testng._21.Driver.BASE_PACKAGE)
+testng._21.Driver.BASE_PACKAGE.toString == orig(testng._21.Driver.BASE_PACKAGE.toString)
+this.variant == orig(this.variant)
+this.variant.toString == orig(this.variant.toString)
+this.modelInstance == orig(this.modelInstance)
+this.modelInstance.getClass().getName() == orig(this.modelInstance.getClass().getName())
+this.modelClass == orig(this.modelClass)
+this.modelInstance has only one value
+this.modelClass has only one value
+return has only one value
+return[] == []
+return[].getClass().getName() == []
+return.getClass().getName() == java.util.ArrayList.class
+===========================================================================
+testng._21.Driver.getSuites():::ENTER
+this.modelInstance == null
+this.modelClass == null
+===========================================================================
+testng._21.Driver.getSuites():::EXIT
+testng._21.Driver.BASE_PACKAGE == orig(testng._21.Driver.BASE_PACKAGE)
+testng._21.Driver.BASE_PACKAGE.toString == orig(testng._21.Driver.BASE_PACKAGE.toString)
+this.variant == orig(this.variant)
+this.variant.toString == orig(this.variant.toString)
+this.modelInstance has only one value
+this.modelClass has only one value
+return has only one value
+return[] == []
+return[].getClass().getName() == []
+return.getClass().getName() == java.util.ArrayList.class
+===========================================================================
+testng._21.Driver.initializeModel():::ENTER
+===========================================================================
+testng._21.Driver.initializeModel():::EXIT
+testng._21.Driver.BASE_PACKAGE == orig(testng._21.Driver.BASE_PACKAGE)
+testng._21.Driver.BASE_PACKAGE.toString == orig(testng._21.Driver.BASE_PACKAGE.toString)
+this.variant == orig(this.variant)
+this.variant.toString == orig(this.variant.toString)
+this.modelInstance.getClass().getName() == orig(this.modelInstance.getClass().getName())
+this.modelClass has only one value
+===========================================================================
+testng._21.misuse.Model:::OBJECT
+this.m_model.m_objects.getClass().getName() == java.util.HashMap.class
+this.m_suites[] == []
+this.m_suites[].getClass().getName() == []
+this.m_suites.getClass().getName() == java.util.ArrayList.class
+this.m_testTags.getClass().getName() == java.util.HashMap.class
+this.m_testResultMap.getClass().getName() == java.util.HashMap.class
+this.m_failedResultsByClass.getClass().getName() == java.util.HashMap.class
+this.m_skippedResultsByClass.getClass().getName() == java.util.HashMap.class
+this.m_passedResultsByClass.getClass().getName() == java.util.HashMap.class
+this.m_allFailedResults[] == []
+this.m_allFailedResults[].getClass().getName() == []
+this.m_allFailedResults.getClass().getName() == java.util.ArrayList.class
+this.m_statusBySuiteName.getClass().getName() == java.util.HashMap.class
+this.m_groupsBySuiteName.m_objects.getClass().getName() == java.util.HashMap.class
+this.m_methodsByGroup.m_objects.getClass().getName() == java.util.HashMap.class
+===========================================================================
+testng._21.misuse.Model.Model(java.util.List):::ENTER
+suites[] == []
+suites[].getClass().getName() == []
+suites.getClass().getName() == java.util.ArrayList.class
+===========================================================================
+testng._21.misuse.Model.Model(java.util.List):::EXIT
+suites[] == orig(suites[])
+suites[] == []
+suites[].getClass().getName() == []
+===========================================================================
+testng._21.misuse.Model.getAllFailedResults():::ENTER
+this has only one value
+this.m_model has only one value
+this.m_model.m_objects has only one value
+this.m_suites has only one value
+this.m_testTags has only one value
+this.m_testResultMap has only one value
+this.m_failedResultsByClass has only one value
+this.m_skippedResultsByClass has only one value
+this.m_passedResultsByClass has only one value
+this.m_allFailedResults has only one value
+this.m_statusBySuiteName has only one value
+this.m_groupsBySuiteName has only one value
+this.m_groupsBySuiteName.m_objects has only one value
+this.m_methodsByGroup has only one value
+this.m_methodsByGroup.m_objects has only one value
+===========================================================================
+testng._21.misuse.Model.getAllFailedResults():::EXIT
+this.m_model == orig(this.m_model)
+this.m_model.m_objects == orig(this.m_model.m_objects)
+this.m_model.m_objects.getClass().getName() == orig(this.m_model.m_objects.getClass().getName())
+this.m_suites == orig(this.m_suites)
+this.m_suites[] == orig(this.m_suites[])
+this.m_suites.getClass().getName() == orig(this.m_suites.getClass().getName())
+this.m_testTags == orig(this.m_testTags)
+this.m_testTags.getClass().getName() == orig(this.m_testTags.getClass().getName())
+this.m_testResultMap == orig(this.m_testResultMap)
+this.m_testResultMap.getClass().getName() == orig(this.m_testResultMap.getClass().getName())
+this.m_failedResultsByClass == orig(this.m_failedResultsByClass)
+this.m_failedResultsByClass.getClass().getName() == orig(this.m_failedResultsByClass.getClass().getName())
+this.m_skippedResultsByClass == orig(this.m_skippedResultsByClass)
+this.m_skippedResultsByClass.getClass().getName() == orig(this.m_skippedResultsByClass.getClass().getName())
+this.m_passedResultsByClass == orig(this.m_passedResultsByClass)
+this.m_passedResultsByClass.getClass().getName() == orig(this.m_passedResultsByClass.getClass().getName())
+this.m_allFailedResults == orig(this.m_allFailedResults)
+this.m_allFailedResults[] == orig(this.m_allFailedResults[])
+this.m_allFailedResults.getClass().getName() == orig(this.m_allFailedResults.getClass().getName())
+this.m_statusBySuiteName == orig(this.m_statusBySuiteName)
+this.m_statusBySuiteName.getClass().getName() == orig(this.m_statusBySuiteName.getClass().getName())
+this.m_groupsBySuiteName == orig(this.m_groupsBySuiteName)
+this.m_groupsBySuiteName.m_objects == orig(this.m_groupsBySuiteName.m_objects)
+this.m_groupsBySuiteName.m_objects.getClass().getName() == orig(this.m_groupsBySuiteName.m_objects.getClass().getName())
+this.m_methodsByGroup == orig(this.m_methodsByGroup)
+this.m_methodsByGroup.m_objects == orig(this.m_methodsByGroup.m_objects)
+this.m_methodsByGroup.m_objects.getClass().getName() == orig(this.m_methodsByGroup.m_objects.getClass().getName())
+this.m_model has only one value
+this.m_model.m_objects has only one value
+this.m_suites has only one value
+this.m_testTags has only one value
+this.m_testResultMap has only one value
+this.m_failedResultsByClass has only one value
+this.m_skippedResultsByClass has only one value
+this.m_passedResultsByClass has only one value
+this.m_allFailedResults has only one value
+this.m_statusBySuiteName has only one value
+this.m_groupsBySuiteName has only one value
+this.m_groupsBySuiteName.m_objects has only one value
+this.m_methodsByGroup has only one value
+this.m_methodsByGroup.m_objects has only one value
+return has only one value
+return[] == []
+return[].getClass().getName() == []
+return.getClass().getName() == java.util.ArrayList.class
+===========================================================================
+testng._21.misuse.Model.getSuites():::ENTER
+this has only one value
+this.m_model has only one value
+this.m_model.m_objects has only one value
+this.m_suites has only one value
+this.m_testTags has only one value
+this.m_testResultMap has only one value
+this.m_failedResultsByClass has only one value
+this.m_skippedResultsByClass has only one value
+this.m_passedResultsByClass has only one value
+this.m_allFailedResults has only one value
+this.m_statusBySuiteName has only one value
+this.m_groupsBySuiteName has only one value
+this.m_groupsBySuiteName.m_objects has only one value
+this.m_methodsByGroup has only one value
+this.m_methodsByGroup.m_objects has only one value
+===========================================================================
+testng._21.misuse.Model.getSuites():::EXIT
+this.m_model == orig(this.m_model)
+this.m_model.m_objects == orig(this.m_model.m_objects)
+this.m_model.m_objects.getClass().getName() == orig(this.m_model.m_objects.getClass().getName())
+this.m_suites == orig(this.m_suites)
+this.m_suites[] == orig(this.m_suites[])
+this.m_suites.getClass().getName() == orig(this.m_suites.getClass().getName())
+this.m_testTags == orig(this.m_testTags)
+this.m_testTags.getClass().getName() == orig(this.m_testTags.getClass().getName())
+this.m_testResultMap == orig(this.m_testResultMap)
+this.m_testResultMap.getClass().getName() == orig(this.m_testResultMap.getClass().getName())
+this.m_failedResultsByClass == orig(this.m_failedResultsByClass)
+this.m_failedResultsByClass.getClass().getName() == orig(this.m_failedResultsByClass.getClass().getName())
+this.m_skippedResultsByClass == orig(this.m_skippedResultsByClass)
+this.m_skippedResultsByClass.getClass().getName() == orig(this.m_skippedResultsByClass.getClass().getName())
+this.m_passedResultsByClass == orig(this.m_passedResultsByClass)
+this.m_passedResultsByClass.getClass().getName() == orig(this.m_passedResultsByClass.getClass().getName())
+this.m_allFailedResults == orig(this.m_allFailedResults)
+this.m_allFailedResults[] == orig(this.m_allFailedResults[])
+this.m_allFailedResults.getClass().getName() == orig(this.m_allFailedResults.getClass().getName())
+this.m_statusBySuiteName == orig(this.m_statusBySuiteName)
+this.m_statusBySuiteName.getClass().getName() == orig(this.m_statusBySuiteName.getClass().getName())
+this.m_groupsBySuiteName == orig(this.m_groupsBySuiteName)
+this.m_groupsBySuiteName.m_objects == orig(this.m_groupsBySuiteName.m_objects)
+this.m_groupsBySuiteName.m_objects.getClass().getName() == orig(this.m_groupsBySuiteName.m_objects.getClass().getName())
+this.m_methodsByGroup == orig(this.m_methodsByGroup)
+this.m_methodsByGroup.m_objects == orig(this.m_methodsByGroup.m_objects)
+this.m_methodsByGroup.m_objects.getClass().getName() == orig(this.m_methodsByGroup.m_objects.getClass().getName())
+this.m_model has only one value
+this.m_model.m_objects has only one value
+this.m_suites has only one value
+this.m_testTags has only one value
+this.m_testResultMap has only one value
+this.m_failedResultsByClass has only one value
+this.m_skippedResultsByClass has only one value
+this.m_passedResultsByClass has only one value
+this.m_allFailedResults has only one value
+this.m_statusBySuiteName has only one value
+this.m_groupsBySuiteName has only one value
+this.m_groupsBySuiteName.m_objects has only one value
+this.m_methodsByGroup has only one value
+this.m_methodsByGroup.m_objects has only one value
+return has only one value
+return[] == []
+return[].getClass().getName() == []
+return.getClass().getName() == java.util.ArrayList.class
+===========================================================================
+testng._21.misuse.Model.init():::ENTER
+===========================================================================
+testng._21.misuse.Model.init():::EXIT
+this.m_model == orig(this.m_model)
+this.m_model.m_objects == orig(this.m_model.m_objects)
+this.m_model.m_objects.getClass().getName() == orig(this.m_model.m_objects.getClass().getName())
+this.m_suites == orig(this.m_suites)
+this.m_suites[] == orig(this.m_suites[])
+this.m_suites.getClass().getName() == orig(this.m_suites.getClass().getName())
+this.m_testTags == orig(this.m_testTags)
+this.m_testTags.getClass().getName() == orig(this.m_testTags.getClass().getName())
+this.m_testResultMap == orig(this.m_testResultMap)
+this.m_testResultMap.getClass().getName() == orig(this.m_testResultMap.getClass().getName())
+this.m_failedResultsByClass == orig(this.m_failedResultsByClass)
+this.m_failedResultsByClass.getClass().getName() == orig(this.m_failedResultsByClass.getClass().getName())
+this.m_skippedResultsByClass == orig(this.m_skippedResultsByClass)
+this.m_skippedResultsByClass.getClass().getName() == orig(this.m_skippedResultsByClass.getClass().getName())
+this.m_passedResultsByClass == orig(this.m_passedResultsByClass)
+this.m_passedResultsByClass.getClass().getName() == orig(this.m_passedResultsByClass.getClass().getName())
+this.m_allFailedResults == orig(this.m_allFailedResults)
+this.m_allFailedResults[] == orig(this.m_allFailedResults[])
+this.m_allFailedResults.getClass().getName() == orig(this.m_allFailedResults.getClass().getName())
+this.m_statusBySuiteName == orig(this.m_statusBySuiteName)
+this.m_statusBySuiteName.getClass().getName() == orig(this.m_statusBySuiteName.getClass().getName())
+this.m_groupsBySuiteName == orig(this.m_groupsBySuiteName)
+this.m_groupsBySuiteName.m_objects == orig(this.m_groupsBySuiteName.m_objects)
+this.m_groupsBySuiteName.m_objects.getClass().getName() == orig(this.m_groupsBySuiteName.m_objects.getClass().getName())
+this.m_methodsByGroup == orig(this.m_methodsByGroup)
+this.m_methodsByGroup.m_objects == orig(this.m_methodsByGroup.m_objects)
+this.m_methodsByGroup.m_objects.getClass().getName() == orig(this.m_methodsByGroup.m_objects.getClass().getName())
+===========================================================================
+testng._21.requirements.org.testng.collections.ListMultiMap:::OBJECT
+this.m_objects.getClass().getName() == java.util.HashMap.class
+===========================================================================
+testng._21.requirements.org.testng.collections.ListMultiMap.ListMultiMap(boolean):::ENTER
+isSorted == false
+===========================================================================
+testng._21.requirements.org.testng.collections.ListMultiMap.ListMultiMap(boolean):::EXIT
+===========================================================================
+testng._21.requirements.org.testng.collections.Lists.newArrayList():::EXIT
+return[] == []
+return[].getClass().getName() == []
+return.getClass().getName() == java.util.ArrayList.class
+===========================================================================
+testng._21.requirements.org.testng.collections.Maps.newHashMap():::EXIT
+return != null
+return.getClass().getName() == java.util.HashMap.class
+===========================================================================
+testng._21.requirements.org.testng.collections.Maps.newListMultiMap():::EXIT
+return.m_objects.getClass().getName() == java.util.HashMap.class
+===========================================================================
+testng._21.requirements.org.testng.collections.Maps.newSetMultiMap():::EXIT
+return.m_objects.getClass().getName() == java.util.HashMap.class
+===========================================================================
+testng._21.requirements.org.testng.collections.MultiMap:::OBJECT
+this.m_objects.getClass().getName() == java.util.HashMap.class
+===========================================================================
+testng._21.requirements.org.testng.collections.MultiMap.MultiMap(boolean):::ENTER
+isSorted == false
+===========================================================================
+testng._21.requirements.org.testng.collections.MultiMap.MultiMap(boolean):::EXIT
+===========================================================================
+testng._21.requirements.org.testng.collections.SetMultiMap:::OBJECT
+this.m_objects.getClass().getName() == java.util.HashMap.class
+===========================================================================
+testng._21.requirements.org.testng.collections.SetMultiMap.SetMultiMap(boolean):::ENTER
+isSorted == false
+===========================================================================
+testng._21.requirements.org.testng.collections.SetMultiMap.SetMultiMap(boolean):::EXIT
