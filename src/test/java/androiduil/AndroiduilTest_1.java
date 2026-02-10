@@ -1,15 +1,16 @@
 package androiduil;
 
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.Nested;
-import org.junit.jupiter.api.DisplayName;
-import static org.junit.jupiter.api.Assertions.*;
+import org.junit.Test;
+import org.junit.experimental.runners.Enclosed;
+import org.junit.runner.RunWith;
+import static org.junit.Assert.*;
 
 import androiduil._1.Driver;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
+@RunWith(Enclosed.class)
 public class AndroiduilTest_1 {
 
     abstract static class CommonLogic {
@@ -26,12 +27,11 @@ public class AndroiduilTest_1 {
          * Misuse: ハンドリングなし → フェイル
          */
         @Test
-        @DisplayName("Source code must handle NullPointerException for Environment.getExternalStorageState()")
-        void testSourceCodeHandlesNullPointerException() throws Exception {
+        public void testSourceCodeHandlesNullPointerException() throws Exception {
             String sourceFilePath = getSourceFilePath();
             Path path = Paths.get(sourceFilePath);
             
-            assertTrue(Files.exists(path), "Source file should exist: " + sourceFilePath);
+            assertTrue("Source file should exist: " + sourceFilePath, Files.exists(path));
             
             String sourceCode = Files.readString(path);
             
@@ -41,15 +41,11 @@ public class AndroiduilTest_1 {
                 sourceCode.contains("catch (NullPointerException") ||
                 sourceCode.contains("catch(NullPointerException");
             
-            assertTrue(hasNullPointerExceptionHandling, 
-                "Source code must handle NullPointerException somewhere in the file. " +
-                "Environment.getExternalStorageState() may throw NullPointerException.");
+            assertTrue("Source code must handle NullPointerException somewhere in the file. " +
+                "Environment.getExternalStorageState() may throw NullPointerException.", hasNullPointerExceptionHandling);
         }
     }
-
-    @Nested
-    @DisplayName("Original")
-    class Original extends CommonLogic {
+    public static class Original extends CommonLogic {
         @Override
         Driver getTargetDriver() {
             return new Driver(androiduil._1.original.StorageUtils.class);
@@ -60,10 +56,7 @@ public class AndroiduilTest_1 {
             return "src/main/java/androiduil/_1/original/StorageUtils.java";
         }
     }
-
-    @Nested
-    @DisplayName("Misuse")
-    class Misuse extends CommonLogic {
+    public static class Misuse extends CommonLogic {
         @Override
         Driver getTargetDriver() {
             return new Driver(androiduil._1.misuse.StorageUtils.class);
@@ -74,10 +67,7 @@ public class AndroiduilTest_1 {
             return "src/main/java/androiduil/_1/misuse/StorageUtils.java";
         }
     }
-
-    @Nested
-    @DisplayName("Fixed")
-    class Fixed extends CommonLogic {
+    public static class Fixed extends CommonLogic {
         @Override
         Driver getTargetDriver() {
             return new Driver(androiduil._1.fixed.StorageUtils.class);

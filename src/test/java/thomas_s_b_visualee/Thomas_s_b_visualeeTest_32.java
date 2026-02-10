@@ -1,9 +1,9 @@
 package thomas_s_b_visualee;
 
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.Nested;
-import org.junit.jupiter.api.DisplayName;
-import static org.junit.jupiter.api.Assertions.*;
+import org.junit.Test;
+import org.junit.experimental.runners.Enclosed;
+import org.junit.runner.RunWith;
+import static org.junit.Assert.*;
 
 import thomas_s_b_visualee._32.Driver;
 import java.util.Scanner;
@@ -15,6 +15,7 @@ import java.util.Scanner;
  * - misuse: hasNext()チェックなしでscanner.next()を呼び出し
  * - fixed: hasNext()チェックを追加してNoSuchElementExceptionを防止
  */
+@RunWith(Enclosed.class)
 public class Thomas_s_b_visualeeTest_32 {
 
     abstract static class CommonLogic {
@@ -22,8 +23,7 @@ public class Thomas_s_b_visualeeTest_32 {
         abstract Driver createDriver() throws Exception;
 
         @Test
-        @DisplayName("scanAfterClosedParenthesis should return token after balanced parentheses")
-        void testScanAfterClosedParenthesisBalanced() throws Exception {
+        public void testScanAfterClosedParenthesisBalanced() throws Exception {
             Driver driver = createDriver();
             
             // Token with balanced parentheses should just return next token
@@ -37,8 +37,7 @@ public class Thomas_s_b_visualeeTest_32 {
         }
 
         @Test
-        @DisplayName("scanAfterClosedParenthesis should handle nested parentheses")
-        void testScanAfterClosedParenthesisNested() throws Exception {
+        public void testScanAfterClosedParenthesisNested() throws Exception {
             Driver driver = createDriver();
             
             // Unbalanced open paren, need to scan until closed
@@ -53,8 +52,7 @@ public class Thomas_s_b_visualeeTest_32 {
         }
 
         @Test
-        @DisplayName("scanAfterClosedParenthesis should handle unclosed parenthesis at EOF gracefully")
-        void testScanAfterClosedParenthesisUnclosedAtEOF() throws Exception {
+        public void testScanAfterClosedParenthesisUnclosedAtEOF() throws Exception {
             Driver driver = createDriver();
             
             // 開き括弧の後にトークンがないソースコード
@@ -72,10 +70,7 @@ public class Thomas_s_b_visualeeTest_32 {
             });
         }
     }
-
-    @Nested
-    @DisplayName("Original")
-    class Original extends CommonLogic {
+    public static class Original extends CommonLogic {
         @Override
         Driver createDriver() throws Exception {
             return Driver.createOriginal();
@@ -84,9 +79,7 @@ public class Thomas_s_b_visualeeTest_32 {
 
     // Misuseはバグ（hasNext()チェックなしでscanner.next()を呼び出し）があるため
     // testScanAfterClosedParenthesisUnclosedAtEOFでNoSuchElementExceptionが発生し失敗する
-    @Nested
-    @DisplayName("Misuse")
-    class Misuse extends CommonLogic {
+    public static class Misuse extends CommonLogic {
         @Override
         Driver createDriver() throws Exception {
             return Driver.createMisuse();
@@ -94,9 +87,7 @@ public class Thomas_s_b_visualeeTest_32 {
     }
 
     // Fixedはバグ修正に失敗したためコメントアウト
-    @Nested
-    @DisplayName("Fixed")
-    class Fixed extends CommonLogic {
+    public static class Fixed extends CommonLogic {
         @Override
         Driver createDriver() throws Exception {
             return Driver.createFixed();

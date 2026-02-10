@@ -1,15 +1,15 @@
 package tucanmobile;
 
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Nested;
-import org.junit.jupiter.api.Test;
+import org.junit.Before;
+import org.junit.Test;
+import org.junit.experimental.runners.Enclosed;
+import org.junit.runner.RunWith;
 
 import tucanmobile._1.Driver;
 import tucanmobile._1.mocks.ProgressDialog;
 import tucanmobile._1.requirements.AnswerObject;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.Assert.*;
 
 /**
  * Test for tucanmobile case 1: Dialog.dismiss() without checking isShowing().
@@ -22,49 +22,59 @@ class TucanmobileTest_1 {
         abstract Driver createDriver();
 
         @Test
-        @DisplayName("Should not throw when dialog is showing and dismiss is called")
-        void testDismissWhenDialogIsShowing() {
+        public void testDismissWhenDialogIsShowing() {
             Driver driver = createDriver();
             
             // onPreExecute creates the dialog
             driver.invokeOnPreExecute();
             
             ProgressDialog dialog = driver.getDialog();
-            assertNotNull(dialog, "Dialog should be created in onPreExecute");
-            assertTrue(dialog.isShowing(), "Dialog should be showing after onPreExecute");
+            assertNotNull("Dialog should be created in onPreExecute", dialog);
+            assertTrue("Dialog should be showing after onPreExecute", dialog.isShowing());
             
             // onPostExecute should dismiss without error
             AnswerObject result = new AnswerObject("", "", null, null);
-            assertDoesNotThrow(() -> driver.invokeOnPostExecute(result));
+            try {
+
+                driver.invokeOnPostExecute(result);
+
+            } catch (Throwable t) {
+
+                fail("Should not throw: " + t.getMessage());
+
+            }
             
-            assertFalse(dialog.isShowing(), "Dialog should not be showing after onPostExecute");
+            assertFalse("Dialog should not be showing after onPostExecute", dialog.isShowing());
         }
 
         @Test
-        @DisplayName("Should handle dialog not showing gracefully")
-        void testDismissWhenDialogIsNotShowing() {
+        public void testDismissWhenDialogIsNotShowing() {
             Driver driver = createDriver();
             
             // onPreExecute creates the dialog
             driver.invokeOnPreExecute();
             
             ProgressDialog dialog = driver.getDialog();
-            assertNotNull(dialog, "Dialog should be created in onPreExecute");
+            assertNotNull("Dialog should be created in onPreExecute", dialog);
             
             // Simulate dialog already dismissed (not showing)
             dialog.setShowing(false);
-            assertFalse(dialog.isShowing(), "Dialog should not be showing");
+            assertFalse("Dialog should not be showing", dialog.isShowing());
             
             // onPostExecute should not throw when dialog is not showing
             AnswerObject result = new AnswerObject("", "", null, null);
-            assertDoesNotThrow(() -> driver.invokeOnPostExecute(result),
-                    "Should not throw when dismissing a dialog that is not showing");
+            try {
+
+                driver.invokeOnPostExecute(result);
+
+            } catch (Throwable t) {
+
+                fail("Should not throw when dismissing a dialog that is not showing" + ": " + t.getMessage());
+
+            }
         }
     }
-
-    @Nested
-    @DisplayName("Original")
-    class Original extends CommonLogic {
+    public static class Original extends CommonLogic {
         @Override
         Driver createDriver() {
             return new Driver(BASE_PACKAGE + ".original.SimpleSecureBrowser");
@@ -72,18 +82,13 @@ class TucanmobileTest_1 {
     }
 
     // Misuseは常にコメントアウト（バグがあるため必ず失敗）
-    @Nested
-    @DisplayName("Misuse")
-    class Misuse extends CommonLogic {
+    public static class Misuse extends CommonLogic {
         @Override
         Driver createDriver() {
             return new Driver(BASE_PACKAGE + ".misuse.SimpleSecureBrowser");
         }
     }
-
-    @Nested
-    @DisplayName("Fixed")
-    class Fixed extends CommonLogic {
+    public static class Fixed extends CommonLogic {
         @Override
         Driver createDriver() {
             return new Driver(BASE_PACKAGE + ".fixed.SimpleSecureBrowser");

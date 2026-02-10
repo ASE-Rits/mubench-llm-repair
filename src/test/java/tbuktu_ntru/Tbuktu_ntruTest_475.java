@@ -1,9 +1,9 @@
 package tbuktu_ntru;
 
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.Nested;
-import org.junit.jupiter.api.DisplayName;
-import static org.junit.jupiter.api.Assertions.*;
+import org.junit.Test;
+import org.junit.experimental.runners.Enclosed;
+import org.junit.runner.RunWith;
+import static org.junit.Assert.*;
 
 import tbuktu_ntru._475.Driver;
 import java.io.ByteArrayOutputStream;
@@ -15,6 +15,7 @@ import java.io.DataOutputStream;
  * Bug: DataOutputStream.flush() が呼ばれていないため、
  * バッファされたデータがByteArrayOutputStreamに書き込まれない可能性がある
  */
+@RunWith(Enclosed.class)
 public class Tbuktu_ntruTest_475 {
 
     /**
@@ -51,71 +52,57 @@ public class Tbuktu_ntruTest_475 {
         abstract Driver driver() throws Exception;
 
         @Test
-        @DisplayName("getEncoded should return non-null byte array")
-        void testGetEncodedReturnsData() throws Exception {
+        public void testGetEncodedReturnsData() throws Exception {
             Driver d = driver();
             byte[] encoded = d.getEncoded();
             
-            assertNotNull(encoded, "getEncoded should return non-null byte array");
-            assertTrue(encoded.length > 0, "getEncoded should return non-empty byte array");
+            assertNotNull("getEncoded should return non-null byte array", encoded);
+            assertTrue("getEncoded should return non-empty byte array", encoded.length > 0);
         }
 
         @Test
-        @DisplayName("getEncoded should produce consistent output")
-        void testGetEncodedConsistent() throws Exception {
+        public void testGetEncodedConsistent() throws Exception {
             Driver d = driver();
             
             byte[] encoded1 = d.getEncoded();
             byte[] encoded2 = d.getEncoded();
             
-            assertArrayEquals(encoded1, encoded2, "Multiple calls to getEncoded should produce same result");
+            assertArrayEquals("Multiple calls to getEncoded should produce same result", encoded1, encoded2);
         }
 
         @Test
-        @DisplayName("getEncoded output should contain header data")
-        void testGetEncodedHeader() throws Exception {
+        public void testGetEncodedHeader() throws Exception {
             Driver d = driver();
             byte[] encoded = d.getEncoded();
             
             // N=107 = 0x006B as short
-            assertEquals(0x00, encoded[0] & 0xFF, "First byte of N should be 0x00");
-            assertEquals(0x6B, encoded[1] & 0xFF, "Second byte of N should be 0x6B (107)");
+            assertEquals("First byte of N should be 0x00", 0x00, encoded[0] & 0xFF);
+            assertEquals("Second byte of N should be 0x6B (107)", 0x6B, encoded[1] & 0xFF);
             
             // q=2048 = 0x0800 as short
-            assertEquals(0x08, encoded[2] & 0xFF, "First byte of q should be 0x08");
-            assertEquals(0x00, encoded[3] & 0xFF, "Second byte of q should be 0x00");
+            assertEquals("First byte of q should be 0x08", 0x08, encoded[2] & 0xFF);
+            assertEquals("Second byte of q should be 0x00", 0x00, encoded[3] & 0xFF);
         }
 
         @Test
-        @DisplayName("getEncoded should call flush() or close() before toByteArray()")
-        void testGetEncodedCallsFlushOrClose() throws Exception {
+        public void testGetEncodedCallsFlushOrClose() throws Exception {
             Driver d = driver();
-            assertTrue(d.hasFlushOrCloseInGetEncoded(), 
-                "getEncoded() should call flush() or close() before toByteArray()");
+            assertTrue("getEncoded() should call flush() or close() before toByteArray()", d.hasFlushOrCloseInGetEncoded());
         }
     }
-
-    @Nested
-    @DisplayName("Original")
-    class Original extends CommonLogic {
+    public static class Original extends CommonLogic {
         @Override
         Driver driver() throws Exception {
             return new Driver("original", createSimpleTestBytes());
         }
     }
-
-    @Nested
-    @DisplayName("Misuse")
-    class Misuse extends CommonLogic {
+    public static class Misuse extends CommonLogic {
         @Override
         Driver driver() throws Exception {
             return new Driver("misuse", createSimpleTestBytes());
         }
     }
-
-    @Nested
-    @DisplayName("Fixed")
-    class Fixed extends CommonLogic {
+    public static class Fixed extends CommonLogic {
         @Override
         Driver driver() throws Exception {
             return new Driver("fixed", createSimpleTestBytes());

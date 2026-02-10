@@ -1,9 +1,9 @@
 package jriecken_gae_java_mini_profiler;
 
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.Nested;
-import org.junit.jupiter.api.DisplayName;
-import static org.junit.jupiter.api.Assertions.*;
+import org.junit.Test;
+import org.junit.experimental.runners.Enclosed;
+import org.junit.runner.RunWith;
+import static org.junit.Assert.*;
 
 import jriecken_gae_java_mini_profiler._39.Driver;
 
@@ -17,6 +17,7 @@ import jriecken_gae_java_mini_profiler._39.Driver;
  * - Misuse: No exception handling (bug)
  * - Fixed: Has try-catch for NumberFormatException (correct)
  */
+@RunWith(Enclosed.class)
 public class Jriecken_gae_java_mini_profilerTest_39 {
     
     private static final String BASE_PACKAGE = "jriecken_gae_java_mini_profiler._39";
@@ -33,42 +34,30 @@ public class Jriecken_gae_java_mini_profilerTest_39 {
          * without throwing NumberFormatException.
          */
         @Test
-        @DisplayName("Should handle invalid appstatsId gracefully")
-        void testHandlesInvalidIdGracefully() {
+        public void testHandlesInvalidIdGracefully() {
             Driver d = driver();
             
             // Test with various invalid inputs
-            assertTrue(d.handlesInvalidIdGracefully("invalid"), 
-                "Should handle 'invalid' string without throwing NumberFormatException");
-            assertTrue(d.handlesInvalidIdGracefully("abc123"), 
-                "Should handle 'abc123' string without throwing NumberFormatException");
-            assertTrue(d.handlesInvalidIdGracefully(""), 
-                "Should handle empty string without throwing NumberFormatException");
-            assertTrue(d.handlesInvalidIdGracefully("12.34"), 
-                "Should handle decimal string without throwing NumberFormatException");
+            assertTrue("Should handle 'invalid' string without throwing NumberFormatException", d.handlesInvalidIdGracefully("invalid"));
+            assertTrue("Should handle 'abc123' string without throwing NumberFormatException", d.handlesInvalidIdGracefully("abc123"));
+            assertTrue("Should handle empty string without throwing NumberFormatException", d.handlesInvalidIdGracefully(""));
+            assertTrue("Should handle decimal string without throwing NumberFormatException", d.handlesInvalidIdGracefully("12.34"));
         }
         
         /**
          * Test that valid numeric appstatsId is processed correctly.
          */
         @Test
-        @DisplayName("Should process valid appstatsId correctly")
-        void testHandlesValidIdCorrectly() {
+        public void testHandlesValidIdCorrectly() {
             Driver d = driver();
             
             // Test with valid numeric ID
-            assertTrue(d.handlesValidIdCorrectly("12345"), 
-                "Should process valid numeric ID correctly");
-            assertTrue(d.handlesValidIdCorrectly("0"), 
-                "Should process '0' correctly");
-            assertTrue(d.handlesValidIdCorrectly("-1"), 
-                "Should process negative number correctly");
+            assertTrue("Should process valid numeric ID correctly", d.handlesValidIdCorrectly("12345"));
+            assertTrue("Should process '0' correctly", d.handlesValidIdCorrectly("0"));
+            assertTrue("Should process negative number correctly", d.handlesValidIdCorrectly("-1"));
         }
     }
-    
-    @Nested
-    @DisplayName("Original")
-    class Original extends CommonCases {
+    public static class Original extends CommonCases {
         
         @Override
         Driver driver() {
@@ -78,19 +67,14 @@ public class Jriecken_gae_java_mini_profilerTest_39 {
     
     // Misuse: バグがあるためテストは失敗する（コメントアウト）
     // NumberFormatException を catch していないため、invalid ID で例外がスローされる
-    @Nested
-    @DisplayName("Misuse")
-    class Misuse extends CommonCases {
+    public static class Misuse extends CommonCases {
         
         @Override
         Driver driver() {
             return new Driver(BASE_PACKAGE + ".misuse.MiniProfilerAppstats");
         }
     }
-    
-    @Nested
-    @DisplayName("Fixed")
-    class Fixed extends CommonCases {
+    public static class Fixed extends CommonCases {
         
         @Override
         Driver driver() {

@@ -1,12 +1,12 @@
 package pawotag;
 
 import pawotag._1.Driver;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Nested;
-import org.junit.jupiter.api.Test;
+import org.junit.Before;
+import org.junit.Test;
+import org.junit.experimental.runners.Enclosed;
+import org.junit.runner.RunWith;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.Assert.*;
 
 /**
  * Test for pawotag/1 - CryptoUtil empty array handling bug.
@@ -24,14 +24,13 @@ class PawotagTest_1 {
 
         abstract Driver driver();
 
-        @BeforeEach
+        @Before
         void resetKey() {
             driver().resetSecretKey();
         }
 
         @Test
-        @DisplayName("encrypt and decrypt round-trip works for non-empty string")
-        void encryptDecryptNonEmpty() {
+        public void encryptDecryptNonEmpty() {
             String original = "Hello, World!";
             String encrypted = driver().encrypt(original);
             assertNotNull(encrypted);
@@ -42,8 +41,7 @@ class PawotagTest_1 {
         }
 
         @Test
-        @DisplayName("encrypt and decrypt round-trip works for empty string")
-        void encryptDecryptEmpty() {
+        public void encryptDecryptEmpty() {
             String original = "";
             String encrypted = driver().encrypt(original);
             assertNotNull(encrypted);
@@ -53,8 +51,7 @@ class PawotagTest_1 {
         }
 
         @Test
-        @DisplayName("encrypt handles null input as empty string")
-        void encryptNullInput() {
+        public void encryptNullInput() {
             String encrypted = driver().encrypt(null);
             assertNotNull(encrypted);
             
@@ -63,23 +60,17 @@ class PawotagTest_1 {
         }
 
         @Test
-        @DisplayName("decrypt returns null for null input")
-        void decryptNullInput() {
+        public void decryptNullInput() {
             String result = driver().decrypt(null);
             assertNull(result);
         }
 
         @Test
-        @DisplayName("code has proper empty array check (source code pattern)")
-        void hasEmptyArrayCheckPattern() throws Exception {
-            assertTrue(driver().hasEmptyArrayCheck(),
-                "encrypt() should check for empty input array before calling doFinal");
+        public void hasEmptyArrayCheckPattern() throws Exception {
+            assertTrue("encrypt() should check for empty input array before calling doFinal", driver().hasEmptyArrayCheck());
         }
     }
-
-    @Nested
-    @DisplayName("Original")
-    class Original extends CommonCases {
+    public static class Original extends CommonCases {
 
         @Override
         Driver driver() {
@@ -88,19 +79,13 @@ class PawotagTest_1 {
     }
 
     // Misuse fails the hasEmptyArrayCheckPattern test because it doesn't check for empty arrays
-    @Nested
-    @DisplayName("Misuse")
-    class Misuse extends CommonCases {
+    public static class Misuse extends CommonCases {
         @Override
         Driver driver() {
             return new Driver(BASE_PACKAGE + ".misuse.CryptoUtil");
         }
     }
-
-
-    @Nested
-    @DisplayName("Fixed")
-    class Fixed extends CommonCases {
+    public static class Fixed extends CommonCases {
 
         @Override
         Driver driver() {

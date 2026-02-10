@@ -1,9 +1,9 @@
 package thomas_s_b_visualee;
 
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.Nested;
-import org.junit.jupiter.api.DisplayName;
-import static org.junit.jupiter.api.Assertions.*;
+import org.junit.Test;
+import org.junit.experimental.runners.Enclosed;
+import org.junit.runner.RunWith;
+import static org.junit.Assert.*;
 
 import thomas_s_b_visualee._30.Driver;
 import java.util.Scanner;
@@ -15,6 +15,7 @@ import java.util.Scanner;
  * - misuse: hasNext()チェックなしでscanner.next()を呼び出し
  * - fixed: hasNext()チェックを追加してNoSuchElementExceptionを防止
  */
+@RunWith(Enclosed.class)
 public class Thomas_s_b_visualeeTest_30 {
 
     abstract static class CommonLogic {
@@ -22,8 +23,7 @@ public class Thomas_s_b_visualeeTest_30 {
         abstract Driver createDriver() throws Exception;
 
         @Test
-        @DisplayName("jumpOverJavaToken should skip 'void' and return next token")
-        void testJumpOverJavaTokenVoid() throws Exception {
+        public void testJumpOverJavaTokenVoid() throws Exception {
             Driver driver = createDriver();
             
             String sourceCode = "void myMethod";
@@ -36,8 +36,7 @@ public class Thomas_s_b_visualeeTest_30 {
         }
 
         @Test
-        @DisplayName("jumpOverJavaToken should skip 'public static' and return next token")
-        void testJumpOverJavaTokenMultiple() throws Exception {
+        public void testJumpOverJavaTokenMultiple() throws Exception {
             Driver driver = createDriver();
             
             String sourceCode = "public static void myMethod";
@@ -50,8 +49,7 @@ public class Thomas_s_b_visualeeTest_30 {
         }
 
         @Test
-        @DisplayName("jumpOverJavaToken should return non-Java token as-is")
-        void testJumpOverJavaTokenNonJavaToken() throws Exception {
+        public void testJumpOverJavaTokenNonJavaToken() throws Exception {
             Driver driver = createDriver();
             
             String sourceCode = "myMethod";
@@ -64,8 +62,7 @@ public class Thomas_s_b_visualeeTest_30 {
         }
 
         @Test
-        @DisplayName("jumpOverJavaToken should handle lone Java token at EOF gracefully")
-        void testJumpOverJavaTokenLoneTokenAtEOF() throws Exception {
+        public void testJumpOverJavaTokenLoneTokenAtEOF() throws Exception {
             Driver driver = createDriver();
             
             // Javaトークンのみで次のトークンがないソースコード
@@ -83,10 +80,7 @@ public class Thomas_s_b_visualeeTest_30 {
             });
         }
     }
-
-    @Nested
-    @DisplayName("Original")
-    class Original extends CommonLogic {
+    public static class Original extends CommonLogic {
         @Override
         Driver createDriver() throws Exception {
             return Driver.createOriginal();
@@ -95,9 +89,7 @@ public class Thomas_s_b_visualeeTest_30 {
 
     // Misuseはバグ（hasNext()チェックなしでscanner.next()を呼び出し）があるため
     // testJumpOverJavaTokenLoneTokenAtEOFでNoSuchElementExceptionが発生し失敗する
-    @Nested
-    @DisplayName("Misuse")
-    class Misuse extends CommonLogic {
+    public static class Misuse extends CommonLogic {
         @Override
         Driver createDriver() throws Exception {
             return Driver.createMisuse();
@@ -105,9 +97,7 @@ public class Thomas_s_b_visualeeTest_30 {
     }
 
     // Fixedはバグ修正に失敗したためコメントアウト
-    @Nested
-    @DisplayName("Fixed")
-    class Fixed extends CommonLogic {
+    public static class Fixed extends CommonLogic {
         @Override
         Driver createDriver() throws Exception {
             return Driver.createFixed();

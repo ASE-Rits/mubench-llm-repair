@@ -2,13 +2,13 @@ package onosendai;
 
 import onosendai._1.Driver;
 
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Nested;
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
+import static org.junit.Assert.*;
+import org.junit.experimental.runners.Enclosed;
+import org.junit.runner.RunWith;
 
 import java.io.IOException;
 
-import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class OnosendaiTest_1 {
 
@@ -21,18 +21,14 @@ class OnosendaiTest_1 {
         abstract String variantName();
 
         @Test
-        @DisplayName("BatteryHelper must use application context")
-        void batteryHelperUsesApplicationContext() throws IOException {
+        public void batteryHelperUsesApplicationContext() throws IOException {
             String source = driver().readSourceCode();
             boolean usesAppContext = source.contains("BatteryHelper.level(context.getApplicationContext())")
                     || source.contains("BatteryHelper.level(appContext)");
-            assertTrue(usesAppContext, "BatteryHelper must be called with application context for " + variantName());
+            assertTrue("BatteryHelper must be called with application context for " + variantName(), usesAppContext);
         }
     }
-
-    @Nested
-    @DisplayName("Original")
-    class Original extends CommonCases {
+    public static class Original extends CommonCases {
         @Override
         Driver driver() {
             return new Driver(BASE_PACKAGE + ".original" + TARGET_CLASS);
@@ -43,10 +39,7 @@ class OnosendaiTest_1 {
             return "original";
         }
     }
-
-    @Nested
-    @DisplayName("Misuse")
-    class Misuse extends CommonCases {
+    public static class Misuse extends CommonCases {
         @Override
         Driver driver() {
             return new Driver(BASE_PACKAGE + ".misuse" + TARGET_CLASS);
@@ -57,10 +50,7 @@ class OnosendaiTest_1 {
             return "misuse";
         }
     }
-
-    @Nested
-    @DisplayName("Fixed")
-    class Fixed extends CommonCases {
+    public static class Fixed extends CommonCases {
         @Override
         Driver driver() {
             return new Driver(BASE_PACKAGE + ".fixed" + TARGET_CLASS);

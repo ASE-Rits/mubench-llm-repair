@@ -1,14 +1,14 @@
 package wordpressa;
 
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Nested;
-import org.junit.jupiter.api.Test;
+import org.junit.Before;
+import org.junit.Test;
+import org.junit.experimental.runners.Enclosed;
+import org.junit.runner.RunWith;
 import wordpressa._1.Driver;
 import wordpressa._1.mocks.ListView;
 import wordpressa._1.mocks.SimperiumUtils;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.Assert.*;
 
 /**
  * Test for wordpressa case 1: NotificationsListFragment.restoreListScrollPosition()
@@ -22,80 +22,66 @@ class WordpressaTest_1 {
 
         abstract Driver driver();
 
-        @BeforeEach
+        @Before
         void setUp() {
             SimperiumUtils.reset();
         }
 
         @Test
-        @DisplayName("should restore scroll position when fragment is added and position is valid")
-        void restoresScrollPositionWhenAdded() {
+        public void restoresScrollPositionWhenAdded() {
             Driver d = driver();
             boolean selectionSet = d.testRestoreScrollPosition(true, 2, 5);
             
-            assertTrue(selectionSet, "Selection should be set when fragment is added");
+            assertTrue("Selection should be set when fragment is added", selectionSet);
         }
 
         @Test
-        @DisplayName("should not restore scroll position when position is INVALID_POSITION")
-        void doesNotRestoreWhenInvalidPosition() {
+        public void doesNotRestoreWhenInvalidPosition() {
             Driver d = driver();
             boolean selectionSet = d.testRestoreScrollPosition(true, ListView.INVALID_POSITION, 5);
             
-            assertFalse(selectionSet, "Selection should not be set when position is INVALID_POSITION");
+            assertFalse("Selection should not be set when position is INVALID_POSITION", selectionSet);
         }
 
         @Test
-        @DisplayName("should not restore scroll position when position exceeds note count")
-        void doesNotRestoreWhenPositionExceedsCount() {
+        public void doesNotRestoreWhenPositionExceedsCount() {
             Driver d = driver();
             boolean selectionSet = d.testRestoreScrollPosition(true, 10, 5);
             
-            assertFalse(selectionSet, "Selection should not be set when position exceeds count");
+            assertFalse("Selection should not be set when position exceeds count", selectionSet);
         }
 
         @Test
-        @DisplayName("should check isAdded() before accessing ListView")
-        void checksIsAddedBeforeGetListView() {
+        public void checksIsAddedBeforeGetListView() {
             Driver d = driver();
             boolean hasCheck = d.checksIsAddedBeforeGetListView();
             
-            assertTrue(hasCheck, "Should check isAdded() before calling getListView()");
+            assertTrue("Should check isAdded() before calling getListView()", hasCheck);
         }
 
         @Test
-        @DisplayName("should NOT set selection when fragment is not added")
-        void doesNotSetSelectionWhenNotAdded() {
+        public void doesNotSetSelectionWhenNotAdded() {
             Driver d = driver();
             boolean selectionSet = d.testRestoreScrollPosition(false, 2, 5);
             
-            assertFalse(selectionSet, "Selection should NOT be set when fragment is not added");
+            assertFalse("Selection should NOT be set when fragment is not added", selectionSet);
         }
     }
-
-    @Nested
-    @DisplayName("Original")
-    class Original extends CommonLogic {
+    public static class Original extends CommonLogic {
 
         @Override
         Driver driver() {
             return new Driver("original");
         }
     }
-
-    @Nested
-    @DisplayName("Fixed")
-    class Fixed extends CommonLogic {
+    public static class Fixed extends CommonLogic {
 
         @Override
         Driver driver() {
             return new Driver("fixed");
         }
     }
-
-    @Nested
-    @DisplayName("Misuse")
-    class Misuse extends CommonLogic {
+    public static class Misuse extends CommonLogic {
 
         @Override
         Driver driver() {

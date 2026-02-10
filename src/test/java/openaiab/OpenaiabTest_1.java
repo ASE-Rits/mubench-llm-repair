@@ -1,11 +1,11 @@
 package openaiab;
 
 import openaiab._1.Driver;
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Nested;
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
+import org.junit.experimental.runners.Enclosed;
+import org.junit.runner.RunWith;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.Assert.assertEquals;
 
 class OpenaiabTest_1 {
 
@@ -17,19 +17,14 @@ class OpenaiabTest_1 {
         abstract String variantName();
 
         @Test
-        @DisplayName("onDestroy should call through to super")
-        void onDestroyShouldCallSuper() {
+        public void onDestroyShouldCallSuper() {
             Driver driver = driver();
             driver.resetLifecycleFlags();
             driver.onDestroy();
-            assertEquals(true, driver.wasUnityOnDestroyCalled(),
-                    "Expected super.onDestroy() to be called for " + variantName());
+            assertEquals("Expected super.onDestroy() to be called for " + variantName(), true, driver.wasUnityOnDestroyCalled());
         }
     }
-
-    @Nested
-    @DisplayName("Original")
-    class Original extends CommonCases {
+    public static class Original extends CommonCases {
         @Override
         Driver driver() {
             return new Driver(BASE_PACKAGE + ".original" + TARGET_CLASS);
@@ -39,10 +34,7 @@ class OpenaiabTest_1 {
         String variantName() { return "original"; }
 
     }
-
-    @Nested
-    @DisplayName("Misuse")
-    class Misuse extends CommonCases {
+    public static class Misuse extends CommonCases {
         @Override
         Driver driver() {
             return new Driver(BASE_PACKAGE + ".misuse" + TARGET_CLASS);
@@ -52,11 +44,7 @@ class OpenaiabTest_1 {
         String variantName() { return "misuse"; }
 
     }
-
-
-    @Nested
-    @DisplayName("Fixed")
-    class Fixed extends CommonCases {
+    public static class Fixed extends CommonCases {
         @Override
         Driver driver() {
             return new Driver(BASE_PACKAGE + ".fixed" + TARGET_CLASS);

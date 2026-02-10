@@ -1,8 +1,8 @@
 package testng;
 
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Nested;
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
+import org.junit.experimental.runners.Enclosed;
+import org.junit.runner.RunWith;
 import testng._22.Driver;
 import testng._22.mocks.MockSuite;
 import testng._22.mocks.MockTestContext;
@@ -10,7 +10,7 @@ import testng._22.mocks.MockSuiteResult;
 
 import java.util.ArrayList;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.Assert.*;
 
 /**
  * Test for TestNG Case 22 - XMLReporter results synchronization bug.
@@ -28,46 +28,41 @@ class TestngTest_22 {
         // ========== Static Analysis Tests ==========
         
         @Test
-        void testGetSuiteAttributesMethodExists() throws Exception {
-            assertTrue(driver().hasGetSuiteAttributesMethod(), 
-                "getSuiteAttributes method should exist");
+        public void testGetSuiteAttributesMethodExists() throws Exception {
+            assertTrue("getSuiteAttributes method should exist", driver().hasGetSuiteAttributesMethod());
         }
         
         @Test
-        void testResultsVariableExists() throws Exception {
-            assertTrue(driver().hasResultsVariable(), 
-                "results variable should exist");
+        public void testResultsVariableExists() throws Exception {
+            assertTrue("results variable should exist", driver().hasResultsVariable());
         }
         
         @Test
-        void testIterationExists() throws Exception {
-            assertTrue(driver().hasIteration(), 
-                "Iteration over results should exist");
+        public void testIterationExists() throws Exception {
+            assertTrue("Iteration over results should exist", driver().hasIteration());
         }
         
         @Test
-        void testSynchronizedBlockPresent() throws Exception {
-            assertTrue(driver().hasSynchronizedBlock(), 
-                "synchronized(results) block should be present");
+        public void testSynchronizedBlockPresent() throws Exception {
+            assertTrue("synchronized(results) block should be present", driver().hasSynchronizedBlock());
         }
         
         @Test
-        void testCorrectlyFixed() throws Exception {
-            assertTrue(driver().isCorrectlyFixed(), 
-                "Iteration should be inside synchronized block");
+        public void testCorrectlyFixed() throws Exception {
+            assertTrue("Iteration should be inside synchronized block", driver().isCorrectlyFixed());
         }
         
         // ========== Dynamic Tests ==========
         
         @Test
-        void testReporterInitialization() throws Exception {
+        public void testReporterInitialization() throws Exception {
             Driver d = driver();
             d.initializeReporter();
             // If no exception, initialization succeeded
         }
         
         @Test
-        void testGetterSetterMethods() throws Exception {
+        public void testGetterSetterMethods() throws Exception {
             Driver d = driver();
             d.initializeReporter();
             
@@ -83,15 +78,15 @@ class TestngTest_22 {
         }
         
         @Test
-        void testTimestampFormat() throws Exception {
+        public void testTimestampFormat() throws Exception {
             Driver d = driver();
             d.initializeReporter();
             String format = d.getTimestampFormat();
-            assertNotNull(format, "getTimestampFormat should return non-null");
+            assertNotNull("getTimestampFormat should return non-null", format);
         }
         
         @Test
-        void testGenerateReportWithMockSuite() throws Exception {
+        public void testGenerateReportWithMockSuite() throws Exception {
             Driver d = driver();
             d.initializeReporter();
             
@@ -111,7 +106,7 @@ class TestngTest_22 {
         }
         
         @Test
-        void testMockSuiteAttributes() throws Exception {
+        public void testMockSuiteAttributes() throws Exception {
             Driver d = driver();
             MockSuite mockSuite = d.createMockSuite("TestSuite");
             
@@ -123,19 +118,13 @@ class TestngTest_22 {
             assertNull(mockSuite.getAttribute("key"));
         }
     }
-    
-    @Nested
-    @DisplayName("Original")
-    class Original extends CommonCases {
+    public static class Original extends CommonCases {
         @Override
         Driver driver() {
             return new Driver("original");
         }
     }
-    
-    @Nested
-    @DisplayName("Fixed")
-    class Fixed extends CommonCases {
+    public static class Fixed extends CommonCases {
         @Override
         Driver driver() {
             return new Driver("fixed");
@@ -143,9 +132,7 @@ class TestngTest_22 {
     }
     
     // ========== Misuse Test (Commented out per guideline) ==========
-    @Nested
-    @DisplayName("Misuse")
-    class Misuse extends CommonCases {
+    public static class Misuse extends CommonCases {
         @Override
         Driver driver() {
             return new Driver("misuse");

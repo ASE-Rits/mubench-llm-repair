@@ -3,11 +3,11 @@ package gnucrasha._1a;
 import gnucrasha._1a.mocks.GnuCashApplication;
 import gnucrasha._1a.mocks.Intent;
 import gnucrasha._1a.mocks.UxArgument;
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Nested;
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
+import org.junit.experimental.runners.Enclosed;
+import org.junit.runner.RunWith;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.Assert.*;
 
 class GnucrashaTest_1a {
 
@@ -16,8 +16,7 @@ class GnucrashaTest_1a {
         abstract Driver driver();
 
         @Test
-        @DisplayName("starts PasscodeLockScreenActivity with account UID when session expired")
-        void startsLockScreenWithUid() {
+        public void startsLockScreenWithUid() {
             Intent result = driver().executeOnResume(true, false, "ACTION_VIEW", "UID-123");
 
             assertNotNull(result);
@@ -25,36 +24,28 @@ class GnucrashaTest_1a {
         }
 
         @Test
-        @DisplayName("does not start lock screen when session is still active")
-        void doesNotStartWhenSessionActive() {
+        public void doesNotStartWhenSessionActive() {
             Intent result = driver().executeOnResume(true, true, "ACTION_VIEW", "UID-456");
 
             assertNull(result);
         }
 
         @Test
-        @DisplayName("onPause records new session start timestamp")
-        void onPauseUpdatesSessionTimestamp() {
+        public void onPauseUpdatesSessionTimestamp() {
             long delta = driver().executeOnPause();
 
             assertTrue(delta >= 0L);
             assertTrue(GnuCashApplication.PASSCODE_SESSION_INIT_TIME > 0L);
         }
     }
-
-    @Nested
-    @DisplayName("Original")
-    class Original extends CommonCases {
+    public static class Original extends CommonCases {
 
         @Override
         Driver driver() {
             return new Driver("gnucrasha._1a.original.PassLockActivity");
         }
     }
-
-    @Nested
-    @DisplayName("Misuse")
-    class Misuse extends CommonCases {
+    public static class Misuse extends CommonCases {
 
         @Override
         Driver driver() {
@@ -62,18 +53,14 @@ class GnucrashaTest_1a {
         }
 
         @Test
-        @DisplayName("misuses long extra and loses account UID")
-        void losesAccountUid() {
+        public void losesAccountUid() {
             Intent result = driver().executeOnResume(true, false, "ACTION_VIEW", "UID-123");
 
             assertNotNull(result);
             assertNull(result.getStringExtra(UxArgument.SELECTED_ACCOUNT_UID));
         }
     }
-
-    @Nested
-    @DisplayName("Fixed")
-    class Fixed extends CommonCases {
+    public static class Fixed extends CommonCases {
 
         @Override
         Driver driver() {

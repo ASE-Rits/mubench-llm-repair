@@ -6,11 +6,11 @@ import calligraphy._2.mocks.Context;
 import calligraphy._2.mocks.Paint;
 import calligraphy._2.mocks.TextView;
 import calligraphy._2.mocks.Typeface;
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Nested;
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
+import org.junit.experimental.runners.Enclosed;
+import org.junit.runner.RunWith;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.Assert.*;
 
 class CalligraphyTest_2 {
 
@@ -23,8 +23,7 @@ class CalligraphyTest_2 {
         abstract String expectedThemeFallback();
 
         @Test
-        @DisplayName("applyFont(TextView, Typeface) sets typeface and paint flag")
-        void applyFontWithTypeface() {
+        public void applyFontWithTypeface() {
             Driver driver = driver();
             TextView textView = new TextView();
             Typeface typeface = new Typeface("fonts/Roboto-Regular.ttf");
@@ -37,8 +36,7 @@ class CalligraphyTest_2 {
         }
 
         @Test
-        @DisplayName("applyFont(Context, TextView, CalligraphyConfig, String) honors explicit textView font")
-        void applyFontHonorsExplicitFont() {
+        public void applyFontHonorsExplicitFont() {
             Driver driver = driver();
             Context context = new Context();
             TextView textView = new TextView();
@@ -52,8 +50,7 @@ class CalligraphyTest_2 {
         }
 
         @Test
-        @DisplayName("applyFont(Context, TextView, CalligraphyConfig, String) falls back to config when override empty")
-        void applyFontFallsBackToConfig() {
+        public void applyFontFallsBackToConfig() {
             Driver driver = driver();
             Context context = new Context();
             TextView textView = new TextView();
@@ -67,8 +64,7 @@ class CalligraphyTest_2 {
         }
 
         @Test
-        @DisplayName("pullFontPathFromStyle gracefully handles getString() runtime failures")
-        void pullFontPathFromStyleHandlesRuntime() {
+        public void pullFontPathFromStyleHandlesRuntime() {
             Driver driver = driver();
 
             InvocationResult result = driver.pullFontPathFromStyleWithFallback("style-fallback.ttf");
@@ -78,8 +74,7 @@ class CalligraphyTest_2 {
         }
 
         @Test
-        @DisplayName("pullFontPathFromTheme gracefully handles getString() runtime failures")
-        void pullFontPathFromThemeHandlesRuntime() {
+        public void pullFontPathFromThemeHandlesRuntime() {
             Driver driver = driver();
 
             InvocationResult result = driver.pullFontPathFromThemeWithFallback("theme-fallback.ttf");
@@ -88,10 +83,7 @@ class CalligraphyTest_2 {
             assertEquals(expectedThemeFallback(), result.getValue());
         }
     }
-
-    @Nested
-    @DisplayName("Original")
-    class Original extends CommonCases {
+    public static class Original extends CommonCases {
 
         @Override
         Driver driver() {
@@ -109,18 +101,14 @@ class CalligraphyTest_2 {
         }
 
         @Test
-        @DisplayName("pullFontPathFromTheme crashes when style is missing")
-        void pullFontPathFromThemeMissingStyleFails() {
+        public void pullFontPathFromThemeMissingStyleFails() {
             InvocationResult result = driver().pullFontPathFromThemeWithMissingStyle();
 
             assertFalse(result.isSuccess());
             assertNotNull(result.getError());
         }
     }
-
-    @Nested
-    @DisplayName("Misuse")
-    class Misuse extends CommonCases {
+    public static class Misuse extends CommonCases {
 
         @Override
         Driver driver() {
@@ -137,10 +125,7 @@ class CalligraphyTest_2 {
             return null;
         }
     }
-
-    @Nested
-    @DisplayName("Fixed")
-    class Fixed extends CommonCases {
+    public static class Fixed extends CommonCases {
 
         @Override
         Driver driver() {
@@ -158,8 +143,7 @@ class CalligraphyTest_2 {
         }
 
         @Test
-        @DisplayName("pullFontPathFromTheme returns null when style is missing")
-        void pullFontPathFromThemeMissingStyleSucceeds() {
+        public void pullFontPathFromThemeMissingStyleSucceeds() {
             InvocationResult result = driver().pullFontPathFromThemeWithMissingStyle();
 
             assertTrue(result.isSuccess());

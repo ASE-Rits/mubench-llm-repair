@@ -1,9 +1,9 @@
 package adempiere;
 
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.Nested;
-import org.junit.jupiter.api.DisplayName;
-import static org.junit.jupiter.api.Assertions.*;
+import org.junit.Test;
+import org.junit.experimental.runners.Enclosed;
+import org.junit.runner.RunWith;
+import static org.junit.Assert.*;
 import adempiere._1.Driver;
 
 /**
@@ -16,6 +16,7 @@ import adempiere._1.Driver;
  * 非ASCII文字（日本語等）を使ってラウンドトリップテストを行い、
  * 正しくエンコーディングが指定されているかを動的に検証する。
  */
+@RunWith(Enclosed.class)
 public class AdempiereTest_1 {
 
     abstract static class CommonCases {
@@ -26,17 +27,16 @@ public class AdempiereTest_1 {
          * 基本的な暗号化・復号化のラウンドトリップテスト（ASCII文字）
          */
         @Test
-        @DisplayName("Round-trip encryption/decryption should work for ASCII text")
-        void testRoundTripAscii() {
+        public void testRoundTripAscii() {
             Driver d = driver();
             String original = "Hello, World!";
             
             String encrypted = d.encrypt(original);
-            assertNotNull(encrypted, "Encrypted value should not be null");
-            assertNotEquals(original, encrypted, "Encrypted should differ from original");
+            assertNotNull("Encrypted value should not be null", encrypted);
+            assertNotEquals("Encrypted should differ from original", original, encrypted);
             
             String decrypted = d.decrypt(encrypted);
-            assertEquals(original, decrypted, "Decrypted should match original");
+            assertEquals("Decrypted should match original", original, decrypted);
         }
 
         /**
@@ -44,93 +44,81 @@ public class AdempiereTest_1 {
          * UTF-8 エンコーディングが正しく使用されていないと失敗する
          */
         @Test
-        @DisplayName("Round-trip encryption/decryption should work for Japanese text (UTF-8)")
-        void testRoundTripJapanese() {
+        public void testRoundTripJapanese() {
             Driver d = driver();
             String original = "こんにちは世界";
             
             String encrypted = d.encrypt(original);
-            assertNotNull(encrypted, "Encrypted value should not be null");
+            assertNotNull("Encrypted value should not be null", encrypted);
             
             String decrypted = d.decrypt(encrypted);
-            assertEquals(original, decrypted, 
-                "Decrypted Japanese text should match original. " +
-                "Failure indicates getBytes() is not using explicit UTF-8 encoding.");
+            assertEquals("Decrypted Japanese text should match original. " +
+                "Failure indicates getBytes() is not using explicit UTF-8 encoding.", original, decrypted);
         }
 
         /**
          * 中国語文字列でのラウンドトリップテスト
          */
         @Test
-        @DisplayName("Round-trip encryption/decryption should work for Chinese text (UTF-8)")
-        void testRoundTripChinese() {
+        public void testRoundTripChinese() {
             Driver d = driver();
             String original = "你好世界";
             
             String encrypted = d.encrypt(original);
-            assertNotNull(encrypted, "Encrypted value should not be null");
+            assertNotNull("Encrypted value should not be null", encrypted);
             
             String decrypted = d.decrypt(encrypted);
-            assertEquals(original, decrypted, 
-                "Decrypted Chinese text should match original.");
+            assertEquals("Decrypted Chinese text should match original.", original, decrypted);
         }
 
         /**
          * 絵文字を含む文字列でのラウンドトリップテスト
          */
         @Test
-        @DisplayName("Round-trip encryption/decryption should work for emoji (UTF-8)")
-        void testRoundTripEmoji() {
+        public void testRoundTripEmoji() {
             Driver d = driver();
             String original = "Hello 🌍🌎🌏";
             
             String encrypted = d.encrypt(original);
-            assertNotNull(encrypted, "Encrypted value should not be null");
+            assertNotNull("Encrypted value should not be null", encrypted);
             
             String decrypted = d.decrypt(encrypted);
-            assertEquals(original, decrypted, 
-                "Decrypted emoji text should match original.");
+            assertEquals("Decrypted emoji text should match original.", original, decrypted);
         }
 
         /**
          * 空文字列のテスト
          */
         @Test
-        @DisplayName("Empty string should be handled correctly")
-        void testEmptyString() {
+        public void testEmptyString() {
             Driver d = driver();
             String original = "";
             
             String encrypted = d.encrypt(original);
-            assertNotNull(encrypted, "Encrypted value should not be null");
+            assertNotNull("Encrypted value should not be null", encrypted);
             
             String decrypted = d.decrypt(encrypted);
-            assertEquals(original, decrypted, "Empty string should round-trip correctly");
+            assertEquals("Empty string should round-trip correctly", original, decrypted);
         }
 
         /**
          * 混合文字列（ASCII + 非ASCII）でのテスト
          */
         @Test
-        @DisplayName("Round-trip should work for mixed ASCII and non-ASCII text")
-        void testRoundTripMixed() {
+        public void testRoundTripMixed() {
             Driver d = driver();
             String original = "Hello こんにちは 你好 🌍";
             
             String encrypted = d.encrypt(original);
-            assertNotNull(encrypted, "Encrypted value should not be null");
+            assertNotNull("Encrypted value should not be null", encrypted);
             
             String decrypted = d.decrypt(encrypted);
-            assertEquals(original, decrypted, 
-                "Mixed text should round-trip correctly.");
+            assertEquals("Mixed text should round-trip correctly.", original, decrypted);
         }
     }
 
     // --- 実行定義 ---
-
-    @Nested
-    @DisplayName("Original")
-    class Original extends CommonCases {
+    public static class Original extends CommonCases {
         @Override
         Driver driver() {
             return new Driver(new adempiere._1.original.Secure());
@@ -139,18 +127,13 @@ public class AdempiereTest_1 {
 
     // Misuse: getBytes() を引数なしで使用 → 非ASCII文字で失敗する可能性
     // テスト確認済み: 日本語テストで失敗
-    @Nested
-    @DisplayName("Misuse")
-    class Misuse extends CommonCases {
+    public static class Misuse extends CommonCases {
         @Override
         Driver driver() {
             return new Driver(new adempiere._1.misuse.Secure());
         }
     }
-
-    @Nested
-    @DisplayName("Fixed")
-    class Fixed extends CommonCases {
+    public static class Fixed extends CommonCases {
         @Override
         Driver driver() {
             return new Driver(new adempiere._1.fixed.Secure());

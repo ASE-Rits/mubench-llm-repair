@@ -2,11 +2,11 @@ package logblock_logblock_2;
 
 import logblock_logblock_2._15.Driver;
 import logblock_logblock_2._15.requirements.entry.blob.PaintingBlob;
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Nested;
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
+import org.junit.experimental.runners.Enclosed;
+import org.junit.runner.RunWith;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.Assert.*;
 
 /**
  * Test for logblock-logblock-2 case 15.
@@ -22,8 +22,7 @@ class LogblockLogblock2Test_15 {
         abstract Driver createDriver() throws Exception;
 
         @Test
-        @DisplayName("PaintingBlob write-read round trip should preserve data")
-        void testPaintingBlobRoundTrip() throws Exception {
+        public void testPaintingBlobRoundTrip() throws Exception {
             Driver d = createDriver();
             
             // Create a PaintingBlob with test data
@@ -33,30 +32,31 @@ class LogblockLogblock2Test_15 {
             
             // Write to bytes and read back
             byte[] bytes = d.writeBlobToBytes(original);
-            assertNotNull(bytes, "Written bytes should not be null");
-            assertTrue(bytes.length > 0, "Written bytes should not be empty");
+            assertNotNull("Written bytes should not be null", bytes);
+            assertTrue("Written bytes should not be empty", bytes.length > 0);
             
             // Read back and verify
             PaintingBlob restored = d.readBlobFromBytes(bytes);
-            assertEquals(original.getArt(), restored.getArt(), 
-                "Art should match after round trip");
-            assertEquals(original.getDirection(), restored.getDirection(), 
-                "Direction should match after round trip");
+            assertEquals("Art should match after round trip", original.getArt(), restored.getArt());
+            assertEquals("Direction should match after round trip", original.getDirection(), restored.getDirection());
         }
 
         @Test
-        @DisplayName("paintingTest should execute successfully")
-        void testPaintingTestExecution() throws Exception {
+        public void testPaintingTestExecution() throws Exception {
             Driver d = createDriver();
             // This will throw an exception if the DataOutputStream is not properly flushed/closed
-            assertDoesNotThrow(() -> d.paintingTest(),
-                "paintingTest should complete without errors");
+            try {
+
+                d.paintingTest();
+
+            } catch (Throwable t) {
+
+                fail("paintingTest should complete without errors" + ": " + t.getMessage());
+
+            }
         }
     }
-
-    @Nested
-    @DisplayName("Original")
-    class Original extends CommonLogic {
+    public static class Original extends CommonLogic {
         @Override
         Driver createDriver() throws Exception {
             return new Driver("original");
@@ -64,18 +64,13 @@ class LogblockLogblock2Test_15 {
     }
 
     // Misuseは常にコメントアウト（バグがあるため必ず失敗）
-    @Nested
-    @DisplayName("Misuse")
-    class Misuse extends CommonLogic {
+    public static class Misuse extends CommonLogic {
         @Override
         Driver createDriver() throws Exception {
             return new Driver("misuse");
         }
     }
-
-    @Nested
-    @DisplayName("Fixed")
-    class Fixed extends CommonLogic {
+    public static class Fixed extends CommonLogic {
         @Override
         Driver createDriver() throws Exception {
             return new Driver("fixed");

@@ -1,13 +1,13 @@
 package jmrtd;
 
 import jmrtd._1.Driver;
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Nested;
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
+import org.junit.experimental.runners.Enclosed;
+import org.junit.runner.RunWith;
 
 import java.io.IOException;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.Assert.*;
 
 /**
  * Test class for jmrtd Case 1: DataOutputStream not closed in SecureMessagingWrapper
@@ -32,26 +32,20 @@ class JmrtdTest_1 {
         abstract Driver driver();
 
         @Test
-        @DisplayName("Source file should exist and be readable")
-        void testSourceFileExists() throws IOException {
+        public void testSourceFileExists() throws IOException {
             Driver d = driver();
             String sourceCode = d.readSourceCode();
             assertNotNull(sourceCode);
-            assertFalse(sourceCode.isEmpty(), "Source code should not be empty");
+            assertFalse("Source code should not be empty", sourceCode.isEmpty());
         }
 
         @Test
-        @DisplayName("readDO8E method should properly close DataOutputStream")
-        void testDataOutputStreamClose() throws IOException {
+        public void testDataOutputStreamClose() throws IOException {
             Driver d = driver();
-            assertTrue(d.hasDataOutputStreamClose(),
-                "readDO8E() should call dataOut.close() for proper resource management");
+            assertTrue("readDO8E() should call dataOut.close() for proper resource management", d.hasDataOutputStreamClose());
         }
     }
-
-    @Nested
-    @DisplayName("Original")
-    class Original extends CommonCases {
+    public static class Original extends CommonCases {
 
         @Override
         Driver driver() {
@@ -63,19 +57,14 @@ class JmrtdTest_1 {
      * Misuse variant - always fails because it lacks dataOut.close()
      * Commented out as it represents the buggy code that should fail.
      */
-    @Nested
-    @DisplayName("Misuse")
-    class Misuse extends CommonCases {
+    public static class Misuse extends CommonCases {
 
         @Override
         Driver driver() {
             return new Driver(BASE_PACKAGE + ".misuse.SecureMessagingWrapper");
         }
     }
-
-    @Nested
-    @DisplayName("Fixed")
-    class Fixed extends CommonCases {
+    public static class Fixed extends CommonCases {
 
         @Override
         Driver driver() {

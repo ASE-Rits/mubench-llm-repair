@@ -1,12 +1,12 @@
 package testng;
 
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Nested;
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
+import org.junit.experimental.runners.Enclosed;
+import org.junit.runner.RunWith;
 import testng._18.Driver;
 import testng._18.mocks.MockTestContext;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.Assert.*;
 
 /**
  * Test for TestNG Case 18 - JUnitXMLReporter m_allTests synchronization bug.
@@ -24,46 +24,41 @@ class TestngTest_18 {
         // ========== Static Analysis Tests ==========
         
         @Test
-        void testGenerateReportMethodExists() throws Exception {
-            assertTrue(driver().hasGenerateReportMethod(), 
-                "generateReport method should exist");
+        public void testGenerateReportMethodExists() throws Exception {
+            assertTrue("generateReport method should exist", driver().hasGenerateReportMethod());
         }
         
         @Test
-        void testAllTestsFieldExists() throws Exception {
-            assertTrue(driver().hasAllTestsField(), 
-                "m_allTests field should exist");
+        public void testAllTestsFieldExists() throws Exception {
+            assertTrue("m_allTests field should exist", driver().hasAllTestsField());
         }
         
         @Test
-        void testIterationExists() throws Exception {
-            assertTrue(driver().hasIteration(), 
-                "Iteration over m_allTests should exist");
+        public void testIterationExists() throws Exception {
+            assertTrue("Iteration over m_allTests should exist", driver().hasIteration());
         }
         
         @Test
-        void testSynchronizedBlockPresent() throws Exception {
-            assertTrue(driver().hasSynchronizedBlock(), 
-                "synchronized(m_allTests) block should be present");
+        public void testSynchronizedBlockPresent() throws Exception {
+            assertTrue("synchronized(m_allTests) block should be present", driver().hasSynchronizedBlock());
         }
         
         @Test
-        void testCorrectlyFixed() throws Exception {
-            assertTrue(driver().isCorrectlyFixed(), 
-                "Iteration should be inside synchronized block");
+        public void testCorrectlyFixed() throws Exception {
+            assertTrue("Iteration should be inside synchronized block", driver().isCorrectlyFixed());
         }
         
         // ========== Dynamic Tests ==========
         
         @Test
-        void testReporterInitialization() throws Exception {
+        public void testReporterInitialization() throws Exception {
             Driver d = driver();
             d.initializeReporter();
             // If no exception, initialization succeeded
         }
         
         @Test
-        void testOnTestSuccessInvocation() throws Exception {
+        public void testOnTestSuccessInvocation() throws Exception {
             Driver d = driver();
             d.initializeReporter();
             try {
@@ -74,7 +69,7 @@ class TestngTest_18 {
         }
         
         @Test
-        void testOnTestFailureInvocation() throws Exception {
+        public void testOnTestFailureInvocation() throws Exception {
             Driver d = driver();
             d.initializeReporter();
             try {
@@ -85,7 +80,7 @@ class TestngTest_18 {
         }
         
         @Test
-        void testGenerateReportWithMockContext() throws Exception {
+        public void testGenerateReportWithMockContext() throws Exception {
             Driver d = driver();
             d.initializeReporter();
             MockTestContext mockContext = d.createMockTestContext("TestContext");
@@ -97,7 +92,7 @@ class TestngTest_18 {
         }
         
         @Test
-        void testOnStartWithMockContext() throws Exception {
+        public void testOnStartWithMockContext() throws Exception {
             Driver d = driver();
             d.initializeReporter();
             MockTestContext mockContext = d.createMockTestContext("TestContext");
@@ -105,7 +100,7 @@ class TestngTest_18 {
         }
         
         @Test
-        void testOnFinishWithMockContext() throws Exception {
+        public void testOnFinishWithMockContext() throws Exception {
             Driver d = driver();
             d.initializeReporter();
             MockTestContext mockContext = d.createMockTestContext("TestContext");
@@ -116,19 +111,13 @@ class TestngTest_18 {
             }
         }
     }
-    
-    @Nested
-    @DisplayName("Original")
-    class Original extends CommonCases {
+    public static class Original extends CommonCases {
         @Override
         Driver driver() {
             return new Driver("original");
         }
     }
-    
-    @Nested
-    @DisplayName("Fixed")
-    class Fixed extends CommonCases {
+    public static class Fixed extends CommonCases {
         @Override
         Driver driver() {
             return new Driver("fixed");
@@ -136,9 +125,7 @@ class TestngTest_18 {
     }
     
     // ========== Misuse Test (Commented out per guideline) ==========
-    @Nested
-    @DisplayName("Misuse")
-    class Misuse extends CommonCases {
+    public static class Misuse extends CommonCases {
         @Override
         Driver driver() {
             return new Driver("misuse");

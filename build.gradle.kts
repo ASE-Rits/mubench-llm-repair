@@ -10,9 +10,9 @@ repositories {
 }
 
 dependencies {
-    // テスト用ライブラリ (JUnit 5) - テストフレームワークはMaven Centralから
-    testImplementation("org.junit.jupiter:junit-jupiter:5.10.2")
-    testRuntimeOnly("org.junit.platform:junit-platform-launcher")
+    // テスト用ライブラリ (JUnit 4) - ローカルJARを使用
+    testImplementation(files("libs/junit-4.13.2.jar"))
+    testImplementation(files("libs/hamcrest-core-1.3.jar"))
     // Lombok - アノテーションプロセッサはMaven Centralから
     compileOnly("org.projectlombok:lombok:1.18.30")
     annotationProcessor("org.projectlombok:lombok:1.18.30")
@@ -69,8 +69,7 @@ application {
 }
 
 tasks.named<Test>("test") {
-    // JUnit 5 を有効化
-    useJUnitPlatform()
+    // JUnit 4 を使用（useJUnitPlatform() を削除）
 
     // テスト実行時に結果(Pass/Fail)や標準出力をコンソールに表示する設定
     testLogging {
@@ -81,8 +80,10 @@ tasks.named<Test>("test") {
 }
 
 // ソースコードのエンコーディングをUTF-8に固定 (文字化け防止)
+// デバッグ情報を含めてコンパイル (javac -g 相当)
 tasks.withType<JavaCompile> {
     options.encoding = "UTF-8"
+    options.compilerArgs.add("-g")
 }
 
 // =============================================================================

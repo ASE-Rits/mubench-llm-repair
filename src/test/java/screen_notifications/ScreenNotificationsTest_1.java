@@ -2,11 +2,11 @@ package screen_notifications;
 
 import screen_notifications._1.Driver;
 
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Nested;
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
+import org.junit.experimental.runners.Enclosed;
+import org.junit.runner.RunWith;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.Assert.*;
 
 class ScreenNotificationsTest_1 {
 
@@ -19,31 +19,29 @@ class ScreenNotificationsTest_1 {
         abstract String variantName();
 
         @Test
-        @DisplayName("loadInBackground should return Data with apps")
-        void loadInBackgroundReturnsData() {
+        public void loadInBackgroundReturnsData() {
             Driver driver = createDriver();
             driver.addApp("com.test.app1", "Alpha App", false);
             driver.addApp("com.test.app2", "Beta App", false);
 
             Object data = driver.loadInBackground(0);
-            assertNotNull(data, "Data should not be null for " + variantName());
+            assertNotNull("Data should not be null for " + variantName(), data);
         }
 
         @Test
-        @DisplayName("loadInBackground should handle OutOfMemoryError gracefully")
-        void loadInBackgroundHandlesOOM() {
+        public void loadInBackgroundHandlesOOM() {
             Driver driver = createDriver();
             driver.addApp("com.test.oom", "OOM App", true);  // This will throw OOM
 
             // Should not throw OutOfMemoryError
-            assertDoesNotThrow(() -> driver.loadInBackground(0),
-                    "Should handle OutOfMemoryError gracefully for " + variantName());
+            try {
+                driver.loadInBackground(0);
+            } catch (OutOfMemoryError e) {
+                fail("Should handle OutOfMemoryError gracefully for " + variantName() + ": " + e.getMessage());
+            }
         }
     }
-
-    @Nested
-    @DisplayName("Original")
-    class Original extends CommonCases {
+    public static class Original extends CommonCases {
         @Override
         Driver createDriver() {
             return new Driver(BASE_PACKAGE + ".original" + TARGET_CLASS);
@@ -54,10 +52,7 @@ class ScreenNotificationsTest_1 {
             return "original";
         }
     }
-
-    @Nested
-    @DisplayName("Misuse")
-    class Misuse extends CommonCases {
+    public static class Misuse extends CommonCases {
         @Override
         Driver createDriver() {
             return new Driver(BASE_PACKAGE + ".misuse" + TARGET_CLASS);
@@ -68,10 +63,7 @@ class ScreenNotificationsTest_1 {
             return "misuse";
         }
     }
-
-    @Nested
-    @DisplayName("Fixed")
-    class Fixed extends CommonCases {
+    public static class Fixed extends CommonCases {
         @Override
         Driver createDriver() {
             return new Driver(BASE_PACKAGE + ".fixed" + TARGET_CLASS);

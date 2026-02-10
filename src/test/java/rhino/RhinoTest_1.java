@@ -1,14 +1,12 @@
 package rhino;
 
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Nested;
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.Timeout;
+import org.junit.Test;
+import org.junit.experimental.runners.Enclosed;
+import org.junit.runner.RunWith;
 import rhino._1.Driver;
 
-import java.util.concurrent.TimeUnit;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.Assert.*;
 
 /**
  * 動的テスト: Parserのfunction()メソッドが正しくinitFunctionを呼び出すか検証。
@@ -30,40 +28,34 @@ class RhinoTest_1 {
         /**
          * 単純な関数定義のパーステスト
          */
-        @Test
-        @DisplayName("Should parse simple function definition")
-        @Timeout(value = PARSE_TIMEOUT_SECONDS, unit = TimeUnit.SECONDS)
-        void testParseSimpleFunction() throws Exception {
+        @Test(timeout = 5000)
+        public void testParseSimpleFunction() throws Exception {
             Driver d = driver();
             String code = "function foo() { return 1; }";
             
             Object result = d.parse(code, "test.js", 1);
-            assertNotNull(result, "Parser should return non-null result");
+            assertNotNull("Parser should return non-null result", result);
         }
 
         /**
          * ネストした関数定義のパーステスト
          * バグがある場合、この関数定義で無限ループが発生する
          */
-        @Test
-        @DisplayName("Should parse nested function definition without infinite loop")
-        @Timeout(value = PARSE_TIMEOUT_SECONDS, unit = TimeUnit.SECONDS)
-        void testParseNestedFunction() throws Exception {
+        @Test(timeout = 5000)
+        public void testParseNestedFunction() throws Exception {
             Driver d = driver();
             // ネストした関数定義 - バグがあると無限ループ
             String code = "function outer() { function inner() { return 1; } return inner(); }";
             
             Object result = d.parse(code, "test.js", 1);
-            assertNotNull(result, "Parser should return non-null result for nested functions");
+            assertNotNull("Parser should return non-null result for nested functions", result);
         }
 
         /**
          * 複数のネストレベルを持つ関数定義のパーステスト
          */
-        @Test
-        @DisplayName("Should parse deeply nested function definitions")
-        @Timeout(value = PARSE_TIMEOUT_SECONDS, unit = TimeUnit.SECONDS)
-        void testParseDeeplyNestedFunctions() throws Exception {
+        @Test(timeout = 5000)
+        public void testParseDeeplyNestedFunctions() throws Exception {
             Driver d = driver();
             String code = 
                 "function a() { " +
@@ -75,40 +67,33 @@ class RhinoTest_1 {
                 "}";
             
             Object result = d.parse(code, "test.js", 1);
-            assertNotNull(result, "Parser should handle deeply nested functions");
+            assertNotNull("Parser should handle deeply nested functions", result);
         }
 
         /**
          * 関数式（function expression）のパーステスト
          */
-        @Test
-        @DisplayName("Should parse function expressions")
-        @Timeout(value = PARSE_TIMEOUT_SECONDS, unit = TimeUnit.SECONDS)
-        void testParseFunctionExpression() throws Exception {
+        @Test(timeout = 5000)
+        public void testParseFunctionExpression() throws Exception {
             Driver d = driver();
             String code = "var f = function() { var g = function() { return 1; }; return g(); };";
             
             Object result = d.parse(code, "test.js", 1);
-            assertNotNull(result, "Parser should handle function expressions");
+            assertNotNull("Parser should handle function expressions", result);
         }
 
         /**
          * 静的解析: initFunctionが1回だけ呼ばれるパターンか確認（後方互換性のため）
          */
         @Test
-        @DisplayName("Source should have correct initFunction pattern (static check)")
-        void testInitFunctionCalledOnce() throws Exception {
+        public void testInitFunctionCalledOnce() throws Exception {
             Driver d = driver();
-            assertTrue(d.hasCorrectInitFunctionPattern(),
-                "initFunction should be called exactly once per function");
+            assertTrue("initFunction should be called exactly once per function", d.hasCorrectInitFunctionPattern());
         }
     }
 
     // --- 実行定義 ---
-
-    @Nested
-    @DisplayName("Original")
-    class Original extends CommonCases {
+    public static class Original extends CommonCases {
         @Override
         Driver driver() throws Exception {
             return new Driver("original");
@@ -116,18 +101,13 @@ class RhinoTest_1 {
     }
 
     // Misuse: initFunctionが2回呼ばれる → 無限ループでタイムアウト
-    @Nested
-    @DisplayName("Misuse")
-    class Misuse extends CommonCases {
+    public static class Misuse extends CommonCases {
         @Override
         Driver driver() throws Exception {
             return new Driver("misuse");
         }
     }
-
-    @Nested
-    @DisplayName("Fixed")
-    class Fixed extends CommonCases {
+    public static class Fixed extends CommonCases {
         @Override
         Driver driver() throws Exception {
             return new Driver("fixed");

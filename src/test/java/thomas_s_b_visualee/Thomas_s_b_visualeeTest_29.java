@@ -1,9 +1,9 @@
 package thomas_s_b_visualee;
 
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.Nested;
-import org.junit.jupiter.api.DisplayName;
-import static org.junit.jupiter.api.Assertions.*;
+import org.junit.Test;
+import org.junit.experimental.runners.Enclosed;
+import org.junit.runner.RunWith;
+import static org.junit.Assert.*;
 
 import thomas_s_b_visualee._29.Driver;
 import thomas_s_b_visualee._29.requirements.source.entity.JavaSource;
@@ -15,6 +15,7 @@ import thomas_s_b_visualee._29.requirements.source.entity.JavaSource;
  * - misuse: hasNext()チェックなしでscanner.next()を呼び出し
  * - fixed: hasNext()チェックを追加してNoSuchElementExceptionを防止
  */
+@RunWith(Enclosed.class)
 public class Thomas_s_b_visualeeTest_29 {
 
     abstract static class CommonLogic {
@@ -22,8 +23,7 @@ public class Thomas_s_b_visualeeTest_29 {
         abstract Driver createDriver() throws Exception;
 
         @Test
-        @DisplayName("findAndSetPackage should correctly extract package from valid source code")
-        void testFindAndSetPackageValidInput() throws Exception {
+        public void testFindAndSetPackageValidInput() throws Exception {
             Driver driver = createDriver();
             
             String sourceCode = "package com.example.test;\n\npublic class Test {}";
@@ -36,8 +36,7 @@ public class Thomas_s_b_visualeeTest_29 {
         }
 
         @Test
-        @DisplayName("findAndSetPackage should handle source code without package")
-        void testFindAndSetPackageNoPackage() throws Exception {
+        public void testFindAndSetPackageNoPackage() throws Exception {
             Driver driver = createDriver();
             
             String sourceCode = "public class Test {}";
@@ -51,8 +50,7 @@ public class Thomas_s_b_visualeeTest_29 {
         }
 
         @Test
-        @DisplayName("findAndSetPackage should handle empty source code")
-        void testFindAndSetPackageEmptySource() throws Exception {
+        public void testFindAndSetPackageEmptySource() throws Exception {
             Driver driver = createDriver();
             
             String sourceCode = "";
@@ -66,8 +64,7 @@ public class Thomas_s_b_visualeeTest_29 {
         }
 
         @Test
-        @DisplayName("findAndSetPackage should handle 'package ' keyword without package name gracefully")
-        void testFindAndSetPackageIncompletePackage() throws Exception {
+        public void testFindAndSetPackageIncompletePackage() throws Exception {
             Driver driver = createDriver();
             
             // "package " の後にパッケージ名がないソースコード
@@ -85,10 +82,7 @@ public class Thomas_s_b_visualeeTest_29 {
             });
         }
     }
-
-    @Nested
-    @DisplayName("Original")
-    class Original extends CommonLogic {
+    public static class Original extends CommonLogic {
         @Override
         Driver createDriver() throws Exception {
             return Driver.createOriginal();
@@ -97,9 +91,7 @@ public class Thomas_s_b_visualeeTest_29 {
 
     // Misuseはバグ（hasNext()チェックなしでscanner.next()を呼び出し）があるため
     // testFindAndSetPackageIncompletePackageでNoSuchElementExceptionが発生し失敗する
-    @Nested
-    @DisplayName("Misuse")
-    class Misuse extends CommonLogic {
+    public static class Misuse extends CommonLogic {
         @Override
         Driver createDriver() throws Exception {
             return Driver.createMisuse();
@@ -107,9 +99,7 @@ public class Thomas_s_b_visualeeTest_29 {
     }
 
     // Fixedはバグ修正に失敗したためコメントアウト
-    @Nested
-    @DisplayName("Fixed")
-    class Fixed extends CommonLogic {
+    public static class Fixed extends CommonLogic {
         @Override
         Driver createDriver() throws Exception {
             return Driver.createFixed();

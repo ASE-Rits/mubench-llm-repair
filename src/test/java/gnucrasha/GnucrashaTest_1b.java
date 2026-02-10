@@ -3,11 +3,11 @@ package gnucrasha._1b;
 import gnucrasha._1b.mocks.GnuCashApplication;
 import gnucrasha._1b.mocks.Intent;
 import gnucrasha._1b.mocks.UxArgument;
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Nested;
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
+import org.junit.experimental.runners.Enclosed;
+import org.junit.runner.RunWith;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.Assert.*;
 
 class GnucrashaTest_1b {
 
@@ -16,8 +16,7 @@ class GnucrashaTest_1b {
         abstract Driver driver();
 
         @Test
-        @DisplayName("successful passcode entry returns to caller with UID")
-        void successfulPasscodeReturnsToCaller() {
+        public void successfulPasscodeReturnsToCaller() {
             Intent result = driver().submitPasscode("1234", "1234", "caller.Clazz", "ACTION", "UID-789");
 
             assertNotNull(result);
@@ -27,8 +26,7 @@ class GnucrashaTest_1b {
         }
 
         @Test
-        @DisplayName("back press navigates home")
-        void backPressNavigatesHome() {
+        public void backPressNavigatesHome() {
             Intent home = driver().pressBack();
 
             assertNotNull(home);
@@ -37,20 +35,14 @@ class GnucrashaTest_1b {
             assertEquals(Intent.FLAG_ACTIVITY_NEW_TASK, home.getFlags());
         }
     }
-
-    @Nested
-    @DisplayName("Original")
-    class Original extends CommonCases {
+    public static class Original extends CommonCases {
 
         @Override
         Driver driver() {
             return new Driver("gnucrasha._1b.original.PasscodeLockScreenActivity");
         }
     }
-
-    @Nested
-    @DisplayName("Misuse")
-    class Misuse extends CommonCases {
+    public static class Misuse extends CommonCases {
 
         @Override
         Driver driver() {
@@ -58,18 +50,14 @@ class GnucrashaTest_1b {
         }
 
         @Test
-        @DisplayName("misuses long extra and loses account UID")
-        void losesAccountUid() {
+        public void losesAccountUid() {
             Intent result = driver().submitPasscode("1234", "1234", "caller.Clazz", "ACTION", "UID-789");
 
             assertNotNull(result);
             assertNull(result.getStringExtra(UxArgument.SELECTED_ACCOUNT_UID));
         }
     }
-
-    @Nested
-    @DisplayName("Fixed")
-    class Fixed extends CommonCases {
+    public static class Fixed extends CommonCases {
 
         @Override
         Driver driver() {

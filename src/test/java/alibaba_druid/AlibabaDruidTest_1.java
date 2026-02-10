@@ -1,9 +1,9 @@
 package alibaba_druid;
 
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.Nested;
-import org.junit.jupiter.api.DisplayName;
-import static org.junit.jupiter.api.Assertions.*;
+import org.junit.Test;
+import org.junit.experimental.runners.Enclosed;
+import org.junit.runner.RunWith;
+import static org.junit.Assert.*;
 
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -11,6 +11,7 @@ import java.nio.file.Paths;
 
 import alibaba_druid._1.Driver;
 
+@RunWith(Enclosed.class)
 public class AlibabaDruidTest_1 {
 
     /**
@@ -39,18 +40,17 @@ public class AlibabaDruidTest_1 {
          * Misuse は Cipher インスタンスを再利用する → テストフェイル
          */
         @Test
-        @DisplayName("Source code must create new Cipher instance in decrypt method")
-        void testSourceCodeCreatesNewCipherInstance() throws Exception {
+        public void testSourceCodeCreatesNewCipherInstance() throws Exception {
             String sourceFilePath = getSourceFilePath();
             Path path = Paths.get(sourceFilePath);
             
-            assertTrue(Files.exists(path), "Source file should exist: " + sourceFilePath);
+            assertTrue("Source file should exist: " + sourceFilePath, Files.exists(path));
             
             String sourceCode = Files.readString(path);
             
             // decrypt(PublicKey publicKey, String cipherText) メソッドを探す
             int decryptMethodStart = sourceCode.indexOf("public static String decrypt(PublicKey publicKey, String cipherText)");
-            assertTrue(decryptMethodStart >= 0, "decrypt(PublicKey, String) method should exist in source");
+            assertTrue("decrypt(PublicKey, String) method should exist in source", decryptMethodStart >= 0);
             
             // メソッドの終わりを見つける（次のpublic メソッドまで）
             int nextMethodStart = sourceCode.indexOf("public static", decryptMethodStart + 1);
@@ -62,17 +62,13 @@ public class AlibabaDruidTest_1 {
             // Original は "cipher = Cipher.getInstance" を含む
             boolean createNewCipherInCatch = decryptMethodBody.contains("cipher = Cipher.getInstance");
             
-            assertTrue(createNewCipherInCatch, 
-                "decrypt method must create a new Cipher instance in the InvalidKeyException catch block. " +
-                "Reusing the same Cipher instance causes issues on IBM JDK.");
+            assertTrue("decrypt method must create a new Cipher instance in the InvalidKeyException catch block. " +
+                "Reusing the same Cipher instance causes issues on IBM JDK.", createNewCipherInCatch);
         }
     }
 
     // --- 以下, 実装定義 ---
-
-    @Nested
-    @DisplayName("Original")
-    class Original extends CommonLogic {
+    public static class Original extends CommonLogic {
         @Override
         Driver getTargetDriver() {
             return new Driver(alibaba_druid._1.original.ConfigTools.class);
@@ -86,9 +82,7 @@ public class AlibabaDruidTest_1 {
 
     // Misuse: テスト要件確認済み（Original はパス、Misuse はフェイル）
     // ビルドを通すためコメントアウト
-    @Nested
-    @DisplayName("Misuse")
-    class Misuse extends CommonLogic {
+    public static class Misuse extends CommonLogic {
         @Override
         Driver getTargetDriver() {
             return new Driver(alibaba_druid._1.misuse.ConfigTools.class);
@@ -99,10 +93,7 @@ public class AlibabaDruidTest_1 {
             return "src/main/java/alibaba_druid/_1/misuse/ConfigTools.java";
         }
     }
-
-    @Nested
-    @DisplayName("Fixed")
-    class Fixed extends CommonLogic {
+    public static class Fixed extends CommonLogic {
         @Override
         Driver getTargetDriver() {
             return new Driver(alibaba_druid._1.fixed.ConfigTools.class);

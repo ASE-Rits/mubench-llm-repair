@@ -1,11 +1,11 @@
 package mqtt;
 
 import mqtt._389.Driver;
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Nested;
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
+import org.junit.experimental.runners.Enclosed;
+import org.junit.runner.RunWith;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.Assert.*;
 
 /**
  * Test for MqttSubscribe variants (mqtt/389).
@@ -24,50 +24,42 @@ class MqttTest_389 {
         abstract Driver createDriver() throws Exception;
 
         @Test
-        @DisplayName("getPayload should return valid bytes")
-        void testGetPayloadReturnsBytes() throws Exception {
+        public void testGetPayloadReturnsBytes() throws Exception {
             Driver d = createDriver();
             byte[] payload = d.getPayload();
-            assertNotNull(payload, "Payload should not be null");
-            assertTrue(payload.length > 0, "Payload should not be empty");
+            assertNotNull("Payload should not be null", payload);
+            assertTrue("Payload should not be empty", payload.length > 0);
         }
 
         @Test
-        @DisplayName("getHeader should return valid bytes")
-        void testGetHeaderReturnsBytes() throws Exception {
+        public void testGetHeaderReturnsBytes() throws Exception {
             Driver d = createDriver();
             byte[] header = d.getHeader();
-            assertNotNull(header, "Header should not be null");
-            assertTrue(header.length > 0, "Header should not be empty");
+            assertNotNull("Header should not be null", header);
+            assertTrue("Header should not be empty", header.length > 0);
         }
 
         @Test
-        @DisplayName("Message type should be SUBSCRIBE (8)")
-        void testMessageType() throws Exception {
+        public void testMessageType() throws Exception {
             Driver d = createDriver();
             byte type = d.getType();
-            assertEquals(8, type, "Message type should be SUBSCRIBE (8)");
+            assertEquals("Message type should be SUBSCRIBE (8)", 8, type);
         }
 
         @Test
-        @DisplayName("isRetryable should return true")
-        void testIsRetryable() throws Exception {
+        public void testIsRetryable() throws Exception {
             Driver d = createDriver();
-            assertTrue(d.isRetryable(), "SUBSCRIBE messages should be retryable");
+            assertTrue("SUBSCRIBE messages should be retryable", d.isRetryable());
         }
 
         @Test
-        @DisplayName("Message ID can be set and retrieved")
-        void testMessageId() throws Exception {
+        public void testMessageId() throws Exception {
             Driver d = createDriver();
             d.setMessageId(12345);
-            assertEquals(12345, d.getMessageId(), "Message ID should match");
+            assertEquals("Message ID should match", 12345, d.getMessageId());
         }
     }
-
-    @Nested
-    @DisplayName("Original")
-    class Original extends CommonLogic {
+    public static class Original extends CommonLogic {
         @Override
         Driver createDriver() throws Exception {
             return new Driver("original", TEST_TOPICS, TEST_QOS);
@@ -75,18 +67,13 @@ class MqttTest_389 {
     }
 
     // Misuseは常にコメントアウト（バグがあるため必ず失敗）
-    @Nested
-    @DisplayName("Misuse")
-    class Misuse extends CommonLogic {
+    public static class Misuse extends CommonLogic {
         @Override
         Driver createDriver() throws Exception {
             return new Driver("misuse", TEST_TOPICS, TEST_QOS);
         }
     }
-
-    @Nested
-    @DisplayName("Fixed")
-    class Fixed extends CommonLogic {
+    public static class Fixed extends CommonLogic {
         @Override
         Driver createDriver() throws Exception {
             return new Driver("fixed", TEST_TOPICS, TEST_QOS);

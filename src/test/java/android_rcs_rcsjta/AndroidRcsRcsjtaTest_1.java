@@ -1,9 +1,9 @@
 package android_rcs_rcsjta;
 
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.Nested;
-import org.junit.jupiter.api.DisplayName;
-import static org.junit.jupiter.api.Assertions.*;
+import org.junit.Test;
+import org.junit.experimental.runners.Enclosed;
+import org.junit.runner.RunWith;
+import static org.junit.Assert.*;
 
 import android_rcs_rcsjta._1.Driver;
 
@@ -17,6 +17,7 @@ import android_rcs_rcsjta._1.Driver;
  * 同じ入力に対して常に同じ結果が返ることを検証し、
  * 非ASCII文字を含む入力でも正常に動作することを確認する。
  */
+@RunWith(Enclosed.class)
 public class AndroidRcsRcsjtaTest_1 {
 
     abstract static class CommonCases {
@@ -27,75 +28,68 @@ public class AndroidRcsRcsjtaTest_1 {
          * 基本的なContributionId生成テスト（ASCII callId）
          */
         @Test
-        @DisplayName("getContributionId should return consistent result for ASCII callId")
-        void testConsistentResultAscii() throws Exception {
+        public void testConsistentResultAscii() throws Exception {
             Driver d = driver();
             String callId = "sip:12345@example.com";
             
             String result1 = d.getContributionId(callId);
             String result2 = d.getContributionId(callId);
             
-            assertNotNull(result1, "ContributionId should not be null");
-            assertEquals(result1, result2, "Same callId should produce same ContributionId");
+            assertNotNull("ContributionId should not be null", result1);
+            assertEquals("Same callId should produce same ContributionId", result1, result2);
         }
 
         /**
          * 日本語を含むcallIdでのテスト
          */
         @Test
-        @DisplayName("getContributionId should return consistent result for Japanese callId")
-        void testConsistentResultJapanese() throws Exception {
+        public void testConsistentResultJapanese() throws Exception {
             Driver d = driver();
             String callId = "sip:ユーザー@example.com";
             
             String result1 = d.getContributionId(callId);
             String result2 = d.getContributionId(callId);
             
-            assertNotNull(result1, "ContributionId should not be null");
-            assertEquals(result1, result2, 
-                "Same Japanese callId should produce same ContributionId. " +
-                "Inconsistency indicates getBytes() is not using explicit UTF-8 encoding.");
+            assertNotNull("ContributionId should not be null", result1);
+            assertEquals("Same Japanese callId should produce same ContributionId. " +
+                "Inconsistency indicates getBytes() is not using explicit UTF-8 encoding.", result1, result2);
         }
 
         /**
          * 中国語を含むcallIdでのテスト
          */
         @Test
-        @DisplayName("getContributionId should return consistent result for Chinese callId")
-        void testConsistentResultChinese() throws Exception {
+        public void testConsistentResultChinese() throws Exception {
             Driver d = driver();
             String callId = "sip:用户@example.com";
             
             String result1 = d.getContributionId(callId);
             String result2 = d.getContributionId(callId);
             
-            assertNotNull(result1, "ContributionId should not be null");
-            assertEquals(result1, result2, 
-                "Same Chinese callId should produce same ContributionId.");
+            assertNotNull("ContributionId should not be null", result1);
+            assertEquals("Same Chinese callId should produce same ContributionId.", result1, result2);
         }
 
         /**
          * ContributionIdの形式テスト（16進数32文字）
          */
         @Test
-        @DisplayName("getContributionId should return 32 hex characters")
-        void testContributionIdFormat() throws Exception {
+        public void testContributionIdFormat() throws Exception {
             Driver d = driver();
             String callId = "sip:test@example.com";
             
             String result = d.getContributionId(callId);
             
-            assertNotNull(result, "ContributionId should not be null");
-            assertEquals(32, result.length(), "ContributionId should be 32 characters (128 bits)");
-            assertTrue(result.matches("[0-9a-f]+"), "ContributionId should be lowercase hex");
+            assertNotNull("ContributionId should not be null", result);
+            assertEquals("ContributionId should be 32 characters (128 bits)", 32, result.length());
+            assertTrue("ContributionId should be lowercase hex", result.matches("[0-9a-f]+"));
         }
 
         /**
          * 異なるcallIdは異なるContributionIdを生成
          */
         @Test
-        @DisplayName("Different callIds should produce different ContributionIds")
-        void testDifferentCallIdsDifferentResults() throws Exception {
+        public void testDifferentCallIdsDifferentResults() throws Exception {
             Driver d = driver();
             
             String result1 = d.getContributionId("sip:user1@example.com");
@@ -103,15 +97,12 @@ public class AndroidRcsRcsjtaTest_1 {
             
             assertNotNull(result1);
             assertNotNull(result2);
-            assertNotEquals(result1, result2, "Different callIds should produce different ContributionIds");
+            assertNotEquals("Different callIds should produce different ContributionIds", result1, result2);
         }
     }
 
     // --- 実行定義 ---
-
-    @Nested
-    @DisplayName("Original")
-    class Original extends CommonCases {
+    public static class Original extends CommonCases {
         @Override
         Driver driver() {
             return new Driver(android_rcs_rcsjta._1.original.ContributionIdGenerator.class);
@@ -119,18 +110,13 @@ public class AndroidRcsRcsjtaTest_1 {
     }
 
     // Misuse: getBytes() を引数なしで使用
-    @Nested
-    @DisplayName("Misuse")
-    class Misuse extends CommonCases {
+    public static class Misuse extends CommonCases {
         @Override
         Driver driver() {
             return new Driver(android_rcs_rcsjta._1.misuse.ContributionIdGenerator.class);
         }
     }
-
-    @Nested
-    @DisplayName("Fixed")
-    class Fixed extends CommonCases {
+    public static class Fixed extends CommonCases {
         @Override
         Driver driver() {
             return new Driver(android_rcs_rcsjta._1.fixed.ContributionIdGenerator.class);

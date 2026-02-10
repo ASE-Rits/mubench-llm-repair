@@ -1,11 +1,11 @@
 package wordpressa;
 
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Nested;
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
+import org.junit.experimental.runners.Enclosed;
+import org.junit.runner.RunWith;
 import wordpressa._3.Driver;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.Assert.*;
 
 /**
  * Test for wordpressa Case 3: EditPostContentFragment
@@ -33,30 +33,23 @@ class WordpressaTest_3 {
         abstract Driver driver();
 
         @Test
-        @DisplayName("should have bounds check for mSelectionEnd before str.insert()")
-        void hasBoundsCheckForSelectionEnd() {
+        public void hasBoundsCheckForSelectionEnd() {
             Driver d = driver();
             boolean hasBoundsCheck = d.hasBoundsCheckForSelectionEnd();
             
-            assertTrue(hasBoundsCheck, 
-                "Should have bounds check (mSelectionEnd > str.length()) before str.insert(). " +
-                "StringIndexOutOfBoundsException indicates missing bounds check.");
+            assertTrue("Should have bounds check (mSelectionEnd > str.length()) before str.insert(). " +
+                "StringIndexOutOfBoundsException indicates missing bounds check.", hasBoundsCheck);
         }
 
         @Test
-        @DisplayName("should handle onClick with R.id.more button without exception")
-        void handlesMoreButtonClickSafely() {
+        public void handlesMoreButtonClickSafely() {
             Driver d = driver();
             boolean noException = d.testOnClickMoreButton();
             
-            assertTrue(noException, 
-                "onClick with R.id.more should not throw exception when selectionEnd > text.length()");
+            assertTrue("onClick with R.id.more should not throw exception when selectionEnd > text.length()", noException);
         }
     }
-
-    @Nested
-    @DisplayName("Original")
-    class Original extends CommonLogic {
+    public static class Original extends CommonLogic {
 
         @Override
         Driver driver() {
@@ -68,19 +61,14 @@ class WordpressaTest_3 {
     // The bug is in onClick() at R.id.more handler (line 1098), but LLM fixed
     // a different location (onFormatButtonClick method).
     // So Fixed also fails the bounds check test.
-    @Nested
-    @DisplayName("Fixed")
-    class Fixed extends CommonLogic {
+    public static class Fixed extends CommonLogic {
 
         @Override
         Driver driver() {
             return new Driver("fixed");
         }
     }
-
-    @Nested
-    @DisplayName("Misuse")
-    class Misuse extends CommonLogic {
+    public static class Misuse extends CommonLogic {
 
         @Override
         Driver driver() {

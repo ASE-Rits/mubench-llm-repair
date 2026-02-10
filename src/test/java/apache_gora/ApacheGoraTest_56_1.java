@@ -1,10 +1,10 @@
 package apache_gora._56_1;
 
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.Nested;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.DisplayName;
-import static org.junit.jupiter.api.Assertions.*;
+import org.junit.Test;
+import org.junit.experimental.runners.Enclosed;
+import org.junit.runner.RunWith;
+import org.junit.Before;
+import static org.junit.Assert.*;
 
 import java.io.ByteArrayOutputStream;
 import java.io.DataOutputStream;
@@ -15,6 +15,7 @@ import java.io.IOException;
  * GORA-56のfollowingKey及びlastPossibleKeyのバグを再現するテストケース.
  * PartitionTestのロジックをDriver経由で実行する形式に移植.
  */
+@RunWith(Enclosed.class)
 public class ApacheGoraTest_56_1 {
 
     // ドライバクラスの定義は外部ファイルに依存
@@ -37,7 +38,7 @@ public class ApacheGoraTest_56_1 {
 
         abstract Driver getTargetDriver();
 
-        @BeforeEach
+        @Before
         void setUp() {
             // no-op (他テストとの一貫性のため)
         }
@@ -59,8 +60,7 @@ public class ApacheGoraTest_56_1 {
         }
 
         @Test
-        @DisplayName("followingKey produces expected successor values")
-        void testFollowingKey() throws Exception {
+        public void testFollowingKey() throws Exception {
             Driver driver = getTargetDriver();
 
             // 期待値の検証 (元の PartitionTest の test1() ロジックを移植)
@@ -91,8 +91,7 @@ public class ApacheGoraTest_56_1 {
         }
 
         @Test
-        @DisplayName("lastPossibleKey produces expected predecessor values")
-        void testLastPossibleKey() throws Exception {
+        public void testLastPossibleKey() throws Exception {
             Driver driver = getTargetDriver();
 
             // 期待値の検証 (元の PartitionTest の test2() ロジックを移植)
@@ -116,29 +115,20 @@ public class ApacheGoraTest_56_1 {
     }
 
     // --- 実装の切り替え ---
-
-    @Nested
-    @DisplayName("Original")
-    class Original extends CommonLogic {
+    public static class Original extends CommonLogic {
         @Override
         Driver getTargetDriver() {
             // 外部ドライバをインスタンス化
             return new Driver("apache_gora._56_1.original.PartitionTest");
         }
     }
-
-    @Nested
-    @DisplayName("Misuse")
-    class Misuse extends CommonLogic {
+    public static class Misuse extends CommonLogic {
         @Override
         Driver getTargetDriver() {
             return new Driver("apache_gora._56_1.misuse.PartitionTest");
         }
     }
-
-    @Nested
-    @DisplayName("Fixed")
-    class Fixed extends CommonLogic {
+    public static class Fixed extends CommonLogic {
         @Override
         Driver getTargetDriver() {
             return new Driver("apache_gora._56_1.fixed.PartitionTest");

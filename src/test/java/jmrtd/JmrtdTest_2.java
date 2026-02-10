@@ -1,16 +1,16 @@
 package jmrtd;
 
 import jmrtd._2.Driver;
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Nested;
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
+import org.junit.experimental.runners.Enclosed;
+import org.junit.runner.RunWith;
 
 import javax.crypto.Cipher;
 import java.io.IOException;
 import java.security.KeyPair;
 import java.security.KeyPairGenerator;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.Assert.*;
 
 /**
  * 動的テスト: PassportAuthService.doAA() の Cipher モード検証。
@@ -34,45 +34,36 @@ class JmrtdTest_2 {
         abstract Driver driver();
 
         @Test
-        @DisplayName("Source file should exist and be readable")
-        void testSourceFileExists() throws IOException {
+        public void testSourceFileExists() throws IOException {
             Driver d = driver();
             String sourceCode = d.readSourceCode();
             assertNotNull(sourceCode);
-            assertFalse(sourceCode.isEmpty(), "Source code should not be empty");
+            assertFalse("Source code should not be empty", sourceCode.isEmpty());
         }
 
         @Test
-        @DisplayName("Should contain PassportAuthService class")
-        void testContainsPassportAuthService() throws IOException {
+        public void testContainsPassportAuthService() throws IOException {
             Driver d = driver();
-            assertTrue(d.containsPassportAuthService(),
-                "Source should contain PassportAuthService class");
+            assertTrue("Source should contain PassportAuthService class", d.containsPassportAuthService());
         }
 
         @Test
-        @DisplayName("doAA method should use Cipher.DECRYPT_MODE")
-        void testUsesDecryptMode() throws IOException {
+        public void testUsesDecryptMode() throws IOException {
             Driver d = driver();
-            assertTrue(d.usesDecryptMode(),
-                "doAA() should use Cipher.DECRYPT_MODE (not ENCRYPT_MODE)");
+            assertTrue("doAA() should use Cipher.DECRYPT_MODE (not ENCRYPT_MODE)", d.usesDecryptMode());
         }
 
         @Test
-        @DisplayName("doAA method should NOT use Cipher.ENCRYPT_MODE")
-        void testNotUsingEncryptMode() throws IOException {
+        public void testNotUsingEncryptMode() throws IOException {
             Driver d = driver();
-            assertFalse(d.usesEncryptMode(),
-                "doAA() should not use Cipher.ENCRYPT_MODE");
+            assertFalse("doAA() should not use Cipher.ENCRYPT_MODE", d.usesEncryptMode());
         }
 
         @Test
-        @DisplayName("Cipher mode should be DECRYPT_MODE")
-        void testCipherModeFromSource() throws IOException {
+        public void testCipherModeFromSource() throws IOException {
             Driver d = driver();
             String mode = d.getCipherModeFromSource();
-            assertEquals("DECRYPT_MODE", mode, 
-                "Cipher should be initialized with DECRYPT_MODE for RSA signature verification");
+            assertEquals("Cipher should be initialized with DECRYPT_MODE for RSA signature verification", "DECRYPT_MODE", mode);
         }
 
         /**
@@ -85,8 +76,7 @@ class JmrtdTest_2 {
          * ENCRYPT_MODE を使うと復号化が失敗する
          */
         @Test
-        @DisplayName("RSA decryption with DECRYPT_MODE should work (dynamic test)")
-        void testRsaDecryptModeWorks() throws Exception {
+        public void testRsaDecryptModeWorks() throws Exception {
             // Generate RSA key pair
             KeyPairGenerator kpg = KeyPairGenerator.getInstance("RSA");
             kpg.initialize(2048);
@@ -109,8 +99,7 @@ class JmrtdTest_2 {
             byte[] decrypted = decryptCipher.doFinal(encrypted);
             
             // Verify round-trip
-            assertArrayEquals(testData, decrypted, 
-                "DECRYPT_MODE should correctly decrypt data encrypted with private key");
+            assertArrayEquals("DECRYPT_MODE should correctly decrypt data encrypted with private key", testData, decrypted);
         }
 
         /**
@@ -121,8 +110,7 @@ class JmrtdTest_2 {
          * サイズオーバーになる場合があるため、パディングなしで検証
          */
         @Test
-        @DisplayName("RSA ENCRYPT_MODE produces different result (demonstrates the bug)")
-        void testRsaEncryptModeProducesDifferentResult() throws Exception {
+        public void testRsaEncryptModeProducesDifferentResult() throws Exception {
             // Generate RSA key pair
             KeyPairGenerator kpg = KeyPairGenerator.getInstance("RSA");
             kpg.initialize(2048);
@@ -153,22 +141,17 @@ class JmrtdTest_2 {
                 byte[] wrongResult = wrongCipher.doFinal(encrypted);
                 
                 // If we get here, the results should be different
-                assertFalse(java.util.Arrays.equals(correctResult, wrongResult),
-                    "ENCRYPT_MODE should produce different result than DECRYPT_MODE");
+                assertFalse("ENCRYPT_MODE should produce different result than DECRYPT_MODE", java.util.Arrays.equals(correctResult, wrongResult));
             } catch (Exception e) {
                 // Exception is also acceptable - it shows the bug causes failure
-                assertTrue(true, "ENCRYPT_MODE caused exception as expected: " + e.getMessage());
+                assertTrue("ENCRYPT_MODE caused exception as expected: " + e.getMessage(), true);
             }
             
             // Verify the correct result matches original
-            assertArrayEquals(testData, correctResult,
-                "DECRYPT_MODE should correctly recover original data");
+            assertArrayEquals("DECRYPT_MODE should correctly recover original data", testData, correctResult);
         }
     }
-
-    @Nested
-    @DisplayName("Original")
-    class Original extends PassportAuthServiceCases {
+    public static class Original extends PassportAuthServiceCases {
 
         @Override
         Driver driver() {
@@ -177,9 +160,7 @@ class JmrtdTest_2 {
     }
 
     // Misuse: ENCRYPT_MODE を使用 → ソース解析で検出
-    @Nested
-    @DisplayName("Misuse")
-    class Misuse extends PassportAuthServiceCases {
+    public static class Misuse extends PassportAuthServiceCases {
 
         @Override
         Driver driver() {
@@ -190,8 +171,6 @@ class JmrtdTest_2 {
     /**
      * Fixed バリアント - LLM 失敗ケース
      */
-    @Nested
-    @DisplayName("Fixed (LLM Failure Case)")
     class Fixed {
 
         Driver driver() {
@@ -199,28 +178,23 @@ class JmrtdTest_2 {
         }
 
         @Test
-        @DisplayName("Source file should exist (wrong class returned by LLM)")
-        void testSourceFileExists() throws IOException {
+        public void testSourceFileExists() throws IOException {
             Driver d = driver();
             String sourceCode = d.readSourceCode();
             assertNotNull(sourceCode);
-            assertFalse(sourceCode.isEmpty(), "Source code should not be empty");
+            assertFalse("Source code should not be empty", sourceCode.isEmpty());
         }
 
         @Test
-        @DisplayName("LLM returned wrong class - should NOT contain PassportAuthService")
-        void testDoesNotContainPassportAuthService() throws IOException {
+        public void testDoesNotContainPassportAuthService() throws IOException {
             Driver d = driver();
-            assertFalse(d.containsPassportAuthService(),
-                "LLM incorrectly returned SecureMessagingWrapper instead of PassportAuthService");
+            assertFalse("LLM incorrectly returned SecureMessagingWrapper instead of PassportAuthService", d.containsPassportAuthService());
         }
 
         @Test
-        @DisplayName("LLM failure: no doAA method in wrong class")
-        void testNoDoAAMethod() throws IOException {
+        public void testNoDoAAMethod() throws IOException {
             Driver d = driver();
-            assertFalse(d.usesDecryptMode(),
-                "SecureMessagingWrapper doesn't have doAA method with Cipher usage");
+            assertFalse("SecureMessagingWrapper doesn't have doAA method with Cipher usage", d.usesDecryptMode());
         }
     }
 }

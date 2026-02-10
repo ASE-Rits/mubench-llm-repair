@@ -1,11 +1,11 @@
 package testng;
 
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Nested;
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
+import org.junit.experimental.runners.Enclosed;
+import org.junit.runner.RunWith;
 import testng._21.Driver;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.Assert.*;
 
 /**
  * Test for TestNG Case 21 - Model.java synchronization bug.
@@ -23,90 +23,76 @@ class TestngTest_21 {
         // ========== Static Analysis Tests ==========
         
         @Test
-        void testInitMethodExists() throws Exception {
-            assertTrue(driver().hasInitMethod(), 
-                "init() method should exist");
+        public void testInitMethodExists() throws Exception {
+            assertTrue("init() method should exist", driver().hasInitMethod());
         }
         
         @Test
-        void testGetResultsCallExists() throws Exception {
-            assertTrue(driver().hasGetResultsCall(), 
-                "getResults() call should exist");
+        public void testGetResultsCallExists() throws Exception {
+            assertTrue("getResults() call should exist", driver().hasGetResultsCall());
         }
         
         @Test
-        void testIterationExists() throws Exception {
-            assertTrue(driver().hasIteration(), 
-                "Iteration over results should exist");
+        public void testIterationExists() throws Exception {
+            assertTrue("Iteration over results should exist", driver().hasIteration());
         }
         
         @Test
-        void testSynchronizedBlockPresent() throws Exception {
-            assertTrue(driver().hasSynchronizedBlock(), 
-                "synchronized(results) block should be present");
+        public void testSynchronizedBlockPresent() throws Exception {
+            assertTrue("synchronized(results) block should be present", driver().hasSynchronizedBlock());
         }
         
         @Test
-        void testCorrectlyFixed() throws Exception {
-            assertTrue(driver().isCorrectlyFixed(), 
-                "Iteration should be inside synchronized block");
+        public void testCorrectlyFixed() throws Exception {
+            assertTrue("Iteration should be inside synchronized block", driver().isCorrectlyFixed());
         }
         
         // ========== Dynamic Tests ==========
         
         @Test
-        void testModelInitialization() throws Exception {
+        public void testModelInitialization() throws Exception {
             Driver d = driver();
             d.initializeModel();
             // If no exception, initialization succeeded
         }
         
         @Test
-        void testGetSuites() throws Exception {
+        public void testGetSuites() throws Exception {
             Driver d = driver();
             d.initializeModel();
             Object suites = d.getSuites();
-            assertNotNull(suites, "getSuites should return non-null");
+            assertNotNull("getSuites should return non-null", suites);
         }
         
         @Test
-        void testGetAllFailedResults() throws Exception {
+        public void testGetAllFailedResults() throws Exception {
             Driver d = driver();
             d.initializeModel();
             Object results = d.getAllFailedResults();
-            assertNotNull(results, "getAllFailedResults should return non-null");
+            assertNotNull("getAllFailedResults should return non-null", results);
         }
         
         @Test
-        void testNonnullList() throws Exception {
+        public void testNonnullList() throws Exception {
             Driver d = driver();
             d.initializeModel();
             Object result = d.nonnullList(null);
-            assertNotNull(result, "nonnullList(null) should return empty list");
+            assertNotNull("nonnullList(null) should return empty list", result);
         }
     }
-    
-    @Nested
-    @DisplayName("Original")
-    class Original extends CommonCases {
+    public static class Original extends CommonCases {
         @Override
         Driver driver() {
             return new Driver("original");
         }
     }
-    
-    @Nested
-    @DisplayName("Fixed")
-    class Fixed extends CommonCases {
+    public static class Fixed extends CommonCases {
         @Override
         Driver driver() {
             return new Driver("fixed");
         }
     }
-    
-    @Nested
-    @DisplayName("Misuse")
-    class Misuse extends CommonCases {
+    public static class Misuse extends CommonCases {
         @Override
         Driver driver() {
             return new Driver("misuse");

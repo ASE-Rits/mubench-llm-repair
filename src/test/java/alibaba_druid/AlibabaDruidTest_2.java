@@ -1,9 +1,9 @@
 package alibaba_druid;
 
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.Nested;
-import org.junit.jupiter.api.DisplayName;
-import static org.junit.jupiter.api.Assertions.*;
+import org.junit.Test;
+import org.junit.experimental.runners.Enclosed;
+import org.junit.runner.RunWith;
+import static org.junit.Assert.*;
 
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -11,6 +11,7 @@ import java.nio.file.Paths;
 
 import alibaba_druid._2.Driver;
 
+@RunWith(Enclosed.class)
 public class AlibabaDruidTest_2 {
 
     /**
@@ -35,18 +36,17 @@ public class AlibabaDruidTest_2 {
          * try-catch でハンドリングしているかを確認する。
          */
         @Test
-        @DisplayName("Source code must handle InvalidKeyException in encrypt method")
-        void testSourceCodeHandlesInvalidKeyException() throws Exception {
+        public void testSourceCodeHandlesInvalidKeyException() throws Exception {
             String sourceFilePath = getSourceFilePath();
             Path path = Paths.get(sourceFilePath);
             
-            assertTrue(Files.exists(path), "Source file should exist: " + sourceFilePath);
+            assertTrue("Source file should exist: " + sourceFilePath, Files.exists(path));
             
             String sourceCode = Files.readString(path);
             
             // encrypt(byte[] keyBytes, String plainText) メソッドを探す（IBM JDKで問題が発生するメソッド）
             int encryptMethodStart = sourceCode.indexOf("public static String encrypt(byte[] keyBytes, String plainText)");
-            assertTrue(encryptMethodStart >= 0, "encrypt(byte[] keyBytes, String plainText) method should exist in source");
+            assertTrue("encrypt(byte[] keyBytes, String plainText) method should exist in source", encryptMethodStart >= 0);
             
             // メソッドの終わりを見つける（次のpublic staticメソッドか、ファイル終わり）
             int nextMethodStart = sourceCode.indexOf("public static", encryptMethodStart + 1);
@@ -59,17 +59,13 @@ public class AlibabaDruidTest_2 {
                 encryptMethodBody.contains("catch (InvalidKeyException") ||
                 encryptMethodBody.contains("catch(InvalidKeyException");
             
-            assertTrue(hasInvalidKeyExceptionHandling, 
-                "encrypt method must handle InvalidKeyException with try-catch. " +
-                "Not handling this exception causes issues on IBM JDK.");
+            assertTrue("encrypt method must handle InvalidKeyException with try-catch. " +
+                "Not handling this exception causes issues on IBM JDK.", hasInvalidKeyExceptionHandling);
         }
     }
 
     // --- 以下, 実装定義 ---
-
-    @Nested
-    @DisplayName("Original")
-    class Original extends CommonLogic {
+    public static class Original extends CommonLogic {
         @Override
         Driver getTargetDriver() {
             return new Driver(alibaba_druid._2.original.ConfigTools.class);
@@ -83,9 +79,7 @@ public class AlibabaDruidTest_2 {
 
     // Misuse: テスト要件確認済み（Original はパス、Misuse はフェイル）
     // ビルドを通すためコメントアウト
-    @Nested
-    @DisplayName("Misuse")
-    class Misuse extends CommonLogic {
+    public static class Misuse extends CommonLogic {
         @Override
         Driver getTargetDriver() {
             return new Driver(alibaba_druid._2.misuse.ConfigTools.class);
@@ -99,9 +93,7 @@ public class AlibabaDruidTest_2 {
 
     // Fixed: catch(GeneralSecurityException)を使用しているため、InvalidKeyExceptionの明示的ハンドリングがない
     // そのためコメントアウト
-    @Nested
-    @DisplayName("Fixed")
-    class Fixed extends CommonLogic {
+    public static class Fixed extends CommonLogic {
         @Override
         Driver getTargetDriver() {
             return new Driver(alibaba_druid._2.fixed.ConfigTools.class);

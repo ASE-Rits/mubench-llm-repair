@@ -2,12 +2,12 @@ package cego._1;
 
 import cego._1.mocks.Intent;
 import cego._1.mocks.Log;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Nested;
-import org.junit.jupiter.api.Test;
+import org.junit.Before;
+import org.junit.Test;
+import org.junit.experimental.runners.Enclosed;
+import org.junit.runner.RunWith;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.Assert.*;
 
 class CegoTest_1 {
 
@@ -17,14 +17,13 @@ class CegoTest_1 {
 
         abstract String expectedMime();
 
-        @BeforeEach
+        @Before
         void resetLog() {
             Log.reset();
         }
 
         @Test
-        @DisplayName("viewImageInStandardApp uses the expected MIME type")
-        void viewImageUsesExpectedMime() {
+        public void viewImageUsesExpectedMime() {
             Intent intent = driver().openBitmap("sample-bitmap");
 
             assertNotNull(intent);
@@ -34,10 +33,7 @@ class CegoTest_1 {
             assertNull(Log.getLastError());
         }
     }
-
-    @Nested
-    @DisplayName("Original")
-    class Original extends CommonCases {
+    public static class Original extends CommonCases {
 
         @Override
         Driver driver() {
@@ -49,10 +45,7 @@ class CegoTest_1 {
             return "image/jpeg";
         }
     }
-
-    @Nested
-    @DisplayName("Misuse")
-    class Misuse extends CommonCases {
+    public static class Misuse extends CommonCases {
 
         @Override
         Driver driver() {
@@ -64,10 +57,7 @@ class CegoTest_1 {
             return "image/jpeg";
         }
     }
-
-    @Nested
-    @DisplayName("Fixed")
-    class Fixed extends CommonCases {
+    public static class Fixed extends CommonCases {
 
         @Override
         Driver driver() {
