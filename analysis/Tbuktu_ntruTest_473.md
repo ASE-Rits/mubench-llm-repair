@@ -1,55 +1,20 @@
 # Tbuktu_ntruTest_473
 
-## ORIGINAL
-```
-EncryptionParameters:::CLASS:::CLASS
-  tbuktu_ntru._473.original.EncryptionParameters$TernaryPolynomialType.SIMPLE != null
-  tbuktu_ntru._473.original.EncryptionParameters$TernaryPolynomialType.PRODUCT != null
-  tbuktu_ntru._473.original.EncryptionParameters$TernaryPolynomialType.$VALUES != null
-  tbuktu_ntru._473.original.EncryptionParameters$TernaryPolynomialType.$VALUES[] elements != null
-  tbuktu_ntru._473.original.EncryptionParameters$TernaryPolynomialType.$VALUES[].getClass().getName() == [tbuktu_ntru._473.original.EncryptionParameters.TernaryPolynomialType, tbuktu_ntru._473.original.EncryptionParameters.TernaryPolynomialType]
-  size(tbuktu_ntru._473.original.EncryptionParameters$TernaryPolynomialType.$VALUES[]) == 2
-
-EncryptionParameters:::OBJECT:::OBJECT
-  size(this.oid[]) == 3
-
-init:::EXIT
-  tbuktu_ntru._473.original.EncryptionParameters$TernaryPolynomialType.$VALUES == orig(tbuktu_ntru._473.original.EncryptionParameters$TernaryPolynomialType.$VALUES)
-  tbuktu_ntru._473.original.EncryptionParameters$TernaryPolynomialType.$VALUES[] == orig(tbuktu_ntru._473.original.EncryptionParameters$TernaryPolynomialType.$VALUES[])
+## MISUSE → ORIGINAL（正しい修正）
+```diff
+---
+- writeToBuffered:::EXIT | return == 0
+---
++ writeToBuffered:::EXIT | return == 64
 ```
 
-## MISUSE
-```
-EncryptionParameters:::CLASS:::CLASS
-  tbuktu_ntru._473.misuse.EncryptionParameters$TernaryPolynomialType.SIMPLE != null
-  tbuktu_ntru._473.misuse.EncryptionParameters$TernaryPolynomialType.PRODUCT != null
-  tbuktu_ntru._473.misuse.EncryptionParameters$TernaryPolynomialType.$VALUES != null
-  tbuktu_ntru._473.misuse.EncryptionParameters$TernaryPolynomialType.$VALUES[] elements != null
-  tbuktu_ntru._473.misuse.EncryptionParameters$TernaryPolynomialType.$VALUES[].getClass().getName() == [tbuktu_ntru._473.misuse.EncryptionParameters.TernaryPolynomialType, tbuktu_ntru._473.misuse.EncryptionParameters.TernaryPolynomialType]
-  size(tbuktu_ntru._473.misuse.EncryptionParameters$TernaryPolynomialType.$VALUES[]) == 2
-
-EncryptionParameters:::OBJECT:::OBJECT
-  size(this.oid[]) == 3
-
-init:::EXIT
-  tbuktu_ntru._473.misuse.EncryptionParameters$TernaryPolynomialType.$VALUES == orig(tbuktu_ntru._473.misuse.EncryptionParameters$TernaryPolynomialType.$VALUES)
-  tbuktu_ntru._473.misuse.EncryptionParameters$TernaryPolynomialType.$VALUES[] == orig(tbuktu_ntru._473.misuse.EncryptionParameters$TernaryPolynomialType.$VALUES[])
+## MISUSE → FIXED（LLM修正による変化）
+```diff
+---
+- writeToBuffered:::EXIT | return == 0
+---
++ writeToBuffered:::EXIT | return == 64
 ```
 
-## FIXED
-```
-EncryptionParameters:::CLASS:::CLASS
-  tbuktu_ntru._473.fixed.EncryptionParameters$TernaryPolynomialType.SIMPLE != null
-  tbuktu_ntru._473.fixed.EncryptionParameters$TernaryPolynomialType.PRODUCT != null
-  tbuktu_ntru._473.fixed.EncryptionParameters$TernaryPolynomialType.$VALUES != null
-  tbuktu_ntru._473.fixed.EncryptionParameters$TernaryPolynomialType.$VALUES[] elements != null
-  tbuktu_ntru._473.fixed.EncryptionParameters$TernaryPolynomialType.$VALUES[].getClass().getName() == [tbuktu_ntru._473.fixed.EncryptionParameters.TernaryPolynomialType, tbuktu_ntru._473.fixed.EncryptionParameters.TernaryPolynomialType]
-  size(tbuktu_ntru._473.fixed.EncryptionParameters$TernaryPolynomialType.$VALUES[]) == 2
+## ✅ ORIGINAL == FIXED（完全一致）
 
-EncryptionParameters:::OBJECT:::OBJECT
-  size(this.oid[]) == 3
-
-init:::EXIT
-  tbuktu_ntru._473.fixed.EncryptionParameters$TernaryPolynomialType.$VALUES == orig(tbuktu_ntru._473.fixed.EncryptionParameters$TernaryPolynomialType.$VALUES)
-  tbuktu_ntru._473.fixed.EncryptionParameters$TernaryPolynomialType.$VALUES[] == orig(tbuktu_ntru._473.fixed.EncryptionParameters$TernaryPolynomialType.$VALUES[])
-```

@@ -37,57 +37,68 @@ extract_meaningful() {
     
     pattern="${project}.${case_num}.${variant}."
     
-    awk -v pat="$pattern" '
-    BEGIN { in_section = 0; header = ""; content = "" }
+    # Driverクラス用のパターン (variant部分なし)
+    driver_pattern="${project}.${case_num}.Driver"
+    
+    awk -v pat="$pattern" -v driver_pat="$driver_pattern" '
+    BEGIN { in_section = 0; header = "" }
     /^={10,}$/ {
-        if (in_section && content != "") {
-            print header
-            print content
-        }
         in_section = 0
         header = ""
-        content = ""
         next
     }
     /:::/ {
         split($0, parts, ":::")
         class_part = parts[1]
         gsub(/\(.*/, "", class_part)
-        if (index(class_part, pat) > 0 && class_part !~ /Test_[0-9]/ && class_part !~ /\.mocks\./) {
+        # 対象クラス OR Driverクラス、ただしTestクラスとmocksは除外
+        if ((index(class_part, pat) > 0 || index(class_part, driver_pat) > 0) && class_part !~ /Test_[0-9]/ && class_part !~ /\.mocks\./) {
             in_section = 1
             match($0, /[^.]+\.[^(]+/)
             method = substr($0, RSTART, RLENGTH)
             gsub(/.*\./, "", method)
-            type = parts[2]
-            header = method ":::" type
+            section_type = parts[2]
+            header = method ":::" section_type
         }
         next
     }
     {
-        if (in_section) {
+        if (in_section && header != "") {
             line = $0
             if (line == "") next
-            # ノイズをフィルタリング
-            if (line ~ /has only one value/ && line !~ /^return/) next
-            if (line ~ /orig\(this\)/) next
-            if (line ~ /\.resources ==/) next
-            if (line ~ /\.resources has/) next
-            if (line ~ /^this ==/) next
-            if (line ~ /^this\./) next
-            # 静的フィールド == orig() パターンを除外（定数の不変性）
-            if (line ~ /\.[A-Z_]+ == orig\(/) next
-            if (line ~ /\.getClass\(\)\.getName\(\) == orig\(/) next
-            # 意味のある行のみ追加
-            content = content "  " line "\n"
-        }
-    }
-    END {
-        if (in_section && content != "") {
-            print header
-            print content
+            
+            # === 最小限のフィルタ（自明なノイズのみ除去） ===
+            # Enum $VALUES配列関連（variant名を含むのでノイズ）
+            if (line ~ /\$VALUES/) next
+            # 型名リスト（variant名を含むのでノイズ）
+            if (line ~ /\.getClass\(\)\.getName\(\) == \[/) next
+            # variant固有の完全修飾クラス名（比較時に差分として出てしまう）
+            if (line ~ /\.(original|misuse|fixed)\./) next
+            
+            # セクションヘッダと内容を1行にまとめて出力（差分比較のため）
+            gsub(/^[ \t]+/, "", line)  # 先頭空白を除去
+            print header " | " line
         }
     }
     ' "$input_file"
+}
+
+# 差分を計算する関数
+compute_diff() {
+    local content1="$1"
+    local content2="$2"
+    local label1="$3"
+    local label2="$4"
+    
+    diff_result=$(diff <(echo "$content1" | sort) <(echo "$content2" | sort) 2>/dev/null)
+    
+    if [[ -n "$diff_result" ]]; then
+        echo "### ${label1} → ${label2}"
+        echo '```diff'
+        echo "$diff_result" | sed 's/^< /- /; s/^> /+ /'
+        echo '```'
+        echo ""
+    fi
 }
 
 for project_dir in "$INVARIANT_DIR"/*/; do
@@ -110,7 +121,13 @@ for project_dir in "$INVARIANT_DIR"/*/; do
         misuse_content=$(extract_meaningful "$misuse_file" "$project" "$case_num" "misuse")
         fixed_content=$(extract_meaningful "$fixed_file" "$project" "$case_num" "fixed")
         
-        if [[ -n "$original_content" || -n "$misuse_content" || -n "$fixed_content" ]]; then
+        # 差分があるか確認
+        diff_om=$(diff <(echo "$original_content" | sort) <(echo "$misuse_content" | sort) 2>/dev/null)
+        diff_mo=$(diff <(echo "$misuse_content" | sort) <(echo "$original_content" | sort) 2>/dev/null)
+        diff_mf=$(diff <(echo "$misuse_content" | sort) <(echo "$fixed_content" | sort) 2>/dev/null)
+        diff_of=$(diff <(echo "$original_content" | sort) <(echo "$fixed_content" | sort) 2>/dev/null)
+        
+        if [[ -n "$diff_om" || -n "$diff_mf" || -n "$diff_of" ]]; then
             output_file="$OUTPUT_DIR/${test_name}.md"
             {
                 # Fixedで失敗しているかチェックして警告を追加
@@ -120,20 +137,36 @@ for project_dir in "$INVARIANT_DIR"/*/; do
                 fi
                 echo "# ${test_name}"
                 echo ""
-                echo "## ORIGINAL"
-                echo '```'
-                echo "$original_content"
-                echo '```'
-                echo ""
-                echo "## MISUSE"  
-                echo '```'
-                echo "$misuse_content"
-                echo '```'
-                echo ""
-                echo "## FIXED"
-                echo '```'
-                echo "$fixed_content"
-                echo '```'
+                
+                # MISUSE vs ORIGINAL（正しい修正）
+                if [[ -n "$diff_mo" ]]; then
+                    echo "## MISUSE → ORIGINAL（正しい修正）"
+                    echo '```diff'
+                    echo "$diff_mo" | sed 's/^< /- /; s/^> /+ /; s/^[0-9].*$/---/'
+                    echo '```'
+                    echo ""
+                fi
+                
+                # MISUSE vs FIXED（LLM修正による変化）
+                if [[ -n "$diff_mf" ]]; then
+                    echo "## MISUSE → FIXED（LLM修正による変化）"
+                    echo '```diff'
+                    echo "$diff_mf" | sed 's/^< /- /; s/^> /+ /; s/^[0-9].*$/---/'
+                    echo '```'
+                    echo ""
+                fi
+                
+                # ORIGINAL vs FIXED（修正の妥当性）
+                if [[ -n "$diff_of" ]]; then
+                    echo "## ORIGINAL vs FIXED（残存する差分）"
+                    echo '```diff'
+                    echo "$diff_of" | sed 's/^< /- /; s/^> /+ /; s/^[0-9].*$/---/'
+                    echo '```'
+                    echo ""
+                else
+                    echo "## ✅ ORIGINAL == FIXED（完全一致）"
+                    echo ""
+                fi
             } > "$output_file"
             echo "Created: $output_file"
         fi
