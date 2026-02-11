@@ -1,0 +1,280 @@
+# GnucrashaTest_1a
+
+## ORIGINAL
+===========================================================================
+gnucrasha._1a.original.PassLockActivity:::CLASS
+gnucrasha._1a.original.PassLockActivity.TAG has only one value
+
+===========================================================================
+gnucrasha._1a.original.PassLockActivity:::OBJECT
+this has only one value
+gnucrasha._1a.mocks.Intent.ACTION_MAIN has only one value
+gnucrasha._1a.mocks.Intent.CATEGORY_HOME has only one value
+this.intent.flags == 0
+this.intent.className == null
+this.intent.data == null
+this.intent.type == null
+this.lastStartedIntent.action has only one value
+this.lastStartedIntent.extras has only one value
+this.lastStartedIntent.flags == 0
+this.lastStartedIntent.categories has only one value
+this.lastStartedIntent.className has only one value
+this.lastStartedIntent.data == null
+this.lastStartedIntent.type == null
+
+===========================================================================
+gnucrasha._1a.original.PassLockActivity.PassLockActivity():::EXIT
+this.intent has only one value
+this.intent.action == null
+this.intent.extras has only one value
+this.intent.categories has only one value
+this.lastStartedIntent == null
+
+===========================================================================
+gnucrasha._1a.original.PassLockActivity.isSessionActive():::ENTER
+this.intent has only one value
+this.intent.action has only one value
+this.intent.extras has only one value
+this.intent.categories has only one value
+this.lastStartedIntent == null
+
+===========================================================================
+gnucrasha._1a.original.PassLockActivity.isSessionActive():::EXIT
+gnucrasha._1a.original.PassLockActivity.TAG == orig(gnucrasha._1a.original.PassLockActivity.TAG)
+this.intent == orig(this.intent)
+gnucrasha._1a.mocks.Intent.ACTION_MAIN == orig(gnucrasha._1a.mocks.Intent.ACTION_MAIN)
+gnucrasha._1a.mocks.Intent.CATEGORY_HOME == orig(gnucrasha._1a.mocks.Intent.CATEGORY_HOME)
+this.intent.action == orig(this.intent.action)
+this.intent.extras == orig(this.intent.extras)
+this.intent.extras.getClass().getName() == orig(this.intent.extras.getClass().getName())
+this.intent.flags == orig(this.intent.flags)
+this.intent.categories == orig(this.intent.categories)
+this.intent.categories.getClass().getName() == orig(this.intent.categories.getClass().getName())
+this.intent.className == orig(this.intent.className)
+this.intent.data == orig(this.intent.data)
+this.intent.type == orig(this.intent.type)
+this.lastStartedIntent == orig(this.lastStartedIntent)
+this.intent has only one value
+this.intent.action has only one value
+this.intent.extras has only one value
+this.intent.categories has only one value
+this.lastStartedIntent == null
+return == false
+
+===========================================================================
+gnucrasha._1a.original.PassLockActivity.isSessionActive():::EXIT;condition="not(return == true)"
+
+===========================================================================
+gnucrasha._1a.original.PassLockActivity.onResume():::ENTER
+this.intent has only one value
+this.intent.action has only one value
+this.intent.extras has only one value
+this.intent.categories has only one value
+this.lastStartedIntent == null
+
+===========================================================================
+gnucrasha._1a.original.PassLockActivity.onResume():::EXIT
+gnucrasha._1a.original.PassLockActivity.TAG == orig(gnucrasha._1a.original.PassLockActivity.TAG)
+this.intent == orig(this.intent)
+gnucrasha._1a.mocks.Intent.ACTION_MAIN == orig(gnucrasha._1a.mocks.Intent.ACTION_MAIN)
+gnucrasha._1a.mocks.Intent.CATEGORY_HOME == orig(gnucrasha._1a.mocks.Intent.CATEGORY_HOME)
+this.intent.action == orig(this.intent.action)
+this.intent.extras == orig(this.intent.extras)
+this.intent.extras.getClass().getName() == orig(this.intent.extras.getClass().getName())
+this.intent.flags == orig(this.intent.flags)
+this.intent.categories == orig(this.intent.categories)
+this.intent.categories.getClass().getName() == orig(this.intent.categories.getClass().getName())
+this.intent.className == orig(this.intent.className)
+this.intent.data == orig(this.intent.data)
+this.intent.type == orig(this.intent.type)
+this.intent has only one value
+this.intent.action has only one value
+this.intent.extras has only one value
+this.intent.categories has only one value
+this.lastStartedIntent has only one value
+
+## MISUSE
+===========================================================================
+gnucrasha._1a.misuse.PassLockActivity:::CLASS
+gnucrasha._1a.misuse.PassLockActivity.TAG has only one value
+
+===========================================================================
+gnucrasha._1a.misuse.PassLockActivity:::OBJECT
+this has only one value
+gnucrasha._1a.mocks.Intent.ACTION_MAIN has only one value
+gnucrasha._1a.mocks.Intent.CATEGORY_HOME has only one value
+this.intent.flags == 0
+this.intent.className == null
+this.intent.data == null
+this.intent.type == null
+this.lastStartedIntent.action has only one value
+this.lastStartedIntent.extras has only one value
+this.lastStartedIntent.flags == 0
+this.lastStartedIntent.categories has only one value
+this.lastStartedIntent.className has only one value
+this.lastStartedIntent.data == null
+this.lastStartedIntent.type == null
+
+===========================================================================
+gnucrasha._1a.misuse.PassLockActivity.PassLockActivity():::EXIT
+this.intent has only one value
+this.intent.action == null
+this.intent.extras has only one value
+this.intent.categories has only one value
+this.lastStartedIntent == null
+
+===========================================================================
+gnucrasha._1a.misuse.PassLockActivity.isSessionActive():::ENTER
+this.intent has only one value
+this.intent.action has only one value
+this.intent.extras has only one value
+this.intent.categories has only one value
+this.lastStartedIntent == null
+
+===========================================================================
+gnucrasha._1a.misuse.PassLockActivity.isSessionActive():::EXIT
+gnucrasha._1a.misuse.PassLockActivity.TAG == orig(gnucrasha._1a.misuse.PassLockActivity.TAG)
+this.intent == orig(this.intent)
+gnucrasha._1a.mocks.Intent.ACTION_MAIN == orig(gnucrasha._1a.mocks.Intent.ACTION_MAIN)
+gnucrasha._1a.mocks.Intent.CATEGORY_HOME == orig(gnucrasha._1a.mocks.Intent.CATEGORY_HOME)
+this.intent.action == orig(this.intent.action)
+this.intent.extras == orig(this.intent.extras)
+this.intent.extras.getClass().getName() == orig(this.intent.extras.getClass().getName())
+this.intent.flags == orig(this.intent.flags)
+this.intent.categories == orig(this.intent.categories)
+this.intent.categories.getClass().getName() == orig(this.intent.categories.getClass().getName())
+this.intent.className == orig(this.intent.className)
+this.intent.data == orig(this.intent.data)
+this.intent.type == orig(this.intent.type)
+this.lastStartedIntent == orig(this.lastStartedIntent)
+this.intent has only one value
+this.intent.action has only one value
+this.intent.extras has only one value
+this.intent.categories has only one value
+this.lastStartedIntent == null
+return == false
+
+===========================================================================
+gnucrasha._1a.misuse.PassLockActivity.isSessionActive():::EXIT;condition="not(return == true)"
+
+===========================================================================
+gnucrasha._1a.misuse.PassLockActivity.onResume():::ENTER
+this.intent has only one value
+this.intent.action has only one value
+this.intent.extras has only one value
+this.intent.categories has only one value
+this.lastStartedIntent == null
+
+===========================================================================
+gnucrasha._1a.misuse.PassLockActivity.onResume():::EXIT
+gnucrasha._1a.misuse.PassLockActivity.TAG == orig(gnucrasha._1a.misuse.PassLockActivity.TAG)
+this.intent == orig(this.intent)
+gnucrasha._1a.mocks.Intent.ACTION_MAIN == orig(gnucrasha._1a.mocks.Intent.ACTION_MAIN)
+gnucrasha._1a.mocks.Intent.CATEGORY_HOME == orig(gnucrasha._1a.mocks.Intent.CATEGORY_HOME)
+this.intent.action == orig(this.intent.action)
+this.intent.extras == orig(this.intent.extras)
+this.intent.extras.getClass().getName() == orig(this.intent.extras.getClass().getName())
+this.intent.flags == orig(this.intent.flags)
+this.intent.categories == orig(this.intent.categories)
+this.intent.categories.getClass().getName() == orig(this.intent.categories.getClass().getName())
+this.intent.className == orig(this.intent.className)
+this.intent.data == orig(this.intent.data)
+this.intent.type == orig(this.intent.type)
+this.intent has only one value
+this.intent.action has only one value
+this.intent.extras has only one value
+this.intent.categories has only one value
+this.lastStartedIntent has only one value
+
+## FIXED
+===========================================================================
+gnucrasha._1a.fixed.PassLockActivity:::CLASS
+gnucrasha._1a.fixed.PassLockActivity.TAG has only one value
+
+===========================================================================
+gnucrasha._1a.fixed.PassLockActivity:::OBJECT
+this has only one value
+gnucrasha._1a.mocks.Intent.ACTION_MAIN has only one value
+gnucrasha._1a.mocks.Intent.CATEGORY_HOME has only one value
+this.intent.flags == 0
+this.intent.className == null
+this.intent.data == null
+this.intent.type == null
+this.lastStartedIntent.action has only one value
+this.lastStartedIntent.extras has only one value
+this.lastStartedIntent.flags == 0
+this.lastStartedIntent.categories has only one value
+this.lastStartedIntent.className has only one value
+this.lastStartedIntent.data == null
+this.lastStartedIntent.type == null
+
+===========================================================================
+gnucrasha._1a.fixed.PassLockActivity.PassLockActivity():::EXIT
+this.intent has only one value
+this.intent.action == null
+this.intent.extras has only one value
+this.intent.categories has only one value
+this.lastStartedIntent == null
+
+===========================================================================
+gnucrasha._1a.fixed.PassLockActivity.isSessionActive():::ENTER
+this.intent has only one value
+this.intent.action has only one value
+this.intent.extras has only one value
+this.intent.categories has only one value
+this.lastStartedIntent == null
+
+===========================================================================
+gnucrasha._1a.fixed.PassLockActivity.isSessionActive():::EXIT
+gnucrasha._1a.fixed.PassLockActivity.TAG == orig(gnucrasha._1a.fixed.PassLockActivity.TAG)
+this.intent == orig(this.intent)
+gnucrasha._1a.mocks.Intent.ACTION_MAIN == orig(gnucrasha._1a.mocks.Intent.ACTION_MAIN)
+gnucrasha._1a.mocks.Intent.CATEGORY_HOME == orig(gnucrasha._1a.mocks.Intent.CATEGORY_HOME)
+this.intent.action == orig(this.intent.action)
+this.intent.extras == orig(this.intent.extras)
+this.intent.extras.getClass().getName() == orig(this.intent.extras.getClass().getName())
+this.intent.flags == orig(this.intent.flags)
+this.intent.categories == orig(this.intent.categories)
+this.intent.categories.getClass().getName() == orig(this.intent.categories.getClass().getName())
+this.intent.className == orig(this.intent.className)
+this.intent.data == orig(this.intent.data)
+this.intent.type == orig(this.intent.type)
+this.lastStartedIntent == orig(this.lastStartedIntent)
+this.intent has only one value
+this.intent.action has only one value
+this.intent.extras has only one value
+this.intent.categories has only one value
+this.lastStartedIntent == null
+return == false
+
+===========================================================================
+gnucrasha._1a.fixed.PassLockActivity.isSessionActive():::EXIT;condition="not(return == true)"
+
+===========================================================================
+gnucrasha._1a.fixed.PassLockActivity.onResume():::ENTER
+this.intent has only one value
+this.intent.action has only one value
+this.intent.extras has only one value
+this.intent.categories has only one value
+this.lastStartedIntent == null
+
+===========================================================================
+gnucrasha._1a.fixed.PassLockActivity.onResume():::EXIT
+gnucrasha._1a.fixed.PassLockActivity.TAG == orig(gnucrasha._1a.fixed.PassLockActivity.TAG)
+this.intent == orig(this.intent)
+gnucrasha._1a.mocks.Intent.ACTION_MAIN == orig(gnucrasha._1a.mocks.Intent.ACTION_MAIN)
+gnucrasha._1a.mocks.Intent.CATEGORY_HOME == orig(gnucrasha._1a.mocks.Intent.CATEGORY_HOME)
+this.intent.action == orig(this.intent.action)
+this.intent.extras == orig(this.intent.extras)
+this.intent.extras.getClass().getName() == orig(this.intent.extras.getClass().getName())
+this.intent.flags == orig(this.intent.flags)
+this.intent.categories == orig(this.intent.categories)
+this.intent.categories.getClass().getName() == orig(this.intent.categories.getClass().getName())
+this.intent.className == orig(this.intent.className)
+this.intent.data == orig(this.intent.data)
+this.intent.type == orig(this.intent.type)
+this.intent has only one value
+this.intent.action has only one value
+this.intent.extras has only one value
+this.intent.categories has only one value
+this.lastStartedIntent has only one value

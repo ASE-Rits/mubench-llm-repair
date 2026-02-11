@@ -1,0 +1,43 @@
+===========================================================================
+junit.runner.Version.id():::EXIT
+return has only one value
+===========================================================================
+thomas_s_b_visualee.Thomas_s_b_visualeeTest_32$CommonLogic:::OBJECT
+this has only one value
+===========================================================================
+thomas_s_b_visualee.Thomas_s_b_visualeeTest_32$CommonLogic.CommonLogic():::EXIT
+===========================================================================
+thomas_s_b_visualee.Thomas_s_b_visualeeTest_32$CommonLogic.testScanAfterClosedParenthesisUnclosedAtEOF():::ENTER
+===========================================================================
+thomas_s_b_visualee.Thomas_s_b_visualeeTest_32$CommonLogic.testScanAfterClosedParenthesisUnclosedAtEOF():::EXIT
+===========================================================================
+thomas_s_b_visualee.Thomas_s_b_visualeeTest_32$Fixed:::OBJECT
+this has only one value
+===========================================================================
+thomas_s_b_visualee.Thomas_s_b_visualeeTest_32$Fixed.Fixed():::EXIT
+===========================================================================
+thomas_s_b_visualee.Thomas_s_b_visualeeTest_32$Fixed.createDriver():::ENTER
+===========================================================================
+thomas_s_b_visualee.Thomas_s_b_visualeeTest_32$Fixed.createDriver():::EXIT
+return has only one value
+return.examinerClass has only one value
+return.getSourceCodeScannerMethod has only one value
+return.getClassBodyMethod has only one value
+return.countCharMethod has only one value
+return.scanAfterQuoteMethod has only one value
+return.scanAfterClosedParenthesisMethod has only one value
+return.isAJavaTokenMethod has only one value
+return.jumpOverJavaTokenMethod has only one value
+return.extractClassInstanceOrEventMethod has only one value
+===========================================================================
+thomas_s_b_visualee._32.Driver.createFixed():::EXIT
+return has only one value
+return.examinerClass has only one value
+return.getSourceCodeScannerMethod has only one value
+return.getClassBodyMethod has only one value
+return.countCharMethod has only one value
+return.scanAfterQuoteMethod has only one value
+return.scanAfterClosedParenthesisMethod has only one value
+return.isAJavaTokenMethod has only one value
+return.jumpOverJavaTokenMethod has only one value
+return.extractClassInstanceOrEventMethod has only one value

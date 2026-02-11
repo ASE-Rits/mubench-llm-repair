@@ -1,0 +1,297 @@
+===========================================================================
+junit.runner.Version.id():::EXIT
+return has only one value
+===========================================================================
+ushahidia.UshahidiaTest_1$CommonLogic:::OBJECT
+===========================================================================
+ushahidia.UshahidiaTest_1$CommonLogic.CommonLogic():::EXIT
+===========================================================================
+ushahidia.UshahidiaTest_1$Misuse:::OBJECT
+===========================================================================
+ushahidia.UshahidiaTest_1$Misuse.Misuse():::EXIT
+===========================================================================
+ushahidia.UshahidiaTest_1$Misuse.createDriver():::ENTER
+===========================================================================
+ushahidia.UshahidiaTest_1$Misuse.createDriver():::EXIT
+ushahidia._1.Driver.BASE_PACKAGE has only one value
+return.targetClass has only one value
+return.mockDb.lastCursor == null
+return.mockDb.queryResultCount == 1
+return.mockDb.queryResultValue == 0
+===========================================================================
+ushahidia._1.Driver:::CLASS
+ushahidia._1.Driver.BASE_PACKAGE has only one value
+ushahidia._1.Driver.BASE_PACKAGE != null
+===========================================================================
+ushahidia._1.Driver:::OBJECT
+this.instance != null
+this.targetClass has only one value
+this.targetClass != null
+this.mockDb != null
+this.mockDb.lastCursor.count one of { 0, 1 }
+this.mockDb.lastCursor.currentPosition one of { -1, 0 }
+this.mockDb.lastCursor.intValues[] == [0]
+this.mockDb.lastCursor.intValues[] elements == 0
+this.mockDb.lastCursor.closed == false
+this.mockDb.queryResultCount one of { 0, 1 }
+this.mockDb.queryResultValue == 0
+size(this.mockDb.lastCursor.intValues[]) == 1
+===========================================================================
+ushahidia._1.Driver.getLastCursor():::ENTER
+===========================================================================
+ushahidia._1.Driver.getLastCursor():::EXIT
+ushahidia._1.Driver.BASE_PACKAGE == orig(ushahidia._1.Driver.BASE_PACKAGE)
+this.instance == orig(this.instance)
+this.instance.getClass().getName() == orig(this.instance.getClass().getName())
+this.targetClass == orig(this.targetClass)
+this.mockDb == orig(this.mockDb)
+this.mockDb.lastCursor == orig(this.mockDb.lastCursor)
+this.mockDb.lastCursor.count == orig(this.mockDb.lastCursor.count)
+this.mockDb.lastCursor.currentPosition == orig(this.mockDb.lastCursor.currentPosition)
+this.mockDb.lastCursor.intValues == orig(this.mockDb.lastCursor.intValues)
+this.mockDb.lastCursor.intValues[] == orig(this.mockDb.lastCursor.intValues[])
+this.mockDb.lastCursor.closed == orig(this.mockDb.lastCursor.closed)
+this.mockDb.queryResultCount == orig(this.mockDb.queryResultCount)
+this.mockDb.queryResultValue == orig(this.mockDb.queryResultValue)
+return.count one of { 0, 1 }
+return.currentPosition one of { -1, 0 }
+return.intValues[] == [0]
+return.intValues[] elements == 0
+return.closed == false
+size(return.intValues[]) == 1
+===========================================================================
+ushahidia._1.Driver.getReportState(long):::ENTER
+this.mockDb.lastCursor == null
+reportId one of { 123, 456 }
+===========================================================================
+ushahidia._1.Driver.getReportState(long):::EXIT
+ushahidia._1.Driver.BASE_PACKAGE == orig(ushahidia._1.Driver.BASE_PACKAGE)
+this.instance == orig(this.instance)
+this.instance.getClass().getName() == orig(this.instance.getClass().getName())
+this.targetClass == orig(this.targetClass)
+this.mockDb == orig(this.mockDb)
+this.mockDb.queryResultCount == orig(this.mockDb.queryResultCount)
+this.mockDb.queryResultValue == orig(this.mockDb.queryResultValue)
+return one of { -1, 0 }
+===========================================================================
+ushahidia._1.Driver.setQueryResult(int, int):::ENTER
+this.mockDb.lastCursor == null
+this.mockDb.queryResultCount == 1
+count one of { 0, 1 }
+value == 0
+===========================================================================
+ushahidia._1.Driver.setQueryResult(int, int):::EXIT
+ushahidia._1.Driver.BASE_PACKAGE == orig(ushahidia._1.Driver.BASE_PACKAGE)
+this.instance == orig(this.instance)
+this.instance.getClass().getName() == orig(this.instance.getClass().getName())
+this.targetClass == orig(this.targetClass)
+this.mockDb == orig(this.mockDb)
+this.mockDb.lastCursor == orig(this.mockDb.lastCursor)
+this.mockDb.queryResultValue == orig(this.mockDb.queryResultValue)
+this.mockDb.lastCursor == null
+===========================================================================
+ushahidia._1.misuse.OpenGeoSmsDao:::CLASS
+ushahidia._1.misuse.OpenGeoSmsDao.WHERE has only one value
+===========================================================================
+ushahidia._1.misuse.OpenGeoSmsDao:::OBJECT
+this.mDb.lastCursor.count one of { 0, 1 }
+this.mDb.lastCursor.currentPosition one of { -1, 0 }
+this.mDb.lastCursor.intValues[] == [0]
+this.mDb.lastCursor.intValues[] elements == 0
+this.mDb.lastCursor.closed == false
+this.mDb.queryResultCount one of { 0, 1 }
+this.mDb.queryResultValue == 0
+size(this.mDb.lastCursor.intValues[]) == 1
+===========================================================================
+ushahidia._1.misuse.OpenGeoSmsDao.OpenGeoSmsDao(ushahidia._1.mocks.SQLiteDatabase):::ENTER
+db.lastCursor == null
+db.queryResultCount == 1
+db.queryResultValue == 0
+===========================================================================
+ushahidia._1.misuse.OpenGeoSmsDao.OpenGeoSmsDao(ushahidia._1.mocks.SQLiteDatabase):::EXIT
+db.lastCursor == orig(db.lastCursor)
+db.queryResultCount == orig(db.queryResultCount)
+db.queryResultValue == orig(db.queryResultValue)
+this.mDb.lastCursor == null
+this.mDb.queryResultCount == 1
+db.lastCursor == null
+db.queryResultCount == 1
+db.queryResultValue == 0
+===========================================================================
+ushahidia._1.misuse.OpenGeoSmsDao.array(long):::ENTER
+i one of { 123, 456 }
+===========================================================================
+ushahidia._1.misuse.OpenGeoSmsDao.array(long):::EXIT
+ushahidia._1.misuse.OpenGeoSmsDao.WHERE == orig(ushahidia._1.misuse.OpenGeoSmsDao.WHERE)
+size(return[]) == 1
+===========================================================================
+ushahidia._1.misuse.OpenGeoSmsDao.getReportState(long):::ENTER
+this.mDb.lastCursor == null
+reportId one of { 123, 456 }
+===========================================================================
+ushahidia._1.misuse.OpenGeoSmsDao.getReportState(long):::EXIT35
+this.mDb has only one value
+this.mDb.lastCursor has only one value
+this.mDb.lastCursor.count == 0
+this.mDb.lastCursor.currentPosition == -1
+this.mDb.lastCursor.intValues has only one value
+this.mDb.queryResultCount == 0
+return == -1
+orig(this) has only one value
+orig(reportId) == 456
+===========================================================================
+ushahidia._1.misuse.OpenGeoSmsDao.getReportState(long):::EXIT38
+this.mDb has only one value
+this.mDb.lastCursor has only one value
+this.mDb.lastCursor.count == 1
+this.mDb.lastCursor.currentPosition == 0
+this.mDb.lastCursor.intValues has only one value
+this.mDb.queryResultCount == 1
+return == 0
+orig(this) has only one value
+orig(reportId) == 123
+===========================================================================
+ushahidia._1.misuse.OpenGeoSmsDao.getReportState(long):::EXIT
+this.mDb == orig(this.mDb)
+this.mDb.queryResultCount == orig(this.mDb.queryResultCount)
+this.mDb.queryResultValue == orig(this.mDb.queryResultValue)
+ushahidia._1.misuse.OpenGeoSmsDao.WHERE == orig(ushahidia._1.misuse.OpenGeoSmsDao.WHERE)
+(this.mDb.lastCursor.count == 0)  <==>  (orig(reportId) == 456)
+(this.mDb.lastCursor.count == 0)  <==>  (return == -1)
+(this.mDb.lastCursor.count == 0)  <==>  (this.mDb.lastCursor.currentPosition == -1)
+(this.mDb.lastCursor.count == 0)  <==>  (this.mDb.queryResultCount == 0)
+(this.mDb.lastCursor.count == 1)  <==>  (orig(reportId) == 123)
+(this.mDb.lastCursor.count == 1)  <==>  (return == 0)
+(this.mDb.lastCursor.count == 1)  <==>  (this.mDb.lastCursor.currentPosition == 0)
+(this.mDb.lastCursor.count == 1)  <==>  (this.mDb.queryResultCount == 1)
+return one of { -1, 0 }
+===========================================================================
+ushahidia._1.mocks.Cursor:::OBJECT
+this.count one of { 0, 1 }
+this.currentPosition one of { -1, 0 }
+this.intValues != null
+this.intValues[] == [0]
+this.intValues[] elements == 0
+this.closed == false
+size(this.intValues[]) == 1
+===========================================================================
+ushahidia._1.mocks.Cursor.Cursor(int, int[]):::ENTER
+count one of { 0, 1 }
+values[] == [0]
+values[] elements == 0
+size(values[]) == 1
+===========================================================================
+ushahidia._1.mocks.Cursor.Cursor(int, int[]):::EXIT
+values[] == orig(values[])
+this.currentPosition == -1
+values[] == [0]
+values[] elements == 0
+===========================================================================
+ushahidia._1.mocks.Cursor.getCount():::ENTER
+this.currentPosition == -1
+===========================================================================
+ushahidia._1.mocks.Cursor.getCount():::EXIT
+this.count == orig(this.count)
+this.currentPosition == orig(this.currentPosition)
+this.intValues == orig(this.intValues)
+this.intValues[] == orig(this.intValues[])
+this.closed == orig(this.closed)
+this.currentPosition == -1
+return one of { 0, 1 }
+===========================================================================
+ushahidia._1.mocks.Cursor.getInt(int):::ENTER
+this has only one value
+this.count == 1
+this.currentPosition == 0
+this.intValues has only one value
+columnIndex == 0
+===========================================================================
+ushahidia._1.mocks.Cursor.getInt(int):::EXIT32
+===========================================================================
+ushahidia._1.mocks.Cursor.getInt(int):::EXIT
+this.count == orig(this.count)
+this.currentPosition == orig(this.currentPosition)
+this.intValues == orig(this.intValues)
+this.intValues[] == orig(this.intValues[])
+this.closed == orig(this.closed)
+this.count == 1
+this.currentPosition == 0
+this.intValues has only one value
+return == 0
+===========================================================================
+ushahidia._1.mocks.Cursor.isClosed():::ENTER
+===========================================================================
+ushahidia._1.mocks.Cursor.isClosed():::EXIT
+this.count == orig(this.count)
+this.currentPosition == orig(this.currentPosition)
+this.intValues == orig(this.intValues)
+this.intValues[] == orig(this.intValues[])
+this.closed == orig(this.closed)
+return == false
+===========================================================================
+ushahidia._1.mocks.Cursor.isClosed():::EXIT;condition="not(return == true)"
+===========================================================================
+ushahidia._1.mocks.Cursor.moveToFirst():::ENTER
+this has only one value
+this.count == 1
+this.currentPosition == -1
+this.intValues has only one value
+===========================================================================
+ushahidia._1.mocks.Cursor.moveToFirst():::EXIT25
+===========================================================================
+ushahidia._1.mocks.Cursor.moveToFirst():::EXIT25;condition="return == true"
+===========================================================================
+ushahidia._1.mocks.Cursor.moveToFirst():::EXIT
+this.count == orig(this.count)
+this.intValues == orig(this.intValues)
+this.intValues[] == orig(this.intValues[])
+this.closed == orig(this.closed)
+this.count == 1
+this.currentPosition == 0
+this.intValues has only one value
+return == true
+===========================================================================
+ushahidia._1.mocks.Cursor.moveToFirst():::EXIT;condition="return == true"
+===========================================================================
+ushahidia._1.mocks.SQLiteDatabase:::OBJECT
+this.lastCursor.count one of { 0, 1 }
+this.lastCursor.currentPosition one of { -1, 0 }
+this.lastCursor.intValues[] == [0]
+this.lastCursor.intValues[] elements == 0
+this.lastCursor.closed == false
+this.queryResultCount one of { 0, 1 }
+this.queryResultValue == 0
+size(this.lastCursor.intValues[]) == 1
+===========================================================================
+ushahidia._1.mocks.SQLiteDatabase.SQLiteDatabase():::EXIT
+this.lastCursor == null
+this.queryResultCount == 1
+===========================================================================
+ushahidia._1.mocks.SQLiteDatabase.getLastCursor():::ENTER
+===========================================================================
+ushahidia._1.mocks.SQLiteDatabase.getLastCursor():::EXIT
+this.lastCursor == orig(this.lastCursor)
+this.lastCursor.count == orig(this.lastCursor.count)
+this.lastCursor.currentPosition == orig(this.lastCursor.currentPosition)
+this.lastCursor.intValues == orig(this.lastCursor.intValues)
+this.lastCursor.intValues[] == orig(this.lastCursor.intValues[])
+this.lastCursor.closed == orig(this.lastCursor.closed)
+this.queryResultCount == orig(this.queryResultCount)
+this.queryResultValue == orig(this.queryResultValue)
+return.count one of { 0, 1 }
+return.currentPosition one of { -1, 0 }
+return.intValues[] == [0]
+return.intValues[] elements == 0
+return.closed == false
+size(return.intValues[]) == 1
+===========================================================================
+ushahidia._1.mocks.SQLiteDatabase.setQueryResult(int, int):::ENTER
+this.lastCursor == null
+this.queryResultCount == 1
+count one of { 0, 1 }
+value == 0
+===========================================================================
+ushahidia._1.mocks.SQLiteDatabase.setQueryResult(int, int):::EXIT
+this.lastCursor == orig(this.lastCursor)
+this.queryResultValue == orig(this.queryResultValue)
+this.lastCursor == null

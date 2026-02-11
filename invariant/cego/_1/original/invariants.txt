@@ -1,0 +1,304 @@
+===========================================================================
+cego._1.CegoTest_1$CommonCases:::OBJECT
+this has only one value
+===========================================================================
+cego._1.CegoTest_1$CommonCases.CommonCases():::EXIT
+===========================================================================
+cego._1.CegoTest_1$CommonCases.resetLog():::ENTER
+===========================================================================
+cego._1.CegoTest_1$CommonCases.resetLog():::EXIT
+===========================================================================
+cego._1.CegoTest_1$CommonCases.viewImageUsesExpectedMime():::ENTER
+===========================================================================
+cego._1.CegoTest_1$CommonCases.viewImageUsesExpectedMime():::EXIT
+===========================================================================
+cego._1.CegoTest_1$Original:::OBJECT
+this has only one value
+===========================================================================
+cego._1.CegoTest_1$Original.Original():::EXIT
+===========================================================================
+cego._1.CegoTest_1$Original.driver():::ENTER
+===========================================================================
+cego._1.CegoTest_1$Original.driver():::EXIT
+return has only one value
+return.activity has only one value
+return.targetClass has only one value
+===========================================================================
+cego._1.CegoTest_1$Original.expectedMime():::ENTER
+===========================================================================
+cego._1.CegoTest_1$Original.expectedMime():::EXIT
+return has only one value
+===========================================================================
+cego._1.Driver:::OBJECT
+this has only one value
+this.activity has only one value
+this.targetClass has only one value
+===========================================================================
+cego._1.Driver.fetchLastStartedIntent():::ENTER
+===========================================================================
+cego._1.Driver.fetchLastStartedIntent():::EXIT
+this.activity == orig(this.activity)
+this.activity.getClass().getName() == orig(this.activity.getClass().getName())
+this.targetClass == orig(this.targetClass)
+return has only one value
+cego._1.mocks.Intent.ACTION_VIEW has only one value
+return.action has only one value
+return.data has only one value
+return.data.path has only one value
+return.type has only one value
+===========================================================================
+cego._1.Driver.openCurrentDrawable():::ENTER
+===========================================================================
+cego._1.Driver.openCurrentDrawable():::EXIT
+this.activity == orig(this.activity)
+this.activity.getClass().getName() == orig(this.activity.getClass().getName())
+this.targetClass == orig(this.targetClass)
+===========================================================================
+cego._1.Driver.setCurrentDrawable(cego._1.mocks.BitmapDrawable):::ENTER
+drawable has only one value
+drawable.bitmap has only one value
+drawable.bitmap.placeholder has only one value
+===========================================================================
+cego._1.Driver.setCurrentDrawable(cego._1.mocks.BitmapDrawable):::EXIT
+this.activity == orig(this.activity)
+this.activity.getClass().getName() == orig(this.activity.getClass().getName())
+this.targetClass == orig(this.targetClass)
+drawable.bitmap == orig(drawable.bitmap)
+drawable.bitmap.placeholder == orig(drawable.bitmap.placeholder)
+drawable.bitmap has only one value
+drawable.bitmap.placeholder has only one value
+===========================================================================
+cego._1.mocks.AbstractActivity:::OBJECT
+this has only one value
+cego._1.mocks.Intent.ACTION_VIEW has only one value
+this.lastStartedIntent.action has only one value
+this.lastStartedIntent.data has only one value
+this.lastStartedIntent.data.path has only one value
+this.lastStartedIntent.type has only one value
+===========================================================================
+cego._1.mocks.AbstractActivity.AbstractActivity():::EXIT
+this.lastStartedIntent == null
+===========================================================================
+cego._1.mocks.AbstractActivity.getLastStartedIntent():::ENTER
+this.lastStartedIntent has only one value
+===========================================================================
+cego._1.mocks.AbstractActivity.getLastStartedIntent():::EXIT
+this.lastStartedIntent == orig(this.lastStartedIntent)
+cego._1.mocks.Intent.ACTION_VIEW == orig(cego._1.mocks.Intent.ACTION_VIEW)
+this.lastStartedIntent.action == orig(this.lastStartedIntent.action)
+this.lastStartedIntent.data == orig(this.lastStartedIntent.data)
+this.lastStartedIntent.data.path == orig(this.lastStartedIntent.data.path)
+this.lastStartedIntent.type == orig(this.lastStartedIntent.type)
+this.lastStartedIntent has only one value
+return has only one value
+return.action has only one value
+return.data has only one value
+return.data.path has only one value
+return.type has only one value
+===========================================================================
+cego._1.mocks.AbstractActivity.startActivity(cego._1.mocks.Intent):::ENTER
+this.lastStartedIntent == null
+intent has only one value
+intent.action has only one value
+intent.data has only one value
+intent.data.path has only one value
+intent.type has only one value
+===========================================================================
+cego._1.mocks.AbstractActivity.startActivity(cego._1.mocks.Intent):::EXIT
+cego._1.mocks.Intent.ACTION_VIEW == orig(cego._1.mocks.Intent.ACTION_VIEW)
+intent.action == orig(intent.action)
+intent.data == orig(intent.data)
+intent.data.path == orig(intent.data.path)
+intent.type == orig(intent.type)
+this.lastStartedIntent has only one value
+intent.action has only one value
+intent.data has only one value
+intent.data.path has only one value
+intent.type has only one value
+===========================================================================
+cego._1.mocks.BitmapDrawable:::OBJECT
+this has only one value
+this.bitmap has only one value
+this.bitmap.placeholder has only one value
+===========================================================================
+cego._1.mocks.BitmapDrawable.BitmapDrawable(cego._1.mocks.Bitmap):::ENTER
+bitmap has only one value
+bitmap.placeholder has only one value
+===========================================================================
+cego._1.mocks.BitmapDrawable.BitmapDrawable(cego._1.mocks.Bitmap):::EXIT
+bitmap.placeholder == orig(bitmap.placeholder)
+bitmap.placeholder has only one value
+===========================================================================
+cego._1.mocks.BitmapDrawable.getBitmap():::ENTER
+===========================================================================
+cego._1.mocks.BitmapDrawable.getBitmap():::EXIT
+this.bitmap == orig(this.bitmap)
+this.bitmap.placeholder == orig(this.bitmap.placeholder)
+return has only one value
+return.placeholder has only one value
+===========================================================================
+cego._1.mocks.Context:::OBJECT
+this has only one value
+===========================================================================
+cego._1.mocks.Context.Context():::EXIT
+===========================================================================
+cego._1.mocks.Intent:::CLASS
+cego._1.mocks.Intent.ACTION_VIEW has only one value
+===========================================================================
+cego._1.mocks.Intent:::OBJECT
+this has only one value
+this.data.path has only one value
+===========================================================================
+cego._1.mocks.Intent.Intent():::EXIT
+this.action == null
+this.data == null
+this.type == null
+===========================================================================
+cego._1.mocks.Intent.getAction():::ENTER
+this.action has only one value
+this.data has only one value
+this.type has only one value
+===========================================================================
+cego._1.mocks.Intent.getAction():::EXIT
+cego._1.mocks.Intent.ACTION_VIEW == orig(cego._1.mocks.Intent.ACTION_VIEW)
+this.action == orig(this.action)
+this.data == orig(this.data)
+this.data.path == orig(this.data.path)
+this.type == orig(this.type)
+this.action has only one value
+this.data has only one value
+this.type has only one value
+return has only one value
+===========================================================================
+cego._1.mocks.Intent.getData():::ENTER
+this.action has only one value
+this.data has only one value
+this.type has only one value
+===========================================================================
+cego._1.mocks.Intent.getData():::EXIT
+cego._1.mocks.Intent.ACTION_VIEW == orig(cego._1.mocks.Intent.ACTION_VIEW)
+this.action == orig(this.action)
+this.data == orig(this.data)
+this.data.path == orig(this.data.path)
+this.type == orig(this.type)
+this.action has only one value
+this.data has only one value
+this.type has only one value
+return has only one value
+return.path has only one value
+===========================================================================
+cego._1.mocks.Intent.getType():::ENTER
+this.action has only one value
+this.data has only one value
+this.type has only one value
+===========================================================================
+cego._1.mocks.Intent.getType():::EXIT
+cego._1.mocks.Intent.ACTION_VIEW == orig(cego._1.mocks.Intent.ACTION_VIEW)
+this.action == orig(this.action)
+this.data == orig(this.data)
+this.data.path == orig(this.data.path)
+this.type == orig(this.type)
+this.action has only one value
+this.data has only one value
+this.type has only one value
+return has only one value
+===========================================================================
+cego._1.mocks.Log:::CLASS
+cego._1.mocks.Log.lastError == null
+===========================================================================
+cego._1.mocks.Log.getLastError():::ENTER
+===========================================================================
+cego._1.mocks.Log.getLastError():::EXIT
+cego._1.mocks.Log.lastError == orig(cego._1.mocks.Log.lastError)
+return == null
+===========================================================================
+cego._1.mocks.Log.reset():::ENTER
+===========================================================================
+cego._1.mocks.Log.reset():::EXIT
+cego._1.mocks.Log.lastError == orig(cego._1.mocks.Log.lastError)
+===========================================================================
+cego._1.original.cgeoimages:::OBJECT
+this has only one value
+this.currentDrawable.bitmap has only one value
+this.currentDrawable.bitmap.placeholder has only one value
+cego._1.mocks.Intent.ACTION_VIEW has only one value
+this.lastStartedIntent.action has only one value
+this.lastStartedIntent.data has only one value
+this.lastStartedIntent.data.path has only one value
+this.lastStartedIntent.type has only one value
+===========================================================================
+cego._1.original.cgeoimages.cgeoimages():::EXIT
+this.currentDrawable == null
+this.lastStartedIntent == null
+===========================================================================
+cego._1.original.cgeoimages.fetchLastStartedIntent():::ENTER
+this.currentDrawable has only one value
+this.lastStartedIntent has only one value
+===========================================================================
+cego._1.original.cgeoimages.fetchLastStartedIntent():::EXIT
+this.currentDrawable == orig(this.currentDrawable)
+this.currentDrawable.bitmap == orig(this.currentDrawable.bitmap)
+this.currentDrawable.bitmap.placeholder == orig(this.currentDrawable.bitmap.placeholder)
+this.lastStartedIntent == orig(this.lastStartedIntent)
+cego._1.mocks.Intent.ACTION_VIEW == orig(cego._1.mocks.Intent.ACTION_VIEW)
+this.lastStartedIntent.action == orig(this.lastStartedIntent.action)
+this.lastStartedIntent.data == orig(this.lastStartedIntent.data)
+this.lastStartedIntent.data.path == orig(this.lastStartedIntent.data.path)
+this.lastStartedIntent.type == orig(this.lastStartedIntent.type)
+this.currentDrawable has only one value
+this.lastStartedIntent has only one value
+return has only one value
+return.action has only one value
+return.data has only one value
+return.data.path has only one value
+return.type has only one value
+===========================================================================
+cego._1.original.cgeoimages.openCurrentDrawable():::ENTER
+this.currentDrawable has only one value
+this.lastStartedIntent == null
+===========================================================================
+cego._1.original.cgeoimages.openCurrentDrawable():::EXIT
+this.currentDrawable == orig(this.currentDrawable)
+this.currentDrawable.bitmap == orig(this.currentDrawable.bitmap)
+this.currentDrawable.bitmap.placeholder == orig(this.currentDrawable.bitmap.placeholder)
+this.currentDrawable has only one value
+this.lastStartedIntent has only one value
+===========================================================================
+cego._1.original.cgeoimages.setCurrentDrawable(cego._1.mocks.BitmapDrawable):::ENTER
+this.currentDrawable == null
+this.lastStartedIntent == null
+drawable has only one value
+drawable.bitmap has only one value
+drawable.bitmap.placeholder has only one value
+===========================================================================
+cego._1.original.cgeoimages.setCurrentDrawable(cego._1.mocks.BitmapDrawable):::EXIT
+this.lastStartedIntent == orig(this.lastStartedIntent)
+drawable.bitmap == orig(drawable.bitmap)
+drawable.bitmap.placeholder == orig(drawable.bitmap.placeholder)
+this.currentDrawable has only one value
+this.lastStartedIntent == null
+drawable.bitmap has only one value
+drawable.bitmap.placeholder has only one value
+===========================================================================
+cego._1.original.cgeoimages.viewImageInStandardApp(cego._1.mocks.BitmapDrawable):::ENTER
+this.currentDrawable has only one value
+this.lastStartedIntent == null
+image has only one value
+image.bitmap has only one value
+image.bitmap.placeholder has only one value
+===========================================================================
+cego._1.original.cgeoimages.viewImageInStandardApp(cego._1.mocks.BitmapDrawable):::EXIT56
+===========================================================================
+cego._1.original.cgeoimages.viewImageInStandardApp(cego._1.mocks.BitmapDrawable):::EXIT
+this.currentDrawable == orig(this.currentDrawable)
+this.currentDrawable.bitmap == orig(this.currentDrawable.bitmap)
+this.currentDrawable.bitmap.placeholder == orig(this.currentDrawable.bitmap.placeholder)
+image.bitmap == orig(image.bitmap)
+image.bitmap.placeholder == orig(image.bitmap.placeholder)
+this.currentDrawable has only one value
+this.lastStartedIntent has only one value
+image.bitmap has only one value
+image.bitmap.placeholder has only one value
+===========================================================================
+junit.runner.Version.id():::EXIT
+return has only one value

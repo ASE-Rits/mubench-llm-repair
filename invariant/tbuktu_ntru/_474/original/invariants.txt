@@ -1,0 +1,139 @@
+===========================================================================
+junit.runner.Version.id():::EXIT
+return has only one value
+===========================================================================
+tbuktu_ntru.Tbuktu_ntruTest_474$CommonLogic:::OBJECT
+this has only one value
+===========================================================================
+tbuktu_ntru.Tbuktu_ntruTest_474$CommonLogic.CommonLogic():::EXIT
+===========================================================================
+tbuktu_ntru.Tbuktu_ntruTest_474$CommonLogic.testWriteToFlushesBuffer():::ENTER
+===========================================================================
+tbuktu_ntru.Tbuktu_ntruTest_474$CommonLogic.testWriteToFlushesBuffer():::EXIT
+===========================================================================
+tbuktu_ntru.Tbuktu_ntruTest_474$Original:::OBJECT
+this has only one value
+===========================================================================
+tbuktu_ntru.Tbuktu_ntruTest_474$Original.Original():::EXIT
+===========================================================================
+tbuktu_ntru.Tbuktu_ntruTest_474$Original.driver():::ENTER
+===========================================================================
+tbuktu_ntru.Tbuktu_ntruTest_474$Original.driver():::EXIT
+return has only one value
+tbuktu_ntru._474.Driver.VARIANT_PACKAGE has only one value
+return.instance has only one value
+return.clazz has only one value
+===========================================================================
+tbuktu_ntru._474.Driver:::CLASS
+tbuktu_ntru._474.Driver.VARIANT_PACKAGE has only one value
+===========================================================================
+tbuktu_ntru._474.Driver:::OBJECT
+this has only one value
+this.instance has only one value
+this.clazz has only one value
+===========================================================================
+tbuktu_ntru._474.Driver.writeToBuffered():::ENTER
+===========================================================================
+tbuktu_ntru._474.Driver.writeToBuffered():::EXIT
+tbuktu_ntru._474.Driver.VARIANT_PACKAGE == orig(tbuktu_ntru._474.Driver.VARIANT_PACKAGE)
+this.instance == orig(this.instance)
+this.instance.getClass().getName() == orig(this.instance.getClass().getName())
+this.clazz == orig(this.clazz)
+return == 65
+===========================================================================
+tbuktu_ntru._474.original.SignatureParameters:::CLASS
+tbuktu_ntru._474.original.SignatureParameters$BasisType.STANDARD has only one value
+tbuktu_ntru._474.original.SignatureParameters$BasisType.STANDARD != null
+tbuktu_ntru._474.original.SignatureParameters$BasisType.TRANSPOSE has only one value
+tbuktu_ntru._474.original.SignatureParameters$BasisType.TRANSPOSE != null
+tbuktu_ntru._474.original.SignatureParameters$BasisType.$VALUES has only one value
+tbuktu_ntru._474.original.SignatureParameters$BasisType.$VALUES != null
+tbuktu_ntru._474.original.SignatureParameters$BasisType.$VALUES[] contains no nulls and has only one value, of length 2
+tbuktu_ntru._474.original.SignatureParameters$BasisType.$VALUES[] elements != null
+tbuktu_ntru._474.original.SignatureParameters$BasisType.$VALUES[].getClass().getName() == [tbuktu_ntru._474.original.SignatureParameters.BasisType, tbuktu_ntru._474.original.SignatureParameters.BasisType]
+tbuktu_ntru._474.original.SignatureParameters$KeyGenAlg.RESULTANT has only one value
+tbuktu_ntru._474.original.SignatureParameters$KeyGenAlg.RESULTANT != null
+tbuktu_ntru._474.original.SignatureParameters$KeyGenAlg.FLOAT has only one value
+tbuktu_ntru._474.original.SignatureParameters$KeyGenAlg.FLOAT != null
+tbuktu_ntru._474.original.SignatureParameters$KeyGenAlg.$VALUES has only one value
+tbuktu_ntru._474.original.SignatureParameters$KeyGenAlg.$VALUES != null
+tbuktu_ntru._474.original.SignatureParameters$KeyGenAlg.$VALUES[] contains no nulls and has only one value, of length 2
+tbuktu_ntru._474.original.SignatureParameters$KeyGenAlg.$VALUES[] elements != null
+tbuktu_ntru._474.original.SignatureParameters$KeyGenAlg.$VALUES[].getClass().getName() == [tbuktu_ntru._474.original.SignatureParameters.KeyGenAlg, tbuktu_ntru._474.original.SignatureParameters.KeyGenAlg]
+tbuktu_ntru._474.original.SignatureParameters$TernaryPolynomialType.SIMPLE has only one value
+tbuktu_ntru._474.original.SignatureParameters$TernaryPolynomialType.SIMPLE != null
+tbuktu_ntru._474.original.SignatureParameters$TernaryPolynomialType.PRODUCT has only one value
+tbuktu_ntru._474.original.SignatureParameters$TernaryPolynomialType.PRODUCT != null
+tbuktu_ntru._474.original.SignatureParameters$TernaryPolynomialType.$VALUES has only one value
+tbuktu_ntru._474.original.SignatureParameters$TernaryPolynomialType.$VALUES != null
+tbuktu_ntru._474.original.SignatureParameters$TernaryPolynomialType.$VALUES[] contains no nulls and has only one value, of length 2
+tbuktu_ntru._474.original.SignatureParameters$TernaryPolynomialType.$VALUES[] elements != null
+tbuktu_ntru._474.original.SignatureParameters$TernaryPolynomialType.$VALUES[].getClass().getName() == [tbuktu_ntru._474.original.SignatureParameters.TernaryPolynomialType, tbuktu_ntru._474.original.SignatureParameters.TernaryPolynomialType]
+size(tbuktu_ntru._474.original.SignatureParameters$BasisType.$VALUES[]) == 2
+size(tbuktu_ntru._474.original.SignatureParameters$KeyGenAlg.$VALUES[]) == 2
+size(tbuktu_ntru._474.original.SignatureParameters$TernaryPolynomialType.$VALUES[]) == 2
+===========================================================================
+tbuktu_ntru._474.original.SignatureParameters:::OBJECT
+this.N one of { 157, 439, 743 }
+this.q one of { 256, 2048 }
+this.d >= 0
+this.d1 >= 0
+this.d2 >= 0
+this.d3 >= 0
+this.B == 1
+this.beta one of { 0.127, 0.165, 0.38 }
+this.normBound one of { 200.0, 400.0, 405.0 }
+this.normBoundSq >= 0.0
+this.signFailTolerance == 100
+this.keyNormBound one of { 80.0, 280.0, 360.0 }
+this.keyNormBoundSq >= 0.0
+this.basisType has only one value
+this.basisType != null
+this.bitsF == 6
+this.keyGenAlg has only one value
+this.keyGenAlg != null
+this.hashAlg != null
+this.polyType != null
+===========================================================================
+tbuktu_ntru._474.original.SignatureParameters.init():::ENTER
+this.betaSq == 0.0
+this.normBoundSq == 0.0
+this.keyNormBoundSq == 0.0
+===========================================================================
+tbuktu_ntru._474.original.SignatureParameters.init():::EXIT
+tbuktu_ntru._474.original.SignatureParameters$BasisType.STANDARD == orig(tbuktu_ntru._474.original.SignatureParameters$BasisType.STANDARD)
+tbuktu_ntru._474.original.SignatureParameters$BasisType.TRANSPOSE == orig(tbuktu_ntru._474.original.SignatureParameters$BasisType.TRANSPOSE)
+tbuktu_ntru._474.original.SignatureParameters$BasisType.$VALUES == orig(tbuktu_ntru._474.original.SignatureParameters$BasisType.$VALUES)
+tbuktu_ntru._474.original.SignatureParameters$BasisType.$VALUES.getClass().getName() == orig(tbuktu_ntru._474.original.SignatureParameters$BasisType.$VALUES.getClass().getName())
+tbuktu_ntru._474.original.SignatureParameters$BasisType.$VALUES[] == orig(tbuktu_ntru._474.original.SignatureParameters$BasisType.$VALUES[])
+tbuktu_ntru._474.original.SignatureParameters$KeyGenAlg.RESULTANT == orig(tbuktu_ntru._474.original.SignatureParameters$KeyGenAlg.RESULTANT)
+tbuktu_ntru._474.original.SignatureParameters$KeyGenAlg.FLOAT == orig(tbuktu_ntru._474.original.SignatureParameters$KeyGenAlg.FLOAT)
+tbuktu_ntru._474.original.SignatureParameters$KeyGenAlg.$VALUES == orig(tbuktu_ntru._474.original.SignatureParameters$KeyGenAlg.$VALUES)
+tbuktu_ntru._474.original.SignatureParameters$KeyGenAlg.$VALUES.getClass().getName() == orig(tbuktu_ntru._474.original.SignatureParameters$KeyGenAlg.$VALUES.getClass().getName())
+tbuktu_ntru._474.original.SignatureParameters$KeyGenAlg.$VALUES[] == orig(tbuktu_ntru._474.original.SignatureParameters$KeyGenAlg.$VALUES[])
+tbuktu_ntru._474.original.SignatureParameters$TernaryPolynomialType.SIMPLE == orig(tbuktu_ntru._474.original.SignatureParameters$TernaryPolynomialType.SIMPLE)
+tbuktu_ntru._474.original.SignatureParameters$TernaryPolynomialType.PRODUCT == orig(tbuktu_ntru._474.original.SignatureParameters$TernaryPolynomialType.PRODUCT)
+tbuktu_ntru._474.original.SignatureParameters$TernaryPolynomialType.$VALUES == orig(tbuktu_ntru._474.original.SignatureParameters$TernaryPolynomialType.$VALUES)
+tbuktu_ntru._474.original.SignatureParameters$TernaryPolynomialType.$VALUES.getClass().getName() == orig(tbuktu_ntru._474.original.SignatureParameters$TernaryPolynomialType.$VALUES.getClass().getName())
+tbuktu_ntru._474.original.SignatureParameters$TernaryPolynomialType.$VALUES[] == orig(tbuktu_ntru._474.original.SignatureParameters$TernaryPolynomialType.$VALUES[])
+this.N == orig(this.N)
+this.q == orig(this.q)
+this.d == orig(this.d)
+this.d1 == orig(this.d1)
+this.d2 == orig(this.d2)
+this.d3 == orig(this.d3)
+this.B == orig(this.B)
+this.beta == orig(this.beta)
+this.normBound == orig(this.normBound)
+this.signFailTolerance == orig(this.signFailTolerance)
+this.keyNormBound == orig(this.keyNormBound)
+this.primeCheck == orig(this.primeCheck)
+this.basisType == orig(this.basisType)
+this.bitsF == orig(this.bitsF)
+this.sparse == orig(this.sparse)
+this.keyGenAlg == orig(this.keyGenAlg)
+this.hashAlg == orig(this.hashAlg)
+this.polyType == orig(this.polyType)
+this.betaSq one of { 0.016129, 0.027225003, 0.1444 }
+this.normBoundSq one of { 40000.0, 160000.0, 164025.0 }
+this.keyNormBoundSq one of { 6400.0, 78400.0, 129600.0 }

@@ -1,0 +1,193 @@
+===========================================================================
+junit.runner.Version.id():::EXIT
+return has only one value
+===========================================================================
+tucanmobile.TucanmobileTest_1$CommonLogic:::OBJECT
+this has only one value
+===========================================================================
+tucanmobile.TucanmobileTest_1$CommonLogic.CommonLogic():::EXIT
+===========================================================================
+tucanmobile.TucanmobileTest_1$CommonLogic.testDismissWhenDialogIsNotShowing():::ENTER
+===========================================================================
+tucanmobile.TucanmobileTest_1$CommonLogic.testDismissWhenDialogIsNotShowing():::EXIT
+===========================================================================
+tucanmobile.TucanmobileTest_1$Original:::OBJECT
+this has only one value
+===========================================================================
+tucanmobile.TucanmobileTest_1$Original.Original():::EXIT
+===========================================================================
+tucanmobile.TucanmobileTest_1$Original.createDriver():::ENTER
+===========================================================================
+tucanmobile.TucanmobileTest_1$Original.createDriver():::EXIT
+return has only one value
+return.targetClass has only one value
+return.instance has only one value
+===========================================================================
+tucanmobile._1.Driver:::OBJECT
+this has only one value
+this.targetClass has only one value
+this.instance has only one value
+===========================================================================
+tucanmobile._1.Driver.getDialog():::ENTER
+===========================================================================
+tucanmobile._1.Driver.getDialog():::EXIT
+this.targetClass == orig(this.targetClass)
+this.instance == orig(this.instance)
+this.instance.getClass().getName() == orig(this.instance.getClass().getName())
+return has only one value
+return.showing == true
+return.title has only one value
+===========================================================================
+tucanmobile._1.Driver.invokeOnPostExecute(tucanmobile._1.requirements.AnswerObject):::ENTER
+result has only one value
+result.HTML_text has only one value
+result.redirectURL has only one value
+result.lastcalledURL == null
+result.Cookies == null
+===========================================================================
+tucanmobile._1.Driver.invokeOnPostExecute(tucanmobile._1.requirements.AnswerObject):::EXIT
+this.targetClass == orig(this.targetClass)
+this.instance == orig(this.instance)
+this.instance.getClass().getName() == orig(this.instance.getClass().getName())
+result.HTML_text == orig(result.HTML_text)
+result.redirectURL == orig(result.redirectURL)
+result.lastcalledURL == orig(result.lastcalledURL)
+result.Cookies == orig(result.Cookies)
+result.HTML_text has only one value
+result.redirectURL has only one value
+result.lastcalledURL == null
+result.Cookies == null
+===========================================================================
+tucanmobile._1.Driver.invokeOnPreExecute():::ENTER
+===========================================================================
+tucanmobile._1.Driver.invokeOnPreExecute():::EXIT
+this.targetClass == orig(this.targetClass)
+this.instance == orig(this.instance)
+this.instance.getClass().getName() == orig(this.instance.getClass().getName())
+===========================================================================
+tucanmobile._1.mocks.AsyncTask:::OBJECT
+this has only one value
+===========================================================================
+tucanmobile._1.mocks.AsyncTask.AsyncTask():::EXIT
+===========================================================================
+tucanmobile._1.mocks.ProgressDialog:::OBJECT
+this has only one value
+===========================================================================
+tucanmobile._1.mocks.ProgressDialog.ProgressDialog():::EXIT
+this.showing == true
+this.title == null
+===========================================================================
+tucanmobile._1.mocks.ProgressDialog.isShowing():::ENTER
+this.showing == false
+===========================================================================
+tucanmobile._1.mocks.ProgressDialog.isShowing():::EXIT
+this.showing == orig(this.showing)
+this.title == orig(this.title)
+this.showing == false
+return == false
+===========================================================================
+tucanmobile._1.mocks.ProgressDialog.isShowing():::EXIT;condition="not(return == true)"
+===========================================================================
+tucanmobile._1.mocks.ProgressDialog.setShowing(boolean):::ENTER
+this.showing == true
+this.title has only one value
+showing == false
+===========================================================================
+tucanmobile._1.mocks.ProgressDialog.setShowing(boolean):::EXIT
+this.title == orig(this.title)
+this.showing == false
+this.title has only one value
+===========================================================================
+tucanmobile._1.mocks.Resources:::OBJECT
+this has only one value
+===========================================================================
+tucanmobile._1.mocks.Resources.Resources():::EXIT
+===========================================================================
+tucanmobile._1.mocks.Resources.getString(int):::ENTER
+resId one of { 1, 2 }
+===========================================================================
+tucanmobile._1.mocks.Resources.getString(int):::EXIT
+===========================================================================
+tucanmobile._1.mocks.SimpleWebListActivity:::OBJECT
+this has only one value
+this.resources has only one value
+===========================================================================
+tucanmobile._1.mocks.SimpleWebListActivity.SimpleWebListActivity():::EXIT
+===========================================================================
+tucanmobile._1.mocks.SimpleWebListActivity.getResources():::ENTER
+===========================================================================
+tucanmobile._1.mocks.SimpleWebListActivity.getResources():::EXIT
+this.resources == orig(this.resources)
+return has only one value
+===========================================================================
+tucanmobile._1.mocks.SimpleWebListActivity.onPostExecute(tucanmobile._1.requirements.AnswerObject):::ENTER
+result has only one value
+result.HTML_text has only one value
+result.redirectURL has only one value
+result.lastcalledURL == null
+result.Cookies == null
+===========================================================================
+tucanmobile._1.mocks.SimpleWebListActivity.onPostExecute(tucanmobile._1.requirements.AnswerObject):::EXIT
+this.resources == orig(this.resources)
+result.HTML_text == orig(result.HTML_text)
+result.redirectURL == orig(result.redirectURL)
+result.lastcalledURL == orig(result.lastcalledURL)
+result.Cookies == orig(result.Cookies)
+result.HTML_text has only one value
+result.redirectURL has only one value
+result.lastcalledURL == null
+result.Cookies == null
+===========================================================================
+tucanmobile._1.original.SimpleSecureBrowser:::OBJECT
+this has only one value
+this.outerCallingListActivity has only one value
+this.outerCallingListActivity.resources has only one value
+this.outerCallingActivity == null
+===========================================================================
+tucanmobile._1.original.SimpleSecureBrowser.SimpleSecureBrowser(tucanmobile._1.mocks.SimpleWebListActivity):::ENTER
+callingActivity has only one value
+callingActivity.resources has only one value
+===========================================================================
+tucanmobile._1.original.SimpleSecureBrowser.SimpleSecureBrowser(tucanmobile._1.mocks.SimpleWebListActivity):::EXIT
+callingActivity.resources == orig(callingActivity.resources)
+this.dialog == null
+callingActivity.resources has only one value
+===========================================================================
+tucanmobile._1.original.SimpleSecureBrowser.onPostExecute(tucanmobile._1.requirements.AnswerObject):::ENTER
+this.dialog has only one value
+this.dialog.showing == false
+this.dialog.title has only one value
+result has only one value
+result.HTML_text has only one value
+result.redirectURL has only one value
+result.lastcalledURL == null
+result.Cookies == null
+===========================================================================
+tucanmobile._1.original.SimpleSecureBrowser.onPostExecute(tucanmobile._1.requirements.AnswerObject):::EXIT
+this.outerCallingListActivity == orig(this.outerCallingListActivity)
+this.outerCallingListActivity.resources == orig(this.outerCallingListActivity.resources)
+this.outerCallingActivity == orig(this.outerCallingActivity)
+this.dialog == orig(this.dialog)
+this.dialog.showing == orig(this.dialog.showing)
+result.HTML_text == orig(result.HTML_text)
+result.redirectURL == orig(result.redirectURL)
+result.lastcalledURL == orig(result.lastcalledURL)
+result.Cookies == orig(result.Cookies)
+this.dialog has only one value
+this.dialog.showing == false
+this.dialog.title has only one value
+result.HTML_text has only one value
+result.redirectURL has only one value
+result.lastcalledURL == null
+result.Cookies == null
+===========================================================================
+tucanmobile._1.original.SimpleSecureBrowser.onPreExecute():::ENTER
+this.dialog == null
+===========================================================================
+tucanmobile._1.original.SimpleSecureBrowser.onPreExecute():::EXIT
+this.outerCallingListActivity == orig(this.outerCallingListActivity)
+this.outerCallingListActivity.resources == orig(this.outerCallingListActivity.resources)
+this.outerCallingActivity == orig(this.outerCallingActivity)
+this.dialog has only one value
+this.dialog.showing == true
+this.dialog.title has only one value

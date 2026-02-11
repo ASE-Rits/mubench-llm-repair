@@ -1,0 +1,93 @@
+// Declarations for wordpressa.WordpressaTest_1$Misuse
+// Declarations written 2026-02-11T23:08:17.487770400 by daikon.DynComp
+
+decl-version 2.0
+var-comparability implicit
+
+ppt wordpressa.WordpressaTest_1$Misuse:::CLASS
+ppt-type class
+
+ppt wordpressa.WordpressaTest_1$Misuse:::OBJECT
+ppt-type object
+variable this
+  var-kind variable
+  dec-type wordpressa.WordpressaTest_1$Misuse
+  rep-type hashcode
+  flags is_param non_null
+  comparability 2
+
+ppt wordpressa.WordpressaTest_1$Misuse.Misuse():::ENTER
+ppt-type enter
+
+ppt wordpressa.WordpressaTest_1$Misuse.Misuse():::EXIT61
+ppt-type subexit
+variable this
+  var-kind variable
+  dec-type wordpressa.WordpressaTest_1$Misuse
+  rep-type hashcode
+  flags is_param non_null
+  comparability 2
+
+ppt wordpressa.WordpressaTest_1$Misuse.driver():::ENTER
+ppt-type enter
+variable this
+  var-kind variable
+  dec-type wordpressa.WordpressaTest_1$Misuse
+  rep-type hashcode
+  flags is_param non_null
+  comparability 2
+
+ppt wordpressa.WordpressaTest_1$Misuse.driver():::EXIT65
+ppt-type subexit
+variable this
+  var-kind variable
+  dec-type wordpressa.WordpressaTest_1$Misuse
+  rep-type hashcode
+  flags is_param non_null
+  comparability 7
+variable return
+  var-kind return
+  dec-type wordpressa._1.Driver
+  rep-type hashcode
+  comparability 2
+variable wordpressa._1.Driver.BASE_PACKAGE
+  var-kind variable
+  dec-type java.lang.String
+  rep-type hashcode
+  flags nomod
+  comparability 8
+variable wordpressa._1.Driver.BASE_PACKAGE.toString
+  var-kind function toString()
+  dec-type java.lang.String
+  rep-type java.lang.String
+  function-args wordpressa._1.Driver.BASE_PACKAGE
+  flags synthetic to_string
+  comparability 9
+variable return.fragment
+  var-kind field fragment
+  dec-type java.lang.Object
+  rep-type hashcode
+  comparability 3
+variable return.fragment.getClass().getName()
+  var-kind function getClass().getName()
+  dec-type java.lang.Class
+  rep-type java.lang.String
+  function-args return.fragment
+  flags synthetic classname non_null
+  comparability 1
+variable return.fragmentClass
+  var-kind field fragmentClass
+  dec-type java.lang.Class
+  rep-type hashcode
+  comparability 4
+variable return.restoreListScrollPosition
+  var-kind field restoreListScrollPosition
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 6
+variable return.refreshNotes
+  var-kind field refreshNotes
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 5
+

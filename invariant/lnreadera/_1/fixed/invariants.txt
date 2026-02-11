@@ -1,0 +1,87 @@
+===========================================================================
+junit.runner.Version.id():::EXIT
+return has only one value
+===========================================================================
+lnreadera.LnreaderaTest_1$CommonCases:::OBJECT
+this has only one value
+===========================================================================
+lnreadera.LnreaderaTest_1$CommonCases.CommonCases():::EXIT
+===========================================================================
+lnreadera.LnreaderaTest_1$CommonCases.testOnDestroyCallsSuper():::ENTER
+===========================================================================
+lnreadera.LnreaderaTest_1$CommonCases.testOnDestroyCallsSuper():::EXIT
+===========================================================================
+lnreadera.LnreaderaTest_1$Fixed:::OBJECT
+this has only one value
+===========================================================================
+lnreadera.LnreaderaTest_1$Fixed.Fixed():::EXIT
+===========================================================================
+lnreadera.LnreaderaTest_1$Fixed.driver():::ENTER
+===========================================================================
+lnreadera.LnreaderaTest_1$Fixed.driver():::EXIT
+return has only one value
+return.targetClass has only one value
+return.activity has only one value
+return.activity.superOnDestroyCalled == false
+===========================================================================
+lnreadera._1.Driver:::OBJECT
+this has only one value
+this.targetClass has only one value
+this.activity has only one value
+===========================================================================
+lnreadera._1.Driver.executeOnDestroyAndCheckSuperCalled():::ENTER
+this.activity.superOnDestroyCalled == false
+===========================================================================
+lnreadera._1.Driver.executeOnDestroyAndCheckSuperCalled():::EXIT
+this.targetClass == orig(this.targetClass)
+this.activity == orig(this.activity)
+this.activity.superOnDestroyCalled == true
+return == true
+===========================================================================
+lnreadera._1.Driver.executeOnDestroyAndCheckSuperCalled():::EXIT;condition="return == true"
+===========================================================================
+lnreadera._1.fixed.DisplayImageActivity:::CLASS
+lnreadera._1.fixed.DisplayImageActivity.TAG has only one value
+===========================================================================
+lnreadera._1.fixed.DisplayImageActivity:::OBJECT
+this has only one value
+this.imgWebView == null
+this.task == null
+this.url == null
+this.dialog == null
+===========================================================================
+lnreadera._1.fixed.DisplayImageActivity.DisplayImageActivity():::EXIT
+this.superOnDestroyCalled == false
+===========================================================================
+lnreadera._1.fixed.DisplayImageActivity.onDestroy():::ENTER
+this.superOnDestroyCalled == false
+===========================================================================
+lnreadera._1.fixed.DisplayImageActivity.onDestroy():::EXIT
+lnreadera._1.fixed.DisplayImageActivity.TAG == orig(lnreadera._1.fixed.DisplayImageActivity.TAG)
+this.imgWebView == orig(this.imgWebView)
+this.task == orig(this.task)
+this.url == orig(this.url)
+this.dialog == orig(this.dialog)
+this.superOnDestroyCalled == true
+===========================================================================
+lnreadera._1.mocks.SherlockActivity:::OBJECT
+this has only one value
+===========================================================================
+lnreadera._1.mocks.SherlockActivity.SherlockActivity():::EXIT
+this.superOnDestroyCalled == false
+===========================================================================
+lnreadera._1.mocks.SherlockActivity.isSuperOnDestroyCalled():::ENTER
+this.superOnDestroyCalled == true
+===========================================================================
+lnreadera._1.mocks.SherlockActivity.isSuperOnDestroyCalled():::EXIT
+this.superOnDestroyCalled == orig(this.superOnDestroyCalled)
+this.superOnDestroyCalled == true
+return == true
+===========================================================================
+lnreadera._1.mocks.SherlockActivity.isSuperOnDestroyCalled():::EXIT;condition="return == true"
+===========================================================================
+lnreadera._1.mocks.SherlockActivity.onDestroy():::ENTER
+this.superOnDestroyCalled == false
+===========================================================================
+lnreadera._1.mocks.SherlockActivity.onDestroy():::EXIT
+this.superOnDestroyCalled == true

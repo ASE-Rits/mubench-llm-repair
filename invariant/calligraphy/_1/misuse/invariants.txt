@@ -1,0 +1,136 @@
+===========================================================================
+calligraphy._1.CalligraphyTest_1$CommonCases:::OBJECT
+===========================================================================
+calligraphy._1.CalligraphyTest_1$CommonCases.CommonCases():::EXIT
+===========================================================================
+calligraphy._1.CalligraphyTest_1$Misuse:::OBJECT
+===========================================================================
+calligraphy._1.CalligraphyTest_1$Misuse.Misuse():::EXIT
+===========================================================================
+calligraphy._1.CalligraphyTest_1$Misuse.driver():::ENTER
+===========================================================================
+calligraphy._1.CalligraphyTest_1$Misuse.driver():::EXIT
+return.targetClass has only one value
+===========================================================================
+calligraphy._1.Driver$ConfigurableTheme:::OBJECT
+this has only one value
+this.resolvedResourceId == 100
+this.typedArray has only one value
+this.obtainException == null
+===========================================================================
+calligraphy._1.Driver$ConfigurableTheme.obtainStyledAttributes(int, int[]):::ENTER
+resId == 100
+attrs has only one value
+attrs[] == [11]
+attrs[] elements == 11
+size(attrs[]) == 1
+===========================================================================
+calligraphy._1.Driver$ConfigurableTheme.obtainStyledAttributes(int, int[]):::EXIT
+this.resolvedResourceId == orig(this.resolvedResourceId)
+this.typedArray == orig(this.typedArray)
+this.obtainException == orig(this.obtainException)
+attrs[] == orig(attrs[])
+attrs[] == [11]
+attrs[] elements == 11
+return has only one value
+===========================================================================
+calligraphy._1.Driver$ConfigurableTheme.resolveAttribute(int, calligraphy._1.mocks.TypedValue, boolean):::ENTER
+styleId == 10
+outValue has only one value
+outValue.resourceId == 0
+resolveRefs == true
+===========================================================================
+calligraphy._1.Driver$ConfigurableTheme.resolveAttribute(int, calligraphy._1.mocks.TypedValue, boolean):::EXIT
+this.resolvedResourceId == orig(this.resolvedResourceId)
+this.typedArray == orig(this.typedArray)
+this.obtainException == orig(this.obtainException)
+outValue.resourceId == 100
+===========================================================================
+calligraphy._1.Driver$InvocationResult:::OBJECT
+this.value == null
+===========================================================================
+calligraphy._1.Driver$InvocationResult.isSuccess():::ENTER
+===========================================================================
+calligraphy._1.Driver$InvocationResult.isSuccess():::EXIT
+this.value == orig(this.value)
+this.error == orig(this.error)
+return == false
+===========================================================================
+calligraphy._1.Driver$InvocationResult.isSuccess():::EXIT;condition="not(return == true)"
+===========================================================================
+calligraphy._1.Driver$StyledContext:::OBJECT
+this has only one value
+this.typedArray has only one value
+this.resources has only one value
+===========================================================================
+calligraphy._1.Driver$StyledContext.StyledContext(calligraphy._1.mocks.TypedArray):::ENTER
+typedArray has only one value
+===========================================================================
+calligraphy._1.Driver$StyledContext.StyledContext(calligraphy._1.mocks.TypedArray):::EXIT
+===========================================================================
+calligraphy._1.Driver$StyledContext.obtainStyledAttributes(calligraphy._1.mocks.AttributeSet, int[]):::ENTER
+attrs has only one value
+attributeIds has only one value
+attributeIds[] == [1]
+attributeIds[] elements == 1
+size(attributeIds[]) == 1
+===========================================================================
+calligraphy._1.Driver$StyledContext.obtainStyledAttributes(calligraphy._1.mocks.AttributeSet, int[]):::EXIT
+this.typedArray == orig(this.typedArray)
+this.resources == orig(this.resources)
+attributeIds[] == orig(attributeIds[])
+attributeIds[] == [1]
+attributeIds[] elements == 1
+return has only one value
+===========================================================================
+calligraphy._1.Driver$ThemeContext:::OBJECT
+this has only one value
+this.theme has only one value
+this.resources has only one value
+===========================================================================
+calligraphy._1.Driver$ThemeContext.ThemeContext(calligraphy._1.mocks.Resources$Theme):::ENTER
+theme has only one value
+===========================================================================
+calligraphy._1.Driver$ThemeContext.ThemeContext(calligraphy._1.mocks.Resources$Theme):::EXIT
+===========================================================================
+calligraphy._1.Driver$ThemeContext.getTheme():::ENTER
+===========================================================================
+calligraphy._1.Driver$ThemeContext.getTheme():::EXIT
+this.theme == orig(this.theme)
+this.resources == orig(this.resources)
+return has only one value
+===========================================================================
+calligraphy._1.mocks.AttributeSet:::OBJECT
+this has only one value
+===========================================================================
+calligraphy._1.mocks.AttributeSet.AttributeSet():::EXIT
+===========================================================================
+calligraphy._1.mocks.Context:::OBJECT
+===========================================================================
+calligraphy._1.mocks.Context.Context():::EXIT
+===========================================================================
+calligraphy._1.mocks.Resources$Theme:::OBJECT
+this has only one value
+===========================================================================
+calligraphy._1.mocks.Resources$Theme.Theme():::EXIT
+===========================================================================
+calligraphy._1.mocks.Resources:::OBJECT
+===========================================================================
+calligraphy._1.mocks.Resources.Resources():::EXIT
+===========================================================================
+calligraphy._1.mocks.TypedArray:::OBJECT
+===========================================================================
+calligraphy._1.mocks.TypedArray.TypedArray():::EXIT
+===========================================================================
+calligraphy._1.mocks.TypedArray.recycle():::ENTER
+===========================================================================
+calligraphy._1.mocks.TypedArray.recycle():::EXIT
+===========================================================================
+calligraphy._1.mocks.TypedValue:::OBJECT
+this has only one value
+this.resourceId == 0
+===========================================================================
+calligraphy._1.mocks.TypedValue.TypedValue():::EXIT
+===========================================================================
+junit.runner.Version.id():::EXIT
+return has only one value

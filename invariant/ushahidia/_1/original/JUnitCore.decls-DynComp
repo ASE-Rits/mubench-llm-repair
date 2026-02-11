@@ -1,0 +1,88 @@
+// Declarations for ushahidia.UshahidiaTest_1$Original
+// Declarations written 2026-02-11T23:07:56.974478669 by daikon.DynComp
+
+decl-version 2.0
+var-comparability implicit
+
+ppt ushahidia.UshahidiaTest_1$Original:::CLASS
+ppt-type class
+
+ppt ushahidia.UshahidiaTest_1$Original:::OBJECT
+ppt-type object
+variable this
+  var-kind variable
+  dec-type ushahidia.UshahidiaTest_1$Original
+  rep-type hashcode
+  flags is_param non_null
+  comparability 2
+
+ppt ushahidia.UshahidiaTest_1$Original.Original():::ENTER
+ppt-type enter
+
+ppt ushahidia.UshahidiaTest_1$Original.Original():::EXIT49
+ppt-type subexit
+variable this
+  var-kind variable
+  dec-type ushahidia.UshahidiaTest_1$Original
+  rep-type hashcode
+  flags is_param non_null
+  comparability 2
+
+ppt ushahidia.UshahidiaTest_1$Original.createDriver():::ENTER
+ppt-type enter
+variable this
+  var-kind variable
+  dec-type ushahidia.UshahidiaTest_1$Original
+  rep-type hashcode
+  flags is_param non_null
+  comparability 2
+
+ppt ushahidia.UshahidiaTest_1$Original.createDriver():::EXIT52
+ppt-type subexit
+variable this
+  var-kind variable
+  dec-type ushahidia.UshahidiaTest_1$Original
+  rep-type hashcode
+  flags is_param non_null
+  comparability 6
+variable return
+  var-kind return
+  dec-type ushahidia._1.Driver
+  rep-type hashcode
+  comparability 2
+variable ushahidia._1.Driver.BASE_PACKAGE
+  var-kind variable
+  dec-type java.lang.String
+  rep-type hashcode
+  flags nomod
+  comparability 7
+variable ushahidia._1.Driver.BASE_PACKAGE.toString
+  var-kind function toString()
+  dec-type java.lang.String
+  rep-type java.lang.String
+  function-args ushahidia._1.Driver.BASE_PACKAGE
+  flags synthetic to_string
+  comparability 8
+variable return.instance
+  var-kind field instance
+  dec-type java.lang.Object
+  rep-type hashcode
+  comparability 3
+variable return.instance.getClass().getName()
+  var-kind function getClass().getName()
+  dec-type java.lang.Class
+  rep-type java.lang.String
+  function-args return.instance
+  flags synthetic classname non_null
+  comparability 1
+variable return.targetClass
+  var-kind field targetClass
+  dec-type java.lang.Class
+  rep-type hashcode
+  comparability 5
+variable return.mockDb
+  var-kind field mockDb
+  dec-type ushahidia._1.mocks.SQLiteDatabase
+  rep-type hashcode
+  comparability 4
+

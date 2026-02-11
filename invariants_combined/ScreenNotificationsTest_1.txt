@@ -1,0 +1,205 @@
+# ScreenNotificationsTest_1
+
+## ORIGINAL
+===========================================================================
+screen_notifications._1.original.App:::OBJECT
+this has only one value
+this.name == null
+this.packageName == null
+this.icon == null
+
+===========================================================================
+screen_notifications._1.original.App.App():::EXIT
+
+===========================================================================
+screen_notifications._1.original.AppsActivity:::OBJECT
+this has only one value
+this.mLoadingDialog == null
+this.mAdapter == null
+this.loaderManager has only one value
+this.menuInflater has only one value
+this.views has only one value
+this.contentViewId == 0
+this.packageManager has only one value
+this.packageManager.installedApps has only one value
+this.packageManager.installedApps[] elements has only one value
+this.packageManager.installedApps[].getClass().getName() one of { [], [screen_notifications._1.mocks.android.content.pm.ApplicationInfo] }
+this.resources has only one value
+size(this.packageManager.installedApps[]) one of { 0, 1 }
+
+===========================================================================
+screen_notifications._1.original.AppsActivity.AppsActivity():::EXIT
+this.packageManager.installedApps[] == []
+this.packageManager.installedApps[].getClass().getName() == []
+
+===========================================================================
+screen_notifications._1.original.AppsActivity.loadInBackground(int):::ENTER
+this.packageManager.installedApps[] contains no nulls and has only one value, of length 1
+this.packageManager.installedApps[].getClass().getName() == [screen_notifications._1.mocks.android.content.pm.ApplicationInfo]
+id == 0
+size(this.packageManager.installedApps[]) == 1
+
+===========================================================================
+screen_notifications._1.original.AppsActivity.loadInBackground(int):::EXIT
+this.mLoadingDialog == orig(this.mLoadingDialog)
+this.mAdapter == orig(this.mAdapter)
+this.loaderManager == orig(this.loaderManager)
+this.menuInflater == orig(this.menuInflater)
+this.views == orig(this.views)
+this.views.getClass().getName() == orig(this.views.getClass().getName())
+this.contentViewId == orig(this.contentViewId)
+this.packageManager == orig(this.packageManager)
+this.packageManager.installedApps == orig(this.packageManager.installedApps)
+this.packageManager.installedApps[] == orig(this.packageManager.installedApps[])
+this.packageManager.installedApps.getClass().getName() == orig(this.packageManager.installedApps.getClass().getName())
+this.resources == orig(this.resources)
+this.packageManager.installedApps[] contains no nulls and has only one value, of length 1
+this.packageManager.installedApps[].getClass().getName() == [screen_notifications._1.mocks.android.content.pm.ApplicationInfo]
+return has only one value
+return.sections has only one value
+return.sections[] contains no nulls and has only one value, of length 1
+return.sections[] elements has only one value
+return.sections[].getClass().getName() == [screen_notifications._1.original.Section]
+return.apps has only one value
+return.apps[] contains no nulls and has only one value, of length 1
+return.apps[] elements has only one value
+return.apps[].getClass().getName() == [screen_notifications._1.original.App]
+return.apps[].name contains no nulls and has only one value, of length 1
+return.apps[].name elements has only one value
+return.apps[].packageName contains no nulls and has only one value, of length 1
+return.apps[].packageName elements has only one value
+return.apps[].icon contains no nulls and has only one value, of length 1
+return.apps[].icon elements has only one value
+size(this.packageManager.installedApps[]) == 1
+size(return.sections[]) == 1
+size(return.apps[]) == 1
+
+===========================================================================
+screen_notifications._1.original.Data:::OBJECT
+this has only one value
+this.sections == null
+this.apps == null
+
+===========================================================================
+screen_notifications._1.original.Data.Data():::EXIT
+
+## MISUSE
+===========================================================================
+screen_notifications._1.misuse.App:::OBJECT
+this has only one value
+this.name == null
+this.packageName == null
+this.icon == null
+
+===========================================================================
+screen_notifications._1.misuse.App.App():::EXIT
+
+===========================================================================
+screen_notifications._1.misuse.AppsActivity:::OBJECT
+this has only one value
+this.mLoadingDialog == null
+this.mAdapter == null
+this.loaderManager has only one value
+this.menuInflater has only one value
+this.views has only one value
+this.contentViewId == 0
+this.packageManager has only one value
+this.packageManager.installedApps has only one value
+this.packageManager.installedApps[] == []
+this.packageManager.installedApps[].getClass().getName() == []
+this.resources has only one value
+
+===========================================================================
+screen_notifications._1.misuse.AppsActivity.AppsActivity():::EXIT
+
+===========================================================================
+screen_notifications._1.misuse.Data:::OBJECT
+this has only one value
+this.sections == null
+this.apps == null
+
+===========================================================================
+screen_notifications._1.misuse.Data.Data():::EXIT
+
+## FIXED
+===========================================================================
+screen_notifications._1.fixed.App:::OBJECT
+this has only one value
+this.name == null
+this.packageName == null
+this.icon == null
+
+===========================================================================
+screen_notifications._1.fixed.App.App():::EXIT
+
+===========================================================================
+screen_notifications._1.fixed.AppsActivity:::OBJECT
+this has only one value
+this.mLoadingDialog == null
+this.mAdapter == null
+this.loaderManager has only one value
+this.menuInflater has only one value
+this.views has only one value
+this.contentViewId == 0
+this.packageManager has only one value
+this.packageManager.installedApps has only one value
+this.packageManager.installedApps[] elements has only one value
+this.packageManager.installedApps[].getClass().getName() one of { [], [screen_notifications._1.mocks.android.content.pm.ApplicationInfo] }
+this.resources has only one value
+size(this.packageManager.installedApps[]) one of { 0, 1 }
+
+===========================================================================
+screen_notifications._1.fixed.AppsActivity.AppsActivity():::EXIT
+this.packageManager.installedApps[] == []
+this.packageManager.installedApps[].getClass().getName() == []
+
+===========================================================================
+screen_notifications._1.fixed.AppsActivity.loadInBackground(int):::ENTER
+this.packageManager.installedApps[] contains no nulls and has only one value, of length 1
+this.packageManager.installedApps[].getClass().getName() == [screen_notifications._1.mocks.android.content.pm.ApplicationInfo]
+id == 0
+size(this.packageManager.installedApps[]) == 1
+
+===========================================================================
+screen_notifications._1.fixed.AppsActivity.loadInBackground(int):::EXIT
+this.mLoadingDialog == orig(this.mLoadingDialog)
+this.mAdapter == orig(this.mAdapter)
+this.loaderManager == orig(this.loaderManager)
+this.menuInflater == orig(this.menuInflater)
+this.views == orig(this.views)
+this.views.getClass().getName() == orig(this.views.getClass().getName())
+this.contentViewId == orig(this.contentViewId)
+this.packageManager == orig(this.packageManager)
+this.packageManager.installedApps == orig(this.packageManager.installedApps)
+this.packageManager.installedApps[] == orig(this.packageManager.installedApps[])
+this.packageManager.installedApps.getClass().getName() == orig(this.packageManager.installedApps.getClass().getName())
+this.resources == orig(this.resources)
+this.packageManager.installedApps[] contains no nulls and has only one value, of length 1
+this.packageManager.installedApps[].getClass().getName() == [screen_notifications._1.mocks.android.content.pm.ApplicationInfo]
+return has only one value
+return.sections has only one value
+return.sections[] contains no nulls and has only one value, of length 1
+return.sections[] elements has only one value
+return.sections[].getClass().getName() == [screen_notifications._1.fixed.Section]
+return.apps has only one value
+return.apps[] contains no nulls and has only one value, of length 1
+return.apps[] elements has only one value
+return.apps[].getClass().getName() == [screen_notifications._1.fixed.App]
+return.apps[].name contains no nulls and has only one value, of length 1
+return.apps[].name elements has only one value
+return.apps[].packageName contains no nulls and has only one value, of length 1
+return.apps[].packageName elements has only one value
+return.apps[].icon == [null]
+return.apps[].icon elements == null
+size(this.packageManager.installedApps[]) == 1
+size(return.sections[]) == 1
+size(return.apps[]) == 1
+
+===========================================================================
+screen_notifications._1.fixed.Data:::OBJECT
+this has only one value
+this.sections == null
+this.apps == null
+
+===========================================================================
+screen_notifications._1.fixed.Data.Data():::EXIT

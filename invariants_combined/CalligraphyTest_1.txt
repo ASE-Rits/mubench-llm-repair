@@ -1,0 +1,70 @@
+# CalligraphyTest_1
+
+## ORIGINAL
+===========================================================================
+calligraphy._1.original.CalligraphyUtils.pullFontPathFromStyle(calligraphy._1.mocks.Context, calligraphy._1.mocks.AttributeSet, int):::ENTER
+context has only one value
+context.resources has only one value
+attrs has only one value
+attributeId == 1
+
+===========================================================================
+calligraphy._1.original.CalligraphyUtils.pullFontPathFromStyle(calligraphy._1.mocks.Context, calligraphy._1.mocks.AttributeSet, int):::EXIT70
+
+===========================================================================
+calligraphy._1.original.CalligraphyUtils.pullFontPathFromStyle(calligraphy._1.mocks.Context, calligraphy._1.mocks.AttributeSet, int):::EXIT
+context.resources == orig(context.resources)
+context.resources has only one value
+return == null
+
+===========================================================================
+calligraphy._1.original.CalligraphyUtils.pullFontPathFromTheme(calligraphy._1.mocks.Context, int, int):::ENTER
+context has only one value
+context.resources has only one value
+styleId == 10
+attributeId == 11
+
+===========================================================================
+calligraphy._1.original.CalligraphyUtils.pullFontPathFromTheme(calligraphy._1.mocks.Context, int, int):::EXIT86
+
+===========================================================================
+calligraphy._1.original.CalligraphyUtils.pullFontPathFromTheme(calligraphy._1.mocks.Context, int, int):::EXIT
+context.resources == orig(context.resources)
+context.resources has only one value
+return == null
+
+## MISUSE
+
+
+## FIXED
+===========================================================================
+calligraphy._1.fixed.CalligraphyUtils.pullFontPathFromStyle(calligraphy._1.mocks.Context, calligraphy._1.mocks.AttributeSet, int):::ENTER
+context has only one value
+context.resources has only one value
+attrs has only one value
+attributeId == 1
+
+===========================================================================
+calligraphy._1.fixed.CalligraphyUtils.pullFontPathFromStyle(calligraphy._1.mocks.Context, calligraphy._1.mocks.AttributeSet, int):::EXIT72
+
+===========================================================================
+calligraphy._1.fixed.CalligraphyUtils.pullFontPathFromStyle(calligraphy._1.mocks.Context, calligraphy._1.mocks.AttributeSet, int):::EXIT
+context.resources == orig(context.resources)
+context.resources has only one value
+return has only one value
+
+===========================================================================
+calligraphy._1.fixed.CalligraphyUtils.pullFontPathFromTheme(calligraphy._1.mocks.Context, int, int):::ENTER
+context has only one value
+context.resources has only one value
+styleId == 10
+attributeId == 11
+
+===========================================================================
+calligraphy._1.fixed.CalligraphyUtils.pullFontPathFromTheme(calligraphy._1.mocks.Context, int, int):::EXIT91
+
+===========================================================================
+calligraphy._1.fixed.CalligraphyUtils.pullFontPathFromTheme(calligraphy._1.mocks.Context, int, int):::EXIT
+context.resources == orig(context.resources)
+context.resources has only one value
+return has only one value

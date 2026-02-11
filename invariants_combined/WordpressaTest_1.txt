@@ -1,0 +1,154 @@
+# WordpressaTest_1
+
+## ORIGINAL
+===========================================================================
+wordpressa._1.original.NotificationsListFragment:::OBJECT
+this.mFauxPullToRefreshHelper == null
+this.mNotesAdapter.notes[].getClass().getName() == [wordpressa._1.mocks.Note, wordpressa._1.mocks.Note, wordpressa._1.mocks.Note, wordpressa._1.mocks.Note, wordpressa._1.mocks.Note]
+this.mNotesAdapter.cursorClosed == false
+this.mNoteClickListener == null
+this.mRestoredListPosition one of { 0, 2 }
+this.mBucket == null
+this.listView.firstVisiblePosition == 0
+this.listView.selectionFromTop == -1
+this.listView.emptyView == null
+this.listAdapter == null
+size(this.mNotesAdapter.notes[]) == 5
+
+===========================================================================
+wordpressa._1.original.NotificationsListFragment.NotificationsListFragment():::EXIT
+this.mNotesAdapter == null
+this.mRestoredListPosition == 0
+this.isAdded == true
+
+===========================================================================
+wordpressa._1.original.NotificationsListFragment.restoreListScrollPosition():::ENTER
+this.isAdded == false
+
+===========================================================================
+wordpressa._1.original.NotificationsListFragment.restoreListScrollPosition():::EXIT
+this.mFauxPullToRefreshHelper == orig(this.mFauxPullToRefreshHelper)
+this.mNotesAdapter == orig(this.mNotesAdapter)
+this.mNotesAdapter.notes == orig(this.mNotesAdapter.notes)
+this.mNotesAdapter.notes[] == orig(this.mNotesAdapter.notes[])
+this.mNotesAdapter.notes.getClass().getName() == orig(this.mNotesAdapter.notes.getClass().getName())
+this.mNotesAdapter.hiddenNoteIds == orig(this.mNotesAdapter.hiddenNoteIds)
+this.mNotesAdapter.hiddenNoteIds.getClass().getName() == orig(this.mNotesAdapter.hiddenNoteIds.getClass().getName())
+this.mNotesAdapter.moderatingNoteIds == orig(this.mNotesAdapter.moderatingNoteIds)
+this.mNotesAdapter.moderatingNoteIds.getClass().getName() == orig(this.mNotesAdapter.moderatingNoteIds.getClass().getName())
+this.mNotesAdapter.cursorClosed == orig(this.mNotesAdapter.cursorClosed)
+this.mNoteClickListener == orig(this.mNoteClickListener)
+this.mRestoredListPosition == orig(this.mRestoredListPosition)
+this.mBucket == orig(this.mBucket)
+this.isAdded == orig(this.isAdded)
+this.listView == orig(this.listView)
+this.listView.firstVisiblePosition == orig(this.listView.firstVisiblePosition)
+this.listView.selectionFromTop == orig(this.listView.selectionFromTop)
+this.listView.emptyView == orig(this.listView.emptyView)
+this.activity == orig(this.activity)
+this.listAdapter == orig(this.listAdapter)
+this.isAdded == false
+
+## MISUSE
+===========================================================================
+wordpressa._1.misuse.NotificationsListFragment:::OBJECT
+this.mFauxPullToRefreshHelper == null
+this.mNotesAdapter.notes[].getClass().getName() == [wordpressa._1.mocks.Note, wordpressa._1.mocks.Note, wordpressa._1.mocks.Note, wordpressa._1.mocks.Note, wordpressa._1.mocks.Note]
+this.mNotesAdapter.cursorClosed == false
+this.mNoteClickListener == null
+this.mRestoredListPosition one of { -1, 0, 2 }
+this.mBucket == null
+this.listView.firstVisiblePosition == 0
+this.listView.selectionFromTop one of { -1, 0, 2 }
+this.listView.emptyView == null
+this.listAdapter == null
+size(this.mNotesAdapter.notes[]) == 5
+
+===========================================================================
+wordpressa._1.misuse.NotificationsListFragment.NotificationsListFragment():::EXIT
+this.mNotesAdapter == null
+this.mRestoredListPosition == 0
+this.isAdded == true
+this.listView.selectionFromTop == -1
+
+===========================================================================
+wordpressa._1.misuse.NotificationsListFragment.restoreListScrollPosition():::ENTER
+this.mRestoredListPosition one of { 0, 2 }
+this.isAdded == false
+this.listView.selectionFromTop == -1
+
+===========================================================================
+wordpressa._1.misuse.NotificationsListFragment.restoreListScrollPosition():::EXIT
+this.mFauxPullToRefreshHelper == orig(this.mFauxPullToRefreshHelper)
+this.mNotesAdapter == orig(this.mNotesAdapter)
+this.mNotesAdapter.notes == orig(this.mNotesAdapter.notes)
+this.mNotesAdapter.notes[] == orig(this.mNotesAdapter.notes[])
+this.mNotesAdapter.notes.getClass().getName() == orig(this.mNotesAdapter.notes.getClass().getName())
+this.mNotesAdapter.hiddenNoteIds == orig(this.mNotesAdapter.hiddenNoteIds)
+this.mNotesAdapter.hiddenNoteIds.getClass().getName() == orig(this.mNotesAdapter.hiddenNoteIds.getClass().getName())
+this.mNotesAdapter.moderatingNoteIds == orig(this.mNotesAdapter.moderatingNoteIds)
+this.mNotesAdapter.moderatingNoteIds.getClass().getName() == orig(this.mNotesAdapter.moderatingNoteIds.getClass().getName())
+this.mNotesAdapter.cursorClosed == orig(this.mNotesAdapter.cursorClosed)
+this.mNoteClickListener == orig(this.mNoteClickListener)
+this.mBucket == orig(this.mBucket)
+this.isAdded == orig(this.isAdded)
+this.listView == orig(this.listView)
+this.listView.firstVisiblePosition == orig(this.listView.firstVisiblePosition)
+this.listView.emptyView == orig(this.listView.emptyView)
+this.activity == orig(this.activity)
+this.listAdapter == orig(this.listAdapter)
+this.mRestoredListPosition == -1
+this.isAdded == false
+this.listView.selectionFromTop one of { 0, 2 }
+
+## FIXED
+===========================================================================
+wordpressa._1.fixed.NotificationsListFragment:::OBJECT
+this.mFauxPullToRefreshHelper == null
+this.mNotesAdapter.notes[].getClass().getName() == [wordpressa._1.mocks.Note, wordpressa._1.mocks.Note, wordpressa._1.mocks.Note, wordpressa._1.mocks.Note, wordpressa._1.mocks.Note]
+this.mNotesAdapter.cursorClosed == false
+this.mNoteClickListener == null
+this.mRestoredListPosition one of { 0, 2 }
+this.mBucket == null
+this.listView.firstVisiblePosition == 0
+this.listView.selectionFromTop == -1
+this.listView.emptyView == null
+this.listAdapter == null
+size(this.mNotesAdapter.notes[]) == 5
+
+===========================================================================
+wordpressa._1.fixed.NotificationsListFragment.NotificationsListFragment():::EXIT
+this.mNotesAdapter == null
+this.mRestoredListPosition == 0
+this.isAdded == true
+
+===========================================================================
+wordpressa._1.fixed.NotificationsListFragment.restoreListScrollPosition():::ENTER
+this.isAdded == false
+
+===========================================================================
+wordpressa._1.fixed.NotificationsListFragment.restoreListScrollPosition():::EXIT207
+
+===========================================================================
+wordpressa._1.fixed.NotificationsListFragment.restoreListScrollPosition():::EXIT
+this.mFauxPullToRefreshHelper == orig(this.mFauxPullToRefreshHelper)
+this.mNotesAdapter == orig(this.mNotesAdapter)
+this.mNotesAdapter.notes == orig(this.mNotesAdapter.notes)
+this.mNotesAdapter.notes[] == orig(this.mNotesAdapter.notes[])
+this.mNotesAdapter.notes.getClass().getName() == orig(this.mNotesAdapter.notes.getClass().getName())
+this.mNotesAdapter.hiddenNoteIds == orig(this.mNotesAdapter.hiddenNoteIds)
+this.mNotesAdapter.hiddenNoteIds.getClass().getName() == orig(this.mNotesAdapter.hiddenNoteIds.getClass().getName())
+this.mNotesAdapter.moderatingNoteIds == orig(this.mNotesAdapter.moderatingNoteIds)
+this.mNotesAdapter.moderatingNoteIds.getClass().getName() == orig(this.mNotesAdapter.moderatingNoteIds.getClass().getName())
+this.mNotesAdapter.cursorClosed == orig(this.mNotesAdapter.cursorClosed)
+this.mNoteClickListener == orig(this.mNoteClickListener)
+this.mRestoredListPosition == orig(this.mRestoredListPosition)
+this.mBucket == orig(this.mBucket)
+this.isAdded == orig(this.isAdded)
+this.listView == orig(this.listView)
+this.listView.firstVisiblePosition == orig(this.listView.firstVisiblePosition)
+this.listView.selectionFromTop == orig(this.listView.selectionFromTop)
+this.listView.emptyView == orig(this.listView.emptyView)
+this.activity == orig(this.activity)
+this.listAdapter == orig(this.listAdapter)
+this.isAdded == false

@@ -1,0 +1,53 @@
+// Declarations for jriecken_gae_java_mini_profiler.Jriecken_gae_java_mini_profilerTest_39$Fixed
+// Declarations written 2026-02-11T23:04:55.118476078 by daikon.DynComp
+
+decl-version 2.0
+var-comparability implicit
+
+ppt jriecken_gae_java_mini_profiler.Jriecken_gae_java_mini_profilerTest_39$Fixed:::CLASS
+ppt-type class
+
+ppt jriecken_gae_java_mini_profiler.Jriecken_gae_java_mini_profilerTest_39$Fixed:::OBJECT
+ppt-type object
+variable this
+  var-kind variable
+  dec-type jriecken_gae_java_mini_profiler.Jriecken_gae_java_mini_profilerTest_39$Fixed
+  rep-type hashcode
+  flags is_param non_null
+  comparability 2
+
+ppt jriecken_gae_java_mini_profiler.Jriecken_gae_java_mini_profilerTest_39$Fixed.Fixed():::ENTER
+ppt-type enter
+
+ppt jriecken_gae_java_mini_profiler.Jriecken_gae_java_mini_profilerTest_39$Fixed.Fixed():::EXIT64
+ppt-type subexit
+variable this
+  var-kind variable
+  dec-type jriecken_gae_java_mini_profiler.Jriecken_gae_java_mini_profilerTest_39$Fixed
+  rep-type hashcode
+  flags is_param non_null
+  comparability 2
+
+ppt jriecken_gae_java_mini_profiler.Jriecken_gae_java_mini_profilerTest_39$Fixed.driver():::ENTER
+ppt-type enter
+variable this
+  var-kind variable
+  dec-type jriecken_gae_java_mini_profiler.Jriecken_gae_java_mini_profilerTest_39$Fixed
+  rep-type hashcode
+  flags is_param non_null
+  comparability 2
+
+ppt jriecken_gae_java_mini_profiler.Jriecken_gae_java_mini_profilerTest_39$Fixed.driver():::EXIT68
+ppt-type subexit
+variable this
+  var-kind variable
+  dec-type jriecken_gae_java_mini_profiler.Jriecken_gae_java_mini_profilerTest_39$Fixed
+  rep-type hashcode
+  flags is_param non_null
+  comparability 3
+variable return
+  var-kind return
+  dec-type jriecken_gae_java_mini_profiler._39.Driver
+  rep-type hashcode
+  comparability 2
+

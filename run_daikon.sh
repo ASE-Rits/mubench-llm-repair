@@ -37,6 +37,14 @@ STATIC_TESTS=(
     "testng/_22"
 )
 
+# ============================================
+# 問題のあるテストリスト（スキップ対象）
+# タイムアウト、無限ループ等の問題があるため除外
+# ============================================
+SKIP_TESTS=(
+    "testng/_16"  # 並行テストのため実行が終わらない
+)
+
 # 静的テストかどうかをチェック
 is_static_test() {
     local project=$1
@@ -44,6 +52,19 @@ is_static_test() {
     local key="${project}/${case_num}"
     for static in "${STATIC_TESTS[@]}"; do
         if [[ "$static" == "$key" ]]; then
+            return 0  # true
+        fi
+    done
+    return 1  # false
+}
+
+# スキップ対象かどうかをチェック
+should_skip() {
+    local project=$1
+    local case_num=$2
+    local key="${project}/${case_num}"
+    for skip in "${SKIP_TESTS[@]}"; do
+        if [[ "$skip" == "$key" ]]; then
             return 0  # true
         fi
     done
@@ -80,15 +101,29 @@ get_cases() {
     ls -d "$BUILD_DIR/$project"/_*/ 2>/dev/null | xargs -n1 basename
 }
 
-# プロジェクト名をキャメルケースに変換
-to_camel_case() {
-    local input=$1
-    local result=""
-    IFS='_' read -ra parts <<< "$input"
-    for part in "${parts[@]}"; do
-        result+="${part^}"
-    done
-    echo "$result"
+# テストクラスの完全修飾名を実際のファイルから取得
+get_full_test_class() {
+    local project=$1
+    local case_num=$2
+    local test_dir="$PROJECT_ROOT/src/test/java/$project"
+    
+    # テストファイルを検索（例: *Test_1.java, *Test_56_1.java）
+    local test_file=$(find "$test_dir" -maxdepth 1 -name "*Test${case_num}.java" 2>/dev/null | head -1)
+    
+    if [[ -n "$test_file" ]]; then
+        # ファイルからパッケージ宣言を読み取る
+        local package_name=$(grep "^package " "$test_file" | sed 's/package //; s/;//')
+        local class_name=$(basename "$test_file" .java)
+        echo "${package_name}.${class_name}"
+    else
+        # フォールバック: プロジェクト名.キャメルケースクラス名
+        local result=""
+        IFS='_' read -ra parts <<< "$project"
+        for part in "${parts[@]}"; do
+            result+="${part^}"
+        done
+        echo "${project}.${result}Test${case_num}"
+    fi
 }
 
 # Daikonを実行する関数（JUnitテストを計測）
@@ -109,10 +144,10 @@ run_daikon_for_variant() {
     # 出力ディレクトリ作成
     mkdir -p "$output_dir"
     
-    # テストクラス名を生成 (例: rhino.RhinoTest_1$Original)
-    local camel_name=$(to_camel_case "$project")
+    # テストクラスの完全修飾名を実際のファイルから取得
+    local full_class=$(get_full_test_class "$project" "$case_num")
     local variant_class="${variant^}"  # original -> Original
-    local test_class="${project}.${camel_name}Test${case_num}\$${variant_class}"
+    local test_class="${full_class}\$${variant_class}"
     
     # 計測対象パターン: 全てを計測（標準ライブラリ/jdkを除外）
     # テストクラスとドライバークラス両方を含める
@@ -187,7 +222,7 @@ main() {
     echo "DAIKONDIR: $DAIKONDIR"
     echo "BUILD_DIR: $BUILD_DIR"
     echo "OUTPUT_DIR: $INVARIANT_DIR"
-    echo "Skipping ${#STATIC_TESTS[@]} static tests"
+    echo "Skipping ${#STATIC_TESTS[@]} static tests, ${#SKIP_TESTS[@]} problematic tests"
     echo ""
     
     # invariantディレクトリをクリア
@@ -203,6 +238,12 @@ main() {
             # 静的テストはスキップ
             if is_static_test "$project" "$case_num"; then
                 echo "  [SKIP] $case_num (static test)"
+                continue
+            fi
+            
+            # 問題のあるテストはスキップ
+            if should_skip "$project" "$case_num"; then
+                echo "  [SKIP] $case_num (problematic test)"
                 continue
             fi
             
@@ -231,6 +272,11 @@ if [[ $# -eq 3 ]]; then
     # 静的テストの場合は警告
     if is_static_test "$project" "$case_num"; then
         echo "[WARN] $project/$case_num is a static test (Daikon may not produce useful invariants)"
+    fi
+    
+    # 問題のあるテストの場合は警告
+    if should_skip "$project" "$case_num"; then
+        echo "[WARN] $project/$case_num is a problematic test (may hang or timeout)"
     fi
     
     mkdir -p "$INVARIANT_DIR"

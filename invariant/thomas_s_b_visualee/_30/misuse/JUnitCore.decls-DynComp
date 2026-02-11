@@ -1,0 +1,103 @@
+// Declarations for thomas_s_b_visualee.Thomas_s_b_visualeeTest_30$Misuse
+// Declarations written 2026-02-11T23:07:22.650308113 by daikon.DynComp
+
+decl-version 2.0
+var-comparability implicit
+
+ppt thomas_s_b_visualee.Thomas_s_b_visualeeTest_30$Misuse:::CLASS
+ppt-type class
+
+ppt thomas_s_b_visualee.Thomas_s_b_visualeeTest_30$Misuse:::OBJECT
+ppt-type object
+variable this
+  var-kind variable
+  dec-type thomas_s_b_visualee.Thomas_s_b_visualeeTest_30$Misuse
+  rep-type hashcode
+  flags is_param non_null
+  comparability 2
+
+ppt thomas_s_b_visualee.Thomas_s_b_visualeeTest_30$Misuse.Misuse():::ENTER
+ppt-type enter
+
+ppt thomas_s_b_visualee.Thomas_s_b_visualeeTest_30$Misuse.Misuse():::EXIT53
+ppt-type subexit
+variable this
+  var-kind variable
+  dec-type thomas_s_b_visualee.Thomas_s_b_visualeeTest_30$Misuse
+  rep-type hashcode
+  flags is_param non_null
+  comparability 2
+
+ppt thomas_s_b_visualee.Thomas_s_b_visualeeTest_30$Misuse.createDriver():::ENTER
+ppt-type enter
+variable this
+  var-kind variable
+  dec-type thomas_s_b_visualee.Thomas_s_b_visualeeTest_30$Misuse
+  rep-type hashcode
+  flags is_param non_null
+  comparability 2
+
+ppt thomas_s_b_visualee.Thomas_s_b_visualeeTest_30$Misuse.createDriver():::EXIT56
+ppt-type subexit
+variable this
+  var-kind variable
+  dec-type thomas_s_b_visualee.Thomas_s_b_visualeeTest_30$Misuse
+  rep-type hashcode
+  flags is_param non_null
+  comparability 13
+variable return
+  var-kind return
+  dec-type thomas_s_b_visualee._30.Driver
+  rep-type hashcode
+  comparability 2
+variable return.examinerClass
+  var-kind field examinerClass
+  dec-type java.lang.Class
+  rep-type hashcode
+  comparability 4
+variable return.findAndSetPackageMethod
+  var-kind field findAndSetPackageMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 6
+variable return.getSourceCodeScannerMethod
+  var-kind field getSourceCodeScannerMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 8
+variable return.getClassBodyMethod
+  var-kind field getClassBodyMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 7
+variable return.countCharMethod
+  var-kind field countCharMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 3
+variable return.scanAfterQuoteMethod
+  var-kind field scanAfterQuoteMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 12
+variable return.scanAfterClosedParenthesisMethod
+  var-kind field scanAfterClosedParenthesisMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 11
+variable return.isAJavaTokenMethod
+  var-kind field isAJavaTokenMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 9
+variable return.jumpOverJavaTokenMethod
+  var-kind field jumpOverJavaTokenMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 10
+variable return.extractClassInstanceOrEventMethod
+  var-kind field extractClassInstanceOrEventMethod
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 5
+

@@ -1,0 +1,95 @@
+// Declarations for tbuktu_ntru.Tbuktu_ntruTest_476$Misuse
+// Declarations written 2026-02-11T23:06:56.013069979 by daikon.DynComp
+
+decl-version 2.0
+var-comparability implicit
+
+ppt tbuktu_ntru.Tbuktu_ntruTest_476$Misuse:::CLASS
+ppt-type class
+
+ppt tbuktu_ntru.Tbuktu_ntruTest_476$Misuse:::OBJECT
+ppt-type object
+variable this
+  var-kind variable
+  dec-type tbuktu_ntru.Tbuktu_ntruTest_476$Misuse
+  rep-type hashcode
+  flags is_param non_null
+  comparability 2
+
+ppt tbuktu_ntru.Tbuktu_ntruTest_476$Misuse.Misuse():::ENTER
+ppt-type enter
+
+ppt tbuktu_ntru.Tbuktu_ntruTest_476$Misuse.Misuse():::EXIT36
+ppt-type subexit
+variable this
+  var-kind variable
+  dec-type tbuktu_ntru.Tbuktu_ntruTest_476$Misuse
+  rep-type hashcode
+  flags is_param non_null
+  comparability 2
+
+ppt tbuktu_ntru.Tbuktu_ntruTest_476$Misuse.driver():::ENTER
+ppt-type enter
+variable this
+  var-kind variable
+  dec-type tbuktu_ntru.Tbuktu_ntruTest_476$Misuse
+  rep-type hashcode
+  flags is_param non_null
+  comparability 2
+
+ppt tbuktu_ntru.Tbuktu_ntruTest_476$Misuse.driver():::EXIT40
+ppt-type subexit
+variable this
+  var-kind variable
+  dec-type tbuktu_ntru.Tbuktu_ntruTest_476$Misuse
+  rep-type hashcode
+  flags is_param non_null
+  comparability 9
+variable return
+  var-kind return
+  dec-type tbuktu_ntru._476.Driver
+  rep-type hashcode
+  comparability 2
+variable tbuktu_ntru._476.Driver.VARIANT_PACKAGE
+  var-kind variable
+  dec-type java.lang.String
+  rep-type hashcode
+  flags nomod
+  comparability 7
+variable tbuktu_ntru._476.Driver.VARIANT_PACKAGE.toString
+  var-kind function toString()
+  dec-type java.lang.String
+  rep-type java.lang.String
+  function-args tbuktu_ntru._476.Driver.VARIANT_PACKAGE
+  flags synthetic to_string
+  comparability 8
+variable return.instance
+  var-kind field instance
+  dec-type java.lang.Object
+  rep-type hashcode
+  comparability 4
+variable return.instance.getClass().getName()
+  var-kind function getClass().getName()
+  dec-type java.lang.Class
+  rep-type java.lang.String
+  function-args return.instance
+  flags synthetic classname non_null
+  comparability 1
+variable return.clazz
+  var-kind field clazz
+  dec-type java.lang.Class
+  rep-type hashcode
+  comparability 3
+variable return.variant
+  var-kind field variant
+  dec-type java.lang.String
+  rep-type hashcode
+  comparability 5
+variable return.variant.toString
+  var-kind function toString()
+  dec-type java.lang.String
+  rep-type java.lang.String
+  function-args return.variant
+  flags synthetic to_string
+  comparability 6
+

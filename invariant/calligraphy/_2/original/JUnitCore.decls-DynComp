@@ -1,0 +1,118 @@
+// Declarations for calligraphy._2.CalligraphyTest_2$Original
+// Declarations written 2026-02-11T23:01:30.974498988 by daikon.DynComp
+
+decl-version 2.0
+var-comparability implicit
+
+ppt calligraphy._2.CalligraphyTest_2$Original:::CLASS
+ppt-type class
+
+ppt calligraphy._2.CalligraphyTest_2$Original:::OBJECT
+ppt-type object
+variable this
+  var-kind variable
+  dec-type calligraphy._2.CalligraphyTest_2$Original
+  rep-type hashcode
+  flags is_param non_null
+  comparability 2
+
+ppt calligraphy._2.CalligraphyTest_2$Original.Original():::ENTER
+ppt-type enter
+
+ppt calligraphy._2.CalligraphyTest_2$Original.Original():::EXIT46
+ppt-type subexit
+variable this
+  var-kind variable
+  dec-type calligraphy._2.CalligraphyTest_2$Original
+  rep-type hashcode
+  flags is_param non_null
+  comparability 2
+
+ppt calligraphy._2.CalligraphyTest_2$Original.driver():::ENTER
+ppt-type enter
+variable this
+  var-kind variable
+  dec-type calligraphy._2.CalligraphyTest_2$Original
+  rep-type hashcode
+  flags is_param non_null
+  comparability 2
+
+ppt calligraphy._2.CalligraphyTest_2$Original.driver():::EXIT50
+ppt-type subexit
+variable this
+  var-kind variable
+  dec-type calligraphy._2.CalligraphyTest_2$Original
+  rep-type hashcode
+  flags is_param non_null
+  comparability 4
+variable return
+  var-kind return
+  dec-type calligraphy._2.Driver
+  rep-type hashcode
+  comparability 2
+variable return.targetClass
+  var-kind field targetClass
+  dec-type java.lang.Class
+  rep-type hashcode
+  comparability 3
+
+ppt calligraphy._2.CalligraphyTest_2$Original.expectedStyleFallback():::ENTER
+ppt-type enter
+variable this
+  var-kind variable
+  dec-type calligraphy._2.CalligraphyTest_2$Original
+  rep-type hashcode
+  flags is_param non_null
+  comparability 2
+
+ppt calligraphy._2.CalligraphyTest_2$Original.expectedStyleFallback():::EXIT55
+ppt-type subexit
+variable this
+  var-kind variable
+  dec-type calligraphy._2.CalligraphyTest_2$Original
+  rep-type hashcode
+  flags is_param non_null
+  comparability 4
+variable return
+  var-kind return
+  dec-type java.lang.String
+  rep-type hashcode
+  comparability 2
+variable return.toString
+  var-kind function toString()
+  dec-type java.lang.String
+  rep-type java.lang.String
+  function-args return
+  flags synthetic to_string
+  comparability 3
+
+ppt calligraphy._2.CalligraphyTest_2$Original.expectedThemeFallback():::ENTER
+ppt-type enter
+variable this
+  var-kind variable
+  dec-type calligraphy._2.CalligraphyTest_2$Original
+  rep-type hashcode
+  flags is_param non_null
+  comparability 2
+
+ppt calligraphy._2.CalligraphyTest_2$Original.expectedThemeFallback():::EXIT60
+ppt-type subexit
+variable this
+  var-kind variable
+  dec-type calligraphy._2.CalligraphyTest_2$Original
+  rep-type hashcode
+  flags is_param non_null
+  comparability 4
+variable return
+  var-kind return
+  dec-type java.lang.String
+  rep-type hashcode
+  comparability 2
+variable return.toString
+  var-kind function toString()
+  dec-type java.lang.String
+  rep-type java.lang.String
+  function-args return
+  flags synthetic to_string
+  comparability 3
+

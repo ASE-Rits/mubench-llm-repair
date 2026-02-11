@@ -1,0 +1,161 @@
+===========================================================================
+junit.runner.Version.id():::EXIT
+return has only one value
+===========================================================================
+tbuktu_ntru.Tbuktu_ntruTest_476$CommonLogic:::OBJECT
+this has only one value
+===========================================================================
+tbuktu_ntru.Tbuktu_ntruTest_476$CommonLogic.CommonLogic():::EXIT
+===========================================================================
+tbuktu_ntru.Tbuktu_ntruTest_476$CommonLogic.testGetEncodedCallsFlushOrClose():::ENTER
+===========================================================================
+tbuktu_ntru.Tbuktu_ntruTest_476$CommonLogic.testGetEncodedCallsFlushOrClose():::EXIT
+===========================================================================
+tbuktu_ntru.Tbuktu_ntruTest_476$Original:::OBJECT
+this has only one value
+===========================================================================
+tbuktu_ntru.Tbuktu_ntruTest_476$Original.Original():::EXIT
+===========================================================================
+tbuktu_ntru.Tbuktu_ntruTest_476$Original.driver():::ENTER
+===========================================================================
+tbuktu_ntru.Tbuktu_ntruTest_476$Original.driver():::EXIT
+return has only one value
+tbuktu_ntru._476.Driver.VARIANT_PACKAGE has only one value
+return.instance has only one value
+return.clazz has only one value
+return.variant has only one value
+===========================================================================
+tbuktu_ntru._476.Driver:::CLASS
+tbuktu_ntru._476.Driver.VARIANT_PACKAGE has only one value
+===========================================================================
+tbuktu_ntru._476.Driver:::OBJECT
+this has only one value
+this.instance has only one value
+this.clazz has only one value
+this.variant has only one value
+===========================================================================
+tbuktu_ntru._476.Driver.createMinimalTestBytes(int, int):::ENTER
+N == 107
+q == 2048
+===========================================================================
+tbuktu_ntru._476.Driver.createMinimalTestBytes(int, int):::EXIT
+tbuktu_ntru._476.Driver.VARIANT_PACKAGE == orig(tbuktu_ntru._476.Driver.VARIANT_PACKAGE)
+return has only one value
+return[] == [0, 107, 8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+return[] elements one of { 0, 8, 107 }
+size(return[]) == 152
+===========================================================================
+tbuktu_ntru._476.Driver.getSourceFilePath():::ENTER
+===========================================================================
+tbuktu_ntru._476.Driver.getSourceFilePath():::EXIT
+tbuktu_ntru._476.Driver.VARIANT_PACKAGE == orig(tbuktu_ntru._476.Driver.VARIANT_PACKAGE)
+this.instance == orig(this.instance)
+this.instance.getClass().getName() == orig(this.instance.getClass().getName())
+this.clazz == orig(this.clazz)
+this.variant == orig(this.variant)
+return has only one value
+===========================================================================
+tbuktu_ntru._476.Driver.hasFlushOrCloseInGetEncoded():::ENTER
+===========================================================================
+tbuktu_ntru._476.Driver.hasFlushOrCloseInGetEncoded():::EXIT151
+===========================================================================
+tbuktu_ntru._476.Driver.hasFlushOrCloseInGetEncoded():::EXIT151;condition="return == true"
+===========================================================================
+tbuktu_ntru._476.Driver.hasFlushOrCloseInGetEncoded():::EXIT
+tbuktu_ntru._476.Driver.VARIANT_PACKAGE == orig(tbuktu_ntru._476.Driver.VARIANT_PACKAGE)
+this.instance == orig(this.instance)
+this.instance.getClass().getName() == orig(this.instance.getClass().getName())
+this.clazz == orig(this.clazz)
+this.variant == orig(this.variant)
+return == true
+===========================================================================
+tbuktu_ntru._476.Driver.hasFlushOrCloseInGetEncoded():::EXIT;condition="return == true"
+===========================================================================
+tbuktu_ntru._476.original.SignaturePublicKey:::OBJECT
+this has only one value
+this.h has only one value
+this.h.coeffs has only one value
+this.h.coeffs[] == [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+this.h.coeffs[] elements == 0
+this.q == 2048
+size(this.h.coeffs[]) == 107
+===========================================================================
+tbuktu_ntru._476.original.SignaturePublicKey.SignaturePublicKey(byte[]):::ENTER
+b has only one value
+b[] == [0, 107, 8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+b[] elements one of { 0, 8, 107 }
+size(b[]) == 152
+===========================================================================
+tbuktu_ntru._476.original.SignaturePublicKey.SignaturePublicKey(byte[]):::EXIT
+b[] == orig(b[])
+b[] == [0, 107, 8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+b[] elements one of { 0, 8, 107 }
+===========================================================================
+tbuktu_ntru._476.requirements.ArrayEncoder:::CLASS
+tbuktu_ntru._476.requirements.ArrayEncoder.COEFF1_TABLE has only one value
+tbuktu_ntru._476.requirements.ArrayEncoder.COEFF1_TABLE[] == [0, 0, 0, 1, 1, 1, -1, -1]
+tbuktu_ntru._476.requirements.ArrayEncoder.COEFF1_TABLE[] elements one of { -1, 0, 1 }
+tbuktu_ntru._476.requirements.ArrayEncoder.COEFF2_TABLE has only one value
+tbuktu_ntru._476.requirements.ArrayEncoder.COEFF2_TABLE[] == [0, 1, -1, 0, 1, -1, 0, 1]
+tbuktu_ntru._476.requirements.ArrayEncoder.COEFF2_TABLE[] elements one of { -1, 0, 1 }
+tbuktu_ntru._476.requirements.ArrayEncoder.BIT1_TABLE has only one value
+tbuktu_ntru._476.requirements.ArrayEncoder.BIT1_TABLE[] == [1, 1, 1, 0, 0, 0, 1, 0, 1]
+tbuktu_ntru._476.requirements.ArrayEncoder.BIT1_TABLE[] elements one of { 0, 1 }
+tbuktu_ntru._476.requirements.ArrayEncoder.BIT2_TABLE has only one value
+tbuktu_ntru._476.requirements.ArrayEncoder.BIT2_TABLE[] == [1, 1, 1, 1, 0, 0, 0, 1, 0]
+tbuktu_ntru._476.requirements.ArrayEncoder.BIT2_TABLE[] elements one of { 0, 1 }
+tbuktu_ntru._476.requirements.ArrayEncoder.BIT3_TABLE has only one value
+tbuktu_ntru._476.requirements.ArrayEncoder.BIT3_TABLE[] == [1, 0, 1, 0, 0, 1, 1, 1, 0]
+tbuktu_ntru._476.requirements.ArrayEncoder.BIT3_TABLE[] elements one of { 0, 1 }
+tbuktu_ntru._476.requirements.ArrayEncoder.THREE has only one value
+size(tbuktu_ntru._476.requirements.ArrayEncoder.COEFF1_TABLE[]) == 8
+size(tbuktu_ntru._476.requirements.ArrayEncoder.COEFF2_TABLE[]) == 8
+size(tbuktu_ntru._476.requirements.ArrayEncoder.BIT1_TABLE[]) == 9
+size(tbuktu_ntru._476.requirements.ArrayEncoder.BIT2_TABLE[]) == 9
+size(tbuktu_ntru._476.requirements.ArrayEncoder.BIT3_TABLE[]) == 9
+===========================================================================
+tbuktu_ntru._476.requirements.ArrayEncoder.decodeModQ(byte[], int, int):::ENTER
+data has only one value
+data[] == [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+data[] elements == 0
+N == 107
+q == 2048
+size(data[]) == 148
+===========================================================================
+tbuktu_ntru._476.requirements.ArrayEncoder.decodeModQ(byte[], int, int):::EXIT
+tbuktu_ntru._476.requirements.ArrayEncoder.COEFF1_TABLE == orig(tbuktu_ntru._476.requirements.ArrayEncoder.COEFF1_TABLE)
+tbuktu_ntru._476.requirements.ArrayEncoder.COEFF1_TABLE[] == orig(tbuktu_ntru._476.requirements.ArrayEncoder.COEFF1_TABLE[])
+tbuktu_ntru._476.requirements.ArrayEncoder.COEFF2_TABLE == orig(tbuktu_ntru._476.requirements.ArrayEncoder.COEFF2_TABLE)
+tbuktu_ntru._476.requirements.ArrayEncoder.COEFF2_TABLE[] == orig(tbuktu_ntru._476.requirements.ArrayEncoder.COEFF2_TABLE[])
+tbuktu_ntru._476.requirements.ArrayEncoder.BIT1_TABLE == orig(tbuktu_ntru._476.requirements.ArrayEncoder.BIT1_TABLE)
+tbuktu_ntru._476.requirements.ArrayEncoder.BIT1_TABLE[] == orig(tbuktu_ntru._476.requirements.ArrayEncoder.BIT1_TABLE[])
+tbuktu_ntru._476.requirements.ArrayEncoder.BIT2_TABLE == orig(tbuktu_ntru._476.requirements.ArrayEncoder.BIT2_TABLE)
+tbuktu_ntru._476.requirements.ArrayEncoder.BIT2_TABLE[] == orig(tbuktu_ntru._476.requirements.ArrayEncoder.BIT2_TABLE[])
+tbuktu_ntru._476.requirements.ArrayEncoder.BIT3_TABLE == orig(tbuktu_ntru._476.requirements.ArrayEncoder.BIT3_TABLE)
+tbuktu_ntru._476.requirements.ArrayEncoder.BIT3_TABLE[] == orig(tbuktu_ntru._476.requirements.ArrayEncoder.BIT3_TABLE[])
+tbuktu_ntru._476.requirements.ArrayEncoder.THREE == orig(tbuktu_ntru._476.requirements.ArrayEncoder.THREE)
+data[] == orig(data[])
+data[] == [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+data[] elements == 0
+return has only one value
+return[] == [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+return[] elements == 0
+size(return[]) == 107
+===========================================================================
+tbuktu_ntru._476.requirements.IntegerPolynomial:::OBJECT
+this has only one value
+this.coeffs has only one value
+this.coeffs[] == [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+this.coeffs[] elements == 0
+size(this.coeffs[]) == 107
+===========================================================================
+tbuktu_ntru._476.requirements.IntegerPolynomial.IntegerPolynomial(int[]):::ENTER
+coeffs has only one value
+coeffs[] == [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+coeffs[] elements == 0
+size(coeffs[]) == 107
+===========================================================================
+tbuktu_ntru._476.requirements.IntegerPolynomial.IntegerPolynomial(int[]):::EXIT
+coeffs[] == orig(coeffs[])
+coeffs[] == [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+coeffs[] elements == 0

@@ -1,0 +1,58 @@
+// Declarations for hoverruan_weiboclient4j.HoverruanWeiboclient4jTest_128$Misuse
+// Declarations written 2026-02-11T23:02:33.133138347 by daikon.DynComp
+
+decl-version 2.0
+var-comparability implicit
+
+ppt hoverruan_weiboclient4j.HoverruanWeiboclient4jTest_128$Misuse:::CLASS
+ppt-type class
+
+ppt hoverruan_weiboclient4j.HoverruanWeiboclient4jTest_128$Misuse:::OBJECT
+ppt-type object
+variable this
+  var-kind variable
+  dec-type hoverruan_weiboclient4j.HoverruanWeiboclient4jTest_128$Misuse
+  rep-type hashcode
+  flags is_param non_null
+  comparability 2
+
+ppt hoverruan_weiboclient4j.HoverruanWeiboclient4jTest_128$Misuse.Misuse():::ENTER
+ppt-type enter
+
+ppt hoverruan_weiboclient4j.HoverruanWeiboclient4jTest_128$Misuse.Misuse():::EXIT56
+ppt-type subexit
+variable this
+  var-kind variable
+  dec-type hoverruan_weiboclient4j.HoverruanWeiboclient4jTest_128$Misuse
+  rep-type hashcode
+  flags is_param non_null
+  comparability 2
+
+ppt hoverruan_weiboclient4j.HoverruanWeiboclient4jTest_128$Misuse.getTargetDriver():::ENTER
+ppt-type enter
+variable this
+  var-kind variable
+  dec-type hoverruan_weiboclient4j.HoverruanWeiboclient4jTest_128$Misuse
+  rep-type hashcode
+  flags is_param non_null
+  comparability 2
+
+ppt hoverruan_weiboclient4j.HoverruanWeiboclient4jTest_128$Misuse.getTargetDriver():::EXIT59
+ppt-type subexit
+variable this
+  var-kind variable
+  dec-type hoverruan_weiboclient4j.HoverruanWeiboclient4jTest_128$Misuse
+  rep-type hashcode
+  flags is_param non_null
+  comparability 4
+variable return
+  var-kind return
+  dec-type hoverruan_weiboclient4j._128.Driver
+  rep-type hashcode
+  comparability 2
+variable return.targetClass
+  var-kind field targetClass
+  dec-type java.lang.Class
+  rep-type hashcode
+  comparability 3
+

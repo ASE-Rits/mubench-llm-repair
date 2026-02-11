@@ -1,0 +1,63 @@
+// Declarations for apache_gora._56_1.ApacheGoraTest_56_1$Original
+// Declarations written 2026-02-11T23:00:41.385280026 by daikon.DynComp
+
+decl-version 2.0
+var-comparability implicit
+
+ppt apache_gora._56_1.ApacheGoraTest_56_1$Original:::CLASS
+ppt-type class
+
+ppt apache_gora._56_1.ApacheGoraTest_56_1$Original:::OBJECT
+ppt-type object
+variable this
+  var-kind variable
+  dec-type apache_gora._56_1.ApacheGoraTest_56_1$Original
+  rep-type hashcode
+  flags is_param non_null
+  comparability 2
+
+ppt apache_gora._56_1.ApacheGoraTest_56_1$Original.Original():::ENTER
+ppt-type enter
+
+ppt apache_gora._56_1.ApacheGoraTest_56_1$Original.Original():::EXIT118
+ppt-type subexit
+variable this
+  var-kind variable
+  dec-type apache_gora._56_1.ApacheGoraTest_56_1$Original
+  rep-type hashcode
+  flags is_param non_null
+  comparability 2
+
+ppt apache_gora._56_1.ApacheGoraTest_56_1$Original.getTargetDriver():::ENTER
+ppt-type enter
+variable this
+  var-kind variable
+  dec-type apache_gora._56_1.ApacheGoraTest_56_1$Original
+  rep-type hashcode
+  flags is_param non_null
+  comparability 2
+
+ppt apache_gora._56_1.ApacheGoraTest_56_1$Original.getTargetDriver():::EXIT122
+ppt-type subexit
+variable this
+  var-kind variable
+  dec-type apache_gora._56_1.ApacheGoraTest_56_1$Original
+  rep-type hashcode
+  flags is_param non_null
+  comparability 5
+variable return
+  var-kind return
+  dec-type apache_gora._56_1.Driver
+  rep-type hashcode
+  comparability 2
+variable return.targetClass
+  var-kind field targetClass
+  dec-type java.lang.Class
+  rep-type hashcode
+  comparability 3
+variable return.variant
+  var-kind field variant
+  dec-type apache_gora._56_1.Driver$Variant
+  rep-type hashcode
+  comparability 4
+

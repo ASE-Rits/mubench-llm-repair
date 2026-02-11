@@ -1,0 +1,195 @@
+===========================================================================
+apache_gora._56_1.ApacheGoraTest_56_1$CommonLogic:::OBJECT
+===========================================================================
+apache_gora._56_1.ApacheGoraTest_56_1$CommonLogic.CommonLogic():::EXIT
+===========================================================================
+apache_gora._56_1.ApacheGoraTest_56_1$CommonLogic.encl(long):::ENTER
+l one of { 1, 31243722414882816L, 72057594037927935L }
+===========================================================================
+apache_gora._56_1.ApacheGoraTest_56_1$CommonLogic.encl(long):::EXIT
+return one of { 1, 31243722414882816L, 72057594037927935L }
+===========================================================================
+apache_gora._56_1.ApacheGoraTest_56_1$CommonLogic.setUp():::ENTER
+===========================================================================
+apache_gora._56_1.ApacheGoraTest_56_1$CommonLogic.setUp():::EXIT
+===========================================================================
+apache_gora._56_1.ApacheGoraTest_56_1$Misuse:::OBJECT
+===========================================================================
+apache_gora._56_1.ApacheGoraTest_56_1$Misuse.Misuse():::EXIT
+===========================================================================
+apache_gora._56_1.ApacheGoraTest_56_1$Misuse.getTargetDriver():::ENTER
+===========================================================================
+apache_gora._56_1.ApacheGoraTest_56_1$Misuse.getTargetDriver():::EXIT
+return.variant == apache_gora._56_1.Driver$Variant.MISUSE
+return.targetClass has only one value
+return.variant has only one value
+apache_gora._56_1.Driver$Variant.ORIGINAL has only one value
+apache_gora._56_1.Driver$Variant.MISUSE has only one value
+apache_gora._56_1.Driver$Variant.FIXED has only one value
+apache_gora._56_1.Driver$Variant.UNKNOWN has only one value
+apache_gora._56_1.Driver$Variant.$VALUES has only one value
+apache_gora._56_1.Driver$Variant.$VALUES[] contains no nulls and has only one value, of length 4
+apache_gora._56_1.Driver$Variant.$VALUES[].getClass().getName() == [apache_gora._56_1.Driver.Variant, apache_gora._56_1.Driver.Variant, apache_gora._56_1.Driver.Variant, apache_gora._56_1.Driver.Variant]
+size(apache_gora._56_1.Driver$Variant.$VALUES[]) == 4
+return.variant in apache_gora._56_1.Driver$Variant.$VALUES[]
+apache_gora._56_1.Driver$Variant.ORIGINAL in apache_gora._56_1.Driver$Variant.$VALUES[]
+apache_gora._56_1.Driver$Variant.MISUSE in apache_gora._56_1.Driver$Variant.$VALUES[]
+apache_gora._56_1.Driver$Variant.FIXED in apache_gora._56_1.Driver$Variant.$VALUES[]
+apache_gora._56_1.Driver$Variant.UNKNOWN in apache_gora._56_1.Driver$Variant.$VALUES[]
+===========================================================================
+apache_gora._56_1.ApacheGoraTest_56_1.decodeLongBigEndian(byte[]):::ENTER
+data[] one of { [0, -1, -1, -1, -1, -1, -1, -1], [0, 0, 0, 0, 0, 0, 0, 1], [0, 111, 0, 0, 0, 0, 0, 0] }
+data[] elements >= -1
+size(data[]) == 8
+===========================================================================
+apache_gora._56_1.ApacheGoraTest_56_1.decodeLongBigEndian(byte[]):::EXIT
+data[] == orig(data[])
+data[] one of { [0, -1, -1, -1, -1, -1, -1, -1], [0, 0, 0, 0, 0, 0, 0, 1], [0, 111, 0, 0, 0, 0, 0, 0] }
+data[] elements >= -1
+return one of { 1, 31243722414882816L, 72057594037927935L }
+===========================================================================
+apache_gora._56_1.Driver:::OBJECT
+this.targetClass has only one value
+this.targetClass != null
+this.variant has only one value
+this.variant != null
+apache_gora._56_1.Driver$Variant.ORIGINAL has only one value
+apache_gora._56_1.Driver$Variant.ORIGINAL != null
+apache_gora._56_1.Driver$Variant.MISUSE has only one value
+apache_gora._56_1.Driver$Variant.MISUSE != null
+apache_gora._56_1.Driver$Variant.FIXED has only one value
+apache_gora._56_1.Driver$Variant.FIXED != null
+apache_gora._56_1.Driver$Variant.UNKNOWN has only one value
+apache_gora._56_1.Driver$Variant.UNKNOWN != null
+apache_gora._56_1.Driver$Variant.$VALUES has only one value
+apache_gora._56_1.Driver$Variant.$VALUES != null
+apache_gora._56_1.Driver$Variant.$VALUES[] contains no nulls and has only one value, of length 4
+apache_gora._56_1.Driver$Variant.$VALUES[] elements != null
+apache_gora._56_1.Driver$Variant.$VALUES[].getClass().getName() == [apache_gora._56_1.Driver.Variant, apache_gora._56_1.Driver.Variant, apache_gora._56_1.Driver.Variant, apache_gora._56_1.Driver.Variant]
+size(apache_gora._56_1.Driver$Variant.$VALUES[]) == 4
+===========================================================================
+apache_gora._56_1.Driver.applyVariantEncoding(long):::ENTER
+value one of { 1, 31243722414882816L, 72057594037927935L }
+===========================================================================
+apache_gora._56_1.Driver.applyVariantEncoding(long):::EXIT130
+===========================================================================
+apache_gora._56_1.Driver.applyVariantEncoding(long):::EXIT
+this.targetClass == orig(this.targetClass)
+this.variant == orig(this.variant)
+apache_gora._56_1.Driver$Variant.ORIGINAL == orig(apache_gora._56_1.Driver$Variant.ORIGINAL)
+apache_gora._56_1.Driver$Variant.MISUSE == orig(apache_gora._56_1.Driver$Variant.MISUSE)
+apache_gora._56_1.Driver$Variant.FIXED == orig(apache_gora._56_1.Driver$Variant.FIXED)
+apache_gora._56_1.Driver$Variant.UNKNOWN == orig(apache_gora._56_1.Driver$Variant.UNKNOWN)
+apache_gora._56_1.Driver$Variant.$VALUES == orig(apache_gora._56_1.Driver$Variant.$VALUES)
+apache_gora._56_1.Driver$Variant.$VALUES.getClass().getName() == orig(apache_gora._56_1.Driver$Variant.$VALUES.getClass().getName())
+apache_gora._56_1.Driver$Variant.$VALUES[] == orig(apache_gora._56_1.Driver$Variant.$VALUES[])
+return one of { 0, 31243722414882816L, 72057594037927680L }
+===========================================================================
+apache_gora._56_1.Driver.areAllBytes(byte[], byte):::ENTER
+data has only one value
+data[] == [0, 0, 0, 0, 0, 0, 0, 0]
+data[] elements == 0
+target == -1
+size(data[]) == 8
+===========================================================================
+apache_gora._56_1.Driver.areAllBytes(byte[], byte):::EXIT150
+===========================================================================
+apache_gora._56_1.Driver.areAllBytes(byte[], byte):::EXIT150;condition="not(return == true)"
+===========================================================================
+apache_gora._56_1.Driver.areAllBytes(byte[], byte):::EXIT
+data[] == orig(data[])
+data[] == [0, 0, 0, 0, 0, 0, 0, 0]
+data[] elements == 0
+return == false
+===========================================================================
+apache_gora._56_1.Driver.areAllBytes(byte[], byte):::EXIT;condition="not(return == true)"
+===========================================================================
+apache_gora._56_1.Driver.computeFollowingKey(byte[]):::ENTER
+this has only one value
+data[] elements one of { 0, 111 }
+data[] one of { [0, 0, 0, 0, 0, 0, 0, 0], [0, 111] }
+size(data[]) one of { 2, 8 }
+===========================================================================
+apache_gora._56_1.Driver.computeFollowingKey(byte[]):::EXIT114
+data[] == [0, 0, 0, 0, 0, 0, 0, 0]
+data[] elements == 0
+return == 1
+orig(data) has only one value
+orig(size(data[])) == 8
+===========================================================================
+apache_gora._56_1.Driver.computeFollowingKey(byte[]):::EXIT116
+data[] == [0, 111]
+return == 31243722414882816L
+orig(data) has only one value
+orig(size(data[])) == 2
+===========================================================================
+apache_gora._56_1.Driver.computeFollowingKey(byte[]):::EXIT
+this.targetClass == orig(this.targetClass)
+this.variant == orig(this.variant)
+apache_gora._56_1.Driver$Variant.ORIGINAL == orig(apache_gora._56_1.Driver$Variant.ORIGINAL)
+apache_gora._56_1.Driver$Variant.MISUSE == orig(apache_gora._56_1.Driver$Variant.MISUSE)
+apache_gora._56_1.Driver$Variant.FIXED == orig(apache_gora._56_1.Driver$Variant.FIXED)
+apache_gora._56_1.Driver$Variant.UNKNOWN == orig(apache_gora._56_1.Driver$Variant.UNKNOWN)
+apache_gora._56_1.Driver$Variant.$VALUES == orig(apache_gora._56_1.Driver$Variant.$VALUES)
+apache_gora._56_1.Driver$Variant.$VALUES.getClass().getName() == orig(apache_gora._56_1.Driver$Variant.$VALUES.getClass().getName())
+apache_gora._56_1.Driver$Variant.$VALUES[] == orig(apache_gora._56_1.Driver$Variant.$VALUES[])
+data[] == orig(data[])
+(data[] == [0, 0, 0, 0, 0, 0, 0, 0])  <==>  (orig(size(data[])) == 8)
+(data[] == [0, 0, 0, 0, 0, 0, 0, 0])  <==>  (return == 1)
+(data[] == [0, 0, 0, 0, 0, 0, 0, 0])  ==>  (data[] elements == 0)
+(data[] == [0, 111])  <==>  (orig(size(data[])) == 2)
+(data[] == [0, 111])  <==>  (return == 31243722414882816L)
+(data[] == [0, 111])  ==>  (data[] elements one of { 0, 111 })
+data[] elements one of { 0, 111 }
+data[] one of { [0, 0, 0, 0, 0, 0, 0, 0], [0, 111] }
+return one of { 1, 31243722414882816L }
+===========================================================================
+apache_gora._56_1.Driver.computeLastPossibleKey(byte[]):::ENTER
+this has only one value
+data has only one value
+data[] == [1]
+data[] elements == 1
+size(data[]) == 1
+===========================================================================
+apache_gora._56_1.Driver.computeLastPossibleKey(byte[]):::EXIT125
+===========================================================================
+apache_gora._56_1.Driver.computeLastPossibleKey(byte[]):::EXIT
+this.targetClass == orig(this.targetClass)
+this.variant == orig(this.variant)
+apache_gora._56_1.Driver$Variant.ORIGINAL == orig(apache_gora._56_1.Driver$Variant.ORIGINAL)
+apache_gora._56_1.Driver$Variant.MISUSE == orig(apache_gora._56_1.Driver$Variant.MISUSE)
+apache_gora._56_1.Driver$Variant.FIXED == orig(apache_gora._56_1.Driver$Variant.FIXED)
+apache_gora._56_1.Driver$Variant.UNKNOWN == orig(apache_gora._56_1.Driver$Variant.UNKNOWN)
+apache_gora._56_1.Driver$Variant.$VALUES == orig(apache_gora._56_1.Driver$Variant.$VALUES)
+apache_gora._56_1.Driver$Variant.$VALUES.getClass().getName() == orig(apache_gora._56_1.Driver$Variant.$VALUES.getClass().getName())
+apache_gora._56_1.Driver$Variant.$VALUES[] == orig(apache_gora._56_1.Driver$Variant.$VALUES[])
+data[] == orig(data[])
+data[] == [1]
+data[] elements == 1
+return == 72057594037927935L
+===========================================================================
+apache_gora._56_1.Driver.safeAdd(long, long):::ENTER
+base == 0
+delta == 1
+===========================================================================
+apache_gora._56_1.Driver.safeAdd(long, long):::EXIT
+return == 1
+===========================================================================
+apache_gora._56_1.Driver.toPaddedLong(byte[]):::ENTER
+data[] elements one of { 0, 1, 111 }
+data[] one of { [0, 0, 0, 0, 0, 0, 0, 0], [0, 111], [1] }
+size(data[]) one of { 1, 2, 8 }
+===========================================================================
+apache_gora._56_1.Driver.toPaddedLong(byte[]):::EXIT
+data[] == orig(data[])
+data[] elements one of { 0, 1, 111 }
+data[] one of { [0, 0, 0, 0, 0, 0, 0, 0], [0, 111], [1] }
+return one of { 0, 31243722414882816L, 72057594037927936L }
+===========================================================================
+apache_gora._56_1.mocks.SignedBinaryEncoder:::OBJECT
+this has only one value
+===========================================================================
+apache_gora._56_1.mocks.SignedBinaryEncoder.SignedBinaryEncoder():::EXIT
+===========================================================================
+junit.runner.Version.id():::EXIT
+return has only one value

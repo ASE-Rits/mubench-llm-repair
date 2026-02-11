@@ -1,0 +1,43 @@
+# Thomas_s_b_visualeeTest_29
+
+## ORIGINAL
+
+
+## MISUSE
+
+
+## FIXED
+===========================================================================
+thomas_s_b_visualee._29.fixed.Examiner:::CLASS
+thomas_s_b_visualee._29.fixed.Examiner.JAVA_TOKENS has only one value
+thomas_s_b_visualee._29.fixed.Examiner.JAVA_TOKENS[] contains no nulls and has only one value, of length 7
+thomas_s_b_visualee._29.fixed.Examiner.JAVA_TOKENS[].getClass().getName() == [java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String]
+size(thomas_s_b_visualee._29.fixed.Examiner.JAVA_TOKENS[]) == 7
+
+===========================================================================
+thomas_s_b_visualee._29.fixed.Examiner.findAndSetPackage(thomas_s_b_visualee._29.requirements.source.entity.JavaSource):::ENTER
+javaSource has only one value
+javaSource.javaFile == null
+javaSource.id == 0
+javaSource.group == 0
+javaSource.packagePath == null
+javaSource.sourceCode has only one value
+javaSource.name has only one value
+
+===========================================================================
+thomas_s_b_visualee._29.fixed.Examiner.findAndSetPackage(thomas_s_b_visualee._29.requirements.source.entity.JavaSource):::EXIT
+thomas_s_b_visualee._29.fixed.Examiner.JAVA_TOKENS == orig(thomas_s_b_visualee._29.fixed.Examiner.JAVA_TOKENS)
+thomas_s_b_visualee._29.fixed.Examiner.JAVA_TOKENS.getClass().getName() == orig(thomas_s_b_visualee._29.fixed.Examiner.JAVA_TOKENS.getClass().getName())
+thomas_s_b_visualee._29.fixed.Examiner.JAVA_TOKENS[] == orig(thomas_s_b_visualee._29.fixed.Examiner.JAVA_TOKENS[])
+javaSource.javaFile == orig(javaSource.javaFile)
+javaSource.id == orig(javaSource.id)
+javaSource.group == orig(javaSource.group)
+javaSource.packagePath == orig(javaSource.packagePath)
+javaSource.sourceCode == orig(javaSource.sourceCode)
+javaSource.name == orig(javaSource.name)
+javaSource.javaFile == null
+javaSource.id == 0
+javaSource.group == 0
+javaSource.packagePath == null
+javaSource.sourceCode has only one value
+javaSource.name has only one value

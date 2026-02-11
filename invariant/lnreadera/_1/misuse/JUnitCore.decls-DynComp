@@ -1,0 +1,63 @@
+// Declarations for lnreadera.LnreaderaTest_1$Misuse
+// Declarations written 2026-02-11T23:05:03.646591270 by daikon.DynComp
+
+decl-version 2.0
+var-comparability implicit
+
+ppt lnreadera.LnreaderaTest_1$Misuse:::CLASS
+ppt-type class
+
+ppt lnreadera.LnreaderaTest_1$Misuse:::OBJECT
+ppt-type object
+variable this
+  var-kind variable
+  dec-type lnreadera.LnreaderaTest_1$Misuse
+  rep-type hashcode
+  flags is_param non_null
+  comparability 2
+
+ppt lnreadera.LnreaderaTest_1$Misuse.Misuse():::ENTER
+ppt-type enter
+
+ppt lnreadera.LnreaderaTest_1$Misuse.Misuse():::EXIT33
+ppt-type subexit
+variable this
+  var-kind variable
+  dec-type lnreadera.LnreaderaTest_1$Misuse
+  rep-type hashcode
+  flags is_param non_null
+  comparability 2
+
+ppt lnreadera.LnreaderaTest_1$Misuse.driver():::ENTER
+ppt-type enter
+variable this
+  var-kind variable
+  dec-type lnreadera.LnreaderaTest_1$Misuse
+  rep-type hashcode
+  flags is_param non_null
+  comparability 2
+
+ppt lnreadera.LnreaderaTest_1$Misuse.driver():::EXIT36
+ppt-type subexit
+variable this
+  var-kind variable
+  dec-type lnreadera.LnreaderaTest_1$Misuse
+  rep-type hashcode
+  flags is_param non_null
+  comparability 5
+variable return
+  var-kind return
+  dec-type lnreadera._1.Driver
+  rep-type hashcode
+  comparability 2
+variable return.targetClass
+  var-kind field targetClass
+  dec-type java.lang.Class
+  rep-type hashcode
+  comparability 4
+variable return.activity
+  var-kind field activity
+  dec-type lnreadera._1.mocks.SherlockActivity
+  rep-type hashcode
+  comparability 3
+

@@ -1,0 +1,23 @@
+===========================================================================
+hoverruan_weiboclient4j.HoverruanWeiboclient4jTest_128$CommonLogic:::OBJECT
+this has only one value
+===========================================================================
+hoverruan_weiboclient4j.HoverruanWeiboclient4jTest_128$CommonLogic.CommonLogic():::EXIT
+===========================================================================
+hoverruan_weiboclient4j.HoverruanWeiboclient4jTest_128$CommonLogic.testCidHandlesInvalidInputGracefully():::ENTER
+===========================================================================
+hoverruan_weiboclient4j.HoverruanWeiboclient4jTest_128$CommonLogic.testCidHandlesInvalidInputGracefully():::EXIT
+===========================================================================
+hoverruan_weiboclient4j.HoverruanWeiboclient4jTest_128$Fixed:::OBJECT
+this has only one value
+===========================================================================
+hoverruan_weiboclient4j.HoverruanWeiboclient4jTest_128$Fixed.Fixed():::EXIT
+===========================================================================
+hoverruan_weiboclient4j.HoverruanWeiboclient4jTest_128$Fixed.getTargetDriver():::ENTER
+===========================================================================
+hoverruan_weiboclient4j.HoverruanWeiboclient4jTest_128$Fixed.getTargetDriver():::EXIT
+return has only one value
+return.targetClass has only one value
+===========================================================================
+junit.runner.Version.id():::EXIT
+return has only one value

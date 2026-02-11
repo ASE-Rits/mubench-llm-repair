@@ -1,0 +1,68 @@
+// Declarations for gnucrasha._1b.GnucrashaTest_1b$Misuse
+// Declarations written 2026-02-11T23:02:18.076004525 by daikon.DynComp
+
+decl-version 2.0
+var-comparability implicit
+
+ppt gnucrasha._1b.GnucrashaTest_1b$Misuse:::CLASS
+ppt-type class
+
+ppt gnucrasha._1b.GnucrashaTest_1b$Misuse:::OBJECT
+ppt-type object
+variable this
+  var-kind variable
+  dec-type gnucrasha._1b.GnucrashaTest_1b$Misuse
+  rep-type hashcode
+  flags is_param non_null
+  comparability 2
+
+ppt gnucrasha._1b.GnucrashaTest_1b$Misuse.Misuse():::ENTER
+ppt-type enter
+
+ppt gnucrasha._1b.GnucrashaTest_1b$Misuse.Misuse():::EXIT36
+ppt-type subexit
+variable this
+  var-kind variable
+  dec-type gnucrasha._1b.GnucrashaTest_1b$Misuse
+  rep-type hashcode
+  flags is_param non_null
+  comparability 2
+
+ppt gnucrasha._1b.GnucrashaTest_1b$Misuse.driver():::ENTER
+ppt-type enter
+variable this
+  var-kind variable
+  dec-type gnucrasha._1b.GnucrashaTest_1b$Misuse
+  rep-type hashcode
+  flags is_param non_null
+  comparability 2
+
+ppt gnucrasha._1b.GnucrashaTest_1b$Misuse.driver():::EXIT40
+ppt-type subexit
+variable this
+  var-kind variable
+  dec-type gnucrasha._1b.GnucrashaTest_1b$Misuse
+  rep-type hashcode
+  flags is_param non_null
+  comparability 6
+variable return
+  var-kind return
+  dec-type gnucrasha._1b.Driver
+  rep-type hashcode
+  comparability 2
+variable return.activity
+  var-kind field activity
+  dec-type gnucrasha._1b.mocks.Context
+  rep-type hashcode
+  comparability 3
+variable return.onPasscodeEntered
+  var-kind field onPasscodeEntered
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 5
+variable return.onBackPressed
+  var-kind field onBackPressed
+  dec-type java.lang.reflect.Method
+  rep-type hashcode
+  comparability 4
+

@@ -1,0 +1,25 @@
+===========================================================================
+apache_gora._56_2.ApacheGoraTest_56_2$CommonCase:::OBJECT
+this has only one value
+===========================================================================
+apache_gora._56_2.ApacheGoraTest_56_2$CommonCase.CommonCase():::EXIT
+===========================================================================
+apache_gora._56_2.ApacheGoraTest_56_2$CommonCase.writeThenReadKeepsAllEntries():::ENTER
+===========================================================================
+apache_gora._56_2.ApacheGoraTest_56_2$CommonCase.writeThenReadKeepsAllEntries():::EXIT
+===========================================================================
+apache_gora._56_2.ApacheGoraTest_56_2$Fixed:::OBJECT
+this has only one value
+===========================================================================
+apache_gora._56_2.ApacheGoraTest_56_2$Fixed.Fixed():::EXIT
+===========================================================================
+apache_gora._56_2.ApacheGoraTest_56_2$Fixed.driver():::ENTER
+===========================================================================
+apache_gora._56_2.ApacheGoraTest_56_2$Fixed.driver():::EXIT
+return has only one value
+===========================================================================
+apache_gora._56_2.ApacheGoraTest_56_2.buildSampleProperties():::EXIT
+return has only one value
+===========================================================================
+junit.runner.Version.id():::EXIT
+return has only one value

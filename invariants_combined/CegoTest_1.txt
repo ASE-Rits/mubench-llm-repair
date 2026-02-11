@@ -1,0 +1,286 @@
+# CegoTest_1
+
+## ORIGINAL
+===========================================================================
+cego._1.original.cgeoimages:::OBJECT
+this has only one value
+this.currentDrawable.bitmap has only one value
+this.currentDrawable.bitmap.placeholder has only one value
+cego._1.mocks.Intent.ACTION_VIEW has only one value
+this.lastStartedIntent.action has only one value
+this.lastStartedIntent.data has only one value
+this.lastStartedIntent.data.path has only one value
+this.lastStartedIntent.type has only one value
+
+===========================================================================
+cego._1.original.cgeoimages.cgeoimages():::EXIT
+this.currentDrawable == null
+this.lastStartedIntent == null
+
+===========================================================================
+cego._1.original.cgeoimages.fetchLastStartedIntent():::ENTER
+this.currentDrawable has only one value
+this.lastStartedIntent has only one value
+
+===========================================================================
+cego._1.original.cgeoimages.fetchLastStartedIntent():::EXIT
+this.currentDrawable == orig(this.currentDrawable)
+this.currentDrawable.bitmap == orig(this.currentDrawable.bitmap)
+this.currentDrawable.bitmap.placeholder == orig(this.currentDrawable.bitmap.placeholder)
+this.lastStartedIntent == orig(this.lastStartedIntent)
+cego._1.mocks.Intent.ACTION_VIEW == orig(cego._1.mocks.Intent.ACTION_VIEW)
+this.lastStartedIntent.action == orig(this.lastStartedIntent.action)
+this.lastStartedIntent.data == orig(this.lastStartedIntent.data)
+this.lastStartedIntent.data.path == orig(this.lastStartedIntent.data.path)
+this.lastStartedIntent.type == orig(this.lastStartedIntent.type)
+this.currentDrawable has only one value
+this.lastStartedIntent has only one value
+return has only one value
+return.action has only one value
+return.data has only one value
+return.data.path has only one value
+return.type has only one value
+
+===========================================================================
+cego._1.original.cgeoimages.openCurrentDrawable():::ENTER
+this.currentDrawable has only one value
+this.lastStartedIntent == null
+
+===========================================================================
+cego._1.original.cgeoimages.openCurrentDrawable():::EXIT
+this.currentDrawable == orig(this.currentDrawable)
+this.currentDrawable.bitmap == orig(this.currentDrawable.bitmap)
+this.currentDrawable.bitmap.placeholder == orig(this.currentDrawable.bitmap.placeholder)
+this.currentDrawable has only one value
+this.lastStartedIntent has only one value
+
+===========================================================================
+cego._1.original.cgeoimages.setCurrentDrawable(cego._1.mocks.BitmapDrawable):::ENTER
+this.currentDrawable == null
+this.lastStartedIntent == null
+drawable has only one value
+drawable.bitmap has only one value
+drawable.bitmap.placeholder has only one value
+
+===========================================================================
+cego._1.original.cgeoimages.setCurrentDrawable(cego._1.mocks.BitmapDrawable):::EXIT
+this.lastStartedIntent == orig(this.lastStartedIntent)
+drawable.bitmap == orig(drawable.bitmap)
+drawable.bitmap.placeholder == orig(drawable.bitmap.placeholder)
+this.currentDrawable has only one value
+this.lastStartedIntent == null
+drawable.bitmap has only one value
+drawable.bitmap.placeholder has only one value
+
+===========================================================================
+cego._1.original.cgeoimages.viewImageInStandardApp(cego._1.mocks.BitmapDrawable):::ENTER
+this.currentDrawable has only one value
+this.lastStartedIntent == null
+image has only one value
+image.bitmap has only one value
+image.bitmap.placeholder has only one value
+
+===========================================================================
+cego._1.original.cgeoimages.viewImageInStandardApp(cego._1.mocks.BitmapDrawable):::EXIT56
+
+===========================================================================
+cego._1.original.cgeoimages.viewImageInStandardApp(cego._1.mocks.BitmapDrawable):::EXIT
+this.currentDrawable == orig(this.currentDrawable)
+this.currentDrawable.bitmap == orig(this.currentDrawable.bitmap)
+this.currentDrawable.bitmap.placeholder == orig(this.currentDrawable.bitmap.placeholder)
+image.bitmap == orig(image.bitmap)
+image.bitmap.placeholder == orig(image.bitmap.placeholder)
+this.currentDrawable has only one value
+this.lastStartedIntent has only one value
+image.bitmap has only one value
+image.bitmap.placeholder has only one value
+
+## MISUSE
+===========================================================================
+cego._1.misuse.cgeoimages:::OBJECT
+this has only one value
+this.currentDrawable.bitmap has only one value
+this.currentDrawable.bitmap.placeholder has only one value
+cego._1.mocks.Intent.ACTION_VIEW has only one value
+this.lastStartedIntent.action has only one value
+this.lastStartedIntent.data has only one value
+this.lastStartedIntent.data.path has only one value
+this.lastStartedIntent.type has only one value
+
+===========================================================================
+cego._1.misuse.cgeoimages.cgeoimages():::EXIT
+this.currentDrawable == null
+this.lastStartedIntent == null
+
+===========================================================================
+cego._1.misuse.cgeoimages.fetchLastStartedIntent():::ENTER
+this.currentDrawable has only one value
+this.lastStartedIntent has only one value
+
+===========================================================================
+cego._1.misuse.cgeoimages.fetchLastStartedIntent():::EXIT
+this.currentDrawable == orig(this.currentDrawable)
+this.currentDrawable.bitmap == orig(this.currentDrawable.bitmap)
+this.currentDrawable.bitmap.placeholder == orig(this.currentDrawable.bitmap.placeholder)
+this.lastStartedIntent == orig(this.lastStartedIntent)
+cego._1.mocks.Intent.ACTION_VIEW == orig(cego._1.mocks.Intent.ACTION_VIEW)
+this.lastStartedIntent.action == orig(this.lastStartedIntent.action)
+this.lastStartedIntent.data == orig(this.lastStartedIntent.data)
+this.lastStartedIntent.data.path == orig(this.lastStartedIntent.data.path)
+this.lastStartedIntent.type == orig(this.lastStartedIntent.type)
+this.currentDrawable has only one value
+this.lastStartedIntent has only one value
+return has only one value
+return.action has only one value
+return.data has only one value
+return.data.path has only one value
+return.type has only one value
+
+===========================================================================
+cego._1.misuse.cgeoimages.openCurrentDrawable():::ENTER
+this.currentDrawable has only one value
+this.lastStartedIntent == null
+
+===========================================================================
+cego._1.misuse.cgeoimages.openCurrentDrawable():::EXIT
+this.currentDrawable == orig(this.currentDrawable)
+this.currentDrawable.bitmap == orig(this.currentDrawable.bitmap)
+this.currentDrawable.bitmap.placeholder == orig(this.currentDrawable.bitmap.placeholder)
+this.currentDrawable has only one value
+this.lastStartedIntent has only one value
+
+===========================================================================
+cego._1.misuse.cgeoimages.setCurrentDrawable(cego._1.mocks.BitmapDrawable):::ENTER
+this.currentDrawable == null
+this.lastStartedIntent == null
+drawable has only one value
+drawable.bitmap has only one value
+drawable.bitmap.placeholder has only one value
+
+===========================================================================
+cego._1.misuse.cgeoimages.setCurrentDrawable(cego._1.mocks.BitmapDrawable):::EXIT
+this.lastStartedIntent == orig(this.lastStartedIntent)
+drawable.bitmap == orig(drawable.bitmap)
+drawable.bitmap.placeholder == orig(drawable.bitmap.placeholder)
+this.currentDrawable has only one value
+this.lastStartedIntent == null
+drawable.bitmap has only one value
+drawable.bitmap.placeholder has only one value
+
+===========================================================================
+cego._1.misuse.cgeoimages.viewImageInStandardApp(cego._1.mocks.BitmapDrawable):::ENTER
+this.currentDrawable has only one value
+this.lastStartedIntent == null
+image has only one value
+image.bitmap has only one value
+image.bitmap.placeholder has only one value
+
+===========================================================================
+cego._1.misuse.cgeoimages.viewImageInStandardApp(cego._1.mocks.BitmapDrawable):::EXIT56
+
+===========================================================================
+cego._1.misuse.cgeoimages.viewImageInStandardApp(cego._1.mocks.BitmapDrawable):::EXIT
+this.currentDrawable == orig(this.currentDrawable)
+this.currentDrawable.bitmap == orig(this.currentDrawable.bitmap)
+this.currentDrawable.bitmap.placeholder == orig(this.currentDrawable.bitmap.placeholder)
+image.bitmap == orig(image.bitmap)
+image.bitmap.placeholder == orig(image.bitmap.placeholder)
+this.currentDrawable has only one value
+this.lastStartedIntent has only one value
+image.bitmap has only one value
+image.bitmap.placeholder has only one value
+
+## FIXED
+===========================================================================
+cego._1.fixed.cgeoimages:::OBJECT
+this has only one value
+this.currentDrawable.bitmap has only one value
+this.currentDrawable.bitmap.placeholder has only one value
+cego._1.mocks.Intent.ACTION_VIEW has only one value
+this.lastStartedIntent.action has only one value
+this.lastStartedIntent.data has only one value
+this.lastStartedIntent.data.path has only one value
+this.lastStartedIntent.type has only one value
+
+===========================================================================
+cego._1.fixed.cgeoimages.cgeoimages():::EXIT
+this.currentDrawable == null
+this.lastStartedIntent == null
+
+===========================================================================
+cego._1.fixed.cgeoimages.fetchLastStartedIntent():::ENTER
+this.currentDrawable has only one value
+this.lastStartedIntent has only one value
+
+===========================================================================
+cego._1.fixed.cgeoimages.fetchLastStartedIntent():::EXIT
+this.currentDrawable == orig(this.currentDrawable)
+this.currentDrawable.bitmap == orig(this.currentDrawable.bitmap)
+this.currentDrawable.bitmap.placeholder == orig(this.currentDrawable.bitmap.placeholder)
+this.lastStartedIntent == orig(this.lastStartedIntent)
+cego._1.mocks.Intent.ACTION_VIEW == orig(cego._1.mocks.Intent.ACTION_VIEW)
+this.lastStartedIntent.action == orig(this.lastStartedIntent.action)
+this.lastStartedIntent.data == orig(this.lastStartedIntent.data)
+this.lastStartedIntent.data.path == orig(this.lastStartedIntent.data.path)
+this.lastStartedIntent.type == orig(this.lastStartedIntent.type)
+this.currentDrawable has only one value
+this.lastStartedIntent has only one value
+return has only one value
+return.action has only one value
+return.data has only one value
+return.data.path has only one value
+return.type has only one value
+
+===========================================================================
+cego._1.fixed.cgeoimages.openCurrentDrawable():::ENTER
+this.currentDrawable has only one value
+this.lastStartedIntent == null
+
+===========================================================================
+cego._1.fixed.cgeoimages.openCurrentDrawable():::EXIT
+this.currentDrawable == orig(this.currentDrawable)
+this.currentDrawable.bitmap == orig(this.currentDrawable.bitmap)
+this.currentDrawable.bitmap.placeholder == orig(this.currentDrawable.bitmap.placeholder)
+this.currentDrawable has only one value
+this.lastStartedIntent has only one value
+
+===========================================================================
+cego._1.fixed.cgeoimages.setCurrentDrawable(cego._1.mocks.BitmapDrawable):::ENTER
+this.currentDrawable == null
+this.lastStartedIntent == null
+drawable has only one value
+drawable.bitmap has only one value
+drawable.bitmap.placeholder has only one value
+
+===========================================================================
+cego._1.fixed.cgeoimages.setCurrentDrawable(cego._1.mocks.BitmapDrawable):::EXIT
+this.lastStartedIntent == orig(this.lastStartedIntent)
+drawable.bitmap == orig(drawable.bitmap)
+drawable.bitmap.placeholder == orig(drawable.bitmap.placeholder)
+this.currentDrawable has only one value
+this.lastStartedIntent == null
+drawable.bitmap has only one value
+drawable.bitmap.placeholder has only one value
+
+===========================================================================
+cego._1.fixed.cgeoimages.viewImageInStandardApp(cego._1.mocks.BitmapDrawable):::ENTER
+this.currentDrawable has only one value
+this.lastStartedIntent == null
+image has only one value
+image.bitmap has only one value
+image.bitmap.placeholder has only one value
+
+===========================================================================
+cego._1.fixed.cgeoimages.viewImageInStandardApp(cego._1.mocks.BitmapDrawable):::EXIT56
+
+===========================================================================
+cego._1.fixed.cgeoimages.viewImageInStandardApp(cego._1.mocks.BitmapDrawable):::EXIT
+this.currentDrawable == orig(this.currentDrawable)
+this.currentDrawable.bitmap == orig(this.currentDrawable.bitmap)
+this.currentDrawable.bitmap.placeholder == orig(this.currentDrawable.bitmap.placeholder)
+image.bitmap == orig(image.bitmap)
+image.bitmap.placeholder == orig(image.bitmap.placeholder)
+this.currentDrawable has only one value
+this.lastStartedIntent has only one value
+image.bitmap has only one value
+image.bitmap.placeholder has only one value

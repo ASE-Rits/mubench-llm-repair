@@ -1,0 +1,464 @@
+===========================================================================
+gnucrasha._1b.Driver:::OBJECT
+this has only one value
+this.activity has only one value
+gnucrasha._1b.mocks.Intent.ACTION_MAIN has only one value
+gnucrasha._1b.mocks.Intent.CATEGORY_HOME has only one value
+this.activity.intent.action == null
+this.activity.intent.flags == 0
+this.activity.intent.className == null
+this.activity.lastStartedIntent == null
+this.onPasscodeEntered has only one value
+this.onBackPressed has only one value
+===========================================================================
+gnucrasha._1b.Driver.resetState():::ENTER
+this.activity.intent has only one value
+this.activity.intent.extras has only one value
+this.activity.intent.categories has only one value
+===========================================================================
+gnucrasha._1b.Driver.resetState():::EXIT
+this.activity == orig(this.activity)
+gnucrasha._1b.mocks.Intent.ACTION_MAIN == orig(gnucrasha._1b.mocks.Intent.ACTION_MAIN)
+gnucrasha._1b.mocks.Intent.CATEGORY_HOME == orig(gnucrasha._1b.mocks.Intent.CATEGORY_HOME)
+this.activity.intent.action == orig(this.activity.intent.action)
+this.activity.intent.extras.getClass().getName() == orig(this.activity.intent.extras.getClass().getName())
+this.activity.intent.flags == orig(this.activity.intent.flags)
+this.activity.intent.categories.getClass().getName() == orig(this.activity.intent.categories.getClass().getName())
+this.activity.intent.className == orig(this.activity.intent.className)
+this.activity.lastStartedIntent == orig(this.activity.lastStartedIntent)
+this.onPasscodeEntered == orig(this.onPasscodeEntered)
+this.onBackPressed == orig(this.onBackPressed)
+this.activity.intent has only one value
+this.activity.intent.extras has only one value
+this.activity.intent.categories has only one value
+===========================================================================
+gnucrasha._1b.GnucrashaTest_1b$CommonCases:::OBJECT
+this has only one value
+===========================================================================
+gnucrasha._1b.GnucrashaTest_1b$CommonCases.CommonCases():::EXIT
+===========================================================================
+gnucrasha._1b.GnucrashaTest_1b$CommonCases.successfulPasscodeReturnsToCaller():::ENTER
+===========================================================================
+gnucrasha._1b.GnucrashaTest_1b$CommonCases.successfulPasscodeReturnsToCaller():::EXIT
+===========================================================================
+gnucrasha._1b.GnucrashaTest_1b$Fixed:::OBJECT
+this has only one value
+===========================================================================
+gnucrasha._1b.GnucrashaTest_1b$Fixed.Fixed():::EXIT
+===========================================================================
+gnucrasha._1b.GnucrashaTest_1b$Fixed.driver():::ENTER
+===========================================================================
+gnucrasha._1b.GnucrashaTest_1b$Fixed.driver():::EXIT
+return has only one value
+return.activity has only one value
+return.activity.intent has only one value
+return.activity.lastStartedIntent == null
+return.onPasscodeEntered has only one value
+return.onBackPressed has only one value
+===========================================================================
+gnucrasha._1b.fixed.PasscodeLockScreenActivity:::CLASS
+gnucrasha._1b.fixed.PasscodeLockScreenActivity.TAG has only one value
+===========================================================================
+gnucrasha._1b.fixed.PasscodeLockScreenActivity:::OBJECT
+this has only one value
+this.intent has only one value
+gnucrasha._1b.mocks.Intent.ACTION_MAIN has only one value
+gnucrasha._1b.mocks.Intent.CATEGORY_HOME has only one value
+this.intent.action == null
+this.intent.extras has only one value
+this.intent.flags == 0
+this.intent.categories has only one value
+this.intent.className == null
+this.lastStartedIntent == null
+===========================================================================
+gnucrasha._1b.fixed.PasscodeLockScreenActivity.PasscodeLockScreenActivity():::EXIT
+===========================================================================
+gnucrasha._1b.mocks.Context:::OBJECT
+this has only one value
+this.intent != null
+gnucrasha._1b.mocks.Intent.ACTION_MAIN has only one value
+gnucrasha._1b.mocks.Intent.ACTION_MAIN != null
+gnucrasha._1b.mocks.Intent.CATEGORY_HOME has only one value
+gnucrasha._1b.mocks.Intent.CATEGORY_HOME != null
+this.intent.extras != null
+this.intent.flags == 0
+this.intent.categories != null
+this.intent.className == null
+this.lastStartedIntent.action has only one value
+this.lastStartedIntent.extras has only one value
+this.lastStartedIntent.flags == 67108864
+this.lastStartedIntent.categories has only one value
+this.lastStartedIntent.className has only one value
+===========================================================================
+gnucrasha._1b.mocks.Context.Context():::EXIT
+this.intent has only one value
+this.intent.action == null
+this.intent.extras has only one value
+this.intent.categories has only one value
+this.lastStartedIntent == null
+===========================================================================
+gnucrasha._1b.mocks.Context.getApplicationContext():::ENTER
+this.lastStartedIntent == null
+===========================================================================
+gnucrasha._1b.mocks.Context.getApplicationContext():::EXIT
+this.intent == orig(this.intent)
+gnucrasha._1b.mocks.Intent.ACTION_MAIN == orig(gnucrasha._1b.mocks.Intent.ACTION_MAIN)
+gnucrasha._1b.mocks.Intent.CATEGORY_HOME == orig(gnucrasha._1b.mocks.Intent.CATEGORY_HOME)
+this.intent.action == orig(this.intent.action)
+this.intent.extras == orig(this.intent.extras)
+this.intent.extras.getClass().getName() == orig(this.intent.extras.getClass().getName())
+this.intent.flags == orig(this.intent.flags)
+this.intent.categories == orig(this.intent.categories)
+this.intent.categories.getClass().getName() == orig(this.intent.categories.getClass().getName())
+this.intent.className == orig(this.intent.className)
+this.lastStartedIntent == orig(this.lastStartedIntent)
+this.lastStartedIntent == null
+return has only one value
+return.intent.flags == 0
+return.intent.className == null
+return.lastStartedIntent == null
+===========================================================================
+gnucrasha._1b.mocks.Context.getIntent():::ENTER
+this.intent has only one value
+this.intent.action has only one value
+this.intent.extras has only one value
+this.intent.categories has only one value
+this.lastStartedIntent == null
+===========================================================================
+gnucrasha._1b.mocks.Context.getIntent():::EXIT
+this.intent == orig(this.intent)
+gnucrasha._1b.mocks.Intent.ACTION_MAIN == orig(gnucrasha._1b.mocks.Intent.ACTION_MAIN)
+gnucrasha._1b.mocks.Intent.CATEGORY_HOME == orig(gnucrasha._1b.mocks.Intent.CATEGORY_HOME)
+this.intent.action == orig(this.intent.action)
+this.intent.extras == orig(this.intent.extras)
+this.intent.extras.getClass().getName() == orig(this.intent.extras.getClass().getName())
+this.intent.flags == orig(this.intent.flags)
+this.intent.categories == orig(this.intent.categories)
+this.intent.categories.getClass().getName() == orig(this.intent.categories.getClass().getName())
+this.intent.className == orig(this.intent.className)
+this.lastStartedIntent == orig(this.lastStartedIntent)
+this.intent has only one value
+this.intent.action has only one value
+this.intent.extras has only one value
+this.intent.categories has only one value
+this.lastStartedIntent == null
+return has only one value
+return.action has only one value
+return.extras has only one value
+return.flags == 0
+return.categories has only one value
+return.className == null
+===========================================================================
+gnucrasha._1b.mocks.Context.getLastStartedIntent():::ENTER
+this.intent has only one value
+this.intent.action has only one value
+this.intent.extras has only one value
+this.intent.categories has only one value
+this.lastStartedIntent has only one value
+===========================================================================
+gnucrasha._1b.mocks.Context.getLastStartedIntent():::EXIT
+this.intent == orig(this.intent)
+gnucrasha._1b.mocks.Intent.ACTION_MAIN == orig(gnucrasha._1b.mocks.Intent.ACTION_MAIN)
+gnucrasha._1b.mocks.Intent.CATEGORY_HOME == orig(gnucrasha._1b.mocks.Intent.CATEGORY_HOME)
+this.intent.action == orig(this.intent.action)
+this.intent.extras == orig(this.intent.extras)
+this.intent.extras.getClass().getName() == orig(this.intent.extras.getClass().getName())
+this.intent.flags == orig(this.intent.flags)
+this.intent.categories == orig(this.intent.categories)
+this.intent.categories.getClass().getName() == orig(this.intent.categories.getClass().getName())
+this.intent.className == orig(this.intent.className)
+this.lastStartedIntent == orig(this.lastStartedIntent)
+this.lastStartedIntent.action == orig(this.lastStartedIntent.action)
+this.lastStartedIntent.extras == orig(this.lastStartedIntent.extras)
+this.lastStartedIntent.extras.getClass().getName() == orig(this.lastStartedIntent.extras.getClass().getName())
+this.lastStartedIntent.flags == orig(this.lastStartedIntent.flags)
+this.lastStartedIntent.categories == orig(this.lastStartedIntent.categories)
+this.lastStartedIntent.categories.getClass().getName() == orig(this.lastStartedIntent.categories.getClass().getName())
+this.lastStartedIntent.className == orig(this.lastStartedIntent.className)
+this.intent has only one value
+this.intent.action has only one value
+this.intent.extras has only one value
+this.intent.categories has only one value
+this.lastStartedIntent has only one value
+return has only one value
+return.action has only one value
+return.extras has only one value
+return.flags == 67108864
+return.categories has only one value
+return.className has only one value
+===========================================================================
+gnucrasha._1b.mocks.Context.setIntent(gnucrasha._1b.mocks.Intent):::ENTER
+this.intent.action == null
+this.lastStartedIntent == null
+intent.flags == 0
+intent.className == null
+===========================================================================
+gnucrasha._1b.mocks.Context.setIntent(gnucrasha._1b.mocks.Intent):::EXIT
+gnucrasha._1b.mocks.Intent.ACTION_MAIN == orig(gnucrasha._1b.mocks.Intent.ACTION_MAIN)
+gnucrasha._1b.mocks.Intent.CATEGORY_HOME == orig(gnucrasha._1b.mocks.Intent.CATEGORY_HOME)
+this.intent.extras.getClass().getName() == orig(this.intent.extras.getClass().getName())
+this.intent.flags == orig(this.intent.flags)
+this.intent.categories.getClass().getName() == orig(this.intent.categories.getClass().getName())
+this.intent.className == orig(this.intent.className)
+this.lastStartedIntent == orig(this.lastStartedIntent)
+intent.action == orig(intent.action)
+intent.extras == orig(intent.extras)
+intent.extras.getClass().getName() == orig(intent.extras.getClass().getName())
+intent.flags == orig(intent.flags)
+intent.categories == orig(intent.categories)
+intent.categories.getClass().getName() == orig(intent.categories.getClass().getName())
+intent.className == orig(intent.className)
+this.lastStartedIntent == null
+intent.flags == 0
+intent.className == null
+===========================================================================
+gnucrasha._1b.mocks.Context.startActivity(gnucrasha._1b.mocks.Intent):::ENTER
+this.intent has only one value
+this.intent.action has only one value
+this.intent.extras has only one value
+this.intent.categories has only one value
+this.lastStartedIntent == null
+intent has only one value
+intent.action has only one value
+intent.extras has only one value
+intent.flags == 67108864
+intent.categories has only one value
+intent.className has only one value
+===========================================================================
+gnucrasha._1b.mocks.Context.startActivity(gnucrasha._1b.mocks.Intent):::EXIT
+this.intent == orig(this.intent)
+gnucrasha._1b.mocks.Intent.ACTION_MAIN == orig(gnucrasha._1b.mocks.Intent.ACTION_MAIN)
+gnucrasha._1b.mocks.Intent.CATEGORY_HOME == orig(gnucrasha._1b.mocks.Intent.CATEGORY_HOME)
+this.intent.action == orig(this.intent.action)
+this.intent.extras == orig(this.intent.extras)
+this.intent.extras.getClass().getName() == orig(this.intent.extras.getClass().getName())
+this.intent.flags == orig(this.intent.flags)
+this.intent.categories == orig(this.intent.categories)
+this.intent.categories.getClass().getName() == orig(this.intent.categories.getClass().getName())
+this.intent.className == orig(this.intent.className)
+intent.action == orig(intent.action)
+intent.extras == orig(intent.extras)
+intent.extras.getClass().getName() == orig(intent.extras.getClass().getName())
+intent.flags == orig(intent.flags)
+intent.categories == orig(intent.categories)
+intent.categories.getClass().getName() == orig(intent.categories.getClass().getName())
+intent.className == orig(intent.className)
+this.intent has only one value
+this.intent.action has only one value
+this.intent.extras has only one value
+this.intent.categories has only one value
+this.lastStartedIntent has only one value
+intent.action has only one value
+intent.extras has only one value
+intent.flags == 67108864
+intent.categories has only one value
+intent.className has only one value
+===========================================================================
+gnucrasha._1b.mocks.GnuCashApplication:::CLASS
+gnucrasha._1b.mocks.GnuCashApplication.PASSCODE_SESSION_INIT_TIME == 0
+gnucrasha._1b.mocks.GnuCashApplication.SESSION_TIMEOUT == 300000
+===========================================================================
+gnucrasha._1b.mocks.GnuCashApplication.reset():::ENTER
+===========================================================================
+gnucrasha._1b.mocks.GnuCashApplication.reset():::EXIT
+gnucrasha._1b.mocks.GnuCashApplication.PASSCODE_SESSION_INIT_TIME == orig(gnucrasha._1b.mocks.GnuCashApplication.PASSCODE_SESSION_INIT_TIME)
+gnucrasha._1b.mocks.GnuCashApplication.SESSION_TIMEOUT == orig(gnucrasha._1b.mocks.GnuCashApplication.SESSION_TIMEOUT)
+===========================================================================
+gnucrasha._1b.mocks.Intent:::CLASS
+gnucrasha._1b.mocks.Intent.ACTION_MAIN has only one value
+gnucrasha._1b.mocks.Intent.CATEGORY_HOME has only one value
+===========================================================================
+gnucrasha._1b.mocks.Intent:::OBJECT
+this.flags one of { 0, 67108864 }
+===========================================================================
+gnucrasha._1b.mocks.Intent.Intent():::EXIT
+this.action == null
+this.flags == 0
+this.className == null
+===========================================================================
+gnucrasha._1b.mocks.Intent.getAction():::ENTER
+this has only one value
+this.action has only one value
+this.extras has only one value
+this.flags == 0
+this.categories has only one value
+this.className == null
+===========================================================================
+gnucrasha._1b.mocks.Intent.getAction():::EXIT
+gnucrasha._1b.mocks.Intent.ACTION_MAIN == orig(gnucrasha._1b.mocks.Intent.ACTION_MAIN)
+gnucrasha._1b.mocks.Intent.CATEGORY_HOME == orig(gnucrasha._1b.mocks.Intent.CATEGORY_HOME)
+this.action == orig(this.action)
+this.extras == orig(this.extras)
+this.extras.getClass().getName() == orig(this.extras.getClass().getName())
+this.flags == orig(this.flags)
+this.categories == orig(this.categories)
+this.categories.getClass().getName() == orig(this.categories.getClass().getName())
+this.className == orig(this.className)
+this.action has only one value
+this.extras has only one value
+this.flags == 0
+this.categories has only one value
+this.className == null
+return has only one value
+===========================================================================
+gnucrasha._1b.mocks.Intent.getClassName():::ENTER
+this has only one value
+this.action has only one value
+this.extras has only one value
+this.flags == 67108864
+this.categories has only one value
+this.className has only one value
+===========================================================================
+gnucrasha._1b.mocks.Intent.getClassName():::EXIT
+gnucrasha._1b.mocks.Intent.ACTION_MAIN == orig(gnucrasha._1b.mocks.Intent.ACTION_MAIN)
+gnucrasha._1b.mocks.Intent.CATEGORY_HOME == orig(gnucrasha._1b.mocks.Intent.CATEGORY_HOME)
+this.action == orig(this.action)
+this.extras == orig(this.extras)
+this.extras.getClass().getName() == orig(this.extras.getClass().getName())
+this.flags == orig(this.flags)
+this.categories == orig(this.categories)
+this.categories.getClass().getName() == orig(this.categories.getClass().getName())
+this.className == orig(this.className)
+this.action has only one value
+this.extras has only one value
+this.flags == 67108864
+this.categories has only one value
+this.className has only one value
+return has only one value
+===========================================================================
+gnucrasha._1b.mocks.Intent.setFlags(int):::ENTER
+this has only one value
+this.action has only one value
+this.extras has only one value
+this.flags == 0
+this.categories has only one value
+this.className has only one value
+flags == 67108864
+===========================================================================
+gnucrasha._1b.mocks.Intent.setFlags(int):::EXIT
+gnucrasha._1b.mocks.Intent.ACTION_MAIN == orig(gnucrasha._1b.mocks.Intent.ACTION_MAIN)
+gnucrasha._1b.mocks.Intent.CATEGORY_HOME == orig(gnucrasha._1b.mocks.Intent.CATEGORY_HOME)
+this.action == orig(this.action)
+this.extras == orig(this.extras)
+this.extras.getClass().getName() == orig(this.extras.getClass().getName())
+this.categories == orig(this.categories)
+this.categories.getClass().getName() == orig(this.categories.getClass().getName())
+this.className == orig(this.className)
+this.action has only one value
+this.extras has only one value
+this.flags == 67108864
+this.categories has only one value
+this.className has only one value
+return has only one value
+return.action has only one value
+return.extras has only one value
+return.flags == 67108864
+return.categories has only one value
+return.className has only one value
+===========================================================================
+gnucrasha._1b.mocks.PreferenceManager:::CLASS
+===========================================================================
+gnucrasha._1b.mocks.PreferenceManager.getDefaultSharedPreferences(gnucrasha._1b.mocks.Context):::ENTER
+gnucrasha._1b.mocks.PreferenceManager.defaultSharedPreferences has only one value
+gnucrasha._1b.mocks.PreferenceManager.defaultSharedPreferences.values has only one value
+context has only one value
+gnucrasha._1b.mocks.Intent.ACTION_MAIN has only one value
+gnucrasha._1b.mocks.Intent.CATEGORY_HOME has only one value
+context.intent.flags == 0
+context.intent.className == null
+context.lastStartedIntent == null
+===========================================================================
+gnucrasha._1b.mocks.PreferenceManager.getDefaultSharedPreferences(gnucrasha._1b.mocks.Context):::EXIT
+gnucrasha._1b.mocks.PreferenceManager.defaultSharedPreferences == orig(gnucrasha._1b.mocks.PreferenceManager.defaultSharedPreferences)
+gnucrasha._1b.mocks.PreferenceManager.defaultSharedPreferences.values == orig(gnucrasha._1b.mocks.PreferenceManager.defaultSharedPreferences.values)
+gnucrasha._1b.mocks.PreferenceManager.defaultSharedPreferences.values.getClass().getName() == orig(gnucrasha._1b.mocks.PreferenceManager.defaultSharedPreferences.values.getClass().getName())
+context.intent == orig(context.intent)
+gnucrasha._1b.mocks.Intent.ACTION_MAIN == orig(gnucrasha._1b.mocks.Intent.ACTION_MAIN)
+gnucrasha._1b.mocks.Intent.CATEGORY_HOME == orig(gnucrasha._1b.mocks.Intent.CATEGORY_HOME)
+context.intent.action == orig(context.intent.action)
+context.intent.extras == orig(context.intent.extras)
+context.intent.extras.getClass().getName() == orig(context.intent.extras.getClass().getName())
+context.intent.flags == orig(context.intent.flags)
+context.intent.categories == orig(context.intent.categories)
+context.intent.categories.getClass().getName() == orig(context.intent.categories.getClass().getName())
+context.intent.className == orig(context.intent.className)
+context.lastStartedIntent == orig(context.lastStartedIntent)
+gnucrasha._1b.mocks.PreferenceManager.defaultSharedPreferences has only one value
+gnucrasha._1b.mocks.PreferenceManager.defaultSharedPreferences.values has only one value
+gnucrasha._1b.mocks.Intent.ACTION_MAIN has only one value
+gnucrasha._1b.mocks.Intent.CATEGORY_HOME has only one value
+context.intent.flags == 0
+context.intent.className == null
+context.lastStartedIntent == null
+return has only one value
+return.values has only one value
+===========================================================================
+gnucrasha._1b.mocks.PreferenceManager.reset():::ENTER
+gnucrasha._1b.mocks.PreferenceManager.defaultSharedPreferences has only one value
+gnucrasha._1b.mocks.PreferenceManager.defaultSharedPreferences.values has only one value
+===========================================================================
+gnucrasha._1b.mocks.PreferenceManager.reset():::EXIT
+gnucrasha._1b.mocks.PreferenceManager.defaultSharedPreferences.values.getClass().getName() == orig(gnucrasha._1b.mocks.PreferenceManager.defaultSharedPreferences.values.getClass().getName())
+gnucrasha._1b.mocks.PreferenceManager.defaultSharedPreferences has only one value
+gnucrasha._1b.mocks.PreferenceManager.defaultSharedPreferences.values has only one value
+===========================================================================
+gnucrasha._1b.mocks.SharedPreferences$Editor:::OBJECT
+this has only one value
+this.staged has only one value
+gnucrasha._1b.mocks.SharedPreferences.this has only one value
+gnucrasha._1b.mocks.SharedPreferences.this.values has only one value
+===========================================================================
+gnucrasha._1b.mocks.SharedPreferences$Editor.Editor(gnucrasha._1b.mocks.SharedPreferences):::ENTER
+gnucrasha._1b.mocks.SharedPreferences.this has only one value
+gnucrasha._1b.mocks.SharedPreferences.this.values has only one value
+===========================================================================
+gnucrasha._1b.mocks.SharedPreferences$Editor.Editor(gnucrasha._1b.mocks.SharedPreferences):::EXIT
+gnucrasha._1b.mocks.SharedPreferences.this == orig(gnucrasha._1b.mocks.SharedPreferences.this)
+gnucrasha._1b.mocks.SharedPreferences.this.values == orig(gnucrasha._1b.mocks.SharedPreferences.this.values)
+gnucrasha._1b.mocks.SharedPreferences.this.values.getClass().getName() == orig(gnucrasha._1b.mocks.SharedPreferences.this.values.getClass().getName())
+===========================================================================
+gnucrasha._1b.mocks.SharedPreferences$Editor.commit():::ENTER
+===========================================================================
+gnucrasha._1b.mocks.SharedPreferences$Editor.commit():::EXIT
+this.staged == orig(this.staged)
+this.staged.getClass().getName() == orig(this.staged.getClass().getName())
+gnucrasha._1b.mocks.SharedPreferences.this == orig(gnucrasha._1b.mocks.SharedPreferences.this)
+gnucrasha._1b.mocks.SharedPreferences.this.values == orig(gnucrasha._1b.mocks.SharedPreferences.this.values)
+gnucrasha._1b.mocks.SharedPreferences.this.values.getClass().getName() == orig(gnucrasha._1b.mocks.SharedPreferences.this.values.getClass().getName())
+return == true
+===========================================================================
+gnucrasha._1b.mocks.SharedPreferences$Editor.commit():::EXIT;condition="return == true"
+===========================================================================
+gnucrasha._1b.mocks.SharedPreferences:::OBJECT
+===========================================================================
+gnucrasha._1b.mocks.SharedPreferences.SharedPreferences():::EXIT
+===========================================================================
+gnucrasha._1b.mocks.SharedPreferences.edit():::ENTER
+this has only one value
+this.values has only one value
+===========================================================================
+gnucrasha._1b.mocks.SharedPreferences.edit():::EXIT
+this.values == orig(this.values)
+this.values.getClass().getName() == orig(this.values.getClass().getName())
+this.values has only one value
+return has only one value
+return.staged has only one value
+gnucrasha._1b.mocks.SharedPreferences.this has only one value
+gnucrasha._1b.mocks.SharedPreferences.this.values has only one value
+===========================================================================
+gnucrasha._1b.mocks.SherlockFragmentActivity:::OBJECT
+this has only one value
+this.intent has only one value
+gnucrasha._1b.mocks.Intent.ACTION_MAIN has only one value
+gnucrasha._1b.mocks.Intent.CATEGORY_HOME has only one value
+this.intent.action == null
+this.intent.extras has only one value
+this.intent.flags == 0
+this.intent.categories has only one value
+this.intent.className == null
+this.lastStartedIntent == null
+===========================================================================
+gnucrasha._1b.mocks.SherlockFragmentActivity.SherlockFragmentActivity():::EXIT
+===========================================================================
+junit.runner.Version.id():::EXIT
+return has only one value

@@ -1,0 +1,64 @@
+# GnucrashaTest_1b
+
+## ORIGINAL
+===========================================================================
+gnucrasha._1b.original.PasscodeLockScreenActivity:::CLASS
+gnucrasha._1b.original.PasscodeLockScreenActivity.TAG has only one value
+
+===========================================================================
+gnucrasha._1b.original.PasscodeLockScreenActivity:::OBJECT
+this has only one value
+this.intent has only one value
+gnucrasha._1b.mocks.Intent.ACTION_MAIN has only one value
+gnucrasha._1b.mocks.Intent.CATEGORY_HOME has only one value
+this.intent.action == null
+this.intent.extras has only one value
+this.intent.flags == 0
+this.intent.categories has only one value
+this.intent.className == null
+this.lastStartedIntent == null
+
+===========================================================================
+gnucrasha._1b.original.PasscodeLockScreenActivity.PasscodeLockScreenActivity():::EXIT
+
+## MISUSE
+===========================================================================
+gnucrasha._1b.misuse.PasscodeLockScreenActivity:::CLASS
+gnucrasha._1b.misuse.PasscodeLockScreenActivity.TAG has only one value
+
+===========================================================================
+gnucrasha._1b.misuse.PasscodeLockScreenActivity:::OBJECT
+this has only one value
+this.intent has only one value
+gnucrasha._1b.mocks.Intent.ACTION_MAIN has only one value
+gnucrasha._1b.mocks.Intent.CATEGORY_HOME has only one value
+this.intent.action == null
+this.intent.extras has only one value
+this.intent.flags == 0
+this.intent.categories has only one value
+this.intent.className == null
+this.lastStartedIntent == null
+
+===========================================================================
+gnucrasha._1b.misuse.PasscodeLockScreenActivity.PasscodeLockScreenActivity():::EXIT
+
+## FIXED
+===========================================================================
+gnucrasha._1b.fixed.PasscodeLockScreenActivity:::CLASS
+gnucrasha._1b.fixed.PasscodeLockScreenActivity.TAG has only one value
+
+===========================================================================
+gnucrasha._1b.fixed.PasscodeLockScreenActivity:::OBJECT
+this has only one value
+this.intent has only one value
+gnucrasha._1b.mocks.Intent.ACTION_MAIN has only one value
+gnucrasha._1b.mocks.Intent.CATEGORY_HOME has only one value
+this.intent.action == null
+this.intent.extras has only one value
+this.intent.flags == 0
+this.intent.categories has only one value
+this.intent.className == null
+this.lastStartedIntent == null
+
+===========================================================================
+gnucrasha._1b.fixed.PasscodeLockScreenActivity.PasscodeLockScreenActivity():::EXIT

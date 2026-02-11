@@ -1,0 +1,70 @@
+// Declarations for tucanmobile.TucanmobileTest_1$Original
+// Declarations written 2026-02-11T23:07:44.474742006 by daikon.DynComp
+
+decl-version 2.0
+var-comparability implicit
+
+ppt tucanmobile.TucanmobileTest_1$Original:::CLASS
+ppt-type class
+
+ppt tucanmobile.TucanmobileTest_1$Original:::OBJECT
+ppt-type object
+variable this
+  var-kind variable
+  dec-type tucanmobile.TucanmobileTest_1$Original
+  rep-type hashcode
+  flags is_param non_null
+  comparability 2
+
+ppt tucanmobile.TucanmobileTest_1$Original.Original():::ENTER
+ppt-type enter
+
+ppt tucanmobile.TucanmobileTest_1$Original.Original():::EXIT52
+ppt-type subexit
+variable this
+  var-kind variable
+  dec-type tucanmobile.TucanmobileTest_1$Original
+  rep-type hashcode
+  flags is_param non_null
+  comparability 2
+
+ppt tucanmobile.TucanmobileTest_1$Original.createDriver():::ENTER
+ppt-type enter
+variable this
+  var-kind variable
+  dec-type tucanmobile.TucanmobileTest_1$Original
+  rep-type hashcode
+  flags is_param non_null
+  comparability 2
+
+ppt tucanmobile.TucanmobileTest_1$Original.createDriver():::EXIT55
+ppt-type subexit
+variable this
+  var-kind variable
+  dec-type tucanmobile.TucanmobileTest_1$Original
+  rep-type hashcode
+  flags is_param non_null
+  comparability 5
+variable return
+  var-kind return
+  dec-type tucanmobile._1.Driver
+  rep-type hashcode
+  comparability 2
+variable return.targetClass
+  var-kind field targetClass
+  dec-type java.lang.Class
+  rep-type hashcode
+  comparability 4
+variable return.instance
+  var-kind field instance
+  dec-type java.lang.Object
+  rep-type hashcode
+  comparability 3
+variable return.instance.getClass().getName()
+  var-kind function getClass().getName()
+  dec-type java.lang.Class
+  rep-type java.lang.String
+  function-args return.instance
+  flags synthetic classname non_null
+  comparability 1
+

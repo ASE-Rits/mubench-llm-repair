@@ -1,0 +1,30 @@
+// Declarations for ivantrendafilov_confucius.Ivantrendafilov_confuciusTest_101$Fixed
+// Declarations written 2026-02-11T23:03:05.231494175 by daikon.DynComp
+
+decl-version 2.0
+var-comparability implicit
+
+ppt ivantrendafilov_confucius.Ivantrendafilov_confuciusTest_101$Fixed:::CLASS
+ppt-type class
+
+ppt ivantrendafilov_confucius.Ivantrendafilov_confuciusTest_101$Fixed:::OBJECT
+ppt-type object
+variable this
+  var-kind variable
+  dec-type ivantrendafilov_confucius.Ivantrendafilov_confuciusTest_101$Fixed
+  rep-type hashcode
+  flags is_param non_null
+  comparability 2
+
+ppt ivantrendafilov_confucius.Ivantrendafilov_confuciusTest_101$Fixed.Fixed():::ENTER
+ppt-type enter
+
+ppt ivantrendafilov_confucius.Ivantrendafilov_confuciusTest_101$Fixed.Fixed():::EXIT51
+ppt-type subexit
+variable this
+  var-kind variable
+  dec-type ivantrendafilov_confucius.Ivantrendafilov_confuciusTest_101$Fixed
+  rep-type hashcode
+  flags is_param non_null
+  comparability 2
+

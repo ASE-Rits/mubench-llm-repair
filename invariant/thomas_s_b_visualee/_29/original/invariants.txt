@@ -1,0 +1,78 @@
+===========================================================================
+junit.runner.Version.id():::EXIT
+return has only one value
+===========================================================================
+thomas_s_b_visualee.Thomas_s_b_visualeeTest_29$CommonLogic:::OBJECT
+this has only one value
+===========================================================================
+thomas_s_b_visualee.Thomas_s_b_visualeeTest_29$CommonLogic.CommonLogic():::EXIT
+===========================================================================
+thomas_s_b_visualee.Thomas_s_b_visualeeTest_29$CommonLogic.testFindAndSetPackageIncompletePackage():::ENTER
+===========================================================================
+thomas_s_b_visualee.Thomas_s_b_visualeeTest_29$CommonLogic.testFindAndSetPackageIncompletePackage():::EXIT
+===========================================================================
+thomas_s_b_visualee.Thomas_s_b_visualeeTest_29$Original:::OBJECT
+this has only one value
+===========================================================================
+thomas_s_b_visualee.Thomas_s_b_visualeeTest_29$Original.Original():::EXIT
+===========================================================================
+thomas_s_b_visualee.Thomas_s_b_visualeeTest_29$Original.createDriver():::ENTER
+===========================================================================
+thomas_s_b_visualee.Thomas_s_b_visualeeTest_29$Original.createDriver():::EXIT
+return has only one value
+return.examinerClass has only one value
+return.findAndSetPackageMethod has only one value
+return.getSourceCodeScannerMethod has only one value
+return.getClassBodyMethod has only one value
+return.countCharMethod has only one value
+return.scanAfterQuoteMethod has only one value
+return.scanAfterClosedParenthesisMethod has only one value
+return.isAJavaTokenMethod has only one value
+return.jumpOverJavaTokenMethod has only one value
+return.extractClassInstanceOrEventMethod has only one value
+===========================================================================
+thomas_s_b_visualee._29.Driver.createOriginal():::EXIT
+return has only one value
+return.examinerClass has only one value
+return.findAndSetPackageMethod has only one value
+return.getSourceCodeScannerMethod has only one value
+return.getClassBodyMethod has only one value
+return.countCharMethod has only one value
+return.scanAfterQuoteMethod has only one value
+return.scanAfterClosedParenthesisMethod has only one value
+return.isAJavaTokenMethod has only one value
+return.jumpOverJavaTokenMethod has only one value
+return.extractClassInstanceOrEventMethod has only one value
+===========================================================================
+thomas_s_b_visualee._29.requirements.source.entity.JavaSource:::CLASS
+===========================================================================
+thomas_s_b_visualee._29.requirements.source.entity.JavaSource:::OBJECT
+this has only one value
+this.javaFile == null
+this.id == 0
+this.group == 0
+this.packagePath == null
+this.sourceCode has only one value
+this.name has only one value
+===========================================================================
+thomas_s_b_visualee._29.requirements.source.entity.JavaSource.getPackagePath():::ENTER
+===========================================================================
+thomas_s_b_visualee._29.requirements.source.entity.JavaSource.getPackagePath():::EXIT
+this.javaFile == orig(this.javaFile)
+this.id == orig(this.id)
+this.group == orig(this.group)
+this.packagePath == orig(this.packagePath)
+this.sourceCode == orig(this.sourceCode)
+this.name == orig(this.name)
+return == null
+===========================================================================
+thomas_s_b_visualee._29.requirements.source.entity.JavaSource.getSourceCode():::ENTER
+===========================================================================
+thomas_s_b_visualee._29.requirements.source.entity.JavaSource.getSourceCode():::EXIT
+this.javaFile == orig(this.javaFile)
+this.id == orig(this.id)
+this.group == orig(this.group)
+this.packagePath == orig(this.packagePath)
+this.sourceCode == orig(this.sourceCode)
+this.name == orig(this.name)
+return has only one value

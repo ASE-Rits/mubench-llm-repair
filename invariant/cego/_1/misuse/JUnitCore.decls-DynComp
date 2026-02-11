@@ -1,0 +1,100 @@
+// Declarations for cego._1.CegoTest_1$Misuse
+// Declarations written 2026-02-11T23:01:48.131392813 by daikon.DynComp
+
+decl-version 2.0
+var-comparability implicit
+
+ppt cego._1.CegoTest_1$Misuse:::CLASS
+ppt-type class
+
+ppt cego._1.CegoTest_1$Misuse:::OBJECT
+ppt-type object
+variable this
+  var-kind variable
+  dec-type cego._1.CegoTest_1$Misuse
+  rep-type hashcode
+  flags is_param non_null
+  comparability 2
+
+ppt cego._1.CegoTest_1$Misuse.Misuse():::ENTER
+ppt-type enter
+
+ppt cego._1.CegoTest_1$Misuse.Misuse():::EXIT49
+ppt-type subexit
+variable this
+  var-kind variable
+  dec-type cego._1.CegoTest_1$Misuse
+  rep-type hashcode
+  flags is_param non_null
+  comparability 2
+
+ppt cego._1.CegoTest_1$Misuse.driver():::ENTER
+ppt-type enter
+variable this
+  var-kind variable
+  dec-type cego._1.CegoTest_1$Misuse
+  rep-type hashcode
+  flags is_param non_null
+  comparability 2
+
+ppt cego._1.CegoTest_1$Misuse.driver():::EXIT53
+ppt-type subexit
+variable this
+  var-kind variable
+  dec-type cego._1.CegoTest_1$Misuse
+  rep-type hashcode
+  flags is_param non_null
+  comparability 5
+variable return
+  var-kind return
+  dec-type cego._1.Driver
+  rep-type hashcode
+  comparability 2
+variable return.activity
+  var-kind field activity
+  dec-type java.lang.Object
+  rep-type hashcode
+  comparability 3
+variable return.activity.getClass().getName()
+  var-kind function getClass().getName()
+  dec-type java.lang.Class
+  rep-type java.lang.String
+  function-args return.activity
+  flags synthetic classname non_null
+  comparability 1
+variable return.targetClass
+  var-kind field targetClass
+  dec-type java.lang.Class
+  rep-type hashcode
+  comparability 4
+
+ppt cego._1.CegoTest_1$Misuse.expectedMime():::ENTER
+ppt-type enter
+variable this
+  var-kind variable
+  dec-type cego._1.CegoTest_1$Misuse
+  rep-type hashcode
+  flags is_param non_null
+  comparability 2
+
+ppt cego._1.CegoTest_1$Misuse.expectedMime():::EXIT58
+ppt-type subexit
+variable this
+  var-kind variable
+  dec-type cego._1.CegoTest_1$Misuse
+  rep-type hashcode
+  flags is_param non_null
+  comparability 4
+variable return
+  var-kind return
+  dec-type java.lang.String
+  rep-type hashcode
+  comparability 2
+variable return.toString
+  var-kind function toString()
+  dec-type java.lang.String
+  rep-type java.lang.String
+  function-args return
+  flags synthetic to_string
+  comparability 3
+

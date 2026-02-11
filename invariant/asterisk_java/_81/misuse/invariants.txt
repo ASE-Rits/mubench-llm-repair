@@ -1,0 +1,3 @@
+===========================================================================
+junit.runner.Version.id():::EXIT
+return has only one value

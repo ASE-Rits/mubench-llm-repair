@@ -1,0 +1,53 @@
+// Declarations for apache_gora._56_2.ApacheGoraTest_56_2$Original
+// Declarations written 2026-02-11T23:00:55.317137141 by daikon.DynComp
+
+decl-version 2.0
+var-comparability implicit
+
+ppt apache_gora._56_2.ApacheGoraTest_56_2$Original:::CLASS
+ppt-type class
+
+ppt apache_gora._56_2.ApacheGoraTest_56_2$Original:::OBJECT
+ppt-type object
+variable this
+  var-kind variable
+  dec-type apache_gora._56_2.ApacheGoraTest_56_2$Original
+  rep-type hashcode
+  flags is_param non_null
+  comparability 2
+
+ppt apache_gora._56_2.ApacheGoraTest_56_2$Original.Original():::ENTER
+ppt-type enter
+
+ppt apache_gora._56_2.ApacheGoraTest_56_2$Original.Original():::EXIT38
+ppt-type subexit
+variable this
+  var-kind variable
+  dec-type apache_gora._56_2.ApacheGoraTest_56_2$Original
+  rep-type hashcode
+  flags is_param non_null
+  comparability 2
+
+ppt apache_gora._56_2.ApacheGoraTest_56_2$Original.driver():::ENTER
+ppt-type enter
+variable this
+  var-kind variable
+  dec-type apache_gora._56_2.ApacheGoraTest_56_2$Original
+  rep-type hashcode
+  flags is_param non_null
+  comparability 2
+
+ppt apache_gora._56_2.ApacheGoraTest_56_2$Original.driver():::EXIT41
+ppt-type subexit
+variable this
+  var-kind variable
+  dec-type apache_gora._56_2.ApacheGoraTest_56_2$Original
+  rep-type hashcode
+  flags is_param non_null
+  comparability 3
+variable return
+  var-kind return
+  dec-type apache_gora._56_2.Driver
+  rep-type hashcode
+  comparability 2
+

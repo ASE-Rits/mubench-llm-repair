@@ -1,0 +1,123 @@
+===========================================================================
+ivantrendafilov_confucius.Ivantrendafilov_confuciusTest_95$CommonLogic:::OBJECT
+this has only one value
+===========================================================================
+ivantrendafilov_confucius.Ivantrendafilov_confuciusTest_95$CommonLogic.CommonLogic():::EXIT
+===========================================================================
+ivantrendafilov_confucius.Ivantrendafilov_confuciusTest_95$CommonLogic.testGetByteListInvalidInputContainsKey():::ENTER
+===========================================================================
+ivantrendafilov_confucius.Ivantrendafilov_confuciusTest_95$CommonLogic.testGetByteListInvalidInputContainsKey():::EXIT
+===========================================================================
+ivantrendafilov_confucius.Ivantrendafilov_confuciusTest_95$Original:::OBJECT
+this has only one value
+===========================================================================
+ivantrendafilov_confucius.Ivantrendafilov_confuciusTest_95$Original.Original():::EXIT
+===========================================================================
+ivantrendafilov_confucius._95.original.AbstractConfiguration:::CLASS
+ivantrendafilov_confucius._95.original.AbstractConfiguration.LOG has only one value
+ivantrendafilov_confucius._95.original.AbstractConfiguration.ITEM_SEPARATOR has only one value
+ivantrendafilov_confucius._95.original.AbstractConfiguration.FILE_PARAM has only one value
+ivantrendafilov_confucius._95.original.AbstractConfiguration.CONTEXT_PARAM has only one value
+===========================================================================
+ivantrendafilov_confucius._95.original.AbstractConfiguration:::OBJECT
+this has only one value
+this.configurationDataProvider has only one value
+this.context == null
+this.initialState has only one value
+===========================================================================
+ivantrendafilov_confucius._95.original.AbstractConfiguration.init():::ENTER
+===========================================================================
+ivantrendafilov_confucius._95.original.AbstractConfiguration.init():::EXIT
+ivantrendafilov_confucius._95.original.AbstractConfiguration.LOG == orig(ivantrendafilov_confucius._95.original.AbstractConfiguration.LOG)
+ivantrendafilov_confucius._95.original.AbstractConfiguration.LOG.getClass().getName() == orig(ivantrendafilov_confucius._95.original.AbstractConfiguration.LOG.getClass().getName())
+ivantrendafilov_confucius._95.original.AbstractConfiguration.ITEM_SEPARATOR == orig(ivantrendafilov_confucius._95.original.AbstractConfiguration.ITEM_SEPARATOR)
+ivantrendafilov_confucius._95.original.AbstractConfiguration.FILE_PARAM == orig(ivantrendafilov_confucius._95.original.AbstractConfiguration.FILE_PARAM)
+ivantrendafilov_confucius._95.original.AbstractConfiguration.CONTEXT_PARAM == orig(ivantrendafilov_confucius._95.original.AbstractConfiguration.CONTEXT_PARAM)
+this.configurationDataProvider == orig(this.configurationDataProvider)
+this.configurationDataProvider.getClass().getName() == orig(this.configurationDataProvider.getClass().getName())
+this.context == orig(this.context)
+this.initialState == orig(this.initialState)
+this.initialState.getClass().getName() == orig(this.initialState.getClass().getName())
+===========================================================================
+ivantrendafilov_confucius._95.requirements.Parser:::CLASS
+ivantrendafilov_confucius._95.requirements.Parser.DEFAULT_CONTEXT has only one value
+ivantrendafilov_confucius._95.requirements.Parser.COMMENT has only one value
+ivantrendafilov_confucius._95.requirements.Parser.IDENTITY has only one value
+ivantrendafilov_confucius._95.requirements.Parser.LEFT_CONTEXT has only one value
+ivantrendafilov_confucius._95.requirements.Parser.RIGHT_CONTEXT has only one value
+ivantrendafilov_confucius._95.requirements.Parser.LEFT_SUBSTITUTION has only one value
+ivantrendafilov_confucius._95.requirements.Parser.RIGHT_SUBSTITUTION has only one value
+===========================================================================
+ivantrendafilov_confucius._95.requirements.Parser:::OBJECT
+this has only one value
+this.configuration has only one value
+===========================================================================
+ivantrendafilov_confucius._95.requirements.Parser.getConfiguration():::ENTER
+===========================================================================
+ivantrendafilov_confucius._95.requirements.Parser.getConfiguration():::EXIT
+ivantrendafilov_confucius._95.requirements.Parser.DEFAULT_CONTEXT == orig(ivantrendafilov_confucius._95.requirements.Parser.DEFAULT_CONTEXT)
+ivantrendafilov_confucius._95.requirements.Parser.COMMENT == orig(ivantrendafilov_confucius._95.requirements.Parser.COMMENT)
+ivantrendafilov_confucius._95.requirements.Parser.IDENTITY == orig(ivantrendafilov_confucius._95.requirements.Parser.IDENTITY)
+ivantrendafilov_confucius._95.requirements.Parser.LEFT_CONTEXT == orig(ivantrendafilov_confucius._95.requirements.Parser.LEFT_CONTEXT)
+ivantrendafilov_confucius._95.requirements.Parser.RIGHT_CONTEXT == orig(ivantrendafilov_confucius._95.requirements.Parser.RIGHT_CONTEXT)
+ivantrendafilov_confucius._95.requirements.Parser.LEFT_SUBSTITUTION == orig(ivantrendafilov_confucius._95.requirements.Parser.LEFT_SUBSTITUTION)
+ivantrendafilov_confucius._95.requirements.Parser.RIGHT_SUBSTITUTION == orig(ivantrendafilov_confucius._95.requirements.Parser.RIGHT_SUBSTITUTION)
+this.configuration == orig(this.configuration)
+this.configuration.getClass().getName() == orig(this.configuration.getClass().getName())
+return has only one value
+===========================================================================
+ivantrendafilov_confucius._95.requirements.Parser.loadStandardProps(ivantrendafilov_confucius._95.requirements.ConfigurationDataProvider):::ENTER
+provider has only one value
+===========================================================================
+ivantrendafilov_confucius._95.requirements.Parser.loadStandardProps(ivantrendafilov_confucius._95.requirements.ConfigurationDataProvider):::EXIT
+ivantrendafilov_confucius._95.requirements.Parser.DEFAULT_CONTEXT == orig(ivantrendafilov_confucius._95.requirements.Parser.DEFAULT_CONTEXT)
+ivantrendafilov_confucius._95.requirements.Parser.COMMENT == orig(ivantrendafilov_confucius._95.requirements.Parser.COMMENT)
+ivantrendafilov_confucius._95.requirements.Parser.IDENTITY == orig(ivantrendafilov_confucius._95.requirements.Parser.IDENTITY)
+ivantrendafilov_confucius._95.requirements.Parser.LEFT_CONTEXT == orig(ivantrendafilov_confucius._95.requirements.Parser.LEFT_CONTEXT)
+ivantrendafilov_confucius._95.requirements.Parser.RIGHT_CONTEXT == orig(ivantrendafilov_confucius._95.requirements.Parser.RIGHT_CONTEXT)
+ivantrendafilov_confucius._95.requirements.Parser.LEFT_SUBSTITUTION == orig(ivantrendafilov_confucius._95.requirements.Parser.LEFT_SUBSTITUTION)
+ivantrendafilov_confucius._95.requirements.Parser.RIGHT_SUBSTITUTION == orig(ivantrendafilov_confucius._95.requirements.Parser.RIGHT_SUBSTITUTION)
+this.configuration == orig(this.configuration)
+this.configuration.getClass().getName() == orig(this.configuration.getClass().getName())
+===========================================================================
+ivantrendafilov_confucius._95.requirements.Parser.parseVariables():::ENTER
+===========================================================================
+ivantrendafilov_confucius._95.requirements.Parser.parseVariables():::EXIT
+ivantrendafilov_confucius._95.requirements.Parser.DEFAULT_CONTEXT == orig(ivantrendafilov_confucius._95.requirements.Parser.DEFAULT_CONTEXT)
+ivantrendafilov_confucius._95.requirements.Parser.COMMENT == orig(ivantrendafilov_confucius._95.requirements.Parser.COMMENT)
+ivantrendafilov_confucius._95.requirements.Parser.IDENTITY == orig(ivantrendafilov_confucius._95.requirements.Parser.IDENTITY)
+ivantrendafilov_confucius._95.requirements.Parser.LEFT_CONTEXT == orig(ivantrendafilov_confucius._95.requirements.Parser.LEFT_CONTEXT)
+ivantrendafilov_confucius._95.requirements.Parser.RIGHT_CONTEXT == orig(ivantrendafilov_confucius._95.requirements.Parser.RIGHT_CONTEXT)
+ivantrendafilov_confucius._95.requirements.Parser.LEFT_SUBSTITUTION == orig(ivantrendafilov_confucius._95.requirements.Parser.LEFT_SUBSTITUTION)
+ivantrendafilov_confucius._95.requirements.Parser.RIGHT_SUBSTITUTION == orig(ivantrendafilov_confucius._95.requirements.Parser.RIGHT_SUBSTITUTION)
+this.configuration == orig(this.configuration)
+this.configuration.getClass().getName() == orig(this.configuration.getClass().getName())
+===========================================================================
+ivantrendafilov_confucius._95.requirements.StreamConfigurationDataProvider:::OBJECT
+this has only one value
+===========================================================================
+ivantrendafilov_confucius._95.requirements.StreamConfigurationDataProvider.getAllLines():::ENTER
+this.inputStream has only one value
+===========================================================================
+ivantrendafilov_confucius._95.requirements.StreamConfigurationDataProvider.getAllLines():::EXIT39
+===========================================================================
+ivantrendafilov_confucius._95.requirements.StreamConfigurationDataProvider.getAllLines():::EXIT
+this.inputStream.getClass().getName() == orig(this.inputStream.getClass().getName())
+this.inputStream has only one value
+return has only one value
+return[] contains no nulls and has only one value, of length 1
+return[] elements has only one value
+return[].getClass().getName() == [java.lang.String]
+size(return[]) == 1
+===========================================================================
+ivantrendafilov_confucius._95.requirements.StreamConfigurationDataProvider.getInputStream():::ENTER
+this.inputStream has only one value
+===========================================================================
+ivantrendafilov_confucius._95.requirements.StreamConfigurationDataProvider.getInputStream():::EXIT
+this.inputStream == orig(this.inputStream)
+this.inputStream.getClass().getName() == orig(this.inputStream.getClass().getName())
+this.inputStream has only one value
+return has only one value
+===========================================================================
+junit.runner.Version.id():::EXIT
+return has only one value

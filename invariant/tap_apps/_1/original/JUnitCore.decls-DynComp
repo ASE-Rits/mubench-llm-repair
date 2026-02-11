@@ -1,0 +1,125 @@
+// Declarations for tap_apps.TapAppsTest_1$Original
+// Declarations written 2026-02-11T23:05:51.424666578 by daikon.DynComp
+
+decl-version 2.0
+var-comparability implicit
+
+ppt tap_apps.TapAppsTest_1$Original:::CLASS
+ppt-type class
+
+ppt tap_apps.TapAppsTest_1$Original:::OBJECT
+ppt-type object
+variable this
+  var-kind variable
+  dec-type tap_apps.TapAppsTest_1$Original
+  rep-type hashcode
+  flags is_param non_null
+  comparability 2
+
+ppt tap_apps.TapAppsTest_1$Original.Original():::ENTER
+ppt-type enter
+
+ppt tap_apps.TapAppsTest_1$Original.Original():::EXIT46
+ppt-type subexit
+variable this
+  var-kind variable
+  dec-type tap_apps.TapAppsTest_1$Original
+  rep-type hashcode
+  flags is_param non_null
+  comparability 2
+
+ppt tap_apps.TapAppsTest_1$Original.createDriver():::ENTER
+ppt-type enter
+variable this
+  var-kind variable
+  dec-type tap_apps.TapAppsTest_1$Original
+  rep-type hashcode
+  flags is_param non_null
+  comparability 2
+
+ppt tap_apps.TapAppsTest_1$Original.createDriver():::EXIT49
+ppt-type subexit
+variable this
+  var-kind variable
+  dec-type tap_apps.TapAppsTest_1$Original
+  rep-type hashcode
+  flags is_param non_null
+  comparability 9
+variable return
+  var-kind return
+  dec-type tap_apps._1.Driver
+  rep-type hashcode
+  comparability 2
+variable tap_apps._1.Driver.BASE_PACKAGE
+  var-kind variable
+  dec-type java.lang.String
+  rep-type hashcode
+  flags nomod
+  comparability 7
+variable tap_apps._1.Driver.BASE_PACKAGE.toString
+  var-kind function toString()
+  dec-type java.lang.String
+  rep-type java.lang.String
+  function-args tap_apps._1.Driver.BASE_PACKAGE
+  flags synthetic to_string
+  comparability 8
+variable return.instance
+  var-kind field instance
+  dec-type java.lang.Object
+  rep-type hashcode
+  comparability 3
+variable return.instance.getClass().getName()
+  var-kind function getClass().getName()
+  dec-type java.lang.Class
+  rep-type java.lang.String
+  function-args return.instance
+  flags synthetic classname non_null
+  comparability 1
+variable return.targetClass
+  var-kind field targetClass
+  dec-type java.lang.Class
+  rep-type hashcode
+  comparability 4
+variable return.variant
+  var-kind field variant
+  dec-type java.lang.String
+  rep-type hashcode
+  comparability 5
+variable return.variant.toString
+  var-kind function toString()
+  dec-type java.lang.String
+  rep-type java.lang.String
+  function-args return.variant
+  flags synthetic to_string
+  comparability 6
+
+ppt tap_apps.TapAppsTest_1$Original.variantName():::ENTER
+ppt-type enter
+variable this
+  var-kind variable
+  dec-type tap_apps.TapAppsTest_1$Original
+  rep-type hashcode
+  flags is_param non_null
+  comparability 2
+
+ppt tap_apps.TapAppsTest_1$Original.variantName():::EXIT54
+ppt-type subexit
+variable this
+  var-kind variable
+  dec-type tap_apps.TapAppsTest_1$Original
+  rep-type hashcode
+  flags is_param non_null
+  comparability 4
+variable return
+  var-kind return
+  dec-type java.lang.String
+  rep-type hashcode
+  comparability 2
+variable return.toString
+  var-kind function toString()
+  dec-type java.lang.String
+  rep-type java.lang.String
+  function-args return
+  flags synthetic to_string
+  comparability 3
+

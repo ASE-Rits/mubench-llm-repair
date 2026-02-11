@@ -1,0 +1,129 @@
+===========================================================================
+junit.runner.Version.id():::EXIT
+return has only one value
+===========================================================================
+tbuktu_ntru.Tbuktu_ntruTest_473$CommonLogic:::OBJECT
+this has only one value
+===========================================================================
+tbuktu_ntru.Tbuktu_ntruTest_473$CommonLogic.CommonLogic():::EXIT
+===========================================================================
+tbuktu_ntru.Tbuktu_ntruTest_473$CommonLogic.testWriteToFlushesBuffer():::ENTER
+===========================================================================
+tbuktu_ntru.Tbuktu_ntruTest_473$CommonLogic.testWriteToFlushesBuffer():::EXIT
+===========================================================================
+tbuktu_ntru.Tbuktu_ntruTest_473$Original:::OBJECT
+this has only one value
+===========================================================================
+tbuktu_ntru.Tbuktu_ntruTest_473$Original.Original():::EXIT
+===========================================================================
+tbuktu_ntru.Tbuktu_ntruTest_473$Original.driver():::ENTER
+===========================================================================
+tbuktu_ntru.Tbuktu_ntruTest_473$Original.driver():::EXIT
+return has only one value
+tbuktu_ntru._473.Driver.VARIANT_PACKAGE has only one value
+return.instance has only one value
+return.clazz has only one value
+===========================================================================
+tbuktu_ntru._473.Driver:::CLASS
+tbuktu_ntru._473.Driver.VARIANT_PACKAGE has only one value
+===========================================================================
+tbuktu_ntru._473.Driver:::OBJECT
+this has only one value
+this.instance has only one value
+this.clazz has only one value
+===========================================================================
+tbuktu_ntru._473.Driver.writeToBuffered():::ENTER
+===========================================================================
+tbuktu_ntru._473.Driver.writeToBuffered():::EXIT
+tbuktu_ntru._473.Driver.VARIANT_PACKAGE == orig(tbuktu_ntru._473.Driver.VARIANT_PACKAGE)
+this.instance == orig(this.instance)
+this.instance.getClass().getName() == orig(this.instance.getClass().getName())
+this.clazz == orig(this.clazz)
+return == 64
+===========================================================================
+tbuktu_ntru._473.original.EncryptionParameters:::CLASS
+tbuktu_ntru._473.original.EncryptionParameters$TernaryPolynomialType.SIMPLE has only one value
+tbuktu_ntru._473.original.EncryptionParameters$TernaryPolynomialType.SIMPLE != null
+tbuktu_ntru._473.original.EncryptionParameters$TernaryPolynomialType.PRODUCT has only one value
+tbuktu_ntru._473.original.EncryptionParameters$TernaryPolynomialType.PRODUCT != null
+tbuktu_ntru._473.original.EncryptionParameters$TernaryPolynomialType.$VALUES has only one value
+tbuktu_ntru._473.original.EncryptionParameters$TernaryPolynomialType.$VALUES != null
+tbuktu_ntru._473.original.EncryptionParameters$TernaryPolynomialType.$VALUES[] contains no nulls and has only one value, of length 2
+tbuktu_ntru._473.original.EncryptionParameters$TernaryPolynomialType.$VALUES[] elements != null
+tbuktu_ntru._473.original.EncryptionParameters$TernaryPolynomialType.$VALUES[].getClass().getName() == [tbuktu_ntru._473.original.EncryptionParameters.TernaryPolynomialType, tbuktu_ntru._473.original.EncryptionParameters.TernaryPolynomialType]
+size(tbuktu_ntru._473.original.EncryptionParameters$TernaryPolynomialType.$VALUES[]) == 2
+===========================================================================
+tbuktu_ntru._473.original.EncryptionParameters:::OBJECT
+this.q == 2048
+this.df >= 0
+this.df1 >= 0
+this.df2 >= 0
+this.df3 >= 0
+this.dr >= 0
+this.dr1 >= 0
+this.dr2 >= 0
+this.dr3 >= 0
+this.dg >= 0
+this.llen one of { 0, 1 }
+this.maxMsgLenBytes >= 0
+this.db one of { 128, 256 }
+this.bufferLenBits >= 0
+this.bufferLenTrits >= 0
+this.maxM1 one of { 0, 60, 126 }
+this.pkLen one of { 0, 128, 256 }
+this.c one of { 12, 13 }
+this.hashSeed == true
+this.oid != null
+this.oid[] elements >= 0
+this.polyType != null
+this.hashAlg != null
+size(this.oid[]) == 3
+===========================================================================
+tbuktu_ntru._473.original.EncryptionParameters.init():::ENTER
+this.dr == 0
+this.dr1 == 0
+this.dr2 == 0
+this.dr3 == 0
+this.dg == 0
+this.llen == 0
+this.maxMsgLenBytes == 0
+this.bufferLenBits == 0
+this.bufferLenTrits == 0
+this.pkLen == 0
+===========================================================================
+tbuktu_ntru._473.original.EncryptionParameters.init():::EXIT
+tbuktu_ntru._473.original.EncryptionParameters$TernaryPolynomialType.SIMPLE == orig(tbuktu_ntru._473.original.EncryptionParameters$TernaryPolynomialType.SIMPLE)
+tbuktu_ntru._473.original.EncryptionParameters$TernaryPolynomialType.PRODUCT == orig(tbuktu_ntru._473.original.EncryptionParameters$TernaryPolynomialType.PRODUCT)
+tbuktu_ntru._473.original.EncryptionParameters$TernaryPolynomialType.$VALUES == orig(tbuktu_ntru._473.original.EncryptionParameters$TernaryPolynomialType.$VALUES)
+tbuktu_ntru._473.original.EncryptionParameters$TernaryPolynomialType.$VALUES.getClass().getName() == orig(tbuktu_ntru._473.original.EncryptionParameters$TernaryPolynomialType.$VALUES.getClass().getName())
+tbuktu_ntru._473.original.EncryptionParameters$TernaryPolynomialType.$VALUES[] == orig(tbuktu_ntru._473.original.EncryptionParameters$TernaryPolynomialType.$VALUES[])
+this.N == orig(this.N)
+this.q == orig(this.q)
+this.df == orig(this.df)
+this.df1 == orig(this.df1)
+this.df2 == orig(this.df2)
+this.df3 == orig(this.df3)
+this.db == orig(this.db)
+this.dm0 == orig(this.dm0)
+this.maxM1 == orig(this.maxM1)
+this.c == orig(this.c)
+this.minCallsR == orig(this.minCallsR)
+this.minCallsMask == orig(this.minCallsMask)
+this.hashSeed == orig(this.hashSeed)
+this.oid == orig(this.oid)
+this.oid[] == orig(this.oid[])
+this.sparse == orig(this.sparse)
+this.fastFp == orig(this.fastFp)
+this.polyType == orig(this.polyType)
+this.hashAlg == orig(this.hashAlg)
+this.llen == 1
+this.pkLen one of { 128, 256 }
+this.dr >= orig(this.dr)
+this.dr1 >= orig(this.dr1)
+this.dr2 >= orig(this.dr2)
+this.dr3 >= orig(this.dr3)
+this.dg > orig(this.dg)
+this.maxMsgLenBytes > orig(this.maxMsgLenBytes)
+this.bufferLenBits > orig(this.bufferLenBits)
+this.bufferLenTrits > orig(this.bufferLenTrits)
+this.pkLen > orig(this.pkLen)

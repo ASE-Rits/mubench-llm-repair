@@ -1,0 +1,22 @@
+===========================================================================
+jriecken_gae_java_mini_profiler.Jriecken_gae_java_mini_profilerTest_39$CommonCases:::OBJECT
+this has only one value
+===========================================================================
+jriecken_gae_java_mini_profiler.Jriecken_gae_java_mini_profilerTest_39$CommonCases.CommonCases():::EXIT
+===========================================================================
+jriecken_gae_java_mini_profiler.Jriecken_gae_java_mini_profilerTest_39$CommonCases.testHandlesInvalidIdGracefully():::ENTER
+===========================================================================
+jriecken_gae_java_mini_profiler.Jriecken_gae_java_mini_profilerTest_39$CommonCases.testHandlesInvalidIdGracefully():::EXIT
+===========================================================================
+jriecken_gae_java_mini_profiler.Jriecken_gae_java_mini_profilerTest_39$Fixed:::OBJECT
+this has only one value
+===========================================================================
+jriecken_gae_java_mini_profiler.Jriecken_gae_java_mini_profilerTest_39$Fixed.Fixed():::EXIT
+===========================================================================
+jriecken_gae_java_mini_profiler.Jriecken_gae_java_mini_profilerTest_39$Fixed.driver():::ENTER
+===========================================================================
+jriecken_gae_java_mini_profiler.Jriecken_gae_java_mini_profilerTest_39$Fixed.driver():::EXIT
+return has only one value
+===========================================================================
+junit.runner.Version.id():::EXIT
+return has only one value

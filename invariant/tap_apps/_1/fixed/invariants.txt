@@ -1,0 +1,13 @@
+===========================================================================
+junit.runner.Version.id():::EXIT
+return has only one value
+===========================================================================
+tap_apps.TapAppsTest_1$CommonCases:::OBJECT
+this has only one value
+===========================================================================
+tap_apps.TapAppsTest_1$CommonCases.CommonCases():::EXIT
+===========================================================================
+tap_apps.TapAppsTest_1$Fixed:::OBJECT
+this has only one value
+===========================================================================
+tap_apps.TapAppsTest_1$Fixed.Fixed():::EXIT

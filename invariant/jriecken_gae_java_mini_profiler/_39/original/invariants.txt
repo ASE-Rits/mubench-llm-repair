@@ -1,0 +1,26 @@
+===========================================================================
+jriecken_gae_java_mini_profiler.Jriecken_gae_java_mini_profilerTest_39$CommonCases:::OBJECT
+this has only one value
+===========================================================================
+jriecken_gae_java_mini_profiler.Jriecken_gae_java_mini_profilerTest_39$CommonCases.CommonCases():::EXIT
+===========================================================================
+jriecken_gae_java_mini_profiler.Jriecken_gae_java_mini_profilerTest_39$CommonCases.testHandlesInvalidIdGracefully():::ENTER
+===========================================================================
+jriecken_gae_java_mini_profiler.Jriecken_gae_java_mini_profilerTest_39$CommonCases.testHandlesInvalidIdGracefully():::EXIT
+===========================================================================
+jriecken_gae_java_mini_profiler.Jriecken_gae_java_mini_profilerTest_39$Original:::OBJECT
+this has only one value
+===========================================================================
+jriecken_gae_java_mini_profiler.Jriecken_gae_java_mini_profilerTest_39$Original.Original():::EXIT
+===========================================================================
+jriecken_gae_java_mini_profiler.Jriecken_gae_java_mini_profilerTest_39$Original.driver():::ENTER
+===========================================================================
+jriecken_gae_java_mini_profiler.Jriecken_gae_java_mini_profilerTest_39$Original.driver():::EXIT
+return has only one value
+===========================================================================
+jriecken_gae_java_mini_profiler._39.mocks.MemcacheServiceFactory$MockMemcacheService:::OBJECT
+===========================================================================
+jriecken_gae_java_mini_profiler._39.mocks.MemcacheServiceFactory$MockMemcacheService.MockMemcacheService():::EXIT
+===========================================================================
+junit.runner.Version.id():::EXIT
+return has only one value
