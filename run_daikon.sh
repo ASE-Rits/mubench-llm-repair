@@ -1,17 +1,74 @@
 #!/bin/bash
 
 # Daikon不変条件抽出スクリプト
-# 対象: original, misuse, fixed (CommonCasesは除外)
+# 対象: 動的テストのみ（静的テストはスキップ）
+# JUnitテストをChicoryで計測してテストクラスの不変条件も取得
+# toString()関連の行は自動的に除外される
+#
+# Usage: ./run_daikon.sh [project case_num variant]
+#   No arguments: process all projects
+#   With arguments: process single variant
 
 set -e
+
+# ============================================
+# 静的テストリスト（スキップ対象）
+# Daikonで有意な不変条件が得られないため除外
+# ============================================
+STATIC_TESTS=(
+    "adempiere/_1"
+    "adempiere/_2"
+    "alibaba_druid/_1"
+    "alibaba_druid/_2"
+    "android_rcs_rcsjta/_1"
+    "androiduil/_1"
+    "asterisk_java/_194"
+    "jmrtd/_1"
+    "jmrtd/_2"
+    "logblock_logblock_2/_15"
+    "mqtt/_389"
+    "onosendai/_1"
+    "pawotag/_1"
+    "rhino/_1"
+    "wordpressa/_3"
+    "testng/_17"
+    "testng/_18"
+    "testng/_21"
+    "testng/_22"
+)
+
+# 静的テストかどうかをチェック
+is_static_test() {
+    local project=$1
+    local case_num=$2
+    local key="${project}/${case_num}"
+    for static in "${STATIC_TESTS[@]}"; do
+        if [[ "$static" == "$key" ]]; then
+            return 0  # true
+        fi
+    done
+    return 1  # false
+}
 
 DAIKONDIR=${DAIKONDIR:-/home/moriwaki-y/tools/daikon-5.8.22}
 PROJECT_ROOT=$(pwd)
 BUILD_DIR="$PROJECT_ROOT/build/classes/java/main"
 TEST_BUILD_DIR="$PROJECT_ROOT/build/classes/java/test"
 INVARIANT_DIR="$PROJECT_ROOT/invariant"
+
 LIBS_DIR="$PROJECT_ROOT/libs"
-CLASSPATH="$BUILD_DIR:$TEST_BUILD_DIR:$DAIKONDIR/daikon.jar:$LIBS_DIR/*"
+JUNIT_JAR="$LIBS_DIR/junit-4.13.2.jar"
+HAMCREST_JAR="$LIBS_DIR/hamcrest-core-1.3.jar"
+CLASSPATH="$BUILD_DIR:$TEST_BUILD_DIR:$DAIKONDIR/daikon.jar:$LIBS_DIR/*:$JUNIT_JAR:$HAMCREST_JAR"
+
+# JDK 17を使用（JDK21よりDaikonとの互換性が良い）
+JAVA_CMD="${JAVA_17:-/usr/lib/jvm/java-17-openjdk-amd64/bin/java}"
+
+# JDK 9+用の--add-opensオプション（Daikonが動作に必要）
+JAVA_OPTS="--add-opens java.base/java.lang=ALL-UNNAMED \
+    --add-opens java.base/java.lang.reflect=ALL-UNNAMED \
+    --add-opens java.base/java.util=ALL-UNNAMED \
+    --add-opens java.base/java.io=ALL-UNNAMED"
 
 # プロジェクトとケースのリストを取得
 get_projects() {
@@ -23,7 +80,18 @@ get_cases() {
     ls -d "$BUILD_DIR/$project"/_*/ 2>/dev/null | xargs -n1 basename
 }
 
-# Daikonを実行する関数
+# プロジェクト名をキャメルケースに変換
+to_camel_case() {
+    local input=$1
+    local result=""
+    IFS='_' read -ra parts <<< "$input"
+    for part in "${parts[@]}"; do
+        result+="${part^}"
+    done
+    echo "$result"
+}
+
+# Daikonを実行する関数（JUnitテストを計測）
 run_daikon_for_variant() {
     local project=$1
     local case_num=$2
@@ -41,34 +109,43 @@ run_daikon_for_variant() {
     # 出力ディレクトリ作成
     mkdir -p "$output_dir"
     
-    # DaikonRunnerを使用
-    local runner_class="daikon_runner.DaikonRunner"
-    local project_case="${project}.${case_num}"
+    # テストクラス名を生成 (例: rhino.RhinoTest_1$Original)
+    local camel_name=$(to_camel_case "$project")
+    local variant_class="${variant^}"  # original -> Original
+    local test_class="${project}.${camel_name}Test${case_num}\$${variant_class}"
+    
+    # 計測対象パターン: 全てを計測（標準ライブラリ/jdkを除外）
+    # テストクラスとドライバークラス両方を含める
+    local ppt_omit_pattern="java\\..*|javax\\..*|org\\..*|sun\\..*|jdk\\..*|com\\.sun\\..*"
     
     echo "  [$variant] Processing..."
+    echo "    Test class: $test_class"
     
-    # 作業ディレクトリを変更
-    pushd "$BUILD_DIR" > /dev/null
+    # 作業ディレクトリをプロジェクトルートに変更（ソースファイルパスを解決するため）
+    pushd "$PROJECT_ROOT" > /dev/null
     
-    # Step 1: DynComp (比較可能性分析)
+    # Step 1: DynComp (比較可能性分析) - 標準ライブラリを除外
     echo "    Step 1: DynComp..."
-    java -cp "$CLASSPATH" daikon.DynComp \
+    $JAVA_CMD $JAVA_OPTS -cp "$CLASSPATH" daikon.DynComp \
+        --ppt-omit-pattern="$ppt_omit_pattern" \
         --output-dir="$output_dir" \
-        "$runner_class" "$project_case" "$variant" 2>&1 | head -3 || true
+        org.junit.runner.JUnitCore "$test_class" 2>&1 | head -5 || true
     
     local decls_file=$(ls "$output_dir"/*.decls-DynComp 2>/dev/null | head -1)
     
-    # Step 2: Chicory (トレース取得)
+    # Step 2: Chicory (トレース取得) - 標準ライブラリを除外
     echo "    Step 2: Chicory (trace)..."
     if [[ -f "$decls_file" ]]; then
-        java -cp "$CLASSPATH" daikon.Chicory \
+        $JAVA_CMD $JAVA_OPTS -cp "$CLASSPATH" daikon.Chicory \
+            --ppt-omit-pattern="$ppt_omit_pattern" \
             --comparability-file="$decls_file" \
             --output-dir="$output_dir" \
-            "$runner_class" "$project_case" "$variant" 2>&1 | head -3 || true
+            org.junit.runner.JUnitCore "$test_class" 2>&1 | head -5 || true
     else
-        java -cp "$CLASSPATH" daikon.Chicory \
+        $JAVA_CMD $JAVA_OPTS -cp "$CLASSPATH" daikon.Chicory \
+            --ppt-omit-pattern="$ppt_omit_pattern" \
             --output-dir="$output_dir" \
-            "$runner_class" "$project_case" "$variant" 2>&1 | head -3 || true
+            org.junit.runner.JUnitCore "$test_class" 2>&1 | head -5 || true
     fi
     
     local dtrace_file=$(ls "$output_dir"/*.dtrace.gz 2>/dev/null | head -1)
@@ -76,7 +153,7 @@ run_daikon_for_variant() {
     # Step 3: Daikon + --suppress_redundant (不変条件推論)
     if [[ -f "$dtrace_file" ]]; then
         echo "    Step 3: Daikon --suppress_redundant..."
-        java -cp "$DAIKONDIR/daikon.jar" daikon.Daikon \
+        $JAVA_CMD -cp "$DAIKONDIR/daikon.jar" daikon.Daikon \
             --suppress_redundant \
             -o "$output_dir/invariants.inv.gz" \
             "$dtrace_file" 2>&1 | tail -3 || true
@@ -88,11 +165,14 @@ run_daikon_for_variant() {
     
     popd > /dev/null
     
-    # Step 4: inv.gz を txt に変換
+    # Step 4: inv.gz を txt に変換（toString()関連の行を除外）
     local inv_file="$output_dir/invariants.inv.gz"
     if [[ -f "$inv_file" ]]; then
         echo "    Step 4: PrintInvariants -> txt..."
-        java -cp "$DAIKONDIR/daikon.jar" daikon.PrintInvariants "$inv_file" > "$output_dir/invariants.txt" 2>/dev/null || true
+        $JAVA_CMD -cp "$DAIKONDIR/daikon.jar" daikon.PrintInvariants "$inv_file" 2>/dev/null \
+            | grep -v "\.toString" \
+            | grep -v "\.class\$" \
+            > "$output_dir/invariants.txt" || true
         echo "    [OK] Generated: $output_dir/invariants.txt"
     else
         echo "    [WARN] No invariants generated"
@@ -102,11 +182,12 @@ run_daikon_for_variant() {
 # メイン処理
 main() {
     echo "=========================================="
-    echo "Daikon Invariant Extraction"
+    echo "Daikon Invariant Extraction (Dynamic Tests Only)"
     echo "=========================================="
     echo "DAIKONDIR: $DAIKONDIR"
     echo "BUILD_DIR: $BUILD_DIR"
     echo "OUTPUT_DIR: $INVARIANT_DIR"
+    echo "Skipping ${#STATIC_TESTS[@]} static tests"
     echo ""
     
     # invariantディレクトリをクリア
@@ -119,6 +200,12 @@ main() {
         echo "=== Project: $project ==="
         
         for case_num in $(get_cases "$project"); do
+            # 静的テストはスキップ
+            if is_static_test "$project" "$case_num"; then
+                echo "  [SKIP] $case_num (static test)"
+                continue
+            fi
+            
             echo ""
             echo "--- Case: $case_num ---"
             
@@ -140,13 +227,19 @@ if [[ $# -eq 3 ]]; then
     project=$1
     case_num=$2
     variant=$3
+    
+    # 静的テストの場合は警告
+    if is_static_test "$project" "$case_num"; then
+        echo "[WARN] $project/$case_num is a static test (Daikon may not produce useful invariants)"
+    fi
+    
     mkdir -p "$INVARIANT_DIR"
     run_daikon_for_variant "$project" "$case_num" "$variant"
 elif [[ $# -eq 0 ]]; then
     main
 else
     echo "Usage: $0 [project case_num variant]"
-    echo "  No arguments: process all projects"
+    echo "  No arguments: process all dynamic tests"
     echo "  With arguments: process single variant"
     exit 1
 fi

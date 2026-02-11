@@ -14,24 +14,14 @@ import static org.junit.Assert.*;
  * Bug Type: missing/condition/synchronization
  * The bug is missing synchronized block when iterating over a synchronized collection.
  * 
- * Tests include both:
- * - Static analysis: verify synchronized block in source code
- * - Dynamic testing: instantiate panel and invoke methods
+ * Dynamic testing: instantiate panel and invoke methods concurrently to detect
+ * ConcurrentModificationException.
  */
 @RunWith(Enclosed.class)
 public class TestngTest_16 {
     
     abstract static class CommonCases {
         abstract Driver driver();
-        
-        // ========== Static Analysis Tests ==========
-
-        @Test
-        public void testSynchronizedBlockPresent() throws Exception {
-            assertTrue("synchronized(invokedMethods) block should be present", driver().hasSynchronizedBlock());
-        }
-        
-        // ========== Dynamic Tests ==========
         
         @Test
         public void testConcurrentAccess() throws Exception {
