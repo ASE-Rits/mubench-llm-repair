@@ -1,0 +1,33 @@
+# Project: apache-gora / Case: 56_2
+
+## original.java -> misuse.java
+-    ((DataOutputStream)out).flush();
+
+## misuse.java -> fixed.java
+-    
++
+-    DataOutput out = new DataOutputStream(bos);
++    DataOutputStream dos = new DataOutputStream(bos);
++    DataOutput out = dos;
+-    
++    dos.flush();
++
+-    
++
+-    
++
+
+## original.java -> fixed.java
+-    
++
+-    DataOutput out = new DataOutputStream(bos);
++    DataOutputStream dos = new DataOutputStream(bos);
++    DataOutput out = dos;
+-    ((DataOutputStream)out).flush();
+-    
++    dos.flush();
++
+-    
++
+-    
++

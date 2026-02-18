@@ -1,0 +1,75 @@
+# Project: testng / Case: 21
+
+## original.java -> misuse.java
+-      Map<String, ISuiteResult> suiteResults = suite.getResults();
+-      synchronized(suiteResults) {
+-        for (ISuiteResult sr : suiteResults.values()) {
+-          ITestContext context = sr.getTestContext();
+-          m_testTags.put(context.getName(), "test-" + testCounter++);
+-          failed.addAll(context.getFailedTests().getAllResults());
+-          skipped.addAll(context.getSkippedTests().getAllResults());
+-          passed.addAll(context.getPassedTests().getAllResults());
+-          IResultMap[] map = new IResultMap[] {
+-              context.getFailedTests(),
+-              context.getSkippedTests(),
+-              context.getPassedTests()
+-          };
+-          for (IResultMap m : map) {
+-            for (ITestResult tr : m.getAllResults()) {
+-              m_testResultMap.put(tr, getTestResultName(tr));
+-            }
++      for (ISuiteResult sr : suite.getResults().values()) {
++        ITestContext context = sr.getTestContext();
++        m_testTags.put(context.getName(), "test-" + testCounter++);
++        failed.addAll(context.getFailedTests().getAllResults());
++        skipped.addAll(context.getSkippedTests().getAllResults());
++        passed.addAll(context.getPassedTests().getAllResults());
++        IResultMap[] map = new IResultMap[] {
++            context.getFailedTests(),
++            context.getSkippedTests(),
++            context.getPassedTests()
++        };
++        for (IResultMap m : map) {
++          for (ITestResult tr : m.getAllResults()) {
++            m_testResultMap.put(tr, getTestResultName(tr));
+
+## misuse.java -> fixed.java
+-      for (ISuiteResult sr : suite.getResults().values()) {
+-        ITestContext context = sr.getTestContext();
+-        m_testTags.put(context.getName(), "test-" + testCounter++);
+-        failed.addAll(context.getFailedTests().getAllResults());
+-        skipped.addAll(context.getSkippedTests().getAllResults());
+-        passed.addAll(context.getPassedTests().getAllResults());
+-        IResultMap[] map = new IResultMap[] {
+-            context.getFailedTests(),
+-            context.getSkippedTests(),
+-            context.getPassedTests()
+-        };
+-        for (IResultMap m : map) {
+-          for (ITestResult tr : m.getAllResults()) {
+-            m_testResultMap.put(tr, getTestResultName(tr));
++      Map<String, ISuiteResult> results = suite.getResults();
++      synchronized (results) {
++        for (ISuiteResult sr : results.values()) {
++          ITestContext context = sr.getTestContext();
++          m_testTags.put(context.getName(), "test-" + testCounter++);
++          failed.addAll(context.getFailedTests().getAllResults());
++          skipped.addAll(context.getSkippedTests().getAllResults());
++          passed.addAll(context.getPassedTests().getAllResults());
++          IResultMap[] map = new IResultMap[] {
++              context.getFailedTests(),
++              context.getSkippedTests(),
++              context.getPassedTests()
++          };
++          for (IResultMap m : map) {
++            for (ITestResult tr : m.getAllResults()) {
++              m_testResultMap.put(tr, getTestResultName(tr));
++            }
+
+## original.java -> fixed.java
+-      Map<String, ISuiteResult> suiteResults = suite.getResults();
+-      synchronized(suiteResults) {
+-        for (ISuiteResult sr : suiteResults.values()) {
++      Map<String, ISuiteResult> results = suite.getResults();
++      synchronized (results) {
++        for (ISuiteResult sr : results.values()) {

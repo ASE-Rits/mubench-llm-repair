@@ -1,0 +1,51 @@
+# Project: androiduil / Case: 1
+
+## original.java -> misuse.java
+-		String externalStorageState;
+-		try {
+-			externalStorageState = Environment.getExternalStorageState();
+-		} catch (NullPointerException e) { // (sh)it happens (Issue #660)
+-			externalStorageState = "";
+-		}
+-		if (preferExternal && MEDIA_MOUNTED.equals(externalStorageState) && hasExternalStoragePermission(context)) {
++		if (preferExternal && MEDIA_MOUNTED
++				.equals(Environment.getExternalStorageState()) && hasExternalStoragePermission(context)) {
+
+## misuse.java -> fixed.java
+-		if (preferExternal && MEDIA_MOUNTED
+-				.equals(Environment.getExternalStorageState()) && hasExternalStoragePermission(context)) {
++		if (preferExternal && isExternalStorageMountedSafe() && hasExternalStoragePermission(context)) {
+-		if (MEDIA_MOUNTED.equals(Environment.getExternalStorageState()) && hasExternalStoragePermission(context)) {
++		if (isExternalStorageMountedSafe() && hasExternalStoragePermission(context)) {
++	}
++
++	private static boolean isExternalStorageMountedSafe() {
++		try {
++			String state = Environment.getExternalStorageState();
++			return MEDIA_MOUNTED.equals(state);
++		} catch (NullPointerException e) {
++			L.w("Environment.getExternalStorageState() returned null or caused NPE");
++			return false;
++		}
+
+## original.java -> fixed.java
+-		String externalStorageState;
+-		try {
+-			externalStorageState = Environment.getExternalStorageState();
+-		} catch (NullPointerException e) { // (sh)it happens (Issue #660)
+-			externalStorageState = "";
+-		}
+-		if (preferExternal && MEDIA_MOUNTED.equals(externalStorageState) && hasExternalStoragePermission(context)) {
++		if (preferExternal && isExternalStorageMountedSafe() && hasExternalStoragePermission(context)) {
+-		if (MEDIA_MOUNTED.equals(Environment.getExternalStorageState()) && hasExternalStoragePermission(context)) {
++		if (isExternalStorageMountedSafe() && hasExternalStoragePermission(context)) {
++	}
++
++	private static boolean isExternalStorageMountedSafe() {
++		try {
++			String state = Environment.getExternalStorageState();
++			return MEDIA_MOUNTED.equals(state);
++		} catch (NullPointerException e) {
++			L.w("Environment.getExternalStorageState() returned null or caused NPE");
++			return false;
++		}

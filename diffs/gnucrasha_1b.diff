@@ -1,0 +1,11 @@
+# Project: gnucrasha / Case: 1b
+
+## original.java -> misuse.java
+-                    .putExtra(UxArgument.SELECTED_ACCOUNT_UID, getIntent().getStringExtra(UxArgument.SELECTED_ACCOUNT_UID))
++                    .putExtra(UxArgument.SELECTED_ACCOUNT_UID, getIntent().getLongExtra(UxArgument.SELECTED_ACCOUNT_UID, 0L))
+
+## misuse.java -> fixed.java
+-                    .putExtra(UxArgument.SELECTED_ACCOUNT_UID, getIntent().getLongExtra(UxArgument.SELECTED_ACCOUNT_UID, 0L))
++                    .putExtra(UxArgument.SELECTED_ACCOUNT_UID, getIntent().getStringExtra(UxArgument.SELECTED_ACCOUNT_UID))
+
+## original.java -> fixed.java

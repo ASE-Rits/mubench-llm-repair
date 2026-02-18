@@ -1,0 +1,83 @@
+# Project: asterisk-java / Case: 194
+
+## original.java -> misuse.java
+-        try
++        if (ptString.indexOf('(') > 0)
+-            if (ptString.indexOf('(') > 0)
+-            {
+-                this.pt = Long.parseLong(ptString.substring(0, ptString.indexOf('(')));
+-            }
+-            else
+-            {
+-                this.pt = Long.parseLong(ptString);
+-            }
+-
+-        } catch (NumberFormatException e)
++            this.pt = Long.parseLong(ptString.substring(0, ptString.indexOf('(')));
++        }
++        else
+-            throw new NumberFormatException(String.format("Input string [%s] is not a parsable long", ptString));
++            this.pt = Long.parseLong(ptString);
+
+## misuse.java -> fixed.java
+-    
++
+-    
++
+-    
++
+-        if (ptString.indexOf('(') > 0)
++        String value = ptString;
++        int idx = ptString.indexOf('(');
++        if (idx > 0)
+-            this.pt = Long.parseLong(ptString.substring(0, ptString.indexOf('(')));
++            value = ptString.substring(0, idx);
+-        else
++
++        try
+-            this.pt = Long.parseLong(ptString);
++            this.pt = Long.parseLong(value.trim());
++        }
++        catch (NumberFormatException e)
++        {
++            throw new IllegalArgumentException("Invalid payload type value: \"" + ptString + "\"", e);
+-    
++
+-    
+-    
+-    
+
+## original.java -> fixed.java
+-    
++
+-    
++
+-    
++
+-        try
++        String value = ptString;
++        int idx = ptString.indexOf('(');
++        if (idx > 0)
+-            if (ptString.indexOf('(') > 0)
+-            {
+-                this.pt = Long.parseLong(ptString.substring(0, ptString.indexOf('(')));
+-            }
+-            else
+-            {
+-                this.pt = Long.parseLong(ptString);
+-            }
++            value = ptString.substring(0, idx);
++        }
+-        } catch (NumberFormatException e)
++        try
++        {
++            this.pt = Long.parseLong(value.trim());
++        }
++        catch (NumberFormatException e)
+-            throw new NumberFormatException(String.format("Input string [%s] is not a parsable long", ptString));
++            throw new IllegalArgumentException("Invalid payload type value: \"" + ptString + "\"", e);
+-    
++
+-    
+-    
+-    

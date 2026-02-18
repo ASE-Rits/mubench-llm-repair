@@ -1,0 +1,93 @@
+# Project: thomas-s-b-visualee / Case: 32
+
+## original.java -> misuse.java
+-      if (!scanner.hasNext()) {
+-         throw new IllegalArgumentException("Insufficient number of tokens to scan after closed parenthesis");
+-      }
+
+## misuse.java -> fixed.java
++import java.util.NoSuchElementException;
++         if (!scanner.hasNext()) {
++            throw new IllegalArgumentException("Insufficient number of tokens while scanning after quote");
++         }
++         if (!scanner.hasNext()) {
++            throw new IllegalArgumentException("Insufficient number of tokens to scan after closed parenthesis");
++         }
++
++      if (!scanner.hasNext()) {
++         throw new IllegalArgumentException("Insufficient number of tokens to scan after closed parenthesis");
++      }
+-            int countOpenParenthesis = countChar(token, '(');
+-            for (int iCount = 0; iCount < countOpenParenthesis; iCount++) {
+-               stack.push(1);
+-            }
++           int countOpenParenthesis = countChar(token, '(');
++           for (int iCount = 0; iCount < countOpenParenthesis; iCount++) {
++              stack.push(1);
++           }
++               if (stack.isEmpty()) {
++                  throw new IllegalStateException("Unbalanced parentheses encountered while scanning");
++               }
+-      while (scanner.hasNext()) {
+-         String token = scanner.next();
+-         if (javaSource.getPackagePath() == null && token.equals("package")) {
+-            token = scanner.next();
+-            if (token.endsWith(";")) {
+-               String packagePath = token.substring(0, token.indexOf(';'));
+-               javaSource.setPackagePath(packagePath);
++      try {
++         while (scanner.hasNext()) {
++            String token = scanner.next();
++            if (javaSource.getPackagePath() == null && token.equals("package")) {
++               if (!scanner.hasNext()) {
++                  throw new IllegalArgumentException("Package declaration is incomplete");
++               }
++               token = scanner.next();
++               if (token.endsWith(";")) {
++                  String packagePath = token.substring(0, token.indexOf(';'));
++                  javaSource.setPackagePath(packagePath);
++               }
++      } finally {
++         scanner.close();
+
+## original.java -> fixed.java
++import java.util.NoSuchElementException;
++         if (!scanner.hasNext()) {
++            throw new IllegalArgumentException("Insufficient number of tokens while scanning after quote");
++         }
++         if (!scanner.hasNext()) {
++            throw new IllegalArgumentException("Insufficient number of tokens to scan after closed parenthesis");
++         }
++
+-            int countOpenParenthesis = countChar(token, '(');
+-            for (int iCount = 0; iCount < countOpenParenthesis; iCount++) {
+-               stack.push(1);
+-            }
++           int countOpenParenthesis = countChar(token, '(');
++           for (int iCount = 0; iCount < countOpenParenthesis; iCount++) {
++              stack.push(1);
++           }
++               if (stack.isEmpty()) {
++                  throw new IllegalStateException("Unbalanced parentheses encountered while scanning");
++               }
+-      while (scanner.hasNext()) {
+-         String token = scanner.next();
+-         if (javaSource.getPackagePath() == null && token.equals("package")) {
+-            token = scanner.next();
+-            if (token.endsWith(";")) {
+-               String packagePath = token.substring(0, token.indexOf(';'));
+-               javaSource.setPackagePath(packagePath);
++      try {
++         while (scanner.hasNext()) {
++            String token = scanner.next();
++            if (javaSource.getPackagePath() == null && token.equals("package")) {
++               if (!scanner.hasNext()) {
++                  throw new IllegalArgumentException("Package declaration is incomplete");
++               }
++               token = scanner.next();
++               if (token.endsWith(";")) {
++                  String packagePath = token.substring(0, token.indexOf(';'));
++                  javaSource.setPackagePath(packagePath);
++               }
++      } finally {
++         scanner.close();

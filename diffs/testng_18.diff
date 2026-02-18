@@ -1,0 +1,47 @@
+# Project: testng / Case: 18
+
+## original.java -> misuse.java
+-      synchronized(m_configIssues) {
+-          for(ITestResult tr : m_configIssues) {
+-              createElement(document, tr);
+-          }
++      for(ITestResult tr : m_configIssues) {
++        createElement(document, tr);
+-      synchronized(m_allTests) {
+-          for(ITestResult tr : m_allTests) {
+-              createElement(document, tr);
+-          }
++      for(ITestResult tr : m_allTests) {
++        createElement(document, tr);
+
+## misuse.java -> fixed.java
+-      for(ITestResult tr : m_configIssues) {
+-        createElement(document, tr);
++      synchronized (m_configIssues) {
++        for(ITestResult tr : m_configIssues) {
++          createElement(document, tr);
++        }
+-      for(ITestResult tr : m_allTests) {
+-        createElement(document, tr);
++      synchronized (m_allTests) {
++        for(ITestResult tr : m_allTests) {
++          createElement(document, tr);
++        }
+
+## original.java -> fixed.java
+-      synchronized(m_configIssues) {
+-          for(ITestResult tr : m_configIssues) {
+-              createElement(document, tr);
+-          }
++      synchronized (m_configIssues) {
++        for(ITestResult tr : m_configIssues) {
++          createElement(document, tr);
++        }
+-      synchronized(m_allTests) {
+-          for(ITestResult tr : m_allTests) {
+-              createElement(document, tr);
+-          }
++      synchronized (m_allTests) {
++        for(ITestResult tr : m_allTests) {
++          createElement(document, tr);
++        }

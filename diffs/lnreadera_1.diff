@@ -1,0 +1,33 @@
+# Project: lnreadera / Case: 1
+
+## original.java -> misuse.java
+-import android.widget.RelativeLayout;
+-
++	
+-		super.onDestroy();
+-		if(imgWebView != null) {
+-			RelativeLayout rootView = (RelativeLayout) findViewById(R.id.rootView);
+-			rootView.removeView(imgWebView);
+-			imgWebView.removeAllViews();
+-			imgWebView.destroy();
+-		}
++		if(imgWebView != null) imgWebView.destroy();
+-
++	
+
+## misuse.java -> fixed.java
++		super.onDestroy();
+
+## original.java -> fixed.java
+-import android.widget.RelativeLayout;
+-
++	
++		if(imgWebView != null) imgWebView.destroy();
+-		if(imgWebView != null) {
+-			RelativeLayout rootView = (RelativeLayout) findViewById(R.id.rootView);
+-			rootView.removeView(imgWebView);
+-			imgWebView.removeAllViews();
+-			imgWebView.destroy();
+-		}
+-
++	

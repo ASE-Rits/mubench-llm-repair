@@ -1,0 +1,7 @@
+# Project: jodatime / Case: 362
+
+## original.java -> misuse.java
+-		    if (st.countTokens() < 4) {
+-			throw new IllegalArgumentException("Attempting to create a Zone from an incomplete tokenizer");
+-		    }
+

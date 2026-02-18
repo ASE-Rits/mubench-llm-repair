@@ -1,0 +1,11 @@
+# Project: logblock-logblock-2 / Case: 15
+
+## original.java -> misuse.java
+-        outStream.close();
+
+## misuse.java -> fixed.java
++        outStream.flush();
++        outStream.close();
+
+## original.java -> fixed.java
++        outStream.flush();

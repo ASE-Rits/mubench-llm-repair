@@ -1,0 +1,15 @@
+# Project: openaiab / Case: 1
+
+## original.java -> misuse.java
+-        super.onDestroy();
+
+## misuse.java -> fixed.java
++        super.onDestroy();
+-} 
++}
+
+## original.java -> fixed.java
+-        super.onDestroy();
++        super.onDestroy();
+-} 
++}

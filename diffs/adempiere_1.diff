@@ -1,0 +1,39 @@
+# Project: adempiere / Case: 1
+
+## original.java -> misuse.java
+- * Security Services.
+- * <p>
+- * Change log:
+- * <ul>
+- * <li>2007-01-27 - teo_sarca - [ 1598095 ] class Secure is not working with UTF8
+- * </ul>
+- *  
++ *  Security Services.
++ *
+-				byte[] encBytes = m_cipher.doFinal(clearText.getBytes("UTF8"));
++				byte[] encBytes = m_cipher.doFinal(clearText.getBytes());
+-				String retValue = new String(out, "UTF8");
++				String retValue = new String(out);
+
+## misuse.java -> fixed.java
+-				AlgorithmParameters ap = m_cipher.getParameters();
+-				m_cipher.init(Cipher.DECRYPT_MODE, m_key, ap);
++				m_cipher.init(Cipher.DECRYPT_MODE, m_key);
+
+## original.java -> fixed.java
+- * Security Services.
+- * <p>
+- * Change log:
+- * <ul>
+- * <li>2007-01-27 - teo_sarca - [ 1598095 ] class Secure is not working with UTF8
+- * </ul>
+- *  
++ *  Security Services.
++ *
+-				byte[] encBytes = m_cipher.doFinal(clearText.getBytes("UTF8"));
++				byte[] encBytes = m_cipher.doFinal(clearText.getBytes());
+-				AlgorithmParameters ap = m_cipher.getParameters();
+-				m_cipher.init(Cipher.DECRYPT_MODE, m_key, ap);
++				m_cipher.init(Cipher.DECRYPT_MODE, m_key);
+-				String retValue = new String(out, "UTF8");
++				String retValue = new String(out);

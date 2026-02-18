@@ -1,0 +1,15 @@
+# Project: jfreechart / Case: 7a
+
+## original.java -> misuse.java
+- * 07-Apr-2008 : Fixed NPE in removeDomainMarker() and 
+- *               removeRangeMarker() (DG);
+-        if (markers == null) {
+-            return false;
+-        }
+-        if (markers == null) {
+-            return false;
+-        }
++
++
++
+

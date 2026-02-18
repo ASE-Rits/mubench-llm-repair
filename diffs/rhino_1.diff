@@ -1,0 +1,15 @@
+# Project: rhino / Case: 1
+
+## original.java -> misuse.java
++            pn = nf.initFunction(fnNode, functionIndex, body, syntheticType);
+
+## misuse.java -> fixed.java
+-            pn = nf.initFunction(fnNode, functionIndex, body, syntheticType);
+-}
+-
++}
+
+## original.java -> fixed.java
+-}
+-
++}

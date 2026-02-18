@@ -1,0 +1,8 @@
+# Project: jodatime / Case: 339
+
+## original.java -> misuse.java
+-            DataOutputStream dout = new DataOutputStream(out);
+-            writeTo(zoneID, (DataOutput)dout);
+-            dout.flush();
++            writeTo(zoneID, (DataOutput)new DataOutputStream(out));
+

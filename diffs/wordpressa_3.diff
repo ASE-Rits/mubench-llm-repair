@@ -1,0 +1,39 @@
+# Project: wordpressa / Case: 3
+
+## original.java -> misuse.java
+-                if (str != null) {
+-                    if (mSelectionEnd > str.length())
+-                        mSelectionEnd = str.length();
++                if (str != null)
+-                }
+
+## misuse.java -> fixed.java
+-            mRootView.getViewTreeObserver().removeGlobalOnLayoutListener(this);
++            mRootView.getViewTreeObserver().removeOnGlobalLayoutListener(this);
+-                    if (mContentEditText.getText() != null) {
+-                        String selectedText = mContentEditText.getText().subSequence(mSelectionStart, mSelectionEnd).toString();
++                    Editable text = mContentEditText.getText();
++                    if (text != null) {
++                        String selectedText = text.subSequence(mSelectionStart, mSelectionEnd).toString();
++            if (content == null)
++                return;
+-}
++}
+
+## original.java -> fixed.java
+-            mRootView.getViewTreeObserver().removeGlobalOnLayoutListener(this);
++            mRootView.getViewTreeObserver().removeOnGlobalLayoutListener(this);
+-                if (str != null) {
+-                    if (mSelectionEnd > str.length())
+-                        mSelectionEnd = str.length();
++                if (str != null)
+-                }
+-                    if (mContentEditText.getText() != null) {
+-                        String selectedText = mContentEditText.getText().subSequence(mSelectionStart, mSelectionEnd).toString();
++                    Editable text = mContentEditText.getText();
++                    if (text != null) {
++                        String selectedText = text.subSequence(mSelectionStart, mSelectionEnd).toString();
++            if (content == null)
++                return;
+-}
++}

@@ -1,0 +1,55 @@
+# Project: jmrtd / Case: 1
+
+## original.java -> misuse.java
+-      long oldssc = ssc;
+-      try {
+-      } finally {
+-         /*
+-          * If we fail to unwrap, at least make sure we have
+-          * the same counter as the ICC, so that we can continue
+-          * to communicate using secure messaging...
+-          */
+-         if (ssc == oldssc) {
+-            ssc++;
+-         }
+-      }
+-            throw new IllegalStateException("DO'87 expected 0x01 marker, found "
+-                  + Hex.byteToHexString((byte)buf));
++            throw new IllegalStateException("DO'87 expected 0x01 marker "
++                + Integer.toHexString(buf));
+-      
++      mac.init(ksMac);
+-      mac.init(ksMac);
+-      dataOut.close();
+
+## misuse.java -> fixed.java
++      dataOut.close();
++      dataOut.close();
+-}
++}
+
+## original.java -> fixed.java
++      dataOut.close();
+-      long oldssc = ssc;
+-      try {
+-      } finally {
+-         /*
+-          * If we fail to unwrap, at least make sure we have
+-          * the same counter as the ICC, so that we can continue
+-          * to communicate using secure messaging...
+-          */
+-         if (ssc == oldssc) {
+-            ssc++;
+-         }
+-      }
+-            throw new IllegalStateException("DO'87 expected 0x01 marker, found "
+-                  + Hex.byteToHexString((byte)buf));
++            throw new IllegalStateException("DO'87 expected 0x01 marker "
++                + Integer.toHexString(buf));
+-      
++      mac.init(ksMac);
+-      mac.init(ksMac);
+-      byte[] cc2 = mac.doFinal(out.toByteArray());
++      byte[] cc2 = mac.doFinal(out.toByteArray());
+-}
++}

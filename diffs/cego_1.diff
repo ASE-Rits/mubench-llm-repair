@@ -1,0 +1,11 @@
+# Project: cego / Case: 1
+
+## original.java -> misuse.java
+-        intent.setDataAndType(Uri.fromFile(file), "image/jpeg");
++        intent.setDataAndType(Uri.fromFile(file), "image/jpg");
+
+## misuse.java -> fixed.java
+-        intent.setDataAndType(Uri.fromFile(file), "image/jpg");
++        intent.setDataAndType(Uri.fromFile(file), "image/jpeg");
+
+## original.java -> fixed.java

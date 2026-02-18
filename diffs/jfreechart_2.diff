@@ -1,0 +1,17 @@
+# Project: jfreechart / Case: 2
+
+## original.java -> misuse.java
+-import org.jfree.chart.ChartRenderingInfo;
+-            ChartRenderingInfo owner = plotState.getOwner();
+-            if (owner != null) {
+-                EntityCollection entities = owner.getEntityCollection();
+-                if (entities != null) {
+-                    entities.add(new AxisLabelEntity(this, hotspot,
+-                            this.labelToolTip, this.labelURL));
+-                }
++            EntityCollection entities = plotState.getOwner()
++                    .getEntityCollection();
++            if (entities != null) {
++                entities.add(new AxisLabelEntity(this, hotspot,
++                        this.labelToolTip, this.labelURL));
+

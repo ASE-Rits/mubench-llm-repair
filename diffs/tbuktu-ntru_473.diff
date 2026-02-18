@@ -1,0 +1,9 @@
+# Project: tbuktu-ntru / Case: 473
+
+## original.java -> misuse.java
+-        dos.flush();
+
+## misuse.java -> fixed.java
++        dos.flush();
+
+## original.java -> fixed.java

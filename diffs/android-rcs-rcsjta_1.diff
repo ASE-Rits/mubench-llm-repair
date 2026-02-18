@@ -1,0 +1,59 @@
+# Project: android-rcs-rcsjta / Case: 1
+
+## original.java -> misuse.java
+- * Copyright (C) 2014 Sony Mobile Communications Inc.
+- *
+- * NOTE: This file has been modified by Sony Mobile Communications Inc.
+- * Modifications are licensed under the License.
+-
+-import static com.orangelabs.rcs.utils.StringUtils.UTF8;
+- *
++ * 
+-            key = uuid.toString().getBytes(UTF8);
++            key = uuid.toString().getBytes();
+-            key = String.valueOf(System.currentTimeMillis()).getBytes(UTF8);
++    		String t = "" + System.currentTimeMillis(); 
++            key = t.getBytes();
+-            byte[] contributionId = mac.doFinal(callId.getBytes(UTF8));
++            byte[] contributionId = mac.doFinal(callId.getBytes());
+-
++            
+
+## misuse.java -> fixed.java
++
++
++
++
++
++import java.nio.charset.StandardCharsets;
++
+-            key = uuid.toString().getBytes();
++            key = uuid.toString().getBytes(StandardCharsets.UTF_8);
+-            key = t.getBytes();
++            key = t.getBytes(StandardCharsets.UTF_8);
+-            byte[] contributionId = mac.doFinal(callId.getBytes());
++            byte[] contributionId = mac.doFinal(callId.getBytes(StandardCharsets.UTF_8));
+
+## original.java -> fixed.java
+- * Copyright (C) 2014 Sony Mobile Communications Inc.
++
+- *
+- * NOTE: This file has been modified by Sony Mobile Communications Inc.
+- * Modifications are licensed under the License.
++
++
++
++import java.nio.charset.StandardCharsets;
+-import static com.orangelabs.rcs.utils.StringUtils.UTF8;
++
+- *
++ * 
+-            key = uuid.toString().getBytes(UTF8);
++            key = uuid.toString().getBytes(StandardCharsets.UTF_8);
+-            key = String.valueOf(System.currentTimeMillis()).getBytes(UTF8);
++    		String t = "" + System.currentTimeMillis(); 
++            key = t.getBytes(StandardCharsets.UTF_8);
+-            byte[] contributionId = mac.doFinal(callId.getBytes(UTF8));
++            byte[] contributionId = mac.doFinal(callId.getBytes(StandardCharsets.UTF_8));
+-
++            

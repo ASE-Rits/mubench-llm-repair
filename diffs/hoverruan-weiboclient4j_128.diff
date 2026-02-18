@@ -1,0 +1,23 @@
+# Project: hoverruan-weiboclient4j / Case: 128
+
+## original.java -> misuse.java
+-        try {
+-            return new Cid(value);
+-        } catch (NumberFormatException e) {
+-            throw new NumberFormatException(String.format("Cid value [%s] is not a parsable Long", value));
+-        }
++        return new Cid(value);
+
+## misuse.java -> fixed.java
+-        return new Cid(value);
++        try {
++            return new Cid(Long.parseLong(value));
++        } catch (NumberFormatException e) {
++            throw new IllegalArgumentException("Invalid Cid value: " + value, e);
++        }
+
+## original.java -> fixed.java
+-            return new Cid(value);
++            return new Cid(Long.parseLong(value));
+-            throw new NumberFormatException(String.format("Cid value [%s] is not a parsable Long", value));
++            throw new IllegalArgumentException("Invalid Cid value: " + value, e);

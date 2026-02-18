@@ -1,0 +1,29 @@
+# Project: pawotag / Case: 1
+
+## original.java -> misuse.java
+-            if (inbytes.length == 0) {
+-                cipher.doFinal(output, index);
+-            }
+-            else {
+-                cipher.doFinal(inbytes, 0, inbytes.length, output, index);
+-            }
++            cipher.doFinal(inbytes, 0, inbytes.length, output, index);
+
+## misuse.java -> fixed.java
+-            cipher.doFinal(inbytes, 0, inbytes.length, output, index);
++
++            if (inputLength == 0) {
++                cipher.doFinal(output, index);
++            }
++            else {
++                cipher.doFinal(inbytes, 0, inbytes.length, output, index);
++            }
+-}
++}
+
+## original.java -> fixed.java
+-            if (inbytes.length == 0) {
++
++            if (inputLength == 0) {
+-}
++}

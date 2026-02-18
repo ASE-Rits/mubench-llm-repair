@@ -1,0 +1,161 @@
+# Project: ivantrendafilov-confucius / Case: 97
+
+## original.java -> misuse.java
+-		try {
+-			return Byte.parseByte(getKey(key));
+-		} catch (NumberFormatException e) {
+-			throw new NumberFormatException(String.format("Configuration value [%s] is not a parsable byte", key));
+-		}
++		return Byte.parseByte(getKey(key));
+-		try {
+-			return value == null ? defaultValue : Byte.parseByte(value);
+-		} catch (NumberFormatException e) {
+-			throw new NumberFormatException(String.format("Configuration value [%s] is not a parsable byte", key));
+-		}
++		return value == null ? defaultValue : Byte.parseByte(value);
+-		try {
+-			for (String value : getKey(key).split(separator))
+-				parts.add(Byte.parseByte(value.trim()));
+-			return parts;
+-		} catch (NumberFormatException e) {
+-			throw new NumberFormatException(String.format("Configuration value [%s] is not a parsable byte", key));
+-		}
++		for (String value : getKey(key).split(separator))
++			parts.add(Byte.parseByte(value.trim()));
++		return parts;
+-		try {
+-			return Long.parseLong(getKey(key));
+-		} catch (NumberFormatException e) {
+-		        throw new NumberFormatException(String.format("Configuration value [%s] is not a parsable long", key));
+-		}
++		return Long.parseLong(getKey(key));
+-		try {
+-			return value == null ? defaultValue : Long.parseLong(value);
+-		} catch (NumberFormatException e) {
+-			throw new NumberFormatException(String.format("Configuration value [%s] is not a parsable long", key));
+-		}
++		return value == null ? defaultValue : Long.parseLong(value);
+-		try {
+-			for (String value : getKey(key).split(separator))
+-				parts.add(Long.parseLong(value.trim()));
+-			return parts;
+-		} catch (NumberFormatException e) {
+-			throw new NumberFormatException(String.format("Configuration value [%s] is not a parsable long", key));
+-		}
++		for (String value : getKey(key).split(separator))
++			parts.add(Long.parseLong(value.trim()));
++		return parts;
+-		try {
+-			return Short.parseShort(getKey(key));
+-		} catch (NumberFormatException e) {
+-			throw new NumberFormatException(String.format("Configuration value [%s] is not a parsable short", key));
+-		}
++		return Short.parseShort(getKey(key));
+-		try {
+-			return value == null ? defaultValue : Short.parseShort(value);
+-		} catch (NumberFormatException e) {
+-			throw new NumberFormatException(String.format("Configuration value [%s] is not a parsable short", key));
+-		}
++		return value == null ? defaultValue : Short.parseShort(value);
+-		try {
+-			for (String value : getKey(key).split(separator))
+-				parts.add(Short.parseShort(value.trim()));
+-			return parts;
+-		} catch (NumberFormatException e) {
+-			throw new NumberFormatException(String.format("Configuration value [%s] is not a parsable short", key));
+-		}
++		for (String value : getKey(key).split(separator))
++			parts.add(Short.parseShort(value.trim()));
++		return parts;
+
+## misuse.java -> fixed.java
+-	public List<Boolean> getBooleanList(String key) {
++	public List<Boolean> getBoolean List(String key) {
+-		return value == null ? defaultValue : Long.parseLong(value);
++		if (value == null) {
++			return defaultValue;
++		}
++		try {
++			return Long.parseLong(value);
++		} catch (NumberFormatException ex) {
++			LOG.warn("Invalid long value [{}] for key [{}]. Using default [{}].", value, key, defaultValue);
++			return defaultValue;
++		}
+-}
++}
+
+## original.java -> fixed.java
+-	public List<Boolean> getBooleanList(String key) {
++	public List<Boolean> getBoolean List(String key) {
+-		try {
+-			return Byte.parseByte(getKey(key));
+-		} catch (NumberFormatException e) {
+-			throw new NumberFormatException(String.format("Configuration value [%s] is not a parsable byte", key));
+-		}
++		return Byte.parseByte(getKey(key));
+-		try {
+-			return value == null ? defaultValue : Byte.parseByte(value);
+-		} catch (NumberFormatException e) {
+-			throw new NumberFormatException(String.format("Configuration value [%s] is not a parsable byte", key));
+-		}
++		return value == null ? defaultValue : Byte.parseByte(value);
+-		try {
+-			for (String value : getKey(key).split(separator))
+-				parts.add(Byte.parseByte(value.trim()));
+-			return parts;
+-		} catch (NumberFormatException e) {
+-			throw new NumberFormatException(String.format("Configuration value [%s] is not a parsable byte", key));
+-		}
++		for (String value : getKey(key).split(separator))
++			parts.add(Byte.parseByte(value.trim()));
++		return parts;
+-		try {
+-			return Long.parseLong(getKey(key));
+-		} catch (NumberFormatException e) {
+-		        throw new NumberFormatException(String.format("Configuration value [%s] is not a parsable long", key));
+-		}
++		return Long.parseLong(getKey(key));
++		if (value == null) {
++			return defaultValue;
++		}
+-			return value == null ? defaultValue : Long.parseLong(value);
+-		} catch (NumberFormatException e) {
+-			throw new NumberFormatException(String.format("Configuration value [%s] is not a parsable long", key));
++			return Long.parseLong(value);
++		} catch (NumberFormatException ex) {
++			LOG.warn("Invalid long value [{}] for key [{}]. Using default [{}].", value, key, defaultValue);
++			return defaultValue;
+-		try {
+-			for (String value : getKey(key).split(separator))
+-				parts.add(Long.parseLong(value.trim()));
+-			return parts;
+-		} catch (NumberFormatException e) {
+-			throw new NumberFormatException(String.format("Configuration value [%s] is not a parsable long", key));
+-		}
++		for (String value : getKey(key).split(separator))
++			parts.add(Long.parseLong(value.trim()));
++		return parts;
+-		try {
+-			return Short.parseShort(getKey(key));
+-		} catch (NumberFormatException e) {
+-			throw new NumberFormatException(String.format("Configuration value [%s] is not a parsable short", key));
+-		}
++		return Short.parseShort(getKey(key));
+-		try {
+-			return value == null ? defaultValue : Short.parseShort(value);
+-		} catch (NumberFormatException e) {
+-			throw new NumberFormatException(String.format("Configuration value [%s] is not a parsable short", key));
+-		}
++		return value == null ? defaultValue : Short.parseShort(value);
+-		try {
+-			for (String value : getKey(key).split(separator))
+-				parts.add(Short.parseShort(value.trim()));
+-			return parts;
+-		} catch (NumberFormatException e) {
+-			throw new NumberFormatException(String.format("Configuration value [%s] is not a parsable short", key));
+-		}
++		for (String value : getKey(key).split(separator))
++			parts.add(Short.parseShort(value.trim()));
++		return parts;
+-}
++}

@@ -1,0 +1,23 @@
+# Project: lnreadera / Case: 2
+
+## original.java -> misuse.java
+-		super.onDestroy();
+-		if(webView != null) {
+-			RelativeLayout rootView = (RelativeLayout) findViewById(R.id.rootView);
+-			rootView.removeView(webView);
+-			webView.removeAllViews();
+-			webView.destroy();
+-		}
++		if(webView != null) webView.destroy();
+
+## misuse.java -> fixed.java
++		super.onDestroy();
+
+## original.java -> fixed.java
+-		if(webView != null) {
+-			RelativeLayout rootView = (RelativeLayout) findViewById(R.id.rootView);
+-			rootView.removeView(webView);
+-			webView.removeAllViews();
+-			webView.destroy();
+-		}
++		if(webView != null) webView.destroy();

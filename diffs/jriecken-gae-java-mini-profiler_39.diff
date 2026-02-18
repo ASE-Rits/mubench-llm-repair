@@ -1,0 +1,53 @@
+# Project: jriecken-gae-java-mini-profiler / Case: 39
+
+## original.java -> misuse.java
+-    StatsProtos.RequestStatProto appstats;
+-    try
+-    {
+-      appstats = writer.getFull(Long.parseLong(appstatsId));
+-    } catch (NumberFormatException e)
+-    {
+-      return appstatsMap;
+-    }
++    StatsProtos.RequestStatProto appstats = writer.getFull(Long.parseLong(appstatsId));
+
+## misuse.java -> fixed.java
++    if (appstatsId == null)
++    {
++      return null;
++    }
++
++    final long parsedId;
++    try
++    {
++      parsedId = Long.parseLong(appstatsId);
++    }
++    catch (NumberFormatException e)
++    {
++      return null;
++    }
++
+-    StatsProtos.RequestStatProto appstats = writer.getFull(Long.parseLong(appstatsId));
++    StatsProtos.RequestStatProto appstats = writer.getFull(parsedId);
+
+## original.java -> fixed.java
+-    Map<String, Object> appstatsMap = null;
+-    MemcacheWriter writer = new MemcacheWriter(null, MemcacheServiceFactory.getMemcacheService("__appstats__"));
+-    StatsProtos.RequestStatProto appstats;
++    if (appstatsId == null)
++    {
++      return null;
++    }
++
++    final long parsedId;
+-      appstats = writer.getFull(Long.parseLong(appstatsId));
+-    } catch (NumberFormatException e)
++      parsedId = Long.parseLong(appstatsId);
++    }
++    catch (NumberFormatException e)
+-      return appstatsMap;
++      return null;
++
++    Map<String, Object> appstatsMap = null;
++    MemcacheWriter writer = new MemcacheWriter(null, MemcacheServiceFactory.getMemcacheService("__appstats__"));
++    StatsProtos.RequestStatProto appstats = writer.getFull(parsedId);

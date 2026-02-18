@@ -1,0 +1,12 @@
+# Project: jfreechart / Case: 6
+
+## original.java -> misuse.java
+- * (C) Copyright 2000-2010, by Object Refinery Limited and Contributors.
++ * (C) Copyright 2000-2009, by Object Refinery Limited and Contributors.
+- * (C) Copyright 2002-2010, by Object Refinery Limited.
++ * (C) Copyright 2002-2009, by Object Refinery Limited.
+- * 09-Feb-2010 : Fixed bug 2947660 (DG);
++ * 26-Jun-2009 : Updated to support selections (DG);
+-        if (dataset == null) {
++        if (dataset != null) {
+

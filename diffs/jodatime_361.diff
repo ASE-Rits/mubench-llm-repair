@@ -1,0 +1,7 @@
+# Project: jodatime / Case: 361
+
+## original.java -> misuse.java
+-            if (st.countTokens() < 6) {
+-                throw new IllegalArgumentException("Attempting to create a Rule from an incomplete tokenizer");
+-            }
+

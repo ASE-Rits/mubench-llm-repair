@@ -1,0 +1,25 @@
+# Project: tap-apps / Case: 1
+
+## original.java -> misuse.java
+-      Cipher c = Cipher.getInstance("Blowfish/ECB/NoPadding");
++      Cipher c = Cipher.getInstance("Blowfish");
+-      
+-      Cipher c = Cipher.getInstance("Blowfish/ECB/NoPadding");
++      Cipher c = Cipher.getInstance("Blowfish");
+
+## misuse.java -> fixed.java
+-      Cipher c = Cipher.getInstance("Blowfish");
++      Cipher c = Cipher.getInstance("Blowfish/ECB/PKCS5Padding");
+-      Cipher c = Cipher.getInstance("Blowfish");
++      Cipher c = Cipher.getInstance("Blowfish/ECB/PKCS5Padding");
+-} // end-class
++} // end-class
+
+## original.java -> fixed.java
+-      Cipher c = Cipher.getInstance("Blowfish/ECB/NoPadding");
++      Cipher c = Cipher.getInstance("Blowfish/ECB/PKCS5Padding");
+-      
+-      Cipher c = Cipher.getInstance("Blowfish/ECB/NoPadding");
++      Cipher c = Cipher.getInstance("Blowfish/ECB/PKCS5Padding");
+-} // end-class
++} // end-class

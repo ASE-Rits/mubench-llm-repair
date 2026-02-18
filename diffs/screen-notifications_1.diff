@@ -1,0 +1,23 @@
+# Project: screen-notifications / Case: 1
+
+## original.java -> misuse.java
+-        	
+-        	try {
+-        		data.apps[i].icon = appInfo.loadIcon(pm);
+-        	} catch (OutOfMemoryError e) {
+-        		data.apps[i].icon = this.getResources().getDrawable(R.drawable.sym_def_app_icon);
+-        	}
++        	data.apps[i].icon = appInfo.loadIcon(pm);
+
+## misuse.java -> fixed.java
+-        	data.apps[i].icon = appInfo.loadIcon(pm);
++        	try {
++        		data.apps[i].icon = appInfo.loadIcon(pm);
++        	} catch (OutOfMemoryError e) {
++        		data.apps[i].icon = null;
++        	}
+
+## original.java -> fixed.java
+-        	
+-        		data.apps[i].icon = this.getResources().getDrawable(R.drawable.sym_def_app_icon);
++        		data.apps[i].icon = null;

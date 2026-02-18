@@ -1,0 +1,15 @@
+# Project: thomas-s-b-visualee / Case: 29
+
+## original.java -> misuse.java
+-            if (!scanner.hasNext()) {
+-               throw new IllegalArgumentException("Insufficient number of tokens to set package");
+-            }
+
+## misuse.java -> fixed.java
++            if (!scanner.hasNext()) {
++               break;
++            }
+
+## original.java -> fixed.java
+-               throw new IllegalArgumentException("Insufficient number of tokens to set package");
++               break;

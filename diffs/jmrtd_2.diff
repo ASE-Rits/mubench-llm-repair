@@ -1,0 +1,1055 @@
+# Project: jmrtd / Case: 2
+
+## original.java -> misuse.java
+-      aaCipher.init(Cipher.DECRYPT_MODE, pubkey);
++      aaCipher.init(Cipher.ENCRYPT_MODE, pubkey);
++
+
+## misuse.java -> fixed.java
+-import java.io.UnsupportedEncodingException;
++import java.io.ByteArrayInputStream;
++import java.io.ByteArrayOutputStream;
++import java.io.DataInputStream;
++import java.io.DataOutputStream;
++import java.io.IOException;
+-import java.security.MessageDigest;
+-import java.security.PublicKey;
+-import java.security.Signature;
+-import java.util.ArrayList;
+-import java.util.Collection;
+-import java.util.Iterator;
++import java.util.Arrays;
++import javax.crypto.Mac;
++import javax.crypto.spec.IvParameterSpec;
+-import sos.smartcards.APDUListener;
+-import sos.smartcards.CardService;
++import sos.smartcards.ISO7816;
+- * Card service for using the BAC and AA protocols on the passport.
+- * Defines basic access control, active authentication.
+- * 
+- * Based on ICAO-TR-PKI and ICAO-TR-LDS.
+- * 
+- * Usage:
+- *    <pre>
+- *       &lt;&lt;create&gt;&gt; ==&gt; open() ==&gt; doBAC(...) ==&gt; doAA() ==&gt; close()
+- *    </pre> 
++ * Secure messaging wrapper for apdus.
++ * Based on Section E.3 of ICAO-TR-PKI.
++ * @author Cees-Bart Breunesse (ceesb@cs.ru.nl)
+-public class PassportAuthService implements CardService
++public class SecureMessagingWrapper implements Apdu.Wrapper
+-   private static final int SESSION_STOPPED_STATE = 0;
+-   private static final int SESSION_STARTED_STATE = 1;
+-   private static final int BAC_AUTHENTICATED_STATE = 2;
+-   private static final int AA_AUTHENTICATED_STATE = 3;
+-   private int state;
+-   
+-   private Collection authListeners;
+-
+-   private PassportApduService service;
+-   private SecureMessagingWrapper wrapper;
+-   private Signature aaSignature;
+-   private MessageDigest aaDigest = MessageDigest.getInstance("SHA1");
+-   private Cipher aaCipher = Cipher.getInstance("RSA");
+-
+-   private PassportAuthService() throws GeneralSecurityException {
+-      aaSignature = Signature.getInstance("SHA1WithRSA/ISO9796-2"); /* FIXME: SHA1WithRSA also works? */
+-      aaDigest = MessageDigest.getInstance("SHA1");
+-      aaCipher = Cipher.getInstance("RSA/NONE/NoPadding");
+-      authListeners = new ArrayList();
+-   }
+-   
+-   /**
+-    * Creates a new passport service for accessing the passport.
+-    * 
+-    * @param service another service which will deal with sending
+-    *        the apdus to the card.
++   private static final IvParameterSpec ZERO_IV_PARAM_SPEC =
++      new IvParameterSpec(new byte[8]);
++
++   private SecretKey ksEnc, ksMac;
++   private Cipher cipher;
++   private Mac mac;
++   private long ssc;
++
++   /**
++    * Constructs a secure messaging wrapper based on the secure messaging
++    * session keys. The initial value of the send sequence counter is set
++    * to <code>0L</code>.
++    *
++    * @param ksEnc the session key for encryption
++    * @param ksMac the session key for macs
+-    *         cannot provide the necessary cryptographic primitives.
++    *         cannot provide the necessary cryptographic primitives
++    *         ("DESede/CBC/Nopadding" Cipher, "ISO9797Alg3Mac" Mac).
+-   public PassportAuthService(CardService service)
++   public SecureMessagingWrapper(SecretKey ksEnc, SecretKey ksMac)
+-      this();
+-      if (service instanceof PassportAuthService) {
+-         this.service = ((PassportAuthService)service).service;
+-      } else if (service instanceof PassportApduService) {
+-         this.service = (PassportApduService)service;
+-      } else {
+-         this.service = new PassportApduService(service);
+-      }   
+-      state = SESSION_STOPPED_STATE;
+-   }
+-   
+-   /**
+-    * Hack to construct a passport service from a service that is already open.
+-    * This should be removed some day.
+-    * 
+-    * @param service underlying service
+-    * @param wrapper encapsulates secure messaging state
++      this(ksEnc, ksMac, 0L);
++   }
++
++   /**
++    * Constructs a secure messaging wrapper based on the secure messaging
++    * session keys and the initial value of the send sequence counter.
++    *
++    * @param ksEnc the session key for encryption
++    * @param ksMac the session key for macs
++    * @param ssc the initial value of the send sequence counter
++    *
++    * @throws GeneralSecurityException when the available JCE providers
++    *         cannot provide the necessary cryptographic primitives
++    *         ("DESede/CBC/Nopadding" Cipher, "ISO9797Alg3Mac" Mac).
+-   public PassportAuthService(CardService service, SecureMessagingWrapper wrapper)
++   public SecureMessagingWrapper(SecretKey ksEnc, SecretKey ksMac, long ssc)
+-      this(service);
+-      this.wrapper = wrapper;
+-      if (state < BAC_AUTHENTICATED_STATE) {
+-         state = BAC_AUTHENTICATED_STATE;
+-      }
+-   }
+-
+-   /**
+-    * Opens a session. This is done by connecting to the card, selecting the
+-    * passport applet.
+-    */
+-   public void open() {
+-      if (state == SESSION_STARTED_STATE) {
+-         return;
+-      }
+-      service.open();
+-      state = SESSION_STARTED_STATE;
+-   }
+-   
+-   public String[] getTerminals() {
+-      return service.getTerminals();
+-   }
+-
+-   public void open(String id) {
+-      if (state == SESSION_STARTED_STATE) {
+-         return;
+-      }
+-      service.open(id);
+-      state = SESSION_STARTED_STATE;
+-   }
+-   
+-   /**
+-    * Performs the <i>Basic Access Control</i> protocol.
+-    *
+-    * @param docNr the document number
+-    * @param dateOfBirth card holder's birth date
+-    * @param dateOfExpiry document's expiry date
+-    */
+-   public void doBAC(String docNr, String dateOfBirth, String dateOfExpiry)
+-         throws GeneralSecurityException, UnsupportedEncodingException {
+-      byte[] keySeed = Util.computeKeySeed(docNr, dateOfBirth, dateOfExpiry);
+-      SecretKey kEnc = Util.deriveKey(keySeed, Util.ENC_MODE);
+-      SecretKey kMac = Util.deriveKey(keySeed, Util.MAC_MODE);
+-      byte[] rndICC = service.sendGetChallenge();
+-      byte[] rndIFD = new byte[8]; /* TODO: random */
+-      byte[] kIFD = new byte[16]; /* TODO: random */
+-      byte[] response = service.sendMutualAuth(rndIFD, rndICC, kIFD, kEnc, kMac);
+-      byte[] kICC = new byte[16];
+-      System.arraycopy(response, 16, kICC, 0, 16);
+-      keySeed = new byte[16];
+-      for (int i = 0; i < 16; i++) {
+-         keySeed[i] = (byte) ((kIFD[i] & 0x000000FF) ^ (kICC[i] & 0x000000FF));
+-      }
+-      SecretKey ksEnc = Util.deriveKey(keySeed, Util.ENC_MODE);
+-      SecretKey ksMac = Util.deriveKey(keySeed, Util.MAC_MODE);
+-      long ssc = Util.computeSendSequenceCounter(rndICC, rndIFD);
+-      wrapper = new SecureMessagingWrapper(ksEnc, ksMac, ssc);
+-      notifyBACPerformed(wrapper, rndICC, rndIFD, kIFD, kICC, true);
+-      state = BAC_AUTHENTICATED_STATE;
+-   }
+-   
+-   public void addAuthenticationListener(AuthListener l) {
+-      authListeners.add(l);
+-   }
+-   
+-   public void removeAuthenticationListener(AuthListener l) {
+-      authListeners.remove(l);
+-   }
+-   
+-   protected void notifyBACPerformed(SecureMessagingWrapper wrapper,
+-		   byte[] rndICC, byte[] rndIFD, byte[] kICC, byte[] kIFD,
+-		   boolean success) {
+-      BACEvent event = new BACEvent(this, wrapper, rndICC, rndIFD, kICC, kIFD, success);
+-      Iterator it = authListeners.iterator();
+-      while (it.hasNext()) {
+-          AuthListener listener = (AuthListener)it.next();
+-          listener.performedBAC(event);
+-      }
+-  }
+-
+-   /**
+-    * Performs the <i>Active Authentication</i> protocol.
+-    * 
+-    * @param pubkey the public key to use (usually read from the card)
+-    * 
+-    * @return a boolean indicating whether the card was authenticated
+-    * 
+-    * @throws GeneralSecurityException if something goes wrong
+-    */
+-   public boolean doAA(PublicKey pubkey) throws GeneralSecurityException {
+-      aaCipher.init(Cipher.ENCRYPT_MODE, pubkey);
+-
+-      aaSignature.initVerify(pubkey);
+-      byte[] m2 = new byte[8]; /* TODO: random rndIFD */
+-      byte[] response = service.sendInternalAuthenticate(wrapper, m2);
+-      System.out.println("DEBUG: response.length = " + response.length);
+-      System.out.println("DEBUG: response = " + Hex.bytesToHexString(response));
+-      int digestLength = aaDigest.getDigestLength(); /* should always be 20 */
+-      byte[] plaintext = aaCipher.doFinal(response);
+-      byte[] m1 = Util.recoverMessage(digestLength, plaintext);
+-      // System.out.println("DEBUG: m1 = " + Hex.bytesToHexString(m1));
+-      aaSignature.update(m1);
+-      aaSignature.update(m2);
+-      boolean success = aaSignature.verify(response);
+-      notifyAAPerformed(pubkey, m1, m2, success);
+-      if (success) {
+-         state = AA_AUTHENTICATED_STATE;
+-      }
+-      return success;
+-   }
+-   
+-   protected void notifyAAPerformed(PublicKey pubkey, byte[] m1, byte[] m2, boolean success) {
+-      Iterator it = authListeners.iterator();
+-      AAEvent event = new AAEvent(this, pubkey, m1, m2, success);
+-      while (it.hasNext()) {
+-          AuthListener listener = (AuthListener)it.next();
+-          listener.performedAA(event);
+-      }
+-  }
+-   
+-   public byte[] sendAPDU(Apdu capdu) {
+-      return service.sendAPDU(capdu);
++      this.ksEnc = ksEnc;
++      this.ksMac = ksMac;
++      this.ssc = ssc;
++      cipher = Cipher.getInstance("DESede/CBC/NoPadding");
++      mac = Mac.getInstance("ISO9797Alg3Mac");
+-   public void close() {
++   /**
++    * Gets the current value of the send sequence counter.
++    *
++    * @return the current value of the send sequence counter.
++    */
++   public /*@ pure */ long getSendSequenceCounter() {
++      return ssc;
++   }
++
++   /**
++    * Wraps the apdu buffer <code>capdu</code> of a command apdu.
++    * As a side effect, this method increments the internal send
++    * sequence counter maintained by this wrapper.
++    *
++    * @param capdu buffer containing the command apdu.
++    *
++    * @return length of the command apdu after wrapping.
++    */
++   public byte[] wrap(byte[] capdu) {
+-         wrapper = null;
+-         service.close();
+-      } finally {
+-         state = SESSION_STOPPED_STATE;
++         byte[] wrappedApdu = wrapCommandAPDU(capdu, capdu.length);
++         // System.arraycopy(wrappedApdu, 0, capdu, 0, wrappedApdu.length);
++         return wrappedApdu;
++      } catch (GeneralSecurityException gse) {
++         gse.printStackTrace();
++         throw new IllegalStateException(gse.toString());
++      } catch (IOException ioe) {
++         ioe.printStackTrace();
++         throw new IllegalStateException(ioe.toString());
++      }
++   }
++
++   /**
++    * Unwraps the apdu buffer <code>rapdu</code> of a response apdu.
++    *
++    * @param rapdu buffer containing the response apdu.
++    * @param len length of the actual response apdu.
++    *
++    * @return a new byte array containing the unwrapped buffer.
++    */
++   public byte[] unwrap(byte[] rapdu, int len) {
++      try {
++         return unwrapResponseAPDU(rapdu, len);
++      } catch (GeneralSecurityException gse) {
++         gse.printStackTrace();
++         throw new IllegalStateException(gse.toString());
++      } catch (IOException ioe) {
++         ioe.printStackTrace();
++         throw new IllegalStateException(ioe.toString());
++      }
++   }
++
++   /**
++    * Does the actual encoding of a command apdu.
++    * Based on Section E.3 of ICAO-TR-PKI, especially the examples.
++    *
++    * @param capdu buffer containing the apdu data. It must be large enough
++    *             to receive the wrapped apdu.
++    * @param len length of the apdu data.
++    *
++    * @return a byte array containing the wrapped apdu buffer.
++    */
++   /*@ requires apdu != null && 4 <= len && len <= apdu.length;
++    */
++   private byte[] wrapCommandAPDU(byte[] capdu, int len
++   ) throws GeneralSecurityException, IOException {
++      if (capdu == null || capdu.length < 4 || len < 4) {
++         throw new IllegalArgumentException("Invalid type");
++      }
++
++      /* Determine lc and le... */
++      int lc = 0;
++      int le = capdu[len - 1] & 0x000000FF;
++      if (len == 4) {
++         lc = 0;
++         le = 0;
++      } else if (len == 5) {
++         /* No command data, byte at index 5 is le. */
++         lc = 0;
++      } else if (len > 5) {
++         /* Byte at index 5 is not le, so it must be lc. */
++         lc = capdu[ISO7816.OFFSET_LC] & 0x000000FF;
++      }
++      if (4 + lc >= len) {
++         /* Value of lc covers rest of apdu length, there is no le. */
++         le = 0;
++      }
++
++      ByteArrayOutputStream out = new ByteArrayOutputStream();
++
++      byte[] maskedHeader = new byte[4];
++      System.arraycopy(capdu, 0, maskedHeader, 0, 4);
++      maskedHeader[ISO7816.OFFSET_CLA] = (byte)0x0C;
++      byte[] paddedHeader = Util.pad(maskedHeader);
++
++      byte[] do87 = new byte[0];
++      byte[] do8E = new byte[0];
++      byte[] do97 = new byte[0];
++
++      if (le > 0) {
++         out.reset();
++         out.write((byte)0x97);
++         out.write((byte)0x01);
++         out.write((byte)le);
++         do97 = out.toByteArray();
++      }
++
++      if (lc > 0) {
++         byte[] data = Util.pad(capdu, ISO7816.OFFSET_CDATA, lc);
++         cipher.init(Cipher.ENCRYPT_MODE, ksEnc, ZERO_IV_PARAM_SPEC);
++         byte[] ciphertext = cipher.doFinal(data);
++
++         out.reset();
++         out.write((byte)0x87);
++         out.write((byte)(ciphertext.length + 1));
++         out.write(0x01);
++         out.write(ciphertext, 0, ciphertext.length);
++         do87 = out.toByteArray();
++
++      out.reset();
++      out.write(paddedHeader, 0, paddedHeader.length);
++      out.write(do87, 0, do87.length);
++      out.write(do97, 0, do97.length);
++      byte[] m = out.toByteArray();
++
++      out.reset();
++      DataOutputStream dataOut = new DataOutputStream(out);
++      ssc++;
++      dataOut.writeLong(ssc);
++      dataOut.write(m, 0, m.length);
++      dataOut.flush();
++      byte[] n = Util.pad(out.toByteArray());
++
++      /* Compute cryptographic checksum... */
++      mac.init(ksMac);
++      byte[] cc = mac.doFinal(n);
++      // ssc++; // TODO dit snappen
++
++      out.reset();
++      out.write((byte)0x8E);
++      out.write(cc.length);
++      out.write(cc, 0, cc.length);
++      do8E = out.toByteArray();
++
++      /* Construct protected apdu... */
++      out.reset();
++      out.write(maskedHeader, 0, 4);
++      out.write((byte)(do87.length + do97.length + do8E.length));
++      out.write(do87, 0, do87.length);
++      out.write(do97, 0, do97.length);
++      out.write(do8E, 0, do8E.length);
++      out.write(0x00);
++
++      return out.toByteArray();
+-   public void addAPDUListener(APDUListener l) {
+-      service.addAPDUListener(l);
++   /**
++    * Does the actual decoding of a response apdu.
++    * Based on Section E.3 of TR-PKI, especially the examples.
++    *
++    * @param rapdu buffer containing the apdu data.
++    * @param len length of the apdu data.
++    *
++    * @return a byte array containing the unwrapped apdu buffer.
++    */
++   private byte[] unwrapResponseAPDU(byte[] rapdu, int len
++   ) throws GeneralSecurityException, IOException {
++      if (rapdu == null || rapdu.length < 2 || len < 2) {
++         throw new IllegalArgumentException("Invalid type");
++      }
++      cipher.init(Cipher.DECRYPT_MODE, ksEnc, ZERO_IV_PARAM_SPEC);
++      DataInputStream in = new DataInputStream(new ByteArrayInputStream(rapdu));
++      byte[] data = new byte[0];
++      short sw = 0;
++      boolean finished = false;
++      while (!finished) {
++         int tag = in.readByte();
++         switch (tag) {
++            case (byte)0x87: data = readDO87(in); break;
++            case (byte)0x99: sw = readDO99(in); break;
++            case (byte)0x8E: readDO8E(in, rapdu); finished = true; break;
++         }
++      }
++      ByteArrayOutputStream out = new ByteArrayOutputStream();
++      out.write(data, 0, data.length);
++      out.write((sw & 0x0000FF00) >> 8);
++      out.write(sw & 0x000000FF);
++      return out.toByteArray();
+-   public void removeAPDUListener(APDUListener l) {
+-      service.removeAPDUListener(l);
++   /**
++    * The <code>0x87</code> tag has already been read.
++    *
++    * @param in inputstream to read from.
++    */
++   private byte[] readDO87(DataInputStream in
++   ) throws IOException, GeneralSecurityException {
++      /* Read length... */
++      int length = 0;
++      int buf = in.readUnsignedByte();
++      if ((buf & 0x00000080) != 0x00000080) {
++         /* Short form */
++         length = buf;
++         buf = in.readUnsignedByte(); /* should be 0x01... */
++         if (buf != 0x01) {
++            throw new IllegalStateException("DO'87 expected 0x01 marker "
++                + Integer.toHexString(buf));
++         }
++      } else {
++         /* Long form */
++         int lengthBytesCount = buf & 0x0000007F;
++         for (int i = 0; i < lengthBytesCount; i++) {
++            length = (length << 8) | in.readUnsignedByte();
++         }
++         buf = in.readUnsignedByte(); /* should be 0x01... */
++         if (buf != 0x01) {
++            throw new IllegalStateException("DO'87 expected 0x01 marker");
++         }
++      }
++      length--; /* takes care of the extra 0x01 marker... */
++      
++      /* Read, decrypt, unpad the data... */
++      byte[] ciphertext = new byte[length];
++      in.read(ciphertext, 0, length);
++      byte[] paddedData = cipher.doFinal(ciphertext);
++      // System.out.println("DEBUG: paddedData = " + Hex.bytesToHexString(paddedData));
++      byte[] data = Util.unpad(paddedData);
++      return data;
+-   
+-   public SecureMessagingWrapper getWrapper() {
+-      return wrapper;
++
++   /**
++    * The <code>0x99</code> tag has already been read.
++    *
++    * @param in inputstream to read from.
++    */
++   private short readDO99(DataInputStream in) throws IOException {
++      int length = in.readUnsignedByte();
++      if (length != 2) {
++         throw new IllegalStateException("DO'99 wrong length");
++      }
++      byte sw1 = in.readByte();
++      byte sw2 = in.readByte();
++      return (short)(((sw1 & 0x000000FF) << 8) | (sw2 & 0x000000FF));
+-   
++
+-    * @deprecated hack
+-    * @param wrapper wrapper
++    * The <code>0x8E</code> tag has already been read.
++    *
++    * @param in inputstream to read from.
+-   public void setWrapper(SecureMessagingWrapper wrapper) {
+-      this.wrapper = wrapper;
+-      notifyBACPerformed(wrapper, null, null, null, null, true);
++   private void readDO8E(DataInputStream in, byte[] rapdu
++   ) throws IOException, GeneralSecurityException {
++      int length = in.readUnsignedByte();
++      if (length != 8) {
++         throw new IllegalStateException("DO'8E wrong length");
++      }
++      byte[] cc1 = new byte[8];
++      in.readFully(cc1);
++      mac.init(ksMac);
++      ByteArrayOutputStream out = new ByteArrayOutputStream();
++      DataOutputStream dataOut = new DataOutputStream(out);
++      try {
++         ssc++;
++         dataOut.writeLong(ssc);
++         byte[] paddedData = Util.pad(rapdu, 0, rapdu.length - 2 - 8 - 2);
++         dataOut.write(paddedData, 0, paddedData.length);
++         dataOut.flush();
++      } finally {
++         dataOut.close();
++      }
++      byte[] cc2 = mac.doFinal(out.toByteArray());
++      if (!Arrays.equals(cc1, cc2)) {
++         throw new IllegalStateException("Incorrect MAC!");
++      }
+-}
++}
+
+## original.java -> fixed.java
+-import java.io.UnsupportedEncodingException;
++import java.io.ByteArrayInputStream;
++import java.io.ByteArrayOutputStream;
++import java.io.DataInputStream;
++import java.io.DataOutputStream;
++import java.io.IOException;
+-import java.security.MessageDigest;
+-import java.security.PublicKey;
+-import java.security.Signature;
+-import java.util.ArrayList;
+-import java.util.Collection;
+-import java.util.Iterator;
++import java.util.Arrays;
++import javax.crypto.Mac;
++import javax.crypto.spec.IvParameterSpec;
+-import sos.smartcards.APDUListener;
+-import sos.smartcards.CardService;
++import sos.smartcards.ISO7816;
+- * Card service for using the BAC and AA protocols on the passport.
+- * Defines basic access control, active authentication.
+- * 
+- * Based on ICAO-TR-PKI and ICAO-TR-LDS.
+- * 
+- * Usage:
+- *    <pre>
+- *       &lt;&lt;create&gt;&gt; ==&gt; open() ==&gt; doBAC(...) ==&gt; doAA() ==&gt; close()
+- *    </pre> 
++ * Secure messaging wrapper for apdus.
++ * Based on Section E.3 of ICAO-TR-PKI.
++ * @author Cees-Bart Breunesse (ceesb@cs.ru.nl)
+-public class PassportAuthService implements CardService
++public class SecureMessagingWrapper implements Apdu.Wrapper
+-   private static final int SESSION_STOPPED_STATE = 0;
+-   private static final int SESSION_STARTED_STATE = 1;
+-   private static final int BAC_AUTHENTICATED_STATE = 2;
+-   private static final int AA_AUTHENTICATED_STATE = 3;
+-   private int state;
+-   
+-   private Collection authListeners;
+-
+-   private PassportApduService service;
+-   private SecureMessagingWrapper wrapper;
+-   private Signature aaSignature;
+-   private MessageDigest aaDigest = MessageDigest.getInstance("SHA1");
+-   private Cipher aaCipher = Cipher.getInstance("RSA");
+-
+-   private PassportAuthService() throws GeneralSecurityException {
+-      aaSignature = Signature.getInstance("SHA1WithRSA/ISO9796-2"); /* FIXME: SHA1WithRSA also works? */
+-      aaDigest = MessageDigest.getInstance("SHA1");
+-      aaCipher = Cipher.getInstance("RSA/NONE/NoPadding");
+-      authListeners = new ArrayList();
+-   }
+-   
+-   /**
+-    * Creates a new passport service for accessing the passport.
+-    * 
+-    * @param service another service which will deal with sending
+-    *        the apdus to the card.
++   private static final IvParameterSpec ZERO_IV_PARAM_SPEC =
++      new IvParameterSpec(new byte[8]);
++
++   private SecretKey ksEnc, ksMac;
++   private Cipher cipher;
++   private Mac mac;
++   private long ssc;
++
++   /**
++    * Constructs a secure messaging wrapper based on the secure messaging
++    * session keys. The initial value of the send sequence counter is set
++    * to <code>0L</code>.
++    *
++    * @param ksEnc the session key for encryption
++    * @param ksMac the session key for macs
+-    *         cannot provide the necessary cryptographic primitives.
++    *         cannot provide the necessary cryptographic primitives
++    *         ("DESede/CBC/Nopadding" Cipher, "ISO9797Alg3Mac" Mac).
+-   public PassportAuthService(CardService service)
++   public SecureMessagingWrapper(SecretKey ksEnc, SecretKey ksMac)
+-      this();
+-      if (service instanceof PassportAuthService) {
+-         this.service = ((PassportAuthService)service).service;
+-      } else if (service instanceof PassportApduService) {
+-         this.service = (PassportApduService)service;
+-      } else {
+-         this.service = new PassportApduService(service);
+-      }   
+-      state = SESSION_STOPPED_STATE;
+-   }
+-   
+-   /**
+-    * Hack to construct a passport service from a service that is already open.
+-    * This should be removed some day.
+-    * 
+-    * @param service underlying service
+-    * @param wrapper encapsulates secure messaging state
++      this(ksEnc, ksMac, 0L);
++   }
++
++   /**
++    * Constructs a secure messaging wrapper based on the secure messaging
++    * session keys and the initial value of the send sequence counter.
++    *
++    * @param ksEnc the session key for encryption
++    * @param ksMac the session key for macs
++    * @param ssc the initial value of the send sequence counter
++    *
++    * @throws GeneralSecurityException when the available JCE providers
++    *         cannot provide the necessary cryptographic primitives
++    *         ("DESede/CBC/Nopadding" Cipher, "ISO9797Alg3Mac" Mac).
+-   public PassportAuthService(CardService service, SecureMessagingWrapper wrapper)
++   public SecureMessagingWrapper(SecretKey ksEnc, SecretKey ksMac, long ssc)
+-      this(service);
+-      this.wrapper = wrapper;
+-      if (state < BAC_AUTHENTICATED_STATE) {
+-         state = BAC_AUTHENTICATED_STATE;
+-      }
+-   }
+-
+-   /**
+-    * Opens a session. This is done by connecting to the card, selecting the
+-    * passport applet.
+-    */
+-   public void open() {
+-      if (state == SESSION_STARTED_STATE) {
+-         return;
+-      }
+-      service.open();
+-      state = SESSION_STARTED_STATE;
+-   }
+-   
+-   public String[] getTerminals() {
+-      return service.getTerminals();
+-   }
+-
+-   public void open(String id) {
+-      if (state == SESSION_STARTED_STATE) {
+-         return;
+-      }
+-      service.open(id);
+-      state = SESSION_STARTED_STATE;
+-   }
+-   
+-   /**
+-    * Performs the <i>Basic Access Control</i> protocol.
+-    *
+-    * @param docNr the document number
+-    * @param dateOfBirth card holder's birth date
+-    * @param dateOfExpiry document's expiry date
+-    */
+-   public void doBAC(String docNr, String dateOfBirth, String dateOfExpiry)
+-         throws GeneralSecurityException, UnsupportedEncodingException {
+-      byte[] keySeed = Util.computeKeySeed(docNr, dateOfBirth, dateOfExpiry);
+-      SecretKey kEnc = Util.deriveKey(keySeed, Util.ENC_MODE);
+-      SecretKey kMac = Util.deriveKey(keySeed, Util.MAC_MODE);
+-      byte[] rndICC = service.sendGetChallenge();
+-      byte[] rndIFD = new byte[8]; /* TODO: random */
+-      byte[] kIFD = new byte[16]; /* TODO: random */
+-      byte[] response = service.sendMutualAuth(rndIFD, rndICC, kIFD, kEnc, kMac);
+-      byte[] kICC = new byte[16];
+-      System.arraycopy(response, 16, kICC, 0, 16);
+-      keySeed = new byte[16];
+-      for (int i = 0; i < 16; i++) {
+-         keySeed[i] = (byte) ((kIFD[i] & 0x000000FF) ^ (kICC[i] & 0x000000FF));
+-      }
+-      SecretKey ksEnc = Util.deriveKey(keySeed, Util.ENC_MODE);
+-      SecretKey ksMac = Util.deriveKey(keySeed, Util.MAC_MODE);
+-      long ssc = Util.computeSendSequenceCounter(rndICC, rndIFD);
+-      wrapper = new SecureMessagingWrapper(ksEnc, ksMac, ssc);
+-      notifyBACPerformed(wrapper, rndICC, rndIFD, kIFD, kICC, true);
+-      state = BAC_AUTHENTICATED_STATE;
+-   }
+-   
+-   public void addAuthenticationListener(AuthListener l) {
+-      authListeners.add(l);
+-   }
+-   
+-   public void removeAuthenticationListener(AuthListener l) {
+-      authListeners.remove(l);
+-   }
+-   
+-   protected void notifyBACPerformed(SecureMessagingWrapper wrapper,
+-		   byte[] rndICC, byte[] rndIFD, byte[] kICC, byte[] kIFD,
+-		   boolean success) {
+-      BACEvent event = new BACEvent(this, wrapper, rndICC, rndIFD, kICC, kIFD, success);
+-      Iterator it = authListeners.iterator();
+-      while (it.hasNext()) {
+-          AuthListener listener = (AuthListener)it.next();
+-          listener.performedBAC(event);
+-      }
+-  }
+-
+-   /**
+-    * Performs the <i>Active Authentication</i> protocol.
+-    * 
+-    * @param pubkey the public key to use (usually read from the card)
+-    * 
+-    * @return a boolean indicating whether the card was authenticated
+-    * 
+-    * @throws GeneralSecurityException if something goes wrong
+-    */
+-   public boolean doAA(PublicKey pubkey) throws GeneralSecurityException {
+-      aaCipher.init(Cipher.DECRYPT_MODE, pubkey);
+-      aaSignature.initVerify(pubkey);
+-      byte[] m2 = new byte[8]; /* TODO: random rndIFD */
+-      byte[] response = service.sendInternalAuthenticate(wrapper, m2);
+-      System.out.println("DEBUG: response.length = " + response.length);
+-      System.out.println("DEBUG: response = " + Hex.bytesToHexString(response));
+-      int digestLength = aaDigest.getDigestLength(); /* should always be 20 */
+-      byte[] plaintext = aaCipher.doFinal(response);
+-      byte[] m1 = Util.recoverMessage(digestLength, plaintext);
+-      // System.out.println("DEBUG: m1 = " + Hex.bytesToHexString(m1));
+-      aaSignature.update(m1);
+-      aaSignature.update(m2);
+-      boolean success = aaSignature.verify(response);
+-      notifyAAPerformed(pubkey, m1, m2, success);
+-      if (success) {
+-         state = AA_AUTHENTICATED_STATE;
+-      }
+-      return success;
+-   }
+-   
+-   protected void notifyAAPerformed(PublicKey pubkey, byte[] m1, byte[] m2, boolean success) {
+-      Iterator it = authListeners.iterator();
+-      AAEvent event = new AAEvent(this, pubkey, m1, m2, success);
+-      while (it.hasNext()) {
+-          AuthListener listener = (AuthListener)it.next();
+-          listener.performedAA(event);
+-      }
+-  }
+-   
+-   public byte[] sendAPDU(Apdu capdu) {
+-      return service.sendAPDU(capdu);
++      this.ksEnc = ksEnc;
++      this.ksMac = ksMac;
++      this.ssc = ssc;
++      cipher = Cipher.getInstance("DESede/CBC/NoPadding");
++      mac = Mac.getInstance("ISO9797Alg3Mac");
+-   public void close() {
++   /**
++    * Gets the current value of the send sequence counter.
++    *
++    * @return the current value of the send sequence counter.
++    */
++   public /*@ pure */ long getSendSequenceCounter() {
++      return ssc;
++   }
++
++   /**
++    * Wraps the apdu buffer <code>capdu</code> of a command apdu.
++    * As a side effect, this method increments the internal send
++    * sequence counter maintained by this wrapper.
++    *
++    * @param capdu buffer containing the command apdu.
++    *
++    * @return length of the command apdu after wrapping.
++    */
++   public byte[] wrap(byte[] capdu) {
+-         wrapper = null;
+-         service.close();
+-      } finally {
+-         state = SESSION_STOPPED_STATE;
++         byte[] wrappedApdu = wrapCommandAPDU(capdu, capdu.length);
++         // System.arraycopy(wrappedApdu, 0, capdu, 0, wrappedApdu.length);
++         return wrappedApdu;
++      } catch (GeneralSecurityException gse) {
++         gse.printStackTrace();
++         throw new IllegalStateException(gse.toString());
++      } catch (IOException ioe) {
++         ioe.printStackTrace();
++         throw new IllegalStateException(ioe.toString());
++      }
++   }
++
++   /**
++    * Unwraps the apdu buffer <code>rapdu</code> of a response apdu.
++    *
++    * @param rapdu buffer containing the response apdu.
++    * @param len length of the actual response apdu.
++    *
++    * @return a new byte array containing the unwrapped buffer.
++    */
++   public byte[] unwrap(byte[] rapdu, int len) {
++      try {
++         return unwrapResponseAPDU(rapdu, len);
++      } catch (GeneralSecurityException gse) {
++         gse.printStackTrace();
++         throw new IllegalStateException(gse.toString());
++      } catch (IOException ioe) {
++         ioe.printStackTrace();
++         throw new IllegalStateException(ioe.toString());
++      }
++   }
++
++   /**
++    * Does the actual encoding of a command apdu.
++    * Based on Section E.3 of ICAO-TR-PKI, especially the examples.
++    *
++    * @param capdu buffer containing the apdu data. It must be large enough
++    *             to receive the wrapped apdu.
++    * @param len length of the apdu data.
++    *
++    * @return a byte array containing the wrapped apdu buffer.
++    */
++   /*@ requires apdu != null && 4 <= len && len <= apdu.length;
++    */
++   private byte[] wrapCommandAPDU(byte[] capdu, int len
++   ) throws GeneralSecurityException, IOException {
++      if (capdu == null || capdu.length < 4 || len < 4) {
++         throw new IllegalArgumentException("Invalid type");
++      }
++
++      /* Determine lc and le... */
++      int lc = 0;
++      int le = capdu[len - 1] & 0x000000FF;
++      if (len == 4) {
++         lc = 0;
++         le = 0;
++      } else if (len == 5) {
++         /* No command data, byte at index 5 is le. */
++         lc = 0;
++      } else if (len > 5) {
++         /* Byte at index 5 is not le, so it must be lc. */
++         lc = capdu[ISO7816.OFFSET_LC] & 0x000000FF;
++      }
++      if (4 + lc >= len) {
++         /* Value of lc covers rest of apdu length, there is no le. */
++         le = 0;
++      }
++
++      ByteArrayOutputStream out = new ByteArrayOutputStream();
++
++      byte[] maskedHeader = new byte[4];
++      System.arraycopy(capdu, 0, maskedHeader, 0, 4);
++      maskedHeader[ISO7816.OFFSET_CLA] = (byte)0x0C;
++      byte[] paddedHeader = Util.pad(maskedHeader);
++
++      byte[] do87 = new byte[0];
++      byte[] do8E = new byte[0];
++      byte[] do97 = new byte[0];
++
++      if (le > 0) {
++         out.reset();
++         out.write((byte)0x97);
++         out.write((byte)0x01);
++         out.write((byte)le);
++         do97 = out.toByteArray();
++      }
++
++      if (lc > 0) {
++         byte[] data = Util.pad(capdu, ISO7816.OFFSET_CDATA, lc);
++         cipher.init(Cipher.ENCRYPT_MODE, ksEnc, ZERO_IV_PARAM_SPEC);
++         byte[] ciphertext = cipher.doFinal(data);
++
++         out.reset();
++         out.write((byte)0x87);
++         out.write((byte)(ciphertext.length + 1));
++         out.write(0x01);
++         out.write(ciphertext, 0, ciphertext.length);
++         do87 = out.toByteArray();
++
++      out.reset();
++      out.write(paddedHeader, 0, paddedHeader.length);
++      out.write(do87, 0, do87.length);
++      out.write(do97, 0, do97.length);
++      byte[] m = out.toByteArray();
++
++      out.reset();
++      DataOutputStream dataOut = new DataOutputStream(out);
++      ssc++;
++      dataOut.writeLong(ssc);
++      dataOut.write(m, 0, m.length);
++      dataOut.flush();
++      byte[] n = Util.pad(out.toByteArray());
++
++      /* Compute cryptographic checksum... */
++      mac.init(ksMac);
++      byte[] cc = mac.doFinal(n);
++      // ssc++; // TODO dit snappen
++
++      out.reset();
++      out.write((byte)0x8E);
++      out.write(cc.length);
++      out.write(cc, 0, cc.length);
++      do8E = out.toByteArray();
++
++      /* Construct protected apdu... */
++      out.reset();
++      out.write(maskedHeader, 0, 4);
++      out.write((byte)(do87.length + do97.length + do8E.length));
++      out.write(do87, 0, do87.length);
++      out.write(do97, 0, do97.length);
++      out.write(do8E, 0, do8E.length);
++      out.write(0x00);
++
++      return out.toByteArray();
+-   public void addAPDUListener(APDUListener l) {
+-      service.addAPDUListener(l);
++   /**
++    * Does the actual decoding of a response apdu.
++    * Based on Section E.3 of TR-PKI, especially the examples.
++    *
++    * @param rapdu buffer containing the apdu data.
++    * @param len length of the apdu data.
++    *
++    * @return a byte array containing the unwrapped apdu buffer.
++    */
++   private byte[] unwrapResponseAPDU(byte[] rapdu, int len
++   ) throws GeneralSecurityException, IOException {
++      if (rapdu == null || rapdu.length < 2 || len < 2) {
++         throw new IllegalArgumentException("Invalid type");
++      }
++      cipher.init(Cipher.DECRYPT_MODE, ksEnc, ZERO_IV_PARAM_SPEC);
++      DataInputStream in = new DataInputStream(new ByteArrayInputStream(rapdu));
++      byte[] data = new byte[0];
++      short sw = 0;
++      boolean finished = false;
++      while (!finished) {
++         int tag = in.readByte();
++         switch (tag) {
++            case (byte)0x87: data = readDO87(in); break;
++            case (byte)0x99: sw = readDO99(in); break;
++            case (byte)0x8E: readDO8E(in, rapdu); finished = true; break;
++         }
++      }
++      ByteArrayOutputStream out = new ByteArrayOutputStream();
++      out.write(data, 0, data.length);
++      out.write((sw & 0x0000FF00) >> 8);
++      out.write(sw & 0x000000FF);
++      return out.toByteArray();
+-   public void removeAPDUListener(APDUListener l) {
+-      service.removeAPDUListener(l);
++   /**
++    * The <code>0x87</code> tag has already been read.
++    *
++    * @param in inputstream to read from.
++    */
++   private byte[] readDO87(DataInputStream in
++   ) throws IOException, GeneralSecurityException {
++      /* Read length... */
++      int length = 0;
++      int buf = in.readUnsignedByte();
++      if ((buf & 0x00000080) != 0x00000080) {
++         /* Short form */
++         length = buf;
++         buf = in.readUnsignedByte(); /* should be 0x01... */
++         if (buf != 0x01) {
++            throw new IllegalStateException("DO'87 expected 0x01 marker "
++                + Integer.toHexString(buf));
++         }
++      } else {
++         /* Long form */
++         int lengthBytesCount = buf & 0x0000007F;
++         for (int i = 0; i < lengthBytesCount; i++) {
++            length = (length << 8) | in.readUnsignedByte();
++         }
++         buf = in.readUnsignedByte(); /* should be 0x01... */
++         if (buf != 0x01) {
++            throw new IllegalStateException("DO'87 expected 0x01 marker");
++         }
++      }
++      length--; /* takes care of the extra 0x01 marker... */
++      
++      /* Read, decrypt, unpad the data... */
++      byte[] ciphertext = new byte[length];
++      in.read(ciphertext, 0, length);
++      byte[] paddedData = cipher.doFinal(ciphertext);
++      // System.out.println("DEBUG: paddedData = " + Hex.bytesToHexString(paddedData));
++      byte[] data = Util.unpad(paddedData);
++      return data;
+-   
+-   public SecureMessagingWrapper getWrapper() {
+-      return wrapper;
++
++   /**
++    * The <code>0x99</code> tag has already been read.
++    *
++    * @param in inputstream to read from.
++    */
++   private short readDO99(DataInputStream in) throws IOException {
++      int length = in.readUnsignedByte();
++      if (length != 2) {
++         throw new IllegalStateException("DO'99 wrong length");
++      }
++      byte sw1 = in.readByte();
++      byte sw2 = in.readByte();
++      return (short)(((sw1 & 0x000000FF) << 8) | (sw2 & 0x000000FF));
+-   
++
+-    * @deprecated hack
+-    * @param wrapper wrapper
++    * The <code>0x8E</code> tag has already been read.
++    *
++    * @param in inputstream to read from.
+-   public void setWrapper(SecureMessagingWrapper wrapper) {
+-      this.wrapper = wrapper;
+-      notifyBACPerformed(wrapper, null, null, null, null, true);
++   private void readDO8E(DataInputStream in, byte[] rapdu
++   ) throws IOException, GeneralSecurityException {
++      int length = in.readUnsignedByte();
++      if (length != 8) {
++         throw new IllegalStateException("DO'8E wrong length");
++      }
++      byte[] cc1 = new byte[8];
++      in.readFully(cc1);
++      mac.init(ksMac);
++      ByteArrayOutputStream out = new ByteArrayOutputStream();
++      DataOutputStream dataOut = new DataOutputStream(out);
++      try {
++         ssc++;
++         dataOut.writeLong(ssc);
++         byte[] paddedData = Util.pad(rapdu, 0, rapdu.length - 2 - 8 - 2);
++         dataOut.write(paddedData, 0, paddedData.length);
++         dataOut.flush();
++      } finally {
++         dataOut.close();
++      }
++      byte[] cc2 = mac.doFinal(out.toByteArray());
++      if (!Arrays.equals(cc1, cc2)) {
++         throw new IllegalStateException("Incorrect MAC!");
++      }
+-}
++}

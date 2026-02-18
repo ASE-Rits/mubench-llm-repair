@@ -1,0 +1,9 @@
+# Project: mqtt / Case: 389
+
+## original.java -> misuse.java
+-			dos.flush();
+
+## misuse.java -> fixed.java
++			dos.flush();
+
+## original.java -> fixed.java

@@ -1,0 +1,11 @@
+# Project: tbuktu-ntru / Case: 476
+
+## original.java -> misuse.java
+-            dataStream.close();
+
+## misuse.java -> fixed.java
++            dataStream.flush();
+
+## original.java -> fixed.java
+-            dataStream.close();
++            dataStream.flush();

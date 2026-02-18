@@ -1,0 +1,93 @@
+# Project: tbuktu-ntru / Case: 475
+
+## original.java -> misuse.java
+-            dataStream.close();
+
+## misuse.java -> fixed.java
+-        ByteArrayOutputStream os = new ByteArrayOutputStream();
+-        DataOutputStream dataStream = new DataOutputStream(os);
+-        try {
+-            dataStream.writeShort(N);
+-            dataStream.writeShort(q);
+-            
+-            int flags = sparse ? 1 : 0;
+-            flags |= polyType==TernaryPolynomialType.PRODUCT ? 4 : 0;
+-            flags |= basisType==BasisType.TRANSPOSE ? 8 : 0;
+-            dataStream.write(flags);
+-            
+-            dataStream.writeFloat(keyNormBoundSq);
+-            dataStream.write(numBases);   // 1 byte
+-            
+-            for (int i=0; i<numBases; i++)
+-                // all bases except for the first one contain a public key
+-                bases.get(i).encode(os, i!=0);
+-        } catch (IOException e) {
+-            throw new NtruException(e);
+-        }
+-        return os.toByteArray();
++       ByteArrayOutputStream os = new ByteArrayOutputStream();
++       try (DataOutputStream dataStream = new DataOutputStream(os)) {
++           dataStream.writeShort(N);
++           dataStream.writeShort(q);
++           
++           int flags = sparse ? 1 : 0;
++           flags |= polyType==TernaryPolynomialType.PRODUCT ? 4 : 0;
++           flags |= basisType==BasisType.TRANSPOSE ? 8 : 0;
++           dataStream.write(flags);
++           
++           dataStream.writeFloat(keyNormBoundSq);
++           dataStream.write(numBases);   // 1 byte
++           
++           for (int i=0; i<numBases; i++)
++               // all bases except for the first one contain a public key
++               bases.get(i).encode(os, i!=0);
++           dataStream.flush();
++       } catch (IOException e) {
++           throw new NtruException(e);
++       }
++       return os.toByteArray();
+
+## original.java -> fixed.java
+-        ByteArrayOutputStream os = new ByteArrayOutputStream();
+-        DataOutputStream dataStream = new DataOutputStream(os);
+-        try {
+-            dataStream.writeShort(N);
+-            dataStream.writeShort(q);
+-            
+-            int flags = sparse ? 1 : 0;
+-            flags |= polyType==TernaryPolynomialType.PRODUCT ? 4 : 0;
+-            flags |= basisType==BasisType.TRANSPOSE ? 8 : 0;
+-            dataStream.write(flags);
+-            
+-            dataStream.writeFloat(keyNormBoundSq);
+-            dataStream.write(numBases);   // 1 byte
+-            
+-            for (int i=0; i<numBases; i++)
+-                // all bases except for the first one contain a public key
+-                bases.get(i).encode(os, i!=0);
+-            dataStream.close();
+-        } catch (IOException e) {
+-            throw new NtruException(e);
+-        }
+-        return os.toByteArray();
++       ByteArrayOutputStream os = new ByteArrayOutputStream();
++       try (DataOutputStream dataStream = new DataOutputStream(os)) {
++           dataStream.writeShort(N);
++           dataStream.writeShort(q);
++           
++           int flags = sparse ? 1 : 0;
++           flags |= polyType==TernaryPolynomialType.PRODUCT ? 4 : 0;
++           flags |= basisType==BasisType.TRANSPOSE ? 8 : 0;
++           dataStream.write(flags);
++           
++           dataStream.writeFloat(keyNormBoundSq);
++           dataStream.write(numBases);   // 1 byte
++           
++           for (int i=0; i<numBases; i++)
++               // all bases except for the first one contain a public key
++               bases.get(i).encode(os, i!=0);
++           dataStream.flush();
++       } catch (IOException e) {
++           throw new NtruException(e);
++       }
++       return os.toByteArray();

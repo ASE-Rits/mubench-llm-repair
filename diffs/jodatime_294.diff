@@ -1,0 +1,6 @@
+# Project: jodatime / Case: 294
+
+## original.java -> misuse.java
+-        oos.close();
++        oos.close();
+

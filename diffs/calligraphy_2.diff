@@ -1,0 +1,35 @@
+# Project: calligraphy / Case: 2
+
+## original.java -> misuse.java
+-        } catch (Exception ignore) {
+-            // Failed for some reason.
+-            return null;
+-        } catch (Exception ignore) {
+-            // Failed for some reason.
+-            return null;
+
+## misuse.java -> fixed.java
++        if (value.resourceId == 0) {
++            return null;
++        }
++
++            if (typedArray.getIndexCount() == 0) {
++                return null;
++            }
++        } catch (RuntimeException e) {
++            return null;
+
+## original.java -> fixed.java
+-        } catch (Exception ignore) {
+-            // Failed for some reason.
+-            return null;
++        if (value.resourceId == 0) {
++            return null;
++        }
++
++            if (typedArray.getIndexCount() == 0) {
++                return null;
++            }
+-        } catch (Exception ignore) {
+-            // Failed for some reason.
++        } catch (RuntimeException e) {

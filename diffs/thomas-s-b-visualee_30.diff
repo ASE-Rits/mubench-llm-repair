@@ -1,0 +1,63 @@
+# Project: thomas-s-b-visualee / Case: 30
+
+## original.java -> misuse.java
+-         if (!scanner.hasNext()) {
+-            throw new IllegalArgumentException("Insufficient number of tokens to jump over");
+-         }
+
+## misuse.java -> fixed.java
++         if (!scanner.hasNext()) {
++            return token;
++         }
+-         return scanner.next();
++         if (scanner.hasNext()) {
++            return scanner.next();
++         } else {
++            return currentToken;
++         }
++      if (!scanner.hasNext()) {
++         return currentToken;
++      }
+-               stack.pop();
++               if (!stack.isEmpty()) {
++                  stack.pop();
++               }
++            if (!scanner.hasNext()) {
++               break;
++            }
++            if (!scanner.hasNext()) {
++               break;
++            }
++            if (!scanner.hasNext()) {
++               break;
++            }
+
+## original.java -> fixed.java
++         if (!scanner.hasNext()) {
++            return token;
++         }
+-         return scanner.next();
++         if (scanner.hasNext()) {
++            return scanner.next();
++         } else {
++            return currentToken;
++         }
++      if (!scanner.hasNext()) {
++         return currentToken;
++      }
+-               stack.pop();
++               if (!stack.isEmpty()) {
++                  stack.pop();
++               }
+-         if (!scanner.hasNext()) {
+-            throw new IllegalArgumentException("Insufficient number of tokens to jump over");
+-         }
++            if (!scanner.hasNext()) {
++               break;
++            }
++            if (!scanner.hasNext()) {
++               break;
++            }
++            if (!scanner.hasNext()) {
++               break;
++            }

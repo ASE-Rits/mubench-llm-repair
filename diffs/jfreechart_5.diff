@@ -1,0 +1,19 @@
+# Project: jfreechart / Case: 5
+
+## original.java -> misuse.java
+-                if (r != null) {
+-                    Collection c = r.getAnnotations();
+-                    Iterator i = c.iterator();
+-                    while (i.hasNext()) {
+-                        XYAnnotation a = (XYAnnotation) i.next();
+-                        if (a instanceof XYAnnotationBoundsInfo) {
+-                            includedAnnotations.add(a);
+-                        }
++                Collection c = r.getAnnotations();
++                Iterator i = c.iterator();
++                while (i.hasNext()) {
++                    XYAnnotation a = (XYAnnotation) i.next();
++                    if (a instanceof XYAnnotationBoundsInfo) {
++                        includedAnnotations.add(a);
++
+

@@ -1,0 +1,29 @@
+# Project: wordpressa / Case: 1
+
+## original.java -> misuse.java
+-        if (isAdded() && getListView() != null && mRestoredListPosition != ListView.INVALID_POSITION
++        if (getListView() != null && mRestoredListPosition != ListView.INVALID_POSITION
+
+## misuse.java -> fixed.java
+-        if (getListView() != null && mRestoredListPosition != ListView.INVALID_POSITION
+-                && mRestoredListPosition < mNotesAdapter.getCount()) {
+-            // Restore scroll position in list
+-            getListView().setSelectionFromTop(mRestoredListPosition, 0);
+-            mRestoredListPosition = ListView.INVALID_POSITION;
++        if (!isAdded() || getListView() == null || mRestoredListPosition == ListView.INVALID_POSITION
++                || mNotesAdapter == null || mRestoredListPosition >= mNotesAdapter.getCount()) {
++            return;
++        getListView().setSelectionFromTop(mRestoredListPosition, 0);
++        mRestoredListPosition = ListView.INVALID_POSITION;
+
+## original.java -> fixed.java
+-        if (isAdded() && getListView() != null && mRestoredListPosition != ListView.INVALID_POSITION
+-                && mRestoredListPosition < mNotesAdapter.getCount()) {
+-            // Restore scroll position in list
+-            getListView().setSelectionFromTop(mRestoredListPosition, 0);
+-            mRestoredListPosition = ListView.INVALID_POSITION;
++        if (!isAdded() || getListView() == null || mRestoredListPosition == ListView.INVALID_POSITION
++                || mNotesAdapter == null || mRestoredListPosition >= mNotesAdapter.getCount()) {
++            return;
++        getListView().setSelectionFromTop(mRestoredListPosition, 0);
++        mRestoredListPosition = ListView.INVALID_POSITION;
